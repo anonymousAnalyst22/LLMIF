@@ -1,0 +1,4544 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// IAR C/C++ Compiler V10.10.1.4655 for 8051              22/Nov/2023  15:42:45
+// Copyright 2004-2017 IAR Systems AB.
+// Standalone license - IAR Embedded Workbench for 8051
+//
+//    Core               =  plain
+//    Code model         =  banked
+//    Data model         =  large
+//    Calling convention =  xdata reentrant
+//    Constant location  =  data_rom
+//    Dptr setup         =  1,16
+//                          
+//    Source file        =  
+//        D:\fuzzing-coordinator-response-collection\Components\zmac\f8w\zmac.c
+//    Command line       =  
+//        -f C:\Users\ADMINI~1\AppData\Local\Temp\EWB1E1.tmp
+//        (D:\fuzzing-coordinator-response-collection\Components\zmac\f8w\zmac.c
+//        -D SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE -D
+//        MULTICAST_ENABLED=FALSE -D ZCL_READ -D ZCL_DISCOVER -D ZCL_WRITE -D
+//        ZCL_BASIC -D ZCL_IDENTIFY -D ISR_KEYINTERRUPT -D HAL_UART=TRUE -D
+//        HAL_LCD=FALSE -D ZCL_ON_OFF -D INT_HEAP_LEN=2800 -D
+//        HAL_UART_DMA_RX_MAX=256 -D HAL_UART_DMA_TX_MAX=256 -lC
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+//        -lA
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+//        --diag_suppress Pe001,Pa010 -o
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj
+//        -e --debug --core=plain --dptr=16,1 --data_model=large
+//        --code_model=banked --calling_convention=xdata_reentrant
+//        --place_constants=data_rom --nr_virtual_regs 8 -f
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg
+//        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+//        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+//        -DZDO_COORDINATOR -DRTR_NWK) -f
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+//        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+//        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+//        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+//        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+//        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+//        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+//        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+//        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+//        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+//        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x00, 0x01, 0x02, 0x03,
+//        0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E,
+//        0x0F}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+//        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+//        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+//        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000
+//        -DENABLE_LED4_DISABLE_S1) -f
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\Source\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\Source\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\ZMain\TI2530DB\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\include\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\include\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mt\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\osal\include\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\saddr\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\sdata\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\af\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\bdb\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\gp\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sec\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sys\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zcl\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\Common\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\SPI\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\Font\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_LCD_SPI\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_OLED\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_TFT\
+//        -Ohz --require_prototypes)
+//    Locale             =  Chinese (Simplified)_China.936
+//    List file          =  
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List\zmac.s51
+//
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME zmac
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__register_banks", "*"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?V0
+        EXTERN ?V1
+        EXTERN ?V2
+        EXTERN ?V3
+        EXTERN ?V4
+        EXTERN ?V5
+        EXTERN ?V6
+        EXTERN ?V7
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?CALL_IND
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK_I_THREE
+        EXTERN ?XLOAD_R0123
+        EXTERN ?XSP
+        EXTERN ?XSTORE_R0123
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC `??ZMacAssociateReq::?relay`
+        FUNCTION `??ZMacAssociateReq::?relay`,0203H
+        PUBLIC `??ZMacAssociateRsp::?relay`
+        FUNCTION `??ZMacAssociateRsp::?relay`,0203H
+        PUBLIC `??ZMacDataReq::?relay`
+        FUNCTION `??ZMacDataReq::?relay`,0203H
+        PUBLIC `??ZMacDataReqSec::?relay`
+        FUNCTION `??ZMacDataReqSec::?relay`,0203H
+        PUBLIC `??ZMacDisassociateReq::?relay`
+        FUNCTION `??ZMacDisassociateReq::?relay`,0203H
+        PUBLIC `??ZMacEnhancedActiveScanReq::?relay`
+        FUNCTION `??ZMacEnhancedActiveScanReq::?relay`,0203H
+        PUBLIC `??ZMacGetReq::?relay`
+        FUNCTION `??ZMacGetReq::?relay`,0203H
+        PUBLIC `??ZMacInit::?relay`
+        FUNCTION `??ZMacInit::?relay`,0203H
+        PUBLIC `??ZMacOrphanRsp::?relay`
+        FUNCTION `??ZMacOrphanRsp::?relay`,0203H
+        PUBLIC `??ZMacPollReq::?relay`
+        FUNCTION `??ZMacPollReq::?relay`,0203H
+        PUBLIC `??ZMacPurgeReq::?relay`
+        FUNCTION `??ZMacPurgeReq::?relay`,0203H
+        PUBLIC `??ZMacPwrOnReq::?relay`
+        FUNCTION `??ZMacPwrOnReq::?relay`,0203H
+        PUBLIC `??ZMacReset::?relay`
+        FUNCTION `??ZMacReset::?relay`,0203H
+        PUBLIC `??ZMacScanReq::?relay`
+        FUNCTION `??ZMacScanReq::?relay`,0203H
+        PUBLIC `??ZMacSendNoData::?relay`
+        FUNCTION `??ZMacSendNoData::?relay`,0203H
+        PUBLIC `??ZMacSetReq::?relay`
+        FUNCTION `??ZMacSetReq::?relay`,0203H
+        PUBLIC `??ZMacSetTransmitPower::?relay`
+        FUNCTION `??ZMacSetTransmitPower::?relay`,0203H
+        PUBLIC `??ZMacSrcMatchAckAllPending::?relay`
+        FUNCTION `??ZMacSrcMatchAckAllPending::?relay`,0203H
+        PUBLIC `??ZMacSrcMatchAddEntry::?relay`
+        FUNCTION `??ZMacSrcMatchAddEntry::?relay`,0203H
+        PUBLIC `??ZMacSrcMatchCheckAllPending::?relay`
+        FUNCTION `??ZMacSrcMatchCheckAllPending::?relay`,0203H
+        PUBLIC `??ZMacSrcMatchDeleteEntry::?relay`
+        FUNCTION `??ZMacSrcMatchDeleteEntry::?relay`,0203H
+        PUBLIC `??ZMacSrcMatchEnable::?relay`
+        FUNCTION `??ZMacSrcMatchEnable::?relay`,0203H
+        PUBLIC `??ZMacStartReq::?relay`
+        FUNCTION `??ZMacStartReq::?relay`,0203H
+        PUBLIC `??ZMacStateIdle::?relay`
+        FUNCTION `??ZMacStateIdle::?relay`,0203H
+        PUBLIC `??ZMacSyncReq::?relay`
+        FUNCTION `??ZMacSyncReq::?relay`,0203H
+        PUBLIC `??ZMac_PwrMode::?relay`
+        FUNCTION `??ZMac_PwrMode::?relay`,0203H
+        PUBLIC ZMacAssociateReq
+        FUNCTION ZMacAssociateReq,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ZMacAssociateRsp
+        FUNCTION ZMacAssociateRsp,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ZMacDataReq
+        FUNCTION ZMacDataReq,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ZMacDataReqSec
+        FUNCTION ZMacDataReqSec,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 21, STACK
+        PUBLIC ZMacDisassociateReq
+        FUNCTION ZMacDisassociateReq,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ZMacEnhancedActiveScanReq
+        FUNCTION ZMacEnhancedActiveScanReq,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        PUBLIC ZMacGetReq
+        FUNCTION ZMacGetReq,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC ZMacInit
+        FUNCTION ZMacInit,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC ZMacOrphanRsp
+        FUNCTION ZMacOrphanRsp,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ZMacPollReq
+        FUNCTION ZMacPollReq,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ZMacPurgeReq
+        FUNCTION ZMacPurgeReq,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC ZMacPwrOnReq
+        FUNCTION ZMacPwrOnReq,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ZMacReset
+        FUNCTION ZMacReset,021203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 10, STACK
+        PUBLIC ZMacScanReq
+        FUNCTION ZMacScanReq,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        PUBLIC ZMacSendNoData
+        FUNCTION ZMacSendNoData,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        PUBLIC ZMacSetReq
+        FUNCTION ZMacSetReq,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC ZMacSetTransmitPower
+        FUNCTION ZMacSetTransmitPower,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 3, STACK
+        LOCFRAME XSTACK, 1, STACK
+        PUBLIC ZMacSrcMatchAckAllPending
+        FUNCTION ZMacSrcMatchAckAllPending,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC ZMacSrcMatchAddEntry
+        FUNCTION ZMacSrcMatchAddEntry,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ZMacSrcMatchCheckAllPending
+        FUNCTION ZMacSrcMatchCheckAllPending,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ZMacSrcMatchDeleteEntry
+        FUNCTION ZMacSrcMatchDeleteEntry,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ZMacSrcMatchEnable
+        FUNCTION ZMacSrcMatchEnable,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ZMacStartReq
+        FUNCTION ZMacStartReq,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        PUBLIC ZMacStateIdle
+        FUNCTION ZMacStateIdle,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ZMacSyncReq
+        FUNCTION ZMacSyncReq,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ZMac_PwrMode
+        FUNCTION ZMac_PwrMode,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC ZMac_ScanBuf
+        PUBLIC _ScanChannels
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA_SP SP IDATA
+          CFI StackFrame CFA_PSP16 PSP16 XDATA
+          CFI StackFrame CFA_XSP16 XSP16 XDATA
+          CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+          CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+          CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+          CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+          CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+          CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+          CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+          CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+          CFI Resource SP:8, PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+          CFI VirtualResource ?RET:24
+          CFI Resource ?BRET_EXT:8
+          CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+          CFI ResourceParts PSP16 PSPH, PSPL
+          CFI ResourceParts XSP16 XSPH, XSPL
+          CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 1
+          CFI DataAlign -1
+          CFI ReturnAddress ?RET CODE
+          CFI CFA_DOVERLAY Used
+          CFI CFA_IOVERLAY Used
+          CFI CFA_SP SP+-3
+          CFI CFA_PSP16 PSP16+0
+          CFI CFA_XSP16 XSP16+0
+          CFI `PSW.CY` SameValue
+          CFI `B.BR0` SameValue
+          CFI `B.BR1` SameValue
+          CFI `B.BR2` SameValue
+          CFI `B.BR3` SameValue
+          CFI `B.BR4` SameValue
+          CFI `B.BR5` SameValue
+          CFI `B.BR6` SameValue
+          CFI `B.BR7` SameValue
+          CFI `VB.BR8` SameValue
+          CFI `VB.BR9` SameValue
+          CFI `VB.BR10` SameValue
+          CFI `VB.BR11` SameValue
+          CFI `VB.BR12` SameValue
+          CFI `VB.BR13` SameValue
+          CFI `VB.BR14` SameValue
+          CFI `VB.BR15` SameValue
+          CFI VB SameValue
+          CFI B Undefined
+          CFI A Undefined
+          CFI PSW SameValue
+          CFI DPL0 SameValue
+          CFI DPH0 SameValue
+          CFI R0 Undefined
+          CFI R1 Undefined
+          CFI R2 Undefined
+          CFI R3 Undefined
+          CFI R4 Undefined
+          CFI R5 Undefined
+          CFI R6 SameValue
+          CFI R7 SameValue
+          CFI V0 SameValue
+          CFI V1 SameValue
+          CFI V2 SameValue
+          CFI V3 SameValue
+          CFI V4 SameValue
+          CFI V5 SameValue
+          CFI V6 SameValue
+          CFI V7 SameValue
+          CFI PSPH Undefined
+          CFI PSPL Undefined
+          CFI XSPH Undefined
+          CFI XSPL Undefined
+          CFI ?RET Concat
+          CFI ?BRET_EXT Frame(CFA_SP, 3)
+          CFI ?RET_HIGH Frame(CFA_SP, 2)
+          CFI ?RET_LOW Frame(CFA_SP, 1)
+          CFI EndCommon cfiCommon0
+        
+        
+          CFI Common cfiCommon1 Using cfiNames0
+          CFI CodeAlign 1
+          CFI DataAlign -1
+          CFI ReturnAddress ?RET CODE
+          CFI CFA_DOVERLAY Used
+          CFI CFA_IOVERLAY Used
+          CFI CFA_SP SP+-2
+          CFI CFA_PSP16 PSP16+0
+          CFI CFA_XSP16 XSP16+0
+          CFI `PSW.CY` SameValue
+          CFI `B.BR0` SameValue
+          CFI `B.BR1` SameValue
+          CFI `B.BR2` SameValue
+          CFI `B.BR3` SameValue
+          CFI `B.BR4` SameValue
+          CFI `B.BR5` SameValue
+          CFI `B.BR6` SameValue
+          CFI `B.BR7` SameValue
+          CFI `VB.BR8` SameValue
+          CFI `VB.BR9` SameValue
+          CFI `VB.BR10` SameValue
+          CFI `VB.BR11` SameValue
+          CFI `VB.BR12` SameValue
+          CFI `VB.BR13` SameValue
+          CFI `VB.BR14` SameValue
+          CFI `VB.BR15` SameValue
+          CFI VB SameValue
+          CFI B SameValue
+          CFI A SameValue
+          CFI PSW SameValue
+          CFI DPL0 SameValue
+          CFI DPH0 SameValue
+          CFI R0 SameValue
+          CFI R1 SameValue
+          CFI R2 SameValue
+          CFI R3 SameValue
+          CFI R4 SameValue
+          CFI R5 SameValue
+          CFI R6 SameValue
+          CFI R7 SameValue
+          CFI V0 SameValue
+          CFI V1 SameValue
+          CFI V2 SameValue
+          CFI V3 SameValue
+          CFI V4 SameValue
+          CFI V5 SameValue
+          CFI V6 SameValue
+          CFI V7 SameValue
+          CFI PSPH Undefined
+          CFI PSPL Undefined
+          CFI XSPH Undefined
+          CFI XSPL Undefined
+          CFI ?RET Concat
+          CFI ?BRET_EXT SameValue
+          CFI ?RET_HIGH Frame(CFA_SP, 2)
+          CFI ?RET_LOW Frame(CFA_SP, 1)
+          CFI EndCommon cfiCommon1
+        
+MAC_Init            SYMBOL "MAC_Init"
+`??MAC_Init::?relay` SYMBOL "?relay", MAC_Init
+MAC_InitCoord       SYMBOL "MAC_InitCoord"
+`??MAC_InitCoord::?relay` SYMBOL "?relay", MAC_InitCoord
+MAC_InitDevice      SYMBOL "MAC_InitDevice"
+`??MAC_InitDevice::?relay` SYMBOL "?relay", MAC_InitDevice
+MAC_McpsDataAlloc   SYMBOL "MAC_McpsDataAlloc"
+`??MAC_McpsDataAlloc::?relay` SYMBOL "?relay", MAC_McpsDataAlloc
+MAC_McpsDataReq     SYMBOL "MAC_McpsDataReq"
+`??MAC_McpsDataReq::?relay` SYMBOL "?relay", MAC_McpsDataReq
+MAC_McpsPurgeReq    SYMBOL "MAC_McpsPurgeReq"
+`??MAC_McpsPurgeReq::?relay` SYMBOL "?relay", MAC_McpsPurgeReq
+MAC_MlmeAssociateReq SYMBOL "MAC_MlmeAssociateReq"
+`??MAC_MlmeAssociateReq::?relay` SYMBOL "?relay", MAC_MlmeAssociateReq
+MAC_MlmeAssociateRsp SYMBOL "MAC_MlmeAssociateRsp"
+`??MAC_MlmeAssociateRsp::?relay` SYMBOL "?relay", MAC_MlmeAssociateRsp
+MAC_MlmeDisassociateReq SYMBOL "MAC_MlmeDisassociateReq"
+`??MAC_MlmeDisassociateReq::?relay` SYMBOL "?relay", MAC_MlmeDisassociateReq
+MAC_MlmeGetReq      SYMBOL "MAC_MlmeGetReq"
+`??MAC_MlmeGetReq::?relay` SYMBOL "?relay", MAC_MlmeGetReq
+MAC_MlmeOrphanRsp   SYMBOL "MAC_MlmeOrphanRsp"
+`??MAC_MlmeOrphanRsp::?relay` SYMBOL "?relay", MAC_MlmeOrphanRsp
+MAC_MlmePollReq     SYMBOL "MAC_MlmePollReq"
+`??MAC_MlmePollReq::?relay` SYMBOL "?relay", MAC_MlmePollReq
+MAC_MlmeResetReq    SYMBOL "MAC_MlmeResetReq"
+`??MAC_MlmeResetReq::?relay` SYMBOL "?relay", MAC_MlmeResetReq
+MAC_MlmeScanReq     SYMBOL "MAC_MlmeScanReq"
+`??MAC_MlmeScanReq::?relay` SYMBOL "?relay", MAC_MlmeScanReq
+MAC_MlmeSetReq      SYMBOL "MAC_MlmeSetReq"
+`??MAC_MlmeSetReq::?relay` SYMBOL "?relay", MAC_MlmeSetReq
+MAC_MlmeStartReq    SYMBOL "MAC_MlmeStartReq"
+`??MAC_MlmeStartReq::?relay` SYMBOL "?relay", MAC_MlmeStartReq
+MAC_MlmeSyncReq     SYMBOL "MAC_MlmeSyncReq"
+`??MAC_MlmeSyncReq::?relay` SYMBOL "?relay", MAC_MlmeSyncReq
+MAC_PwrMode         SYMBOL "MAC_PwrMode"
+`??MAC_PwrMode::?relay` SYMBOL "?relay", MAC_PwrMode
+MAC_PwrOnReq        SYMBOL "MAC_PwrOnReq"
+`??MAC_PwrOnReq::?relay` SYMBOL "?relay", MAC_PwrOnReq
+MAC_SrcMatchAckAllPending SYMBOL "MAC_SrcMatchAckAllPending"
+`??MAC_SrcMatchAckAllPending::?relay` SYMBOL "?relay", MAC_SrcMatchAckAllPending
+MAC_SrcMatchAddEntry SYMBOL "MAC_SrcMatchAddEntry"
+`??MAC_SrcMatchAddEntry::?relay` SYMBOL "?relay", MAC_SrcMatchAddEntry
+MAC_SrcMatchCheckAllPending SYMBOL "MAC_SrcMatchCheckAllPending"
+`??MAC_SrcMatchCheckAllPending::?relay` SYMBOL "?relay", MAC_SrcMatchCheckAllPending
+MAC_SrcMatchDeleteEntry SYMBOL "MAC_SrcMatchDeleteEntry"
+`??MAC_SrcMatchDeleteEntry::?relay` SYMBOL "?relay", MAC_SrcMatchDeleteEntry
+MAC_SrcMatchEnable  SYMBOL "MAC_SrcMatchEnable"
+`??MAC_SrcMatchEnable::?relay` SYMBOL "?relay", MAC_SrcMatchEnable
+macStateIdle        SYMBOL "macStateIdle"
+`??macStateIdle::?relay` SYMBOL "?relay", macStateIdle
+osal_int_disable    SYMBOL "osal_int_disable"
+`??osal_int_disable::?relay` SYMBOL "?relay", osal_int_disable
+osal_mem_alloc      SYMBOL "osal_mem_alloc"
+`??osal_mem_alloc::?relay` SYMBOL "?relay", osal_mem_alloc
+osal_mem_free       SYMBOL "osal_mem_free"
+`??osal_mem_free::?relay` SYMBOL "?relay", osal_mem_free
+osal_memcpy         SYMBOL "osal_memcpy"
+`??osal_memcpy::?relay` SYMBOL "?relay", osal_memcpy
+osal_memset         SYMBOL "osal_memset"
+`??osal_memset::?relay` SYMBOL "?relay", osal_memset
+osal_msg_deallocate SYMBOL "osal_msg_deallocate"
+`??osal_msg_deallocate::?relay` SYMBOL "?relay", osal_msg_deallocate
+sAddrExtCpy         SYMBOL "sAddrExtCpy"
+`??sAddrExtCpy::?relay` SYMBOL "?relay", sAddrExtCpy
+ZMacAssociateReq    SYMBOL "ZMacAssociateReq"
+`??ZMacAssociateReq::?relay` SYMBOL "?relay", ZMacAssociateReq
+ZMacAssociateRsp    SYMBOL "ZMacAssociateRsp"
+`??ZMacAssociateRsp::?relay` SYMBOL "?relay", ZMacAssociateRsp
+ZMacDataReq         SYMBOL "ZMacDataReq"
+`??ZMacDataReq::?relay` SYMBOL "?relay", ZMacDataReq
+ZMacDataReqSec      SYMBOL "ZMacDataReqSec"
+`??ZMacDataReqSec::?relay` SYMBOL "?relay", ZMacDataReqSec
+ZMacDisassociateReq SYMBOL "ZMacDisassociateReq"
+`??ZMacDisassociateReq::?relay` SYMBOL "?relay", ZMacDisassociateReq
+ZMacEnhancedActiveScanReq SYMBOL "ZMacEnhancedActiveScanReq"
+`??ZMacEnhancedActiveScanReq::?relay` SYMBOL "?relay", ZMacEnhancedActiveScanReq
+ZMacGetReq          SYMBOL "ZMacGetReq"
+`??ZMacGetReq::?relay` SYMBOL "?relay", ZMacGetReq
+ZMacInit            SYMBOL "ZMacInit"
+`??ZMacInit::?relay` SYMBOL "?relay", ZMacInit
+ZMacOrphanRsp       SYMBOL "ZMacOrphanRsp"
+`??ZMacOrphanRsp::?relay` SYMBOL "?relay", ZMacOrphanRsp
+ZMacPollReq         SYMBOL "ZMacPollReq"
+`??ZMacPollReq::?relay` SYMBOL "?relay", ZMacPollReq
+ZMacPurgeReq        SYMBOL "ZMacPurgeReq"
+`??ZMacPurgeReq::?relay` SYMBOL "?relay", ZMacPurgeReq
+ZMacPwrOnReq        SYMBOL "ZMacPwrOnReq"
+`??ZMacPwrOnReq::?relay` SYMBOL "?relay", ZMacPwrOnReq
+ZMacReset           SYMBOL "ZMacReset"
+`??ZMacReset::?relay` SYMBOL "?relay", ZMacReset
+ZMacScanReq         SYMBOL "ZMacScanReq"
+`??ZMacScanReq::?relay` SYMBOL "?relay", ZMacScanReq
+ZMacSendNoData      SYMBOL "ZMacSendNoData"
+`??ZMacSendNoData::?relay` SYMBOL "?relay", ZMacSendNoData
+ZMacSetReq          SYMBOL "ZMacSetReq"
+`??ZMacSetReq::?relay` SYMBOL "?relay", ZMacSetReq
+ZMacSetTransmitPower SYMBOL "ZMacSetTransmitPower"
+`??ZMacSetTransmitPower::?relay` SYMBOL "?relay", ZMacSetTransmitPower
+ZMacSrcMatchAckAllPending SYMBOL "ZMacSrcMatchAckAllPending"
+`??ZMacSrcMatchAckAllPending::?relay` SYMBOL "?relay", ZMacSrcMatchAckAllPending
+ZMacSrcMatchAddEntry SYMBOL "ZMacSrcMatchAddEntry"
+`??ZMacSrcMatchAddEntry::?relay` SYMBOL "?relay", ZMacSrcMatchAddEntry
+ZMacSrcMatchCheckAllPending SYMBOL "ZMacSrcMatchCheckAllPending"
+`??ZMacSrcMatchCheckAllPending::?relay` SYMBOL "?relay", ZMacSrcMatchCheckAllPending
+ZMacSrcMatchDeleteEntry SYMBOL "ZMacSrcMatchDeleteEntry"
+`??ZMacSrcMatchDeleteEntry::?relay` SYMBOL "?relay", ZMacSrcMatchDeleteEntry
+ZMacSrcMatchEnable  SYMBOL "ZMacSrcMatchEnable"
+`??ZMacSrcMatchEnable::?relay` SYMBOL "?relay", ZMacSrcMatchEnable
+ZMacStartReq        SYMBOL "ZMacStartReq"
+`??ZMacStartReq::?relay` SYMBOL "?relay", ZMacStartReq
+ZMacStateIdle       SYMBOL "ZMacStateIdle"
+`??ZMacStateIdle::?relay` SYMBOL "?relay", ZMacStateIdle
+ZMacSyncReq         SYMBOL "ZMacSyncReq"
+`??ZMacSyncReq::?relay` SYMBOL "?relay", ZMacSyncReq
+ZMac_PwrMode        SYMBOL "ZMac_PwrMode"
+`??ZMac_PwrMode::?relay` SYMBOL "?relay", ZMac_PwrMode
+
+        EXTERN `??MAC_Init::?relay`
+        FUNCTION `??MAC_Init::?relay`,00H
+        EXTERN `??MAC_InitCoord::?relay`
+        FUNCTION `??MAC_InitCoord::?relay`,00H
+        EXTERN `??MAC_InitDevice::?relay`
+        FUNCTION `??MAC_InitDevice::?relay`,00H
+        EXTERN `??MAC_McpsDataAlloc::?relay`
+        FUNCTION `??MAC_McpsDataAlloc::?relay`,00H
+        EXTERN `??MAC_McpsDataReq::?relay`
+        FUNCTION `??MAC_McpsDataReq::?relay`,00H
+        EXTERN `??MAC_McpsPurgeReq::?relay`
+        FUNCTION `??MAC_McpsPurgeReq::?relay`,00H
+        EXTERN `??MAC_MlmeAssociateReq::?relay`
+        FUNCTION `??MAC_MlmeAssociateReq::?relay`,00H
+        EXTERN `??MAC_MlmeAssociateRsp::?relay`
+        FUNCTION `??MAC_MlmeAssociateRsp::?relay`,00H
+        EXTERN `??MAC_MlmeDisassociateReq::?relay`
+        FUNCTION `??MAC_MlmeDisassociateReq::?relay`,00H
+        EXTERN `??MAC_MlmeGetReq::?relay`
+        FUNCTION `??MAC_MlmeGetReq::?relay`,00H
+        EXTERN `??MAC_MlmeOrphanRsp::?relay`
+        FUNCTION `??MAC_MlmeOrphanRsp::?relay`,00H
+        EXTERN `??MAC_MlmePollReq::?relay`
+        FUNCTION `??MAC_MlmePollReq::?relay`,00H
+        EXTERN `??MAC_MlmeResetReq::?relay`
+        FUNCTION `??MAC_MlmeResetReq::?relay`,00H
+        EXTERN `??MAC_MlmeScanReq::?relay`
+        FUNCTION `??MAC_MlmeScanReq::?relay`,00H
+        EXTERN `??MAC_MlmeSetReq::?relay`
+        FUNCTION `??MAC_MlmeSetReq::?relay`,00H
+        EXTERN `??MAC_MlmeStartReq::?relay`
+        FUNCTION `??MAC_MlmeStartReq::?relay`,00H
+        EXTERN `??MAC_MlmeSyncReq::?relay`
+        FUNCTION `??MAC_MlmeSyncReq::?relay`,00H
+        EXTERN `??MAC_PwrMode::?relay`
+        FUNCTION `??MAC_PwrMode::?relay`,00H
+        EXTERN `??MAC_PwrOnReq::?relay`
+        FUNCTION `??MAC_PwrOnReq::?relay`,00H
+        EXTERN `??MAC_SrcMatchAckAllPending::?relay`
+        FUNCTION `??MAC_SrcMatchAckAllPending::?relay`,00H
+        EXTERN `??MAC_SrcMatchAddEntry::?relay`
+        FUNCTION `??MAC_SrcMatchAddEntry::?relay`,00H
+        EXTERN `??MAC_SrcMatchCheckAllPending::?relay`
+        FUNCTION `??MAC_SrcMatchCheckAllPending::?relay`,00H
+        EXTERN `??MAC_SrcMatchDeleteEntry::?relay`
+        FUNCTION `??MAC_SrcMatchDeleteEntry::?relay`,00H
+        EXTERN `??MAC_SrcMatchEnable::?relay`
+        FUNCTION `??MAC_SrcMatchEnable::?relay`,00H
+        EXTERN `??macStateIdle::?relay`
+        FUNCTION `??macStateIdle::?relay`,00H
+        EXTERN `??osal_int_disable::?relay`
+        FUNCTION `??osal_int_disable::?relay`,00H
+        EXTERN `??osal_mem_alloc::?relay`
+        FUNCTION `??osal_mem_alloc::?relay`,00H
+        EXTERN `??osal_mem_free::?relay`
+        FUNCTION `??osal_mem_free::?relay`,00H
+        EXTERN `??osal_memcpy::?relay`
+        FUNCTION `??osal_memcpy::?relay`,00H
+        EXTERN `??osal_memset::?relay`
+        FUNCTION `??osal_memset::?relay`,00H
+        EXTERN `??osal_msg_deallocate::?relay`
+        FUNCTION `??osal_msg_deallocate::?relay`,00H
+        EXTERN `??sAddrExtCpy::?relay`
+        FUNCTION `??sAddrExtCpy::?relay`,00H
+        EXTERN MAC_Init
+        FUNCTION MAC_Init,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN MAC_InitCoord
+        FUNCTION MAC_InitCoord,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN MAC_InitDevice
+        FUNCTION MAC_InitDevice,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN MAC_McpsDataAlloc
+        FUNCTION MAC_McpsDataAlloc,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 18, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN MAC_McpsDataReq
+        FUNCTION MAC_McpsDataReq,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 18, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN MAC_McpsPurgeReq
+        FUNCTION MAC_McpsPurgeReq,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN MAC_MlmeAssociateReq
+        FUNCTION MAC_MlmeAssociateReq,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN MAC_MlmeAssociateRsp
+        FUNCTION MAC_MlmeAssociateRsp,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN MAC_MlmeDisassociateReq
+        FUNCTION MAC_MlmeDisassociateReq,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN MAC_MlmeGetReq
+        FUNCTION MAC_MlmeGetReq,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN MAC_MlmeOrphanRsp
+        FUNCTION MAC_MlmeOrphanRsp,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN MAC_MlmePollReq
+        FUNCTION MAC_MlmePollReq,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN MAC_MlmeResetReq
+        FUNCTION MAC_MlmeResetReq,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN MAC_MlmeScanReq
+        FUNCTION MAC_MlmeScanReq,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN MAC_MlmeSetReq
+        FUNCTION MAC_MlmeSetReq,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN MAC_MlmeStartReq
+        FUNCTION MAC_MlmeStartReq,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN MAC_MlmeSyncReq
+        FUNCTION MAC_MlmeSyncReq,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN MAC_PwrMode
+        FUNCTION MAC_PwrMode,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN MAC_PwrOnReq
+        FUNCTION MAC_PwrOnReq,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN MAC_SrcMatchAckAllPending
+        FUNCTION MAC_SrcMatchAckAllPending,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN MAC_SrcMatchAddEntry
+        FUNCTION MAC_SrcMatchAddEntry,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN MAC_SrcMatchCheckAllPending
+        FUNCTION MAC_SrcMatchCheckAllPending,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN MAC_SrcMatchDeleteEntry
+        FUNCTION MAC_SrcMatchDeleteEntry,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN MAC_SrcMatchEnable
+        FUNCTION MAC_SrcMatchEnable,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN aExtendedAddress
+        EXTERN macStateIdle
+        FUNCTION macStateIdle,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_int_disable
+        FUNCTION osal_int_disable,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_mem_alloc
+        FUNCTION osal_mem_alloc,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_mem_free
+        FUNCTION osal_mem_free,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_memcpy
+        FUNCTION osal_memcpy,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 21, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_memset
+        FUNCTION osal_memset,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_msg_deallocate
+        FUNCTION osal_msg_deallocate,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 18, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN sAddrExtCpy
+        FUNCTION sAddrExtCpy,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+
+// D:\fuzzing-coordinator-response-collection\Components\zmac\f8w\zmac.c
+//    1 /**************************************************************************************************
+//    2   Filename:       zmac.c
+//    3   Revised:        $Date: 2014-06-20 15:25:38 -0700 (Fri, 20 Jun 2014) $
+//    4   Revision:       $Revision: 39136 $
+//    5 
+//    6 
+//    7   Description:    This file contains the ZStack MAC Porting Layer
+//    8 
+//    9 
+//   10   Copyright 2005-2014 Texas Instruments Incorporated. All rights reserved.
+//   11 
+//   12   IMPORTANT: Your use of this Software is limited to those specific rights
+//   13   granted under the terms of a software license agreement between the user
+//   14   who downloaded the software, his/her employer (which must be your employer)
+//   15   and Texas Instruments Incorporated (the "License").  You may not use this
+//   16   Software unless you agree to abide by the terms of the License. The License
+//   17   limits your use, and you acknowledge, that the Software may not be modified,
+//   18   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   19   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   20   frequency transceiver, which is integrated into your product.  Other than for
+//   21   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   22   works of, modify, distribute, perform, display or sell this Software and/or
+//   23   its documentation for any purpose.
+//   24 
+//   25   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   26   PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   27   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   28   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   29   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   30   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   31   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   32   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   33   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   34   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   35   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   36 
+//   37   Should you have any questions regarding your right to use this Software,
+//   38   contact Texas Instruments Incorporated at www.TI.com.
+//   39 **************************************************************************************************/
+//   40 
+//   41 /********************************************************************************************************
+//   42  *                                               INCLUDES
+//   43  ********************************************************************************************************/
+//   44 
+//   45 #include "ZComDef.h"
+//   46 #include "OSAL.h"
+//   47 #include "ZMAC.h"
+//   48 #include "mac_main.h"
+//   49 
+//   50 #if !defined NONWK
+//   51   #include "ZGlobals.h"
+//   52 #endif
+//   53 
+//   54 #if defined( ZCL_KEY_ESTABLISH )
+//   55   #include "ssp.h"
+//   56 #endif
+//   57 
+//   58 #ifdef FEATURE_DUAL_MAC
+//   59   #include "dmmgr.h"
+//   60 #endif /* FEATURE_DUAL_MAC */
+//   61 /********************************************************************************************************
+//   62  *                                                 MACROS
+//   63  ********************************************************************************************************/
+//   64 
+//   65 /********************************************************************************************************
+//   66  *                                               CONSTANTS
+//   67  ********************************************************************************************************/
+//   68 #define MAX_SECURITY_PIB_SET_ENTRY  sizeof(deviceDescriptor_t)
+//   69 
+//   70 /********************************************************************************************************
+//   71  *                                               GLOBALS
+//   72  ********************************************************************************************************/
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA32
+//   73 uint32 _ScanChannels;
+_ScanChannels:
+        DS 4
+        REQUIRE __INIT_XDATA_Z
+//   74 
+//   75 #ifndef FEATURE_DUAL_MAC   
+//   76 extern uint8 aExtendedAddress[];
+//   77 #endif /* FEATURE_DUAL_MAC */
+//   78 
+//   79 /**************************************************************************************************
+//   80  * @fn          MAC_SetRandomSeedCB
+//   81  *
+//   82  * @brief       MAC function: Set the function pointer for the random seed callback.
+//   83  *
+//   84  * input parameters
+//   85  *
+//   86  * @param       pCBFcn - function pointer of the random seed callback
+//   87  *
+//   88  * output parameters
+//   89  *
+//   90  * None.
+//   91  *
+//   92  * @return      none
+//   93  **************************************************************************************************
+//   94  */
+//   95 extern void MAC_SetRandomSeedCB(macRNGFcn_t pCBFcn);
+//   96 /********************************************************************************************************
+//   97  *                                               LOCALS
+//   98  ********************************************************************************************************/
+//   99 
+//  100 /* Pointer to scan result buffer */
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//  101 void *ZMac_ScanBuf = NULL;
+ZMac_ScanBuf:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+//  102 
+//  103 /********************************************************************************************************
+//  104  * LOCAL FUNCTION PROTOTYPES
+//  105  ********************************************************************************************************/
+//  106 
+//  107 /********************************************************************************************************
+//  108  *                                                TYPEDEFS
+//  109  ********************************************************************************************************/
+//  110 
+//  111 
+//  112 /********************************************************************************************************
+//  113  *                                                FUNCTIONS
+//  114  ********************************************************************************************************/
+//  115 
+//  116 /********************************************************************************************************
+//  117  * @fn      ZMacInit
+//  118  *
+//  119  * @brief   Initialize MAC.
+//  120  *
+//  121  * @param   none.
+//  122  *
+//  123  * @return  status.
+//  124  ********************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  125 uint8 ZMacInit( void )
+ZMacInit:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function ZMacInit
+        CODE
+//  126 {
+        FUNCALL ZMacInit, MAC_Init
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZMacInit, MAC_InitDevice
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZMacInit, MAC_InitCoord
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZMacInit, ZMacReset
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZMacInit, osal_int_disable
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV       A,#-0x9
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+//  127   uint8 stat;
+//  128 
+//  129 #if defined( ZCL_KEY_ESTABLISH )
+//  130   /* Set the callback function for 16 byte random seed */
+//  131   MAC_SetRandomSeedCB( SSP_StoreRandomSeedNV);
+//  132 #endif
+//  133 
+//  134   MAC_Init();
+        ; Setup parameters for call to function MAC_Init
+        LCALL     `??MAC_Init::?relay`; Banked call to: MAC_Init
+//  135   MAC_InitDevice();
+        ; Setup parameters for call to function MAC_InitDevice
+        LCALL     `??MAC_InitDevice::?relay`; Banked call to: MAC_InitDevice
+//  136 
+//  137 #if !defined NONWK
+//  138   if ( ZG_BUILD_RTR_TYPE )
+//  139   {
+//  140     MAC_InitCoord();
+        ; Setup parameters for call to function MAC_InitCoord
+        LCALL     `??MAC_InitCoord::?relay`; Banked call to: MAC_InitCoord
+//  141   }
+//  142 #endif
+//  143 
+//  144   // If OK, initialize the MAC
+//  145   stat = ZMacReset( TRUE );
+        ; Setup parameters for call to function ZMacReset
+        MOV       R1,#0x1
+        LCALL     `??ZMacReset::?relay`; Banked call to: ZMacReset
+        MOV       A,R1
+        MOV       R6,A
+//  146 
+//  147   // Turn off interrupts
+//  148   osal_int_disable( INTS_ALL );
+        ; Setup parameters for call to function osal_int_disable
+        MOV       R1,#-0x1
+        LCALL     `??osal_int_disable::?relay`; Banked call to: osal_int_disable
+//  149 
+//  150   return ( stat );
+        MOV       A,R6
+        MOV       R1,A
+        SJMP      ??Subroutine10_0
+//  151 }
+          CFI EndBlock cfiBlock0
+//  152 
+//  153 /********************************************************************************************************
+//  154  * @fn      ZMacReset
+//  155  *
+//  156  * @brief   Reset the MAC.
+//  157  *
+//  158  * @param   Default to PIB defaults.
+//  159  *
+//  160  * @return  status.
+//  161  ********************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  162 uint8 ZMacReset( uint8 SetDefaultPIB )
+ZMacReset:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function ZMacReset
+        CODE
+//  163 {
+        FUNCALL ZMacReset, MAC_MlmeResetReq
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZMacReset, MAC_MlmeSetReq
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZMacReset, MAC_MlmeSetReq
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZMacReset, osal_mem_free
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV       A,#-0x9
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 1
+        MOV       A,#-0x1
+        LCALL     ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 10)
+//  164   byte stat;
+//  165   byte value;
+//  166 
+//  167   stat = MAC_MlmeResetReq( SetDefaultPIB );
+        ; Setup parameters for call to function MAC_MlmeResetReq
+        LCALL     `??MAC_MlmeResetReq::?relay`; Banked call to: MAC_MlmeResetReq
+        MOV       A,R1
+        MOV       R6,A
+//  168 
+//  169   // Don't send PAN ID conflict
+//  170   value = FALSE;
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        CLR       A
+        MOVX      @DPTR,A
+//  171   MAC_MlmeSetReq( MAC_ASSOCIATED_PAN_COORD, &value );
+        ; Setup parameters for call to function MAC_MlmeSetReq
+        MOV       R2,?XSP + 0
+        MOV       R3,?XSP + 1
+        MOV       R1,#0x56
+        LCALL     `??MAC_MlmeSetReq::?relay`; Banked call to: MAC_MlmeSetReq
+//  172 #ifdef FEATURE_DUAL_MAC
+//  173   {
+//  174     uint8 aExtendedAddress[8] = { 0};
+//  175     if ( SUCCESS == DMMGR_GetExtAddr( aExtendedAddress) ) 
+//  176     {
+//  177       MAC_MlmeSetReq( MAC_EXTENDED_ADDRESS, &aExtendedAddress );
+//  178     }
+//  179   }
+//  180 #else
+//  181   MAC_MlmeSetReq( MAC_EXTENDED_ADDRESS, &aExtendedAddress );
+        ; Setup parameters for call to function MAC_MlmeSetReq
+        MOV       R2,#aExtendedAddress & 0xff
+        MOV       R3,#(aExtendedAddress >> 8) & 0xff
+        MOV       R1,#-0x1e
+        LCALL     `??MAC_MlmeSetReq::?relay`; Banked call to: MAC_MlmeSetReq
+//  182 #endif /* FEATURE_DUAL_MAC */
+//  183 
+//  184   if (ZMac_ScanBuf)
+        LCALL     ?Subroutine5 & 0xFFFF
+??CrossCallReturnLabel_10:
+        JZ        ??ZMacReset_0
+//  185   {
+//  186     osal_mem_free(ZMac_ScanBuf);
+        ; Setup parameters for call to function osal_mem_free
+        MOV       DPTR,#ZMac_ScanBuf
+        MOVX      A,@DPTR
+        MOV       R2,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       R3,A
+        LCALL     `??osal_mem_free::?relay`; Banked call to: osal_mem_free
+//  187     ZMac_ScanBuf = NULL;
+        MOV       DPTR,#ZMac_ScanBuf
+        CLR       A
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOVX      @DPTR,A
+//  188   }
+//  189 
+//  190   return ( stat );
+??ZMacReset_0:
+        MOV       A,R6
+        MOV       R1,A
+        SJMP      ?Subroutine0
+//  191 }
+          CFI EndBlock cfiBlock1
+//  192 
+//  193 
+//  194 /********************************************************************************************************
+//  195  * @fn      ZMacGetReq
+//  196  *
+//  197  * @brief   Read a MAC PIB attribute.
+//  198  *
+//  199  * @param   attr - PIB attribute to get
+//  200  * @param   value - pointer to the buffer to store the attribute
+//  201  *
+//  202  * @return  status
+//  203  ********************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  204 uint8 ZMacGetReq( uint8 attr, uint8 *value )
+ZMacGetReq:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function ZMacGetReq
+        CODE
+//  205 {
+        FUNCALL ZMacGetReq, sAddrExtCpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZMacGetReq, MAC_MlmeGetReq
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV       A,#-0x9
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV       A,R1
+        MOV       R6,A
+//  206   if ( attr == ZMacExtAddr )
+        MOV       A,#-0x1e
+        XRL       A,R6
+        JNZ       ??ZMacGetReq_0
+//  207   {
+//  208 #ifdef FEATURE_DUAL_MAC
+//  209     /**
+//  210      * Provide the local copy if we have one, or let it read from
+//  211      * macPib.
+//  212      */
+//  213     if ( SUCCESS == DMMGR_GetExtAddr(value) )
+//  214     {             
+//  215       return ZMacSuccess;
+//  216     }
+//  217 #else
+//  218     osal_cpyExtAddr( value, &aExtendedAddress );
+        ; Setup parameters for call to function sAddrExtCpy
+        MOV       R4,#aExtendedAddress & 0xff
+        MOV       R5,#(aExtendedAddress >> 8) & 0xff
+        LCALL     `??sAddrExtCpy::?relay`; Banked call to: sAddrExtCpy
+//  219     return ZMacSuccess;
+        MOV       R1,#0x0
+        SJMP      ??ZMacGetReq_1
+//  220 #endif /* FEATURE_DUAL_MAC */
+//  221   }
+//  222 
+//  223   return (ZMacStatus_t) MAC_MlmeGetReq( attr, value );
+??ZMacGetReq_0:
+        ; Setup parameters for call to function MAC_MlmeGetReq
+        LCALL     `??MAC_MlmeGetReq::?relay`; Banked call to: MAC_MlmeGetReq
+??ZMacGetReq_1:
+        SJMP      ??Subroutine10_0
+//  224 }
+          CFI EndBlock cfiBlock2
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine0:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 10)
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        MOV       A,#0x1
+        LCALL     ?DEALLOC_XSTACK8
+          CFI EndBlock cfiBlock3
+        REQUIRE ??Subroutine10_0
+        ; // Fall through to label ??Subroutine10_0
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+??Subroutine10_0:
+          CFI Block cfiBlock4 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        MOV       R7,#0x1
+        LJMP      ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock4
+//  225 
+//  226 
+//  227 /********************************************************************************************************
+//  228  * @fn      ZMacSetReq
+//  229  *
+//  230  * @brief   Write a MAC PIB attribute.
+//  231  *
+//  232  * @param   attr - PIB attribute to Set
+//  233  * @param   value - pointer to the data
+//  234  *
+//  235  * @return  status
+//  236  ********************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  237 uint8 ZMacSetReq( uint8 attr, byte *value )
+ZMacSetReq:
+          CFI Block cfiBlock5 Using cfiCommon0
+          CFI Function ZMacSetReq
+        CODE
+//  238 {
+        FUNCALL ZMacSetReq, sAddrExtCpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZMacSetReq, MAC_MlmeSetReq
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        MOV       A,#-0x9
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV       ?V0,R1
+        MOV       A,R2
+        MOV       R6,A
+        MOV       A,R3
+        MOV       R7,A
+//  239   if ( attr == ZMacExtAddr )
+        MOV       A,#-0x1e
+        XRL       A,?V0
+        JNZ       ??ZMacSetReq_0
+//  240   {
+//  241 #ifdef FEATURE_DUAL_MAC
+//  242     DMMGR_SetExtAddr( value );
+//  243 #else
+//  244     osal_cpyExtAddr( aExtendedAddress, value );
+        ; Setup parameters for call to function sAddrExtCpy
+        MOV       A,R6
+        MOV       R4,A
+        MOV       A,R7
+        MOV       R5,A
+        MOV       R2,#aExtendedAddress & 0xff
+        MOV       R3,#(aExtendedAddress >> 8) & 0xff
+        LCALL     `??sAddrExtCpy::?relay`; Banked call to: sAddrExtCpy
+//  245 #endif /* FEATURE_DUAL_MAC */
+//  246   }
+//  247 
+//  248   return (ZMacStatus_t) MAC_MlmeSetReq( attr, value );
+??ZMacSetReq_0:
+        ; Setup parameters for call to function MAC_MlmeSetReq
+        MOV       A,R6
+        MOV       R2,A
+        MOV       A,R7
+        MOV       R3,A
+        MOV       R1,?V0
+        LCALL     `??MAC_MlmeSetReq::?relay`; Banked call to: MAC_MlmeSetReq
+        SJMP      ??Subroutine10_0
+//  249 }
+          CFI EndBlock cfiBlock5
+//  250 
+//  251 #ifdef FEATURE_MAC_SECURITY
+//  252 /********************************************************************************************************
+//  253  * @fn      ZMacSecurityGetReq
+//  254  *
+//  255  * @brief   Read a MAC Security PIB attribute.
+//  256  *
+//  257  * @param   attr - PIB attribute to get
+//  258  * @param   value - pointer to the buffer to store the attribute
+//  259  *
+//  260  * @return  status
+//  261  ********************************************************************************************************/
+//  262 uint8 ZMacSecurityGetReq( uint8 attr, uint8 *value )
+//  263 {
+//  264   uint8         keyIndex, entry, status;
+//  265   uint8        *ptr;
+//  266 
+//  267   ptr = (uint8 *) value;
+//  268   switch (attr)
+//  269   {
+//  270     case ZMacKeyIdLookupEntry:
+//  271       keyIndex = *ptr++; /* key_index */
+//  272       entry    = *ptr++; /* key_id_lookup_index */
+//  273       
+//  274       /* Transform byte array to propriety PIB struct */
+//  275       ((macSecurityPibKeyIdLookupEntry_t *)value)->key_id_lookup_index = entry;
+//  276       ((macSecurityPibKeyIdLookupEntry_t *)value)->key_index = keyIndex;
+//  277       break;
+//  278       
+//  279     case ZMacKeyDeviceEntry:
+//  280       keyIndex = *ptr++; /* key_index */
+//  281       entry    = *ptr++; /* key_device_index */
+//  282       
+//  283       /* Transform byte array to propriety PIB struct */
+//  284       ((macSecurityPibKeyDeviceEntry_t *)value)->key_device_index = entry;
+//  285       ((macSecurityPibKeyDeviceEntry_t *)value)->key_index = keyIndex;
+//  286       break;
+//  287       
+//  288     case ZMacKeyUsageEntry:
+//  289       keyIndex = *ptr++; /* key_index */
+//  290       entry    = *ptr++; /* key_key_usage_index */
+//  291       
+//  292       /* Transform byte array to propriety PIB struct */
+//  293       ((macSecurityPibKeyUsageEntry_t *)value)->key_key_usage_index = entry;
+//  294       ((macSecurityPibKeyUsageEntry_t *)value)->key_index = keyIndex;
+//  295       break;
+//  296       
+//  297     case ZMacKeyEntry:
+//  298       keyIndex = *ptr++; /* key_index */
+//  299       
+//  300       /* Transform byte array to propriety PIB struct */
+//  301       ((macSecurityPibKeyEntry_t *)value)->key_index = keyIndex;
+//  302       break;
+//  303       
+//  304     case ZMacDeviceEntry:
+//  305       entry = *ptr++; /* device_index */
+//  306       
+//  307       /* Transform byte array to propriety PIB struct */
+//  308       ((macSecurityPibDeviceEntry_t *)value)->device_index = entry;
+//  309       break;
+//  310 
+//  311     case ZMacSecurityLevelEntry:
+//  312       entry = *ptr++; /* security_level_index */
+//  313       
+//  314       /* Transform byte array to propriety PIB struct */
+//  315       ((macSecurityPibSecurityLevelEntry_t *)value)->security_level_index = entry;
+//  316       break;
+//  317   }
+//  318 
+//  319   status = (ZMacStatus_t) MAC_MlmeGetSecurityReq( attr, value );
+//  320   
+//  321   ptr = (uint8 *) value;
+//  322   switch (attr)
+//  323   {
+//  324     case ZMacKeyIdLookupEntry:
+//  325       *ptr++ = keyIndex; /* key_index */
+//  326       *ptr++ = entry;    /* key_id_lookup_index */
+//  327       
+//  328       /* Transform propriety PIB struct to byte array */
+//  329       osal_memcpy(ptr, &((macSecurityPibKeyIdLookupEntry_t *)value)->macKeyIdLookupEntry, sizeof(keyIdLookupDescriptor_t));
+//  330       break;
+//  331       
+//  332     case ZMacKeyDeviceEntry:
+//  333       *ptr++ = keyIndex; /* key_index */
+//  334       *ptr++ = entry;    /* key_device_index */
+//  335       
+//  336       /* Transform propriety PIB struct to byte array */
+//  337       osal_memcpy(ptr, &((macSecurityPibKeyDeviceEntry_t *)value)->macKeyDeviceEntry, sizeof(keyDeviceDescriptor_t));
+//  338       break;
+//  339       
+//  340     case ZMacKeyUsageEntry:
+//  341       *ptr++ = keyIndex; /* key_index */
+//  342       *ptr++ = entry;    /* key_key_usage_index */
+//  343       
+//  344       /* Transform propriety PIB struct to byte array */
+//  345       osal_memcpy(ptr, &((macSecurityPibKeyUsageEntry_t *)value)->macKeyUsageEntry, sizeof(keyUsageDescriptor_t));
+//  346       break;
+//  347       
+//  348     case ZMacKeyEntry:
+//  349       *ptr++ = keyIndex; /* key_index */
+//  350       
+//  351       /* Transform propriety PIB struct to byte array */
+//  352       osal_memcpy(ptr, &((macSecurityPibKeyEntry_t *)value)->keyEntry, MAC_KEY_MAX_LEN);
+//  353       break;
+//  354       
+//  355     case ZMacDeviceEntry:
+//  356       *ptr++ = entry; /* device_index */
+//  357       
+//  358       /* Transform propriety PIB struct to byte array */
+//  359       osal_memcpy(ptr, &((macSecurityPibDeviceEntry_t *)value)->macDeviceEntry, sizeof(deviceDescriptor_t));
+//  360       break;
+//  361 
+//  362     case ZMacSecurityLevelEntry:
+//  363       *ptr++ = entry; /* security_level_index */
+//  364       
+//  365       /* Transform propriety PIB struct to byte array */
+//  366       osal_memcpy(ptr, &((macSecurityPibSecurityLevelEntry_t *)value)->macSecurityLevelEntry, sizeof(securityLevelDescriptor_t));
+//  367       break;
+//  368   }
+//  369   
+//  370   return status;
+//  371 }
+//  372 
+//  373 
+//  374 /********************************************************************************************************
+//  375  * @fn      ZMacSecuritySetReq
+//  376  *
+//  377  * @brief   Write a MAC Security PIB attribute.
+//  378  *
+//  379  * @param   attr - PIB attribute to Set
+//  380  * @param   value - pointer to the data
+//  381  *
+//  382  * @return  status
+//  383  ********************************************************************************************************/
+//  384 uint8 ZMacSecuritySetReq( uint8 attr, byte *value )
+//  385 {
+//  386   uint8         keyIndex, entry;
+//  387   uint32        frameCounter;
+//  388   uint8        *ptr;
+//  389   uint8         tmp[MAX_SECURITY_PIB_SET_ENTRY]; /* This must cover the largest single PIB entry */
+//  390   uint8         temp[MAX_SECURITY_PIB_SET_ENTRY]; /* This must cover the largest single PIB entry */
+//  391 
+//  392   /* Note that the Transform byte array to propriety PIB struct below works 
+//  393    * because the members of the structures are all defined manually in a way, 
+//  394    * where memcpy would work, without usage of explicit 'pack', they fit 
+//  395    * such that memcpy would work
+//  396    */
+//  397   ptr = (uint8 *) value;
+//  398   switch (attr)
+//  399   {
+//  400     case ZMacKeyIdLookupEntry:
+//  401       keyIndex = *ptr++; /* key_index */
+//  402       entry    = *ptr++; /* key_id_lookup_index */
+//  403       
+//  404       /* Transform byte array to propriety PIB struct */
+//  405       osal_memcpy(tmp, ptr, sizeof(keyIdLookupDescriptor_t));
+//  406       osal_memcpy(&((macSecurityPibKeyIdLookupEntry_t *)temp)->macKeyIdLookupEntry, tmp, sizeof(keyIdLookupDescriptor_t));
+//  407       ((macSecurityPibKeyIdLookupEntry_t *)temp)->key_id_lookup_index = entry;
+//  408       ((macSecurityPibKeyIdLookupEntry_t *)temp)->key_index = keyIndex;
+//  409       return (ZMacStatus_t) MAC_MlmeSetSecurityReq( attr, temp );
+//  410       break;
+//  411       
+//  412     case ZMacKeyDeviceEntry:
+//  413       keyIndex = *ptr++; /* key_index */
+//  414       entry    = *ptr++; /* key_device_index */
+//  415       
+//  416       /* Transform byte array to propriety PIB struct */
+//  417       osal_memcpy(tmp, ptr, sizeof(keyDeviceDescriptor_t));
+//  418       osal_memcpy(&((macSecurityPibKeyDeviceEntry_t *)temp)->macKeyDeviceEntry, tmp, sizeof(keyDeviceDescriptor_t));
+//  419       ((macSecurityPibKeyDeviceEntry_t *)temp)->key_device_index = entry;
+//  420       ((macSecurityPibKeyDeviceEntry_t *)temp)->key_index = keyIndex;
+//  421       return (ZMacStatus_t) MAC_MlmeSetSecurityReq( attr, temp );
+//  422       break;
+//  423       
+//  424     case ZMacKeyUsageEntry:
+//  425       keyIndex = *ptr++; /* key_index */
+//  426       entry    = *ptr++; /* key_key_usage_index */
+//  427       
+//  428       /* Transform byte array to propriety PIB struct */
+//  429       osal_memcpy(tmp, ptr, sizeof(keyUsageDescriptor_t));
+//  430       osal_memcpy(&((macSecurityPibKeyUsageEntry_t *)temp)->macKeyUsageEntry, tmp, sizeof(keyUsageDescriptor_t));
+//  431       ((macSecurityPibKeyUsageEntry_t *)temp)->key_key_usage_index = entry;
+//  432       ((macSecurityPibKeyUsageEntry_t *)temp)->key_index = keyIndex;
+//  433       return (ZMacStatus_t) MAC_MlmeSetSecurityReq( attr, temp );
+//  434       break;
+//  435       
+//  436     case ZMacKeyEntry:
+//  437       keyIndex = *ptr++; /* key_index */
+//  438       
+//  439       /* Transform byte array to propriety PIB struct */
+//  440       osal_memcpy(tmp, ptr, MAC_KEY_MAX_LEN);
+//  441       osal_memcpy(&((macSecurityPibKeyEntry_t *)temp)->keyEntry, tmp, MAC_KEY_MAX_LEN);
+//  442       ptr+=MAC_KEY_MAX_LEN;
+//  443       
+//  444       osal_memcpy(&frameCounter, ptr, sizeof(frameCounter));
+//  445       
+//  446       ((macSecurityPibKeyEntry_t *)temp)->frameCounter = frameCounter;
+//  447       ((macSecurityPibKeyEntry_t *)temp)->key_index = keyIndex;
+//  448       return (ZMacStatus_t) MAC_MlmeSetSecurityReq( attr, temp );
+//  449       break;
+//  450       
+//  451     case ZMacDeviceEntry:
+//  452        entry = *ptr++;
+//  453        
+//  454        /* Transform byte array to propriety PIB struct */
+//  455        osal_memcpy(tmp, ptr, sizeof(deviceDescriptor_t));
+//  456        osal_memcpy(&((macSecurityPibDeviceEntry_t *)temp)->macDeviceEntry, tmp, sizeof(deviceDescriptor_t));
+//  457    
+//  458       ((macSecurityPibDeviceEntry_t *)temp)->device_index = entry;
+//  459       return (ZMacStatus_t) MAC_MlmeSetSecurityReq( attr, temp );
+//  460       break;
+//  461 
+//  462     case ZMacSecurityLevelEntry:
+//  463       entry = *ptr++; /* security_level_index */
+//  464       
+//  465       /* Transform byte array to propriety PIB struct */
+//  466       osal_memcpy(tmp, ptr, sizeof(securityLevelDescriptor_t));
+//  467       osal_memcpy(&((macSecurityPibSecurityLevelEntry_t *)temp)->macSecurityLevelEntry, tmp, sizeof(securityLevelDescriptor_t));
+//  468       
+//  469       ((macSecurityPibSecurityLevelEntry_t *)temp)->security_level_index = entry;
+//  470       return (ZMacStatus_t) MAC_MlmeSetSecurityReq( attr, temp );
+//  471       break;
+//  472   }
+//  473 
+//  474   return (ZMacStatus_t) MAC_MlmeSetSecurityReq( attr, value );
+//  475 }
+//  476 #endif /* FEATURE_MAC_SECURITY */
+//  477 
+//  478 /********************************************************************************************************
+//  479  * @fn      ZMacAssociateReq
+//  480  *
+//  481  * @brief   Request an association with a coordinator.
+//  482  *
+//  483  * @param   structure with info need to associate.
+//  484  *
+//  485  * @return  status
+//  486  ********************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  487 uint8 ZMacAssociateReq( ZMacAssociateReq_t *pData )
+ZMacAssociateReq:
+          CFI Block cfiBlock6 Using cfiCommon0
+          CFI Function ZMacAssociateReq
+        CODE
+//  488 {
+        FUNCALL ZMacAssociateReq, MAC_MlmeAssociateReq
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  489   /* Right now, set security to zero */
+//  490   pData->Sec.SecurityLevel = false;
+        MOV       DPL,R2
+        MOV       DPH,R3
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        CLR       A
+        MOVX      @DPTR,A
+//  491 
+//  492   MAC_MlmeAssociateReq ( (macMlmeAssociateReq_t *)pData);
+        ; Setup parameters for call to function MAC_MlmeAssociateReq
+        LCALL     `??MAC_MlmeAssociateReq::?relay`; Banked call to: MAC_MlmeAssociateReq
+//  493   return ( ZMacSuccess );
+        LJMP      ?Subroutine1 & 0xFFFF
+//  494 }
+          CFI EndBlock cfiBlock6
+//  495 
+//  496 /********************************************************************************************************
+//  497  * @fn      ZMacAssociateRsp
+//  498  *
+//  499  * @brief   Request to send an association response message.
+//  500  *
+//  501  * @param   structure with associate response and info needed to send it.
+//  502  *
+//  503  * @return  MAC_SUCCESS or MAC error code
+//  504  ********************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  505 uint8 ZMacAssociateRsp( ZMacAssociateRsp_t *pData )
+ZMacAssociateRsp:
+          CFI Block cfiBlock7 Using cfiCommon0
+          CFI Function ZMacAssociateRsp
+        CODE
+//  506 {
+        FUNCALL ZMacAssociateRsp, MAC_MlmeAssociateRsp
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  507   /* TBD: set security to zero for now. Require Ztool change */
+//  508   pData->Sec.SecurityLevel = false;
+        MOV       DPL,R2
+        MOV       DPH,R3
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        CLR       A
+        MOVX      @DPTR,A
+//  509 
+//  510   return ( MAC_MlmeAssociateRsp( (macMlmeAssociateRsp_t *) pData ) );
+        ; Setup parameters for call to function MAC_MlmeAssociateRsp
+        LCALL     `??MAC_MlmeAssociateRsp::?relay`; Banked call to: MAC_MlmeAssociateRsp
+        LJMP      ??Subroutine14_0 & 0xFFFF
+//  511 }
+          CFI EndBlock cfiBlock7
+//  512 
+//  513 /********************************************************************************************************
+//  514  * @fn      ZMacDisassociateReq
+//  515  *
+//  516  * @brief   Request to send a disassociate request message.
+//  517  *
+//  518  * @param   structure with info need send it.
+//  519  *
+//  520  * @return  status
+//  521  ********************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  522 uint8 ZMacDisassociateReq( ZMacDisassociateReq_t *pData )
+ZMacDisassociateReq:
+          CFI Block cfiBlock8 Using cfiCommon0
+          CFI Function ZMacDisassociateReq
+        CODE
+//  523 {
+        FUNCALL ZMacDisassociateReq, MAC_MlmeDisassociateReq
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  524   /* Right now, set security to zero */
+//  525   pData->Sec.SecurityLevel = false;
+        MOV       DPL,R2
+        MOV       DPH,R3
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        CLR       A
+        MOVX      @DPTR,A
+//  526 
+//  527   MAC_MlmeDisassociateReq( (macMlmeDisassociateReq_t *)pData);
+        ; Setup parameters for call to function MAC_MlmeDisassociateReq
+        LCALL     `??MAC_MlmeDisassociateReq::?relay`; Banked call to: MAC_MlmeDisassociateReq
+//  528   return ( ZMacSuccess );
+        LJMP      ?Subroutine1 & 0xFFFF
+//  529 }
+          CFI EndBlock cfiBlock8
+//  530 
+//  531 /********************************************************************************************************
+//  532  * @fn      ZMacOrphanRsp
+//  533  *
+//  534  * @brief   Allows next higher layer to respond to an orphan indication message.
+//  535  *
+//  536  * @param   structure with info need send it.
+//  537  *
+//  538  * @return  status
+//  539  ********************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  540 uint8 ZMacOrphanRsp( ZMacOrphanRsp_t *pData )
+ZMacOrphanRsp:
+          CFI Block cfiBlock9 Using cfiCommon0
+          CFI Function ZMacOrphanRsp
+        CODE
+//  541 {
+        FUNCALL ZMacOrphanRsp, MAC_MlmeOrphanRsp
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  542   /* Right now, set security to zero */
+//  543   pData->Sec.SecurityLevel = false;
+        MOV       DPL,R2
+        MOV       DPH,R3
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        CLR       A
+        MOVX      @DPTR,A
+//  544 
+//  545   MAC_MlmeOrphanRsp( (macMlmeOrphanRsp_t *)pData);
+        ; Setup parameters for call to function MAC_MlmeOrphanRsp
+        LCALL     `??MAC_MlmeOrphanRsp::?relay`; Banked call to: MAC_MlmeOrphanRsp
+//  546   return ( ZMacSuccess );
+        LJMP      ?Subroutine1 & 0xFFFF
+//  547 }
+          CFI EndBlock cfiBlock9
+//  548 
+//  549 /********************************************************************************************************
+//  550  * @fn      ZMacScanReq
+//  551  *
+//  552  * @brief   This function is called to perform a network scan.
+//  553  *
+//  554  * @param   param - structure with info need send it.
+//  555  *
+//  556  * @return  status
+//  557  ********************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  558 uint8 ZMacScanReq( ZMacScanReq_t *pData )
+ZMacScanReq:
+          CFI Block cfiBlock10 Using cfiCommon0
+          CFI Function ZMacScanReq
+        CODE
+//  559 {
+        FUNCALL ZMacScanReq, osal_mem_alloc
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZMacScanReq, osal_memset
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZMacScanReq, MAC_MlmeScanReq
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZMacScanReq, osal_mem_alloc
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        MOV       A,#-0xc
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV       A,R2
+        MOV       R6,A
+        MOV       A,R3
+        MOV       R7,A
+//  560   _ScanChannels = pData->ScanChannels;
+        MOV       DPL,R6
+        MOV       DPH,R7
+        LCALL     ?XLOAD_R0123
+        MOV       DPTR,#_ScanChannels
+        LCALL     ?XSTORE_R0123
+//  561 
+//  562   /* scan in progress */
+//  563   if (ZMac_ScanBuf != NULL)
+        LCALL     ?Subroutine5 & 0xFFFF
+??CrossCallReturnLabel_11:
+        JZ        ??ZMacScanReq_0
+//  564   {
+//  565     return MAC_SCAN_IN_PROGRESS;
+        MOV       R1,#-0x4
+        SJMP      ??ZMacScanReq_1
+//  566   }
+//  567 
+//  568   if (pData->ScanType != ZMAC_ORPHAN_SCAN)
+??ZMacScanReq_0:
+        MOV       DPL,R6
+        MOV       DPH,R7
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       R0,A
+        MOV       A,#0x3
+        XRL       A,R0
+        JZ        ??CrossCallReturnLabel_0
+//  569   {
+//  570     /* Allocate memory depends on the scan type */
+//  571     if (pData->ScanType == ZMAC_ED_SCAN)
+        LCALL     ?Subroutine7 & 0xFFFF
+??CrossCallReturnLabel_4:
+        JNZ       ??ZMacScanReq_2
+//  572     {
+//  573       if ((ZMac_ScanBuf = osal_mem_alloc(ZMAC_ED_SCAN_MAXCHANNELS)) == NULL)
+        ; Setup parameters for call to function osal_mem_alloc
+        MOV       R2,#0x1b
+        MOV       R3,#0x0
+        LCALL     `??osal_mem_alloc::?relay`; Banked call to: osal_mem_alloc
+        LCALL     ?Subroutine9 & 0xFFFF
+??CrossCallReturnLabel_7:
+        JZ        ??ZMacScanReq_3
+//  574       {
+//  575         return MAC_NO_RESOURCES;
+//  576       }
+//  577       osal_memset(ZMac_ScanBuf, 0, ZMAC_ED_SCAN_MAXCHANNELS);
+        ; Setup parameters for call to function osal_memset
+        MOV       R4,#0x1b
+        MOV       R5,#0x0
+        MOV       R1,#0x0
+        LCALL     `??osal_memset::?relay`; Banked call to: osal_memset
+//  578       pData->Result.pEnergyDetect = ((uint8*)ZMac_ScanBuf) + MAC_CHAN_11;
+        LCALL     ?Subroutine4 & 0xFFFF
+//  579     }
+//  580     else if (pData->MaxResults > 0)
+//  581     {
+//  582       if ((ZMac_ScanBuf = pData->Result.pPanDescriptor =
+//  583            osal_mem_alloc( sizeof( ZMacPanDesc_t ) * pData->MaxResults )) == NULL)
+//  584       {
+//  585         return MAC_NO_RESOURCES;
+//  586       }
+//  587     }
+//  588   }
+//  589 
+//  590   /* Channel Page */
+//  591   pData->ChannelPage = 0x00;
+??CrossCallReturnLabel_0:
+        MOV       DPL,R6
+        MOV       DPH,R7
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        CLR       A
+        MOVX      @DPTR,A
+//  592 
+//  593   MAC_MlmeScanReq ((macMlmeScanReq_t *)pData);
+        ; Setup parameters for call to function MAC_MlmeScanReq
+        MOV       A,R6
+        MOV       R2,A
+        MOV       A,R7
+        MOV       R3,A
+        LCALL     `??MAC_MlmeScanReq::?relay`; Banked call to: MAC_MlmeScanReq
+//  594 
+//  595   return ZMacSuccess;
+        MOV       R1,#0x0
+??ZMacScanReq_1:
+        LJMP      ?Subroutine2 & 0xFFFF
+??ZMacScanReq_2:
+        MOV       DPL,R6
+        MOV       DPH,R7
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        MOVX      A,@DPTR
+        JZ        ??CrossCallReturnLabel_0
+        ; Setup parameters for call to function osal_mem_alloc
+        MOV       B,#0x21
+        MUL       AB
+        MOV       R2,A
+        MOV       R3,B
+        LCALL     `??osal_mem_alloc::?relay`; Banked call to: osal_mem_alloc
+        LCALL     ?Subroutine6 & 0xFFFF
+??CrossCallReturnLabel_2:
+        JNZ       ??CrossCallReturnLabel_0
+??ZMacScanReq_3:
+        MOV       R1,#0x1a
+        SJMP      ??ZMacScanReq_1
+//  596 }
+          CFI EndBlock cfiBlock10
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine9:
+          CFI Block cfiCond11 Using cfiCommon0
+          CFI Function ZMacScanReq
+          CFI Conditional ??CrossCallReturnLabel_7
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI CFA_SP SP+-2
+          CFI CFA_XSP16 add(XSP16, 12)
+          CFI Block cfiCond12 Using cfiCommon0
+          CFI (cfiCond12) Function ZMacEnhancedActiveScanReq
+          CFI (cfiCond12) Conditional ??CrossCallReturnLabel_8
+          CFI (cfiCond12) R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond12) VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond12) V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond12) V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond12) V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond12) V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond12) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond12) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond12) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond12) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond12) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond12) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond12) CFA_SP SP+-2
+          CFI (cfiCond12) CFA_XSP16 add(XSP16, 12)
+          CFI Block cfiPicker13 Using cfiCommon1
+          CFI (cfiPicker13) NoFunction
+          CFI (cfiPicker13) Picker
+        MOV       ?V2,R2
+        MOV       ?V3,R3
+        MOV       R0,?V2
+        MOV       R1,?V3
+          CFI EndBlock cfiCond11
+          CFI EndBlock cfiCond12
+          CFI EndBlock cfiPicker13
+        REQUIRE ??Subroutine11_0
+        ; // Fall through to label ??Subroutine11_0
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+??Subroutine11_0:
+          CFI Block cfiCond14 Using cfiCommon0
+          CFI Function ZMacScanReq
+          CFI Conditional ??CrossCallReturnLabel_6, ??CrossCallReturnLabel_2
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI CFA_SP SP+-4
+          CFI CFA_XSP16 add(XSP16, 12)
+          CFI Block cfiCond15 Using cfiCommon0
+          CFI (cfiCond15) Function ZMacEnhancedActiveScanReq
+          CFI (cfiCond15) Conditional ??CrossCallReturnLabel_6, ??CrossCallReturnLabel_3
+          CFI (cfiCond15) R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond15) VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond15) V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond15) V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond15) V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond15) V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond15) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond15) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond15) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond15) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond15) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond15) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond15) CFA_SP SP+-4
+          CFI (cfiCond15) CFA_XSP16 add(XSP16, 12)
+          CFI Block cfiCond16 Using cfiCommon0
+          CFI (cfiCond16) Function ZMacScanReq
+          CFI (cfiCond16) Conditional ??CrossCallReturnLabel_7
+          CFI (cfiCond16) R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond16) VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond16) V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond16) V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond16) V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond16) V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond16) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond16) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond16) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond16) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond16) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond16) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond16) CFA_SP SP+-2
+          CFI (cfiCond16) CFA_XSP16 add(XSP16, 12)
+          CFI Block cfiCond17 Using cfiCommon0
+          CFI (cfiCond17) Function ZMacEnhancedActiveScanReq
+          CFI (cfiCond17) Conditional ??CrossCallReturnLabel_8
+          CFI (cfiCond17) R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond17) VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond17) V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond17) V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond17) V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond17) V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond17) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond17) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond17) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond17) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond17) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond17) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond17) CFA_SP SP+-2
+          CFI (cfiCond17) CFA_XSP16 add(XSP16, 12)
+          CFI Block cfiPicker18 Using cfiCommon1
+          CFI (cfiPicker18) NoFunction
+          CFI (cfiPicker18) Picker
+        MOV       DPTR,#ZMac_ScanBuf
+        MOV       A,R0
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOV       A,R1
+        MOVX      @DPTR,A
+        MOV       A,R0
+        ORL       A,R1
+        RET
+          CFI EndBlock cfiCond14
+          CFI EndBlock cfiCond15
+          CFI EndBlock cfiCond16
+          CFI EndBlock cfiCond17
+          CFI EndBlock cfiPicker18
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine5:
+          CFI Block cfiCond19 Using cfiCommon0
+          CFI Function ZMacReset
+          CFI Conditional ??CrossCallReturnLabel_10
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI CFA_SP SP+-2
+          CFI CFA_XSP16 add(XSP16, 10)
+          CFI Block cfiCond20 Using cfiCommon0
+          CFI (cfiCond20) Function ZMacScanReq
+          CFI (cfiCond20) Conditional ??CrossCallReturnLabel_11
+          CFI (cfiCond20) R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond20) VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond20) V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond20) V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond20) V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond20) V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond20) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond20) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond20) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond20) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond20) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond20) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond20) CFA_SP SP+-2
+          CFI (cfiCond20) CFA_XSP16 add(XSP16, 12)
+          CFI Block cfiCond21 Using cfiCommon0
+          CFI (cfiCond21) Function ZMacEnhancedActiveScanReq
+          CFI (cfiCond21) Conditional ??CrossCallReturnLabel_12
+          CFI (cfiCond21) R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond21) VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond21) V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond21) V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond21) V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond21) V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond21) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond21) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond21) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond21) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond21) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond21) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond21) CFA_SP SP+-2
+          CFI (cfiCond21) CFA_XSP16 add(XSP16, 12)
+          CFI Block cfiPicker22 Using cfiCommon1
+          CFI (cfiPicker22) NoFunction
+          CFI (cfiPicker22) Picker
+        MOV       DPTR,#ZMac_ScanBuf
+          CFI EndBlock cfiCond19
+          CFI EndBlock cfiCond20
+          CFI EndBlock cfiCond21
+          CFI EndBlock cfiPicker22
+        REQUIRE ??Subroutine12_0
+        ; // Fall through to label ??Subroutine12_0
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+??Subroutine12_0:
+          CFI Block cfiCond23 Using cfiCommon0
+          CFI Function ZMacDataReqSec
+          CFI Conditional ??CrossCallReturnLabel_9
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI CFA_SP SP+-2
+          CFI CFA_XSP16 add(XSP16, 18)
+          CFI Block cfiCond24 Using cfiCommon0
+          CFI (cfiCond24) Function ZMacReset
+          CFI (cfiCond24) Conditional ??CrossCallReturnLabel_10
+          CFI (cfiCond24) R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond24) VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond24) V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond24) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond24) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond24) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond24) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond24) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond24) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond24) CFA_SP SP+-2
+          CFI (cfiCond24) CFA_XSP16 add(XSP16, 10)
+          CFI Block cfiCond25 Using cfiCommon0
+          CFI (cfiCond25) Function ZMacScanReq
+          CFI (cfiCond25) Conditional ??CrossCallReturnLabel_11
+          CFI (cfiCond25) R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond25) VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond25) V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond25) V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond25) V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond25) V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond25) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond25) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond25) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond25) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond25) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond25) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond25) CFA_SP SP+-2
+          CFI (cfiCond25) CFA_XSP16 add(XSP16, 12)
+          CFI Block cfiCond26 Using cfiCommon0
+          CFI (cfiCond26) Function ZMacEnhancedActiveScanReq
+          CFI (cfiCond26) Conditional ??CrossCallReturnLabel_12
+          CFI (cfiCond26) R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond26) VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond26) V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond26) V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond26) V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond26) V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond26) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond26) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond26) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond26) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond26) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond26) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond26) CFA_SP SP+-2
+          CFI (cfiCond26) CFA_XSP16 add(XSP16, 12)
+          CFI Block cfiPicker27 Using cfiCommon1
+          CFI (cfiPicker27) NoFunction
+          CFI (cfiPicker27) Picker
+        MOVX      A,@DPTR
+        MOV       R0,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       R1,A
+        MOV       A,R0
+        ORL       A,R1
+        RET
+          CFI EndBlock cfiCond23
+          CFI EndBlock cfiCond24
+          CFI EndBlock cfiCond25
+          CFI EndBlock cfiCond26
+          CFI EndBlock cfiPicker27
+//  597 
+//  598 
+//  599 /********************************************************************************************************
+//  600  * @fn      ZMacStartReq
+//  601  *
+//  602  * @brief   This function is called to tell the MAC to transmit beacons
+//  603  *          and become a coordinator.
+//  604  *
+//  605  * @param   structure with info need send it.
+//  606  *
+//  607  * @return  status
+//  608  ********************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  609 uint8 ZMacStartReq( ZMacStartReq_t *pData )
+ZMacStartReq:
+          CFI Block cfiBlock28 Using cfiCommon0
+          CFI Function ZMacStartReq
+        CODE
+//  610 {
+        FUNCALL ZMacStartReq, MAC_MlmeSetReq
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZMacStartReq, MAC_MlmeStartReq
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV       A,#-0x9
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 1
+        MOV       A,#-0x1
+        LCALL     ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 10)
+        MOV       A,R2
+        MOV       R6,A
+        MOV       A,R3
+        MOV       R7,A
+//  611   uint8 stat;
+//  612 
+//  613   // Probably want to keep the receiver on
+//  614   stat = true;
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOV       A,#0x1
+        MOVX      @DPTR,A
+//  615   MAC_MlmeSetReq( MAC_RX_ON_WHEN_IDLE, &stat );
+        ; Setup parameters for call to function MAC_MlmeSetReq
+        MOV       R2,?XSP + 0
+        MOV       R3,?XSP + 1
+        MOV       R1,#0x52
+        LCALL     `??MAC_MlmeSetReq::?relay`; Banked call to: MAC_MlmeSetReq
+//  616 
+//  617   /* Right now, set security to zero */
+//  618   pData->RealignSec.SecurityLevel = false;
+        MOV       A,R6
+        ADD       A,#0x15
+        MOV       DPL,A
+        CLR       A
+        ADDC      A,R7
+        MOV       DPH,A
+        CLR       A
+        MOVX      @DPTR,A
+//  619   pData->BeaconSec.SecurityLevel = false;
+        MOV       A,R6
+        ADD       A,#0x20
+        MOV       DPL,A
+        CLR       A
+        ADDC      A,R7
+        MOV       DPH,A
+        CLR       A
+        MOVX      @DPTR,A
+//  620 
+//  621 
+//  622   MAC_MlmeStartReq((macMlmeStartReq_t *) pData);
+        ; Setup parameters for call to function MAC_MlmeStartReq
+        MOV       A,R6
+        MOV       R2,A
+        MOV       A,R7
+        MOV       R3,A
+        LCALL     `??MAC_MlmeStartReq::?relay`; Banked call to: MAC_MlmeStartReq
+//  623 
+//  624   // MAC does not issue mlmeStartConfirm(), so we have to
+//  625   // mlmeStartConfirm( stat );  This needs to be addressed some how
+//  626 
+//  627   return ZMacSuccess;
+        MOV       R1,#0x0
+        LJMP      ?Subroutine0 & 0xFFFF
+//  628 }
+          CFI EndBlock cfiBlock28
+//  629 
+//  630 /********************************************************************************************************
+//  631  * @fn      ZMacSyncReq
+//  632  *
+//  633  * @brief   This function is called to request a sync to the current
+//  634  *          networks beacons.
+//  635  *
+//  636  * @param   LogicalChannel -
+//  637  * @param   TrackBeacon - true/false
+//  638  *
+//  639  * @return  status
+//  640  ********************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  641 uint8 ZMacSyncReq( ZMacSyncReq_t *pData )
+ZMacSyncReq:
+          CFI Block cfiBlock29 Using cfiCommon0
+          CFI Function ZMacSyncReq
+        CODE
+//  642 {
+        FUNCALL ZMacSyncReq, MAC_MlmeSyncReq
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  643   MAC_MlmeSyncReq( (macMlmeSyncReq_t *)pData);
+        ; Setup parameters for call to function MAC_MlmeSyncReq
+        LCALL     `??MAC_MlmeSyncReq::?relay`; Banked call to: MAC_MlmeSyncReq
+//  644   return ZMacSuccess;
+        LJMP      ?Subroutine1 & 0xFFFF
+//  645 }
+          CFI EndBlock cfiBlock29
+//  646 
+//  647 /********************************************************************************************************
+//  648  * @fn      ZMacPollReq
+//  649  *
+//  650  * @brief   This function is called to request MAC data request poll.
+//  651  *
+//  652  * @param   coordAddr -
+//  653  * @param   coordPanId -
+//  654  * @param   SecurityEnable - true or false.
+//  655  *
+//  656  * @return  status
+//  657  ********************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  658 uint8 ZMacPollReq( ZMacPollReq_t *pData )
+ZMacPollReq:
+          CFI Block cfiBlock30 Using cfiCommon0
+          CFI Function ZMacPollReq
+        CODE
+//  659 {
+        FUNCALL ZMacPollReq, MAC_MlmePollReq
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  660   /* Right now, set security to zero */
+//  661   pData->Sec.SecurityLevel = false;
+        MOV       A,R2
+        ADD       A,#0x13
+        MOV       DPL,A
+        CLR       A
+        ADDC      A,R3
+        MOV       DPH,A
+        CLR       A
+        MOVX      @DPTR,A
+//  662 
+//  663   MAC_MlmePollReq ((macMlmePollReq_t *)pData);
+        ; Setup parameters for call to function MAC_MlmePollReq
+        LCALL     `??MAC_MlmePollReq::?relay`; Banked call to: MAC_MlmePollReq
+//  664   return ( ZMacSuccess );
+        LJMP      ?Subroutine1 & 0xFFFF
+//  665 }
+          CFI EndBlock cfiBlock30
+//  666 
+//  667 /********************************************************************************************************
+//  668  * @fn      ZMacDataReqSec
+//  669  *
+//  670  * @brief   Send a MAC Data Frame packet, calls the passed in function to apply non-MAC security
+//  671  *          on the MAC data field after the MAC buffer allocation.
+//  672  *
+//  673  * @param   pData - structure containing data and where to send it.
+//  674  * @param   secCB - callback function to apply security, NULL indicates no security
+//  675  *
+//  676  * @return  status
+//  677  ********************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  678 uint8 ZMacDataReqSec( ZMacDataReq_t *pData, applySecCB_t secCB )
+ZMacDataReqSec:
+          CFI Block cfiBlock31 Using cfiCommon0
+          CFI Function ZMacDataReqSec
+        CODE
+//  679 {
+        FUNCALL ZMacDataReqSec, MAC_McpsDataAlloc
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 18, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 18, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZMacDataReqSec, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 21, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 21, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZMacDataReqSec, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 21, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 21, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZMacDataReqSec, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 21, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 21, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZMacDataReqSec, osal_msg_deallocate
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 18, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 18, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZMacDataReqSec, MAC_McpsDataReq
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 18, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 18, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        REQUIRE ?V7
+        MOV       A,#-0x10
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 16)
+        ; Saved register size: 16
+        ; Auto size: 2
+        MOV       A,#-0x2
+        LCALL     ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 18)
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOV       A,R4
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOV       A,R5
+        MOVX      @DPTR,A
+        MOV       ?V4,R2
+        MOV       ?V5,R3
+        ; Setup parameters for call to function MAC_McpsDataAlloc
+        MOV       A,R2
+        ADD       A,#0x1c
+        LCALL     ??Subroutine13_0 & 0xFFFF
+??CrossCallReturnLabel_13:
+        MOV       R3,A
+        MOV       A,R2
+        ADD       A,#0x1b
+        LCALL     ??Subroutine13_0 & 0xFFFF
+??CrossCallReturnLabel_14:
+        MOV       R2,A
+        LCALL     ?Subroutine8 & 0xFFFF
+??CrossCallReturnLabel_16:
+        MOV       R1,A
+//  680   macMcpsDataReq_t *pBuf;
+//  681 
+//  682   /* Allocate memory */
+//  683   pBuf = MAC_McpsDataAlloc( pData->msduLength, pData->Sec.SecurityLevel, pData->Sec.KeyIdMode );
+        LCALL     `??MAC_McpsDataAlloc::?relay`; Banked call to: MAC_McpsDataAlloc
+        MOV       ?V0,R2
+        MOV       ?V1,R3
+        MOV       R6,?V0
+        MOV       R7,?V1
+//  684 
+//  685   if ( pBuf )
+        MOV       A,R6
+        ORL       A,R7
+        JNZ       $+5
+        LJMP      ??ZMacDataReqSec_0 & 0xFFFF
+//  686   {
+//  687     /* Copy the addresses */
+//  688     osal_memcpy( &pBuf->mac, pData, sizeof (macDataReq_t) );
+        ; Setup parameters for call to function osal_memcpy
+        MOV       ?V0,?V4
+        MOV       ?V1,?V5
+        MOV       ?V2,#0x0
+        MOV       R0,#?V0
+        LCALL     ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 21)
+        MOV       R4,#0x13
+        MOV       R5,#0x0
+        MOV       A,R6
+        ADD       A,#0x26
+        MOV       R2,A
+        CLR       A
+        ADDC      A,R7
+        MOV       R3,A
+        LCALL     `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV       A,#0x3
+        LCALL     ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 18)
+//  689 
+//  690     /* Copy data */
+//  691     osal_memcpy( pBuf->msdu.p, pData->msdu, pData->msduLength );
+        MOV       A,R6
+        ADD       A,#0x2
+        MOV       ?V6,A
+        CLR       A
+        ADDC      A,R7
+        MOV       ?V7,A
+        ; Setup parameters for call to function osal_memcpy
+        MOV       A,?V4
+        ADD       A,#0x1f
+        LCALL     ??Subroutine13_0 & 0xFFFF
+??CrossCallReturnLabel_15:
+        MOV       ?V0,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       ?V1,A
+        MOV       R0,#?V0
+        LCALL     ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 21)
+        LCALL     ?Subroutine8 & 0xFFFF
+??CrossCallReturnLabel_17:
+        MOV       R4,A
+        MOV       R5,#0x0
+        MOV       DPL,?V6
+        MOV       DPH,?V7
+        MOVX      A,@DPTR
+        MOV       R2,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       R3,A
+        LCALL     `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV       A,#0x3
+        LCALL     ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 18)
+//  692 
+//  693     /* Copy Security parameters */
+//  694     osal_memcpy( &pBuf->sec, &pData->Sec, sizeof (macSec_t));
+        ; Setup parameters for call to function osal_memcpy
+        MOV       A,?V4
+        ADD       A,#0x13
+        MOV       ?V0,A
+        CLR       A
+        ADDC      A,?V5
+        MOV       ?V1,A
+        MOV       R0,#?V0
+        LCALL     ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 21)
+        MOV       R4,#0xb
+        MOV       R5,#0x0
+        MOV       A,R6
+        ADD       A,#0x1b
+        MOV       R2,A
+        CLR       A
+        ADDC      A,R7
+        MOV       R3,A
+        LCALL     `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV       A,#0x3
+        LCALL     ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 18)
+//  695 
+//  696     /* Encrypt in place */
+//  697     if ( secCB && pBuf->msdu.len && pBuf->msdu.p )
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        LCALL     ??Subroutine12_0 & 0xFFFF
+??CrossCallReturnLabel_9:
+        JZ        ??ZMacDataReqSec_1
+        MOV       DPL,R6
+        MOV       DPH,R7
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       R1,A
+        JZ        ??ZMacDataReqSec_1
+        MOV       DPL,?V6
+        MOV       DPH,?V7
+        MOVX      A,@DPTR
+        MOV       R2,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       R3,A
+        MOV       A,R2
+        ORL       A,R3
+        JZ        ??ZMacDataReqSec_1
+//  698     {
+//  699       if ( secCB( pBuf->msdu.len, pBuf->msdu.p ) != ZSuccess )
+        ; Setup parameters for indirect call
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       DPH,A
+        MOV       DPL,R0
+        LCALL     ?CALL_IND
+        MOV       A,R1
+        JZ        ??ZMacDataReqSec_1
+//  700       {
+//  701         // Deallocate the buffer.  MAC_McpsDataAlloc() calls osal_msg_allocate() and
+//  702         // returns the same pointer.
+//  703         osal_msg_deallocate( (uint8 *)pBuf );
+        ; Setup parameters for call to function osal_msg_deallocate
+        MOV       A,R6
+        MOV       R2,A
+        MOV       A,R7
+        MOV       R3,A
+        LCALL     `??osal_msg_deallocate::?relay`; Banked call to: osal_msg_deallocate
+//  704 
+//  705         return ( MAC_NO_RESOURCES );
+        SJMP      ??ZMacDataReqSec_0
+//  706       }
+//  707     }
+//  708 
+//  709     /* Call Mac Data Request */
+//  710     MAC_McpsDataReq( pBuf );
+??ZMacDataReqSec_1:
+        ; Setup parameters for call to function MAC_McpsDataReq
+        MOV       A,R6
+        MOV       R2,A
+        MOV       A,R7
+        MOV       R3,A
+        LCALL     `??MAC_McpsDataReq::?relay`; Banked call to: MAC_McpsDataReq
+//  711 
+//  712     return ( ZMacSuccess );
+        MOV       R1,#0x0
+        SJMP      ??ZMacDataReqSec_2
+//  713   }
+//  714 
+//  715   return ( MAC_NO_RESOURCES );
+??ZMacDataReqSec_0:
+        MOV       R1,#0x1a
+??ZMacDataReqSec_2:
+        MOV       A,#0x2
+        LCALL     ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 16)
+        MOV       R7,#0x8
+        LJMP      ?BANKED_LEAVE_XDATA
+//  716 }
+          CFI EndBlock cfiBlock31
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine8:
+          CFI Block cfiCond32 Using cfiCommon0
+          CFI Function ZMacDataReqSec
+          CFI Conditional ??CrossCallReturnLabel_16
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI CFA_SP SP+-2
+          CFI CFA_XSP16 add(XSP16, 18)
+          CFI Block cfiCond33 Using cfiCommon0
+          CFI (cfiCond33) Function ZMacDataReqSec
+          CFI (cfiCond33) Conditional ??CrossCallReturnLabel_17
+          CFI (cfiCond33) R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI (cfiCond33) VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI (cfiCond33) V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI (cfiCond33) V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI (cfiCond33) V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond33) V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond33) V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond33) V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond33) V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond33) V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond33) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond33) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond33) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond33) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond33) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond33) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond33) CFA_SP SP+-2
+          CFI (cfiCond33) CFA_XSP16 add(XSP16, 21)
+          CFI Block cfiPicker34 Using cfiCommon1
+          CFI (cfiPicker34) NoFunction
+          CFI (cfiPicker34) Picker
+        MOV       A,?V4
+        ADD       A,#0x1e
+          CFI EndBlock cfiCond32
+          CFI EndBlock cfiCond33
+          CFI EndBlock cfiPicker34
+        REQUIRE ??Subroutine13_0
+        ; // Fall through to label ??Subroutine13_0
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+??Subroutine13_0:
+          CFI Block cfiCond35 Using cfiCommon0
+          CFI Function ZMacDataReqSec
+          CFI Conditional ??CrossCallReturnLabel_13
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI CFA_SP SP+-2
+          CFI CFA_XSP16 add(XSP16, 18)
+          CFI Block cfiCond36 Using cfiCommon0
+          CFI (cfiCond36) Function ZMacDataReqSec
+          CFI (cfiCond36) Conditional ??CrossCallReturnLabel_14
+          CFI (cfiCond36) R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI (cfiCond36) VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI (cfiCond36) V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI (cfiCond36) V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI (cfiCond36) V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond36) V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond36) V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond36) V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond36) V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond36) V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond36) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond36) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond36) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond36) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond36) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond36) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond36) CFA_SP SP+-2
+          CFI (cfiCond36) CFA_XSP16 add(XSP16, 18)
+          CFI Block cfiCond37 Using cfiCommon0
+          CFI (cfiCond37) Function ZMacDataReqSec
+          CFI (cfiCond37) Conditional ??CrossCallReturnLabel_15
+          CFI (cfiCond37) R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI (cfiCond37) VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI (cfiCond37) V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI (cfiCond37) V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI (cfiCond37) V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond37) V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond37) V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond37) V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond37) V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond37) V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond37) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond37) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond37) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond37) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond37) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond37) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond37) CFA_SP SP+-2
+          CFI (cfiCond37) CFA_XSP16 add(XSP16, 18)
+          CFI Block cfiCond38 Using cfiCommon0
+          CFI (cfiCond38) Function ZMacDataReqSec
+          CFI (cfiCond38) Conditional ??CrossCallReturnLabel_16
+          CFI (cfiCond38) R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI (cfiCond38) VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI (cfiCond38) V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI (cfiCond38) V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI (cfiCond38) V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond38) V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond38) V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond38) V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond38) V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond38) V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond38) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond38) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond38) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond38) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond38) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond38) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond38) CFA_SP SP+-2
+          CFI (cfiCond38) CFA_XSP16 add(XSP16, 18)
+          CFI Block cfiCond39 Using cfiCommon0
+          CFI (cfiCond39) Function ZMacDataReqSec
+          CFI (cfiCond39) Conditional ??CrossCallReturnLabel_17
+          CFI (cfiCond39) R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI (cfiCond39) VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI (cfiCond39) V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI (cfiCond39) V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI (cfiCond39) V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond39) V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond39) V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond39) V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond39) V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond39) V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond39) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond39) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond39) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond39) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond39) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond39) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond39) CFA_SP SP+-2
+          CFI (cfiCond39) CFA_XSP16 add(XSP16, 21)
+          CFI Block cfiPicker40 Using cfiCommon1
+          CFI (cfiPicker40) NoFunction
+          CFI (cfiPicker40) Picker
+        MOV       DPL,A
+        CLR       A
+        ADDC      A,?V5
+        MOV       DPH,A
+        MOVX      A,@DPTR
+        RET
+          CFI EndBlock cfiCond35
+          CFI EndBlock cfiCond36
+          CFI EndBlock cfiCond37
+          CFI EndBlock cfiCond38
+          CFI EndBlock cfiCond39
+          CFI EndBlock cfiPicker40
+//  717 
+//  718 /********************************************************************************************************
+//  719  * @fn      ZMacDataReq
+//  720  *
+//  721  * @brief   Send a MAC Data Frame packet.
+//  722  *
+//  723  * @param   structure containing data and where to send it.
+//  724  *
+//  725  * @return  status
+//  726  ********************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  727 uint8 ZMacDataReq( ZMacDataReq_t *pData )
+ZMacDataReq:
+          CFI Block cfiBlock41 Using cfiCommon0
+          CFI Function ZMacDataReq
+        CODE
+//  728 {
+        FUNCALL ZMacDataReq, ZMacDataReqSec
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  729   return ZMacDataReqSec( pData, NULL );
+        ; Setup parameters for call to function ZMacDataReqSec
+        MOV       R4,#0x0
+        MOV       R5,#0x0
+        LCALL     `??ZMacDataReqSec::?relay`; Banked call to: ZMacDataReqSec
+        SJMP      ??Subroutine14_0
+//  730 }
+          CFI EndBlock cfiBlock41
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine1:
+          CFI Block cfiBlock42 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA_SP SP+-5
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI DPH0 Frame(CFA_SP, 5)
+        MOV       R1,#0x0
+          CFI EndBlock cfiBlock42
+        REQUIRE ??Subroutine14_0
+        ; // Fall through to label ??Subroutine14_0
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+??Subroutine14_0:
+          CFI Block cfiBlock43 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA_SP SP+-5
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI DPH0 Frame(CFA_SP, 5)
+        POP       DPH
+          CFI CFA_SP SP+-4
+          CFI DPH0 SameValue
+        POP       DPL
+          CFI CFA_SP SP+-3
+          CFI DPL0 SameValue
+        LJMP      ?BRET
+          CFI EndBlock cfiBlock43
+//  731 
+//  732 /********************************************************************************************************
+//  733  * @fn      ZMacPurgeReq
+//  734  *
+//  735  * @brief   Purge a MAC Data Frame packet.
+//  736  *
+//  737  * @param   MSDU data handle.
+//  738  *
+//  739  * @return  status
+//  740  ********************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  741 uint8 ZMacPurgeReq( byte Handle )
+ZMacPurgeReq:
+          CFI Block cfiBlock44 Using cfiCommon0
+          CFI Function ZMacPurgeReq
+        CODE
+//  742 {
+        FUNCALL ZMacPurgeReq, MAC_McpsPurgeReq
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV       A,#-0x9
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+//  743   MAC_McpsPurgeReq( Handle );
+        ; Setup parameters for call to function MAC_McpsPurgeReq
+        LCALL     `??MAC_McpsPurgeReq::?relay`; Banked call to: MAC_McpsPurgeReq
+//  744   return ZMacSuccess;
+          CFI EndBlock cfiBlock44
+        REQUIRE ?Subroutine3
+        ; // Fall through to label ?Subroutine3
+//  745 }
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine3:
+          CFI Block cfiBlock45 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        MOV       R1,#0x0
+        LJMP      ??Subroutine10_0 & 0xFFFF
+          CFI EndBlock cfiBlock45
+//  746 
+//  747 /********************************************************************************************************
+//  748  * @fn      ZMacSrcMatchEnable
+//  749  *
+//  750  * @brief   This function is call to enable AUTOPEND and source address matching.
+//  751  *
+//  752  * @param   addressType - address type that the application uses
+//  753  *                        SADDR_MODE_SHORT or SADDR_MODE_EXT.
+//  754  *          numEntries  - number of source address table entries to be used
+//  755  *
+//  756  * @return  status
+//  757  ********************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  758 ZMacStatus_t ZMacSrcMatchEnable (void)
+ZMacSrcMatchEnable:
+          CFI Block cfiBlock46 Using cfiCommon0
+          CFI Function ZMacSrcMatchEnable
+        CODE
+//  759 {
+        FUNCALL ZMacSrcMatchEnable, MAC_SrcMatchEnable
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  760   MAC_SrcMatchEnable();
+        ; Setup parameters for call to function MAC_SrcMatchEnable
+        LCALL     `??MAC_SrcMatchEnable::?relay`; Banked call to: MAC_SrcMatchEnable
+//  761   return ZMacSuccess;
+        SJMP      ?Subroutine1
+//  762 }
+          CFI EndBlock cfiBlock46
+//  763 
+//  764 /********************************************************************************************************
+//  765  * @fn      ZMacSrcMatchAddEntry
+//  766  *
+//  767  * @brief   This function is called to add a short or extended address to source address table.
+//  768  *
+//  769  * @param   addr - a pointer to sAddr_t which contains addrMode
+//  770  *                     and a union of a short 16-bit MAC address or an extended
+//  771  *                     64-bit MAC address to be added to the source address table.
+//  772  *          panID - the device PAN ID. It is only used when the addr is
+//  773  *                      using short address
+//  774  *
+//  775  * @return  status
+//  776  ********************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  777 ZMacStatus_t ZMacSrcMatchAddEntry (zAddrType_t *addr, uint16 panID)
+ZMacSrcMatchAddEntry:
+          CFI Block cfiBlock47 Using cfiCommon0
+          CFI Function ZMacSrcMatchAddEntry
+        CODE
+//  778 {
+        FUNCALL ZMacSrcMatchAddEntry, MAC_SrcMatchAddEntry
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  779   return (MAC_SrcMatchAddEntry ((sAddr_t*)addr, panID));
+        ; Setup parameters for call to function MAC_SrcMatchAddEntry
+        LCALL     `??MAC_SrcMatchAddEntry::?relay`; Banked call to: MAC_SrcMatchAddEntry
+        SJMP      ??Subroutine14_0
+//  780 }
+          CFI EndBlock cfiBlock47
+//  781 
+//  782 /********************************************************************************************************
+//  783  * @fn      ZMacSrcMatchDeleteEntry
+//  784  *
+//  785  * @brief   This function is called to delete a short or extended address from source address table.
+//  786  *
+//  787  * @param   addr - a pointer to sAddr_t which contains addrMode
+//  788  *                     and a union of a short 16-bit MAC address or an extended
+//  789  *                     64-bit MAC address to be added to the source address table.
+//  790  *          panID - the device PAN ID. It is only used when the addr is
+//  791  *                      using short address
+//  792  *
+//  793  * @return  status
+//  794  ********************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  795 ZMacStatus_t ZMacSrcMatchDeleteEntry (zAddrType_t *addr, uint16 panID)
+ZMacSrcMatchDeleteEntry:
+          CFI Block cfiBlock48 Using cfiCommon0
+          CFI Function ZMacSrcMatchDeleteEntry
+        CODE
+//  796 {
+        FUNCALL ZMacSrcMatchDeleteEntry, MAC_SrcMatchDeleteEntry
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  797   return (MAC_SrcMatchDeleteEntry ((sAddr_t*)addr, panID));
+        ; Setup parameters for call to function MAC_SrcMatchDeleteEntry
+        LCALL     `??MAC_SrcMatchDeleteEntry::?relay`; Banked call to: MAC_SrcMatchDeleteEntry
+        SJMP      ??Subroutine14_0
+//  798 }
+          CFI EndBlock cfiBlock48
+//  799 
+//  800 /********************************************************************************************************
+//  801  * @fn       ZMacSrcMatchAckAllPending
+//  802  *
+//  803  * @brief    Enabled/disable acknowledging all packets with pending bit set
+//  804  *           It is normally enabled when adding new entries to
+//  805  *           the source address table fails due to the table is full, or
+//  806  *           disabled when more entries are deleted and the table has
+//  807  *           empty slots.
+//  808  *
+//  809  * @param    option - true (acknowledging all packets with pending field set)
+//  810  *                    false (acknowledging all packets with pending field cleared)
+//  811  *
+//  812  * @return   status
+//  813  ********************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  814 ZMacStatus_t ZMacSrcMatchAckAllPending (uint8 option)
+ZMacSrcMatchAckAllPending:
+          CFI Block cfiBlock49 Using cfiCommon0
+          CFI Function ZMacSrcMatchAckAllPending
+        CODE
+//  815 {
+        FUNCALL ZMacSrcMatchAckAllPending, MAC_SrcMatchAckAllPending
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV       A,#-0x9
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+//  816   MAC_SrcMatchAckAllPending (option);
+        ; Setup parameters for call to function MAC_SrcMatchAckAllPending
+        LCALL     `??MAC_SrcMatchAckAllPending::?relay`; Banked call to: MAC_SrcMatchAckAllPending
+//  817 
+//  818   return ZMacSuccess;
+        SJMP      ?Subroutine3
+//  819 }
+          CFI EndBlock cfiBlock49
+//  820 
+//  821 /********************************************************************************************************
+//  822  * @fn       ZMacSrcMatchCheckAllPending
+//  823  *
+//  824  * @brief    This function is called to check if acknowledging all packets with pending bit set is enabled.
+//  825  *
+//  826  * @param    none
+//  827  *
+//  828  * @return   status
+//  829  ********************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  830 ZMacStatus_t ZMacSrcMatchCheckAllPending (void)
+ZMacSrcMatchCheckAllPending:
+          CFI Block cfiBlock50 Using cfiCommon0
+          CFI Function ZMacSrcMatchCheckAllPending
+        CODE
+//  831 {
+        FUNCALL ZMacSrcMatchCheckAllPending, MAC_SrcMatchCheckAllPending
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  832   return (MAC_SrcMatchCheckAllPending ());
+        ; Setup parameters for call to function MAC_SrcMatchCheckAllPending
+        LCALL     `??MAC_SrcMatchCheckAllPending::?relay`; Banked call to: MAC_SrcMatchCheckAllPending
+        SJMP      ??Subroutine14_0
+//  833 }
+          CFI EndBlock cfiBlock50
+//  834 
+//  835 /********************************************************************************************************
+//  836  * @fn      - ZMACPwrOnReq
+//  837  *
+//  838  * @brief   - This function requests the MAC to power on the radio hardware
+//  839  *            and wake up.  When the power on procedure is complete the MAC
+//  840  *            will send a MAC_PWR_ON_CNF to the application.
+//  841  *
+//  842  * @input   - None.
+//  843  *
+//  844  * @output  - None.
+//  845  *
+//  846  * @return  - None.
+//  847  ********************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  848 void ZMacPwrOnReq ( void )
+ZMacPwrOnReq:
+          CFI Block cfiBlock51 Using cfiCommon0
+          CFI Function ZMacPwrOnReq
+        CODE
+//  849 {
+        FUNCALL ZMacPwrOnReq, MAC_PwrOnReq
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  850   MAC_PwrOnReq();
+        ; Setup parameters for call to function MAC_PwrOnReq
+        LCALL     `??MAC_PwrOnReq::?relay`; Banked call to: MAC_PwrOnReq
+//  851 }
+        SJMP      ??Subroutine14_0
+          CFI EndBlock cfiBlock51
+//  852 
+//  853 /********************************************************************************************************
+//  854  * @fn          MAC_PwrMode
+//  855  *
+//  856  * @brief       This function returns the current power mode of the MAC.
+//  857  *
+//  858  * input parameters
+//  859  *
+//  860  * None.
+//  861  *
+//  862  * output parameters
+//  863  *
+//  864  * None.
+//  865  *
+//  866  * @return      The current power mode of the MAC.
+//  867  ********************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  868 uint8 ZMac_PwrMode(void)
+ZMac_PwrMode:
+          CFI Block cfiBlock52 Using cfiCommon0
+          CFI Function ZMac_PwrMode
+        CODE
+//  869 {
+        FUNCALL ZMac_PwrMode, MAC_PwrMode
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  870   return (MAC_PwrMode());
+        ; Setup parameters for call to function MAC_PwrMode
+        LCALL     `??MAC_PwrMode::?relay`; Banked call to: MAC_PwrMode
+        SJMP      ??Subroutine14_0
+//  871 }
+          CFI EndBlock cfiBlock52
+//  872 
+//  873 /********************************************************************************************************
+//  874  * @fn      ZMacSetTransmitPower
+//  875  *
+//  876  * @brief   Set the transmitter power according to the level setting param.
+//  877  *
+//  878  * @param   Valid power level setting as defined in ZMAC.h.
+//  879  *
+//  880  * @return  ZMacSuccess if PHY_TRANSMIT_POWER found or ZMacUnsupportedAttribute.
+//  881  ********************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  882 uint8 ZMacSetTransmitPower( ZMacTransmitPower_t level )
+ZMacSetTransmitPower:
+          CFI Block cfiBlock53 Using cfiCommon0
+          CFI Function ZMacSetTransmitPower
+        CODE
+//  883 {
+        FUNCALL ZMacSetTransmitPower, MAC_MlmeSetReq
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 1, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 1, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 1
+        MOV       A,#-0x1
+        LCALL     ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 1)
+        MOV       A,R1
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOVX      @DPTR,A
+//  884   return MAC_MlmeSetReq( ZMacPhyTransmitPowerSigned, &level );
+        ; Setup parameters for call to function MAC_MlmeSetReq
+        MOV       R2,?XSP + 0
+        MOV       R3,?XSP + 1
+        MOV       R1,#-0x20
+        LCALL     `??MAC_MlmeSetReq::?relay`; Banked call to: MAC_MlmeSetReq
+        MOV       A,#0x1
+        LCALL     ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 XSP16+0
+        SJMP      ??Subroutine14_0
+//  885 }
+          CFI EndBlock cfiBlock53
+//  886 
+//  887 /********************************************************************************************************
+//  888  * @fn      ZMacSendNoData
+//  889  *
+//  890  * @brief   This function sends an empty msg
+//  891  *
+//  892  * @param   DstAddr   - destination short address
+//  893  *          DstPANId  - destination pan id
+//  894  *
+//  895  * @return  None
+//  896  ********************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  897 void ZMacSendNoData ( uint16 DstAddr, uint16 DstPANId )
+ZMacSendNoData:
+          CFI Block cfiBlock54 Using cfiCommon0
+          CFI Function ZMacSendNoData
+        CODE
+//  898 {
+        FUNCALL ZMacSendNoData, MAC_McpsDataAlloc
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZMacSendNoData, MAC_McpsDataReq
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        MOV       A,#-0xc
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV       ?V0,R2
+        MOV       ?V1,R3
+        MOV       A,R4
+        MOV       R6,A
+        MOV       A,R5
+        MOV       R7,A
+//  899   macMcpsDataReq_t *pBuf;
+//  900 
+//  901   /* Allocate memory */
+//  902   pBuf = MAC_McpsDataAlloc(0, MAC_SEC_LEVEL_NONE, MAC_KEY_ID_MODE_NONE);
+        ; Setup parameters for call to function MAC_McpsDataAlloc
+        MOV       R3,#0x0
+        MOV       R2,#0x0
+        MOV       R1,#0x0
+        LCALL     `??MAC_McpsDataAlloc::?relay`; Banked call to: MAC_McpsDataAlloc
+//  903 
+//  904   if (pBuf)
+        MOV       A,R2
+        ORL       A,R3
+        JZ        ??ZMacSendNoData_0
+//  905   {
+//  906     /* Fill in src information */
+//  907     pBuf->mac.srcAddrMode              = SADDR_MODE_SHORT;
+        MOV       A,R2
+        ADD       A,#0x31
+        MOV       DPL,A
+        CLR       A
+        ADDC      A,R3
+        MOV       DPH,A
+        MOV       A,#0x2
+        MOVX      @DPTR,A
+//  908 
+//  909     /* Fill in dst information */
+//  910     pBuf->mac.dstAddr.addr.shortAddr   = DstAddr;
+        MOV       A,R2
+        ADD       A,#0x26
+        MOV       DPL,A
+        CLR       A
+        ADDC      A,R3
+        MOV       DPH,A
+        MOV       A,?V0
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOV       A,?V1
+        MOVX      @DPTR,A
+//  911     pBuf->mac.dstAddr.addrMode         = SADDR_MODE_SHORT;
+        MOV       A,R2
+        ADD       A,#0x2e
+        MOV       DPL,A
+        CLR       A
+        ADDC      A,R3
+        MOV       DPH,A
+        MOV       A,#0x2
+        MOVX      @DPTR,A
+//  912     pBuf->mac.dstPanId                 = DstPANId;
+        MOV       A,R2
+        ADD       A,#0x2f
+        MOV       DPL,A
+        CLR       A
+        ADDC      A,R3
+        MOV       DPH,A
+        MOV       A,R6
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOV       A,R7
+        MOVX      @DPTR,A
+//  913 
+//  914     /* Misc information */
+//  915     pBuf->mac.msduHandle               = 0;
+        MOV       A,R2
+        ADD       A,#0x32
+        MOV       DPL,A
+        CLR       A
+        ADDC      A,R3
+        MOV       DPH,A
+        CLR       A
+        MOVX      @DPTR,A
+//  916     pBuf->mac.txOptions                = ZMAC_TXOPTION_ACK | ZMAC_TXOPTION_NO_RETRANS | ZMAC_TXOPTION_NO_CNF;
+        MOV       A,R2
+        ADD       A,#0x33
+        MOV       DPL,A
+        CLR       A
+        ADDC      A,R3
+        MOV       DPH,A
+        MOV       A,#0x31
+        MOVX      @DPTR,A
+        INC       DPTR
+        CLR       A
+        MOVX      @DPTR,A
+//  917 
+//  918     /* Right now, set security to zero */
+//  919     pBuf->sec.securityLevel = false;
+        MOV       A,R2
+        ADD       A,#0x23
+        MOV       DPL,A
+        CLR       A
+        ADDC      A,R3
+        MOV       DPH,A
+        CLR       A
+        MOVX      @DPTR,A
+//  920 
+//  921     /* Call Mac Data Request */
+//  922     MAC_McpsDataReq(pBuf);
+        ; Setup parameters for call to function MAC_McpsDataReq
+        LCALL     `??MAC_McpsDataReq::?relay`; Banked call to: MAC_McpsDataReq
+//  923   }
+//  924 
+//  925 }
+??ZMacSendNoData_0:
+          CFI EndBlock cfiBlock54
+        REQUIRE ?Subroutine2
+        ; // Fall through to label ?Subroutine2
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine2:
+          CFI Block cfiBlock55 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 12)
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        MOV       R7,#0x4
+        LJMP      ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock55
+//  926 
+//  927 /********************************************************************************************************
+//  928  * @fn      ZMacStateIdle
+//  929  *
+//  930  * @brief   This function returns true if the MAC state is idle.
+//  931  *
+//  932  * @param   none
+//  933  *
+//  934  * @return  TRUE if the MAC state is idle, FALSE otherwise.
+//  935  ********************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  936 uint8 ZMacStateIdle( void )
+ZMacStateIdle:
+          CFI Block cfiBlock56 Using cfiCommon0
+          CFI Function ZMacStateIdle
+        CODE
+//  937 {
+        FUNCALL ZMacStateIdle, macStateIdle
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  938   return macStateIdle();
+        ; Setup parameters for call to function macStateIdle
+        LCALL     `??macStateIdle::?relay`; Banked call to: macStateIdle
+        LJMP      ??Subroutine14_0 & 0xFFFF
+//  939 }
+          CFI EndBlock cfiBlock56
+//  940 
+//  941 /********************************************************************************************************
+//  942  * @fn      ZMacEnhancedActiveScanReq
+//  943  *
+//  944  * @brief   This function is called to perform a network scan.
+//  945  *
+//  946  * @param   param - structure with info need send it.
+//  947  *
+//  948  * @return  status
+//  949  ********************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  950 uint8 ZMacEnhancedActiveScanReq( ZMacScanReq_t *pData )
+ZMacEnhancedActiveScanReq:
+          CFI Block cfiBlock57 Using cfiCommon0
+          CFI Function ZMacEnhancedActiveScanReq
+        CODE
+//  951 {
+        FUNCALL ZMacEnhancedActiveScanReq, osal_mem_alloc
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZMacEnhancedActiveScanReq, osal_memset
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZMacEnhancedActiveScanReq, MAC_MlmeScanReq
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ZMacEnhancedActiveScanReq, osal_mem_alloc
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        MOV       A,#-0xc
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV       A,R2
+        MOV       R6,A
+        MOV       A,R3
+        MOV       R7,A
+//  952   _ScanChannels = pData->ScanChannels;
+        MOV       DPL,R6
+        MOV       DPH,R7
+        LCALL     ?XLOAD_R0123
+        MOV       DPTR,#_ScanChannels
+        LCALL     ?XSTORE_R0123
+//  953 
+//  954   /* scan in progress */
+//  955   if (ZMac_ScanBuf != NULL)
+        LCALL     ?Subroutine5 & 0xFFFF
+??CrossCallReturnLabel_12:
+        JZ        ??ZMacEnhancedActiveScanReq_0
+//  956   {
+//  957     return MAC_SCAN_IN_PROGRESS;
+        MOV       R1,#-0x4
+        SJMP      ??ZMacEnhancedActiveScanReq_1
+//  958   }
+//  959 
+//  960   if (pData->ScanType != ZMAC_ORPHAN_SCAN)
+??ZMacEnhancedActiveScanReq_0:
+        MOV       DPL,R6
+        MOV       DPH,R7
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       R0,A
+        MOV       A,#0x3
+        XRL       A,R0
+        JZ        ??CrossCallReturnLabel_1
+//  961   {
+//  962     /* Allocate memory depends on the scan type */
+//  963     if (pData->ScanType == ZMAC_ED_SCAN)
+        LCALL     ?Subroutine7 & 0xFFFF
+??CrossCallReturnLabel_5:
+        JNZ       ??ZMacEnhancedActiveScanReq_2
+//  964     {
+//  965       if ((ZMac_ScanBuf = osal_mem_alloc(ZMAC_ED_SCAN_MAXCHANNELS)) == NULL)
+        ; Setup parameters for call to function osal_mem_alloc
+        MOV       R2,#0x1b
+        MOV       R3,#0x0
+        LCALL     `??osal_mem_alloc::?relay`; Banked call to: osal_mem_alloc
+        LCALL     ?Subroutine9 & 0xFFFF
+??CrossCallReturnLabel_8:
+        JZ        ??ZMacEnhancedActiveScanReq_3
+//  966       {
+//  967         return MAC_NO_RESOURCES;
+//  968       }
+//  969       osal_memset(ZMac_ScanBuf, 0, ZMAC_ED_SCAN_MAXCHANNELS);
+        ; Setup parameters for call to function osal_memset
+        MOV       R4,#0x1b
+        MOV       R5,#0x0
+        MOV       R1,#0x0
+        LCALL     `??osal_memset::?relay`; Banked call to: osal_memset
+//  970       pData->Result.pEnergyDetect = ((uint8*)ZMac_ScanBuf) + MAC_CHAN_11;
+        LCALL     ?Subroutine4 & 0xFFFF
+//  971     }
+//  972     else if (pData->MaxResults > 0)
+//  973     {
+//  974       if ((ZMac_ScanBuf = pData->Result.pPanDescriptor =
+//  975            osal_mem_alloc( sizeof( ZMacPanDesc_t ) * pData->MaxResults )) == NULL)
+//  976       {
+//  977         return MAC_NO_RESOURCES;
+//  978       }
+//  979     }
+//  980   }
+//  981 
+//  982   /* Channel Page */
+//  983   pData->ChannelPage = 0x00; 
+??CrossCallReturnLabel_1:
+        MOV       DPL,R6
+        MOV       DPH,R7
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        CLR       A
+        MOVX      @DPTR,A
+//  984 
+//  985   MAC_MlmeScanReq ((macMlmeScanReq_t *)pData);
+        ; Setup parameters for call to function MAC_MlmeScanReq
+        MOV       A,R6
+        MOV       R2,A
+        MOV       A,R7
+        MOV       R3,A
+        LCALL     `??MAC_MlmeScanReq::?relay`; Banked call to: MAC_MlmeScanReq
+//  986 
+//  987   return ZMacSuccess;
+        MOV       R1,#0x0
+??ZMacEnhancedActiveScanReq_1:
+        SJMP      ?Subroutine2
+??ZMacEnhancedActiveScanReq_2:
+        MOV       DPL,R6
+        MOV       DPH,R7
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        MOVX      A,@DPTR
+        JZ        ??CrossCallReturnLabel_1
+        ; Setup parameters for call to function osal_mem_alloc
+        MOV       B,#0x21
+        MUL       AB
+        MOV       R2,A
+        MOV       R3,B
+        LCALL     `??osal_mem_alloc::?relay`; Banked call to: osal_mem_alloc
+        LCALL     ?Subroutine6 & 0xFFFF
+??CrossCallReturnLabel_3:
+        JNZ       ??CrossCallReturnLabel_1
+??ZMacEnhancedActiveScanReq_3:
+        MOV       R1,#0x1a
+        SJMP      ??ZMacEnhancedActiveScanReq_1
+//  988 }
+          CFI EndBlock cfiBlock57
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine7:
+          CFI Block cfiCond58 Using cfiCommon0
+          CFI Function ZMacScanReq
+          CFI Conditional ??CrossCallReturnLabel_4
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI CFA_SP SP+-2
+          CFI CFA_XSP16 add(XSP16, 12)
+          CFI Block cfiCond59 Using cfiCommon0
+          CFI (cfiCond59) Function ZMacEnhancedActiveScanReq
+          CFI (cfiCond59) Conditional ??CrossCallReturnLabel_5
+          CFI (cfiCond59) R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond59) VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond59) V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond59) V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond59) V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond59) V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond59) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond59) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond59) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond59) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond59) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond59) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond59) CFA_SP SP+-2
+          CFI (cfiCond59) CFA_XSP16 add(XSP16, 12)
+          CFI Block cfiPicker60 Using cfiCommon1
+          CFI (cfiPicker60) NoFunction
+          CFI (cfiPicker60) Picker
+        MOV       A,R6
+        ADD       A,#0x16
+        MOV       ?V0,A
+        CLR       A
+        ADDC      A,R7
+        MOV       ?V1,A
+        MOV       A,R0
+        RET
+          CFI EndBlock cfiCond58
+          CFI EndBlock cfiCond59
+          CFI EndBlock cfiPicker60
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine6:
+          CFI Block cfiCond61 Using cfiCommon0
+          CFI Function ZMacScanReq
+          CFI Conditional ??CrossCallReturnLabel_2
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI CFA_SP SP+-2
+          CFI CFA_XSP16 add(XSP16, 12)
+          CFI Block cfiCond62 Using cfiCommon0
+          CFI (cfiCond62) Function ZMacEnhancedActiveScanReq
+          CFI (cfiCond62) Conditional ??CrossCallReturnLabel_3
+          CFI (cfiCond62) R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond62) VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond62) V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond62) V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond62) V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond62) V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond62) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond62) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond62) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond62) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond62) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond62) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond62) CFA_SP SP+-2
+          CFI (cfiCond62) CFA_XSP16 add(XSP16, 12)
+          CFI Block cfiPicker63 Using cfiCommon1
+          CFI (cfiPicker63) NoFunction
+          CFI (cfiPicker63) Picker
+        MOV       ?V2,R2
+        MOV       ?V3,R3
+        MOV       R0,?V2
+        MOV       R1,?V3
+        MOV       DPL,?V0
+        MOV       DPH,?V1
+        MOV       A,R0
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOV       A,R1
+        MOVX      @DPTR,A
+        LCALL     ??Subroutine11_0 & 0xFFFF
+??CrossCallReturnLabel_6:
+        RET
+          CFI EndBlock cfiCond61
+          CFI EndBlock cfiCond62
+          CFI EndBlock cfiPicker63
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine4:
+          CFI Block cfiCond64 Using cfiCommon0
+          CFI Function ZMacScanReq
+          CFI Conditional ??CrossCallReturnLabel_0
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI CFA_SP SP+-2
+          CFI CFA_XSP16 add(XSP16, 12)
+          CFI Block cfiCond65 Using cfiCommon0
+          CFI (cfiCond65) Function ZMacEnhancedActiveScanReq
+          CFI (cfiCond65) Conditional ??CrossCallReturnLabel_1
+          CFI (cfiCond65) R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond65) VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond65) V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond65) V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond65) V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond65) V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond65) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond65) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond65) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond65) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond65) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond65) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond65) CFA_SP SP+-2
+          CFI (cfiCond65) CFA_XSP16 add(XSP16, 12)
+          CFI Block cfiPicker66 Using cfiCommon1
+          CFI (cfiPicker66) NoFunction
+          CFI (cfiPicker66) Picker
+        MOV       DPTR,#ZMac_ScanBuf
+        MOVX      A,@DPTR
+        ADD       A,#0xb
+        MOV       R0,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        ADDC      A,#0x0
+        MOV       R1,A
+        MOV       DPL,?V0
+        MOV       DPH,?V1
+        MOV       A,R0
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOV       A,R1
+        MOVX      @DPTR,A
+        RET
+          CFI EndBlock cfiCond64
+          CFI EndBlock cfiCond65
+          CFI EndBlock cfiPicker66
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??ZMacInit::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ZMacInit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??ZMacReset::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ZMacReset
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??ZMacGetReq::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ZMacGetReq
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??ZMacSetReq::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ZMacSetReq
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??ZMacAssociateReq::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ZMacAssociateReq
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??ZMacAssociateRsp::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ZMacAssociateRsp
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??ZMacDisassociateReq::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ZMacDisassociateReq
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??ZMacOrphanRsp::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ZMacOrphanRsp
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??ZMacScanReq::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ZMacScanReq
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??ZMacStartReq::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ZMacStartReq
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??ZMacSyncReq::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ZMacSyncReq
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??ZMacPollReq::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ZMacPollReq
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??ZMacDataReqSec::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ZMacDataReqSec
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??ZMacDataReq::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ZMacDataReq
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??ZMacPurgeReq::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ZMacPurgeReq
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??ZMacSrcMatchEnable::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ZMacSrcMatchEnable
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??ZMacSrcMatchAddEntry::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ZMacSrcMatchAddEntry
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??ZMacSrcMatchDeleteEntry::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ZMacSrcMatchDeleteEntry
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??ZMacSrcMatchAckAllPending::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ZMacSrcMatchAckAllPending
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??ZMacSrcMatchCheckAllPending::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ZMacSrcMatchCheckAllPending
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??ZMacPwrOnReq::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ZMacPwrOnReq
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??ZMac_PwrMode::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ZMac_PwrMode
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??ZMacSetTransmitPower::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ZMacSetTransmitPower
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??ZMacSendNoData::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ZMacSendNoData
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??ZMacStateIdle::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ZMacStateIdle
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??ZMacEnhancedActiveScanReq::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ZMacEnhancedActiveScanReq
+
+        END
+//  989 
+//  990 #ifdef FEATURE_DUAL_MAC
+//  991 /********************************************************************************************************
+//  992  * @fn      ZMacFreeScanBuf
+//  993  *
+//  994  * @brief   This function free's the scan buffer.
+//  995  *
+//  996  * @param   None
+//  997  *
+//  998  * @return  None
+//  999  ********************************************************************************************************/
+// 1000 void ZMacFreeScanBuf( void )
+// 1001 {
+// 1002   if ( ZMac_ScanBuf )
+// 1003   {
+// 1004     osal_mem_free( ZMac_ScanBuf );
+// 1005     ZMac_ScanBuf = NULL;
+// 1006   }
+// 1007 }
+// 1008 #endif /* FEATURE_DUAL_MAC */
+// 
+// 1 268 bytes in segment BANKED_CODE
+//   156 bytes in segment BANK_RELAYS
+//     6 bytes in segment XDATA_Z
+// 
+//   156 bytes of CODE     memory
+// 1 268 bytes of HUGECODE memory
+//     6 bytes of XDATA    memory
+//
+//Errors: none
+//Warnings: none

@@ -1,0 +1,3815 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.10.1.4655 for 8051               22/Nov/2023  15:42:40
+# Copyright 2004-2017 IAR Systems AB.
+# Standalone license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        D:\fuzzing-coordinator-response-collection\Components\stack\bdb\bdb_FindingAndBinding.c
+#    Command line       =  
+#        -f C:\Users\ADMINI~1\AppData\Local\Temp\EW98AD.tmp
+#        (D:\fuzzing-coordinator-response-collection\Components\stack\bdb\bdb_FindingAndBinding.c
+#        -D SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE -D
+#        MULTICAST_ENABLED=FALSE -D ZCL_READ -D ZCL_DISCOVER -D ZCL_WRITE -D
+#        ZCL_BASIC -D ZCL_IDENTIFY -D ISR_KEYINTERRUPT -D HAL_UART=TRUE -D
+#        HAL_LCD=FALSE -D ZCL_ON_OFF -D INT_HEAP_LEN=2800 -D
+#        HAL_UART_DMA_RX_MAX=256 -D HAL_UART_DMA_TX_MAX=256 -lC
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+#        -lA
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+#        --diag_suppress Pe001,Pa010 -o
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj
+#        -e --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=banked --calling_convention=xdata_reentrant
+#        --place_constants=data_rom --nr_virtual_regs 8 -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+#        -DZDO_COORDINATOR -DRTR_NWK) -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x00, 0x01, 0x02, 0x03,
+#        0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E,
+#        0x0F}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+#        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+#        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+#        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000
+#        -DENABLE_LED4_DISABLE_S1) -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\Source\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\Source\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\ZMain\TI2530DB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mt\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\osal\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\saddr\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\sdata\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\af\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\bdb\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\gp\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sec\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sys\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zcl\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\Common\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\SPI\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\Font\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_LCD_SPI\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_OLED\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_TFT\
+#        -Ohz --require_prototypes)
+#    Locale             =  Chinese (Simplified)_China.936
+#    List file          =  
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List\bdb_FindingAndBinding.lst
+#    Object file        =  
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj\bdb_FindingAndBinding.r51
+#
+###############################################################################
+
+D:\fuzzing-coordinator-response-collection\Components\stack\bdb\bdb_FindingAndBinding.c
+      1          /**************************************************************************************************
+      2            Filename:       bdb_FindingAndBinding.c
+      3            Revised:        $Date: 2016-02-25 11:51:49 -0700 (Thu, 25 Feb 2016) $
+      4            Revision:       $Revision: - $
+      5          
+      6            Description:    This file contains the Base Device Behavior functions and attributes.
+      7          
+      8          
+      9            Copyright 2006-2015 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /*********************************************************************
+     41           * INCLUDES
+     42           */
+     43          
+     44          #include "bdb.h"
+     45          #include "ZDObject.h"
+     46          #include "bdb_interface.h"
+     47          #include "AddrMgr.h"
+     48             
+     49          #if (BDB_FINDING_BINDING_CAPABILITY_ENABLED==1)   
+     50             
+     51          /*********************************************************************
+     52           * MACROS
+     53           */
+     54          
+     55          
+     56          
+     57             
+     58          /*********************************************************************
+     59           * CONSTANTS
+     60           */
+     61          /*********************************************************************
+     62           * TYPEDEFS
+     63           */
+     64           
+     65           
+     66          /*********************************************************************
+     67           * GLOBAL VARIABLES
+     68           */
+     69          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     70          uint8 grpName[6] = {'G','r','o','u','p','\0'};
+   \                     grpName:
+   \   000000                DS 6
+   \   000006                REQUIRE `?<Initializer for grpName>`
+   \   000006                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     71          bdbGCB_IdentifyTimeChange_t      pfnIdentifyTimeChangeCB = NULL; 
+   \                     pfnIdentifyTimeChangeCB:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     72          bdbGCB_BindNotification_t        pfnBindNotificationCB = NULL;
+   \                     pfnBindNotificationCB:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     73          
+     74          /*********************************************************************
+     75           * EXTERNAL VARIABLES
+     76           */
+     77          
+     78          /*********************************************************************
+     79           * EXTERNAL FUNCTIONS
+     80           */
+     81          
+     82          
+     83          
+     84          /*********************************************************************
+     85           * LOCAL VARIABLES
+     86           */
+     87          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     88          SimpleDescriptionFormat_t  bdb_FindingBindingTargetSimpleDesc;
+   \                     bdb_FindingBindingTargetSimpleDesc:
+   \   000000                DS 12
+   \   00000C                REQUIRE __INIT_XDATA_Z
+     89          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     90          uint8 bdbIndentifyActiveEndpoint  = 0xFF;
+   \                     bdbIndentifyActiveEndpoint:
+   \   000000                DS 1
+   \   000001                REQUIRE `?<Initializer for bdbIndentifyActiveEndpoint>`
+   \   000001                REQUIRE __INIT_XDATA_I
+     91          
+     92          //Your JOB:
+     93          //Remove the clusters that your application do not use. This will save some flash and processing
+     94          //when looking into matching clusters during the finding & binding procedure
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     95          const cId_t bdb_ZclType1Clusters[] =
+   \                     bdb_ZclType1Clusters:
+   \   000000   0500         DW 5
+   \   000002   0600         DW 6
+   \   000004   0800         DW 8
+   \   000006   0900         DW 9
+   \   000008   1600         DW 22
+   \   00000A   0201         DW 258
+   \   00000C   0202         DW 514
+   \   00000E   0302         DW 515
+   \   000010   0003         DW 768
+   \   000012   0103         DW 769
+   \   000014   0105         DW 1281
+   \   000016   0205         DW 1282
+   \   000018   0006         DW 1536
+   \   00001A   0106         DW 1537
+   \   00001C   040B         DW 2820
+   \   00001E   1406         DW 1556
+   \   000020   1506         DW 1557
+   \   000022   1706         DW 1559
+   \   000024   0007         DW 1792
+   \   000026   0107         DW 1793
+   \   000028   0207         DW 1794
+   \   00002A   0307         DW 1795
+   \   00002C   0009         DW 2304
+   \   00002E   0509         DW 2309
+     96          {
+     97            ZCL_CLUSTER_ID_GEN_SCENES,
+     98            ZCL_CLUSTER_ID_GEN_ON_OFF,
+     99            ZCL_CLUSTER_ID_GEN_LEVEL_CONTROL,
+    100            ZCL_CLUSTER_ID_GEN_ALARMS,
+    101            ZCL_CLUSTER_ID_GEN_PARTITION,
+    102            ZCL_CLUSTER_ID_CLOSURES_WINDOW_COVERING,
+    103            ZCL_CLUSTER_ID_HVAC_FAN_CONTROL,
+    104            ZCL_CLUSTER_ID_HVAC_DIHUMIDIFICATION_CONTROL,
+    105            ZCL_CLUSTER_ID_LIGHTING_COLOR_CONTROL,
+    106            ZCL_CLUSTER_ID_LIGHTING_BALLAST_CONFIG,
+    107            ZCL_CLUSTER_ID_SS_IAS_ACE,
+    108            ZCL_CLUSTER_ID_SS_IAS_WD,
+    109            ZCL_CLUSTER_ID_PI_GENERIC_TUNNEL,
+    110            ZCL_CLUSTER_ID_PI_BACNET_PROTOCOL_TUNNEL,
+    111            ZCL_CLUSTER_ID_HA_ELECTRICAL_MEASUREMENT,
+    112            ZCL_CLUSTER_ID_PI_11073_PROTOCOL_TUNNEL,
+    113            ZCL_CLUSTER_ID_PI_ISO7818_PROTOCOL_TUNNEL,
+    114            ZCL_CLUSTER_ID_PI_RETAIL_TUNNEL,
+    115            ZCL_CLUSTER_ID_SE_PRICE,
+    116            ZCL_CLUSTER_ID_SE_DRLC,
+    117            ZCL_CLUSTER_ID_SE_METERING,
+    118            ZCL_CLUSTER_ID_SE_MESSAGING,
+    119            ZCL_CLUSTER_ID_TELECOMMUNICATIONS_INFORMATION,
+    120            ZCL_CLUSTER_ID_TELECOMMUNICATIONS_VOICE_OVER_ZIGBEE,
+    121          };
+    122          
+    123          //Your JOB:
+    124          //Remove the clusters that your application do not use. This will save some flash and processing
+    125          //when looking into matching clusters during the finding & binding procedure
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    126          const cId_t bdb_ZclType2Clusters[] =
+   \                     bdb_ZclType2Clusters:
+   \   000000   0700         DW 7
+   \   000002   0A00         DW 10
+   \   000004   0C00         DW 12
+   \   000006   0D00         DW 13
+   \   000008   0E00         DW 14
+   \   00000A   0F00         DW 15
+   \   00000C   1000         DW 16
+   \   00000E   1100         DW 17
+   \   000010   1200         DW 18
+   \   000012   1300         DW 19
+   \   000014   1400         DW 20
+   \   000016   1900         DW 25
+   \   000018   1B00         DW 27
+   \   00001A   0001         DW 256
+   \   00001C   0101         DW 257
+   \   00001E   0002         DW 512
+   \   000020   0102         DW 513
+   \   000022   0204         DW 1026
+   \   000024   0004         DW 1024
+   \   000026   0104         DW 1025
+   \   000028   0304         DW 1027
+   \   00002A   0404         DW 1028
+   \   00002C   0504         DW 1029
+   \   00002E   0604         DW 1030
+   \   000030   0005         DW 1280
+   \   000032   0206         DW 1538
+   \   000034   0306         DW 1539
+   \   000036   0406         DW 1540
+   \   000038   0506         DW 1541
+   \   00003A   0606         DW 1542
+   \   00003C   0706         DW 1543
+   \   00003E   0806         DW 1544
+   \   000040   0906         DW 1545
+   \   000042   0A06         DW 1546
+   \   000044   0B06         DW 1547
+   \   000046   0C06         DW 1548
+   \   000048   0D06         DW 1549
+   \   00004A   0E06         DW 1550
+   \   00004C   0F06         DW 1551
+   \   00004E   1006         DW 1552
+   \   000050   1106         DW 1553
+   \   000052   1206         DW 1554
+   \   000054   1306         DW 1555
+   \   000056   0407         DW 1796
+   \   000058   0009         DW 2304
+   \   00005A   000B         DW 2816
+   \   00005C   010B         DW 2817
+   \   00005E   020B         DW 2818
+   \   000060   030B         DW 2819
+    127          {
+    128            ZCL_CLUSTER_ID_GEN_ON_OFF_SWITCH_CONFIG,
+    129            ZCL_CLUSTER_ID_GEN_TIME,
+    130            ZCL_CLUSTER_ID_GEN_ANALOG_INPUT_BASIC,
+    131            ZCL_CLUSTER_ID_GEN_ANALOG_OUTPUT_BASIC,
+    132            ZCL_CLUSTER_ID_GEN_ANALOG_VALUE_BASIC,
+    133            ZCL_CLUSTER_ID_GEN_BINARY_INPUT_BASIC,
+    134            ZCL_CLUSTER_ID_GEN_BINARY_OUTPUT_BASIC,
+    135            ZCL_CLUSTER_ID_GEN_BINARY_VALUE_BASIC,
+    136            ZCL_CLUSTER_ID_GEN_MULTISTATE_INPUT_BASIC,
+    137            ZCL_CLUSTER_ID_GEN_MULTISTATE_OUTPUT_BASIC,
+    138            ZCL_CLUSTER_ID_GEN_MULTISTATE_VALUE_BASIC,
+    139            ZCL_CLUSTER_ID_OTA,
+    140            ZCL_CLUSTER_ID_GEN_APPLIANCE_CONTROL,
+    141            ZCL_CLUSTER_ID_CLOSURES_SHADE_CONFIG,
+    142            ZCL_CLUSTER_ID_CLOSURES_DOOR_LOCK,
+    143            ZCL_CLUSTER_ID_HVAC_PUMP_CONFIG_CONTROL,
+    144            ZCL_CLUSTER_ID_HVAC_THERMOSTAT,
+    145            ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT,
+    146            ZCL_CLUSTER_ID_MS_ILLUMINANCE_MEASUREMENT,
+    147            ZCL_CLUSTER_ID_MS_ILLUMINANCE_LEVEL_SENSING_CONFIG,
+    148            ZCL_CLUSTER_ID_MS_PRESSURE_MEASUREMENT,
+    149            ZCL_CLUSTER_ID_MS_FLOW_MEASUREMENT,
+    150            ZCL_CLUSTER_ID_MS_RELATIVE_HUMIDITY,
+    151            ZCL_CLUSTER_ID_MS_OCCUPANCY_SENSING,
+    152            ZCL_CLUSTER_ID_SS_IAS_ZONE,
+    153            ZCL_CLUSTER_ID_PI_ANALOG_INPUT_BACNET_REG,
+    154            ZCL_CLUSTER_ID_PI_ANALOG_INPUT_BACNET_EXT,
+    155            ZCL_CLUSTER_ID_PI_ANALOG_OUTPUT_BACNET_REG,
+    156            ZCL_CLUSTER_ID_PI_ANALOG_OUTPUT_BACNET_EXT,
+    157            ZCL_CLUSTER_ID_PI_ANALOG_VALUE_BACNET_REG,
+    158            ZCL_CLUSTER_ID_PI_ANALOG_VALUE_BACNET_EXT,
+    159            ZCL_CLUSTER_ID_PI_BINARY_INPUT_BACNET_REG,
+    160            ZCL_CLUSTER_ID_PI_BINARY_INPUT_BACNET_EXT,
+    161            ZCL_CLUSTER_ID_PI_BINARY_OUTPUT_BACNET_REG,
+    162            ZCL_CLUSTER_ID_PI_BINARY_OUTPUT_BACNET_EXT,
+    163            ZCL_CLUSTER_ID_PI_BINARY_VALUE_BACNET_REG,
+    164            ZCL_CLUSTER_ID_PI_BINARY_VALUE_BACNET_EXT,
+    165            ZCL_CLUSTER_ID_PI_MULTISTATE_INPUT_BACNET_REG,
+    166            ZCL_CLUSTER_ID_PI_MULTISTATE_INPUT_BACNET_EXT,
+    167            ZCL_CLUSTER_ID_PI_MULTISTATE_OUTPUT_BACNET_REG,
+    168            ZCL_CLUSTER_ID_PI_MULTISTATE_OUTPUT_BACNET_EXT,
+    169            ZCL_CLUSTER_ID_PI_MULTISTATE_VALUE_BACNET_REG,
+    170            ZCL_CLUSTER_ID_PI_MULTISTATE_VALUE_BACNET_EXT,
+    171            ZCL_CLUSTER_ID_SE_TUNNELING,
+    172            ZCL_CLUSTER_ID_TELECOMMUNICATIONS_INFORMATION,
+    173            ZCL_CLUSTER_ID_HA_APPLIANCE_IDENTIFICATION,
+    174            ZCL_CLUSTER_ID_HA_METER_IDENTIFICATION,
+    175            ZCL_CLUSTER_ID_HA_APPLIANCE_EVENTS_ALERTS,
+    176            ZCL_CLUSTER_ID_HA_APPLIANCE_STATISTICS,
+    177          };
+    178          
+    179          #ifdef ZCL_GROUPS
+    180          static zclOptionRec_t zcl_Groups_Options[] =
+    181          {
+    182            {
+    183              ZCL_CLUSTER_ID_GEN_GROUPS,
+    184              ( AF_ACK_REQUEST ),
+    185            },
+    186          };
+    187          #endif
+    188          
+    189          
+    190           /*********************************************************************
+    191           * LOCAL FUNCTIONS
+    192           */
+    193          static ZStatus_t bdb_zclFindingBindingAddBindEntry( byte SrcEndpInt,
+    194                                            uint16 BindClusterId,
+    195                                            byte Cnt,                 
+    196                                            uint16 * ClusterList,
+    197                                            zAddrType_t *DstAddr, byte DstEndpInt, uint8 addBind );
+    198          
+    199          uint8 bdb_FindIfAppCluster( cId_t ClusterId );
+    200          
+    201          
+    202          static void bdb_zclSimpleDescClusterListClean( SimpleDescriptionFormat_t *pSimpleDesc );
+    203          bdbFindingBindingRespondent_t* bdb_findRespondentNode(uint8 endpoint, uint16 shortAddress);
+    204          bdbFindingBindingRespondent_t* bdb_getRespondentRetry(bdbFindingBindingRespondent_t* pRespondentHead);
+    205          void bdb_checkMatchingEndpoints(uint8 bindIfMatch, uint16 shortAddress, bdbFindingBindingRespondent_t **pCurr);
+    206           /*********************************************************************
+    207           * PUBLIC FUNCTIONS
+    208           *********************************************************************/
+    209          
+    210          void bdb_ProcessSimpleDesc( zdoIncomingMsg_t *msgPtr );
+    211          void bdb_ProcessIEEEAddrRsp(zdoIncomingMsg_t *pMsg);
+    212          
+    213          /*********************************************************************
+    214           * @fn      bdb_SetIdentifyActiveEndpoint
+    215           *
+    216           * @brief   Set the endpoint which will perform the finding and binding (either Target or Initiator)
+    217           *
+    218           * @param   Active endpoint with which perform F&B. If set to 0xFF all endpoints with Identify will be attempted.
+    219           *
+    220           * @return  ZFailure - F&B commissioning mode already requested
+    221           *          ZInvalidParameter - Endpoint specified not found or reserved by Zigbee
+    222           *          ZSuccess - 
+    223           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    224          ZStatus_t bdb_SetIdentifyActiveEndpoint(uint8 activeEndpoint)
+   \                     bdb_SetIdentifyActiveEndpoint:
+    225          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004   E9           MOV       A,R1
+   \   000005   FA           MOV       R2,A
+    226            epList_t *bdb_EpDescriptorListTemp = NULL;
+    227            
+    228            //Cannot process the request if no endpoints or F&B is under process
+    229            if(bdbAttributes.bdbCommissioningMode & BDB_COMMISSIONING_MODE_FINDING_BINDING)
+   \   000006   90....       MOV       DPTR,#bdbAttributes + 11
+   \   000009   E0           MOVX      A,@DPTR
+   \   00000A   A2E3         MOV       C,0xE0 /* A   */.3
+   \   00000C   5004         JNC       ??bdb_SetIdentifyActiveEndpoint_0
+    230            {
+    231              return ZFailure;
+   \   00000E   7901         MOV       R1,#0x1
+   \   000010   8038         SJMP      ??bdb_SetIdentifyActiveEndpoint_1
+    232            }
+    233            
+    234            if(activeEndpoint == 0xFF)
+   \                     ??bdb_SetIdentifyActiveEndpoint_0:
+   \   000012   74FF         MOV       A,#-0x1
+   \   000014   6A           XRL       A,R2
+   \   000015   6028         JZ        ??bdb_SetIdentifyActiveEndpoint_2
+    235            {
+    236              bdbIndentifyActiveEndpoint = activeEndpoint;
+    237              return ZSuccess;
+    238            }
+    239            
+    240            if((activeEndpoint != 0) && (activeEndpoint < BDB_ZIGBEE_RESERVED_ENDPOINTS_START))
+   \   000017   EA           MOV       A,R2
+   \   000018   602E         JZ        ??bdb_SetIdentifyActiveEndpoint_3
+   \   00001A   C3           CLR       C
+   \   00001B   94F1         SUBB      A,#-0xf
+   \   00001D   5029         JNC       ??bdb_SetIdentifyActiveEndpoint_3
+    241            {
+    242              bdb_EpDescriptorListTemp = bdb_HeadEpDescriptorList;
+   \   00001F   90....       MOV       DPTR,#bdb_HeadEpDescriptorList
+   \   000022   8004         SJMP      ??bdb_SetIdentifyActiveEndpoint_4
+    243              
+    244              while(bdb_EpDescriptorListTemp != NULL)
+    245              {
+    246                if(bdb_EpDescriptorListTemp->epDesc->endPoint == activeEndpoint)
+    247                {
+    248                  bdbIndentifyActiveEndpoint = activeEndpoint;
+    249                  return ZSuccess;
+    250                }
+    251                bdb_EpDescriptorListTemp = bdb_EpDescriptorListTemp->nextDesc;
+   \                     ??bdb_SetIdentifyActiveEndpoint_5:
+   \   000024   8882         MOV       DPL,R0
+   \   000026   8983         MOV       DPH,R1
+   \                     ??bdb_SetIdentifyActiveEndpoint_4:
+   \   000028   12....       LCALL     ??Subroutine50_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_102:
+   \   00002B   601B         JZ        ??bdb_SetIdentifyActiveEndpoint_3
+   \   00002D   8882         MOV       DPL,R0
+   \   00002F   8983         MOV       DPH,R1
+   \   000031   A3           INC       DPTR
+   \   000032   A3           INC       DPTR
+   \   000033   E0           MOVX      A,@DPTR
+   \   000034   FB           MOV       R3,A
+   \   000035   A3           INC       DPTR
+   \   000036   E0           MOVX      A,@DPTR
+   \   000037   F583         MOV       DPH,A
+   \   000039   8B82         MOV       DPL,R3
+   \   00003B   E0           MOVX      A,@DPTR
+   \   00003C   6A           XRL       A,R2
+   \   00003D   70E5         JNZ       ??bdb_SetIdentifyActiveEndpoint_5
+   \                     ??bdb_SetIdentifyActiveEndpoint_2:
+   \   00003F   EA           MOV       A,R2
+   \   000040   90....       MOV       DPTR,#bdbIndentifyActiveEndpoint
+   \   000043   F0           MOVX      @DPTR,A
+   \   000044   7900         MOV       R1,#0x0
+   \   000046   8002         SJMP      ??bdb_SetIdentifyActiveEndpoint_1
+    252              }
+    253            }
+    254            
+    255            return ZInvalidParameter;
+   \                     ??bdb_SetIdentifyActiveEndpoint_3:
+   \   000048   7902         MOV       R1,#0x2
+   \                     ??bdb_SetIdentifyActiveEndpoint_1:
+   \   00004A   02....       LJMP      ??Subroutine38_0 & 0xFFFF
+    256          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine38_0:
+   \   000000   D083         POP       DPH
+   \   000002   D082         POP       DPL
+   \   000004   02....       LJMP      ?BRET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine32:
+   \   000000   E0           MOVX      A,@DPTR
+   \   000001   F8           MOV       R0,A
+   \   000002   A3           INC       DPTR
+   \   000003   E0           MOVX      A,@DPTR
+   \   000004   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine50_0:
+   \   000000   12....       LCALL     ?Subroutine32 & 0xFFFF
+   \                     ??CrossCallReturnLabel_119:
+   \   000003   F9           MOV       R1,A
+   \   000004   E8           MOV       A,R0
+   \   000005   49           ORL       A,R1
+   \   000006   22           RET
+    257          
+    258          
+    259          /*********************************************************************
+    260           * @fn      bdb_setEpDescListToActiveEndpoint
+    261           *
+    262           * @brief   Set the endpoint list to the active endpoint selected by the application for F&B process
+    263           *
+    264           * @return  Current endpoint descriptor
+    265           */
+    266          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    267          endPointDesc_t* bdb_setEpDescListToActiveEndpoint(void)
+   \                     bdb_setEpDescListToActiveEndpoint:
+    268          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    269            bdb_CurrEpDescriptorList = bdb_HeadEpDescriptorList;
+   \   000004   90....       MOV       DPTR,#bdb_HeadEpDescriptorList
+   \   000007   12....       LCALL     ??Subroutine34_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_32:
+   \   00000A   12....       LCALL     ?Subroutine31 & 0xFFFF
+    270           
+    271            //Check which active endpoit is being requested
+    272            if(bdbIndentifyActiveEndpoint != 0xFF)
+   \                     ??CrossCallReturnLabel_46:
+   \   00000D   90....       MOV       DPTR,#bdbIndentifyActiveEndpoint
+   \   000010   E0           MOVX      A,@DPTR
+   \   000011   F4           CPL       A
+   \   000012   601B         JZ        ??CrossCallReturnLabel_1
+    273            {
+    274              //Search for an specific endpoint
+    275              while(bdb_CurrEpDescriptorList != NULL)
+   \                     ??bdb_setEpDescListToActiveEndpoint_0:
+   \   000014   90....       MOV       DPTR,#bdb_CurrEpDescriptorList
+   \   000017   12....       LCALL     ??Subroutine50_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_103:
+   \   00001A   602E         JZ        ??bdb_setEpDescListToActiveEndpoint_1
+    276              {
+    277                if(bdb_CurrEpDescriptorList->epDesc->endPoint == bdbIndentifyActiveEndpoint)
+   \   00001C   12....       LCALL     ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   00001F   F8           MOV       R0,A
+   \   000020   90....       MOV       DPTR,#bdbIndentifyActiveEndpoint
+   \   000023   E0           MOVX      A,@DPTR
+   \   000024   68           XRL       A,R0
+   \   000025   601A         JZ        ??bdb_setEpDescListToActiveEndpoint_2
+    278                {
+    279                  return bdb_CurrEpDescriptorList->epDesc;
+    280                }
+    281                bdb_CurrEpDescriptorList = bdb_CurrEpDescriptorList->nextDesc;
+   \   000027   12....       LCALL     ?Subroutine5 & 0xFFFF
+    282              }
+    283            }
+   \                     ??CrossCallReturnLabel_0:
+   \   00002A   80E8         SJMP      ??bdb_setEpDescListToActiveEndpoint_0
+    284            else
+    285            {
+    286              //Look for the first endpoint that has Identify cluster
+    287              while(bdb_CurrEpDescriptorList != NULL)
+    288              {
+    289                if((bdb_CurrEpDescriptorList->epDesc->endPoint != 0) && (bdb_CurrEpDescriptorList->epDesc->endPoint < BDB_ZIGBEE_RESERVED_ENDPOINTS_START))
+    290                {
+    291                  return bdb_CurrEpDescriptorList->epDesc;
+    292                }
+    293                bdb_CurrEpDescriptorList = bdb_CurrEpDescriptorList->nextDesc;
+   \                     ??bdb_setEpDescListToActiveEndpoint_3:
+   \   00002C   12....       LCALL     ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   00002F   90....       MOV       DPTR,#bdb_CurrEpDescriptorList
+   \   000032   12....       LCALL     ??Subroutine50_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_104:
+   \   000035   6013         JZ        ??bdb_setEpDescListToActiveEndpoint_1
+   \   000037   12....       LCALL     ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   00003A   60F0         JZ        ??bdb_setEpDescListToActiveEndpoint_3
+   \   00003C   C3           CLR       C
+   \   00003D   94F1         SUBB      A,#-0xf
+   \   00003F   50EB         JNC       ??bdb_setEpDescListToActiveEndpoint_3
+   \                     ??bdb_setEpDescListToActiveEndpoint_2:
+   \   000041   12....       LCALL     ?Subroutine10 & 0xFFFF
+    294              }
+    295            }
+   \                     ??CrossCallReturnLabel_10:
+   \   000044   FA           MOV       R2,A
+   \   000045   A3           INC       DPTR
+   \   000046   E0           MOVX      A,@DPTR
+   \   000047   FB           MOV       R3,A
+   \   000048   8004         SJMP      ??bdb_setEpDescListToActiveEndpoint_4
+    296            //not found
+    297            return NULL;
+   \                     ??bdb_setEpDescListToActiveEndpoint_1:
+   \   00004A   7A00         MOV       R2,#0x0
+   \   00004C   7B00         MOV       R3,#0x0
+   \                     ??bdb_setEpDescListToActiveEndpoint_4:
+   \   00004E   02....       LJMP      ??Subroutine38_0 & 0xFFFF
+    298          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine34_0:
+   \   000000   12....       LCALL     ?Subroutine32 & 0xFFFF
+   \                     ??CrossCallReturnLabel_115:
+   \   000003   F9           MOV       R1,A
+   \   000004   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine10:
+   \   000000   90....       MOV       DPTR,#bdb_CurrEpDescriptorList
+   \   000003   12....       LCALL     ?Subroutine30 & 0xFFFF
+   \                     ??CrossCallReturnLabel_57:
+   \   000006   A3           INC       DPTR
+   \   000007   A3           INC       DPTR
+   \   000008   E0           MOVX      A,@DPTR
+   \   000009   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine30:
+   \   000000   E0           MOVX      A,@DPTR
+   \   000001   F8           MOV       R0,A
+   \   000002                REQUIRE ??Subroutine39_0
+   \   000002                ; // Fall through to label ??Subroutine39_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine39_0:
+   \   000000   A3           INC       DPTR
+   \   000001                REQUIRE ??Subroutine40_0
+   \   000001                ; // Fall through to label ??Subroutine40_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine40_0:
+   \   000000   E0           MOVX      A,@DPTR
+   \   000001   F583         MOV       DPH,A
+   \   000003   8882         MOV       DPL,R0
+   \   000005   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine7:
+   \   000000   12....       LCALL     ??Subroutine40_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_55:
+   \   000003   A3           INC       DPTR
+   \   000004   A3           INC       DPTR
+   \   000005   12....       LCALL     ?Subroutine28 & 0xFFFF
+   \                     ??CrossCallReturnLabel_90:
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   90....       MOV       DPTR,#bdb_CurrEpDescriptorList
+   \   000003   12....       LCALL     ?Subroutine28 & 0xFFFF
+   \                     ??CrossCallReturnLabel_89:
+   \   000006   F8           MOV       R0,A
+   \   000007   A3           INC       DPTR
+   \   000008   E0           MOVX      A,@DPTR
+   \   000009   F9           MOV       R1,A
+   \   00000A   12....       LCALL     ?Subroutine31 & 0xFFFF
+   \                     ??CrossCallReturnLabel_47:
+   \   00000D   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine31:
+   \   000000   90....       MOV       DPTR,#bdb_CurrEpDescriptorList
+   \   000003                REQUIRE ??Subroutine41_0
+   \   000003                ; // Fall through to label ??Subroutine41_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine41_0:
+   \   000000   E8           MOV       A,R0
+   \   000001   F0           MOVX      @DPTR,A
+   \   000002   A3           INC       DPTR
+   \   000003   E9           MOV       A,R1
+   \   000004   F0           MOVX      @DPTR,A
+   \   000005   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine28:
+   \   000000   12....       LCALL     ?Subroutine32 & 0xFFFF
+   \                     ??CrossCallReturnLabel_117:
+   \   000003   F583         MOV       DPH,A
+   \   000005   8882         MOV       DPL,R0
+   \   000007   E0           MOVX      A,@DPTR
+   \   000008   22           RET
+    299          
+    300          
+    301          /*********************************************************************
+    302           * @fn      bdb_ProcessIEEEAddrRsp
+    303           *
+    304           * @brief   Process IEEE addr response and mark the entry as done or remove the 
+    305           *          bind if not successful.
+    306           *
+    307           * @param   zdoIncomingMsg_t *pMsg
+    308           *
+    309           * @return  none
+    310           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    311          void bdb_ProcessIEEEAddrRsp(zdoIncomingMsg_t *pMsg)
+   \                     bdb_ProcessIEEEAddrRsp:
+    312          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV       A,#-0xa
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 15
+   \   000005   74F1         MOV       A,#-0xf
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+    313            ZDO_NwkIEEEAddrResp_t *pAddrRsp = NULL;
+    314            bdbFindingBindingRespondent_t *pCurr = NULL;
+   \   00000A   85..82       MOV       DPL,?XSP + 0
+   \   00000D   85..83       MOV       DPH,?XSP + 1
+   \   000010   E4           CLR       A
+   \   000011   F0           MOVX      @DPTR,A
+   \   000012   A3           INC       DPTR
+   \   000013   F0           MOVX      @DPTR,A
+    315          
+    316            pAddrRsp = ZDO_ParseAddrRsp( pMsg );
+   \   000014                ; Setup parameters for call to function ZDO_ParseAddrRsp
+   \   000014   12....       LCALL     `??ZDO_ParseAddrRsp::?relay`; Banked call to: ZDO_ParseAddrRsp
+   \   000017   8A..         MOV       ?V0,R2
+   \   000019   8B..         MOV       ?V1,R3
+   \   00001B   AE..         MOV       R6,?V0
+   \   00001D   AF..         MOV       R7,?V1
+    317            
+    318            if(pAddrRsp == NULL)
+   \   00001F   EE           MOV       A,R6
+   \   000020   4F           ORL       A,R7
+   \   000021   7003         JNZ       $+5
+   \   000023   02....       LJMP      ??bdb_ProcessIEEEAddrRsp_0 & 0xFFFF
+    319            {
+    320              return;
+    321            }
+    322            
+    323            bdb_setEpDescListToActiveEndpoint();
+   \   000026                ; Setup parameters for call to function bdb_setEpDescListToActiveEndpoint
+   \   000026   12....       LCALL     `??bdb_setEpDescListToActiveEndpoint::?relay`; Banked call to: bdb_setEpDescListToActiveEndpoint
+    324            
+    325            pCurr = bdb_findRespondentNode(bdb_FindingBindingTargetSimpleDesc.EndPoint, pAddrRsp->nwkAddr);
+   \   000029   8E82         MOV       DPL,R6
+   \   00002B   8F83         MOV       DPH,R7
+   \   00002D   A3           INC       DPTR
+   \   00002E   8582..       MOV       ?V0,DPL
+   \   000031   8583..       MOV       ?V1,DPH
+   \   000034                ; Setup parameters for call to function bdb_findRespondentNode
+   \   000034   12....       LCALL     ?Subroutine18 & 0xFFFF
+   \                     ??CrossCallReturnLabel_21:
+   \   000037   12....       LCALL     `??bdb_findRespondentNode::?relay`; Banked call to: bdb_findRespondentNode
+   \   00003A   12....       LCALL     ?Subroutine4 & 0xFFFF
+    326            
+    327            //Does the entry exist and we were waiting an IEEE addr rsp from this device?
+    328            if((pCurr != NULL) && (pCurr->attempts > FINDING_AND_BINDING_MISSING_IEEE_ADDR))
+   \                     ??CrossCallReturnLabel_100:
+   \   00003D   7003         JNZ       $+5
+   \   00003F   02....       LJMP      ??bdb_ProcessIEEEAddrRsp_1 & 0xFFFF
+   \   000042   85..82       MOV       DPL,?XSP + 0
+   \   000045   85..83       MOV       DPH,?XSP + 1
+   \   000048   A3           INC       DPTR
+   \   000049   E0           MOVX      A,@DPTR
+   \   00004A   C8           XCH       A,R0
+   \   00004B   12....       LCALL     ?Subroutine25 & 0xFFFF
+   \                     ??CrossCallReturnLabel_28:
+   \   00004E   E0           MOVX      A,@DPTR
+   \   00004F   C3           CLR       C
+   \   000050   9481         SUBB      A,#-0x7f
+   \   000052   4073         JC        ??bdb_ProcessIEEEAddrRsp_1
+    329            {
+    330              if(pAddrRsp->status == ZSuccess )
+   \   000054   8E82         MOV       DPL,R6
+   \   000056   8F83         MOV       DPH,R7
+   \   000058   E0           MOVX      A,@DPTR
+   \   000059   7063         JNZ       ??bdb_ProcessIEEEAddrRsp_2
+    331              {
+    332                uint8 extAddr[8]; 
+    333                AddrMgrEntry_t entry;
+    334                
+    335                entry.nwkAddr = pAddrRsp->nwkAddr;
+   \   00005B   12....       LCALL     ?Subroutine22 & 0xFFFF
+   \                     ??CrossCallReturnLabel_34:
+   \   00005E   7403         MOV       A,#0x3
+   \   000060   12....       LCALL     ?XSTACK_DISP0_8
+   \   000063   12....       LCALL     ??Subroutine41_0 & 0xFFFF
+    336                entry.user = ADDRMGR_USER_BINDING;
+   \                     ??CrossCallReturnLabel_42:
+   \   000066   7402         MOV       A,#0x2
+   \   000068   12....       LCALL     ?XSTACK_DISP0_8
+   \   00006B   7404         MOV       A,#0x4
+   \   00006D   F0           MOVX      @DPTR,A
+    337                AddrMgrExtAddrSet(entry.extAddr, pAddrRsp->extAddr);
+   \   00006E                ; Setup parameters for call to function AddrMgrExtAddrSet
+   \   00006E   EE           MOV       A,R6
+   \   00006F   2403         ADD       A,#0x3
+   \   000071   FC           MOV       R4,A
+   \   000072   E4           CLR       A
+   \   000073   3F           ADDC      A,R7
+   \   000074   FD           MOV       R5,A
+   \   000075   7405         MOV       A,#0x5
+   \   000077   12....       LCALL     ?XSTACK_DISP0_8
+   \   00007A   AA82         MOV       R2,DPL
+   \   00007C   AB83         MOV       R3,DPH
+   \   00007E   12....       LCALL     `??AddrMgrExtAddrSet::?relay`; Banked call to: AddrMgrExtAddrSet
+    338                
+    339                //Add it as bind entry
+    340                if(AddrMgrEntryUpdate(&entry) == FALSE)
+   \   000081                ; Setup parameters for call to function AddrMgrEntryUpdate
+   \   000081   7402         MOV       A,#0x2
+   \   000083   12....       LCALL     ?XSTACK_DISP101_8
+   \   000086   12....       LCALL     `??AddrMgrEntryUpdate::?relay`; Banked call to: AddrMgrEntryUpdate
+   \   000089   E9           MOV       A,R1
+   \   00008A   7020         JNZ       ??bdb_ProcessIEEEAddrRsp_3
+    341                {
+    342                  //No space, then report F&B table full
+    343                  //If periodic was triggered, then finish it
+    344                  if(FINDING_AND_BINDING_PERIODIC_ENABLE == TRUE)                                  
+    345                  {
+    346                    bdb_FB_InitiatorCurrentCyclesNumber = 0;
+   \   00008C   12....       LCALL     ?Subroutine23 & 0xFFFF
+    347                    osal_stop_timerEx(bdb_TaskID, BDB_FINDING_AND_BINDING_PERIOD_TIMEOUT);
+    348                  }
+   \                     ??CrossCallReturnLabel_25:
+   \   00008F   12....       LCALL     `??osal_stop_timerEx::?relay`; Banked call to: osal_stop_timerEx
+    349                  
+    350                  bdb_zclSimpleDescClusterListClean( &bdb_FindingBindingTargetSimpleDesc );
+   \   000092                ; Setup parameters for call to function bdb_zclSimpleDescClusterListClean
+   \   000092   7A..         MOV       R2,#bdb_FindingBindingTargetSimpleDesc & 0xff
+   \   000094   7B..         MOV       R3,#(bdb_FindingBindingTargetSimpleDesc >> 8) & 0xff
+   \   000096   12....       LCALL     `??bdb_zclSimpleDescClusterListClean::?relay`; Banked call to: bdb_zclSimpleDescClusterListClean
+    351                  osal_stop_timerEx( bdb_TaskID, BDB_RESPONDENT_PROCESS_TIMEOUT );
+   \   000099                ; Setup parameters for call to function osal_stop_timerEx
+   \   000099   7A00         MOV       R2,#0x0
+   \   00009B   7B40         MOV       R3,#0x40
+   \   00009D   90....       MOV       DPTR,#bdb_TaskID
+   \   0000A0   E0           MOVX      A,@DPTR
+   \   0000A1   F9           MOV       R1,A
+   \   0000A2   12....       LCALL     `??osal_stop_timerEx::?relay`; Banked call to: osal_stop_timerEx
+    352                  bdb_exitFindingBindingWStatus( BDB_COMMISSIONING_FB_BINDING_TABLE_FULL );
+   \   0000A5                ; Setup parameters for call to function bdb_exitFindingBindingWStatus
+   \   0000A5   790C         MOV       R1,#0xc
+   \   0000A7   12....       LCALL     `??bdb_exitFindingBindingWStatus::?relay`; Banked call to: bdb_exitFindingBindingWStatus
+    353                  return;
+   \   0000AA   8022         SJMP      ??bdb_ProcessIEEEAddrRsp_0
+    354                }
+    355          
+    356                //search for the matching clusters to be added this time as we have the IEEE addrs
+    357                bdb_checkMatchingEndpoints(TRUE, pAddrRsp->nwkAddr, &pCurr);
+   \                     ??bdb_ProcessIEEEAddrRsp_3:
+   \   0000AC                ; Setup parameters for call to function bdb_checkMatchingEndpoints
+   \   0000AC   AC..         MOV       R4,?XSP + 0
+   \   0000AE   AD..         MOV       R5,?XSP + 1
+   \   0000B0   85..82       MOV       DPL,?V0
+   \   0000B3   85..83       MOV       DPH,?V1
+   \   0000B6   12....       LCALL     ??Subroutine45_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_59:
+   \   0000B9   7901         MOV       R1,#0x1
+   \   0000BB   12....       LCALL     `??bdb_checkMatchingEndpoints::?relay`; Banked call to: bdb_checkMatchingEndpoints
+    358                (void)extAddr;  //dummy
+    359              }
+    360              //Bind cannot be added if the device was not found
+    361              pCurr->attempts = FINDING_AND_BINDING_RESPONDENT_COMPLETE;
+   \                     ??bdb_ProcessIEEEAddrRsp_2:
+   \   0000BE   12....       LCALL     ?Subroutine14 & 0xFFFF
+    362            }
+   \                     ??CrossCallReturnLabel_40:
+   \   0000C1   12....       LCALL     ?Subroutine25 & 0xFFFF
+   \                     ??CrossCallReturnLabel_29:
+   \   0000C4   74FF         MOV       A,#-0x1
+   \   0000C6   F0           MOVX      @DPTR,A
+    363            
+    364            //release the memory
+    365            osal_mem_free( pAddrRsp );
+   \                     ??bdb_ProcessIEEEAddrRsp_1:
+   \   0000C7                ; Setup parameters for call to function osal_mem_free
+   \   0000C7   EE           MOV       A,R6
+   \   0000C8   FA           MOV       R2,A
+   \   0000C9   EF           MOV       A,R7
+   \   0000CA   FB           MOV       R3,A
+   \   0000CB   12....       LCALL     `??osal_mem_free::?relay`; Banked call to: osal_mem_free
+    366          }
+   \                     ??bdb_ProcessIEEEAddrRsp_0:
+   \   0000CE   740F         MOV       A,#0xf
+   \   0000D0   80..         SJMP      ??Subroutine36_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine25:
+   \   000000   12....       LCALL     ?Subroutine33 & 0xFFFF
+   \                     ??CrossCallReturnLabel_98:
+   \   000003   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine22:
+   \   000000   85..82       MOV       DPL,?V0
+   \   000003   85..83       MOV       DPH,?V1
+   \   000006                REQUIRE ??Subroutine34_0
+   \   000006                ; // Fall through to label ??Subroutine34_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine14:
+   \   000000   85..82       MOV       DPL,?XSP + 0
+   \   000003   85..83       MOV       DPH,?XSP + 1
+   \   000006                REQUIRE ??Subroutine35_0
+   \   000006                ; // Fall through to label ??Subroutine35_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine35_0:
+   \   000000   12....       LCALL     ?Subroutine32 & 0xFFFF
+   \                     ??CrossCallReturnLabel_116:
+   \   000003   C8           XCH       A,R0
+   \   000004   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine36_0:
+   \   000000   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000003                REQUIRE ??Subroutine37_0
+   \   000003                ; // Fall through to label ??Subroutine37_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine37_0:
+   \   000000   7F02         MOV       R7,#0x2
+   \   000002   02....       LJMP      ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine23:
+   \   000000   90....       MOV       DPTR,#bdb_FB_InitiatorCurrentCyclesNumber
+   \   000003   E4           CLR       A
+   \   000004   F0           MOVX      @DPTR,A
+   \   000005                ; Setup parameters for call to function osal_stop_timerEx
+   \   000005                ; Setup parameters for call to function osal_stop_timerEx
+   \   000005                ; Setup parameters for call to function osal_stop_timerEx
+   \   000005   7A40         MOV       R2,#0x40
+   \   000007   FB           MOV       R3,A
+   \   000008   90....       MOV       DPTR,#bdb_TaskID
+   \   00000B   E0           MOVX      A,@DPTR
+   \   00000C   F9           MOV       R1,A
+   \   00000D   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine33:
+   \   000000   240C         ADD       A,#0xc
+   \   000002   F582         MOV       DPL,A
+   \   000004   E4           CLR       A
+   \   000005   38           ADDC      A,R0
+   \   000006   F583         MOV       DPH,A
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine18:
+   \   000000   12....       LCALL     ?Subroutine29 & 0xFFFF
+   \                     ??CrossCallReturnLabel_76:
+   \   000003   90....       MOV       DPTR,#bdb_FindingBindingTargetSimpleDesc
+   \   000006   E0           MOVX      A,@DPTR
+   \   000007   F9           MOV       R1,A
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine45_0:
+   \   000000   12....       LCALL     ?Subroutine29 & 0xFFFF
+   \                     ??CrossCallReturnLabel_77:
+   \   000003   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine29:
+   \   000000   E0           MOVX      A,@DPTR
+   \   000001   FA           MOV       R2,A
+   \   000002   A3           INC       DPTR
+   \   000003   E0           MOVX      A,@DPTR
+   \   000004   FB           MOV       R3,A
+   \   000005   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   85..82       MOV       DPL,?XSP + 0
+   \   000003   85..83       MOV       DPH,?XSP + 1
+   \   000006   EA           MOV       A,R2
+   \   000007   F0           MOVX      @DPTR,A
+   \   000008   A3           INC       DPTR
+   \   000009   EB           MOV       A,R3
+   \   00000A   F0           MOVX      @DPTR,A
+   \   00000B                REQUIRE ??Subroutine49_0
+   \   00000B                ; // Fall through to label ??Subroutine49_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine49_0:
+   \   000000   85..82       MOV       DPL,?XSP + 0
+   \   000003   85..83       MOV       DPH,?XSP + 1
+   \   000006                REQUIRE ??Subroutine50_0
+   \   000006                ; // Fall through to label ??Subroutine50_0
+    367          
+    368          
+    369          /*********************************************************************
+    370           * @fn      bdb_StopInitiatorFindingBinding
+    371           *
+    372           * @brief   Stops finding and binding for initiator devices.
+    373           *
+    374           * @param   none
+    375           *
+    376           * @return  none
+    377           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    378          void bdb_StopInitiatorFindingBinding(void)
+   \                     bdb_StopInitiatorFindingBinding:
+    379          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    380            //If periodic was triggered, then finish it
+    381            if(FINDING_AND_BINDING_PERIODIC_ENABLE == TRUE)                                  
+    382            {
+    383              bdb_FB_InitiatorCurrentCyclesNumber = 0;
+   \   000004   12....       LCALL     ?Subroutine23 & 0xFFFF
+    384              osal_stop_timerEx(bdb_TaskID, BDB_FINDING_AND_BINDING_PERIOD_TIMEOUT);
+    385            }      
+   \                     ??CrossCallReturnLabel_26:
+   \   000007   12....       LCALL     `??osal_stop_timerEx::?relay`; Banked call to: osal_stop_timerEx
+    386            //Clean the respondent list and stop its timer
+    387            bdb_zclRespondentListClean( &pRespondentHead );
+   \   00000A                ; Setup parameters for call to function bdb_zclRespondentListClean
+   \   00000A   7A..         MOV       R2,#pRespondentHead & 0xff
+   \   00000C   7B..         MOV       R3,#(pRespondentHead >> 8) & 0xff
+   \   00000E   12....       LCALL     `??bdb_zclRespondentListClean::?relay`; Banked call to: bdb_zclRespondentListClean
+    388            osal_stop_timerEx( bdb_TaskID, BDB_RESPONDENT_PROCESS_TIMEOUT );
+   \   000011                ; Setup parameters for call to function osal_stop_timerEx
+   \   000011   7A00         MOV       R2,#0x0
+   \   000013   7B40         MOV       R3,#0x40
+   \   000015   90....       MOV       DPTR,#bdb_TaskID
+   \   000018   E0           MOVX      A,@DPTR
+   \   000019   F9           MOV       R1,A
+   \   00001A   12....       LCALL     `??osal_stop_timerEx::?relay`; Banked call to: osal_stop_timerEx
+    389            
+    390            //Notify status
+    391            bdb_exitFindingBindingWStatus( BDB_COMMISSIONING_FB_NO_IDENTIFY_QUERY_RESPONSE );
+   \   00001D                ; Setup parameters for call to function bdb_exitFindingBindingWStatus
+   \   00001D   790B         MOV       R1,#0xb
+   \   00001F   12....       LCALL     `??bdb_exitFindingBindingWStatus::?relay`; Banked call to: bdb_exitFindingBindingWStatus
+    392          
+    393          }
+   \   000022   80..         SJMP      ??Subroutine38_0
+    394          
+    395          
+    396          /*********************************************************************
+    397           * @fn      bdb_checkMatchingEndpoints
+    398           *
+    399           * @brief   Check active endpoints for F&B and the respondant simple descriptor 
+    400           *          for matching application clusters
+    401           *
+    402           * @param   pRespondant - Respondant to be process
+    403           * @param   bindIfMatch - Flag to indicate that binds for matching cluster must 
+    404           *                        be done
+    405           *
+    406           * @return  status - Result of the operation
+    407           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    408          void bdb_checkMatchingEndpoints(uint8 bindIfMatch, uint16 shortAddr, bdbFindingBindingRespondent_t **pCurr)
+   \                     bdb_checkMatchingEndpoints:
+    409          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000   74F0         MOV       A,#-0x10
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 13
+   \   000005   74F3         MOV       A,#-0xd
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+   \   00000A   7402         MOV       A,#0x2
+   \   00000C   12....       LCALL     ?XSTACK_DISP0_8
+   \   00000F   12....       LCALL     ??Subroutine46_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_78:
+   \   000012   85..82       MOV       DPL,?XSP + 0
+   \   000015   85..83       MOV       DPH,?XSP + 1
+   \   000018   EC           MOV       A,R4
+   \   000019   F0           MOVX      @DPTR,A
+   \   00001A   A3           INC       DPTR
+   \   00001B   ED           MOV       A,R5
+   \   00001C   F0           MOVX      @DPTR,A
+   \   00001D   89..         MOV       ?V0,R1
+    410            uint8 matchFound;
+    411            endPointDesc_t *bdb_CurrEpDescriptor;
+    412            uint8 i, status;
+    413            zAddrType_t dstAddr;
+    414          #ifdef ZCL_GROUPS
+    415            afAddrType_t afDstAddr;
+    416          #endif  
+    417            
+    418            //Check all the endpoints active for F&B
+    419            while(bdb_CurrEpDescriptorList != NULL)
+   \   00001F   90....       MOV       DPTR,#bdb_CurrEpDescriptorList
+   \   000022   12....       LCALL     ??Subroutine50_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_105:
+   \   000025   7003         JNZ       $+5
+   \   000027   02....       LJMP      ??bdb_checkMatchingEndpoints_0 & 0xFFFF
+    420            {
+    421              matchFound = FALSE;
+   \                     ??bdb_checkMatchingEndpoints_1:
+   \   00002A   7F00         MOV       R7,#0x0
+    422          
+    423              bdb_CurrEpDescriptor = bdb_CurrEpDescriptorList->epDesc;
+   \   00002C   12....       LCALL     ?Subroutine10 & 0xFFFF
+   \                     ??CrossCallReturnLabel_11:
+   \   00002F   F5..         MOV       ?V4,A
+   \   000031   A3           INC       DPTR
+   \   000032   E0           MOVX      A,@DPTR
+   \   000033   F5..         MOV       ?V5,A
+    424          
+    425          #ifdef ZCL_GROUPS
+    426              if ( bdbAttributes.bdbCommissioningGroupID != 0xFFFF )    
+    427              {
+    428                zcl_registerClusterOptionList(bdb_CurrEpDescriptor->endPoint,1,zcl_Groups_Options);      
+    429                
+    430                dstAddr.addr.shortAddr = bdbAttributes.bdbCommissioningGroupID;
+    431                dstAddr.addrMode = AddrGroup;
+    432              }
+    433              else
+    434          #endif
+    435              {
+    436                dstAddr.addrMode = Addr64Bit;
+   \   000035   740C         MOV       A,#0xc
+   \   000037   12....       LCALL     ?XSTACK_DISP0_8
+   \   00003A   7403         MOV       A,#0x3
+   \   00003C   F0           MOVX      @DPTR,A
+    437                if(bindIfMatch)
+   \   00003D   E5..         MOV       A,?V0
+   \   00003F   6010         JZ        ??bdb_checkMatchingEndpoints_2
+    438                {
+    439                  //if bind is to be created, then we should have the ext address in addr mgr
+    440                  AddrMgrExtAddrLookup( shortAddr, dstAddr.addr.extAddr );
+   \   000041                ; Setup parameters for call to function AddrMgrExtAddrLookup
+   \   000041   7404         MOV       A,#0x4
+   \   000043   12....       LCALL     ?XSTACK_DISP102_8
+   \   000046   7402         MOV       A,#0x2
+   \   000048   12....       LCALL     ?XSTACK_DISP0_8
+   \   00004B   12....       LCALL     ??Subroutine45_0 & 0xFFFF
+    441                }
+    442              }
+   \                     ??CrossCallReturnLabel_60:
+   \   00004E   12....       LCALL     `??AddrMgrExtAddrLookup::?relay`; Banked call to: AddrMgrExtAddrLookup
+    443              for(i = 0; i < bdb_CurrEpDescriptor->simpleDesc->AppNumOutClusters; i++)
+   \                     ??bdb_checkMatchingEndpoints_2:
+   \   000051   7E00         MOV       R6,#0x0
+   \   000053   E5..         MOV       A,?V4
+   \   000055   2404         ADD       A,#0x4
+   \   000057   F5..         MOV       ?V6,A
+   \   000059   E4           CLR       A
+   \   00005A   35..         ADDC      A,?V5
+   \   00005C   F5..         MOV       ?V7,A
+   \   00005E   8049         SJMP      ??bdb_checkMatchingEndpoints_3
+    444              {
+    445                //Filter for Application clusters (to bind app clusters only)
+    446                status = bdb_zclFindingBindingAddBindEntry( bdb_CurrEpDescriptor->endPoint,
+    447                                        bdb_CurrEpDescriptor->simpleDesc->pAppOutClusterList[i],
+    448                                        bdb_FindingBindingTargetSimpleDesc.AppNumInClusters,
+    449                                        bdb_FindingBindingTargetSimpleDesc.pAppInClusterList,
+    450                                        &dstAddr, bdb_FindingBindingTargetSimpleDesc.EndPoint, bindIfMatch );
+   \                     ??bdb_checkMatchingEndpoints_4:
+   \   000060                ; Setup parameters for call to function bdb_zclFindingBindingAddBindEntry
+   \   000060   E5..         MOV       A,?V0
+   \   000062   F5..         MOV       ?V1,A
+   \   000064   78..         MOV       R0,#?V1
+   \   000066   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   000069   7405         MOV       A,#0x5
+   \   00006B   12....       LCALL     ?XSTACK_DISP100_8
+   \   00006E   88..         MOV       ?V2,R0
+   \   000070   89..         MOV       ?V3,R1
+   \   000072   78..         MOV       R0,#?V2
+   \   000074   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000077   90....       MOV       DPTR,#bdb_FindingBindingTargetSimpleDesc + 7
+   \   00007A   12....       LCALL     ?PUSH_XSTACK8_X_TWO
+   \   00007D   90....       MOV       DPTR,#bdb_FindingBindingTargetSimpleDesc
+   \   000080   E0           MOVX      A,@DPTR
+   \   000081   FD           MOV       R5,A
+   \   000082   90....       MOV       DPTR,#bdb_FindingBindingTargetSimpleDesc + 6
+   \   000085   12....       LCALL     ?Subroutine15 & 0xFFFF
+   \                     ??CrossCallReturnLabel_17:
+   \   000088   A3           INC       DPTR
+   \   000089   A3           INC       DPTR
+   \   00008A   A3           INC       DPTR
+   \   00008B   12....       LCALL     ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_6:
+   \   00008E   12....       LCALL     `??bdb_zclFindingBindingAddBindEntry::?relay`; Banked call to: bdb_zclFindingBindingAddBindEntry
+   \   000091   7405         MOV       A,#0x5
+   \   000093   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000096   E9           MOV       A,R1
+   \   000097   F5..         MOV       ?V1,A
+    451                
+    452                if ( status == ZApsTableFull )
+   \   000099   74B2         MOV       A,#-0x4e
+   \   00009B   65..         XRL       A,?V1
+   \   00009D   607A         JZ        ??bdb_checkMatchingEndpoints_5
+    453                {
+    454                  break;
+    455                }
+    456                else if(status == ZSuccess)
+   \   00009F   E9           MOV       A,R1
+   \   0000A0   7006         JNZ       ??bdb_checkMatchingEndpoints_6
+    457                {
+    458                  matchFound = TRUE;
+   \   0000A2   7F01         MOV       R7,#0x1
+    459                  //If a match is found and we are not adding due to lack of IEEE addrs, then skip looking
+    460                  if(!bindIfMatch)
+   \   0000A4   E5..         MOV       A,?V0
+   \   0000A6   607A         JZ        ??bdb_checkMatchingEndpoints_7
+    461                  {
+    462                    break;
+    463                  }
+    464                }
+    465              }
+   \                     ??bdb_checkMatchingEndpoints_6:
+   \   0000A8   0E           INC       R6
+   \                     ??bdb_checkMatchingEndpoints_3:
+   \   0000A9   12....       LCALL     ?Subroutine13 & 0xFFFF
+   \                     ??CrossCallReturnLabel_15:
+   \   0000AC   A3           INC       DPTR
+   \   0000AD   A3           INC       DPTR
+   \   0000AE   A3           INC       DPTR
+   \   0000AF   E0           MOVX      A,@DPTR
+   \   0000B0   F8           MOV       R0,A
+   \   0000B1   EE           MOV       A,R6
+   \   0000B2   C3           CLR       C
+   \   0000B3   98           SUBB      A,R0
+   \   0000B4   40AA         JC        ??bdb_checkMatchingEndpoints_4
+    466              
+    467              //Only search for other matches if the table is not full and we have not 
+    468              //found any match or we have to add bind as many as we can
+    469              if( (status != ZApsTableFull) && (!matchFound || bindIfMatch) )      
+   \   0000B6   74B2         MOV       A,#-0x4e
+   \   0000B8   65..         XRL       A,?V1
+   \   0000BA   605D         JZ        ??bdb_checkMatchingEndpoints_5
+   \   0000BC   EF           MOV       A,R7
+   \   0000BD   A2E0         MOV       C,0xE0 /* A   */.0
+   \   0000BF   5004         JNC       ??bdb_checkMatchingEndpoints_8
+   \   0000C1   E5..         MOV       A,?V0
+   \   0000C3   6054         JZ        ??bdb_checkMatchingEndpoints_5
+    470              {
+    471                for(i = 0; i < bdb_CurrEpDescriptor->simpleDesc->AppNumInClusters; i++)
+   \                     ??bdb_checkMatchingEndpoints_8:
+   \   0000C5   7E00         MOV       R6,#0x0
+   \   0000C7   800A         SJMP      ??bdb_checkMatchingEndpoints_9
+    472                {
+    473                  //Filter for Application clusters (to bind app clusters only)
+    474                  status = bdb_zclFindingBindingAddBindEntry( bdb_CurrEpDescriptor->endPoint,
+    475                                          bdb_CurrEpDescriptor->simpleDesc->pAppInClusterList[i],
+    476                                          bdb_FindingBindingTargetSimpleDesc.AppNumOutClusters,
+    477                                          bdb_FindingBindingTargetSimpleDesc.pAppOutClusterList,
+    478                                          &dstAddr, bdb_FindingBindingTargetSimpleDesc.EndPoint, bindIfMatch );
+    479          
+    480                  if ( status == ZApsTableFull )
+    481                  {
+    482                    break;
+    483                  }
+    484                  else if(status == ZSuccess)
+   \                     ??bdb_checkMatchingEndpoints_10:
+   \   0000C9   E9           MOV       A,R1
+   \   0000CA   7006         JNZ       ??bdb_checkMatchingEndpoints_11
+    485                  {
+    486                    matchFound = TRUE;
+   \   0000CC   7F01         MOV       R7,#0x1
+    487                    
+    488                    //If a match is found and we are not adding due to lack of IEEE addrs, then skip looking
+    489                    if(!bindIfMatch)
+   \   0000CE   E5..         MOV       A,?V0
+   \   0000D0   6050         JZ        ??bdb_checkMatchingEndpoints_7
+    490                    {
+    491                      break;
+    492                    }
+    493                  }
+   \                     ??bdb_checkMatchingEndpoints_11:
+   \   0000D2   0E           INC       R6
+   \                     ??bdb_checkMatchingEndpoints_9:
+   \   0000D3   12....       LCALL     ?Subroutine13 & 0xFFFF
+   \                     ??CrossCallReturnLabel_16:
+   \   0000D6   E0           MOVX      A,@DPTR
+   \   0000D7   F8           MOV       R0,A
+   \   0000D8   EE           MOV       A,R6
+   \   0000D9   C3           CLR       C
+   \   0000DA   98           SUBB      A,R0
+   \   0000DB   503C         JNC       ??bdb_checkMatchingEndpoints_5
+   \   0000DD                ; Setup parameters for call to function bdb_zclFindingBindingAddBindEntry
+   \   0000DD   E5..         MOV       A,?V0
+   \   0000DF   F5..         MOV       ?V1,A
+   \   0000E1   78..         MOV       R0,#?V1
+   \   0000E3   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   0000E6   7405         MOV       A,#0x5
+   \   0000E8   12....       LCALL     ?XSTACK_DISP100_8
+   \   0000EB   88..         MOV       ?V2,R0
+   \   0000ED   89..         MOV       ?V3,R1
+   \   0000EF   78..         MOV       R0,#?V2
+   \   0000F1   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   0000F4   90....       MOV       DPTR,#bdb_FindingBindingTargetSimpleDesc + 10
+   \   0000F7   12....       LCALL     ?PUSH_XSTACK8_X_TWO
+   \   0000FA   90....       MOV       DPTR,#bdb_FindingBindingTargetSimpleDesc
+   \   0000FD   E0           MOVX      A,@DPTR
+   \   0000FE   FD           MOV       R5,A
+   \   0000FF   90....       MOV       DPTR,#bdb_FindingBindingTargetSimpleDesc + 9
+   \   000102   12....       LCALL     ?Subroutine15 & 0xFFFF
+   \                     ??CrossCallReturnLabel_18:
+   \   000105   12....       LCALL     ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_7:
+   \   000108   12....       LCALL     `??bdb_zclFindingBindingAddBindEntry::?relay`; Banked call to: bdb_zclFindingBindingAddBindEntry
+   \   00010B   7405         MOV       A,#0x5
+   \   00010D   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000110   E9           MOV       A,R1
+   \   000111   F5..         MOV       ?V1,A
+   \   000113   74B2         MOV       A,#-0x4e
+   \   000115   65..         XRL       A,?V1
+   \   000117   70B0         JNZ       ??bdb_checkMatchingEndpoints_10
+    494                }
+    495              }
+    496              
+    497              //Check if we have found any match
+    498              if( matchFound == TRUE )
+   \                     ??bdb_checkMatchingEndpoints_5:
+   \   000119   EF           MOV       A,R7
+   \   00011A   A2E0         MOV       C,0xE0 /* A   */.0
+   \   00011C   500B         JNC       ??bdb_checkMatchingEndpoints_12
+    499              {
+    500                if(bindIfMatch)
+   \   00011E   E5..         MOV       A,?V0
+   \   000120   7007         JNZ       ??bdb_checkMatchingEndpoints_12
+    501                {
+    502                  //Mark respondent as complete as simple desc has been process and we do 
+    503                  //have IEEE addrs
+    504                  (*pCurr)->attempts = FINDING_AND_BINDING_RESPONDENT_COMPLETE;
+    505                }
+    506                else
+    507                {
+    508                  //Mark as we need IEEE addrs
+    509                  (*pCurr)->attempts = FINDING_AND_BINDING_MISSING_IEEE_ADDR;
+   \                     ??bdb_checkMatchingEndpoints_7:
+   \   000122   12....       LCALL     ?Subroutine9 & 0xFFFF
+    510                }
+    511          
+    512          #ifdef ZCL_GROUPS
+    513                if ( bdbAttributes.bdbCommissioningGroupID != 0xFFFF )
+    514                {
+    515                  afDstAddr.addr.shortAddr = shortAddr;
+    516                  afDstAddr.addrMode = afAddr16Bit;
+    517                  afDstAddr.endPoint = bdb_FindingBindingTargetSimpleDesc.EndPoint;
+    518                      
+    519                  zclGeneral_SendAddGroupRequest( bdb_CurrEpDescriptor->endPoint, &afDstAddr,
+    520                                              COMMAND_GROUP_ADD, bdbAttributes.bdbCommissioningGroupID, grpName,
+    521                                              TRUE, 0x00 );
+    522                }
+    523          #endif
+    524              }
+   \                     ??CrossCallReturnLabel_8:
+   \   000125   7480         MOV       A,#-0x80
+   \   000127   8005         SJMP      ??bdb_checkMatchingEndpoints_13
+    525              else
+    526              {
+    527                //No matching cluster, then we are done with this respondent
+    528                (*pCurr)->attempts = FINDING_AND_BINDING_RESPONDENT_COMPLETE;
+   \                     ??bdb_checkMatchingEndpoints_12:
+   \   000129   12....       LCALL     ?Subroutine9 & 0xFFFF
+    529              }
+   \                     ??CrossCallReturnLabel_9:
+   \   00012C   74FF         MOV       A,#-0x1
+   \                     ??bdb_checkMatchingEndpoints_13:
+   \   00012E   F0           MOVX      @DPTR,A
+    530              
+    531              if ( status == ZApsTableFull )
+   \   00012F   74B2         MOV       A,#-0x4e
+   \   000131   65..         XRL       A,?V1
+   \   000133   7020         JNZ       ??bdb_checkMatchingEndpoints_14
+    532              {
+    533                //If periodic was triggered, then finish it
+    534                if(FINDING_AND_BINDING_PERIODIC_ENABLE == TRUE)                                  
+    535                {
+    536                  bdb_FB_InitiatorCurrentCyclesNumber = 0;
+   \   000135   12....       LCALL     ?Subroutine23 & 0xFFFF
+    537                  osal_stop_timerEx(bdb_TaskID, BDB_FINDING_AND_BINDING_PERIOD_TIMEOUT);
+    538                }      
+   \                     ??CrossCallReturnLabel_27:
+   \   000138   12....       LCALL     `??osal_stop_timerEx::?relay`; Banked call to: osal_stop_timerEx
+    539                
+    540                bdb_zclSimpleDescClusterListClean( &bdb_FindingBindingTargetSimpleDesc );
+   \   00013B                ; Setup parameters for call to function bdb_zclSimpleDescClusterListClean
+   \   00013B   7A..         MOV       R2,#bdb_FindingBindingTargetSimpleDesc & 0xff
+   \   00013D   7B..         MOV       R3,#(bdb_FindingBindingTargetSimpleDesc >> 8) & 0xff
+   \   00013F   12....       LCALL     `??bdb_zclSimpleDescClusterListClean::?relay`; Banked call to: bdb_zclSimpleDescClusterListClean
+    541                osal_stop_timerEx( bdb_TaskID, BDB_RESPONDENT_PROCESS_TIMEOUT );
+   \   000142                ; Setup parameters for call to function osal_stop_timerEx
+   \   000142   7A00         MOV       R2,#0x0
+   \   000144   7B40         MOV       R3,#0x40
+   \   000146   90....       MOV       DPTR,#bdb_TaskID
+   \   000149   E0           MOVX      A,@DPTR
+   \   00014A   F9           MOV       R1,A
+   \   00014B   12....       LCALL     `??osal_stop_timerEx::?relay`; Banked call to: osal_stop_timerEx
+    542                bdb_exitFindingBindingWStatus( BDB_COMMISSIONING_FB_BINDING_TABLE_FULL );
+   \   00014E                ; Setup parameters for call to function bdb_exitFindingBindingWStatus
+   \   00014E   790C         MOV       R1,#0xc
+   \   000150   12....       LCALL     `??bdb_exitFindingBindingWStatus::?relay`; Banked call to: bdb_exitFindingBindingWStatus
+    543                
+    544                return;
+   \   000153   8021         SJMP      ??bdb_checkMatchingEndpoints_0
+    545              }
+    546              
+    547              //If an specific endpoint was requested, then don't go trough the rest of 
+    548              //the endpoints
+    549              if( bdbIndentifyActiveEndpoint != 0xFF )
+   \                     ??bdb_checkMatchingEndpoints_14:
+   \   000155   90....       MOV       DPTR,#bdbIndentifyActiveEndpoint
+   \   000158   E0           MOVX      A,@DPTR
+   \   000159   F4           CPL       A
+   \   00015A   701A         JNZ       ??bdb_checkMatchingEndpoints_0
+    550              {
+    551                break;
+    552              }
+    553              else
+    554              {
+    555                //If active endpoints 'all' is attempted, then process the next endpoint in 
+    556                //the list
+    557                bdb_CurrEpDescriptorList = bdb_CurrEpDescriptorList->nextDesc;
+   \   00015C   800D         SJMP      ??bdb_checkMatchingEndpoints_15
+    558          
+    559                while(bdb_CurrEpDescriptorList != NULL)
+    560                {
+    561                  //It has to be different from 0 or reserved for Zigbee
+    562                  if((bdb_CurrEpDescriptorList->epDesc->endPoint != 0) && (bdb_CurrEpDescriptorList->epDesc->endPoint < BDB_ZIGBEE_RESERVED_ENDPOINTS_START))
+   \                     ??bdb_checkMatchingEndpoints_16:
+   \   00015E   12....       LCALL     ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_5:
+   \   000161   6008         JZ        ??bdb_checkMatchingEndpoints_15
+   \   000163   C3           CLR       C
+   \   000164   94F1         SUBB      A,#-0xf
+   \   000166   5003         JNC       $+5
+   \   000168   02....       LJMP      ??bdb_checkMatchingEndpoints_1 & 0xFFFF
+    563                  {
+    564                    break;
+    565                  }
+    566                  bdb_CurrEpDescriptorList = bdb_CurrEpDescriptorList->nextDesc;
+   \                     ??bdb_checkMatchingEndpoints_15:
+   \   00016B   12....       LCALL     ?Subroutine5 & 0xFFFF
+    567                }
+   \                     ??CrossCallReturnLabel_2:
+   \   00016E   90....       MOV       DPTR,#bdb_CurrEpDescriptorList
+   \   000171   12....       LCALL     ??Subroutine50_0 & 0xFFFF
+    568              }
+    569            }
+   \                     ??CrossCallReturnLabel_106:
+   \   000174   70E8         JNZ       ??bdb_checkMatchingEndpoints_16
+    570          }
+   \                     ??bdb_checkMatchingEndpoints_0:
+   \   000176   740D         MOV       A,#0xd
+   \   000178                REQUIRE ?Subroutine2
+   \   000178                ; // Fall through to label ?Subroutine2
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000003   7F08         MOV       R7,#0x8
+   \   000005   02....       LJMP      ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine15:
+   \   000000   E0           MOVX      A,@DPTR
+   \   000001   FC           MOV       R4,A
+   \   000002   EE           MOV       A,R6
+   \   000003   25E0         ADD       A,0xE0 /* A   */
+   \   000005   F8           MOV       R0,A
+   \   000006   E4           CLR       A
+   \   000007   33           RLC       A
+   \   000008   F9           MOV       R1,A
+   \   000009   8A82         MOV       DPL,R2
+   \   00000B   8B83         MOV       DPH,R3
+   \   00000D   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine13:
+   \   000000   85..82       MOV       DPL,?V6
+   \   000003   85..83       MOV       DPH,?V7
+   \   000006   12....       LCALL     ?Subroutine29 & 0xFFFF
+   \                     ??CrossCallReturnLabel_75:
+   \   000009   8A82         MOV       DPL,R2
+   \   00000B   8B83         MOV       DPH,R3
+   \   00000D   A3           INC       DPTR
+   \   00000E   A3           INC       DPTR
+   \   00000F   A3           INC       DPTR
+   \   000010   A3           INC       DPTR
+   \   000011   A3           INC       DPTR
+   \   000012   A3           INC       DPTR
+   \   000013   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine9:
+   \   000000   85..82       MOV       DPL,?XSP + 0
+   \   000003   85..83       MOV       DPH,?XSP + 1
+   \   000006   12....       LCALL     ?Subroutine30 & 0xFFFF
+   \                     ??CrossCallReturnLabel_56:
+   \   000009   12....       LCALL     ?Subroutine27 & 0xFFFF
+   \                     ??CrossCallReturnLabel_96:
+   \   00000C   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine27:
+   \   000000   12....       LCALL     ?Subroutine32 & 0xFFFF
+   \                     ??CrossCallReturnLabel_118:
+   \   000003   C8           XCH       A,R0
+   \   000004   12....       LCALL     ?Subroutine33 & 0xFFFF
+   \                     ??CrossCallReturnLabel_99:
+   \   000007   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine8:
+   \   000000   A3           INC       DPTR
+   \   000001   A3           INC       DPTR
+   \   000002   A3           INC       DPTR
+   \   000003   A3           INC       DPTR
+   \   000004   A3           INC       DPTR
+   \   000005   A3           INC       DPTR
+   \   000006   A3           INC       DPTR
+   \   000007   E0           MOVX      A,@DPTR
+   \   000008   28           ADD       A,R0
+   \   000009   FA           MOV       R2,A
+   \   00000A   A3           INC       DPTR
+   \   00000B   E0           MOVX      A,@DPTR
+   \   00000C   39           ADDC      A,R1
+   \   00000D   8A82         MOV       DPL,R2
+   \   00000F   F583         MOV       DPH,A
+   \   000011   12....       LCALL     ?Subroutine29 & 0xFFFF
+   \                     ??CrossCallReturnLabel_73:
+   \   000014   85..82       MOV       DPL,?V4
+   \   000017   85..83       MOV       DPH,?V5
+   \   00001A   E0           MOVX      A,@DPTR
+   \   00001B   F9           MOV       R1,A
+   \   00001C   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine46_0:
+   \   000000   EA           MOV       A,R2
+   \   000001   F0           MOVX      @DPTR,A
+   \   000002   A3           INC       DPTR
+   \   000003   EB           MOV       A,R3
+   \   000004   F0           MOVX      @DPTR,A
+   \   000005   22           RET
+    571          
+    572          
+    573          
+    574          /*********************************************************************
+    575           * @fn      bdb_ProcessSimpleDesc
+    576           *
+    577           * @brief   Process simple descriptor requested by F&B. Binds will be added if 
+    578           *          matching cluster is found and if IEEE addrs of the device is already 
+    579           *          stored
+    580           *
+    581           * @param   msgPtr - pointer to simple descriptor response indication message
+    582           *
+    583           * @return  none
+    584           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    585          void bdb_ProcessSimpleDesc( zdoIncomingMsg_t *msgPtr )
+   \                     bdb_ProcessSimpleDesc:
+    586          {
+   \   000000                REQUIRE ?V0
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 19
+   \   000005   74ED         MOV       A,#-0x13
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+   \   00000A   EA           MOV       A,R2
+   \   00000B   FE           MOV       R6,A
+   \   00000C   EB           MOV       A,R3
+   \   00000D   FF           MOV       R7,A
+    587            zAddrType_t dstAddr;
+    588            bdbFindingBindingRespondent_t *pCurr = NULL;
+   \   00000E   85..82       MOV       DPL,?XSP + 0
+   \   000011   85..83       MOV       DPH,?XSP + 1
+   \   000014   E4           CLR       A
+   \   000015   F0           MOVX      @DPTR,A
+   \   000016   A3           INC       DPTR
+   \   000017   F0           MOVX      @DPTR,A
+    589            uint8 isRespondantReadyToBeAdded = FALSE;
+   \   000018   75..00       MOV       ?V0,#0x0
+    590          
+    591            bdb_setEpDescListToActiveEndpoint();
+   \   00001B                ; Setup parameters for call to function bdb_setEpDescListToActiveEndpoint
+   \   00001B   12....       LCALL     `??bdb_setEpDescListToActiveEndpoint::?relay`; Banked call to: bdb_setEpDescListToActiveEndpoint
+    592            
+    593            if ( !(bdb_CurrEpDescriptorList->epDesc->epType & BDB_FINDING_AND_BINDING_INITIATOR )) 
+   \   00001E   12....       LCALL     ?Subroutine10 & 0xFFFF
+   \                     ??CrossCallReturnLabel_12:
+   \   000021   F8           MOV       R0,A
+   \   000022   12....       LCALL     ??Subroutine44_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_51:
+   \   000025   A3           INC       DPTR
+   \   000026   E0           MOVX      A,@DPTR
+   \   000027   A2E0         MOV       C,0xE0 /* A   */.0
+   \   000029   4003         JC        $+5
+   \   00002B   02....       LJMP      ??bdb_ProcessSimpleDesc_0 & 0xFFFF
+    594            {  
+    595              //We should not be processing these commands as we are not initiator
+    596              return;
+    597            }
+    598            
+    599            dstAddr.addr.shortAddr = BUILD_UINT16( msgPtr->asdu[1], msgPtr->asdu[2] );
+   \   00002E   EE           MOV       A,R6
+   \   00002F   2413         ADD       A,#0x13
+   \   000031   F582         MOV       DPL,A
+   \   000033   E4           CLR       A
+   \   000034   3F           ADDC      A,R7
+   \   000035   F583         MOV       DPH,A
+   \   000037   12....       LCALL     ?Subroutine21 & 0xFFFF
+   \                     ??CrossCallReturnLabel_23:
+   \   00003A   A3           INC       DPTR
+   \   00003B   E0           MOVX      A,@DPTR
+   \   00003C   FC           MOV       R4,A
+   \   00003D   8882         MOV       DPL,R0
+   \   00003F   8983         MOV       DPH,R1
+   \   000041   A3           INC       DPTR
+   \   000042   A3           INC       DPTR
+   \   000043   E0           MOVX      A,@DPTR
+   \   000044   FB           MOV       R3,A
+   \   000045   EC           MOV       A,R4
+   \   000046   FA           MOV       R2,A
+   \   000047   7402         MOV       A,#0x2
+   \   000049   12....       LCALL     ?XSTACK_DISP0_8
+   \   00004C   12....       LCALL     ??Subroutine46_0 & 0xFFFF
+    600            dstAddr.addrMode = Addr16Bit;
+   \                     ??CrossCallReturnLabel_79:
+   \   00004F   740A         MOV       A,#0xa
+   \   000051   12....       LCALL     ?XSTACK_DISP0_8
+   \   000054   7402         MOV       A,#0x2
+   \   000056   F0           MOVX      @DPTR,A
+    601            
+    602            ZDO_ParseSimpleDescBuf( &msgPtr->asdu[4], &bdb_FindingBindingTargetSimpleDesc );
+   \   000057                ; Setup parameters for call to function ZDO_ParseSimpleDescBuf
+   \   000057   7C..         MOV       R4,#bdb_FindingBindingTargetSimpleDesc & 0xff
+   \   000059   7D..         MOV       R5,#(bdb_FindingBindingTargetSimpleDesc >> 8) & 0xff
+   \   00005B   E8           MOV       A,R0
+   \   00005C   2404         ADD       A,#0x4
+   \   00005E   FA           MOV       R2,A
+   \   00005F   E4           CLR       A
+   \   000060   39           ADDC      A,R1
+   \   000061   FB           MOV       R3,A
+   \   000062   12....       LCALL     `??ZDO_ParseSimpleDescBuf::?relay`; Banked call to: ZDO_ParseSimpleDescBuf
+    603            
+    604            pCurr = bdb_findRespondentNode(bdb_FindingBindingTargetSimpleDesc.EndPoint, dstAddr.addr.shortAddr);
+   \   000065                ; Setup parameters for call to function bdb_findRespondentNode
+   \   000065   7402         MOV       A,#0x2
+   \   000067   12....       LCALL     ?XSTACK_DISP0_8
+   \   00006A   12....       LCALL     ?Subroutine18 & 0xFFFF
+   \                     ??CrossCallReturnLabel_22:
+   \   00006D   12....       LCALL     `??bdb_findRespondentNode::?relay`; Banked call to: bdb_findRespondentNode
+   \   000070   12....       LCALL     ?Subroutine4 & 0xFFFF
+    605            
+    606            //Just for safety check this is a valid entry
+    607            if(pCurr != NULL) 
+   \                     ??CrossCallReturnLabel_101:
+   \   000073   604C         JZ        ??bdb_ProcessSimpleDesc_0
+    608            {
+    609              uint8 extAddr[Z_EXTADDR_LEN]; 
+    610              
+    611              if(AddrMgrExtAddrLookup( pCurr->data.addr.shortAddr, extAddr ))
+   \   000075                ; Setup parameters for call to function AddrMgrExtAddrLookup
+   \   000075   740B         MOV       A,#0xb
+   \   000077   12....       LCALL     ?XSTACK_DISP102_8
+   \   00007A   12....       LCALL     ?Subroutine20 & 0xFFFF
+   \                     ??CrossCallReturnLabel_53:
+   \   00007D   12....       LCALL     ??Subroutine45_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_61:
+   \   000080   12....       LCALL     `??AddrMgrExtAddrLookup::?relay`; Banked call to: AddrMgrExtAddrLookup
+   \   000083   E9           MOV       A,R1
+   \   000084   6005         JZ        ??bdb_ProcessSimpleDesc_1
+    612              {
+    613                isRespondantReadyToBeAdded = TRUE;
+   \   000086   75..01       MOV       ?V0,#0x1
+   \   000089   8012         SJMP      ??bdb_ProcessSimpleDesc_2
+    614              }
+    615              else
+    616              {
+    617                //Save the simple desc to don't ask for it again
+    618                pCurr->SimpleDescriptor = &bdb_FindingBindingTargetSimpleDesc;
+   \                     ??bdb_ProcessSimpleDesc_1:
+   \   00008B   12....       LCALL     ?Subroutine14 & 0xFFFF
+    619              }
+   \                     ??CrossCallReturnLabel_41:
+   \   00008E   240D         ADD       A,#0xd
+   \   000090   F582         MOV       DPL,A
+   \   000092   E4           CLR       A
+   \   000093   38           ADDC      A,R0
+   \   000094   F583         MOV       DPH,A
+   \   000096   74..         MOV       A,#bdb_FindingBindingTargetSimpleDesc & 0xff
+   \   000098   F0           MOVX      @DPTR,A
+   \   000099   A3           INC       DPTR
+   \   00009A   74..         MOV       A,#(bdb_FindingBindingTargetSimpleDesc >> 8) & 0xff
+   \   00009C   F0           MOVX      @DPTR,A
+    620              (void)extAddr;  //dummy
+    621            }
+    622            else
+    623            {
+    624              //This simple desc rsp was not requested by BDB F&B
+    625              return;
+    626            } 
+    627            
+    628            bdb_checkMatchingEndpoints(isRespondantReadyToBeAdded, dstAddr.addr.shortAddr, &pCurr);
+   \                     ??bdb_ProcessSimpleDesc_2:
+   \   00009D                ; Setup parameters for call to function bdb_checkMatchingEndpoints
+   \   00009D   AC..         MOV       R4,?XSP + 0
+   \   00009F   AD..         MOV       R5,?XSP + 1
+   \   0000A1   7402         MOV       A,#0x2
+   \   0000A3   12....       LCALL     ?XSTACK_DISP0_8
+   \   0000A6   12....       LCALL     ??Subroutine45_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_62:
+   \   0000A9   A9..         MOV       R1,?V0
+   \   0000AB   12....       LCALL     `??bdb_checkMatchingEndpoints::?relay`; Banked call to: bdb_checkMatchingEndpoints
+    629            
+    630            //If the respondent got process complete, then release the entry
+    631            if(pCurr->attempts == FINDING_AND_BINDING_RESPONDENT_COMPLETE)
+   \   0000AE   85..82       MOV       DPL,?XSP + 0
+   \   0000B1   85..83       MOV       DPH,?XSP + 1
+   \   0000B4   12....       LCALL     ??Subroutine48_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_94:
+   \   0000B7   F4           CPL       A
+   \   0000B8   7007         JNZ       ??bdb_ProcessSimpleDesc_0
+    632            {
+    633              bdb_zclSimpleDescClusterListClean( &bdb_FindingBindingTargetSimpleDesc );  
+   \   0000BA                ; Setup parameters for call to function bdb_zclSimpleDescClusterListClean
+   \   0000BA   7A..         MOV       R2,#bdb_FindingBindingTargetSimpleDesc & 0xff
+   \   0000BC   7B..         MOV       R3,#(bdb_FindingBindingTargetSimpleDesc >> 8) & 0xff
+   \   0000BE   12....       LCALL     `??bdb_zclSimpleDescClusterListClean::?relay`; Banked call to: bdb_zclSimpleDescClusterListClean
+    634            }
+    635          }
+   \                     ??bdb_ProcessSimpleDesc_0:
+   \   0000C1   7413         MOV       A,#0x13
+   \   0000C3                REQUIRE ?Subroutine3
+   \   0000C3                ; // Fall through to label ?Subroutine3
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000003                REQUIRE ??Subroutine42_0
+   \   000003                ; // Fall through to label ??Subroutine42_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine42_0:
+   \   000000   7F01         MOV       R7,#0x1
+   \   000002   02....       LJMP      ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine20:
+   \   000000   85..82       MOV       DPL,?XSP + 0
+   \   000003   85..83       MOV       DPH,?XSP + 1
+   \   000006                REQUIRE ??Subroutine44_0
+   \   000006                ; // Fall through to label ??Subroutine44_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine44_0:
+   \   000000   12....       LCALL     ??Subroutine39_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_58:
+   \   000003   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine21:
+   \   000000   12....       LCALL     ?Subroutine32 & 0xFFFF
+   \                     ??CrossCallReturnLabel_114:
+   \   000003   F9           MOV       R1,A
+   \   000004   8882         MOV       DPL,R0
+   \   000006   8983         MOV       DPH,R1
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine48_0:
+   \   000000   12....       LCALL     ?Subroutine27 & 0xFFFF
+   \                     ??CrossCallReturnLabel_97:
+   \   000003   E0           MOVX      A,@DPTR
+   \   000004   22           RET
+    636          
+    637          /*********************************************************************
+    638           * @fn      bdb_zclFindingBindingEpType
+    639           *
+    640           * @brief   Gives the Ep Type according to application clusters in
+    641           *          simple descriptor
+    642           *
+    643           * @return  epType - If Target, Initiator or both
+    644           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    645          uint8 bdb_zclFindingBindingEpType( endPointDesc_t *epDesc )
+   \                     bdb_zclFindingBindingEpType:
+    646          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000   74F2         MOV       A,#-0xe
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 0
+    647            uint8 epType = 0;
+   \   000005   7E00         MOV       R6,#0x0
+    648            uint8 status;
+    649            uint8 type1ClusterCnt;
+    650            uint8 type2ClusterCnt;
+    651            
+    652            type1ClusterCnt = sizeof( bdb_ZclType1Clusters )/sizeof( uint16 );
+    653            type2ClusterCnt = sizeof( bdb_ZclType2Clusters )/sizeof( uint16 );
+    654            
+    655          
+    656            // Are there matching type 1 on server side?
+    657            status = ZDO_AnyClusterMatches( epDesc->simpleDesc->AppNumInClusters, 
+    658                                            epDesc->simpleDesc->pAppInClusterList,
+    659                                            type1ClusterCnt,
+    660                                            (uint16*)bdb_ZclType1Clusters);
+    661            
+    662            if( status == TRUE )
+   \   000007   EA           MOV       A,R2
+   \   000008   2404         ADD       A,#0x4
+   \   00000A   F5..         MOV       ?V0,A
+   \   00000C   E4           CLR       A
+   \   00000D   3B           ADDC      A,R3
+   \   00000E   F5..         MOV       ?V1,A
+   \   000010   85..82       MOV       DPL,?V0
+   \   000013   F583         MOV       DPH,A
+   \   000015   12....       LCALL     ??Subroutine43_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_48:
+   \   000018   75....       MOV       ?V4,#bdb_ZclType1Clusters & 0xff
+   \   00001B   75....       MOV       ?V5,#(bdb_ZclType1Clusters >> 8) & 0xff
+   \   00001E                ; Setup parameters for call to function ZDO_AnyClusterMatches
+   \   00001E   78..         MOV       R0,#?V4
+   \   000020   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000023   7C18         MOV       R4,#0x18
+   \   000025   12....       LCALL     ?Subroutine11 & 0xFFFF
+   \                     ??CrossCallReturnLabel_13:
+   \   000028   12....       LCALL     `??ZDO_AnyClusterMatches::?relay`; Banked call to: ZDO_AnyClusterMatches
+   \   00002B   7402         MOV       A,#0x2
+   \   00002D   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000030   E9           MOV       A,R1
+   \   000031   6401         XRL       A,#0x1
+   \   000033   7002         JNZ       ??bdb_zclFindingBindingEpType_0
+    663            {
+    664              epType |= BDB_FINDING_AND_BINDING_TARGET;
+   \   000035   7E02         MOV       R6,#0x2
+    665            }
+    666            
+    667            // Are there matching type 1 on client side?
+    668            status = ZDO_AnyClusterMatches( epDesc->simpleDesc->AppNumOutClusters, 
+    669                                            epDesc->simpleDesc->pAppOutClusterList,
+    670                                            type1ClusterCnt,
+    671                                            (uint16*)bdb_ZclType1Clusters);
+    672            
+    673            if( status == TRUE )
+   \                     ??bdb_zclFindingBindingEpType_0:
+   \   000037   12....       LCALL     ?Subroutine17 & 0xFFFF
+   \                     ??CrossCallReturnLabel_49:
+   \   00003A                ; Setup parameters for call to function ZDO_AnyClusterMatches
+   \   00003A   78..         MOV       R0,#?V4
+   \   00003C   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00003F   7C18         MOV       R4,#0x18
+   \   000041   85..82       MOV       DPL,?V2
+   \   000044   85..83       MOV       DPH,?V3
+   \   000047   12....       LCALL     ?Subroutine19 & 0xFFFF
+   \                     ??CrossCallReturnLabel_71:
+   \   00004A   85..82       MOV       DPL,?V2
+   \   00004D   85..83       MOV       DPH,?V3
+   \   000050   A3           INC       DPTR
+   \   000051   A3           INC       DPTR
+   \   000052   A3           INC       DPTR
+   \   000053   A3           INC       DPTR
+   \   000054   A3           INC       DPTR
+   \   000055   A3           INC       DPTR
+   \   000056   A3           INC       DPTR
+   \   000057   A3           INC       DPTR
+   \   000058   A3           INC       DPTR
+   \   000059   E0           MOVX      A,@DPTR
+   \   00005A   F9           MOV       R1,A
+   \   00005B   12....       LCALL     `??ZDO_AnyClusterMatches::?relay`; Banked call to: ZDO_AnyClusterMatches
+   \   00005E   7402         MOV       A,#0x2
+   \   000060   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000063   E9           MOV       A,R1
+   \   000064   6401         XRL       A,#0x1
+   \   000066   7004         JNZ       ??bdb_zclFindingBindingEpType_1
+    674            {
+    675              epType |= BDB_FINDING_AND_BINDING_INITIATOR;
+   \   000068   EE           MOV       A,R6
+   \   000069   D2E0         SETB      0xE0 /* A   */.0
+   \   00006B   FE           MOV       R6,A
+    676            }
+    677            
+    678            // Are there matching type 2 on server side?
+    679            status = ZDO_AnyClusterMatches( epDesc->simpleDesc->AppNumInClusters, 
+    680                                            epDesc->simpleDesc->pAppInClusterList,
+    681                                            type2ClusterCnt,
+    682                                            (uint16*)bdb_ZclType2Clusters);
+    683            
+    684            if( status == TRUE )
+   \                     ??bdb_zclFindingBindingEpType_1:
+   \   00006C   12....       LCALL     ?Subroutine17 & 0xFFFF
+   \                     ??CrossCallReturnLabel_50:
+   \   00006F   75....       MOV       ?V4,#bdb_ZclType2Clusters & 0xff
+   \   000072   75....       MOV       ?V5,#(bdb_ZclType2Clusters >> 8) & 0xff
+   \   000075                ; Setup parameters for call to function ZDO_AnyClusterMatches
+   \   000075   78..         MOV       R0,#?V4
+   \   000077   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00007A   7C31         MOV       R4,#0x31
+   \   00007C   12....       LCALL     ?Subroutine11 & 0xFFFF
+   \                     ??CrossCallReturnLabel_14:
+   \   00007F   12....       LCALL     `??ZDO_AnyClusterMatches::?relay`; Banked call to: ZDO_AnyClusterMatches
+   \   000082   7402         MOV       A,#0x2
+   \   000084   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000087   E9           MOV       A,R1
+   \   000088   6401         XRL       A,#0x1
+   \   00008A   7004         JNZ       ??bdb_zclFindingBindingEpType_2
+    685            {
+    686              epType |= BDB_FINDING_AND_BINDING_INITIATOR;
+   \   00008C   EE           MOV       A,R6
+   \   00008D   D2E0         SETB      0xE0 /* A   */.0
+   \   00008F   FE           MOV       R6,A
+    687            }
+    688            
+    689            // Are there matching type 2 on client side?
+    690            status = ZDO_AnyClusterMatches( epDesc->simpleDesc->AppNumOutClusters, 
+    691                                            epDesc->simpleDesc->pAppOutClusterList,
+    692                                            type2ClusterCnt,
+    693                                            (uint16*)bdb_ZclType2Clusters);
+    694            
+    695            if( status == TRUE )
+   \                     ??bdb_zclFindingBindingEpType_2:
+   \   000090   12....       LCALL     ?Subroutine22 & 0xFFFF
+   \                     ??CrossCallReturnLabel_35:
+   \   000093   88..         MOV       ?V0,R0
+   \   000095                ; Setup parameters for call to function ZDO_AnyClusterMatches
+   \   000095   78..         MOV       R0,#?V4
+   \   000097   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00009A   7C31         MOV       R4,#0x31
+   \   00009C   85..82       MOV       DPL,?V0
+   \   00009F   8983         MOV       DPH,R1
+   \   0000A1   12....       LCALL     ?Subroutine19 & 0xFFFF
+   \                     ??CrossCallReturnLabel_72:
+   \   0000A4   85..82       MOV       DPL,?V0
+   \   0000A7   8983         MOV       DPH,R1
+   \   0000A9   A3           INC       DPTR
+   \   0000AA   A3           INC       DPTR
+   \   0000AB   A3           INC       DPTR
+   \   0000AC   A3           INC       DPTR
+   \   0000AD   A3           INC       DPTR
+   \   0000AE   A3           INC       DPTR
+   \   0000AF   A3           INC       DPTR
+   \   0000B0   A3           INC       DPTR
+   \   0000B1   A3           INC       DPTR
+   \   0000B2   E0           MOVX      A,@DPTR
+   \   0000B3   F9           MOV       R1,A
+   \   0000B4   12....       LCALL     `??ZDO_AnyClusterMatches::?relay`; Banked call to: ZDO_AnyClusterMatches
+   \   0000B7   7402         MOV       A,#0x2
+   \   0000B9   12....       LCALL     ?DEALLOC_XSTACK8
+   \   0000BC   E9           MOV       A,R1
+   \   0000BD   6401         XRL       A,#0x1
+   \   0000BF   7004         JNZ       ??bdb_zclFindingBindingEpType_3
+    696            {
+    697              epType |= BDB_FINDING_AND_BINDING_TARGET;
+   \   0000C1   EE           MOV       A,R6
+   \   0000C2   D2E1         SETB      0xE0 /* A   */.1
+   \   0000C4   FE           MOV       R6,A
+    698            }
+    699          
+    700            return epType;
+   \                     ??bdb_zclFindingBindingEpType_3:
+   \   0000C5   EE           MOV       A,R6
+   \   0000C6   F9           MOV       R1,A
+   \   0000C7   7F06         MOV       R7,#0x6
+   \   0000C9   02....       LJMP      ?BANKED_LEAVE_XDATA
+    701          
+    702          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine17:
+   \   000000   85..82       MOV       DPL,?V0
+   \   000003   85..83       MOV       DPH,?V1
+   \   000006                REQUIRE ??Subroutine43_0
+   \   000006                ; // Fall through to label ??Subroutine43_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine43_0:
+   \   000000   E0           MOVX      A,@DPTR
+   \   000001   F5..         MOV       ?V2,A
+   \   000003   A3           INC       DPTR
+   \   000004   E0           MOVX      A,@DPTR
+   \   000005   F5..         MOV       ?V3,A
+   \   000007   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine11:
+   \   000000   85..82       MOV       DPL,?V2
+   \   000003   85..83       MOV       DPH,?V3
+   \   000006   A3           INC       DPTR
+   \   000007   A3           INC       DPTR
+   \   000008   A3           INC       DPTR
+   \   000009   A3           INC       DPTR
+   \   00000A   A3           INC       DPTR
+   \   00000B   A3           INC       DPTR
+   \   00000C   A3           INC       DPTR
+   \   00000D   12....       LCALL     ?Subroutine29 & 0xFFFF
+   \                     ??CrossCallReturnLabel_74:
+   \   000010   85..82       MOV       DPL,?V2
+   \   000013   85..83       MOV       DPH,?V3
+   \   000016   A3           INC       DPTR
+   \   000017   A3           INC       DPTR
+   \   000018   A3           INC       DPTR
+   \   000019   A3           INC       DPTR
+   \   00001A   A3           INC       DPTR
+   \   00001B   A3           INC       DPTR
+   \   00001C   E0           MOVX      A,@DPTR
+   \   00001D   F9           MOV       R1,A
+   \   00001E   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine19:
+   \   000000   A3           INC       DPTR
+   \   000001   A3           INC       DPTR
+   \   000002   A3           INC       DPTR
+   \   000003   A3           INC       DPTR
+   \   000004   A3           INC       DPTR
+   \   000005   A3           INC       DPTR
+   \   000006   A3           INC       DPTR
+   \   000007   A3           INC       DPTR
+   \   000008   A3           INC       DPTR
+   \   000009   A3           INC       DPTR
+   \   00000A                REQUIRE ??Subroutine45_0
+   \   00000A                ; // Fall through to label ??Subroutine45_0
+    703          
+    704          /*********************************************************************
+    705           * @fn      bdb_zclFindingBindingAddBindEntry
+    706           *
+    707           * @brief   This function is used to Add an entry to the binding table
+    708           *
+    709           * @param   SrcEndpInt - source endpoint
+    710           * @param   BindClusterId - cluster to try bind
+    711           * @param   Cnt - list of remote clusters
+    712           * @param   ClusterList - pointer to the Object ID list
+    713           * @param   DstAddr - Address of remote node
+    714           * @param   DstEndpInt - EndPoint of remote node
+    715           * @param   addBind - Indicate wheter or not bind must be added or not
+    716           *
+    717           * @return  status - Success if added
+    718           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    719          static ZStatus_t bdb_zclFindingBindingAddBindEntry( byte SrcEndpInt,
+   \                     bdb_zclFindingBindingAddBindEntry:
+    720                                            uint16 BindClusterId,
+    721                                            byte Cnt,                 
+    722                                            uint16 * ClusterList,
+    723                                            zAddrType_t *DstAddr, byte DstEndpInt, uint8 addBind )
+    724          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000   74F4         MOV       A,#-0xc
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 2
+   \   000005   74FE         MOV       A,#-0x2
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+   \   00000A   12....       LCALL     ?Subroutine24 & 0xFFFF
+   \                     ??CrossCallReturnLabel_84:
+   \   00000D   E9           MOV       A,R1
+   \   00000E   FF           MOV       R7,A
+   \   00000F   EC           MOV       A,R4
+   \   000010   FE           MOV       R6,A
+   \   000011   8D..         MOV       ?V0,R5
+    725            uint8 status;
+    726          
+    727            if ( bdb_FindIfAppCluster ( BindClusterId ) != SUCCESS )
+   \   000013                ; Setup parameters for call to function bdb_FindIfAppCluster
+   \   000013   85..82       MOV       DPL,?XSP + 0
+   \   000016   85..83       MOV       DPH,?XSP + 1
+   \   000019   E0           MOVX      A,@DPTR
+   \   00001A   FA           MOV       R2,A
+   \   00001B   12....       LCALL     `??bdb_FindIfAppCluster::?relay`; Banked call to: bdb_FindIfAppCluster
+   \   00001E   E9           MOV       A,R1
+   \   00001F   7024         JNZ       ??bdb_zclFindingBindingAddBindEntry_0
+    728            {
+    729              return ( ZApsFail ); // No App cluster
+    730            }
+    731          
+    732            // Are there matching clusters?
+    733            status = ZDO_AnyClusterMatches( Cnt, 
+    734                                            ClusterList,
+    735                                            1,
+    736                                           &BindClusterId);
+    737            if ( status == FALSE )
+   \   000021                ; Setup parameters for call to function ZDO_AnyClusterMatches
+   \   000021   A8..         MOV       R0,?XSP + 0
+   \   000023   A9..         MOV       R1,?XSP + 1
+   \   000025   88..         MOV       ?V2,R0
+   \   000027   89..         MOV       ?V3,R1
+   \   000029   78..         MOV       R0,#?V2
+   \   00002B   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00002E   7C01         MOV       R4,#0x1
+   \   000030   7410         MOV       A,#0x10
+   \   000032   12....       LCALL     ?XSTACK_DISP0_8
+   \   000035   12....       LCALL     ??Subroutine45_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_63:
+   \   000038   EE           MOV       A,R6
+   \   000039   F9           MOV       R1,A
+   \   00003A   12....       LCALL     `??ZDO_AnyClusterMatches::?relay`; Banked call to: ZDO_AnyClusterMatches
+   \   00003D   7402         MOV       A,#0x2
+   \   00003F   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000042   E9           MOV       A,R1
+   \   000043   7004         JNZ       ??bdb_zclFindingBindingAddBindEntry_1
+    738            {
+    739              return ( ZApsFail ); // No matched Cluster
+   \                     ??bdb_zclFindingBindingAddBindEntry_0:
+   \   000045   79B1         MOV       R1,#-0x4f
+   \   000047   8040         SJMP      ??bdb_zclFindingBindingAddBindEntry_2
+    740            }
+    741          
+    742            if(addBind)  
+   \                     ??bdb_zclFindingBindingAddBindEntry_1:
+   \   000049   7412         MOV       A,#0x12
+   \   00004B   12....       LCALL     ?XSTACK_DISP0_8
+   \   00004E   E0           MOVX      A,@DPTR
+   \   00004F   6036         JZ        ??bdb_zclFindingBindingAddBindEntry_3
+    743            {
+    744              if ( pbindAddEntry )
+   \   000051   90....       MOV       DPTR,#pbindAddEntry
+   \   000054   12....       LCALL     ??Subroutine50_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_107:
+   \   000057   602E         JZ        ??bdb_zclFindingBindingAddBindEntry_3
+    745              {
+    746                // Add the entry into the binding table
+    747                if (!pbindAddEntry( SrcEndpInt, DstAddr, DstEndpInt,
+    748                                       1, &BindClusterId ) )
+   \   000059                ; Setup parameters for indirect call
+   \   000059   78..         MOV       R0,#?V2
+   \   00005B   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00005E   7D01         MOV       R5,#0x1
+   \   000060   AC..         MOV       R4,?V0
+   \   000062   7412         MOV       A,#0x12
+   \   000064   12....       LCALL     ?XSTACK_DISP0_8
+   \   000067   12....       LCALL     ??Subroutine45_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_64:
+   \   00006A   EF           MOV       A,R7
+   \   00006B   F9           MOV       R1,A
+   \   00006C   90....       MOV       DPTR,#pbindAddEntry
+   \   00006F   E0           MOVX      A,@DPTR
+   \   000070   F8           MOV       R0,A
+   \   000071   12....       LCALL     ??Subroutine44_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_52:
+   \   000074   12....       LCALL     ?CALL_IND
+   \   000077   7402         MOV       A,#0x2
+   \   000079   12....       LCALL     ?DEALLOC_XSTACK8
+   \   00007C   8B..         MOV       ?V3,R3
+   \   00007E   EA           MOV       A,R2
+   \   00007F   45..         ORL       A,?V3
+   \   000081   7004         JNZ       ??bdb_zclFindingBindingAddBindEntry_3
+    749                {
+    750                  return ( ZApsTableFull );
+   \   000083   79B2         MOV       R1,#-0x4e
+   \   000085   8002         SJMP      ??bdb_zclFindingBindingAddBindEntry_2
+    751                }
+    752              }
+    753            }
+    754            
+    755            return ( ZSuccess );
+   \                     ??bdb_zclFindingBindingAddBindEntry_3:
+   \   000087   7900         MOV       R1,#0x0
+   \                     ??bdb_zclFindingBindingAddBindEntry_2:
+   \   000089   7402         MOV       A,#0x2
+   \   00008B   12....       LCALL     ?DEALLOC_XSTACK8
+   \   00008E   7F04         MOV       R7,#0x4
+   \   000090   02....       LJMP      ?BANKED_LEAVE_XDATA
+    756          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine24:
+   \   000000   85..82       MOV       DPL,?XSP + 0
+   \   000003   85..83       MOV       DPH,?XSP + 1
+   \   000006                REQUIRE ??Subroutine46_0
+   \   000006                ; // Fall through to label ??Subroutine46_0
+    757          
+    758          /*********************************************************************
+    759           * @fn      bdb_exitFindingBindingWStatus
+    760           *
+    761           * @brief   Clean respondent list and reports the status to bdb state machine
+    762           *
+    763           * @return  
+    764           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    765          void bdb_exitFindingBindingWStatus( uint8 status )
+   \                     bdb_exitFindingBindingWStatus:
+    766          {
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV       A,R1
+    767            // bdb report status
+    768            bdbAttributes.bdbCommissioningStatus = status;
+   \   000006   90....       MOV       DPTR,#bdbAttributes + 10
+   \   000009   F0           MOVX      @DPTR,A
+    769            
+    770            bdb_reportCommissioningState( BDB_COMMISSIONING_STATE_FINDING_BINDING, TRUE );
+   \   00000A                ; Setup parameters for call to function bdb_reportCommissioningState
+   \   00000A   7A01         MOV       R2,#0x1
+   \   00000C   7906         MOV       R1,#0x6
+   \   00000E   12....       LCALL     `??bdb_reportCommissioningState::?relay`; Banked call to: bdb_reportCommissioningState
+    771          }
+   \   000011   02....       LJMP      ??Subroutine42_0 & 0xFFFF
+    772          
+    773          /*********************************************************************
+    774           * @fn      bdb_zclSimpleDescClusterListClean
+    775           *
+    776           * @brief   This function free Simple Descriptor cluster lists
+    777           *
+    778           * @param   pSimpleDesc - pointer to simple descriptor
+    779           *
+    780           * @return  status
+    781           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    782          static void bdb_zclSimpleDescClusterListClean( SimpleDescriptionFormat_t *pSimpleDesc )
+   \                     bdb_zclSimpleDescClusterListClean:
+    783          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV       A,#-0xa
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV       ?V0,R2
+   \   000007   8B..         MOV       ?V1,R3
+    784            if(pSimpleDesc->pAppInClusterList != NULL)
+   \   000009   EA           MOV       A,R2
+   \   00000A   2407         ADD       A,#0x7
+   \   00000C   FE           MOV       R6,A
+   \   00000D   E4           CLR       A
+   \   00000E   35..         ADDC      A,?V1
+   \   000010   FF           MOV       R7,A
+   \   000011   8E82         MOV       DPL,R6
+   \   000013   8F83         MOV       DPH,R7
+   \   000015   12....       LCALL     ??Subroutine45_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_65:
+   \   000018   EA           MOV       A,R2
+   \   000019   4B           ORL       A,R3
+   \   00001A   600B         JZ        ??bdb_zclSimpleDescClusterListClean_0
+    785            {
+    786              osal_mem_free( pSimpleDesc->pAppInClusterList );
+   \   00001C                ; Setup parameters for call to function osal_mem_free
+   \   00001C   12....       LCALL     `??osal_mem_free::?relay`; Banked call to: osal_mem_free
+    787              pSimpleDesc->pAppInClusterList = ( cId_t* )NULL;
+   \   00001F   8E82         MOV       DPL,R6
+   \   000021   8F83         MOV       DPH,R7
+   \   000023   E4           CLR       A
+   \   000024   F0           MOVX      @DPTR,A
+   \   000025   A3           INC       DPTR
+   \   000026   F0           MOVX      @DPTR,A
+    788            }
+    789            if(pSimpleDesc->pAppOutClusterList != NULL)
+   \                     ??bdb_zclSimpleDescClusterListClean_0:
+   \   000027   E5..         MOV       A,?V0
+   \   000029   240A         ADD       A,#0xa
+   \   00002B   FE           MOV       R6,A
+   \   00002C   E4           CLR       A
+   \   00002D   35..         ADDC      A,?V1
+   \   00002F   FF           MOV       R7,A
+   \   000030   8E82         MOV       DPL,R6
+   \   000032   8F83         MOV       DPH,R7
+   \   000034   12....       LCALL     ??Subroutine45_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_66:
+   \   000037   EA           MOV       A,R2
+   \   000038   4B           ORL       A,R3
+   \   000039   600B         JZ        ??bdb_zclSimpleDescClusterListClean_1
+    790            {
+    791              osal_mem_free( pSimpleDesc->pAppOutClusterList );
+   \   00003B                ; Setup parameters for call to function osal_mem_free
+   \   00003B   12....       LCALL     `??osal_mem_free::?relay`; Banked call to: osal_mem_free
+    792              pSimpleDesc->pAppOutClusterList = ( cId_t* )NULL;
+   \   00003E   8E82         MOV       DPL,R6
+   \   000040   8F83         MOV       DPH,R7
+   \   000042   E4           CLR       A
+   \   000043   F0           MOVX      @DPTR,A
+   \   000044   A3           INC       DPTR
+   \   000045   F0           MOVX      @DPTR,A
+    793            }
+    794          }
+   \                     ??bdb_zclSimpleDescClusterListClean_1:
+   \   000046   02....       LJMP      ??Subroutine37_0 & 0xFFFF
+    795          
+    796          /*********************************************************************
+    797           * @fn      bdb_RegisterIdentifyTimeChangeCB
+    798           *
+    799           * @brief   Register an Application's Identify Time change callback function
+    800           *          to let know the application when identify is active or not.
+    801           *
+    802           * @param   pfnIdentify - application callback
+    803           *
+    804           * @return  none
+    805           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   12....       LCALL     ??Subroutine46_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_83:
+   \   000003                REQUIRE ??Subroutine38_0
+   \   000003                ; // Fall through to label ??Subroutine38_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    806          void bdb_RegisterIdentifyTimeChangeCB( bdbGCB_IdentifyTimeChange_t pfnIdentifyTimeChange )
+   \                     bdb_RegisterIdentifyTimeChangeCB:
+    807          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    808            pfnIdentifyTimeChangeCB = pfnIdentifyTimeChange;
+   \   000004   90....       MOV       DPTR,#pfnIdentifyTimeChangeCB
+   \   000007   02....       LJMP      ?Subroutine0 & 0xFFFF
+    809          }
+    810          
+    811          #if (FINDING_AND_BINDING_PERIODIC_ENABLE==TRUE)
+    812          /*********************************************************************
+    813           * @fn      bdb_GetFBInitiatorStatus
+    814           *
+    815           * @brief   Get the F&B initiator status for periodic requests.
+    816           *
+    817           * @param   RemainingTime - in seconds
+    818           * @param   AttemptsLeft - number of attempts to be done
+    819           * @param   MatchesFound - Add the number of matches to this parameter
+    820           *                         since the last bdb_GetFBInitiatorStatus call
+    821           *
+    822           * @return  none
+    823           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    824          void bdb_GetFBInitiatorStatus(uint8 *RemainingTime, uint8* AttemptsLeft)
+   \                     bdb_GetFBInitiatorStatus:
+    825          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000   74F0         MOV       A,#-0x10
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 2
+   \   000005   74FE         MOV       A,#-0x2
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+   \   00000A   85..82       MOV       DPL,?XSP + 0
+   \   00000D   85..83       MOV       DPH,?XSP + 1
+   \   000010   EC           MOV       A,R4
+   \   000011   F0           MOVX      @DPTR,A
+   \   000012   A3           INC       DPTR
+   \   000013   ED           MOV       A,R5
+   \   000014   F0           MOVX      @DPTR,A
+   \   000015   EA           MOV       A,R2
+   \   000016   FE           MOV       R6,A
+   \   000017   EB           MOV       A,R3
+   \   000018   FF           MOV       R7,A
+    826            if(RemainingTime != NULL)  
+   \   000019   EE           MOV       A,R6
+   \   00001A   4F           ORL       A,R7
+   \   00001B   6048         JZ        ??bdb_GetFBInitiatorStatus_0
+    827            {
+    828              if (bdb_FB_InitiatorCurrentCyclesNumber == 0)
+   \   00001D   90....       MOV       DPTR,#bdb_FB_InitiatorCurrentCyclesNumber
+   \   000020   E0           MOVX      A,@DPTR
+   \   000021   7007         JNZ       ??bdb_GetFBInitiatorStatus_1
+    829              {
+    830                *RemainingTime = 0;
+   \   000023   8E82         MOV       DPL,R6
+   \   000025   8F83         MOV       DPH,R7
+   \   000027   E4           CLR       A
+   \   000028   803A         SJMP      ??bdb_GetFBInitiatorStatus_2
+    831              }
+    832              else
+    833              {
+    834                *RemainingTime = (bdb_FB_InitiatorCurrentCyclesNumber - 1) * FINDING_AND_BINDING_PERIODIC_TIME + ((osal_get_timeoutEx(bdb_TaskID, BDB_FINDING_AND_BINDING_PERIOD_TIMEOUT) + 999) / 1000);
+   \                     ??bdb_GetFBInitiatorStatus_1:
+   \   00002A                ; Setup parameters for call to function osal_get_timeoutEx
+   \   00002A   7A40         MOV       R2,#0x40
+   \   00002C   7B00         MOV       R3,#0x0
+   \   00002E   90....       MOV       DPTR,#bdb_TaskID
+   \   000031   E0           MOVX      A,@DPTR
+   \   000032   F9           MOV       R1,A
+   \   000033   12....       LCALL     `??osal_get_timeoutEx::?relay`; Banked call to: osal_get_timeoutEx
+   \   000036   8A..         MOV       ?V4,R2
+   \   000038   8B..         MOV       ?V5,R3
+   \   00003A   8C..         MOV       ?V6,R4
+   \   00003C   8D..         MOV       ?V7,R5
+   \   00003E   90....       MOV       DPTR,#__Constant_3e7
+   \   000041   78..         MOV       R0,#?V4
+   \   000043   12....       LCALL     ?L_ADD_X
+   \   000046   90....       MOV       DPTR,#__Constant_3e8
+   \   000049   78..         MOV       R0,#?V0
+   \   00004B   12....       LCALL     ?L_MOV_X
+   \   00004E   78..         MOV       R0,#?V4
+   \   000050   79..         MOV       R1,#?V0
+   \   000052   12....       LCALL     ?UL_DIV_MOD
+   \   000055   75F00F       MOV       B,#0xf
+   \   000058   90....       MOV       DPTR,#bdb_FB_InitiatorCurrentCyclesNumber
+   \   00005B   E0           MOVX      A,@DPTR
+   \   00005C   14           DEC       A
+   \   00005D   A4           MUL       AB
+   \   00005E   25..         ADD       A,?V4
+   \   000060   8E82         MOV       DPL,R6
+   \   000062   8F83         MOV       DPH,R7
+   \                     ??bdb_GetFBInitiatorStatus_2:
+   \   000064   F0           MOVX      @DPTR,A
+    835              }
+    836            }
+    837            
+    838            if(AttemptsLeft != NULL)
+   \                     ??bdb_GetFBInitiatorStatus_0:
+   \   000065   12....       LCALL     ??Subroutine49_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_113:
+   \   000068   600C         JZ        ??bdb_GetFBInitiatorStatus_3
+    839            {
+    840              *AttemptsLeft = bdb_FB_InitiatorCurrentCyclesNumber;
+   \   00006A   90....       MOV       DPTR,#bdb_FB_InitiatorCurrentCyclesNumber
+   \   00006D   E0           MOVX      A,@DPTR
+   \   00006E   C0E0         PUSH      A
+   \   000070   12....       LCALL     ?Subroutine20 & 0xFFFF
+    841            }
+   \                     ??CrossCallReturnLabel_54:
+   \   000073   D0E0         POP       A
+   \   000075   F0           MOVX      @DPTR,A
+    842          }
+   \                     ??bdb_GetFBInitiatorStatus_3:
+   \   000076   7402         MOV       A,#0x2
+   \   000078   02....       LJMP      ?Subroutine2 & 0xFFFF
+    843          #endif
+    844          
+    845          /*********************************************************************
+    846           * @fn      bdb_RegisterBindNotificationCB
+    847           *
+    848           * @brief   Register an Application's notification callback function to let 
+    849           *          know the application when a new bind is added to the binding table.
+    850           *
+    851           * @param   pfnIdentify - application callback
+    852           *
+    853           * @return  none
+    854           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    855          void bdb_RegisterBindNotificationCB( bdbGCB_BindNotification_t pfnBindNotification )
+   \                     bdb_RegisterBindNotificationCB:
+    856          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    857            pfnBindNotificationCB = pfnBindNotification;
+   \   000004   90....       MOV       DPTR,#pfnBindNotificationCB
+   \   000007   02....       LJMP      ?Subroutine0 & 0xFFFF
+    858          }
+    859          
+    860          /*********************************************************************
+    861           * @fn      bdb_SendIdentifyQuery
+    862           *
+    863           * @brief   Sends Identify query from the given endpoint
+    864           *
+    865           * @param   endpoint
+    866           *
+    867           * @return  ZStatus_t
+    868           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   740C         MOV       A,#0xc
+   \   000002                REQUIRE ??Subroutine36_0
+   \   000002                ; // Fall through to label ??Subroutine36_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    869          ZStatus_t bdb_SendIdentifyQuery( uint8 endpoint )
+   \                     bdb_SendIdentifyQuery:
+    870          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV       A,#-0xa
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 12
+   \   000005   74F4         MOV       A,#-0xc
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+   \   00000A   E9           MOV       A,R1
+   \   00000B   FF           MOV       R7,A
+    871            afAddrType_t dstAddr;
+    872            ZStatus_t    status;
+    873            
+    874            dstAddr.addr.shortAddr = NWK_BROADCAST_SHORTADDR_DEVALL;
+   \   00000C   85..82       MOV       DPL,?XSP + 0
+   \   00000F   85..83       MOV       DPH,?XSP + 1
+   \   000012   74FF         MOV       A,#-0x1
+   \   000014   F0           MOVX      @DPTR,A
+   \   000015   A3           INC       DPTR
+   \   000016   F0           MOVX      @DPTR,A
+    875            dstAddr.addrMode = afAddr16Bit;
+   \   000017   7408         MOV       A,#0x8
+   \   000019   12....       LCALL     ?XSTACK_DISP0_8
+   \   00001C   7402         MOV       A,#0x2
+   \   00001E   F0           MOVX      @DPTR,A
+    876            dstAddr.endPoint = 0xFF;
+   \   00001F   7409         MOV       A,#0x9
+   \   000021   12....       LCALL     ?XSTACK_DISP0_8
+   \   000024   74FF         MOV       A,#-0x1
+   \   000026   F0           MOVX      @DPTR,A
+    877          
+    878            status = zclGeneral_SendIdentifyQuery( endpoint, &dstAddr, TRUE, bdb_getZCLFrameCounter() ); 
+   \   000027                ; Setup parameters for call to function bdb_getZCLFrameCounter
+   \   000027   12....       LCALL     `??bdb_getZCLFrameCounter::?relay`; Banked call to: bdb_getZCLFrameCounter
+   \   00002A   E9           MOV       A,R1
+   \   00002B   F9           MOV       R1,A
+   \   00002C                ; Setup parameters for call to function zcl_SendCommand
+   \   00002C   E4           CLR       A
+   \   00002D   F5..         MOV       ?V0,A
+   \   00002F   F5..         MOV       ?V1,A
+   \   000031   78..         MOV       R0,#?V0
+   \   000033   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000036   78..         MOV       R0,#?V0
+   \   000038   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00003B   E9           MOV       A,R1
+   \   00003C   F5..         MOV       ?V0,A
+   \   00003E   78..         MOV       R0,#?V0
+   \   000040   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   000043   E4           CLR       A
+   \   000044   F5..         MOV       ?V0,A
+   \   000046   78..         MOV       R0,#?V0
+   \   000048   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00004B   75..01       MOV       ?V0,#0x1
+   \   00004E   78..         MOV       R0,#?V0
+   \   000050   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   000053   75..00       MOV       ?V0,#0x0
+   \   000056   78..         MOV       R0,#?V0
+   \   000058   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   00005B   75..01       MOV       ?V0,#0x1
+   \   00005E   78..         MOV       R0,#?V0
+   \   000060   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   000063   78..         MOV       R0,#?V0
+   \   000065   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   000068   7C03         MOV       R4,#0x3
+   \   00006A   7D00         MOV       R5,#0x0
+   \   00006C   740B         MOV       A,#0xb
+   \   00006E   12....       LCALL     ?XSTACK_DISP101_8
+   \   000071   EF           MOV       A,R7
+   \   000072   F9           MOV       R1,A
+   \   000073   12....       LCALL     `??zcl_SendCommand::?relay`; Banked call to: zcl_SendCommand
+   \   000076   740B         MOV       A,#0xb
+   \   000078   12....       LCALL     ?DEALLOC_XSTACK8
+   \   00007B   E9           MOV       A,R1
+   \   00007C   FE           MOV       R6,A
+    879            
+    880            if(status == ZSuccess)
+   \   00007D   7017         JNZ       ??bdb_SendIdentifyQuery_0
+    881            {
+    882              osal_start_timerEx( bdb_TaskID, BDB_RESPONDENT_PROCESS_TIMEOUT, IDENTIFY_QUERY_RSP_TIMEOUT );
+   \   00007F                ; Setup parameters for call to function osal_start_timerEx
+   \   00007F   90....       MOV       DPTR,#__Constant_1388
+   \   000082   12....       LCALL     ?PUSH_XSTACK8_X_FOUR
+   \   000085   7A00         MOV       R2,#0x0
+   \   000087   7B40         MOV       R3,#0x40
+   \   000089   90....       MOV       DPTR,#bdb_TaskID
+   \   00008C   E0           MOVX      A,@DPTR
+   \   00008D   F9           MOV       R1,A
+   \   00008E   12....       LCALL     `??osal_start_timerEx::?relay`; Banked call to: osal_start_timerEx
+   \   000091   7404         MOV       A,#0x4
+   \   000093   12....       LCALL     ?DEALLOC_XSTACK8
+    883            }
+    884            
+    885            return status;
+   \                     ??bdb_SendIdentifyQuery_0:
+   \   000096   EE           MOV       A,R6
+   \   000097   F9           MOV       R1,A
+   \   000098   02....       LJMP      ?Subroutine1 & 0xFFFF
+    886          }
+    887          
+    888          /*********************************************************************
+    889           * @fn      bdb_SendIdentifyQueryWithAddr
+    890           *
+    891           * @brief   Sends Identify query from the given endpoint
+    892           *
+    893           * @param   endpoint
+    894           *
+    895           * @return  ZStatus_t
+    896           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    897          ZStatus_t bdb_SendIdentifyQueryWithAddr(uint8 src_endpoint, uint16 shortAddr, uint8 endpoint)
+   \                     bdb_SendIdentifyQueryWithAddr:
+    898          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV       A,#-0xa
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 12
+   \   000005   74F4         MOV       A,#-0xc
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+   \   00000A   E9           MOV       A,R1
+   \   00000B   FF           MOV       R7,A
+    899            afAddrType_t dstAddr;
+    900            ZStatus_t    status;
+    901            
+    902            dstAddr.addr.shortAddr = shortAddr;
+   \   00000C   12....       LCALL     ?Subroutine24 & 0xFFFF
+    903            dstAddr.addrMode = afAddr16Bit;
+   \                     ??CrossCallReturnLabel_85:
+   \   00000F   7408         MOV       A,#0x8
+   \   000011   12....       LCALL     ?XSTACK_DISP0_8
+   \   000014   7402         MOV       A,#0x2
+   \   000016   F0           MOVX      @DPTR,A
+    904            dstAddr.endPoint = endpoint;
+   \   000017   7409         MOV       A,#0x9
+   \   000019   12....       LCALL     ?XSTACK_DISP0_8
+   \   00001C   EC           MOV       A,R4
+   \   00001D   F0           MOVX      @DPTR,A
+    905          
+    906            status = zclGeneral_SendIdentifyQuery( src_endpoint, &dstAddr, TRUE, bdb_getZCLFrameCounter() ); 
+   \   00001E                ; Setup parameters for call to function bdb_getZCLFrameCounter
+   \   00001E   12....       LCALL     `??bdb_getZCLFrameCounter::?relay`; Banked call to: bdb_getZCLFrameCounter
+   \   000021   E9           MOV       A,R1
+   \   000022   F9           MOV       R1,A
+   \   000023                ; Setup parameters for call to function zcl_SendCommand
+   \   000023   E4           CLR       A
+   \   000024   F5..         MOV       ?V0,A
+   \   000026   F5..         MOV       ?V1,A
+   \   000028   78..         MOV       R0,#?V0
+   \   00002A   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00002D   78..         MOV       R0,#?V0
+   \   00002F   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000032   E9           MOV       A,R1
+   \   000033   F5..         MOV       ?V0,A
+   \   000035   78..         MOV       R0,#?V0
+   \   000037   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   00003A   E4           CLR       A
+   \   00003B   F5..         MOV       ?V0,A
+   \   00003D   78..         MOV       R0,#?V0
+   \   00003F   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000042   75..01       MOV       ?V0,#0x1
+   \   000045   78..         MOV       R0,#?V0
+   \   000047   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   00004A   75..00       MOV       ?V0,#0x0
+   \   00004D   78..         MOV       R0,#?V0
+   \   00004F   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   000052   75..01       MOV       ?V0,#0x1
+   \   000055   78..         MOV       R0,#?V0
+   \   000057   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   00005A   78..         MOV       R0,#?V0
+   \   00005C   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   00005F   7C03         MOV       R4,#0x3
+   \   000061   7D00         MOV       R5,#0x0
+   \   000063   740B         MOV       A,#0xb
+   \   000065   12....       LCALL     ?XSTACK_DISP101_8
+   \   000068   EF           MOV       A,R7
+   \   000069   F9           MOV       R1,A
+   \   00006A   12....       LCALL     `??zcl_SendCommand::?relay`; Banked call to: zcl_SendCommand
+   \   00006D   740B         MOV       A,#0xb
+   \   00006F   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000072   E9           MOV       A,R1
+   \   000073   F5..         MOV       ?V0,A
+    907            
+    908            if(status == ZSuccess)
+   \   000075   7017         JNZ       ??bdb_SendIdentifyQueryWithAddr_0
+    909            {
+    910              osal_start_timerEx( bdb_TaskID, BDB_RESPONDENT_PROCESS_TIMEOUT, IDENTIFY_QUERY_RSP_TIMEOUT );
+   \   000077                ; Setup parameters for call to function osal_start_timerEx
+   \   000077   90....       MOV       DPTR,#__Constant_1388
+   \   00007A   12....       LCALL     ?PUSH_XSTACK8_X_FOUR
+   \   00007D   7A00         MOV       R2,#0x0
+   \   00007F   7B40         MOV       R3,#0x40
+   \   000081   90....       MOV       DPTR,#bdb_TaskID
+   \   000084   E0           MOVX      A,@DPTR
+   \   000085   F9           MOV       R1,A
+   \   000086   12....       LCALL     `??osal_start_timerEx::?relay`; Banked call to: osal_start_timerEx
+   \   000089   7404         MOV       A,#0x4
+   \   00008B   12....       LCALL     ?DEALLOC_XSTACK8
+    911            }
+    912            
+    913            return status;
+   \                     ??bdb_SendIdentifyQueryWithAddr_0:
+   \   00008E   A9..         MOV       R1,?V0
+   \   000090   02....       LJMP      ?Subroutine1 & 0xFFFF
+    914          }
+    915          
+    916          /*********************************************************************
+    917           * @fn      bdb_ZclIdentifyQueryCmdInd
+    918           *
+    919           * @brief   Callback from the ZCL General Cluster Library when
+    920           *          it received an Identity Query Response Command for this 
+    921           *          application.
+    922           *
+    923           * @param   srcAddr - source address and endpoint of the response message
+    924           * @param   identifyTime - the number of seconds to identify yourself
+    925           *
+    926           * @return  none
+    927           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    928          void bdb_ZclIdentifyQueryCmdInd( zclIdentifyQueryRsp_t *pCmd )
+   \                     bdb_ZclIdentifyQueryCmdInd:
+    929          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV       A,#-0xa
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV       A,R2
+   \   000006   FE           MOV       R6,A
+   \   000007   EB           MOV       A,R3
+   \   000008   FF           MOV       R7,A
+    930            bdbFindingBindingRespondent_t *pCurr;
+    931            
+    932            // Stop the timer before refresh
+    933            osal_stop_timerEx( bdb_TaskID, BDB_RESPONDENT_PROCESS_TIMEOUT );
+   \   000009                ; Setup parameters for call to function osal_stop_timerEx
+   \   000009   7A00         MOV       R2,#0x0
+   \   00000B   7B40         MOV       R3,#0x40
+   \   00000D   90....       MOV       DPTR,#bdb_TaskID
+   \   000010   E0           MOVX      A,@DPTR
+   \   000011   F9           MOV       R1,A
+   \   000012   12....       LCALL     `??osal_stop_timerEx::?relay`; Banked call to: osal_stop_timerEx
+    934            
+    935            // add new node to the list
+    936            pCurr = bdb_AddRespondentNode( &pRespondentHead, pCmd );
+   \   000015                ; Setup parameters for call to function bdb_AddRespondentNode
+   \   000015   EE           MOV       A,R6
+   \   000016   FC           MOV       R4,A
+   \   000017   EF           MOV       A,R7
+   \   000018   FD           MOV       R5,A
+   \   000019   7A..         MOV       R2,#pRespondentHead & 0xff
+   \   00001B   7B..         MOV       R3,#(pRespondentHead >> 8) & 0xff
+   \   00001D   12....       LCALL     `??bdb_AddRespondentNode::?relay`; Banked call to: bdb_AddRespondentNode
+    937            
+    938            if(pCurr != NULL)
+   \   000020   EA           MOV       A,R2
+   \   000021   4B           ORL       A,R3
+   \   000022   605C         JZ        ??bdb_ZclIdentifyQueryCmdInd_0
+    939            {
+    940              pCurr->data.addrMode = pCmd->srcAddr->addrMode;
+   \   000024   8E82         MOV       DPL,R6
+   \   000026   8F83         MOV       DPH,R7
+   \   000028   12....       LCALL     ?Subroutine21 & 0xFFFF
+   \                     ??CrossCallReturnLabel_24:
+   \   00002B   12....       LCALL     ?Subroutine16 & 0xFFFF
+   \                     ??CrossCallReturnLabel_19:
+   \   00002E   F0           MOVX      @DPTR,A
+    941              pCurr->data.addr.shortAddr = pCmd->srcAddr->addr.shortAddr;
+   \   00002F   8882         MOV       DPL,R0
+   \   000031   8983         MOV       DPH,R1
+   \   000033   E0           MOVX      A,@DPTR
+   \   000034   FC           MOV       R4,A
+   \   000035   A3           INC       DPTR
+   \   000036   E0           MOVX      A,@DPTR
+   \   000037   FD           MOV       R5,A
+   \   000038   8A82         MOV       DPL,R2
+   \   00003A   8B83         MOV       DPH,R3
+   \   00003C   EC           MOV       A,R4
+   \   00003D   F0           MOVX      @DPTR,A
+   \   00003E   A3           INC       DPTR
+   \   00003F   ED           MOV       A,R5
+   \   000040   F0           MOVX      @DPTR,A
+    942              pCurr->data.endPoint = pCmd->srcAddr->endPoint;
+   \   000041   8882         MOV       DPL,R0
+   \   000043   8983         MOV       DPH,R1
+   \   000045   A3           INC       DPTR
+   \   000046   12....       LCALL     ?Subroutine16 & 0xFFFF
+   \                     ??CrossCallReturnLabel_20:
+   \   000049   A3           INC       DPTR
+   \   00004A   F0           MOVX      @DPTR,A
+    943              pCurr->data.panId = pCmd->srcAddr->panId;
+   \   00004B   8E82         MOV       DPL,R6
+   \   00004D   8F83         MOV       DPH,R7
+   \   00004F   12....       LCALL     ??Subroutine35_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_36:
+   \   000052   240A         ADD       A,#0xa
+   \   000054   F582         MOV       DPL,A
+   \   000056   E4           CLR       A
+   \   000057   38           ADDC      A,R0
+   \   000058   F583         MOV       DPH,A
+   \   00005A   12....       LCALL     ??Subroutine34_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_33:
+   \   00005D   8A82         MOV       DPL,R2
+   \   00005F   8B83         MOV       DPH,R3
+   \   000061   A3           INC       DPTR
+   \   000062   A3           INC       DPTR
+   \   000063   A3           INC       DPTR
+   \   000064   A3           INC       DPTR
+   \   000065   A3           INC       DPTR
+   \   000066   A3           INC       DPTR
+   \   000067   A3           INC       DPTR
+   \   000068   A3           INC       DPTR
+   \   000069   A3           INC       DPTR
+   \   00006A   A3           INC       DPTR
+   \   00006B   12....       LCALL     ??Subroutine41_0 & 0xFFFF
+    944              pCurr->attempts = FINDING_AND_BINDING_NEW_RESPONDENT;
+   \                     ??CrossCallReturnLabel_43:
+   \   00006E   12....       LCALL     ?Subroutine26 & 0xFFFF
+   \                     ??CrossCallReturnLabel_30:
+   \   000071   E4           CLR       A
+   \   000072   F0           MOVX      @DPTR,A
+    945              pCurr->SimpleDescriptor = NULL;
+   \   000073   EA           MOV       A,R2
+   \   000074   240D         ADD       A,#0xd
+   \   000076   F582         MOV       DPL,A
+   \   000078   E4           CLR       A
+   \   000079   3B           ADDC      A,R3
+   \   00007A   F583         MOV       DPH,A
+   \   00007C   E4           CLR       A
+   \   00007D   F0           MOVX      @DPTR,A
+   \   00007E   A3           INC       DPTR
+   \   00007F   F0           MOVX      @DPTR,A
+    946            }
+    947            
+    948            //Process the identify query rsp
+    949            osal_set_event(bdb_TaskID, BDB_RESPONDENT_PROCESS_TIMEOUT);
+   \                     ??bdb_ZclIdentifyQueryCmdInd_0:
+   \   000080                ; Setup parameters for call to function osal_set_event
+   \   000080   7A00         MOV       R2,#0x0
+   \   000082   7B40         MOV       R3,#0x40
+   \   000084   90....       MOV       DPTR,#bdb_TaskID
+   \   000087   E0           MOVX      A,@DPTR
+   \   000088   F9           MOV       R1,A
+   \   000089   12....       LCALL     `??osal_set_event::?relay`; Banked call to: osal_set_event
+    950          }
+   \   00008C   02....       LJMP      ??Subroutine37_0 & 0xFFFF
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine16:
+   \   000000   A3           INC       DPTR
+   \   000001   A3           INC       DPTR
+   \   000002   A3           INC       DPTR
+   \   000003   A3           INC       DPTR
+   \   000004   A3           INC       DPTR
+   \   000005   A3           INC       DPTR
+   \   000006   A3           INC       DPTR
+   \   000007   A3           INC       DPTR
+   \   000008   E0           MOVX      A,@DPTR
+   \   000009   8A82         MOV       DPL,R2
+   \   00000B   8B83         MOV       DPH,R3
+   \   00000D   A3           INC       DPTR
+   \   00000E   A3           INC       DPTR
+   \   00000F   A3           INC       DPTR
+   \   000010   A3           INC       DPTR
+   \   000011   A3           INC       DPTR
+   \   000012   A3           INC       DPTR
+   \   000013   A3           INC       DPTR
+   \   000014   A3           INC       DPTR
+   \   000015   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine26:
+   \   000000   EA           MOV       A,R2
+   \   000001   240C         ADD       A,#0xc
+   \   000003   F582         MOV       DPL,A
+   \   000005   E4           CLR       A
+   \   000006   3B           ADDC      A,R3
+   \   000007   F583         MOV       DPH,A
+   \   000009   22           RET
+    951          
+    952          /*********************************************************************
+    953           * @fn      bdb_ProcessRespondentList
+    954           *
+    955           * @brief   Process the Identify Query respondent list by sending Simple Descriptor request to 
+    956           *          devices respondent in the list. Also send IEEE Addr Req to those 
+    957           *          device for which a bind is created but IEEE addr is missing.
+    958           *
+    959           * @param   none
+    960           *
+    961           * @return  none
+    962           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    963          void bdb_ProcessRespondentList( void )
+   \                     bdb_ProcessRespondentList:
+    964          {
+   \   000000                REQUIRE ?V0
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 9
+   \   000005   74F7         MOV       A,#-0x9
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+    965            zAddrType_t dstAddr = { 0 };
+   \   00000A   90....       MOV       DPTR,#`?<Constant {{0}}>`
+   \   00000D   AC..         MOV       R4,?XSP + 0
+   \   00000F   AD..         MOV       R5,?XSP + 1
+   \   000011   7409         MOV       A,#0x9
+   \   000013   12....       LCALL     ?MOVE_LONG8_XDATA_XDATA
+    966            
+    967            // Look for the first respondent
+    968            if ( pRespondentCurr == NULL )
+   \   000016   90....       MOV       DPTR,#pRespondentCurr
+   \   000019   12....       LCALL     ??Subroutine50_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_108:
+   \   00001C   7023         JNZ       ??bdb_ProcessRespondentList_0
+    969            {
+    970              pRespondentCurr = bdb_getRespondentRetry(pRespondentHead);
+   \   00001E                ; Setup parameters for call to function bdb_getRespondentRetry
+   \   00001E   90....       MOV       DPTR,#pRespondentHead
+   \   000021   12....       LCALL     ??Subroutine45_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_67:
+   \   000024   12....       LCALL     `??bdb_getRespondentRetry::?relay`; Banked call to: bdb_getRespondentRetry
+   \   000027   90....       MOV       DPTR,#pRespondentCurr
+   \   00002A   12....       LCALL     ??Subroutine46_0 & 0xFFFF
+    971              
+    972              // If null, then no responses from Identify query request
+    973              if ( (pRespondentCurr == NULL) )
+   \                     ??CrossCallReturnLabel_80:
+   \   00002D   90....       MOV       DPTR,#pRespondentCurr
+   \   000030   12....       LCALL     ??Subroutine50_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_109:
+   \   000033   7055         JNZ       ??CrossCallReturnLabel_44
+    974              {
+    975                //No responses, then no responses
+    976                if(pRespondentHead == NULL)
+   \   000035   90....       MOV       DPTR,#pRespondentHead
+   \   000038   12....       LCALL     ??Subroutine50_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_110:
+   \   00003B   703F         JNZ       ??bdb_ProcessRespondentList_1
+    977                {
+    978                  bdb_exitFindingBindingWStatus( BDB_COMMISSIONING_FB_NO_IDENTIFY_QUERY_RESPONSE );
+   \   00003D                ; Setup parameters for call to function bdb_exitFindingBindingWStatus
+   \   00003D   790B         MOV       R1,#0xb
+   \   00003F   803D         SJMP      ??bdb_ProcessRespondentList_2
+    979                }
+    980                //Responses and binded to all clusters possible
+    981                else
+    982                {
+    983                  bdb_exitFindingBindingWStatus( BDB_COMMISSIONING_SUCCESS );
+    984                }
+    985                return;
+    986              }
+    987            }
+    988            else
+    989            {
+    990              //Validate that we are not processing a missing IEEE Address before chaning 
+    991              //the current respondent to be process
+    992              if((pRespondentCurr->attempts & FINDING_AND_BINDING_MISSING_IEEE_ADDR) &&
+    993                 (pRespondentCurr->attempts & ~FINDING_AND_BINDING_MISSING_IEEE_ADDR) >= FINDING_AND_BINDING_MAX_ATTEMPTS)
+   \                     ??bdb_ProcessRespondentList_0:
+   \   000041   90....       MOV       DPTR,#pRespondentCurr
+   \   000044   E0           MOVX      A,@DPTR
+   \   000045   240C         ADD       A,#0xc
+   \   000047   F8           MOV       R0,A
+   \   000048   A3           INC       DPTR
+   \   000049   E0           MOVX      A,@DPTR
+   \   00004A   3400         ADDC      A,#0x0
+   \   00004C   F9           MOV       R1,A
+   \   00004D   8882         MOV       DPL,R0
+   \   00004F   8983         MOV       DPH,R1
+   \   000051   E0           MOVX      A,@DPTR
+   \   000052   A2E7         MOV       C,0xE0 /* A   */.7
+   \   000054   5034         JNC       ??CrossCallReturnLabel_44
+   \   000056   547F         ANL       A,#0x7f
+   \   000058   C3           CLR       C
+   \   000059   9404         SUBB      A,#0x4
+   \   00005B   402D         JC        ??CrossCallReturnLabel_44
+    994              {
+    995                if(pRespondentNext == NULL)
+   \   00005D   90....       MOV       DPTR,#pRespondentNext
+   \   000060   12....       LCALL     ??Subroutine50_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_111:
+   \   000063   701F         JNZ       ??bdb_ProcessRespondentList_3
+    996                {
+    997                  //Review the whole list if we have simple desc that we need to attempt.
+    998                  pRespondentCurr = bdb_getRespondentRetry(pRespondentHead);
+   \   000065                ; Setup parameters for call to function bdb_getRespondentRetry
+   \   000065   90....       MOV       DPTR,#pRespondentHead
+   \   000068   12....       LCALL     ??Subroutine45_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_68:
+   \   00006B   12....       LCALL     `??bdb_getRespondentRetry::?relay`; Banked call to: bdb_getRespondentRetry
+   \   00006E   90....       MOV       DPTR,#pRespondentCurr
+   \   000071   12....       LCALL     ??Subroutine46_0 & 0xFFFF
+    999                    
+   1000                  if(pRespondentCurr == NULL)
+   \                     ??CrossCallReturnLabel_81:
+   \   000074   90....       MOV       DPTR,#pRespondentCurr
+   \   000077   12....       LCALL     ??Subroutine50_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_112:
+   \   00007A   700E         JNZ       ??CrossCallReturnLabel_44
+   1001                  {
+   1002                    bdb_exitFindingBindingWStatus( BDB_COMMISSIONING_SUCCESS );
+   \   00007C                ; Setup parameters for call to function bdb_exitFindingBindingWStatus
+   \                     ??bdb_ProcessRespondentList_1:
+   \   00007C   7900         MOV       R1,#0x0
+   \                     ??bdb_ProcessRespondentList_2:
+   \   00007E   12....       LCALL     `??bdb_exitFindingBindingWStatus::?relay`; Banked call to: bdb_exitFindingBindingWStatus
+   1003                    return;
+   \   000081   02....       LJMP      ??CrossCallReturnLabel_82 & 0xFFFF
+   1004                  }
+   1005                }
+   1006                else
+   1007                {
+   1008                  pRespondentCurr = pRespondentNext;
+   \                     ??bdb_ProcessRespondentList_3:
+   \   000084   90....       MOV       DPTR,#pRespondentCurr
+   \   000087   12....       LCALL     ??Subroutine41_0 & 0xFFFF
+   1009                }
+   1010              }
+   1011            }
+   1012            
+   1013            //Start the timer to process the next respondent
+   1014            osal_start_timerEx( bdb_TaskID, BDB_RESPONDENT_PROCESS_TIMEOUT, SIMPLEDESC_RESPONSE_TIMEOUT );
+   \                     ??CrossCallReturnLabel_44:
+   \   00008A                ; Setup parameters for call to function osal_start_timerEx
+   \   00008A   90....       MOV       DPTR,#__Constant_1388
+   \   00008D   12....       LCALL     ?PUSH_XSTACK8_X_FOUR
+   \   000090   7A00         MOV       R2,#0x0
+   \   000092   7B40         MOV       R3,#0x40
+   \   000094   90....       MOV       DPTR,#bdb_TaskID
+   \   000097   E0           MOVX      A,@DPTR
+   \   000098   F9           MOV       R1,A
+   \   000099   12....       LCALL     `??osal_start_timerEx::?relay`; Banked call to: osal_start_timerEx
+   \   00009C   7404         MOV       A,#0x4
+   \   00009E   12....       LCALL     ?DEALLOC_XSTACK8
+   1015            
+   1016            /**
+   1017             * JC NOTES: Followings are the codes querying the device which just replied to an Identify Query Response
+   1018             * about the IEEE address or the simple device descriptor.
+   1019            **/
+   1020            //If ParentLost is reported, then do not attempt send SimpleDesc, mark those as pending, 
+   1021            //if Parent Lost is restored, then these simpleDesc attempts will be restored to 0
+   1022            if(bdbCommissioningProcedureState.bdbCommissioningState != BDB_PARENT_LOST)
+   \   0000A1   90....       MOV       DPTR,#bdbCommissioningProcedureState
+   \   0000A4   E0           MOVX      A,@DPTR
+   \   0000A5   6408         XRL       A,#0x8
+   \   0000A7   90....       MOV       DPTR,#pRespondentCurr
+   \   0000AA   6073         JZ        ??bdb_ProcessRespondentList_4
+   1023            {
+   1024              dstAddr.addr.shortAddr = pRespondentCurr->data.addr.shortAddr;
+   \   0000AC   12....       LCALL     ??Subroutine47_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_86:
+   \   0000AF   F8           MOV       R0,A
+   \   0000B0   A3           INC       DPTR
+   \   0000B1   E0           MOVX      A,@DPTR
+   \   0000B2   F9           MOV       R1,A
+   \   0000B3   85..82       MOV       DPL,?XSP + 0
+   \   0000B6   85..83       MOV       DPH,?XSP + 1
+   \   0000B9   12....       LCALL     ??Subroutine41_0 & 0xFFFF
+   1025              dstAddr.addrMode = pRespondentCurr->data.addrMode;
+   \                     ??CrossCallReturnLabel_45:
+   \   0000BC   90....       MOV       DPTR,#pRespondentCurr
+   \   0000BF   12....       LCALL     ??Subroutine35_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_37:
+   \   0000C2   2408         ADD       A,#0x8
+   \   0000C4   F582         MOV       DPL,A
+   \   0000C6   E4           CLR       A
+   \   0000C7   38           ADDC      A,R0
+   \   0000C8   F583         MOV       DPH,A
+   \   0000CA   E0           MOVX      A,@DPTR
+   \   0000CB   C0E0         PUSH      A
+   \   0000CD   7408         MOV       A,#0x8
+   \   0000CF   12....       LCALL     ?XSTACK_DISP0_8
+   \   0000D2   D0E0         POP       A
+   \   0000D4   12....       LCALL     ?Subroutine6 & 0xFFFF
+   1026          
+   1027              //Update the attempts, ahead of actually sending the frame, as this is done just below
+   1028              pRespondentCurr->attempts++;
+   \                     ??CrossCallReturnLabel_92:
+   \   0000D7   04           INC       A
+   \   0000D8   12....       LCALL     ?Subroutine6 & 0xFFFF
+   1029              
+   1030              //Send IEEE addr request or simple desc req
+   1031              if(pRespondentCurr->attempts & FINDING_AND_BINDING_MISSING_IEEE_ADDR)
+   \                     ??CrossCallReturnLabel_93:
+   \   0000DB   A2E7         MOV       C,0xE0 /* A   */.7
+   \   0000DD   5012         JNC       ??bdb_ProcessRespondentList_5
+   1032              {
+   1033                ZDP_IEEEAddrReq(pRespondentCurr->data.addr.shortAddr,0,0,0);
+   \   0000DF                ; Setup parameters for call to function ZDP_IEEEAddrReq
+   \   0000DF   7D00         MOV       R5,#0x0
+   \   0000E1   7C00         MOV       R4,#0x0
+   \   0000E3   7900         MOV       R1,#0x0
+   \   0000E5   12....       LCALL     ?Subroutine12 & 0xFFFF
+   1034              }
+   \                     ??CrossCallReturnLabel_87:
+   \   0000E8   FA           MOV       R2,A
+   \   0000E9   A3           INC       DPTR
+   \   0000EA   E0           MOVX      A,@DPTR
+   \   0000EB   FB           MOV       R3,A
+   \   0000EC   12....       LCALL     `??ZDP_IEEEAddrReq::?relay`; Banked call to: ZDP_IEEEAddrReq
+   \   0000EF   8034         SJMP      ??bdb_ProcessRespondentList_6
+   1035              else
+   1036              {
+   1037                //Send simple descriptor
+   1038                ZDP_SimpleDescReq( &dstAddr, pRespondentCurr->data.addr.shortAddr, pRespondentCurr->data.endPoint, 0 );
+   \                     ??bdb_ProcessRespondentList_5:
+   \   0000F1                ; Setup parameters for call to function ZDP_SimpleDescReq
+   \   0000F1   75..00       MOV       ?V0,#0x0
+   \   0000F4   78..         MOV       R0,#?V0
+   \   0000F6   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   0000F9   90....       MOV       DPTR,#pRespondentCurr
+   \   0000FC   12....       LCALL     ??Subroutine35_0 & 0xFFFF
+   1039              }
+   1040            }
+   \                     ??CrossCallReturnLabel_38:
+   \   0000FF   2409         ADD       A,#0x9
+   \   000101   F582         MOV       DPL,A
+   \   000103   E4           CLR       A
+   \   000104   38           ADDC      A,R0
+   \   000105   F583         MOV       DPH,A
+   \   000107   E0           MOVX      A,@DPTR
+   \   000108   F9           MOV       R1,A
+   \   000109   12....       LCALL     ?Subroutine12 & 0xFFFF
+   \                     ??CrossCallReturnLabel_88:
+   \   00010C   FC           MOV       R4,A
+   \   00010D   A3           INC       DPTR
+   \   00010E   E0           MOVX      A,@DPTR
+   \   00010F   FD           MOV       R5,A
+   \   000110   7401         MOV       A,#0x1
+   \   000112   12....       LCALL     ?XSTACK_DISP101_8
+   \   000115   12....       LCALL     `??ZDP_SimpleDescReq::?relay`; Banked call to: ZDP_SimpleDescReq
+   \   000118   7401         MOV       A,#0x1
+   \   00011A   12....       LCALL     ?DEALLOC_XSTACK8
+   \   00011D   8006         SJMP      ??bdb_ProcessRespondentList_6
+   1041            else
+   1042            {
+   1043              //Stop any attempt due to parent lost
+   1044              pRespondentCurr->attempts |= FINDING_AND_BINDING_PARENT_LOST;
+   \                     ??bdb_ProcessRespondentList_4:
+   \   00011F   12....       LCALL     ??Subroutine48_0 & 0xFFFF
+   1045            }
+   \                     ??CrossCallReturnLabel_95:
+   \   000122   D2E6         SETB      0xE0 /* A   */.6
+   \   000124   F0           MOVX      @DPTR,A
+   1046            
+   1047            //Search for the next respondant that has not enough tries in the list
+   1048            pRespondentNext = bdb_getRespondentRetry(pRespondentCurr->pNext);
+   \                     ??bdb_ProcessRespondentList_6:
+   \   000125                ; Setup parameters for call to function bdb_getRespondentRetry
+   \   000125   90....       MOV       DPTR,#pRespondentCurr
+   \   000128   12....       LCALL     ??Subroutine35_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_39:
+   \   00012B   240F         ADD       A,#0xf
+   \   00012D   F582         MOV       DPL,A
+   \   00012F   E4           CLR       A
+   \   000130   38           ADDC      A,R0
+   \   000131   F583         MOV       DPH,A
+   \   000133   12....       LCALL     ??Subroutine45_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_69:
+   \   000136   12....       LCALL     `??bdb_getRespondentRetry::?relay`; Banked call to: bdb_getRespondentRetry
+   \   000139   90....       MOV       DPTR,#pRespondentNext
+   \   00013C   12....       LCALL     ??Subroutine46_0 & 0xFFFF
+   1049          }
+   \                     ??CrossCallReturnLabel_82:
+   \   00013F   7409         MOV       A,#0x9
+   \   000141   02....       LJMP      ?Subroutine3 & 0xFFFF
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine12:
+   \   000000   90....       MOV       DPTR,#pRespondentCurr
+   \   000003                REQUIRE ??Subroutine47_0
+   \   000003                ; // Fall through to label ??Subroutine47_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine47_0:
+   \   000000   12....       LCALL     ?Subroutine28 & 0xFFFF
+   \                     ??CrossCallReturnLabel_91:
+   \   000003   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   F0           MOVX      @DPTR,A
+   \   000001   90....       MOV       DPTR,#pRespondentCurr
+   \   000004                REQUIRE ??Subroutine48_0
+   \   000004                ; // Fall through to label ??Subroutine48_0
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant {{0}}>`:
+   \   000000   0000         DW 0
+   \   000002   00000000     DB 0, 0, 0, 0, 0, 0
+   \            0000    
+   \   000008   00           DB 0
+   1050          
+   1051          /*********************************************************************
+   1052           * @fn      bdb_FindIfAppCluster
+   1053           *
+   1054           * @brief   To verify if cluster is application type
+   1055           *
+   1056           * @param   none
+   1057           *
+   1058           * @return  true if success
+   1059           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   1060          uint8 bdb_FindIfAppCluster( cId_t ClusterId )
+   \                     bdb_FindIfAppCluster:
+   1061          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   1062            uint8 i;
+   1063            uint8 ClusterCnt;
+   1064          
+   1065            ClusterCnt = sizeof( bdb_ZclType1Clusters )/sizeof( uint16 );
+   1066            
+   1067            for ( i = 0; i < ClusterCnt; i++ )
+   \   000004   7800         MOV       R0,#0x0
+   1068            {
+   1069              if ( bdb_ZclType1Clusters[i] == ClusterId )
+   \                     ??bdb_FindIfAppCluster_0:
+   \   000006   E8           MOV       A,R0
+   \   000007   25E0         ADD       A,0xE0 /* A   */
+   \   000009   FC           MOV       R4,A
+   \   00000A   E4           CLR       A
+   \   00000B   33           RLC       A
+   \   00000C   FD           MOV       R5,A
+   \   00000D   74..         MOV       A,#bdb_ZclType1Clusters & 0xff
+   \   00000F   2C           ADD       A,R4
+   \   000010   F582         MOV       DPL,A
+   \   000012   74..         MOV       A,#(bdb_ZclType1Clusters >> 8) & 0xff
+   \   000014   3D           ADDC      A,R5
+   \   000015   F583         MOV       DPH,A
+   \   000017   E0           MOVX      A,@DPTR
+   \   000018   6A           XRL       A,R2
+   \   000019   7003         JNZ       ??bdb_FindIfAppCluster_1
+   \   00001B   A3           INC       DPTR
+   \   00001C   E0           MOVX      A,@DPTR
+   \   00001D   6B           XRL       A,R3
+   \                     ??bdb_FindIfAppCluster_1:
+   \   00001E   6023         JZ        ??bdb_FindIfAppCluster_2
+   1070              {
+   1071                return ( SUCCESS );
+   1072              }
+   1073            }
+   \   000020   08           INC       R0
+   \   000021   E8           MOV       A,R0
+   \   000022   C3           CLR       C
+   \   000023   9418         SUBB      A,#0x18
+   \   000025   40DF         JC        ??bdb_FindIfAppCluster_0
+   1074            
+   1075            ClusterCnt = sizeof( bdb_ZclType2Clusters )/sizeof( uint16 );
+   1076            
+   1077            for ( i = 0; i < ClusterCnt; i++ )
+   \   000027   7800         MOV       R0,#0x0
+   1078            {
+   1079              if ( bdb_ZclType2Clusters[i] == ClusterId )
+   \                     ??bdb_FindIfAppCluster_3:
+   \   000029   E8           MOV       A,R0
+   \   00002A   25E0         ADD       A,0xE0 /* A   */
+   \   00002C   FC           MOV       R4,A
+   \   00002D   E4           CLR       A
+   \   00002E   33           RLC       A
+   \   00002F   FD           MOV       R5,A
+   \   000030   74..         MOV       A,#bdb_ZclType2Clusters & 0xff
+   \   000032   2C           ADD       A,R4
+   \   000033   F582         MOV       DPL,A
+   \   000035   74..         MOV       A,#(bdb_ZclType2Clusters >> 8) & 0xff
+   \   000037   3D           ADDC      A,R5
+   \   000038   F583         MOV       DPH,A
+   \   00003A   E0           MOVX      A,@DPTR
+   \   00003B   6A           XRL       A,R2
+   \   00003C   7003         JNZ       ??bdb_FindIfAppCluster_4
+   \   00003E   A3           INC       DPTR
+   \   00003F   E0           MOVX      A,@DPTR
+   \   000040   6B           XRL       A,R3
+   \                     ??bdb_FindIfAppCluster_4:
+   \   000041   7004         JNZ       ??bdb_FindIfAppCluster_5
+   1080              {
+   1081                return ( SUCCESS );
+   \                     ??bdb_FindIfAppCluster_2:
+   \   000043   7900         MOV       R1,#0x0
+   \   000045   8009         SJMP      ??bdb_FindIfAppCluster_6
+   1082              }
+   1083            }
+   \                     ??bdb_FindIfAppCluster_5:
+   \   000047   08           INC       R0
+   \   000048   E8           MOV       A,R0
+   \   000049   C3           CLR       C
+   \   00004A   9431         SUBB      A,#0x31
+   \   00004C   40DB         JC        ??bdb_FindIfAppCluster_3
+   1084            
+   1085            // If not found, take it as application cluster it will be filtered
+   1086            // by simple descriptor at some point
+   1087            return ( FAILURE );
+   \   00004E   7901         MOV       R1,#0x1
+   \                     ??bdb_FindIfAppCluster_6:
+   \   000050   02....       LJMP      ??Subroutine38_0 & 0xFFFF
+   1088          }
+   1089          
+   1090          
+   1091          /*********************************************************************
+   1092           * @fn      bdb_getRespondentRetry
+   1093           *
+   1094           * @brief   Get the next Respondant entry to retry
+   1095           *
+   1096           * @param   pHead - pointer to a pointer of the list head
+   1097           *
+   1098           * @return  respondant entry if found, otherwise NULL
+   1099           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   1100          bdbFindingBindingRespondent_t* bdb_getRespondentRetry(bdbFindingBindingRespondent_t* pRespondentHead)
+   \                     bdb_getRespondentRetry:
+   1101          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   1102            bdbFindingBindingRespondent_t *pTemp;
+   1103            
+   1104            pTemp = pRespondentHead;
+   \   000004   800C         SJMP      ??CrossCallReturnLabel_70
+   1105            
+   1106            while(pTemp != NULL)
+   1107            {
+   1108              //does the next entry requires to perform an attempt on simple desc req or IEEE addr req?
+   1109              if((pTemp->attempts & ~FINDING_AND_BINDING_MISSING_IEEE_ADDR) < FINDING_AND_BINDING_MAX_ATTEMPTS)
+   1110              {
+   1111                return pTemp;
+   1112              }
+   1113             
+   1114              pTemp = pTemp->pNext;
+   \                     ??bdb_getRespondentRetry_0:
+   \   000006   EA           MOV       A,R2
+   \   000007   240F         ADD       A,#0xf
+   \   000009   F582         MOV       DPL,A
+   \   00000B   E4           CLR       A
+   \   00000C   3B           ADDC      A,R3
+   \   00000D   F583         MOV       DPH,A
+   \   00000F   12....       LCALL     ??Subroutine45_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_70:
+   \   000012   EA           MOV       A,R2
+   \   000013   4B           ORL       A,R3
+   \   000014   600D         JZ        ??bdb_getRespondentRetry_1
+   \   000016   12....       LCALL     ?Subroutine26 & 0xFFFF
+   \                     ??CrossCallReturnLabel_31:
+   \   000019   E0           MOVX      A,@DPTR
+   \   00001A   547F         ANL       A,#0x7f
+   \   00001C   C3           CLR       C
+   \   00001D   9404         SUBB      A,#0x4
+   \   00001F   50E5         JNC       ??bdb_getRespondentRetry_0
+   \   000021   8004         SJMP      ??bdb_getRespondentRetry_2
+   1115            }
+   1116            return NULL;
+   \                     ??bdb_getRespondentRetry_1:
+   \   000023   7A00         MOV       R2,#0x0
+   \   000025   7B00         MOV       R3,#0x0
+   \                     ??bdb_getRespondentRetry_2:
+   \   000027   02....       LJMP      ??Subroutine38_0 & 0xFFFF
+   1117          }
+   1118          
+   1119          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   1120          bdbFindingBindingRespondent_t* bdb_findRespondentNode(uint8 endpoint, uint16 shortAddress)
+   \                     bdb_findRespondentNode:
+   1121          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   1122            bdbFindingBindingRespondent_t* pTemp = pRespondentHead;
+   \   000004   90....       MOV       DPTR,#pRespondentHead
+   \   000007   8009         SJMP      ??bdb_findRespondentNode_0
+   1123            
+   1124            while(pTemp != NULL)  
+   1125            {
+   1126              if((pTemp->data.addr.shortAddr == shortAddress) && (pTemp->data.endPoint == endpoint))
+   1127              {
+   1128                return pTemp;
+   1129              }
+   1130              
+   1131              pTemp = pTemp->pNext;
+   \                     ??bdb_findRespondentNode_1:
+   \   000009   EC           MOV       A,R4
+   \   00000A   240F         ADD       A,#0xf
+   \   00000C   F582         MOV       DPL,A
+   \   00000E   E4           CLR       A
+   \   00000F   3D           ADDC      A,R5
+   \   000010   F583         MOV       DPH,A
+   \                     ??bdb_findRespondentNode_0:
+   \   000012   E0           MOVX      A,@DPTR
+   \   000013   FC           MOV       R4,A
+   \   000014   A3           INC       DPTR
+   \   000015   E0           MOVX      A,@DPTR
+   \   000016   FD           MOV       R5,A
+   \   000017   EC           MOV       A,R4
+   \   000018   4D           ORL       A,R5
+   \   000019   6024         JZ        ??bdb_findRespondentNode_2
+   \   00001B   8C82         MOV       DPL,R4
+   \   00001D   8D83         MOV       DPH,R5
+   \   00001F   E0           MOVX      A,@DPTR
+   \   000020   6A           XRL       A,R2
+   \   000021   7003         JNZ       ??bdb_findRespondentNode_3
+   \   000023   A3           INC       DPTR
+   \   000024   E0           MOVX      A,@DPTR
+   \   000025   6B           XRL       A,R3
+   \                     ??bdb_findRespondentNode_3:
+   \   000026   70E1         JNZ       ??bdb_findRespondentNode_1
+   \   000028   8C82         MOV       DPL,R4
+   \   00002A   8D83         MOV       DPH,R5
+   \   00002C   A3           INC       DPTR
+   \   00002D   A3           INC       DPTR
+   \   00002E   A3           INC       DPTR
+   \   00002F   A3           INC       DPTR
+   \   000030   A3           INC       DPTR
+   \   000031   A3           INC       DPTR
+   \   000032   A3           INC       DPTR
+   \   000033   A3           INC       DPTR
+   \   000034   A3           INC       DPTR
+   \   000035   E0           MOVX      A,@DPTR
+   \   000036   69           XRL       A,R1
+   \   000037   70D0         JNZ       ??bdb_findRespondentNode_1
+   \   000039   EC           MOV       A,R4
+   \   00003A   FA           MOV       R2,A
+   \   00003B   ED           MOV       A,R5
+   \   00003C   FB           MOV       R3,A
+   \   00003D   8004         SJMP      ??bdb_findRespondentNode_4
+   1132            }
+   1133            
+   1134            return NULL;
+   \                     ??bdb_findRespondentNode_2:
+   \   00003F   7A00         MOV       R2,#0x0
+   \   000041   7B00         MOV       R3,#0x0
+   \                     ??bdb_findRespondentNode_4:
+   \   000043   02....       LJMP      ??Subroutine38_0 & 0xFFFF
+   1135          }
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for grpName>`:
+   \   000000   47           DB 71
+   \   000001   72           DB 114
+   \   000002   6F           DB 111
+   \   000003   75           DB 117
+   \   000004   70           DB 112
+   \   000005   00           DB 0
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for bdbIndentifyActiveEndpoint>`:
+   \   000000   FF           DB 255
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_3e7:
+   \   000000   E7030000     DD 999
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_3e8:
+   \   000000   E8030000     DD 1000
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_1388:
+   \   000000   88130000     DD 5000
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??bdb_SetIdentifyActiveEndpoint::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    bdb_SetIdentifyActiveEndpoint
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??bdb_setEpDescListToActiveEndpoint::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    bdb_setEpDescListToActiveEndpoint
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??bdb_ProcessIEEEAddrRsp::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    bdb_ProcessIEEEAddrRsp
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??bdb_StopInitiatorFindingBinding::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    bdb_StopInitiatorFindingBinding
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??bdb_checkMatchingEndpoints::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    bdb_checkMatchingEndpoints
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??bdb_ProcessSimpleDesc::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    bdb_ProcessSimpleDesc
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??bdb_zclFindingBindingEpType::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    bdb_zclFindingBindingEpType
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??bdb_zclFindingBindingAddBindEntry::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    bdb_zclFindingBindingAddBindEntry
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??bdb_exitFindingBindingWStatus::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    bdb_exitFindingBindingWStatus
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??bdb_zclSimpleDescClusterListClean::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    bdb_zclSimpleDescClusterListClean
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??bdb_RegisterIdentifyTimeChangeCB::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    bdb_RegisterIdentifyTimeChangeCB
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??bdb_GetFBInitiatorStatus::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    bdb_GetFBInitiatorStatus
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??bdb_RegisterBindNotificationCB::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    bdb_RegisterBindNotificationCB
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??bdb_SendIdentifyQuery::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    bdb_SendIdentifyQuery
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??bdb_SendIdentifyQueryWithAddr::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    bdb_SendIdentifyQueryWithAddr
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??bdb_ZclIdentifyQueryCmdInd::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    bdb_ZclIdentifyQueryCmdInd
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??bdb_ProcessRespondentList::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    bdb_ProcessRespondentList
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??bdb_FindIfAppCluster::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    bdb_FindIfAppCluster
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??bdb_getRespondentRetry::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    bdb_getRespondentRetry
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??bdb_findRespondentNode::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    bdb_findRespondentNode
+   1136          
+   1137          #endif  
+   1138          
+   1139          /*********************************************************************
+   1140          *********************************************************************/
+
+   Maximum stack usage in bytes:
+
+   ISTACK XSTACK Function
+   ------ ------ --------
+      2     14   bdb_FindIfAppCluster
+      1     18   bdb_GetFBInitiatorStatus
+        0     18   -> osal_get_timeoutEx
+      0     25   bdb_ProcessIEEEAddrRsp
+        0     25   -> AddrMgrEntryUpdate
+        0     25   -> AddrMgrExtAddrSet
+        0     25   -> ZDO_ParseAddrRsp
+        0     25   -> bdb_checkMatchingEndpoints
+        0     25   -> bdb_exitFindingBindingWStatus
+        0     25   -> bdb_findRespondentNode
+        0     25   -> bdb_setEpDescListToActiveEndpoint
+        0     25   -> bdb_zclSimpleDescClusterListClean
+        0     25   -> osal_mem_free
+        0     25   -> osal_stop_timerEx
+      1     22   bdb_ProcessRespondentList
+        0     18   -> ZDP_IEEEAddrReq
+        0     19   -> ZDP_SimpleDescReq
+        0     18   -> bdb_exitFindingBindingWStatus
+        0     18   -> bdb_getRespondentRetry
+        0     22   -> osal_start_timerEx
+      0     28   bdb_ProcessSimpleDesc
+        0     28   -> AddrMgrExtAddrLookup
+        0     28   -> ZDO_ParseSimpleDescBuf
+        0     28   -> bdb_checkMatchingEndpoints
+        0     28   -> bdb_findRespondentNode
+        0     28   -> bdb_setEpDescListToActiveEndpoint
+        0     28   -> bdb_zclSimpleDescClusterListClean
+      2      0   bdb_RegisterBindNotificationCB
+      2      0   bdb_RegisterIdentifyTimeChangeCB
+      0     33   bdb_SendIdentifyQuery
+        0     22   -> bdb_getZCLFrameCounter
+        0     26   -> osal_start_timerEx
+        0     33   -> zcl_SendCommand
+      1     33   bdb_SendIdentifyQueryWithAddr
+        0     22   -> bdb_getZCLFrameCounter
+        0     26   -> osal_start_timerEx
+        0     33   -> zcl_SendCommand
+      2      0   bdb_SetIdentifyActiveEndpoint
+      2      0   bdb_StopInitiatorFindingBinding
+        2      0   -> bdb_exitFindingBindingWStatus
+        2      0   -> bdb_zclRespondentListClean
+        2      0   -> osal_stop_timerEx
+      1     10   bdb_ZclIdentifyQueryCmdInd
+        0     10   -> bdb_AddRespondentNode
+        0     10   -> osal_set_event
+        0     10   -> osal_stop_timerEx
+      0     62   bdb_checkMatchingEndpoints
+        0     29   -> AddrMgrExtAddrLookup
+        0     29   -> bdb_exitFindingBindingWStatus
+        0     34   -> bdb_zclFindingBindingAddBindEntry
+        0     29   -> bdb_zclSimpleDescClusterListClean
+        0     29   -> osal_stop_timerEx
+      0     38   bdb_exitFindingBindingWStatus
+        0      9   -> bdb_reportCommissioningState
+      2     28   bdb_findRespondentNode
+      2     18   bdb_getRespondentRetry
+      2     28   bdb_setEpDescListToActiveEndpoint
+      0     50   bdb_zclFindingBindingAddBindEntry
+        0     16   -> ZDO_AnyClusterMatches
+        0     14   -> bdb_FindIfAppCluster
+      0     16   bdb_zclFindingBindingEpType
+        0     16   -> ZDO_AnyClusterMatches
+      0     39   bdb_zclSimpleDescClusterListClean
+        0     10   -> osal_mem_free
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       9  ?<Constant {{0}}>
+       1  ?<Initializer for bdbIndentifyActiveEndpoint>
+       6  ?<Initializer for grpName>
+       5  ??Subroutine34_0
+       5  ??Subroutine35_0
+       3  ??Subroutine36_0
+       5  ??Subroutine37_0
+       7  ??Subroutine38_0
+       1  ??Subroutine39_0
+       6  ??Subroutine40_0
+       6  ??Subroutine41_0
+       5  ??Subroutine42_0
+       8  ??Subroutine43_0
+       4  ??Subroutine44_0
+       4  ??Subroutine45_0
+       6  ??Subroutine46_0
+       4  ??Subroutine47_0
+       5  ??Subroutine48_0
+       6  ??Subroutine49_0
+       7  ??Subroutine50_0
+       3  ?Subroutine0
+       2  ?Subroutine1
+      10  ?Subroutine10
+      31  ?Subroutine11
+       3  ?Subroutine12
+      20  ?Subroutine13
+       6  ?Subroutine14
+      14  ?Subroutine15
+      22  ?Subroutine16
+       6  ?Subroutine17
+       9  ?Subroutine18
+      10  ?Subroutine19
+       8  ?Subroutine2
+       6  ?Subroutine20
+       9  ?Subroutine21
+       6  ?Subroutine22
+      14  ?Subroutine23
+       6  ?Subroutine24
+       4  ?Subroutine25
+      10  ?Subroutine26
+       8  ?Subroutine27
+       9  ?Subroutine28
+       6  ?Subroutine29
+       3  ?Subroutine3
+       2  ?Subroutine30
+       3  ?Subroutine31
+       5  ?Subroutine32
+       9  ?Subroutine33
+      11  ?Subroutine4
+      14  ?Subroutine5
+       4  ?Subroutine6
+       9  ?Subroutine7
+      29  ?Subroutine8
+      13  ?Subroutine9
+       4  __Constant_1388
+       4  __Constant_3e7
+       4  __Constant_3e8
+       1  bdbIndentifyActiveEndpoint
+      83  bdb_FindIfAppCluster
+       6  bdb_FindIfAppCluster::?relay
+      12  bdb_FindingBindingTargetSimpleDesc
+     123  bdb_GetFBInitiatorStatus
+       6  bdb_GetFBInitiatorStatus::?relay
+     210  bdb_ProcessIEEEAddrRsp
+       6  bdb_ProcessIEEEAddrRsp::?relay
+     324  bdb_ProcessRespondentList
+       6  bdb_ProcessRespondentList::?relay
+     195  bdb_ProcessSimpleDesc
+       6  bdb_ProcessSimpleDesc::?relay
+      10  bdb_RegisterBindNotificationCB
+       6  bdb_RegisterBindNotificationCB::?relay
+      10  bdb_RegisterIdentifyTimeChangeCB
+       6  bdb_RegisterIdentifyTimeChangeCB::?relay
+     155  bdb_SendIdentifyQuery
+       6  bdb_SendIdentifyQuery::?relay
+     147  bdb_SendIdentifyQueryWithAddr
+       6  bdb_SendIdentifyQueryWithAddr::?relay
+      77  bdb_SetIdentifyActiveEndpoint
+       6  bdb_SetIdentifyActiveEndpoint::?relay
+      36  bdb_StopInitiatorFindingBinding
+       6  bdb_StopInitiatorFindingBinding::?relay
+     143  bdb_ZclIdentifyQueryCmdInd
+       6  bdb_ZclIdentifyQueryCmdInd::?relay
+      48  bdb_ZclType1Clusters
+      98  bdb_ZclType2Clusters
+     376  bdb_checkMatchingEndpoints
+       6  bdb_checkMatchingEndpoints::?relay
+      20  bdb_exitFindingBindingWStatus
+       6  bdb_exitFindingBindingWStatus::?relay
+      70  bdb_findRespondentNode
+       6  bdb_findRespondentNode::?relay
+      42  bdb_getRespondentRetry
+       6  bdb_getRespondentRetry::?relay
+      81  bdb_setEpDescListToActiveEndpoint
+       6  bdb_setEpDescListToActiveEndpoint::?relay
+     147  bdb_zclFindingBindingAddBindEntry
+       6  bdb_zclFindingBindingAddBindEntry::?relay
+     204  bdb_zclFindingBindingEpType
+       6  bdb_zclFindingBindingEpType::?relay
+      73  bdb_zclSimpleDescClusterListClean
+       6  bdb_zclSimpleDescClusterListClean::?relay
+       6  grpName
+       2  pfnBindNotificationCB
+       2  pfnIdentifyTimeChangeCB
+
+ 
+ 2 937 bytes in segment BANKED_CODE
+   120 bytes in segment BANK_RELAYS
+     7 bytes in segment XDATA_I
+     7 bytes in segment XDATA_ID
+   167 bytes in segment XDATA_ROM_C
+    16 bytes in segment XDATA_Z
+ 
+   127 bytes of CODE     memory
+   155 bytes of CONST    memory (+ 12 bytes shared)
+ 2 937 bytes of HUGECODE memory
+    23 bytes of XDATA    memory
+
+Errors: none
+Warnings: none

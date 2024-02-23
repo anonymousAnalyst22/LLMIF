@@ -1,0 +1,1721 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// IAR C/C++ Compiler V10.10.1.4655 for 8051              22/Nov/2023  15:42:39
+// Copyright 2004-2017 IAR Systems AB.
+// Standalone license - IAR Embedded Workbench for 8051
+//
+//    Core               =  plain
+//    Code model         =  banked
+//    Data model         =  large
+//    Calling convention =  xdata reentrant
+//    Constant location  =  data_rom
+//    Dptr setup         =  1,16
+//                          
+//    Source file        =  
+//        D:\fuzzing-coordinator-response-collection\Components\stack\bdb\bdb_touchlink.c
+//    Command line       =  
+//        -f C:\Users\ADMINI~1\AppData\Local\Temp\EW98AA.tmp
+//        (D:\fuzzing-coordinator-response-collection\Components\stack\bdb\bdb_touchlink.c
+//        -D SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE -D
+//        MULTICAST_ENABLED=FALSE -D ZCL_READ -D ZCL_DISCOVER -D ZCL_WRITE -D
+//        ZCL_BASIC -D ZCL_IDENTIFY -D ISR_KEYINTERRUPT -D HAL_UART=TRUE -D
+//        HAL_LCD=FALSE -D ZCL_ON_OFF -D INT_HEAP_LEN=2800 -D
+//        HAL_UART_DMA_RX_MAX=256 -D HAL_UART_DMA_TX_MAX=256 -lC
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+//        -lA
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+//        --diag_suppress Pe001,Pa010 -o
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj
+//        -e --debug --core=plain --dptr=16,1 --data_model=large
+//        --code_model=banked --calling_convention=xdata_reentrant
+//        --place_constants=data_rom --nr_virtual_regs 8 -f
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg
+//        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+//        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+//        -DZDO_COORDINATOR -DRTR_NWK) -f
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+//        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+//        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+//        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+//        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+//        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+//        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+//        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+//        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+//        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+//        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x00, 0x01, 0x02, 0x03,
+//        0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E,
+//        0x0F}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+//        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+//        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+//        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000
+//        -DENABLE_LED4_DISABLE_S1) -f
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\Source\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\Source\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\ZMain\TI2530DB\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\include\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\include\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mt\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\osal\include\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\saddr\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\sdata\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\af\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\bdb\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\gp\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sec\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sys\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zcl\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\Common\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\SPI\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\Font\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_LCD_SPI\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_OLED\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_TFT\
+//        -Ohz --require_prototypes)
+//    Locale             =  Chinese (Simplified)_China.936
+//    List file          =  
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List\bdb_touchlink.s51
+//
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME bdb_touchlink
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__register_banks", "*"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+
+        END
+// D:\fuzzing-coordinator-response-collection\Components\stack\bdb\bdb_touchlink.c
+//    1 /**************************************************************************************************
+//    2   Filename:       bdb_touchlink.c
+//    3   Revised:        $Date: 2013-12-06 15:53:38 -0800 (Fri, 06 Dec 2013) $
+//    4   Revision:       $Revision: 36460 $
+//    5 
+//    6   Description:    Zigbee Cluster Library - Light Link Profile.
+//    7 
+//    8 
+//    9   Copyright 2011-2013 Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License").  You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product.  Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com.
+//   38 **************************************************************************************************/
+//   39 
+//   40 /*********************************************************************
+//   41  * INCLUDES
+//   42  */
+//   43 #include "OSAL_Nv.h"
+//   44 #include "hal_aes.h"
+//   45 #include "ssp_hash.h"
+//   46 #include "nwk_util.h"
+//   47 #include "ZDSecMgr.h"
+//   48 #include "ZDObject.h"
+//   49 
+//   50 #if defined( INTER_PAN )
+//   51   #include "stub_aps.h"
+//   52 #if defined ( BDB_TL_INITIATOR )
+//   53   #include "bdb_touchlink_initiator.h"
+//   54 #endif // BDB_TL_INITIATOR
+//   55 #if defined ( BDB_TL_TARGET )
+//   56   #include "bdb_touchlink_target.h"
+//   57 #endif // BDB_TL_TARGET
+//   58 #endif
+//   59 
+//   60 #include "bdb.h"
+//   61 #include "bdb_interface.h"
+//   62 #include "bdb_tlCommissioning.h"
+//   63 #include "bdb_touchlink.h"
+//   64 
+//   65 #if defined ( BDB_TL_TARGET ) || defined ( BDB_TL_INITIATOR )
+//   66 
+//   67 /*********************************************************************
+//   68  * MACROS
+//   69  */
+//   70 #define TOUCHLINK_NEW_MIN( min, max )                  ( ( (uint32)(max) + (uint32)(min) + 1 ) / 2 )
+//   71 
+//   72 /*********************************************************************
+//   73  * CONSTANTS
+//   74  */
+//   75 
+//   76 #define TOUCHLINK_NUM_DEVICE_INFO_ENTRIES              5
+//   77 
+//   78 
+//   79 /*********************************************************************
+//   80  * TYPEDEFS
+//   81  */
+//   82 
+//   83 /*********************************************************************
+//   84  * GLOBAL VARIABLES
+//   85  */
+//   86 
+//   87 uint32 touchLinkLastAcceptedTransID;
+//   88    
+//   89 // Used for Network Discovery
+//   90 touchLinkDiscoveredNwkParam_t *pDiscoveredNwkParamList = NULL;
+//   91 
+//   92 // Current Touch Link Transaction ID
+//   93 uint32 touchLinkTransID;
+//   94 
+//   95 // Scan Response ID
+//   96 uint32 touchLinkResponseID;
+//   97 
+//   98 // Our group ID range
+//   99 uint16 touchLinkGrpIDsBegin;
+//  100 uint16 touchLinkGrpIDsEnd;
+//  101 
+//  102 // Flag for leave
+//  103 uint8 touchLinkLeaveInitiated;
+//  104 
+//  105 // Device Information Table
+//  106 bdbTLDeviceInfo_t *touchLinkSubDevicesTbl[5];
+//  107 
+//  108 bool touchlinkFNReset;
+//  109 
+//  110 /*********************************************************************
+//  111  * EXTERNAL VARIABLES
+//  112  */
+//  113 
+//  114 /*********************************************************************
+//  115  * EXTERNAL FUNCTIONS
+//  116  */
+//  117 
+//  118 /*********************************************************************
+//  119  * LOCAL VARIABLES
+//  120  */
+//  121 // TOUCHLINK Profile attributes - Our free network address and group ID ranges
+//  122 static uint16 touchLinkFreeNwkAddrBegin;
+//  123 static uint16 touchLinkFreeNwkAddrEnd;
+//  124 static uint16 touchLinkFreeGrpIdBegin;
+//  125 static uint16 touchLinkFreeGrpIdEnd;
+//  126 
+//  127 static bool touchLinkIsInitiator;
+//  128 static uint8 touchLinkTaskId;
+//  129 
+//  130 // This is the Cluster ID List and should be filled with Application
+//  131 // specific cluster IDs.
+//  132 #define TOUCHLINK_EP_MAX_INCLUSTERS       1
+//  133 static const cId_t touchLink_EP_InClusterList[TOUCHLINK_EP_MAX_INCLUSTERS] =
+//  134 {
+//  135   ZCL_CLUSTER_ID_TOUCHLINK
+//  136 };
+//  137 
+//  138 #define TOUCHLINK_EP_MAX_OUTCLUSTERS       1
+//  139 static const cId_t touchLink_EP_OutClusterList[TOUCHLINK_EP_MAX_OUTCLUSTERS] =
+//  140 {
+//  141   ZCL_CLUSTER_ID_TOUCHLINK
+//  142 };
+//  143 
+//  144 static SimpleDescriptionFormat_t touchLink_EP_SimpleDesc =
+//  145 {
+//  146   TOUCHLINK_INTERNAL_ENDPOINT,         //  int Endpoint;
+//  147   TOUCHLINK_PROFILE_ID,                //  uint16 AppProfId[2];
+//  148   TOUCHLINK_INTERNAL_DEVICE_ID,        //  uint16 AppDeviceId[2];
+//  149   TOUCHLINK_DEVICE_VERSION,            //  int   AppDevVer:4;
+//  150   TOUCHLINK_INTERNAL_FLAGS,            //  int   AppFlags:4;
+//  151   TOUCHLINK_EP_MAX_INCLUSTERS,         //  byte  AppNumInClusters;
+//  152   (cId_t *)touchLink_EP_InClusterList, //  byte *pAppInClusterList;
+//  153   TOUCHLINK_EP_MAX_OUTCLUSTERS,        //  byte  AppNumInClusters;
+//  154   (cId_t *)touchLink_EP_OutClusterList //  byte *pAppInClusterList;
+//  155 };
+//  156 
+//  157 #if defined( INTER_PAN )
+//  158 // Define endpoint structure to register with STUB APS for INTER-PAN support
+//  159 static endPointDesc_t touchLink_EP =
+//  160 {
+//  161   TOUCHLINK_INTERNAL_ENDPOINT,
+//  162   0,
+//  163   &touchLinkTaskId,
+//  164   (SimpleDescriptionFormat_t *)NULL,  // No Simple description for this endpoint
+//  165   (afNetworkLatencyReq_t)0            // No Network Latency req
+//  166 };
+//  167 #endif
+//  168 
+//  169 
+//  170 /*********************************************************************
+//  171  * LOCAL FUNCTIONS
+//  172  */
+//  173 static void touchLink_BuildAesKey( uint8 *pAesKey, uint32 transID, uint32 responseID, uint8 keyIndex );
+//  174 void touchLink_ItemInit( uint16 id, uint16 len, void *pBuf );
+//  175 static void *touchLink_BeaconIndCB ( void *param );
+//  176 static void *touchLink_NwkDiscoveryCnfCB ( void *param );
+//  177 static void touchLink_InitNV( void );
+//  178 
+//  179 /*********************************************************************
+//  180  * PUBLIC FUNCTIONS
+//  181  */
+//  182 
+//  183 /*********************************************************************
+//  184  * @fn      touchLink_InitVariables
+//  185  *
+//  186  * @brief   Initialize the TOUCHLINK global and local variables.
+//  187  *
+//  188  * @param   initiator - if caller is Initiator
+//  189  *
+//  190  * @return  none
+//  191  */
+//  192 void touchLink_InitVariables( bool initiator )
+//  193 {
+//  194   touchLinkTransID = 0;
+//  195   touchLinkIsInitiator = initiator;
+//  196 
+//  197   if ( bdbAttributes.bdbNodeIsOnANetwork == FALSE )
+//  198   {
+//  199     _NIB.nwkDevAddress = INVALID_NODE_ADDR;
+//  200   }
+//  201 
+//  202   // verify groups communication is initiated by broadcasts rather than multicasts
+//  203   _NIB.nwkUseMultiCast = FALSE;
+//  204   // detect and remove stored deprecated end device children after power up
+//  205   zgRouterOffAssocCleanup = TRUE;
+//  206   osal_nv_write(ZCD_NV_ROUTER_OFF_ASSOC_CLEANUP, 0, sizeof(zgRouterOffAssocCleanup), &zgRouterOffAssocCleanup);
+//  207 
+//  208   touchLink_InitFreeRanges( initiator );
+//  209 
+//  210   touchLink_InitNV();
+//  211 
+//  212   touchLinkLeaveInitiated = FALSE;
+//  213 
+//  214   // Initialize device info table
+//  215   osal_memset( touchLinkSubDevicesTbl, 0, sizeof( touchLinkSubDevicesTbl ) );
+//  216   
+//  217   touchLinkIsInitiator = FALSE;
+//  218   
+//  219   // set broadcast address mask to support broadcast filtering
+//  220   NLME_SetBroadcastFilter( ZDO_Config_Node_Descriptor.CapabilityFlags );
+//  221 }
+//  222 
+//  223 /*********************************************************************
+//  224  * @fn      touchLink_InitFreeRanges
+//  225  *
+//  226  * @brief   Initialize the TOUCHLINK free range global variables.
+//  227  *
+//  228  * @param   initiator - if caller is link initiator
+//  229  *
+//  230  * @return  none
+//  231  */
+//  232 void touchLink_InitFreeRanges( bool initiator )
+//  233 {
+//  234   // Initialize our free network address and group ID ranges
+//  235   if ( initiator )
+//  236   {
+//  237     touchLinkFreeNwkAddrBegin = APL_FREE_NWK_ADDR_RANGE_BEGIN;
+//  238     touchLinkFreeNwkAddrEnd = APL_FREE_NWK_ADDR_RANGE_END;
+//  239 
+//  240     touchLinkFreeGrpIdBegin = APL_FREE_GROUP_ID_RANGE_BEGIN;
+//  241     touchLinkFreeGrpIdEnd = APL_FREE_GROUP_ID_RANGE_END;
+//  242   }
+//  243   else
+//  244   {
+//  245     touchLinkFreeNwkAddrBegin = touchLinkFreeNwkAddrEnd = 0;
+//  246     touchLinkFreeGrpIdBegin = touchLinkFreeGrpIdEnd = 0;
+//  247   }
+//  248 
+//  249   // Initialize our local group ID range
+//  250   touchLinkGrpIDsBegin = touchLinkGrpIDsEnd = 0;
+//  251 }
+//  252 
+//  253 /*********************************************************************
+//  254  * @fn      touchLink_UpdateFreeRanges
+//  255  *
+//  256  * @brief   Update the TOUCHLINK free range global variables.
+//  257  *
+//  258  * @param   pParams - new parameters
+//  259  *
+//  260  * @return  none
+//  261  */
+//  262 void touchLink_UpdateFreeRanges( bdbTLNwkParams_t *pParams )
+//  263 {
+//  264   // Set our free network address and group ID ranges
+//  265   touchLinkFreeNwkAddrBegin = pParams->freeNwkAddrBegin;
+//  266   touchLinkFreeNwkAddrEnd = pParams->freeNwkAddrEnd;
+//  267   touchLinkFreeGrpIdBegin = pParams->freeGrpIDBegin;
+//  268   touchLinkFreeGrpIdEnd = pParams->freeGrpIDEnd;
+//  269 
+//  270   // Set our group ID range
+//  271   touchLinkGrpIDsBegin = pParams->grpIDsBegin;
+//  272   touchLinkGrpIDsEnd = pParams->grpIDsEnd;
+//  273 }
+//  274 
+//  275 /*********************************************************************
+//  276  * @fn      touchLink_GerFreeRanges
+//  277  *
+//  278  * @brief   Get the TOUCHLINK free range global variables.
+//  279  *
+//  280  * @param   pParams - parameter to get
+//  281  *
+//  282  * @return  none
+//  283  */
+//  284 void touchLink_GerFreeRanges( bdbTLNwkParams_t *pParams )
+//  285 {
+//  286   // Set our free network address and group ID ranges
+//  287   pParams->freeNwkAddrBegin = touchLinkFreeNwkAddrBegin;
+//  288   pParams->freeNwkAddrEnd = touchLinkFreeNwkAddrEnd;
+//  289   pParams->freeGrpIDBegin = touchLinkFreeGrpIdBegin;
+//  290   pParams->freeGrpIDEnd = touchLinkFreeGrpIdEnd;
+//  291   
+//  292     // Set our group ID range
+//  293   pParams->grpIDsBegin = touchLinkGrpIDsBegin;
+//  294   pParams->grpIDsEnd = touchLinkGrpIDsEnd;
+//  295 }
+//  296 
+//  297 /*********************************************************************
+//  298  * @fn      touchLink_IsValidSplitFreeRanges
+//  299  *
+//  300  * @brief   Checks to see if the resulting two ranges are not smaller
+//  301  *          than the threshold after division of a network address or
+//  302  *          group ID range. The Initiator splits its own free range
+//  303  *          in half and assigns the top half to the new device.
+//  304  *
+//  305  *          Note: A range (Nmin...Nmax) is split as follows:
+//  306  *
+//  307  *                N'min = (Nmax + Nmin + 1)/2
+//  308  *                N'max = Nmax
+//  309  *                Nmax = N'min - 1
+//  310  *
+//  311  * @param   totalGrpIDs - total number of group IDs needed
+//  312  *
+//  313  * @return  TRUE if split possible. FALSE, otherwise.
+//  314  */
+//  315 bool touchLink_IsValidSplitFreeRanges( uint8 totalGrpIDs )
+//  316 {
+//  317   if ( ( touchLinkFreeNwkAddrBegin != 0 ) && ( touchLinkFreeGrpIdBegin != 0 ) )
+//  318   {
+//  319       return ( ( ( ( touchLinkFreeNwkAddrEnd - touchLinkFreeNwkAddrBegin ) / 2 ) >= APL_FREE_ADDR_THRESHOLD ) &&
+//  320                ( ( ( touchLinkFreeGrpIdEnd - ( touchLinkFreeGrpIdBegin + totalGrpIDs - 1 ) ) / 2 ) >= APL_FREE_GROUP_ID_THRESHOLD ) );
+//  321 
+//  322   }
+//  323 
+//  324   return ( FALSE );
+//  325 }
+//  326 
+//  327 /*********************************************************************
+//  328  * @fn      touchLink_SplitFreeRanges
+//  329  *
+//  330  * @brief   Split our own free network address and group ID ranges
+//  331  *          in half and assign the top half to the new device.
+//  332  *
+//  333  *          Note: A range (Nmin...Nmax) is split as follows:
+//  334  *
+//  335  *                N'min = (Nmax + Nmin + 1)/2
+//  336  *                N'max = Nmax
+//  337  *                Nmax = N'min - 1
+//  338  *
+//  339  * output parameters
+//  340  *
+//  341  * @param   pAddrBegin - new address range begin
+//  342  * @param   pAddrEnd - new address range end
+//  343  * @param   pGrpIdBegin - new group id range begin
+//  344  * @param   pGrpIdEnd - new group id range end
+//  345  *
+//  346  * @return  none
+//  347  */
+//  348 void touchLink_SplitFreeRanges( uint16 *pAddrBegin, uint16 *pAddrEnd,
+//  349                         uint16 *pGrpIdBegin, uint16 *pGrpIdEnd )
+//  350 {
+//  351   if ( ( touchLinkFreeNwkAddrBegin != 0 ) && ( touchLinkFreeGrpIdBegin != 0 ) )
+//  352   {
+//  353     *pAddrBegin = TOUCHLINK_NEW_MIN( touchLinkFreeNwkAddrBegin, touchLinkFreeNwkAddrEnd );
+//  354     *pGrpIdBegin = TOUCHLINK_NEW_MIN( touchLinkFreeGrpIdBegin, touchLinkFreeGrpIdEnd );
+//  355 
+//  356     *pAddrEnd = touchLinkFreeNwkAddrEnd;
+//  357     *pGrpIdEnd = touchLinkFreeGrpIdEnd;
+//  358 
+//  359     // Update our max
+//  360     touchLinkFreeNwkAddrEnd = *pAddrBegin - 1;
+//  361     touchLinkFreeGrpIdEnd = *pGrpIdBegin - 1;
+//  362   }
+//  363   else
+//  364   {
+//  365     *pAddrBegin = *pAddrEnd = 0;
+//  366     *pGrpIdBegin = *pGrpIdEnd = 0;
+//  367   }
+//  368 }
+//  369 
+//  370 /*********************************************************************
+//  371  * @fn      touchLink_PopGrpIDRange
+//  372  *
+//  373  * @brief   Pop the requested number of group IDs out of the free group IDs range.
+//  374  *
+//  375  * input parameters
+//  376  *
+//  377  * @param   numGrpIDs - number of group IDs needed
+//  378  *
+//  379  * output parameters
+//  380  *
+//  381  * @param   pGrpIdBegin - new group id range begin, or 0 if unavaialable
+//  382  * @param   pGrpIdEnd - new group id range end, , or 0 if unavaialable
+//  383  *
+//  384  * @return  none
+//  385  */
+//  386 void touchLink_PopGrpIDRange( uint8 numGrpIDs, uint16 *pGrpIDsBegin, uint16 *pGrpIDsEnd )
+//  387 {
+//  388   if ( ( touchLinkFreeGrpIdBegin != 0 )
+//  389        && ( touchLinkFreeGrpIdBegin <= touchLinkFreeGrpIdEnd )
+//  390        && ( ( touchLinkFreeGrpIdEnd - touchLinkFreeGrpIdBegin ) >= numGrpIDs ) )
+//  391   {
+//  392     *pGrpIDsBegin = touchLinkFreeGrpIdBegin;
+//  393 
+//  394     // Update min free group id
+//  395     touchLinkFreeGrpIdBegin += numGrpIDs;
+//  396 
+//  397     *pGrpIDsEnd = touchLinkFreeGrpIdBegin - 1;
+//  398   }
+//  399   else
+//  400   {
+//  401     *pGrpIDsBegin = *pGrpIDsEnd = 0;
+//  402   }
+//  403 }
+//  404 
+//  405 /*********************************************************************
+//  406  * @fn      touchLink_PopNwkAddress
+//  407  *
+//  408  * @brief   Pop an avaialble short address out of the free network addresses range.
+//  409  *
+//  410  * @param   none
+//  411  *
+//  412  * @return  free address if available. 0, otherwise.
+//  413  */
+//  414 uint16 touchLink_PopNwkAddress( void )
+//  415 {
+//  416   if ( ( touchLinkFreeNwkAddrBegin == 0 ) || ( touchLinkFreeNwkAddrBegin > touchLinkFreeNwkAddrEnd ) )
+//  417   {
+//  418     return ( 0 );
+//  419   }
+//  420 
+//  421   return ( touchLinkFreeNwkAddrBegin++ );
+//  422 }
+//  423 
+//  424 /*********************************************************************
+//  425  * @fn      touchLink_GetNumSubDevices
+//  426  *
+//  427  * @brief   Get the total number of sub-devices (endpoints) registered.
+//  428  *
+//  429  * @param   startIndex - starting index
+//  430  *
+//  431  * @return  number of sub-devices
+//  432  */
+//  433 uint8 touchLink_GetNumSubDevices( uint8 startIndex )
+//  434 {
+//  435   uint8 numEPs = 0;
+//  436 
+//  437   for ( uint8 i = startIndex; i < TOUCHLINK_NUM_DEVICE_INFO_ENTRIES; i++ )
+//  438   {
+//  439     if ( touchLinkSubDevicesTbl[i] != NULL )
+//  440     numEPs++;
+//  441   }
+//  442 
+//  443   return ( numEPs );
+//  444 }
+//  445 
+//  446 /*********************************************************************
+//  447  * @fn      touchLink_GetNumGrpIDs
+//  448  *
+//  449  * @brief   Get the total number of group IDs required by this device.
+//  450  *
+//  451  * @param   none
+//  452  *
+//  453  * @return  number of group IDs
+//  454  */
+//  455 uint8 touchLink_GetNumGrpIDs( void )
+//  456 {
+//  457   uint8 numGrpIDs = 0;
+//  458 
+//  459   for ( uint8 i = 0; i < TOUCHLINK_NUM_DEVICE_INFO_ENTRIES; i++ )
+//  460   {
+//  461     if ( touchLinkSubDevicesTbl[i] != NULL )
+//  462     {
+//  463       numGrpIDs += touchLinkSubDevicesTbl[i]->grpIdCnt;
+//  464     }
+//  465   }
+//  466 
+//  467   return ( numGrpIDs );
+//  468 }
+//  469 
+//  470 /*********************************************************************
+//  471  * @fn      touchLink_GetSubDeviceInfo
+//  472  *
+//  473  * @brief   Get the sub-device information.
+//  474  *
+//  475  * input parameter
+//  476  *
+//  477  * @param   index - index of sub-device
+//  478  *
+//  479  * output parameter
+//  480  *
+//  481  * @param   pInfo - sub-device info (to be returned)
+//  482  *
+//  483  * @return  none
+//  484  */
+//  485 void touchLink_GetSubDeviceInfo( uint8 index, bdbTLDeviceInfo_t *pInfo )
+//  486 {
+//  487   if ( pInfo == NULL )
+//  488   {
+//  489     return;
+//  490   }
+//  491   if ( ( index < TOUCHLINK_NUM_DEVICE_INFO_ENTRIES ) &&
+//  492        ( touchLinkSubDevicesTbl[index] != NULL ) )
+//  493   {
+//  494     endPointDesc_t *epDesc = afFindEndPointDesc( touchLinkSubDevicesTbl[index]->endpoint );
+//  495     if ( epDesc != NULL )
+//  496     {
+//  497       // Copy sub-device info
+//  498       *pInfo = *(touchLinkSubDevicesTbl[index]);
+//  499     }
+//  500   }
+//  501   else
+//  502   {
+//  503     osal_memset( pInfo, 0, sizeof( bdbTLDeviceInfo_t ) );
+//  504   }
+//  505 }
+//  506 
+//  507 
+//  508 /*********************************************************************
+//  509  * @fn      touchLink_EncryptNwkKey
+//  510  *
+//  511  * @brief   Encrypt the current network key to be sent to a Target.
+//  512  *          In case of Factory New device generate new key.
+//  513  *
+//  514  * output parameter
+//  515  *
+//  516  * @param   pNwkKey - pointer to encrypted network key
+//  517  *
+//  518  * input parameters
+//  519  *
+//  520  * @param   keyIndex - key index
+//  521  * @param   transID - transaction id
+//  522  * @param   responseID - response id
+//  523  *
+//  524  * @return  none
+//  525  */
+//  526 void touchLink_EncryptNwkKey( uint8 *pNwkKey, uint8 keyIndex, uint32 transID, uint32 responseID )
+//  527 {
+//  528   uint8 aesKeyKey[SEC_KEY_LEN] = TOUCHLINK_DEFAULT_AES_KEY;
+//  529   uint8 masterKey[SEC_KEY_LEN] = TOUCHLINK_ENC_KEY;
+//  530   uint8 nwkKey[SEC_KEY_LEN];
+//  531 
+//  532   if ( bdbAttributes.bdbNodeIsOnANetwork == FALSE )
+//  533   {
+//  534     touchLink_GenerateRandNum( nwkKey, SEC_KEY_LEN );
+//  535   }
+//  536   else
+//  537   {
+//  538     nwkActiveKeyItems keyItems;
+//  539     SSP_ReadNwkActiveKey( &keyItems );
+//  540     osal_memcpy( nwkKey, keyItems.active.key , SEC_KEY_LEN);
+//  541   }
+//  542 
+//  543   // Build the AES key
+//  544   touchLink_BuildAesKey( aesKeyKey, transID, responseID, keyIndex );
+//  545 
+//  546   if ( ( keyIndex == TOUCHLINK_KEY_INDEX_MASTER ) || ( keyIndex == TOUCHLINK_KEY_INDEX_CERT ) )
+//  547   {
+//  548     // Encypt with the master key
+//  549     sspAesEncrypt( masterKey, aesKeyKey );
+//  550   }
+//  551   // Encrypt the network key with the AES key
+//  552   sspAesEncrypt( aesKeyKey, nwkKey );
+//  553 
+//  554   // Copy in the encrypted network key
+//  555   osal_memcpy( pNwkKey, nwkKey, SEC_KEY_LEN );
+//  556 }
+//  557 
+//  558 /*********************************************************************
+//  559  * @fn      touchLink_DecryptNwkKey
+//  560  *
+//  561  * @brief   Decrypt the received network key and update.
+//  562  *
+//  563  * @param   pNwkKey - pointer to the encrypted network key
+//  564  * @param   keyIndex - key index
+//  565  * @param   transID - transaction id
+//  566  * @param   responseID - response id
+//  567  *
+//  568  * @return  none
+//  569  */
+//  570 void touchLink_DecryptNwkKey( uint8 *pNwkKey, uint8 keyIndex, uint32 transID, uint32 responseID )
+//  571 {
+//  572   uint8 aesKeyKey[SEC_KEY_LEN] = TOUCHLINK_DEFAULT_AES_KEY;
+//  573 
+//  574   uint8 nwkKey[SEC_KEY_LEN];
+//  575 
+//  576   uint8 masterKey[SEC_KEY_LEN] = TOUCHLINK_ENC_KEY;
+//  577 
+//  578   // Copy in the encrypted network key
+//  579   osal_memcpy( nwkKey, pNwkKey, SEC_KEY_LEN );
+//  580 
+//  581   touchLink_BuildAesKey( aesKeyKey, transID, responseID, keyIndex );
+//  582 
+//  583   if ( ( keyIndex == TOUCHLINK_KEY_INDEX_MASTER ) || ( keyIndex == TOUCHLINK_KEY_INDEX_CERT ) )
+//  584   {
+//  585     //encypt with the master key
+//  586     sspAesEncrypt( masterKey, aesKeyKey );
+//  587   }
+//  588   // Decrypt the network key with the AES key
+//  589   sspAesDecrypt( aesKeyKey, nwkKey );
+//  590 
+//  591   touchLink_UpdateNwkKey( nwkKey, keyIndex );
+//  592 }
+//  593 
+//  594 /*********************************************************************
+//  595  * @fn      touchLink_BuildAesKey
+//  596  *
+//  597  * @brief   Build an AES key using Transaction ID and Response ID.
+//  598  *
+//  599  * @param   pAesKey - pointer to AES to be built
+//  600  * @param   transID - transaction id
+//  601  * @param   responseID - response id
+//  602  *
+//  603  * @return  none
+//  604  */
+//  605 static void touchLink_BuildAesKey( uint8 *pAesKey, uint32 transID, uint32 responseID, uint8 keyIndex )
+//  606 {
+//  607 
+//  608   if ( ( keyIndex == TOUCHLINK_KEY_INDEX_MASTER ) || ( keyIndex == TOUCHLINK_KEY_INDEX_CERT ) )
+//  609   {
+//  610     // Copy transaction identifier to 1st byte
+//  611     pAesKey[0] = BREAK_UINT32( transID, 3 );
+//  612     pAesKey[1] = BREAK_UINT32( transID, 2 );
+//  613     pAesKey[2] = BREAK_UINT32( transID, 1 );
+//  614     pAesKey[3] = BREAK_UINT32( transID, 0 );
+//  615 
+//  616     // Copy response identifier 3rd bute
+//  617     pAesKey[8] = BREAK_UINT32( responseID, 3 );
+//  618     pAesKey[9] = BREAK_UINT32( responseID, 2 );
+//  619     pAesKey[10] = BREAK_UINT32( responseID, 1 );
+//  620     pAesKey[11] = BREAK_UINT32( responseID, 0 );
+//  621   }
+//  622 
+//  623   // Copy in the transaction identifier
+//  624   pAesKey[4] = BREAK_UINT32( transID, 3 );
+//  625   pAesKey[5] = BREAK_UINT32( transID, 2 );
+//  626   pAesKey[6] = BREAK_UINT32( transID, 1 );
+//  627   pAesKey[7] = BREAK_UINT32( transID, 0 );
+//  628 
+//  629   // Copy in the response identifier
+//  630   pAesKey[12] = BREAK_UINT32( responseID, 3 );
+//  631   pAesKey[13] = BREAK_UINT32( responseID, 2 );
+//  632   pAesKey[14] = BREAK_UINT32( responseID, 1 );
+//  633   pAesKey[15] = BREAK_UINT32( responseID, 0 );
+//  634 }
+//  635 
+//  636 /*********************************************************************
+//  637  * @fn      touchLink_UpdateNwkKey
+//  638  *
+//  639  * @brief   Update the network key.
+//  640  *
+//  641  * @param   pNwkParams - pointer to new network key
+//  642  * @param   keyIndex - key index
+//  643  *
+//  644  * @return  none
+//  645  */
+//  646 void touchLink_UpdateNwkKey( uint8 *pNwkKey, uint8 keyIndex )
+//  647 {
+//  648   uint32 nwkFrameCounterTmp;
+//  649   (void)keyIndex;
+//  650 
+//  651   // To prevent Framecounter out of sync issues, store the lastkey
+//  652   nwkFrameCounterTmp = nwkFrameCounter;  // (Global in SSP).
+//  653 
+//  654   // Update the network key
+//  655   SSP_UpdateNwkKey( pNwkKey, 0 );
+//  656 
+//  657   SSP_SwitchNwkKey( 0 );
+//  658 
+//  659   nwkFrameCounter  = nwkFrameCounterTmp; // restore
+//  660 
+//  661   // Save off the security
+//  662   ZDApp_SaveNwkKey();
+//  663 }
+//  664 
+//  665 /*********************************************************************
+//  666  * @fn      touchLink_GetNwkKeyBitmask
+//  667  *
+//  668  * @brief   Get the supported network key bitmask.
+//  669  *
+//  670  * @param   none
+//  671  *
+//  672  * @return  network key bitmask
+//  673  */
+//  674 uint16 touchLink_GetNwkKeyBitmask( void )
+//  675 {
+//  676   return ( (uint16)1 << TOUCHLINK_KEY_INDEX );
+//  677 }
+//  678 
+//  679 /*********************************************************************
+//  680  * @fn      touchLink_GenerateRandNum
+//  681  *
+//  682  * @brief   Fill buffer with random bytes.
+//  683  *
+//  684  * input parameter
+//  685  *
+//  686  * @param   numSize - size of buffer in bytes
+//  687  *
+//  688  * output parameter
+//  689  *
+//  690  * @param   pNum - pointer to buffer to be filled with random values
+//  691  *
+//  692  * @return  none
+//  693  */
+//  694 void touchLink_GenerateRandNum( uint8 *pNum, uint8 numSize )
+//  695 {
+//  696   if ( pNum && numSize )
+//  697   {
+//  698     uint8 lastByte = ( numSize - 1 );
+//  699     for ( uint8 i = 0; i < lastByte; i += 2 )
+//  700     {
+//  701       uint16 rand = osal_rand();
+//  702       pNum[i]   = LO_UINT16( rand );
+//  703       pNum[i+1] = HI_UINT16( rand );
+//  704     }
+//  705 
+//  706     // In case the number is odd
+//  707     if ( numSize % 2 )
+//  708     {
+//  709       pNum[lastByte] = LO_UINT16( osal_rand() );
+//  710     }
+//  711   }
+//  712 }
+//  713 
+//  714 /*********************************************************************
+//  715  * @fn      touchLink_GetRandPrimaryChannel
+//  716  *
+//  717  * @brief   Get randomly chosen TOUCHLINK primary channel.
+//  718  *
+//  719  * @return  channel
+//  720  */
+//  721 uint8 touchLink_GetRandPrimaryChannel()
+//  722 {
+//  723   uint8 channel = osal_rand() & 0x1F;
+//  724   if ( channel <= TOUCHLINK_FIRST_CHANNEL )
+//  725   {
+//  726     channel = TOUCHLINK_FIRST_CHANNEL;
+//  727   }
+//  728   else if ( channel <= TOUCHLINK_SECOND_CHANNEL )
+//  729   {
+//  730     channel = TOUCHLINK_SECOND_CHANNEL;
+//  731   }
+//  732   else if ( channel <= TOUCHLINK_THIRD_CHANNEL )
+//  733   {
+//  734     channel = TOUCHLINK_THIRD_CHANNEL;
+//  735   }
+//  736   else
+//  737   {
+//  738     channel = TOUCHLINK_FOURTH_CHANNEL;
+//  739   }
+//  740 #ifdef TOUCHLINK_DEV_SELECT_FIRST_CHANNEL
+//  741 #warning The device will always select the first primary channel
+//  742   channel = TOUCHLINK_FIRST_CHANNEL;
+//  743 #endif
+//  744   return channel;
+//  745 }
+//  746 
+//  747 /*********************************************************************
+//  748  * @fn      touchLink_SetNIB
+//  749  *
+//  750  * @brief   Copy new Network Parameters to the NIB.
+//  751  *
+//  752  * @param   nwkState - network state
+//  753  * @param   nwkAddr - short address
+//  754  * @param   pExtendedPANID - pointer to extended PAN ID
+//  755  * @param   logicalChannel - channel
+//  756  * @param   panId - PAN identifier
+//  757  * @param   nwkUpdateId - nwtwork update identifier
+//  758  *
+//  759  * @return      void
+//  760  */
+//  761 void touchLink_SetNIB( nwk_states_t nwkState, uint16 nwkAddr, uint8 *pExtendedPANID,
+//  762                  uint8 logicalChannel, uint16 panId, uint8 nwkUpdateId )
+//  763 {
+//  764   // Copy the new network parameters to NIB
+//  765   _NIB.nwkState = nwkState;
+//  766   _NIB.nwkDevAddress = nwkAddr;
+//  767   _NIB.nwkLogicalChannel = logicalChannel;
+//  768   _NIB.nwkCoordAddress = INVALID_NODE_ADDR;
+//  769   _NIB.channelList = (uint32)1 << logicalChannel;
+//  770   _NIB.nwkPanId = panId;
+//  771   _NIB.nodeDepth = 1;
+//  772   _NIB.MaxRouters = (uint8)gNWK_MAX_DEVICE_LIST;
+//  773   _NIB.MaxChildren = (uint8)gNWK_MAX_DEVICE_LIST;
+//  774   _NIB.allocatedRouterAddresses = 1;
+//  775   _NIB.allocatedEndDeviceAddresses = 1;
+//  776 
+//  777   if ( _NIB.nwkUpdateId != nwkUpdateId )
+//  778   {
+//  779     NLME_SetUpdateID( nwkUpdateId );
+//  780   }
+//  781 
+//  782   osal_cpyExtAddr( _NIB.extendedPANID, pExtendedPANID );
+//  783 
+//  784   // Save the NIB
+//  785   if ( ( nwkState == NWK_ROUTER ) || ( nwkState == NWK_ENDDEVICE ) )
+//  786   {
+//  787     touchLink_UpdateNV( TOUCHLINK_UPDATE_NV_NIB );
+//  788   }
+//  789   // else will be updated when ED joins its parent
+//  790 }
+//  791 
+//  792 /*********************************************************************
+//  793  * @fn      touchLink_ProcessNwkUpdate
+//  794  *
+//  795  * @brief   Update our local network update id and logical channel.
+//  796  *
+//  797  * @param   nwkUpdateId - new network update id
+//  798  * @param   logicalChannel - new logical channel
+//  799  *
+//  800  * @return  void
+//  801  */
+//  802 void touchLink_ProcessNwkUpdate( uint8 nwkUpdateId, uint8 logicalChannel )
+//  803 {
+//  804   // Update the network update id
+//  805   NLME_SetUpdateID( nwkUpdateId );
+//  806 
+//  807   // Switch channel
+//  808   if ( _NIB.nwkLogicalChannel != logicalChannel )
+//  809   {
+//  810     _NIB.nwkLogicalChannel = logicalChannel;
+//  811     touchLink_SetChannel( logicalChannel );
+//  812   }
+//  813 
+//  814   // Update channel list
+//  815   _NIB.channelList = (uint32)1 << logicalChannel;
+//  816 
+//  817   // Our Channel has been changed -- notify to save info into NV
+//  818   ZDApp_NwkStateUpdateCB();
+//  819   touchLink_UpdateNV( TOUCHLINK_UPDATE_NV_NIB );
+//  820 
+//  821   // Reset the total transmit count and the transmit failure counters
+//  822   _NIB.nwkTotalTransmissions = 0;
+//  823   nwkTransmissionFailures( TRUE );
+//  824 }
+//  825 
+//  826 /*********************************************************************
+//  827  * @fn      touchLink_UpdateNV
+//  828  *
+//  829  * @brief   Updates NV with NIB and free ranges items
+//  830  *
+//  831  * @param   enables - specifies what to update
+//  832  *
+//  833  * @return  none
+//  834  */
+//  835 void touchLink_UpdateNV( uint8 enables )
+//  836 {
+//  837 #if defined ( NV_RESTORE )
+//  838 
+//  839  #if defined ( NV_TURN_OFF_RADIO )
+//  840   // Turn off the radio's receiver during an NV update
+//  841   uint8 RxOnIdle;
+//  842   uint8 x = FALSE;
+//  843   ZMacGetReq( ZMacRxOnIdle, &RxOnIdle );
+//  844   ZMacSetReq( ZMacRxOnIdle, &x );
+//  845  #endif
+//  846 
+//  847   if ( enables & TOUCHLINK_UPDATE_NV_NIB )
+//  848   {
+//  849     // Update NIB in NV
+//  850     osal_nv_write( ZCD_NV_NIB, 0, sizeof( nwkIB_t ), &_NIB );
+//  851 
+//  852     // Reset the NV startup option to resume from NV by clearing
+//  853     // the "New" join option.
+//  854     zgWriteStartupOptions( ZG_STARTUP_CLEAR, ZCD_STARTOPT_DEFAULT_NETWORK_STATE );
+//  855   }
+//  856 
+//  857   if ( enables & TOUCHLINK_UPDATE_NV_RANGES )
+//  858   {
+//  859     // Store our free network address and group ID ranges
+//  860     osal_nv_write( ZCD_NV_MIN_FREE_NWK_ADDR, 0, sizeof( touchLinkFreeNwkAddrBegin ), &touchLinkFreeNwkAddrBegin );
+//  861     osal_nv_write( ZCD_NV_MAX_FREE_NWK_ADDR, 0, sizeof( touchLinkFreeNwkAddrEnd ), &touchLinkFreeNwkAddrEnd );
+//  862     osal_nv_write( ZCD_NV_MIN_FREE_GRP_ID, 0, sizeof( touchLinkFreeGrpIdBegin ), &touchLinkFreeGrpIdBegin );
+//  863     osal_nv_write( ZCD_NV_MAX_FREE_GRP_ID, 0, sizeof( touchLinkFreeGrpIdEnd ), &touchLinkFreeGrpIdEnd );
+//  864 
+//  865     // Store our group ID range
+//  866     osal_nv_write( ZCD_NV_MIN_GRP_IDS, 0, sizeof( touchLinkGrpIDsBegin ), &touchLinkGrpIDsBegin );
+//  867     osal_nv_write( ZCD_NV_MAX_GRP_IDS, 0, sizeof( touchLinkGrpIDsEnd ), &touchLinkGrpIDsEnd );
+//  868   }
+//  869 
+//  870  #if defined ( NV_TURN_OFF_RADIO )
+//  871   ZMacSetReq( ZMacRxOnIdle, &RxOnIdle );
+//  872  #endif
+//  873 
+//  874 #endif // NV_RESTORE
+//  875 }
+//  876 
+//  877 /*********************************************************************
+//  878  * @fn          touchLink_InitNV
+//  879  *
+//  880  * @brief       Initialize free range RAM variables from NV. If NV items
+//  881  *              don't exist, then the NV is initialize with what is in
+//  882  *              RAM variables.
+//  883  *
+//  884  * @param       none
+//  885  *
+//  886  * @return      none
+//  887  */
+//  888 static void touchLink_InitNV( void )
+//  889 {
+//  890   // Initialize our free network address and group ID ranges
+//  891   touchLink_ItemInit( ZCD_NV_MIN_FREE_NWK_ADDR, sizeof( touchLinkFreeNwkAddrBegin ), &touchLinkFreeNwkAddrBegin );
+//  892   touchLink_ItemInit( ZCD_NV_MAX_FREE_NWK_ADDR, sizeof( touchLinkFreeNwkAddrEnd ), &touchLinkFreeNwkAddrEnd );
+//  893   touchLink_ItemInit( ZCD_NV_MIN_FREE_GRP_ID, sizeof( touchLinkFreeGrpIdBegin ), &touchLinkFreeGrpIdBegin );
+//  894   touchLink_ItemInit( ZCD_NV_MAX_FREE_GRP_ID, sizeof( touchLinkFreeGrpIdEnd ), &touchLinkFreeGrpIdEnd );
+//  895 
+//  896   // Initialize our group ID range
+//  897   touchLink_ItemInit( ZCD_NV_MIN_GRP_IDS, sizeof( touchLinkGrpIDsBegin ), &touchLinkGrpIDsBegin );
+//  898   touchLink_ItemInit( ZCD_NV_MAX_GRP_IDS, sizeof( touchLinkGrpIDsEnd ), &touchLinkGrpIDsEnd );
+//  899 }
+//  900 
+//  901 /*********************************************************************
+//  902  * @fn      touchLink_ItemInit
+//  903  *
+//  904  * @brief   Initialize an NV item. If the item doesn't exist in NV memory,
+//  905  *          write the default (value passed in) into NV memory. But if
+//  906  *          it exists, set the item to the value stored in NV memory.
+//  907  *
+//  908  * @param   id - item id
+//  909  * @param   len - item len
+//  910  * @param   buf - pointer to the item
+//  911  *
+//  912  * @return  none
+//  913  */
+//  914 void touchLink_ItemInit( uint16 id, uint16 len, void *pBuf )
+//  915 {
+//  916 #if defined ( NV_RESTORE )
+//  917   // If the item doesn't exist in NV memory, create and initialize
+//  918   // it with the value passed in.
+//  919   if ( osal_nv_item_init( id, len, pBuf ) == ZSuccess )
+//  920   {
+//  921     // The item already exists in NV memory, read it from NV memory
+//  922     osal_nv_read( id, 0, len, pBuf );
+//  923   }
+//  924 #endif // NV_RESTORE
+//  925 }
+//  926 
+//  927 /*********************************************************************
+//  928  * @fn      touchLink_SetMacNwkParams
+//  929  *
+//  930  * @brief   Configure MAC with our Network Parameters.
+//  931  *
+//  932  * @param   nwkAddr - network address
+//  933  * @param   panId - PAN identifier
+//  934  * @param   channel
+//  935  *
+//  936  * @return  void
+//  937  */
+//  938 void touchLink_SetMacNwkParams( uint16 nwkAddr, uint16 panId, uint8 channel )
+//  939 {
+//  940   // Set our short address
+//  941   ZMacSetReq( ZMacShortAddress, (byte*)&nwkAddr );
+//  942 
+//  943   // Set our PAN ID
+//  944   ZMacSetReq( ZMacPanId, (byte*)&panId );
+//  945 
+//  946   // Tune to the selected logical channel
+//  947   touchLink_SetChannel( channel );
+//  948 }
+//  949 
+//  950 /*********************************************************************
+//  951  * @fn      touchLink_SetChannel
+//  952  *
+//  953  * @brief   Set our channel.
+//  954  *
+//  955  * @param   channel - new channel to change to
+//  956  *
+//  957  * @return  void
+//  958  */
+//  959 void touchLink_SetChannel( uint8 channel )
+//  960 {
+//  961   bdb_setChannel( (uint32) ( 1L << channel ) );
+//  962 
+//  963   // Set the new channel
+//  964   ZMacSetReq( ZMacChannel, &channel );
+//  965 }
+//  966 
+//  967 /*********************************************************************
+//  968  * @fn      touchLink_SendDeviceInfoRsp
+//  969  *
+//  970  * @brief   Send out a Device Information Response command.
+//  971  *
+//  972  * @param   srcEP - sender's endpoint
+//  973  * @param   dstAddr - destination address
+//  974  * @param   startIndex - start index
+//  975  * @param   transID - received transaction id
+//  976  * @param   seqNum - received sequence number
+//  977  *
+//  978  * @return  ZStatus_t
+//  979  */
+//  980 uint8 touchLink_SendDeviceInfoRsp( uint8 srcEP, afAddrType_t *dstAddr, uint8 startIndex,
+//  981                              uint32 transID, uint8 seqNum )
+//  982 {
+//  983   bdbTLDeviceInfoRsp_t *pRsp;
+//  984   uint8 cnt;
+//  985   uint8 rspLen;
+//  986   uint8 status = ZSuccess;
+//  987 
+//  988   cnt = touchLink_GetNumSubDevices( startIndex );
+//  989   if ( cnt > TOUCHLINK_DEVICE_INFO_RSP_REC_COUNT_MAX )
+//  990   {
+//  991     cnt = TOUCHLINK_DEVICE_INFO_RSP_REC_COUNT_MAX; // should be between 0x00-0x05
+//  992   }
+//  993 
+//  994   rspLen = sizeof( bdbTLDeviceInfoRsp_t ) + ( cnt * sizeof( devInfoRec_t ) );
+//  995 
+//  996   pRsp = (bdbTLDeviceInfoRsp_t *)osal_mem_alloc( rspLen );
+//  997   if ( pRsp )
+//  998   {
+//  999     pRsp->transID = transID;
+// 1000 
+// 1001     pRsp->numSubDevices = touchLink_GetNumSubDevices( 0 );
+// 1002     pRsp->startIndex = startIndex;
+// 1003     pRsp->cnt = cnt;
+// 1004 
+// 1005     for ( uint8 i = 0; i < cnt; i++ )
+// 1006     {
+// 1007       devInfoRec_t *pRec = &(pRsp->devInfoRec[i]);
+// 1008 
+// 1009       osal_cpyExtAddr( pRec->ieeeAddr, NLME_GetExtAddr() );
+// 1010 
+// 1011       touchLink_GetSubDeviceInfo( startIndex + i, &(pRec->deviceInfo) );
+// 1012 
+// 1013       pRec->sort = 0;
+// 1014     }
+// 1015 
+// 1016     // Send a response back
+// 1017     status = bdbTL_Send_DeviceInfoRsp( srcEP, dstAddr, pRsp, seqNum );
+// 1018 
+// 1019     osal_mem_free( pRsp );
+// 1020   }
+// 1021   else
+// 1022   {
+// 1023     status = ZMemError;
+// 1024   }
+// 1025 
+// 1026   return ( status );
+// 1027 }
+// 1028 
+// 1029 /*********************************************************************
+// 1030  * @fn      touchLink_SendLeaveReq
+// 1031  *
+// 1032  * @brief   Send out a Leave Request command.
+// 1033  *
+// 1034  * @param   void
+// 1035  *
+// 1036  * @return  ZStatus_t
+// 1037  */
+// 1038 ZStatus_t touchLink_SendLeaveReq( void )
+// 1039 {
+// 1040   NLME_LeaveReq_t leaveReq;
+// 1041   
+// 1042   // Set every field to 0
+// 1043   osal_memset( &leaveReq, 0, sizeof( NLME_LeaveReq_t ) );
+// 1044   
+// 1045   // Send out our leave
+// 1046   return ( NLME_LeaveReq( &leaveReq ) );
+// 1047 }
+// 1048 
+// 1049 /*********************************************************************
+// 1050  * @fn      touchLink_GetMsgRssi
+// 1051  *
+// 1052  * @brief   Get the RSSI of the message just received through a ZCL callback.
+// 1053  *
+// 1054  * @param   none
+// 1055  *
+// 1056  * @return  RSSI if AF message was received, TOUCHLINK_WORST_RSSI otherwise.
+// 1057  */
+// 1058 int8 touchLink_GetMsgRssi( void )
+// 1059 {
+// 1060   afIncomingMSGPacket_t *pAF = zcl_getRawAFMsg();
+// 1061 
+// 1062   if ( pAF != NULL )
+// 1063   {
+// 1064     return ( pAF->rssi );
+// 1065   }
+// 1066 
+// 1067   return ( TOUCHLINK_WORST_RSSI );
+// 1068 }
+// 1069 
+// 1070 /*********************************************************************
+// 1071  * @fn      touchLink_NewNwkUpdateId
+// 1072  *
+// 1073  * @brief   Determine the new network update id. The nwkUpdateId attribute
+// 1074  *          can take the value of 0x00 - 0xff and may wrap around so care
+// 1075  *          must be taken when comparing for newness.
+// 1076  *
+// 1077  * @param   ID1 - first nwk update id
+// 1078  * @param   ID2 - second nwk update id
+// 1079  *
+// 1080  * @return  new nwk update ID
+// 1081  */
+// 1082 uint8 touchLink_NewNwkUpdateId( uint8 ID1, uint8 ID2 )
+// 1083 {
+// 1084   if ( ( (ID1 >= ID2) && ((ID1 - ID2) > 200) )
+// 1085       || ( (ID1 < ID2) && ((ID2 - ID1) > 200) ) )
+// 1086   {
+// 1087     return ( MIN( ID1, ID2 ) );
+// 1088   }
+// 1089 
+// 1090   return ( MAX( ID1, ID2 ) );
+// 1091 }
+// 1092 
+// 1093 /*********************************************************************
+// 1094  * @fn      touchLink_SetTouchLinkTaskId
+// 1095  *
+// 1096  * @brief   Register Target/Initiator taskID for commissioning events
+// 1097  *
+// 1098  * @param   taskID
+// 1099  *
+// 1100  * @return  none
+// 1101  */
+// 1102 void touchLink_SetTouchLinkTaskId( uint8 taskID )
+// 1103 {
+// 1104   touchLinkTaskId = taskID;
+// 1105 
+// 1106   // register internal EP for TOUCHLINK messages
+// 1107   bdb_RegisterSimpleDescriptor( &touchLink_EP_SimpleDesc );
+// 1108 
+// 1109 #if defined( INTER_PAN )
+// 1110   // Register with Stub APS
+// 1111   StubAPS_RegisterApp( &touchLink_EP );
+// 1112 #endif // INTER_PAN
+// 1113 }
+// 1114 
+// 1115 /*********************************************************************
+// 1116  * @fn      touchLink_PerformNetworkDisc
+// 1117  *
+// 1118  * @brief   Perform a Network Discovery scan.
+// 1119  *          Scan results will be stored locally to analyze.
+// 1120  *
+// 1121  * @param   scanChannelList - channels to perform discovery scan
+// 1122  *
+// 1123  * @return  void
+// 1124  */
+// 1125 void touchLink_PerformNetworkDisc( uint32 scanChannelList )
+// 1126 {
+// 1127   NLME_ScanFields_t scan;
+// 1128 
+// 1129   scan.channels = scanChannelList;
+// 1130   scan.duration = BEACON_ORDER_240_MSEC;
+// 1131   scan.scanType = ZMAC_ACTIVE_SCAN;
+// 1132   scan.scanApp  = NLME_DISC_SCAN;
+// 1133 
+// 1134   if ( NLME_NwkDiscReq2( &scan ) == ZSuccess )
+// 1135   {
+// 1136     // Register ZDO callback to handle the network discovery confirm and
+// 1137     // beacon notification confirm
+// 1138     ZDO_RegisterForZdoCB( ZDO_NWK_DISCOVERY_CNF_CBID, touchLink_NwkDiscoveryCnfCB );
+// 1139     ZDO_RegisterForZdoCB( ZDO_BEACON_NOTIFY_IND_CBID, touchLink_BeaconIndCB );
+// 1140   }
+// 1141   else
+// 1142   {
+// 1143     NLME_NwkDiscTerm();
+// 1144   }
+// 1145 }
+// 1146 
+// 1147 /*********************************************************************
+// 1148  * @fn      touchLink_BeaconIndCB
+// 1149  *
+// 1150  * @brief   Process the incoming beacon indication.
+// 1151  *
+// 1152  * @param   param -  pointer to a parameter and a structure of parameters
+// 1153  *
+// 1154  * @return  void
+// 1155  */
+// 1156 static void *touchLink_BeaconIndCB ( void *param )
+// 1157 {
+// 1158   NLME_beaconInd_t *pBeacon = param;
+// 1159   touchLinkDiscoveredNwkParam_t *pParam = pDiscoveredNwkParamList;
+// 1160   touchLinkDiscoveredNwkParam_t *pLastParam;
+// 1161   uint8 found = FALSE;
+// 1162 
+// 1163 
+// 1164   // Add the network parameter to the Network Parameter List
+// 1165   while ( pParam != NULL )
+// 1166   {
+// 1167     if ( ( pParam->PANID == pBeacon->panID ) &&
+// 1168         ( pParam->logicalChannel == pBeacon->logicalChannel ) )
+// 1169     {
+// 1170       found = TRUE;
+// 1171       break;
+// 1172     }
+// 1173     
+// 1174     pLastParam = pParam;
+// 1175     pParam = pParam->nextParam;
+// 1176   }
+// 1177   
+// 1178   // If no existing parameter found, make a new one and add to the list
+// 1179   if ( found == FALSE )
+// 1180   {
+// 1181     pParam = osal_mem_alloc( sizeof( touchLinkDiscoveredNwkParam_t ) );
+// 1182     if ( pParam == NULL )
+// 1183     {
+// 1184       // Memory alloc failed, discard this beacon
+// 1185       return ( NULL );
+// 1186     }
+// 1187     
+// 1188     // Clear the network descriptor
+// 1189     osal_memset( pParam, 0, sizeof( touchLinkDiscoveredNwkParam_t )  );
+// 1190     
+// 1191     // Initialize the descriptor
+// 1192     pParam->chosenRouter = INVALID_NODE_ADDR;
+// 1193     pParam->chosenRouterDepth = 0xFF;
+// 1194     
+// 1195     // Save new entry into the descriptor list
+// 1196     if ( pDiscoveredNwkParamList == NULL )
+// 1197     {
+// 1198       // First element in the list
+// 1199       pDiscoveredNwkParamList = pParam;
+// 1200     }
+// 1201     else
+// 1202     {
+// 1203       // Last element in the list
+// 1204       pLastParam->nextParam = pParam;
+// 1205     }
+// 1206   }
+// 1207   
+// 1208   // Update the descriptor with the incoming beacon
+// 1209   pParam->logicalChannel = pBeacon->logicalChannel;
+// 1210   pParam->PANID          = pBeacon->panID;
+// 1211   
+// 1212   // Save the extended PAN ID from the beacon payload only if 1.1 version network
+// 1213   if ( pBeacon->protocolVersion != ZB_PROT_V1_0 )
+// 1214   {
+// 1215     osal_cpyExtAddr( pParam->extendedPANID, pBeacon->extendedPanID );
+// 1216   }
+// 1217   else
+// 1218   {
+// 1219     osal_memset( pParam->extendedPANID, 0xFF, Z_EXTADDR_LEN );
+// 1220   }
+// 1221   
+// 1222   // check if this device is a better choice to join...
+// 1223   // ...dont bother checking assocPermit flag is doing a rejoin
+// 1224   if ( pBeacon->LQI > gMIN_TREE_LQI )
+// 1225   {
+// 1226     uint8 selected = FALSE;
+// 1227     uint8 capacity = FALSE;
+// 1228     
+// 1229     if ( _NIB.spare3 == ZIGBEEPRO )
+// 1230     {
+// 1231       if ( ((pBeacon->LQI   > pParam->chosenRouterLinkQuality) &&
+// 1232             (pBeacon->depth < MAX_NODE_DEPTH)) ||
+// 1233           ((pBeacon->LQI   == pParam->chosenRouterLinkQuality) &&
+// 1234            (pBeacon->depth < pParam->chosenRouterDepth)) )
+// 1235       {
+// 1236         selected = TRUE;
+// 1237       }
+// 1238     }
+// 1239     else
+// 1240     {
+// 1241       if ( pBeacon->depth < pParam->chosenRouterDepth )
+// 1242       {
+// 1243         selected = TRUE;
+// 1244       }
+// 1245     }
+// 1246     
+// 1247     capacity = pBeacon->routerCapacity;
+// 1248     
+// 1249     if ( (capacity) && (selected) )
+// 1250     {
+// 1251       // this is the new chosen router for joining...
+// 1252       pParam->chosenRouter            = pBeacon->sourceAddr;
+// 1253       pParam->chosenRouterLinkQuality = pBeacon->LQI;
+// 1254       pParam->chosenRouterDepth       = pBeacon->depth;
+// 1255     }
+// 1256     
+// 1257     if ( pBeacon->deviceCapacity )
+// 1258       pParam->deviceCapacity = 1;
+// 1259     
+// 1260     if ( pBeacon->routerCapacity )
+// 1261       pParam->routerCapacity = 1;
+// 1262   }
+// 1263     
+// 1264   return ( NULL );
+// 1265 }
+// 1266 
+// 1267 /*********************************************************************
+// 1268  * @fn      touchLink_NwkDiscoveryCnfCB
+// 1269  *
+// 1270  * @brief   Send an event to inform the target the completion of
+// 1271  *          network discovery scan
+// 1272  *
+// 1273  * @param   param - pointer to a parameter and a structure of parameters
+// 1274  *
+// 1275  * @return  void
+// 1276  */
+// 1277 static void *touchLink_NwkDiscoveryCnfCB ( void *param )
+// 1278 {
+// 1279 #if ( BDB_TOUCHLINK_CAPABILITY_ENABLED == TRUE )
+// 1280   // Scan completed. De-register the callbacks with ZDO
+// 1281   ZDO_DeregisterForZdoCB( ZDO_NWK_DISCOVERY_CNF_CBID );
+// 1282   ZDO_DeregisterForZdoCB( ZDO_BEACON_NOTIFY_IND_CBID );
+// 1283 
+// 1284   NLME_NwkDiscTerm();
+// 1285 
+// 1286   if ( pDiscoveredNwkParamList != NULL )
+// 1287   {
+// 1288     // proceed to join the network, otherwise
+// 1289     // Notify our task
+// 1290     osal_set_event( touchLinkTaskId, TOUCHLINK_NWK_DISC_CNF_EVT );
+// 1291   }
+// 1292   else
+// 1293   {
+// 1294     // no suitable network in secondary channel list, then just wait for touchlink
+// 1295 #if ( ZSTACK_ROUTER_BUILD )
+// 1296     // Try to create a new distributed network
+// 1297     osal_set_event( touchLinkTaskId, TOUCHLINK_NWK_DISC_CNF_EVT );
+// 1298 #elif ( ZSTACK_END_DEVICE_BUILD )
+// 1299     // Notify the BDB state machine 
+// 1300     bdbAttributes.bdbCommissioningStatus = BDB_COMMISSIONING_NO_NETWORK;
+// 1301     bdb_reportCommissioningState( BDB_COMMISSIONING_STATE_TL, FALSE );
+// 1302     // No parent to join in 
+// 1303     bdbCommissioningProcedureState.bdbCommissioningState = BDB_PARENT_LOST;
+// 1304     NLME_OrphanStateSet( );
+// 1305     bdb_ZedAttemptRecoverNwk( );
+// 1306 #endif
+// 1307   }
+// 1308 
+// 1309 #else
+// 1310   (void)touchLinkTaskId;
+// 1311   (void)param;
+// 1312 #endif
+// 1313   return ( NULL );
+// 1314 }
+// 1315 
+// 1316 /****************************************************************************
+// 1317  * @fn      touchLink_FreeNwkParamList
+// 1318  *
+// 1319  * @brief   This function frees any network discovery data.
+// 1320  *
+// 1321  * @param   none
+// 1322  *
+// 1323  * @return  none
+// 1324  */
+// 1325 void touchLink_FreeNwkParamList( void )
+// 1326 {
+// 1327   touchLinkDiscoveredNwkParam_t *pParam = pDiscoveredNwkParamList;
+// 1328   touchLinkDiscoveredNwkParam_t *pNextParam;
+// 1329 
+// 1330   // deallocate the pDiscoveredNwkParamList memory
+// 1331   while ( pParam != NULL )
+// 1332   {
+// 1333     pNextParam = pParam->nextParam;
+// 1334 
+// 1335     osal_mem_free( pParam );
+// 1336 
+// 1337     pParam = pNextParam;
+// 1338   }
+// 1339 
+// 1340   pDiscoveredNwkParamList = NULL;
+// 1341 }
+// 1342 
+// 1343 /****************************************************************************
+// 1344  * @fn      touchLink_IsValidTransID
+// 1345  *
+// 1346  * @brief   Transaction ID Filter for Touch-Link received commands.
+// 1347  *
+// 1348  * @param   transID - received transaction ID
+// 1349  *
+// 1350  * @return  FALSE if not matching current or transaction expired
+// 1351  */
+// 1352 bool touchLink_IsValidTransID( uint32 transID )
+// 1353 {
+// 1354   if ( ( touchLinkTransID == 0 ) || ( ( touchLinkTransID != transID ) && ( touchLinkLastAcceptedTransID != transID ) ) )
+// 1355   {
+// 1356     return ( FALSE );
+// 1357   }
+// 1358   return ( TRUE );
+// 1359 }
+// 1360 
+// 1361 /*********************************************************************
+// 1362  * @fn      touchLink_RouterProcessZDOMsg
+// 1363  *
+// 1364  * @brief   Process incoming ZDO messages (for routers)
+// 1365  *
+// 1366  * @param   inMsg - message to process
+// 1367  *
+// 1368  * @return  none
+// 1369  */
+// 1370 void touchLink_RouterProcessZDOMsg( zdoIncomingMsg_t *inMsg )
+// 1371 {
+// 1372   ZDO_DeviceAnnce_t devAnnce;
+// 1373 
+// 1374   switch ( inMsg->clusterID )
+// 1375   {
+// 1376     case Device_annce:
+// 1377       {
+// 1378         // all devices should send link status, including the one sending it
+// 1379         ZDO_ParseDeviceAnnce( inMsg, &devAnnce );
+// 1380 
+// 1381         linkInfo_t *linkInfo;
+// 1382 
+// 1383         // check if entry exists
+// 1384         linkInfo = nwkNeighborGetLinkInfo( devAnnce.nwkAddr, _NIB.nwkPanId );
+// 1385 
+// 1386         // if not, look for a vacant entry to add this node...
+// 1387         if ( linkInfo == NULL )
+// 1388         {
+// 1389           nwkNeighborAdd( devAnnce.nwkAddr, _NIB.nwkPanId, 1 );
+// 1390           // if we have end device childs, send link status
+// 1391           if ( AssocCount(CHILD_RFD, CHILD_RFD_RX_IDLE) > 0 )
+// 1392           {
+// 1393             linkInfo = nwkNeighborGetLinkInfo( devAnnce.nwkAddr, _NIB.nwkPanId );
+// 1394             if ( (linkInfo != NULL) && (linkInfo->txCost == 0) )
+// 1395             {
+// 1396               linkInfo->txCost = MAX_LINK_COST;
+// 1397             }
+// 1398             NLME_UpdateLinkStatus();
+// 1399           }
+// 1400         }
+// 1401         else
+// 1402         {
+// 1403           // only update the TxCost, so the Link Status can be sent properly
+// 1404           if (linkInfo->txCost == 0)
+// 1405           {
+// 1406             linkInfo->txCost = MAX_LINK_COST;
+// 1407           }
+// 1408         }
+// 1409       }
+// 1410       break;
+// 1411 
+// 1412     case Mgmt_Permit_Join_req:
+// 1413       {
+// 1414         uint8 duration = inMsg->asdu[ZDP_MGMT_PERMIT_JOIN_REQ_DURATION];
+// 1415         ZStatus_t stat = NLME_PermitJoiningRequest( duration );
+// 1416         // Send a response if unicast
+// 1417         if ( !inMsg->wasBroadcast )
+// 1418         {
+// 1419           ZDP_MgmtPermitJoinRsp( inMsg->TransSeq, &(inMsg->srcAddr), stat, false );
+// 1420         }
+// 1421       }
+// 1422       break;
+// 1423 
+// 1424     default:
+// 1425       break;
+// 1426   }
+// 1427 }
+// 1428 
+// 1429 /*********************************************************************
+// 1430  * @fn      touchLink_PermitJoin
+// 1431  *
+// 1432  * @brief   Set the router permit join flag, to allow or deny classical
+// 1433  *          commissioning by other ZigBee devices.
+// 1434  *
+// 1435  * @param   duration - enable up to aplcMaxPermitJoinDuration seconds,
+// 1436  *                     0 to disable
+// 1437  *
+// 1438  * @return  status
+// 1439  */
+// 1440 ZStatus_t touchLink_PermitJoin( uint8 duration )
+// 1441 {
+// 1442   if ( duration > APLC_MAX_PERMIT_JOIN_DURATION )
+// 1443   {
+// 1444     duration = APLC_MAX_PERMIT_JOIN_DURATION;
+// 1445   }
+// 1446   return NLME_PermitJoiningRequest( duration );
+// 1447 }
+// 1448 
+// 1449 /*********************************************************************
+// 1450  * @fn      targetStartRtr
+// 1451  *
+// 1452  * @brief   Start operating on the new network.
+// 1453  *
+// 1454  * @param   pParams - pointer to received network parameters
+// 1455  * @param   transID - transaction id
+// 1456  *
+// 1457  * @return  none
+// 1458  */
+// 1459 void touchLinkStartRtr( bdbTLNwkParams_t *pParams, uint32 transID )
+// 1460 {
+// 1461   // Copy the new network parameters to
+// 1462   touchLink_SetNIB( NWK_ROUTER, pParams->nwkAddr, pParams->extendedPANID,
+// 1463               pParams->logicalChannel, pParams->panId, _NIB.nwkUpdateId );
+// 1464 
+// 1465   // Apply the received network key
+// 1466   touchLink_DecryptNwkKey( pParams->nwkKey, pParams->keyIndex, transID, touchLinkResponseID );
+// 1467 
+// 1468   // setting apsTrustCenterAddress to 0xffffffff
+// 1469   ZDSecMgrUpdateTCAddress( NULL );
+// 1470 
+// 1471   NLME_PermitJoiningRequest(0);
+// 1472 
+// 1473   // Use the new free ranges
+// 1474   //touchLink_UpdateFreeRanges( pParams );
+// 1475 
+// 1476   // Save free ranges
+// 1477   touchLink_UpdateNV( TOUCHLINK_UPDATE_NV_RANGES );
+// 1478 
+// 1479   // In case we're here after a leave
+// 1480   touchLinkLeaveInitiated = FALSE;
+// 1481 
+// 1482   // Clear leave control logic
+// 1483   ZDApp_LeaveCtrlReset();
+// 1484 
+// 1485   // Start operating on the new network
+// 1486   ZDOInitDeviceEx( 0, 1 );
+// 1487 }
+// 1488 
+// 1489 /*********************************************************************
+// 1490  * @fn      touchLink_DevRejoin
+// 1491  *
+// 1492  * @brief   Perform a network rejoin
+// 1493  *
+// 1494  * @param   rejoinInf - pointer to received network parameters
+// 1495  *
+// 1496  * @return  none
+// 1497  */
+// 1498 void touchLink_DevRejoin( bdbTLNwkRejoin_t *rejoinInf )
+// 1499 {
+// 1500     networkDesc_t *pNwkDesc = NULL;
+// 1501      
+// 1502     // Initialize the security for type of device
+// 1503     ZDApp_SecInit( ZDO_INITDEV_RESTORED_NETWORK_STATE );
+// 1504     
+// 1505     pNwkDesc = (networkDesc_t *)osal_mem_alloc( sizeof( networkDesc_t ) );
+// 1506     if( pNwkDesc == NULL )
+// 1507     {
+// 1508       return;
+// 1509     }
+// 1510          
+// 1511     NwkDescList = pNwkDesc;
+// 1512     pNwkDesc->panId = rejoinInf->panId;
+// 1513     pNwkDesc->logicalChannel = rejoinInf->logicalChannel;
+// 1514     osal_memcpy( pNwkDesc->extendedPANID, rejoinInf->extendedPANID, Z_EXTADDR_LEN);
+// 1515     pNwkDesc->chosenRouterDepth = 1;
+// 1516     pNwkDesc->routerCapacity = 1;
+// 1517     pNwkDesc->deviceCapacity = 1;
+// 1518     pNwkDesc->version = 2;
+// 1519     pNwkDesc->stackProfile = 2;
+// 1520     pNwkDesc->chosenRouterLinkQuality = DEF_LQI;
+// 1521     pNwkDesc->chosenRouter = rejoinInf->nwkAddr;
+// 1522     pNwkDesc->updateId = rejoinInf->nwkUpdateId;
+// 1523     pNwkDesc->nextDesc = NULL;
+// 1524     
+// 1525     // Save free ranges
+// 1526     touchLink_UpdateNV( TOUCHLINK_UPDATE_NV_RANGES );
+// 1527 
+// 1528     // In case we're here after a leave
+// 1529     touchLinkLeaveInitiated = FALSE;
+// 1530 
+// 1531     // Clear leave control logic
+// 1532     ZDApp_LeaveCtrlReset();
+// 1533     
+// 1534     // Let's join the network started by the target
+// 1535     NLME_ReJoinRequest( rejoinInf->extendedPANID, _NIB.nwkLogicalChannel);
+// 1536 }
+// 1537 
+// 1538 /*********************************************************************
+// 1539  * @fn      touchLink_DeviceIsInitiator
+// 1540  *
+// 1541  * @brief   Set device initiator flag.
+// 1542  *
+// 1543  * @param   initiator - new flag value
+// 1544  *
+// 1545  * @return  none
+// 1546  */
+// 1547 void touchLink_DeviceIsInitiator( bool initiator )
+// 1548 {
+// 1549   touchLinkIsInitiator = initiator;
+// 1550 }
+// 1551 
+// 1552 /*********************************************************************
+// 1553  * @fn      touchLink_DeviceIsInitiator
+// 1554  *
+// 1555  * @brief   Get device initiator flag.
+// 1556  *
+// 1557  * @param   none
+// 1558  *
+// 1559  * @return  touchLinkIsInitiator - flag value
+// 1560  */
+// 1561 bool touchLink_GetDeviceInitiator( void )
+// 1562 {
+// 1563   return touchLinkIsInitiator;
+// 1564 }
+// 1565 
+// 1566 #endif // BDB_TL_TARGET || BDB_TL_INITIATOR
+// 1567 
+// 1568 /*********************************************************************
+// 1569 *********************************************************************/
+// 
+//
+// 
+//
+//
+//Errors: none
+//Warnings: none

@@ -1,0 +1,2017 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.10.1.4655 for 8051               22/Nov/2023  15:42:43
+# Copyright 2004-2017 IAR Systems AB.
+# Standalone license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        D:\fuzzing-coordinator-response-collection\Components\mt\MT_UTIL.c
+#    Command line       =  
+#        -f C:\Users\ADMINI~1\AppData\Local\Temp\EWA8EA.tmp
+#        (D:\fuzzing-coordinator-response-collection\Components\mt\MT_UTIL.c -D
+#        SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE -D
+#        MULTICAST_ENABLED=FALSE -D ZCL_READ -D ZCL_DISCOVER -D ZCL_WRITE -D
+#        ZCL_BASIC -D ZCL_IDENTIFY -D ISR_KEYINTERRUPT -D HAL_UART=TRUE -D
+#        HAL_LCD=FALSE -D ZCL_ON_OFF -D INT_HEAP_LEN=2800 -D
+#        HAL_UART_DMA_RX_MAX=256 -D HAL_UART_DMA_TX_MAX=256 -lC
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+#        -lA
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+#        --diag_suppress Pe001,Pa010 -o
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj
+#        -e --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=banked --calling_convention=xdata_reentrant
+#        --place_constants=data_rom --nr_virtual_regs 8 -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+#        -DZDO_COORDINATOR -DRTR_NWK) -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x00, 0x01, 0x02, 0x03,
+#        0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E,
+#        0x0F}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+#        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+#        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+#        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000
+#        -DENABLE_LED4_DISABLE_S1) -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\Source\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\Source\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\ZMain\TI2530DB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mt\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\osal\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\saddr\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\sdata\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\af\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\bdb\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\gp\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sec\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sys\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zcl\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\Common\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\SPI\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\Font\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_LCD_SPI\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_OLED\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_TFT\
+#        -Ohz --require_prototypes)
+#    Locale             =  Chinese (Simplified)_China.936
+#    List file          =  
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List\MT_UTIL.lst
+#    Object file        =  
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj\MT_UTIL.r51
+#
+###############################################################################
+
+D:\fuzzing-coordinator-response-collection\Components\mt\MT_UTIL.c
+      1          /***************************************************************************************************
+      2            Filename:       MT_UTIL.c
+      3            Revised:        $Date: 2015-01-26 08:25:50 -0800 (Mon, 26 Jan 2015) $
+      4            Revision:       $Revision: 42025 $
+      5          
+      6            Description:    MonitorTest Utility Functions
+      7          
+      8            Copyright 2007-2015 Texas Instruments Incorporated. All rights reserved.
+      9          
+     10            IMPORTANT: Your use of this Software is limited to those specific rights
+     11            granted under the terms of a software license agreement between the user
+     12            who downloaded the software, his/her employer (which must be your employer)
+     13            and Texas Instruments Incorporated (the "License"). You may not use this
+     14            Software unless you agree to abide by the terms of the License. The License
+     15            limits your use, and you acknowledge, that the Software may not be modified,
+     16            copied or distributed unless embedded on a Texas Instruments microcontroller
+     17            or used solely and exclusively in conjunction with a Texas Instruments radio
+     18            frequency transceiver, which is integrated into your product. Other than for
+     19            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     20            works of, modify, distribute, perform, display or sell this Software and/or
+     21            its documentation for any purpose.
+     22          
+     23            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     24            PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     25            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     26            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     27            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     28            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     29            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     30            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     31            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     32            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     33            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     34          
+     35            Should you have any questions regarding your right to use this Software,
+     36            contact Texas Instruments Incorporated at www.TI.com.
+     37          
+     38           ***************************************************************************************************/
+     39          
+     40          /***************************************************************************************************
+     41           * INCLUDES
+     42           ***************************************************************************************************/
+     43          #include "ZComDef.h"
+     44          
+     45          #include "AddrMgr.h"
+     46          
+     47          #include "OnBoard.h"   /* This is here because of the key reading */
+     48          #include "hal_key.h"
+     49          #include "hal_led.h"
+     50          #include "OSAL_Nv.h"
+     51          #include "osal.h"
+     52          #include "NLMEDE.h"
+     53          #include "MT.h"
+     54          #include "MT_UTIL.h"
+     55          #include "MT_MAC.h"
+     56          #include "ssp.h"
+     57          #if defined ZCL_KEY_ESTABLISH
+     58          #include "zcl_key_establish.h"
+     59          #include "zcl_se.h"
+     60          #endif
+     61          
+     62          #if !defined NONWK
+     63          #include "MT_ZDO.h"
+     64          #include "MT_SAPI.h"
+     65          #include "MT_NWK.h"
+     66          #include "MT_AF.h"
+     67          #include "AssocList.h"
+     68          #include "ZDApp.h"
+     69          #include "ZDSecMgr.h"
+     70          #endif
+     71          
+     72          #if defined MT_SRNG
+     73          #include "hal_srng.h"
+     74          #endif
+     75          
+     76          #if defined FEATURE_DUAL_MAC
+     77          #include "dmmgr.h"
+     78          #endif
+     79          
+     80          /***************************************************************************************************
+     81           * CONSTANTS
+     82           ***************************************************************************************************/
+     83          #define MT_UTIL_DEVICE_INFO_RESPONSE_LEN 14
+     84          #define MT_UTIL_STATUS_LEN    1
+     85          #define MT_UTIL_FRM_CTR_LEN   4
+     86          // Status + LinkKeyDataLen + Tx+Rx Frame counter.
+     87          #define MT_APSME_LINKKEY_GET_RSP_LEN (MT_UTIL_STATUS_LEN + SEC_KEY_LEN + (MT_UTIL_FRM_CTR_LEN * 2))
+     88          // Status + NV id
+     89          #define MT_APSME_LINKKEY_NV_ID_GET_RSP_LEN (MT_UTIL_STATUS_LEN + 2)
+     90          
+     91          /***************************************************************************************************
+     92           * LOCAL VARIABLES
+     93           ***************************************************************************************************/
+     94          #if defined ZCL_KEY_ESTABLISH
+     95          uint8 zcl_key_establish_task_id;
+     96          #endif
+     97          
+     98          #ifdef FEATURE_GET_PRIMARY_IEEE
+     99          /* This feature is not compatible with MSP430 or ARM platforms. */
+    100          __no_init const __xdata char ieeeMac[1] @ 0x780C;
+    101          #endif
+    102          
+    103          /***************************************************************************************************
+    104           * LOCAL FUNCTIONS
+    105           ***************************************************************************************************/
+    106          #ifdef AUTO_PEND
+    107          static void MT_UtilRevExtCpy( uint8 *pDst, uint8 *pSrc );
+    108          static void MT_UtilSpi2Addr( zAddrType_t *pDst, uint8 *pSrc );
+    109          #endif
+    110          
+    111          #if defined (MT_UTIL_FUNC)
+    112          static void MT_UtilGetDeviceInfo(void);
+    113          static void MT_UtilGetNvInfo(void);
+    114          static void MT_UtilSetPanID(uint8 *pBuf);
+    115          static void MT_UtilSetChannels(uint8 *pBuf);
+    116          static void MT_UtilSetSecLevel(uint8 *pBuf);
+    117          static void MT_UtilSetPreCfgKey(uint8 *pBuf);
+    118          static void MT_UtilCallbackSub(uint8 *pData);
+    119          static void MT_UtilTimeAlive(void);
+    120          static void MT_UtilSrcMatchEnable (uint8 *pBuf);
+    121          static void MT_UtilSrcMatchAddEntry (uint8 *pBuf);
+    122          static void MT_UtilSrcMatchDeleteEntry (uint8 *pBuf);
+    123          static void MT_UtilSrcMatchCheckSrcAddr (uint8 *pBuf);
+    124          static void MT_UtilSrcMatchAckAllPending (uint8 *pBuf);
+    125          static void MT_UtilSrcMatchCheckAllPending (uint8 *pBuf);
+    126          
+    127          static void MT_UtilGpioSetDirection(uint8 *pBuf);
+    128          static void MT_UtilGpioRead(uint8 *pBuf);
+    129          static void MT_UtilGpioWrite(uint8 *pBuf);
+    130          
+    131          #if (defined HAL_KEY) && (HAL_KEY == TRUE)
+    132          static void MT_UtilKeyEvent(uint8 *pBuf);
+    133          #endif
+    134          
+    135          #if (defined HAL_LED) && (HAL_LED == TRUE)
+    136          static void MT_UtilLedControl(uint8 *pBuf);
+    137          #endif
+    138          
+    139          #ifdef MT_SRNG
+    140          static void MT_UtilSrngGen(void);
+    141          #endif
+    142          
+    143          #ifdef FEATURE_GET_PRIMARY_IEEE
+    144          static void MT_UtilGetPrimaryIEEE(void);
+    145          #endif
+    146          
+    147          #if !defined NONWK
+    148          static void MT_UtilDataReq(uint8 *pBuf);
+    149          static void MT_UtilAddrMgrEntryLookupExt(uint8 *pBuf);
+    150          static void MT_UtilAddrMgrEntryLookupNwk(uint8 *pBuf);
+    151          #if defined MT_SYS_KEY_MANAGEMENT
+    152          static void MT_UtilAPSME_LinkKeyDataGet(uint8 *pBuf);
+    153          static void MT_UtilAPSME_LinkKeyNvIdGet(uint8 *pBuf);
+    154          #endif //MT_SYS_KEY_MANAGEMENT
+    155          static void MT_UtilAPSME_RequestKeyCmd(uint8 *pBuf);
+    156          static void MT_UtilAssocCount(uint8 *pBuf);
+    157          static void MT_UtilAssocFindDevice(uint8 *pBuf);
+    158          static void MT_UtilAssocGetWithAddress(uint8 *pBuf);
+    159          static void MT_UtilBindAddEntry(uint8 *pBuf);
+    160          static void packDev_t(uint8 *pBuf, associated_devices_t *pDev);
+    161          static void packBindEntry_t(uint8 *pBuf, BindingEntry_t *pBind);
+    162          #if defined ZCL_KEY_ESTABLISH
+    163          static void MT_UtilzclGeneral_KeyEstablish_InitiateKeyEstablishment(uint8 *pBuf);
+    164          static void MT_UtilzclGeneral_KeyEstablishment_ECDSASign(uint8 *pBuf);
+    165          #endif // ZCL_KEY_ESTABLISH
+    166          static void MT_UtilSync(void);
+    167          #endif // !defined NONWK
+    168          #endif // MT_UTIL_FUNC
+    169          
+    170          #if defined (MT_UTIL_FUNC)
+    171          /***************************************************************************************************
+    172          * @fn      MT_UtilProcessing
+    173          *
+    174          * @brief   Process all the DEBUG commands that are issued by test tool
+    175          *
+    176          * @param   pBuf  - pointer to received SPI data message
+    177          *
+    178          * @return  status
+    179          ***************************************************************************************************/
+    180          uint8 MT_UtilCommandProcessing(uint8 *pBuf)
+    181          {
+    182            uint8 status = MT_RPC_SUCCESS;
+    183          
+    184            switch (pBuf[MT_RPC_POS_CMD1])
+    185            {
+    186              // CC253X MAC Network Processor does not have NV support
+    187          #if !defined(CC253X_MACNP)
+    188            case MT_UTIL_GET_DEVICE_INFO:
+    189              MT_UtilGetDeviceInfo();
+    190              break;
+    191          
+    192            case MT_UTIL_GET_NV_INFO:
+    193              MT_UtilGetNvInfo();
+    194              break;
+    195          
+    196            case MT_UTIL_SET_PANID:
+    197              MT_UtilSetPanID(pBuf);
+    198              break;
+    199          
+    200            case MT_UTIL_SET_CHANNELS:
+    201              MT_UtilSetChannels(pBuf);
+    202              break;
+    203          
+    204            case MT_UTIL_SET_SECLEVEL:
+    205              MT_UtilSetSecLevel(pBuf);
+    206              break;
+    207          
+    208            case MT_UTIL_SET_PRECFGKEY:
+    209              MT_UtilSetPreCfgKey(pBuf);
+    210              break;
+    211          #endif
+    212          
+    213          #ifdef FEATURE_GET_PRIMARY_IEEE
+    214            case MT_UTIL_GET_PRIMARY_IEEE:
+    215              MT_UtilGetPrimaryIEEE();
+    216              break;
+    217          #endif
+    218          
+    219            case MT_UTIL_CALLBACK_SUB_CMD:
+    220              MT_UtilCallbackSub(pBuf);
+    221              break;
+    222          
+    223            case MT_UTIL_KEY_EVENT:
+    224          #if (defined HAL_KEY) && (HAL_KEY == TRUE)
+    225              MT_UtilKeyEvent(pBuf);
+    226          #endif
+    227              break;
+    228          
+    229            case MT_UTIL_TIME_ALIVE:
+    230              MT_UtilTimeAlive();
+    231              break;
+    232          
+    233            case MT_UTIL_LED_CONTROL:
+    234          #if (defined HAL_LED) && (HAL_LED == TRUE)
+    235              MT_UtilLedControl(pBuf);
+    236          #endif
+    237              break;
+    238          
+    239            case MT_UTIL_SRC_MATCH_ENABLE:
+    240              MT_UtilSrcMatchEnable(pBuf);
+    241              break;
+    242          
+    243            case MT_UTIL_SRC_MATCH_ADD_ENTRY:
+    244              MT_UtilSrcMatchAddEntry(pBuf);
+    245              break;
+    246          
+    247            case MT_UTIL_SRC_MATCH_DEL_ENTRY:
+    248              MT_UtilSrcMatchDeleteEntry(pBuf);
+    249              break;
+    250          
+    251            case MT_UTIL_SRC_MATCH_CHECK_SRC_ADDR:
+    252              MT_UtilSrcMatchCheckSrcAddr(pBuf);
+    253              break;
+    254          
+    255            case MT_UTIL_SRC_MATCH_ACK_ALL_PENDING:
+    256              MT_UtilSrcMatchAckAllPending(pBuf);
+    257              break;
+    258          
+    259            case MT_UTIL_SRC_MATCH_CHECK_ALL_PENDING:
+    260              MT_UtilSrcMatchCheckAllPending(pBuf);
+    261              break;
+    262          
+    263            case MT_UTIL_TEST_LOOPBACK:
+    264              MT_BuildAndSendZToolResponse((MT_RPC_CMD_SRSP|(uint8)MT_RPC_SYS_UTIL), MT_UTIL_TEST_LOOPBACK,
+    265                                           pBuf[MT_RPC_POS_LEN], (pBuf+MT_RPC_FRAME_HDR_SZ));
+    266              break;
+    267          
+    268            case MT_UTIL_GPIO_SET_DIRECTION:
+    269              MT_UtilGpioSetDirection(pBuf);
+    270              break;
+    271          
+    272            case MT_UTIL_GPIO_READ:
+    273              MT_UtilGpioRead(pBuf);
+    274              break;
+    275          
+    276            case MT_UTIL_GPIO_WRITE:
+    277              MT_UtilGpioWrite(pBuf);
+    278              break;
+    279          
+    280          #if !defined NONWK
+    281            case MT_UTIL_DATA_REQ:
+    282              MT_UtilDataReq(pBuf);
+    283              break;
+    284          
+    285            case MT_UTIL_ADDRMGR_EXT_ADDR_LOOKUP:
+    286              MT_UtilAddrMgrEntryLookupExt(pBuf);
+    287              break;
+    288          
+    289            case MT_UTIL_ADDRMGR_NWK_ADDR_LOOKUP:
+    290              MT_UtilAddrMgrEntryLookupNwk(pBuf);
+    291              break;
+    292          
+    293          #if defined MT_SYS_KEY_MANAGEMENT
+    294            case MT_UTIL_APSME_LINK_KEY_DATA_GET:
+    295              MT_UtilAPSME_LinkKeyDataGet(pBuf);
+    296              break;
+    297          
+    298            case MT_UTIL_APSME_LINK_KEY_NV_ID_GET:
+    299              MT_UtilAPSME_LinkKeyNvIdGet(pBuf);
+    300              break;
+    301          #endif // MT_SYS_KEY_MANAGEMENT
+    302          
+    303            case MT_UTIL_APSME_REQUEST_KEY_CMD:
+    304              MT_UtilAPSME_RequestKeyCmd(pBuf);
+    305              break;
+    306          
+    307            case MT_UTIL_ASSOC_COUNT:
+    308              MT_UtilAssocCount(pBuf);
+    309              break;
+    310          
+    311            case MT_UTIL_ASSOC_FIND_DEVICE:
+    312              MT_UtilAssocFindDevice(pBuf);
+    313              break;
+    314          
+    315            case MT_UTIL_ASSOC_GET_WITH_ADDRESS:
+    316              MT_UtilAssocGetWithAddress(pBuf);
+    317              break;
+    318          
+    319            case MT_UTIL_BIND_ADD_ENTRY:
+    320              MT_UtilBindAddEntry(pBuf);
+    321              break;
+    322          
+    323          #if defined ZCL_KEY_ESTABLISH
+    324            case MT_UTIL_ZCL_KEY_EST_INIT_EST:
+    325              MT_UtilzclGeneral_KeyEstablish_InitiateKeyEstablishment(pBuf);
+    326              break;
+    327          
+    328            case MT_UTIL_ZCL_KEY_EST_SIGN:
+    329              MT_UtilzclGeneral_KeyEstablishment_ECDSASign(pBuf);
+    330              break;
+    331          #endif
+    332          
+    333            case MT_UTIL_SYNC_REQ:
+    334              MT_UtilSync();
+    335              break;
+    336          #endif /* !defined NONWK */
+    337          
+    338          #ifdef MT_SRNG
+    339            case MT_UTIL_SRNG_GENERATE:
+    340              MT_UtilSrngGen();
+    341              break;
+    342          #endif
+    343          
+    344            default:
+    345              status = MT_RPC_ERR_COMMAND_ID;
+    346              break;
+    347            }
+    348          
+    349            return status;
+    350          }
+    351          
+    352          /***************************************************************************************************
+    353          * @fn      MT_UtilGetDeviceInfo
+    354          *
+    355          * @brief   The Get Device Info serial message.
+    356          *
+    357          * @param   None.
+    358          *
+    359          * @return  void
+    360          ***************************************************************************************************/
+    361          static void MT_UtilGetDeviceInfo(void)
+    362          {
+    363            uint8  *buf;
+    364            uint8  *pBuf;
+    365            uint8  bufLen = MT_UTIL_DEVICE_INFO_RESPONSE_LEN;
+    366            uint16 *assocList = NULL;
+    367          
+    368          #if !defined NONWK
+    369            uint8  assocCnt = 0;
+    370          
+    371            if (ZG_DEVICE_RTR_TYPE)
+    372            {
+    373              assocList = AssocMakeList( &assocCnt );
+    374              bufLen += (assocCnt * sizeof(uint16));
+    375            }
+    376          #endif
+    377          
+    378            buf = osal_mem_alloc( bufLen );
+    379            if ( buf )
+    380            {
+    381              pBuf = buf;
+    382          
+    383              *pBuf++ = ZSUCCESS; // Status
+    384          
+    385              osal_nv_read( ZCD_NV_EXTADDR, 0, Z_EXTADDR_LEN, pBuf );
+    386              pBuf += Z_EXTADDR_LEN;
+    387          
+    388          #if defined NONWK
+    389              // Skip past ZStack only parameters for NONWK
+    390              *pBuf++ = 0;
+    391              *pBuf++ = 0;
+    392              *pBuf++ = 0;
+    393              *pBuf++ = 0;
+    394              *pBuf = 0;
+    395          #else
+    396              {
+    397                uint16 shortAddr = NLME_GetShortAddr();
+    398                *pBuf++ = LO_UINT16( shortAddr );
+    399                *pBuf++ = HI_UINT16( shortAddr );
+    400              }
+    401          
+    402              /* Return device type */
+    403              *pBuf++ = ZSTACK_DEVICE_BUILD;
+    404          
+    405              /*Return device state */
+    406              *pBuf++ = (uint8)devState;
+    407          
+    408              if (ZG_DEVICE_RTR_TYPE)
+    409              {
+    410                *pBuf++ = assocCnt;
+    411          
+    412                if ( assocCnt )
+    413                {
+    414                  uint8 x;
+    415                  uint16 *puint16 = assocList;
+    416          
+    417                  for ( x = 0; x < assocCnt; x++, puint16++ )
+    418                  {
+    419                    *pBuf++ = LO_UINT16( *puint16 );
+    420                    *pBuf++ = HI_UINT16( *puint16 );
+    421                  }
+    422                }
+    423              }
+    424              else
+    425              {
+    426                *pBuf++ = 0;
+    427              }
+    428          #endif
+    429          
+    430              MT_BuildAndSendZToolResponse( ((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL),
+    431                                           MT_UTIL_GET_DEVICE_INFO,
+    432                                           bufLen, buf );
+    433          
+    434              osal_mem_free( buf );
+    435            }
+    436          
+    437            if ( assocList )
+    438            {
+    439              osal_mem_free( assocList );
+    440            }
+    441          }
+    442          
+    443          #ifdef MT_SRNG
+    444          /***************************************************************************************************
+    445          * @fn      MT_UtilSrngGen
+    446          *
+    447          * @brief   Generate Secure Random Numbers
+    448          *
+    449          * @param   None.
+    450          *
+    451          * @return  void
+    452          ***************************************************************************************************/
+    453          static void MT_UtilSrngGen(void)
+    454          {
+    455            static uint32 count = 125000; /* 125000 * 8 bits = 1000000 bits */
+    456            uint8 outrng[100];
+    457            uint8 status;
+    458          
+    459            if(count > 0)
+    460            {
+    461              status = ssp_srng_generate((uint8 *)outrng, 100, NULL);
+    462              if (status != SRNG_SUCCESS)
+    463              {
+    464                if(RNG_INIT_ERROR == status)
+    465                {
+    466                  ssp_srng_reseed();
+    467                }
+    468                else
+    469                {
+    470                  while(1)
+    471                  {
+    472                    ASM_NOP;
+    473                  }
+    474                } /* if(RNG_INIT_ERROR == status) */
+    475              }/*if (status != SRNG_SUCCESS) */
+    476          
+    477              if(count >= 100)
+    478              {
+    479                count -= 100;
+    480              }
+    481              else
+    482              {
+    483                count = 0;
+    484              }
+    485              MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_AREQ |
+    486                                           (uint8)MT_RPC_SYS_DBG),
+    487                                            MT_DEBUG_MSG,
+    488                                            100,
+    489                                            outrng);
+    490              osal_start_timerEx(MT_TaskID, MT_SRNG_EVENT, 100);
+    491            }
+    492          }
+    493          #endif
+    494          
+    495          /***************************************************************************************************
+    496           * @fn      MT_UtilGetNvInfo
+    497           *
+    498           * @brief   The Get NV Info serial message.
+    499           *
+    500           * @param   None.
+    501           *
+    502           * @return  void
+    503           ***************************************************************************************************/
+    504          static void MT_UtilGetNvInfo(void)
+    505          {
+    506            uint8 len;
+    507            uint8 stat;
+    508            uint8 *buf;
+    509            uint8 *pBuf;
+    510            uint16 tmp16;
+    511            uint32 tmp32;
+    512          
+    513            /*
+    514              Get required length of buffer
+    515              Status + ExtAddr + ChanList + PanID  + SecLevel + PreCfgKey
+    516            */
+    517            len = 1 + Z_EXTADDR_LEN + 4 + 2 + 1 + SEC_KEY_LEN;
+    518          
+    519            buf = osal_mem_alloc( len );
+    520            if ( buf )
+    521            {
+    522              /* Assume NV not available */
+    523              osal_memset( buf, 0xFF, len );
+    524          
+    525              /* Skip over status */
+    526              pBuf = buf + 1;
+    527          
+    528              /* Start with 64-bit extended address */
+    529              stat = osal_nv_read( ZCD_NV_EXTADDR, 0, Z_EXTADDR_LEN, pBuf );
+    530              if ( stat ) stat = 0x01;
+    531              pBuf += Z_EXTADDR_LEN;
+    532          
+    533              /* Scan channel list (bit mask) */
+    534              if (  osal_nv_read( ZCD_NV_CHANLIST, 0, sizeof( tmp32 ), &tmp32 ) )
+    535              {
+    536                stat |= 0x02;
+    537              }
+    538              else
+    539              {
+    540                pBuf[0] = BREAK_UINT32( tmp32, 3 );
+    541                pBuf[1] = BREAK_UINT32( tmp32, 2 );
+    542                pBuf[2] = BREAK_UINT32( tmp32, 1 );
+    543                pBuf[3] = BREAK_UINT32( tmp32, 0 );
+    544              }
+    545              pBuf += sizeof( tmp32 );
+    546          
+    547              /* ZigBee PanID */
+    548              if ( osal_nv_read( ZCD_NV_PANID, 0, sizeof( tmp16 ), &tmp16 ) )
+    549              {
+    550                stat |= 0x04;
+    551              }
+    552              else
+    553              {
+    554                pBuf[0] = LO_UINT16( tmp16 );
+    555                pBuf[1] = HI_UINT16( tmp16 );
+    556              }
+    557              pBuf += sizeof( tmp16 );
+    558          
+    559              /* Security level */
+    560              if ( osal_nv_read( ZCD_NV_SECURITY_LEVEL, 0, sizeof( uint8 ), pBuf++ ) )
+    561              {
+    562                stat |= 0x08;
+    563              }
+    564              /* Pre-configured security key */
+    565              if ( osal_nv_read( ZCD_NV_PRECFGKEY, 0, SEC_KEY_LEN, pBuf ) )
+    566              {
+    567                stat |= 0x10;
+    568              }
+    569              /* Status bit mask - bit=1 indicates failure */
+    570              *buf = stat;
+    571          
+    572              MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), MT_UTIL_GET_NV_INFO,
+    573                                            len, buf );
+    574          
+    575              osal_mem_free( buf );
+    576            }
+    577          }
+    578          
+    579          /***************************************************************************************************
+    580           * @fn      MT_UtilSetPanID
+    581           *
+    582           * @brief   Set PanID message
+    583           *
+    584           * @param   pBuf - pointer to the data
+    585           *
+    586           * @return  void
+    587           ***************************************************************************************************/
+    588          static void MT_UtilSetPanID(uint8 *pBuf)
+    589          {
+    590            uint16 temp16;
+    591            uint8 retValue;
+    592            uint8 cmdId;
+    593          
+    594            /* parse header */
+    595            cmdId = pBuf[MT_RPC_POS_CMD1];
+    596            pBuf += MT_RPC_FRAME_HDR_SZ;
+    597          
+    598            temp16 = osal_build_uint16( pBuf );
+    599          
+    600            retValue = osal_nv_write(ZCD_NV_PANID, 0, osal_nv_item_len( ZCD_NV_PANID ), &temp16);
+    601          
+    602            /* Build and send back the response */
+    603            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), cmdId, 1, &retValue);
+    604          }
+    605          
+    606          /***************************************************************************************************
+    607           * @fn      MT_UtilSetChannels
+    608           *
+    609           * @brief   Set Channels
+    610           *
+    611           * @param   pBuf - pointer to the data
+    612           *
+    613           * @return  void
+    614           ***************************************************************************************************/
+    615          static void MT_UtilSetChannels(uint8 *pBuf)
+    616          {
+    617            uint32 tmp32;
+    618            uint8 retValue;
+    619            uint8 cmdId;
+    620          
+    621            /* parse header */
+    622            cmdId = pBuf[MT_RPC_POS_CMD1];
+    623            pBuf += MT_RPC_FRAME_HDR_SZ;
+    624          
+    625            tmp32 = osal_build_uint32( pBuf, 4 );
+    626          
+    627            retValue = osal_nv_write(ZCD_NV_CHANLIST, 0, osal_nv_item_len( ZCD_NV_CHANLIST ), &tmp32);
+    628          
+    629            /* Build and send back the response */
+    630            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), cmdId, 1, &retValue);
+    631          }
+    632          
+    633          /***************************************************************************************************
+    634           * @fn      MT_UtilSetSecLevel
+    635           *
+    636           * @brief   Set Sec Level
+    637           *
+    638           * @param   byte *msg - pointer to the data
+    639           *
+    640           * @return  void
+    641           ***************************************************************************************************/
+    642          static void MT_UtilSetSecLevel(uint8 *pBuf)
+    643          {
+    644            uint8 retValue;
+    645            uint8 cmdId;
+    646          
+    647            /* parse header */
+    648            cmdId = pBuf[MT_RPC_POS_CMD1];
+    649            pBuf += MT_RPC_FRAME_HDR_SZ;
+    650          
+    651            retValue = osal_nv_write( ZCD_NV_SECURITY_LEVEL, 0, osal_nv_item_len( ZCD_NV_SECURITY_LEVEL ), pBuf);
+    652          
+    653            /* Build and send back the response */
+    654            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), cmdId, 1, &retValue );
+    655          
+    656          }
+    657          
+    658          /***************************************************************************************************
+    659           * @fn      MT_UtilSetPreCfgKey
+    660           *
+    661           * @brief   Set Pre Cfg Key
+    662           *
+    663           * @param   pBuf - pointer to the data
+    664           *
+    665           * @return  void
+    666           ***************************************************************************************************/
+    667          static void MT_UtilSetPreCfgKey(uint8 *pBuf)
+    668          {
+    669            uint8 retValue;
+    670            uint8 cmdId;
+    671          
+    672            /* parse header */
+    673            cmdId = pBuf[MT_RPC_POS_CMD1];
+    674            pBuf += MT_RPC_FRAME_HDR_SZ;
+    675          
+    676            retValue = osal_nv_write( ZCD_NV_PRECFGKEY, 0, osal_nv_item_len( ZCD_NV_PRECFGKEY ), pBuf);
+    677          
+    678            /* Build and send back the response */
+    679            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), cmdId, 1, &retValue );
+    680          
+    681          }
+    682          
+    683          #ifdef FEATURE_GET_PRIMARY_IEEE
+    684          /***************************************************************************************************
+    685           * @fn      MT_UtilGetPrimaryIEEE
+    686           *
+    687           * @brief   Return a copy of the Primary IEEE address
+    688           *
+    689           * @param   none
+    690           *
+    691           * @return  void
+    692           ***************************************************************************************************/
+    693          static void MT_UtilGetPrimaryIEEE(void)
+    694          {
+    695            uint8 i;
+    696            uint8 retBuf[Z_EXTADDR_LEN+1];
+    697          
+    698            retBuf[0] = SUCCESS;
+    699          
+    700            for(i = 1; i <= Z_EXTADDR_LEN; i++)
+    701            {
+    702              retBuf[i] = ieeeMac[i];
+    703            }
+    704          
+    705            MT_BuildAndSendZToolResponse( ((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL),
+    706                                            MT_UTIL_GET_PRIMARY_IEEE, Z_EXTADDR_LEN+1, retBuf );
+    707          }
+    708          #endif /* FEATURE_GET_PRIMARY_IEEE */
+    709          
+    710          /***************************************************************************************************
+    711           * @fn      MT_UtilCallbackSub
+    712           *
+    713           * @brief   The Callback subscribe.
+    714           *
+    715           * @param   pBuf - pointer to the data
+    716           *
+    717           * @return  void
+    718           ***************************************************************************************************/
+    719          void MT_UtilCallbackSub(uint8 *pBuf)
+    720          {
+    721            uint8 cmdId = pBuf[MT_RPC_POS_CMD1];
+    722            uint8 retValue = ZFailure;
+    723          
+    724          #if defined(MT_MAC_CB_FUNC) || defined(MT_NWK_CB_FUNC) || defined(MT_ZDO_CB_FUNC) || defined(MT_AF_CB_FUNC) || defined(MT_SAPI_CB_FUNC)
+    725            uint8 subSystem;
+    726            uint16 subscribed_command;
+    727          
+    728            // Move past header
+    729            retValue = ZSuccess;
+    730            pBuf += MT_RPC_FRAME_HDR_SZ;
+    731          
+    732            /* Command */
+    733            subscribed_command = osal_build_uint16( pBuf );
+    734            pBuf += 2;
+    735          
+    736            /* Subsystem - 5 bits on the MSB of the command */
+    737            subSystem = HI_UINT16(subscribed_command) & 0x1F ;
+    738          
+    739            /* What is the action - SUBSCRIBE or !SUBSCRIBE */
+    740            if (*pBuf)
+    741            {
+    742              /* Turn ON */
+    743            #if defined( MT_MAC_CB_FUNC )
+    744              if ((subSystem == MT_RPC_SYS_MAC) || (subscribed_command == 0xFFFF))
+    745              {
+    746              #if !defined (FEATURE_DUAL_MAC)
+    747                _macCallbackSub = 0xFFFF;
+    748              #else
+    749                DMMGR_SaveMacCbReg( 0xFFFF );
+    750              #endif /* ! FEATURE_DUAL_MAC */
+    751              }
+    752            #endif
+    753          
+    754            #if defined( MT_NWK_CB_FUNC )
+    755              if ((subSystem == MT_RPC_SYS_NWK) || (subscribed_command == 0xFFFF))
+    756                _nwkCallbackSub = 0xFFFF;
+    757            #endif
+    758          
+    759            #if defined( MT_ZDO_CB_FUNC )
+    760              if ((subSystem == MT_RPC_SYS_ZDO) || (subscribed_command == 0xFFFF))
+    761                _zdoCallbackSub = 0xFFFFFFFF;
+    762            #endif
+    763          
+    764            #if defined( MT_AF_CB_FUNC )
+    765              if ((subSystem == MT_RPC_SYS_AF) || (subscribed_command == 0xFFFF))
+    766                _afCallbackSub = 0xFFFF;
+    767            #endif
+    768          
+    769            #if defined( MT_SAPI_CB_FUNC )
+    770              if ((subSystem == MT_RPC_SYS_SAPI) || (subscribed_command == 0xFFFF))
+    771                _sapiCallbackSub = 0xFFFF;
+    772            #endif
+    773            }
+    774            else
+    775            {
+    776              /* Turn OFF */
+    777            #if defined( MT_MAC_CB_FUNC )
+    778              if ((subSystem == MT_RPC_SYS_MAC) || (subscribed_command == 0xFFFF))
+    779                _macCallbackSub = 0x0000;
+    780          
+    781            #if defined (FEATURE_DUAL_MAC )
+    782              DMMGR_SaveMacCbReg( 0x0000 );
+    783            #endif /* FEATURE_DUAL_MAC */
+    784          
+    785            #endif
+    786          
+    787            #if defined( MT_NWK_CB_FUNC )
+    788              if ((subSystem == MT_RPC_SYS_NWK) || (subscribed_command == 0xFFFF))
+    789                _nwkCallbackSub = 0x0000;
+    790            #endif
+    791          
+    792            #if defined( MT_ZDO_CB_FUNC )
+    793              if ((subSystem == MT_RPC_SYS_ZDO) || (subscribed_command == 0xFFFF))
+    794                _zdoCallbackSub = 0x00000000;
+    795            #endif
+    796          
+    797            #if defined( MT_AF_CB_FUNC )
+    798              if ((subSystem == MT_RPC_SYS_AF) || (subscribed_command == 0xFFFF))
+    799                _afCallbackSub = 0x0000;
+    800            #endif
+    801          
+    802            #if defined( MT_SAPI_CB_FUNC )
+    803              if ((subSystem == MT_RPC_SYS_SAPI) || (subscribed_command == 0xFFFF))
+    804                  _sapiCallbackSub = 0x0000;
+    805            #endif
+    806            }
+    807          #endif  // MT_MAC_CB_FUNC || MT_NWK_CB_FUNC || MT_ZDO_CB_FUNC || MT_AF_CB_FUNC || MT_SAPI_CB_FUNC || MT_SAPI_CB_FUNC
+    808          
+    809            /* Build and send back the response */
+    810            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), cmdId, 1, &retValue );
+    811          }
+    812          
+    813          #if (defined HAL_KEY) && (HAL_KEY == TRUE)
+    814          /***************************************************************************************************
+    815           * @fn      MT_UtilKeyEvent
+    816           *
+    817           * @brief   Process Key Event
+    818           *
+    819           * @param   pBuf - pointer to the data
+    820           *
+    821           * @return  void
+    822           ***************************************************************************************************/
+    823          static void MT_UtilKeyEvent(uint8 *pBuf)
+    824          {
+    825            uint8 x = 0;
+    826            uint8 retValue;
+    827            uint8 cmdId;
+    828          
+    829            /* parse header */
+    830            cmdId = pBuf[MT_RPC_POS_CMD1];
+    831            pBuf += MT_RPC_FRAME_HDR_SZ;
+    832          
+    833            /* Translate between SPI values to device values */
+    834            if ( *pBuf & 0x01 )
+    835              x |= HAL_KEY_SW_1;
+    836            if ( *pBuf & 0x02 )
+    837              x |= HAL_KEY_SW_2;
+    838            if ( *pBuf & 0x04 )
+    839              x |= HAL_KEY_SW_3;
+    840            if ( *pBuf & 0x08 )
+    841              x |= HAL_KEY_SW_4;
+    842          #if defined ( HAL_KEY_SW_5 )
+    843            if ( *pBuf & 0x10 )
+    844              x |= HAL_KEY_SW_5;
+    845          #endif
+    846          #if defined ( HAL_KEY_SW_6 )
+    847            if ( *pBuf & 0x20 )
+    848              x |= HAL_KEY_SW_6;
+    849          #endif
+    850          #if defined ( HAL_KEY_SW_7 )
+    851            if ( *pBuf & 0x40 )
+    852              x |= HAL_KEY_SW_7;
+    853          #endif
+    854          #if defined ( HAL_KEY_SW_8 )
+    855            if ( *pBuf & 0x80 )
+    856              x |= HAL_KEY_SW_8;
+    857          #endif
+    858            pBuf++;
+    859          
+    860            retValue = OnBoard_SendKeys(x, *pBuf);
+    861          
+    862            /* Build and send back the response */
+    863            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), cmdId, 1, &retValue );
+    864          }
+    865          #endif
+    866          
+    867          /***************************************************************************************************
+    868           * @fn      MT_UtilTimeAlive
+    869           *
+    870           * @brief   Process Time Alive
+    871           *
+    872           * @param   None.
+    873           *
+    874           * @return  None
+    875           ***************************************************************************************************/
+    876          static void MT_UtilTimeAlive(void)
+    877          {
+    878            uint8 timeAlive[4];
+    879            uint32 tmp32;
+    880          
+    881            /* Time since last reset (seconds) */
+    882            tmp32 = osal_GetSystemClock() / 1000;
+    883          
+    884            /* Convert to high byte first into temp buffer */
+    885            osal_buffer_uint32( timeAlive, tmp32 );
+    886          
+    887            /* Build and send back the response */
+    888            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL),
+    889                                                 MT_UTIL_TIME_ALIVE, sizeof(timeAlive), timeAlive);
+    890          }
+    891          
+    892          #if (defined HAL_LED) && (HAL_LED == TRUE)
+    893          /***************************************************************************************************
+    894           * @fn      MT_UtilLedControl
+    895           *
+    896           * @brief   Process the LED Control Message
+    897           *
+    898           * @param   pBuf - pointer to the received data
+    899           *
+    900           * @return  None
+    901           ***************************************************************************************************/
+    902          static void MT_UtilLedControl(uint8 *pBuf)
+    903          {
+    904            uint8 iLed, Led, iMode, Mode, cmdId;
+    905            uint8 retValue;
+    906          
+    907            /* parse header */
+    908            cmdId = pBuf[MT_RPC_POS_CMD1];
+    909            pBuf += MT_RPC_FRAME_HDR_SZ;
+    910          
+    911            /* LED and Mode */
+    912            iLed = *pBuf++;
+    913            iMode = *pBuf;
+    914          
+    915            if ( iLed == 1 )
+    916              Led = HAL_LED_1;
+    917            else if ( iLed == 2 )
+    918              Led = HAL_LED_2;
+    919            else if ( iLed == 3 )
+    920              Led = HAL_LED_3;
+    921            else if ( iLed == 4 )
+    922              Led = HAL_LED_4;
+    923            else if ( iLed == 0xFF )
+    924              Led = HAL_LED_ALL;
+    925            else
+    926              Led = 0;
+    927          
+    928            if ( iMode == 0 )
+    929              Mode = HAL_LED_MODE_OFF;
+    930            else if ( iMode == 1 )
+    931              Mode = HAL_LED_MODE_ON;
+    932            else if ( iMode == 2 )
+    933              Mode = HAL_LED_MODE_BLINK;
+    934            else if ( iMode == 3 )
+    935              Mode = HAL_LED_MODE_FLASH;
+    936            else if ( iMode == 4 )
+    937              Mode = HAL_LED_MODE_TOGGLE;
+    938            else
+    939              Led = 0;
+    940          
+    941            if ( Led != 0 )
+    942            {
+    943              HalLedSet (Led, Mode);
+    944              retValue = ZSuccess;
+    945            }
+    946            else
+    947            {
+    948              retValue = ZFailure;
+    949            }
+    950          
+    951            /* Build and send back the response */
+    952            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), cmdId, 1, &retValue );
+    953          }
+    954          #endif /* HAL_LED */
+    955          
+    956          /***************************************************************************************************
+    957           * @fn          MT_UtilSrcMatchEnable
+    958           *
+    959           * @brief      Enabled AUTOPEND and source address matching.
+    960           *
+    961           * @param      pBuf - Buffer contains the data
+    962           *
+    963           * @return     void
+    964           ***************************************************************************************************/
+    965          static void MT_UtilSrcMatchEnable (uint8 *pBuf)
+    966          {
+    967            uint8 retValue, cmdId;
+    968          
+    969            /* Parse header */
+    970            cmdId = pBuf[MT_RPC_POS_CMD1];
+    971            pBuf += MT_RPC_FRAME_HDR_SZ;
+    972          
+    973          #ifdef AUTO_PEND
+    974            /* Call the routine */
+    975            retValue = ZMacSrcMatchEnable();
+    976          #else
+    977            retValue = ZMacUnsupported;
+    978          #endif
+    979          
+    980            /* Build and send back the response */
+    981            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), cmdId, 1, &retValue );
+    982          
+    983          }
+    984          
+    985          /***************************************************************************************************
+    986           * @fn          MT_UtilSrcMatchAddEntry
+    987           *
+    988           * @brief       Add a short or extended address to source address table.
+    989           *
+    990           * @param       pBuf - Buffer contains the data
+    991           *
+    992           * @return      void
+    993           ***************************************************************************************************/
+    994          static void MT_UtilSrcMatchAddEntry (uint8 *pBuf)
+    995          {
+    996            uint8 retValue, cmdId;
+    997          
+    998            /* Parse header */
+    999            cmdId = pBuf[MT_RPC_POS_CMD1];
+   1000            pBuf += MT_RPC_FRAME_HDR_SZ;
+   1001          
+   1002          #ifdef AUTO_PEND
+   1003            uint16 panID;
+   1004            zAddrType_t devAddr;
+   1005          
+   1006            /* Address mode */
+   1007            devAddr.addrMode = *pBuf++;
+   1008          
+   1009            /* Address based on the address mode */
+   1010            MT_UtilSpi2Addr( &devAddr, pBuf);
+   1011            pBuf += Z_EXTADDR_LEN;
+   1012          
+   1013            /* PanID */
+   1014            panID = osal_build_uint16( pBuf );
+   1015          
+   1016            /* Call the routine */
+   1017            retValue =  ZMacSrcMatchAddEntry (&devAddr, panID);
+   1018          #else
+   1019            retValue = ZMacUnsupported;
+   1020          #endif
+   1021          
+   1022            /* Build and send back the response */
+   1023            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), cmdId, 1, &retValue );
+   1024          }
+   1025          
+   1026          /***************************************************************************************************
+   1027           * @fn          MT_UtilSrcMatchDeleteEntry
+   1028           *
+   1029           * @brief      Delete a short or extended address from source address table.
+   1030           *
+   1031           * @param      pBuf - Buffer contains the data
+   1032           *
+   1033           * @return     void
+   1034           ***************************************************************************************************/
+   1035          static void MT_UtilSrcMatchDeleteEntry (uint8 *pBuf)
+   1036          {
+   1037            uint8 retValue, cmdId;
+   1038          
+   1039            /* Parse header */
+   1040            cmdId = pBuf[MT_RPC_POS_CMD1];
+   1041            pBuf += MT_RPC_FRAME_HDR_SZ;
+   1042          
+   1043          #ifdef AUTO_PEND
+   1044            uint16 panID;
+   1045            zAddrType_t devAddr;
+   1046          
+   1047            /* Address mode */
+   1048            devAddr.addrMode = *pBuf++;
+   1049          
+   1050            /* Address based on the address mode */
+   1051            MT_UtilSpi2Addr( &devAddr, pBuf);
+   1052            pBuf += Z_EXTADDR_LEN;
+   1053          
+   1054            /* PanID */
+   1055            panID = osal_build_uint16( pBuf );
+   1056          
+   1057            /* Call the routine */
+   1058            retValue =  ZMacSrcMatchDeleteEntry (&devAddr, panID);
+   1059          #else
+   1060            retValue = ZMacUnsupported;
+   1061          #endif
+   1062          
+   1063            /* Build and send back the response */
+   1064            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), cmdId, 1, &retValue );
+   1065          }
+   1066          
+   1067          /***************************************************************************************************
+   1068           * @fn          MT_UtilSrcMatchCheckSrcAddr
+   1069           *
+   1070           * @brief      Check if a short or extended address is in the source address table.
+   1071           *
+   1072           * @param      pBuf - Buffer contains the data
+   1073           *
+   1074           * @return     void
+   1075           ***************************************************************************************************/
+   1076          static void MT_UtilSrcMatchCheckSrcAddr (uint8 *pBuf)
+   1077          {
+   1078            uint8 cmdId;
+   1079            uint8 retArray[2];
+   1080          
+   1081            /* Parse header */
+   1082            cmdId = pBuf[MT_RPC_POS_CMD1];
+   1083            pBuf += MT_RPC_FRAME_HDR_SZ;
+   1084          
+   1085          #if 0  /* Unsupported  */
+   1086            uint16 panID;
+   1087            zAddrType_t devAddr;
+   1088          
+   1089            /* Address mode */
+   1090            devAddr.addrMode = *pBuf++;
+   1091          
+   1092            /* Address based on the address mode */
+   1093            MT_UtilSpi2Addr( &devAddr, pBuf);
+   1094            pBuf += Z_EXTADDR_LEN;
+   1095          
+   1096            /* PanID */
+   1097            panID = osal_build_uint16( pBuf );
+   1098          
+   1099            /* Call the routine */
+   1100            retArray[1] =  ZMacSrcMatchCheckSrcAddr (&devAddr, panID);
+   1101          
+   1102              /* Return failure if the index is invalid */
+   1103            if (retArray[1] == ZMacSrcMatchInvalidIndex )
+   1104            {
+   1105              retArray[0] = ZFailure;
+   1106            }
+   1107            else
+   1108            {
+   1109              retArray[0] = ZSuccess;
+   1110            }
+   1111          #else
+   1112            retArray[0] = ZMacUnsupported;
+   1113            retArray[1] = ZMacSrcMatchInvalidIndex;
+   1114          #endif
+   1115          
+   1116            /* Build and send back the response */
+   1117            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), cmdId, 2, retArray );
+   1118          }
+   1119          
+   1120          /***************************************************************************************************
+   1121           * @fn          MT_UtilSrcMatchAckAllPending
+   1122           *
+   1123           * @brief       Enabled/disable acknowledging all packets with pending bit set
+   1124           *              It is normally enabled when adding new entries to
+   1125           *              the source address table fails due to the table is full, or
+   1126           *              disabled when more entries are deleted and the table has
+   1127           *              empty slots.
+   1128           *
+   1129           * @param       pBuf - Buffer contains the data
+   1130           *
+   1131           * @return      void
+   1132           ***************************************************************************************************/
+   1133          static void MT_UtilSrcMatchAckAllPending (uint8 *pBuf)
+   1134          {
+   1135            uint8 retValue, cmdId;
+   1136          
+   1137            /* Parse header */
+   1138            cmdId = pBuf[MT_RPC_POS_CMD1];
+   1139            pBuf += MT_RPC_FRAME_HDR_SZ;
+   1140          
+   1141          #ifdef AUTO_PEND
+   1142            /* Call the routine */
+   1143            retValue = ZMacSrcMatchAckAllPending(*pBuf);
+   1144          #else
+   1145            retValue = ZMacUnsupported;
+   1146          #endif
+   1147          
+   1148            /* Build and send back the response */
+   1149            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), cmdId, 1, &retValue );
+   1150          }
+   1151          
+   1152          /***************************************************************************************************
+   1153           * @fn          MT_UtilSrcMatchCheckAllPending
+   1154           *
+   1155           * @brief       Check if acknowledging all packets with pending bit set
+   1156           *              is enabled.
+   1157           *
+   1158           * @param       pBuf - Buffer contains the data
+   1159           *
+   1160           * @return      void
+   1161           ***************************************************************************************************/
+   1162          static void MT_UtilSrcMatchCheckAllPending (uint8 *pBuf)
+   1163          {
+   1164            uint8 retArray[2], cmdId;
+   1165          
+   1166            /* Parse header */
+   1167            cmdId = pBuf[MT_RPC_POS_CMD1];
+   1168            pBuf += MT_RPC_FRAME_HDR_SZ;
+   1169          
+   1170          #ifdef AUTO_PEND
+   1171            /* Call the routine */
+   1172            retArray[0] = ZMacSuccess;
+   1173            retArray[1] = ZMacSrcMatchCheckAllPending();
+   1174          #else
+   1175            retArray[0] = ZMacUnsupported;
+   1176            retArray[1] = FALSE;
+   1177          #endif
+   1178          
+   1179            /* Build and send back the response */
+   1180            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), cmdId, 2, retArray );
+   1181          }
+   1182          
+   1183          /***************************************************************************************************
+   1184           * SUPPORT
+   1185           ***************************************************************************************************/
+   1186          
+   1187          #ifdef AUTO_PEND
+   1188          /***************************************************************************************************
+   1189           * @fn      MT_UtilRevExtCpy
+   1190           *
+   1191           * @brief
+   1192           *
+   1193           *   Reverse-copy an extended address.
+   1194           *
+   1195           * @param   pDst - Pointer to data destination
+   1196           * @param   pSrc - Pointer to data source
+   1197           *
+   1198           * @return  void
+   1199           ***************************************************************************************************/
+   1200          static void MT_UtilRevExtCpy( uint8 *pDst, uint8 *pSrc )
+   1201          {
+   1202            int8 i;
+   1203          
+   1204            for ( i = Z_EXTADDR_LEN - 1; i >= 0; i-- )
+   1205            {
+   1206              *pDst++ = pSrc[i];
+   1207            }
+   1208          }
+   1209          
+   1210          /***************************************************************************************************
+   1211           * @fn      MT_UtilSpi2Addr
+   1212           *
+   1213           * @brief   Copy an address from an SPI message to an address struct.  The
+   1214           *          addrMode in pAddr must already be set.
+   1215           *
+   1216           * @param   pDst - Pointer to address struct
+   1217           * @param   pSrc - Pointer SPI message byte array
+   1218           *
+   1219           * @return  void
+   1220           ***************************************************************************************************/
+   1221          static void MT_UtilSpi2Addr( zAddrType_t *pDst, uint8 *pSrc )
+   1222          {
+   1223            if ( pDst->addrMode == Addr16Bit )
+   1224            {
+   1225              pDst->addr.shortAddr = osal_build_uint16( pSrc );
+   1226            }
+   1227            else if ( pDst->addrMode == Addr64Bit )
+   1228            {
+   1229              MT_UtilRevExtCpy( pDst->addr.extAddr, pSrc );
+   1230            }
+   1231          }
+   1232          #endif // AUTO_PEND
+   1233          
+   1234          /***************************************************************************************************
+   1235           * @fn      MT_UtilGpioRead
+   1236           *
+   1237           * @brief   Read values of all GPIOs (P0_0 -P2_4)
+   1238           *
+   1239           * @param   void
+   1240           *
+   1241           * @return  P0, P1, P2, P0DIR, P1DIR, P2DIR
+   1242           ***************************************************************************************************/
+   1243          static void MT_UtilGpioRead(uint8 *pBuf)
+   1244          {
+   1245          #if defined ( HAL_MCU_CC2530 )
+   1246            uint8 rtrn[6] = {P0, P1, P2, P0DIR, P1DIR, P2DIR};
+   1247          #else
+   1248            uint8 rtrn[6] = {0, 0, 0, 0, 0, 0};
+   1249          #endif
+   1250            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), MT_UTIL_GPIO_READ,
+   1251              6, rtrn);
+   1252          }
+   1253          
+   1254          /***************************************************************************************************
+   1255           * @fn      MT_UtilGpioSetDirection
+   1256           *
+   1257           * @brief   Set the direction of a specific GPIO (P0_0 -P2_4)
+   1258           *
+   1259           * @param   port - 0, 1 or 2
+   1260           * @param   bit - 0 - 7
+   1261           * @param   direction - 0 for input, 1 for output
+   1262           *
+   1263           * @return  oldP0DIR, oldP1DIR, oldP2DIR, newP0DIR, newP1DIR, newP2DIR
+   1264           ***************************************************************************************************/
+   1265          static void MT_UtilGpioSetDirection(uint8 *pBuf)
+   1266          {
+   1267          #if defined ( HAL_MCU_CC2530 )
+   1268            uint8 rtrn[6] = {P0DIR, P1DIR, P2DIR, 0, 0, 0};
+   1269            uint8 port = pBuf[MT_RPC_POS_DAT0 + 0];
+   1270            uint8 bit = pBuf[MT_RPC_POS_DAT0 + 1];
+   1271            uint8 direction = pBuf[MT_RPC_POS_DAT0 + 2];
+   1272          
+   1273            if (direction == 0)
+   1274            {
+   1275              switch (port)
+   1276              {
+   1277                case 0:
+   1278                  P0DIR &= (~ BV(bit));
+   1279                  break;
+   1280                case 1:
+   1281                  P1DIR &= (~ BV(bit));
+   1282                  break;
+   1283                case 2:
+   1284                  P2DIR &= (~ BV(bit));
+   1285                  break;
+   1286              }
+   1287            }
+   1288            else
+   1289            {
+   1290              switch (port)
+   1291              {
+   1292                case 0:
+   1293                  P0DIR |= BV(bit);
+   1294                  break;
+   1295                case 1:
+   1296                  P1DIR |= BV(bit);
+   1297                  break;
+   1298                case 2:
+   1299                  P2DIR |= BV(bit);
+   1300                  break;
+   1301              }
+   1302            }
+   1303          
+   1304            rtrn[3] = P0DIR;
+   1305            rtrn[4] = P1DIR;
+   1306            rtrn[5] = P2DIR;
+   1307          #else
+   1308            uint8 rtrn[6] = {0, 0, 0, 0, 0, 0};
+   1309          #endif
+   1310          
+   1311            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), MT_UTIL_GPIO_SET_DIRECTION,
+   1312              6, rtrn);
+   1313          }
+   1314          
+   1315          /***************************************************************************************************
+   1316           * @fn      MT_UtilGpioWrite
+   1317           *
+   1318           * @brief   Write value of a specific GPIO (P0_0 -P2_4)
+   1319           *
+   1320           * @param   port - 0, 1 or 2
+   1321           * @param   bit - 0 - 7
+   1322           * @param   value - 0 or 1
+   1323           *
+   1324           * @return  oldP0, oldP1, oldP2, newP0, newP1, newP2, P0DIR, P1DIR, P2DIR
+   1325           ***************************************************************************************************/
+   1326          static void MT_UtilGpioWrite(uint8 *pBuf)
+   1327          {
+   1328          #if defined ( HAL_MCU_CC2530 )
+   1329            uint8 rtrn[9] = {P0, P1, P2, 0, 0, 0, P0DIR, P1DIR, P2DIR};
+   1330            uint8 port = pBuf[MT_RPC_POS_DAT0 + 0];
+   1331            uint8 bit = pBuf[MT_RPC_POS_DAT0 + 1];
+   1332            uint8 value = pBuf[MT_RPC_POS_DAT0 + 2];
+   1333          
+   1334            if (value == 0)
+   1335            {
+   1336              switch (port)
+   1337              {
+   1338                case 0:
+   1339                  P0 &= (~ BV(bit));
+   1340                  break;
+   1341                case 1:
+   1342                  P1 &= (~ BV(bit));
+   1343                  break;
+   1344                case 2:
+   1345                  P2 &= (~ BV(bit));
+   1346                  break;
+   1347              }
+   1348            }
+   1349            else
+   1350            {
+   1351              switch (port)
+   1352              {
+   1353                case 0:
+   1354                  P0 |= BV(bit);
+   1355                  break;
+   1356                case 1:
+   1357                  P1 |= BV(bit);
+   1358                  break;
+   1359                case 2:
+   1360                  P2 |= BV(bit);
+   1361                  break;
+   1362              }
+   1363            }
+   1364          
+   1365            rtrn[3] = P0;
+   1366            rtrn[4] = P1;
+   1367            rtrn[5] = P2;
+   1368          
+   1369          #else
+   1370            uint8 rtrn[9] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+   1371          #endif
+   1372          
+   1373            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), MT_UTIL_GPIO_WRITE,
+   1374              9, rtrn);
+   1375          }
+   1376          
+   1377          #if !defined NONWK
+   1378          /**************************************************************************************************
+   1379           * @fn      MT_UtilDataReq
+   1380           *
+   1381           * @brief   Process the MAC Data Request command.
+   1382           *
+   1383           * @param   pBuf - pointer to the received data
+   1384           *
+   1385           * @return  None
+   1386          **************************************************************************************************/
+   1387          static void MT_UtilDataReq(uint8 *pBuf)
+   1388          {
+   1389            uint8 rtrn = NwkPollReq(pBuf[MT_RPC_POS_DAT0]);
+   1390            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), MT_UTIL_DATA_REQ,
+   1391                                                                                         1, &rtrn);
+   1392          }
+   1393          
+   1394          /***************************************************************************************************
+   1395           * @fn      MT_UtilAddrMgrEntryLookupExt
+   1396           *
+   1397           * @brief   Proxy the AddrMgrEntryLookupExt() function.
+   1398           *
+   1399           * @param   pBuf - pointer to the received buffer
+   1400           *
+   1401           * @return  void
+   1402           ***************************************************************************************************/
+   1403          static void MT_UtilAddrMgrEntryLookupExt(uint8 *pBuf)
+   1404          {
+   1405            uint8 nwkAddr[2];
+   1406            AddrMgrEntry_t entry;
+   1407            uint8 cmdId = pBuf[MT_RPC_POS_CMD1];
+   1408            pBuf += MT_RPC_FRAME_HDR_SZ;
+   1409          
+   1410            osal_memcpy(entry.extAddr, pBuf, Z_EXTADDR_LEN);
+   1411            (void)AddrMgrEntryLookupExt(&entry);
+   1412          
+   1413            nwkAddr[0] = LO_UINT16(entry.nwkAddr);
+   1414            nwkAddr[1] = HI_UINT16(entry.nwkAddr);
+   1415            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL),
+   1416                                                 cmdId, sizeof(uint16), nwkAddr);
+   1417          }
+   1418          
+   1419          /***************************************************************************************************
+   1420           * @fn      MT_UtilAddrMgrEntryLookupNwk
+   1421           *
+   1422           * @brief   Proxy the AddrMgrEntryLookupNwk() function.
+   1423           *
+   1424           * @param   pBuf - pointer to the received buffer
+   1425           *
+   1426           * @return  void
+   1427           ***************************************************************************************************/
+   1428          static void MT_UtilAddrMgrEntryLookupNwk(uint8 *pBuf)
+   1429          {
+   1430            AddrMgrEntry_t entry;
+   1431            uint8 cmdId = pBuf[MT_RPC_POS_CMD1];
+   1432            pBuf += MT_RPC_FRAME_HDR_SZ;
+   1433          
+   1434            entry.nwkAddr = osal_build_uint16( pBuf );
+   1435            (void)AddrMgrEntryLookupNwk(&entry);
+   1436          
+   1437            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL),
+   1438                                                 cmdId, Z_EXTADDR_LEN, entry.extAddr);
+   1439          }
+   1440          
+   1441          #if defined MT_SYS_KEY_MANAGEMENT
+   1442          /***************************************************************************************************
+   1443           * @fn      MT_UtilAPSME_LinkKeyDataGet
+   1444           *
+   1445           * @brief   Retrieves APS Link Key data from NV.
+   1446           *
+   1447           * @param   pBuf - pointer to the received buffer
+   1448           *
+   1449           * @return  void
+   1450           ***************************************************************************************************/
+   1451          static void MT_UtilAPSME_LinkKeyDataGet(uint8 *pBuf)
+   1452          {
+   1453            uint8 rsp[MT_APSME_LINKKEY_GET_RSP_LEN];
+   1454            APSME_LinkKeyData_t *pData = NULL;
+   1455            uint8 cmdId = pBuf[MT_RPC_POS_CMD1];
+   1456            uint16 apsLinkKeyNvId;
+   1457            uint32 *apsRxFrmCntr;
+   1458            uint32 *apsTxFrmCntr;
+   1459          
+   1460            pBuf += MT_RPC_FRAME_HDR_SZ;
+   1461          
+   1462            *rsp = APSME_LinkKeyNVIdGet(pBuf, &apsLinkKeyNvId);
+   1463          
+   1464            if (SUCCESS == *rsp)
+   1465            {
+   1466              pData = (APSME_LinkKeyData_t *)osal_mem_alloc(sizeof(APSME_LinkKeyData_t));
+   1467          
+   1468              if (pData != NULL)
+   1469              {
+   1470                // retrieve key from NV
+   1471                if ( osal_nv_read( apsLinkKeyNvId, 0,
+   1472                                  sizeof(APSME_LinkKeyData_t), pData) == SUCCESS)
+   1473          
+   1474                {
+   1475                  uint8 *ptr = rsp+1;
+   1476                  apsRxFrmCntr = &ApsLinkKeyFrmCntr[apsLinkKeyNvId - ZCD_NV_APS_LINK_KEY_DATA_START].rxFrmCntr;
+   1477                  apsTxFrmCntr = &ApsLinkKeyFrmCntr[apsLinkKeyNvId - ZCD_NV_APS_LINK_KEY_DATA_START].txFrmCntr;
+   1478          
+   1479                  (void)osal_memcpy(ptr, pData->key, SEC_KEY_LEN);
+   1480                  ptr += SEC_KEY_LEN;
+   1481                  osal_buffer_uint32( ptr, *apsTxFrmCntr );
+   1482                  ptr += 4;
+   1483                  osal_buffer_uint32( ptr, *apsRxFrmCntr );
+   1484                }
+   1485          
+   1486                // clear copy of key in RAM
+   1487                osal_memset( pData, 0x00, sizeof(APSME_LinkKeyData_t) );
+   1488          
+   1489                osal_mem_free(pData);
+   1490              }
+   1491            }
+   1492            else
+   1493            {
+   1494              // set data key and counters 0xFF
+   1495              osal_memset(&rsp[1], 0xFF, SEC_KEY_LEN + (MT_UTIL_FRM_CTR_LEN * 2));
+   1496            }
+   1497          
+   1498            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), cmdId,
+   1499                                                 MT_APSME_LINKKEY_GET_RSP_LEN, rsp);
+   1500          
+   1501            // clear key data
+   1502            osal_memset(rsp, 0x00, MT_APSME_LINKKEY_GET_RSP_LEN);
+   1503          
+   1504          }
+   1505          
+   1506          /***************************************************************************************************
+   1507           * @fn      MT_UtilAPSME_LinkKeyNvIdGet
+   1508           *
+   1509           * @brief   Retrieves APS Link Key NV ID from the entry table.
+   1510           *
+   1511           * @param   pBuf - pointer to the received buffer
+   1512           *
+   1513           * @return  void
+   1514           ***************************************************************************************************/
+   1515          static void MT_UtilAPSME_LinkKeyNvIdGet(uint8 *pBuf)
+   1516          {
+   1517            uint8 rsp[MT_APSME_LINKKEY_NV_ID_GET_RSP_LEN];
+   1518            uint8 cmdId = pBuf[MT_RPC_POS_CMD1];
+   1519            uint16 apsLinkKeyNvId;
+   1520          
+   1521            pBuf += MT_RPC_FRAME_HDR_SZ;
+   1522          
+   1523            *rsp = APSME_LinkKeyNVIdGet(pBuf, &apsLinkKeyNvId);
+   1524          
+   1525            if (SUCCESS == *rsp)
+   1526            {
+   1527              rsp[1] = LO_UINT16(apsLinkKeyNvId);
+   1528              rsp[2] = HI_UINT16(apsLinkKeyNvId);
+   1529            }
+   1530            else
+   1531            {
+   1532              // send failure response with invalid NV ID
+   1533              osal_memset(&rsp[1], 0xFF, 2);
+   1534            }
+   1535          
+   1536            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), cmdId,
+   1537                                                 MT_APSME_LINKKEY_NV_ID_GET_RSP_LEN, rsp);
+   1538          }
+   1539          #endif // MT_SYS_KEY_MANAGEMENT
+   1540          
+   1541          /***************************************************************************************************
+   1542           * @fn      MT_UtilAPSME_RequestKeyCmd
+   1543           *
+   1544           * @brief   Send RequestKey command message to TC for a specific partner Address.
+   1545           *
+   1546           * @param   pBuf  - pointer to the received buffer
+   1547           *
+   1548           * @return  void
+   1549           ***************************************************************************************************/
+   1550          void MT_UtilAPSME_RequestKeyCmd(uint8 *pBuf)
+   1551          {
+   1552            uint8 cmdId;
+   1553            uint8 partnerAddr[Z_EXTADDR_LEN];
+   1554            uint8 retValue;
+   1555          
+   1556            // parse header
+   1557            cmdId = pBuf[MT_RPC_POS_CMD1];
+   1558            pBuf += MT_RPC_FRAME_HDR_SZ;
+   1559          
+   1560            /* PartnerAddress */
+   1561            osal_memcpy(partnerAddr, pBuf, Z_EXTADDR_LEN);
+   1562          
+   1563            retValue = (uint8)ZDSecMgrRequestAppKey(partnerAddr);
+   1564          
+   1565            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), cmdId, 1, &retValue);
+   1566          }
+   1567          
+   1568          /***************************************************************************************************
+   1569           * @fn      MT_UtilAssocCount
+   1570           *
+   1571           * @brief   Proxy the AssocCount() function.
+   1572           *
+   1573           * @param   pBuf - pointer to the received buffer
+   1574           *
+   1575           * @return  void
+   1576           ***************************************************************************************************/
+   1577          static void MT_UtilAssocCount(uint8 *pBuf)
+   1578          {
+   1579            uint16 cnt;
+   1580            uint8 cmdId = pBuf[MT_RPC_POS_CMD1];
+   1581            pBuf += MT_RPC_FRAME_HDR_SZ;
+   1582          
+   1583            cnt = AssocCount(pBuf[0], pBuf[1]);
+   1584            pBuf[0] = LO_UINT16(cnt);
+   1585            pBuf[1] = HI_UINT16(cnt);
+   1586          
+   1587            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), cmdId, 2, pBuf);
+   1588          }
+   1589          
+   1590          /***************************************************************************************************
+   1591           * @fn      MT_UtilAssocFindDevice
+   1592           *
+   1593           * @brief   Get an associated device by index.
+   1594           *
+   1595           * @param   pBuf - pointer to the received buffer
+   1596           *
+   1597           * @return  void
+   1598           ***************************************************************************************************/
+   1599          static void MT_UtilAssocFindDevice(uint8 *pBuf)
+   1600          {
+   1601            uint8 cmdId = pBuf[MT_RPC_POS_CMD1];
+   1602            uint8 buf[sizeof(associated_devices_t)];
+   1603          
+   1604            packDev_t(buf, AssocFindDevice(pBuf[MT_RPC_FRAME_HDR_SZ]));
+   1605            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), cmdId,
+   1606                                                 sizeof(associated_devices_t), buf);
+   1607          }
+   1608          
+   1609          /***************************************************************************************************
+   1610           * @fn      MT_UtilAssocGetWithAddress
+   1611           *
+   1612           * @brief   Get an associated device by address.
+   1613           *
+   1614           * @param   pBuf - pointer to the received buffer
+   1615           *
+   1616           * @return  void
+   1617           ***************************************************************************************************/
+   1618          static void MT_UtilAssocGetWithAddress(uint8 *pBuf)
+   1619          {
+   1620            extern associated_devices_t *AssocGetWithAddress(uint8 *extAddr, uint16 shortAddr);
+   1621            uint8 cmdId = pBuf[MT_RPC_POS_CMD1];
+   1622            uint8 buf[sizeof(associated_devices_t)];
+   1623          
+   1624            pBuf += MT_RPC_FRAME_HDR_SZ;
+   1625            packDev_t(buf, AssocGetWithAddress(((AddrMgrExtAddrValid(pBuf)) ? pBuf : NULL),
+   1626                                            BUILD_UINT16(pBuf[Z_EXTADDR_LEN], pBuf[Z_EXTADDR_LEN+1])));
+   1627          
+   1628            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), cmdId,
+   1629                                                 sizeof(associated_devices_t), buf);
+   1630          }
+   1631          
+   1632          /***************************************************************************************************
+   1633           * @fn      MT_UtilBindAddEntry
+   1634           *
+   1635           * @brief   Add Binding Entry into Local Table.
+   1636           *
+   1637           * @param   pBuf - pointer to the received buffer
+   1638           *
+   1639           * @return  void
+   1640           ***************************************************************************************************/
+   1641          static void MT_UtilBindAddEntry(uint8 *pBuf)
+   1642          {
+   1643            uint8 srcEp;
+   1644            zAddrType_t dstAddr;
+   1645            uint8 dstEp;
+   1646            uint8 numClusterIds;
+   1647            uint16 *clusterIds;
+   1648            uint8 buf[sizeof(BindingEntry_t)];
+   1649            uint8 cmdId = pBuf[MT_RPC_POS_CMD1];
+   1650            pBuf += MT_RPC_FRAME_HDR_SZ;
+   1651          
+   1652            // Initialize the return buffer
+   1653            osal_memset( buf, 0xFF, sizeof(BindingEntry_t) );
+   1654            buf[2] = 0xFE;    // set the default value of INVALID_NODE_ADDR
+   1655            buf[3] = 0xFF;    // set the default value of INVALID_NODE_ADDR
+   1656          
+   1657            srcEp = *pBuf++;
+   1658          
+   1659            // Destination Address mode
+   1660            dstAddr.addrMode = *pBuf++;
+   1661          
+   1662            // Destination Address
+   1663            if ( dstAddr.addrMode == Addr64Bit )
+   1664            {
+   1665              uint8 *ptr; // Use this additional pointer because *pBuf is incremented later for both cases
+   1666          
+   1667              ptr = pBuf;
+   1668              osal_cpyExtAddr( dstAddr.addr.extAddr, ptr );
+   1669            }
+   1670            else
+   1671            {
+   1672              dstAddr.addr.shortAddr = osal_build_uint16( pBuf );
+   1673            }
+   1674            // The short address occupies LSB two bytes
+   1675            pBuf += Z_EXTADDR_LEN;
+   1676          
+   1677            // DstEPInt
+   1678            dstEp = *pBuf++;
+   1679          
+   1680            numClusterIds = *pBuf++;
+   1681          
+   1682            if ( numClusterIds > 0 )
+   1683            {
+   1684              // copy list of clusters
+   1685              clusterIds = (uint16 *)osal_mem_alloc( numClusterIds * sizeof(uint16) );
+   1686              osal_memcpy( clusterIds, pBuf, numClusterIds * sizeof(uint16));
+   1687          
+   1688              if ( clusterIds != NULL )
+   1689              {
+   1690                // The response to MT interface has to be pack into buf
+   1691                packBindEntry_t( buf, bindAddEntry( srcEp, &dstAddr, dstEp, numClusterIds, clusterIds ));
+   1692          
+   1693                osal_mem_free( clusterIds );
+   1694              }
+   1695            }
+   1696          
+   1697            MT_BuildAndSendZToolResponse( ( (uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL ),
+   1698                                          cmdId, sizeof(BindingEntry_t), buf );
+   1699          }
+   1700          
+   1701          /***************************************************************************************************
+   1702           * @fn      packDev_t
+   1703           *
+   1704           * @brief   Pack an associated_devices_t structure into a byte buffer (pack INVALID_NODE_ADDR if
+   1705           *          the pDev parameter is NULL).
+   1706           *
+   1707           * @param   pBuf - pointer to the buffer into which to pack the structure.
+   1708           * @param   pDev - pointer to the structure.
+   1709           *
+   1710           * @return  void
+   1711           ***************************************************************************************************/
+   1712          static void packDev_t(uint8 *pBuf, associated_devices_t *pDev)
+   1713          {
+   1714            if (NULL == pDev)
+   1715            {
+   1716              uint16 rtrn = INVALID_NODE_ADDR;
+   1717              *pBuf++ = LO_UINT16(rtrn);
+   1718              *pBuf++ = HI_UINT16(rtrn);
+   1719            }
+   1720            else
+   1721            {
+   1722              *pBuf++ = LO_UINT16(pDev->shortAddr);
+   1723              *pBuf++ = HI_UINT16(pDev->shortAddr);
+   1724              *pBuf++ = LO_UINT16(pDev->addrIdx);
+   1725              *pBuf++ = HI_UINT16(pDev->addrIdx);
+   1726              *pBuf++ = pDev->nodeRelation;
+   1727              *pBuf++ = pDev->devStatus;
+   1728              *pBuf++ = pDev->assocCnt;
+   1729              *pBuf++ = pDev->age;
+   1730              *pBuf++ = pDev->linkInfo.txCounter;
+   1731              *pBuf++ = pDev->linkInfo.txCost;
+   1732              *pBuf++ = pDev->linkInfo.rxLqi;
+   1733              *pBuf++ = pDev->linkInfo.inKeySeqNum;
+   1734              osal_buffer_uint32( pBuf, pDev->linkInfo.inFrmCntr );
+   1735              *pBuf += 4;
+   1736              *pBuf++ = LO_UINT16(pDev->linkInfo.txFailure);
+   1737              *pBuf++ = HI_UINT16(pDev->linkInfo.txFailure);
+   1738            }
+   1739          }
+   1740          
+   1741          /***************************************************************************************************
+   1742           * @fn      packBindEntry_t
+   1743           *
+   1744           * @brief   Pack a BindingEntry_t structure into a byte buffer (pack INVALID_NODE_ADDR
+   1745           *          as dstIdx if the pBind parameter is NULL).
+   1746           *
+   1747           * @param   pBuf - pointer to the buffer into which to pack the structure.
+   1748           * @param   pBind - pointer to the structure.
+   1749           *
+   1750           * @return  void
+   1751           ***************************************************************************************************/
+   1752          static void packBindEntry_t(uint8 *pBuf, BindingEntry_t *pBind)
+   1753          {
+   1754            if ( NULL == pBind )
+   1755            {
+   1756              uint16 rtrn = INVALID_NODE_ADDR;
+   1757              *pBuf++ = 0xFF;
+   1758              *pBuf++ = 0xFF;
+   1759              *pBuf++ = LO_UINT16(rtrn);
+   1760              *pBuf++ = HI_UINT16(rtrn);
+   1761              *pBuf++ = 0xFF;
+   1762              *pBuf++ = 0xFF;
+   1763          
+   1764            }
+   1765            else
+   1766            {
+   1767              *pBuf++ = pBind->srcEP;
+   1768              *pBuf++ = pBind->dstGroupMode;
+   1769              *pBuf++ = LO_UINT16( pBind->dstIdx );
+   1770              *pBuf++ = HI_UINT16( pBind->dstIdx );
+   1771              *pBuf++ = pBind->dstEP;
+   1772              *pBuf++ = pBind->numClusterIds;
+   1773          
+   1774              osal_memcpy( pBuf, pBind->clusterIdList, pBind->numClusterIds * sizeof(uint16));
+   1775            }
+   1776          }
+   1777          
+   1778          #if defined ZCL_KEY_ESTABLISH
+   1779          /***************************************************************************************************
+   1780           * @fn      MT_UtilzclGeneral_KeyEstablish_InitiateKeyEstablishment
+   1781           *
+   1782           * @brief   Proxy the zclKE_StartDirect() function.
+   1783           *
+   1784           * @param   pBuf - pointer to the received buffer
+   1785           *
+   1786           * @return  void
+   1787           ***************************************************************************************************/
+   1788          static void MT_UtilzclGeneral_KeyEstablish_InitiateKeyEstablishment(uint8 *pBuf)
+   1789          {
+   1790            afAddrType_t partnerAddr;
+   1791            uint8 cmdId = pBuf[MT_RPC_POS_CMD1];
+   1792            pBuf += MT_RPC_FRAME_HDR_SZ;
+   1793          
+   1794            partnerAddr.panId = 0;  // Not an inter-pan message.
+   1795            partnerAddr.endPoint = pBuf[2];
+   1796            partnerAddr.addrMode = afAddr16Bit;
+   1797            partnerAddr.addr.shortAddr = osal_build_uint16( &pBuf[4] );
+   1798          
+   1799            zcl_key_establish_task_id = pBuf[0];
+   1800          
+   1801            *pBuf = zclKE_StartDirect(MT_TaskID, &partnerAddr, pBuf[1], pBuf[3]);
+   1802          
+   1803            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), cmdId, 1, pBuf);
+   1804          }
+   1805          
+   1806          /***************************************************************************************************
+   1807           * @fn      MT_UtilzclGeneral_KeyEstablishment_ECDSASign
+   1808           *
+   1809           * @brief   Proxy the zclGeneral_KeyEstablishment_ECDSASign() function.
+   1810           *
+   1811           * @param   pBuf - pointer to the received buffer
+   1812           *
+   1813           * @return  void
+   1814           ***************************************************************************************************/
+   1815          static void MT_UtilzclGeneral_KeyEstablishment_ECDSASign(uint8 *pBuf)
+   1816          {
+   1817          #if defined ZCL_KEY_ESTABLISH
+   1818            uint8 *output;
+   1819            uint8 signLen;
+   1820            uint8 cmdId = pBuf[MT_RPC_POS_CMD1];
+   1821            pBuf += MT_RPC_FRAME_HDR_SZ;
+   1822          
+   1823            signLen = zclKE_ECDSASignGetLen(ZCL_KE_SUITE_1);
+   1824          
+   1825            output = osal_mem_alloc(signLen+1);
+   1826          
+   1827            if (NULL == output)
+   1828            {
+   1829              *pBuf = FAILURE;
+   1830              MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), cmdId, 1, pBuf);
+   1831            }
+   1832            else
+   1833            {
+   1834              *output = zclKE_ECDSASign(ZCL_KE_SUITE_1, pBuf+1, *pBuf, output+1);
+   1835              MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_UTIL), cmdId,
+   1836                                                   signLen+1, output);
+   1837              osal_mem_free(output);
+   1838            }
+   1839          #endif
+   1840          }
+   1841          
+   1842          /***************************************************************************************************
+   1843           * @fn      MT_UtilKeyEstablishInd
+   1844           *
+   1845           * @brief   Proxy the ZCL_KEY_ESTABLISH_IND command.
+   1846           *
+   1847           * @param   pInd - Pointer to a zclKE_StatusInd_t structure.
+   1848           *
+   1849           * @return  None
+   1850           ***************************************************************************************************/
+   1851          void MT_UtilKeyEstablishInd(zclKE_StatusInd_t *pInd)
+   1852          {
+   1853            uint8 msg[6];
+   1854          
+   1855            msg[0] = zcl_key_establish_task_id;
+   1856            msg[1] = pInd->hdr.event;
+   1857            msg[2] = pInd->hdr.status;
+   1858            msg[3] = pInd->waitTime;
+   1859            msg[4] = LO_UINT16(pInd->suites);
+   1860            msg[5] = HI_UINT16(pInd->suites);
+   1861          
+   1862            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_AREQ | (uint8)MT_RPC_SYS_UTIL),
+   1863                                                 MT_UTIL_ZCL_KEY_ESTABLISH_IND, 6, msg);
+   1864          }
+   1865          #endif
+   1866          
+   1867          /***************************************************************************************************
+   1868           * @fn      MT_UtilSync
+   1869           *
+   1870           * @brief   Process the MT_UTIL_SYNC command
+   1871           *
+   1872           * @param   None
+   1873           *
+   1874           * @return  None
+   1875           ***************************************************************************************************/
+   1876          static void MT_UtilSync(void)
+   1877          {
+   1878           MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_AREQ|(uint8)MT_RPC_SYS_UTIL),MT_UTIL_SYNC_REQ,0,0);
+   1879          }
+   1880          #endif /* !defined NONWK */
+   1881          #endif /* MT_UTIL_FUNC */
+   1882          /**************************************************************************************************
+   1883           **************************************************************************************************/
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: none

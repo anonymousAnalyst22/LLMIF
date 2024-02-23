@@ -1,0 +1,685 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// IAR C/C++ Compiler V10.10.1.4655 for 8051              22/Nov/2023  15:42:42
+// Copyright 2004-2017 IAR Systems AB.
+// Standalone license - IAR Embedded Workbench for 8051
+//
+//    Core               =  plain
+//    Code model         =  banked
+//    Data model         =  large
+//    Calling convention =  xdata reentrant
+//    Constant location  =  data_rom
+//    Dptr setup         =  1,16
+//                          
+//    Source file        =  
+//        D:\fuzzing-coordinator-response-collection\Components\mt\MT_APP_CONFIG.c
+//    Command line       =  
+//        -f C:\Users\ADMINI~1\AppData\Local\Temp\EWA632.tmp
+//        (D:\fuzzing-coordinator-response-collection\Components\mt\MT_APP_CONFIG.c
+//        -D SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE -D
+//        MULTICAST_ENABLED=FALSE -D ZCL_READ -D ZCL_DISCOVER -D ZCL_WRITE -D
+//        ZCL_BASIC -D ZCL_IDENTIFY -D ISR_KEYINTERRUPT -D HAL_UART=TRUE -D
+//        HAL_LCD=FALSE -D ZCL_ON_OFF -D INT_HEAP_LEN=2800 -D
+//        HAL_UART_DMA_RX_MAX=256 -D HAL_UART_DMA_TX_MAX=256 -lC
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+//        -lA
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+//        --diag_suppress Pe001,Pa010 -o
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj
+//        -e --debug --core=plain --dptr=16,1 --data_model=large
+//        --code_model=banked --calling_convention=xdata_reentrant
+//        --place_constants=data_rom --nr_virtual_regs 8 -f
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg
+//        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+//        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+//        -DZDO_COORDINATOR -DRTR_NWK) -f
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+//        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+//        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+//        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+//        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+//        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+//        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+//        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+//        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+//        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+//        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x00, 0x01, 0x02, 0x03,
+//        0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E,
+//        0x0F}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+//        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+//        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+//        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000
+//        -DENABLE_LED4_DISABLE_S1) -f
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\Source\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\Source\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\ZMain\TI2530DB\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\include\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\include\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mt\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\osal\include\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\saddr\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\sdata\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\af\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\bdb\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\gp\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sec\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sys\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zcl\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\Common\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\SPI\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\Font\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_LCD_SPI\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_OLED\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_TFT\
+//        -Ohz --require_prototypes)
+//    Locale             =  Chinese (Simplified)_China.936
+//    List file          =  
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List\MT_APP_CONFIG.s51
+//
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME MT_APP_CONFIG
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__register_banks", "*"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+
+        END
+// D:\fuzzing-coordinator-response-collection\Components\mt\MT_APP_CONFIG.c
+//    1 /***************************************************************************************************
+//    2   Filename:       MT_APP_CONFIG.c
+//    3   Revised:        $Date: 2016-03-31 01:06:52 -0700 (Thu, 31 Marc 2016) $
+//    4   Revision:       $Revision:  $
+//    5 
+//    6   Description:    MonitorTest functions for application configuration.
+//    7 
+//    8   Copyright 2007-2013 Texas Instruments Incorporated. All rights reserved.
+//    9 
+//   10   IMPORTANT: Your use of this Software is limited to those specific rights
+//   11   granted under the terms of a software license agreement between the user
+//   12   who downloaded the software, his/her employer (which must be your employer)
+//   13   and Texas Instruments Incorporated (the "License"). You may not use this
+//   14   Software unless you agree to abide by the terms of the License. The License
+//   15   limits your use, and you acknowledge, that the Software may not be modified,
+//   16   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   17   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   18   frequency transceiver, which is integrated into your product. Other than for
+//   19   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   20   works of, modify, distribute, perform, display or sell this Software and/or
+//   21   its documentation for any purpose.
+//   22 
+//   23   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   24   PROVIDED ?AS IS? WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   25   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   26   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   27   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   28   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   29   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   30   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   31   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   32   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   33   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   34 
+//   35   Should you have any questions regarding your right to use this Software,
+//   36   contact Texas Instruments Incorporated at www.TI.com.
+//   37 
+//   38  ***************************************************************************************************/
+//   39 
+//   40 /***************************************************************************************************
+//   41  * INCLUDES
+//   42  ***************************************************************************************************/
+//   43  
+//   44  
+//   45 #include "ZComDef.h"
+//   46 #include "MT.h"
+//   47 #include "MT_APP_CONFIG.h"
+//   48 #include "MT_UART.h"
+//   49 
+//   50 #include "bdb.h"
+//   51 #include "bdb_interface.h"
+//   52 #include "ZDApp.h"
+//   53  
+//   54 /***************************************************************************************************
+//   55 * LOCAL FUNCTIONs
+//   56 ***************************************************************************************************/
+//   57    
+//   58 #if defined (MT_APP_CNF_FUNC)
+//   59 
+//   60 static void MT_AppCnfSetNwkFrameCounter(uint8 *pBuf);   
+//   61 static void MT_AppCnfSetDefaultRemoteEndDeviceTimeout(uint8 *pBuf);
+//   62 static void MT_AppCnfSetEndDeviceTimeout(uint8 *pBuf);
+//   63 #if (ZG_BUILD_COORDINATOR_TYPE)
+//   64 static void MT_AppCnfSetAllowRejoinTCPolicy(uint8 *pBuf);
+//   65 #endif
+//   66 
+//   67 static void MT_AppCnfBDBSetChannel(uint8* pBuf);
+//   68 static void MT_AppCnfBDBStartCommissioning(uint8* pBuf);
+//   69 #if (ZG_BUILD_COORDINATOR_TYPE)
+//   70     static void MT_AppCnfBDBSetTCRequireKeyExchange(uint8 *pBuf);
+//   71     static void MT_AppCnfBDBAddInstallCode(uint8 *pBuf);
+//   72     static void MT_AppCnfBDBSetJoinUsesInstallCodeKey(uint8 *pBuf);
+//   73 #endif
+//   74 #if (ZG_BUILD_JOINING_TYPE)
+//   75     static void MT_AppCnfBDBSetActiveCentralizedKey(uint8* pBuf);
+//   76 #endif
+//   77 
+//   78 #if (ZG_BUILD_ENDDEVICE_TYPE)    
+//   79     static void MT_AppCnfBDBZedAttemptRecoverNwk(uint8* pBuf);
+//   80 #endif
+//   81       
+//   82 #endif
+//   83 
+//   84 
+//   85 /***************************************************************************************************
+//   86 * External variables
+//   87 ***************************************************************************************************/
+//   88 extern uint32 nwkFrameCounter;
+//   89 extern uint16 nwkFrameCounterChanges;
+//   90 
+//   91 
+//   92 #if defined (MT_APP_CNF_FUNC)
+//   93 uint8 MT_AppCnfCommandProcessing(uint8 *pBuf)
+//   94 {
+//   95   uint8 status = MT_RPC_SUCCESS;
+//   96 
+//   97   switch (pBuf[MT_RPC_POS_CMD1])
+//   98   {
+//   99     case MT_APP_CNF_SET_NWK_FRAME_COUNTER:
+//  100       MT_AppCnfSetNwkFrameCounter(pBuf);
+//  101     break;
+//  102     case MT_APP_CNF_SET_DEFAULT_REMOTE_ENDDEVICE_TIMEOUT:
+//  103       MT_AppCnfSetDefaultRemoteEndDeviceTimeout(pBuf);
+//  104     break;
+//  105     case MT_APP_CNF_SET_ENDDEVICETIMEOUT:
+//  106       MT_AppCnfSetEndDeviceTimeout(pBuf);
+//  107     break;
+//  108 #if (ZG_BUILD_COORDINATOR_TYPE)
+//  109     case MT_APP_CNF_SET_ALLOWREJOIN_TC_POLICY:
+//  110       MT_AppCnfSetAllowRejoinTCPolicy(pBuf);
+//  111     break;
+//  112 #endif
+//  113     
+//  114 
+//  115     case MT_APP_CNF_BDB_START_COMMISSIONING:
+//  116       MT_AppCnfBDBStartCommissioning(pBuf);
+//  117     break;
+//  118     case MT_APP_CNF_BDB_SET_CHANNEL:
+//  119       MT_AppCnfBDBSetChannel(pBuf);
+//  120     break;
+//  121 
+//  122 #if (ZG_BUILD_COORDINATOR_TYPE)
+//  123       case MT_APP_CNF_BDB_ADD_INSTALLCODE:
+//  124         MT_AppCnfBDBAddInstallCode(pBuf);
+//  125       break;
+//  126       case MT_APP_CNF_BDB_SET_TC_REQUIRE_KEY_EXCHANGE:
+//  127         MT_AppCnfBDBSetTCRequireKeyExchange(pBuf);
+//  128       break;
+//  129       case MT_APP_CNF_BDB_SET_JOINUSESINSTALLCODEKEY:
+//  130         MT_AppCnfBDBSetJoinUsesInstallCodeKey(pBuf);
+//  131       break;
+//  132 #endif
+//  133 #if (ZG_BUILD_JOINING_TYPE)
+//  134       case MT_APP_CNF_BDB_SET_ACTIVE_DEFAULT_CENTRALIZED_KEY:
+//  135         MT_AppCnfBDBSetActiveCentralizedKey(pBuf);
+//  136       break;
+//  137 #endif
+//  138       
+//  139 #if (ZG_BUILD_ENDDEVICE_TYPE)        
+//  140       case MT_APP_CNF_BDB_ZED_ATTEMPT_RECOVER_NWK:
+//  141         MT_AppCnfBDBZedAttemptRecoverNwk(pBuf);
+//  142       break;
+//  143 #endif
+//  144 
+//  145   }
+//  146   return status;
+//  147 }
+//  148 
+//  149 
+//  150 /***************************************************************************************************
+//  151 * @fn      MT_AppCnfCommissioningNotification
+//  152 *
+//  153 * @brief   Notify the host processor about an event in BDB
+//  154 *
+//  155 * @param   bdbCommissioningModeMsg - Commissioning notification message
+//  156 *
+//  157 * @return  void
+//  158 ***************************************************************************************************/
+//  159 void MT_AppCnfCommissioningNotification(bdbCommissioningModeMsg_t* bdbCommissioningModeMsg)
+//  160 {
+//  161   uint8 retArray[3];
+//  162   
+//  163   retArray[0] = bdbCommissioningModeMsg->bdbCommissioningStatus;
+//  164   retArray[1] = bdbCommissioningModeMsg->bdbCommissioningMode;
+//  165   retArray[2] = bdbCommissioningModeMsg->bdbRemainingCommissioningModes;
+//  166 
+//  167   MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_AREQ | (uint8)MT_RPC_SYS_APP_CNF), MT_APP_CNF_BDB_COMMISSIONING_NOTIFICATION, sizeof(bdbCommissioningModeMsg_t), retArray);
+//  168 }
+//  169 
+//  170 
+//  171 /***************************************************************************************************
+//  172 * @fn      MT_AppCnfBDBStartCommissioning
+//  173 *
+//  174 * @brief   Start the commissioning process setting the commissioning mode given.
+//  175 *
+//  176 * @param   pBuf - pointer to received buffer
+//  177 *
+//  178 * @return  void
+//  179 ***************************************************************************************************/
+//  180 static void MT_AppCnfBDBStartCommissioning(uint8* pBuf)
+//  181 {
+//  182   uint8 retValue = ZSuccess;
+//  183   uint8 cmdId;
+//  184   
+//  185   /* parse header */
+//  186   cmdId = pBuf[MT_RPC_POS_CMD1];
+//  187   pBuf += MT_RPC_FRAME_HDR_SZ;
+//  188   
+//  189   bdb_StartCommissioning(*pBuf);
+//  190   
+//  191   /* Build and send back the response */
+//  192   MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP_CNF), cmdId, 1, &retValue);
+//  193 }
+//  194 
+//  195 
+//  196 /***************************************************************************************************
+//  197 * @fn      MT_AppCnfBDBSetChannel
+//  198 *
+//  199 * @brief   Set the primary or seconday channel for discovery or formation procedure
+//  200 *
+//  201 * @param   pBuf - pointer to received buffer
+//  202 *
+//  203 * @return  void
+//  204 ***************************************************************************************************/
+//  205 static void MT_AppCnfBDBSetChannel(uint8* pBuf)
+//  206 {
+//  207   uint8 retValue = ZSuccess;
+//  208   uint8 cmdId;
+//  209   uint8 isPrimary;
+//  210   uint32 Channel;
+//  211   
+//  212   /* parse header */
+//  213   cmdId = pBuf[MT_RPC_POS_CMD1];
+//  214   pBuf += MT_RPC_FRAME_HDR_SZ;
+//  215   
+//  216   isPrimary = *pBuf;
+//  217   pBuf++;
+//  218   
+//  219   Channel = osal_build_uint32(pBuf, sizeof(uint32));
+//  220     
+//  221   bdb_setChannelAttribute(isPrimary,Channel);
+//  222   
+//  223   /* Build and send back the response */
+//  224   MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP_CNF), cmdId, 1, &retValue);
+//  225 }
+//  226 
+//  227 
+//  228 
+//  229 #if (ZG_BUILD_COORDINATOR_TYPE)
+//  230 /*********************************************************************
+//  231  * @fn          MT_AppCnfBDBSetTCRequireKeyExchange
+//  232  *
+//  233  * @brief       Configure bdbTrustCenterRequireKeyExchange attribute.
+//  234  *
+//  235  * @param       Set attribute to FALSE if *pBuf == 0, FALSE otherwise
+//  236  *
+//  237  * @return      none
+//  238  */
+//  239 static void MT_AppCnfBDBSetTCRequireKeyExchange(uint8 *pBuf)
+//  240 {
+//  241   uint8 retValue = ZSuccess;
+//  242   uint8 cmdId;
+//  243   
+//  244   /* parse header */
+//  245   cmdId = pBuf[MT_RPC_POS_CMD1];
+//  246   pBuf += MT_RPC_FRAME_HDR_SZ;
+//  247   
+//  248   if(*pBuf)
+//  249   {
+//  250     bdb_setTCRequireKeyExchange(TRUE);
+//  251   }
+//  252   else
+//  253   {
+//  254     bdb_setTCRequireKeyExchange(FALSE);
+//  255   }
+//  256   /* Build and send back the response */
+//  257   MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP_CNF), cmdId, 1, &retValue);
+//  258 }
+//  259 
+//  260  /*********************************************************************
+//  261  * @fn          MT_AppCnfBDBSetJoinUsesInstallCodeKey
+//  262  *
+//  263  * @brief       Configure bdbJoinUsesInstallCodeKey attribute.
+//  264  *
+//  265  * @param       Set attribute to FALSE if *pBuf == 0, FALSE otherwise
+//  266  *
+//  267  * @return      none
+//  268  */
+//  269 static void MT_AppCnfBDBSetJoinUsesInstallCodeKey(uint8 *pBuf)
+//  270 {
+//  271   uint8 retValue = ZSuccess;
+//  272   uint8 cmdId;
+//  273   
+//  274   /* parse header */
+//  275   cmdId = pBuf[MT_RPC_POS_CMD1];
+//  276   pBuf += MT_RPC_FRAME_HDR_SZ;
+//  277   
+//  278   if(*pBuf)
+//  279   {
+//  280     bdb_setJoinUsesInstallCodeKey(TRUE);
+//  281   }
+//  282   else
+//  283   {
+//  284     bdb_setJoinUsesInstallCodeKey(FALSE);
+//  285   }
+//  286   /* Build and send back the response */
+//  287   MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP_CNF), cmdId, 1, &retValue);
+//  288 }
+//  289 
+//  290  /*********************************************************************
+//  291  * @fn          MT_AppCnfBDBAddInstallCode
+//  292  *
+//  293  * @brief       Add a preconfigured key used as IC derived key to TC device
+//  294  *              see formats allowed in BDB_INSTALL_CODE_USE.
+//  295  *
+//  296  * @param       pBuf - pointer to received buffer
+//  297  *
+//  298  * @return      none
+//  299  */
+//  300 static void MT_AppCnfBDBAddInstallCode(uint8* pBuf)
+//  301 {
+//  302   uint8 retValue = ZSuccess;
+//  303   uint8 cmdId;
+//  304   uint8 *pExtAddr;
+//  305   uint8 installCodeFormat;
+//  306   
+//  307   /* parse header */
+//  308   cmdId = pBuf[MT_RPC_POS_CMD1];
+//  309   pBuf += MT_RPC_FRAME_HDR_SZ;
+//  310   
+//  311   installCodeFormat = *pBuf;
+//  312   
+//  313   pBuf++;
+//  314   
+//  315   /* Extended Addr */
+//  316   pExtAddr = pBuf;
+//  317   pBuf += Z_EXTADDR_LEN;  //Point to the IC data
+//  318    
+//  319   switch(installCodeFormat)
+//  320   {
+//  321     case BDB_INSTALL_CODE_USE_IC_CRC:
+//  322       retValue = bdb_addInstallCode(pBuf,pExtAddr);
+//  323     break;
+//  324     case BDB_INSTALL_CODE_USE_KEY:
+//  325       retValue = APSME_AddTCLinkKey(pBuf,pExtAddr);
+//  326     break;
+//  327   }
+//  328   
+//  329   /* Build and send back the response */
+//  330   MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP_CNF), cmdId, 1, &retValue);
+//  331 }
+//  332 #endif
+//  333 #if (ZG_BUILD_JOINING_TYPE)
+//  334 
+//  335  /*********************************************************************
+//  336  * @fn      MT_AppCnfBDBSetActiveCentralizedKey
+//  337  *
+//  338  * @brief   Set the active centralized key to be used, Global or IC derived.
+//  339  *          If IC is selected, the IC must be included in the buffer considering 
+//  340  *          the IC format used by the joining device, see BDB_INSTALL_CODE_USE
+//  341  *
+//  342  * @param   pBuf - pointer to received buffer
+//  343  *
+//  344  * @return  void
+//  345  */
+//  346 static void MT_AppCnfBDBSetActiveCentralizedKey(uint8* pBuf)
+//  347 {
+//  348   uint8 retValue;
+//  349   uint8 cmdId;
+//  350   
+//  351   /* parse header */
+//  352   cmdId = pBuf[MT_RPC_POS_CMD1];
+//  353   pBuf += MT_RPC_FRAME_HDR_SZ;
+//  354   
+//  355   if(*pBuf)
+//  356   {
+//  357     //Set Global Default Centralized key
+//  358     retValue = bdb_setActiveCentralizedLinkKey(TRUE,NULL);
+//  359   }
+//  360   else
+//  361   {
+//  362     pBuf++;
+//  363     retValue = bdb_setActiveCentralizedLinkKey(FALSE,pBuf);
+//  364   }
+//  365 
+//  366   /* Build and send back the response */
+//  367   MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP_CNF), cmdId, 1, &retValue);
+//  368 }
+//  369 
+//  370 #endif //#if(ZG_BUILD_JOINING_TYPE)
+//  371 
+//  372 #if (ZG_BUILD_ENDDEVICE_TYPE) 
+//  373  /*********************************************************************
+//  374  * @fn      MT_AppCnfBDBZedAttemptRecoverNwk
+//  375  *
+//  376  * @brief   Instruct the ZED to try to rejoin its previews network
+//  377  *
+//  378  * @param   pBuf - pointer to received buffer
+//  379  *
+//  380  * @return  void
+//  381  */
+//  382 static void MT_AppCnfBDBZedAttemptRecoverNwk(uint8* pBuf)
+//  383 {
+//  384   uint8 retValue;
+//  385   uint8 cmdId;
+//  386   
+//  387   /* parse header */
+//  388   cmdId = pBuf[MT_RPC_POS_CMD1];
+//  389   pBuf += MT_RPC_FRAME_HDR_SZ;
+//  390   
+//  391   retValue = bdb_ZedAttemptRecoverNwk();
+//  392 
+//  393   /* Build and send back the response */
+//  394   MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP_CNF), cmdId, 1, &retValue);
+//  395 }
+//  396 #endif
+//  397 
+//  398 
+//  399 
+//  400 
+//  401 #if (ZG_BUILD_COORDINATOR_TYPE)
+//  402 /***************************************************************************************************
+//  403 * @fn      MT_AppCnfSetAllowRejoinTCPolicy
+//  404 *
+//  405 * @brief   Set the AllowRejoin TC policy
+//  406 *
+//  407 * @param   pBuf - pointer to received buffer
+//  408 *
+//  409 * @return  void
+//  410 ***************************************************************************************************/
+//  411 static void MT_AppCnfSetAllowRejoinTCPolicy(uint8 *pBuf)
+//  412 {
+//  413   uint8 retValue = ZSuccess;
+//  414   uint8 cmdId;
+//  415 
+//  416   /* parse header */
+//  417   cmdId = pBuf[MT_RPC_POS_CMD1];
+//  418   pBuf += MT_RPC_FRAME_HDR_SZ;
+//  419  
+//  420   if(*pBuf)
+//  421   {
+//  422     zgAllowRejoins = TRUE;
+//  423   }
+//  424   else
+//  425   {
+//  426     zgAllowRejoins = FALSE;
+//  427   }
+//  428 
+//  429   /* Build and send back the response */
+//  430   MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP_CNF), cmdId, 1, &retValue);
+//  431 }
+//  432 #endif
+//  433 
+//  434 /***************************************************************************************************
+//  435  * @fn      MT_AppCnfSetEndDeviceTimeout
+//  436  *
+//  437  * @brief   Set End Device Timeout
+//  438  *
+//  439  * @param   pBuf - pointer to received buffer
+//  440  *
+//  441  * @return  void
+//  442  ***************************************************************************************************/
+//  443 static void MT_AppCnfSetEndDeviceTimeout(uint8 *pBuf)
+//  444 {
+//  445   uint8 retValue = ZSuccess;
+//  446   uint8 cmdId;
+//  447   
+//  448   /* parse header */
+//  449   cmdId = pBuf[MT_RPC_POS_CMD1];
+//  450   pBuf += MT_RPC_FRAME_HDR_SZ;
+//  451 
+//  452   if(*pBuf > 14)
+//  453   {
+//  454     retValue = ZInvalidParameter;
+//  455   }
+//  456   else
+//  457   {
+//  458     /* Populate info */
+//  459     zgEndDeviceTimeoutValue = *pBuf;
+//  460     osal_nv_write( ZCD_NV_END_DEV_TIMEOUT_VALUE, 0, sizeof(zgEndDeviceTimeoutValue), &zgEndDeviceTimeoutValue);
+//  461   }
+//  462   /* Build and send back the response */
+//  463   MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP_CNF), cmdId, 1, &retValue);
+//  464 }
+//  465   
+//  466 /***************************************************************************************************
+//  467  * @fn      MT_AppCnfSetDefaultRemoteEndDeviceTimeout
+//  468  *
+//  469  * @brief   Set Remote End Device Timeout
+//  470  *
+//  471  * @param   pBuf - pointer to received buffer
+//  472  *
+//  473  * @return  void
+//  474  ***************************************************************************************************/
+//  475 static void MT_AppCnfSetDefaultRemoteEndDeviceTimeout(uint8 *pBuf)
+//  476 {
+//  477   uint8 retValue = ZSuccess;
+//  478   uint8 cmdId;
+//  479   uint8  tempTimeoutIndex;
+//  480 
+//  481   /* parse header */
+//  482   cmdId = pBuf[MT_RPC_POS_CMD1];
+//  483   pBuf += MT_RPC_FRAME_HDR_SZ;
+//  484  
+//  485   /* Populate info */
+//  486   tempTimeoutIndex = *pBuf++;
+//  487   
+//  488   if(tempTimeoutIndex > 14)
+//  489   {
+//  490     retValue = ZInvalidParameter;
+//  491   }
+//  492   else
+//  493   {
+//  494     /* Populate info */
+//  495     zgNwkEndDeviceTimeoutDefault = tempTimeoutIndex;
+//  496     osal_nv_write( ZCD_NV_NWK_ENDDEV_TIMEOUT_DEF, 0, sizeof(zgNwkEndDeviceTimeoutDefault), &zgNwkEndDeviceTimeoutDefault );
+//  497   }
+//  498 
+//  499   /* Build and send back the response */
+//  500   MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP_CNF), cmdId, 1, &retValue);
+//  501 }
+//  502 
+//  503  /***************************************************************************************************
+//  504  * @fn      MT_AppCnfSetNwkFrameCounter
+//  505  *
+//  506  * @brief   Set the nwk frame counter to the specified value for the current network.
+//  507  *          THIS IS ONLY A DEBUG INTERFACE AND SHOULD NOT BE USE IN REAL APPLICATIONS
+//  508  *
+//  509  * @param   pBuf - nwk frame counter
+//  510  *
+//  511  * @return  void
+//  512  ***************************************************************************************************/
+//  513  static void MT_AppCnfSetNwkFrameCounter(uint8* pBuf)
+//  514 {
+//  515   uint8 retValue = ZSuccess;
+//  516   uint8 cmdId;
+//  517 
+//  518   /* parse header */
+//  519   cmdId = pBuf[MT_RPC_POS_CMD1];
+//  520   pBuf += MT_RPC_FRAME_HDR_SZ;
+//  521 
+//  522   nwkFrameCounter = osal_build_uint32(pBuf, sizeof(uint32));
+//  523   nwkFrameCounterChanges = 0;
+//  524   
+//  525   //Save the NwkFrameCounter
+//  526   ZDApp_SaveNwkKey();
+//  527 
+//  528   /* Build and send back the response */
+//  529   MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP_CNF), cmdId, 1, &retValue);
+//  530 }
+//  531 
+//  532 #endif
+//  533 
+// 
+//
+// 
+//
+//
+//Errors: none
+//Warnings: none

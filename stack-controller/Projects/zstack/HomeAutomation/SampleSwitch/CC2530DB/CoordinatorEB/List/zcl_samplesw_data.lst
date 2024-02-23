@@ -1,0 +1,881 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.10.1.4655 for 8051               22/Nov/2023  15:42:44
+# Copyright 2004-2017 IAR Systems AB.
+# Standalone license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\Source\zcl_samplesw_data.c
+#    Command line       =  
+#        -f C:\Users\ADMINI~1\AppData\Local\Temp\EWAE9C.tmp
+#        (D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\Source\zcl_samplesw_data.c
+#        -D SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE -D
+#        MULTICAST_ENABLED=FALSE -D ZCL_READ -D ZCL_DISCOVER -D ZCL_WRITE -D
+#        ZCL_BASIC -D ZCL_IDENTIFY -D ISR_KEYINTERRUPT -D HAL_UART=TRUE -D
+#        HAL_LCD=FALSE -D ZCL_ON_OFF -D INT_HEAP_LEN=2800 -D
+#        HAL_UART_DMA_RX_MAX=256 -D HAL_UART_DMA_TX_MAX=256 -lC
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+#        -lA
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+#        --diag_suppress Pe001,Pa010 -o
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj
+#        -e --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=banked --calling_convention=xdata_reentrant
+#        --place_constants=data_rom --nr_virtual_regs 8 -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+#        -DZDO_COORDINATOR -DRTR_NWK) -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x00, 0x01, 0x02, 0x03,
+#        0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E,
+#        0x0F}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+#        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+#        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+#        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000
+#        -DENABLE_LED4_DISABLE_S1) -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\Source\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\Source\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\ZMain\TI2530DB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mt\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\osal\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\saddr\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\sdata\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\af\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\bdb\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\gp\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sec\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sys\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zcl\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\Common\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\SPI\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\Font\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_LCD_SPI\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_OLED\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_TFT\
+#        -Ohz --require_prototypes)
+#    Locale             =  Chinese (Simplified)_China.936
+#    List file          =  
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List\zcl_samplesw_data.lst
+#    Object file        =  
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj\zcl_samplesw_data.r51
+#
+###############################################################################
+
+D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\Source\zcl_samplesw_data.c
+      1          /**************************************************************************************************
+      2            Filename:       zcl_samplesw_data.c
+      3            Revised:        $Date: 2014-07-30 12:57:37 -0700 (Wed, 30 Jul 2014) $
+      4            Revision:       $Revision: 39591 $
+      5          
+      6          
+      7            Description:    Zigbee Cluster Library - sample device application.
+      8          
+      9          
+     10            Copyright 2006-2014 Texas Instruments Incorporated. All rights reserved.
+     11          
+     12            IMPORTANT: Your use of this Software is limited to those specific rights
+     13            granted under the terms of a software license agreement between the user
+     14            who downloaded the software, his/her employer (which must be your employer)
+     15            and Texas Instruments Incorporated (the "License").  You may not use this
+     16            Software unless you agree to abide by the terms of the License. The License
+     17            limits your use, and you acknowledge, that the Software may not be modified,
+     18            copied or distributed unless embedded on a Texas Instruments microcontroller
+     19            or used solely and exclusively in conjunction with a Texas Instruments radio
+     20            frequency transceiver, which is integrated into your product.  Other than for
+     21            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     22            works of, modify, distribute, perform, display or sell this Software and/or
+     23            its documentation for any purpose.
+     24          
+     25            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     26            PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     27            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     28            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     29            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     30            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     31            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     32            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     33            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     34            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     35            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     36          
+     37            Should you have any questions regarding your right to use this Software,
+     38            contact Texas Instruments Incorporated at www.TI.com.
+     39          **************************************************************************************************/
+     40          
+     41          /*********************************************************************
+     42           * INCLUDES
+     43           */
+     44          #include "ZComDef.h"
+     45          #include "OSAL.h"
+     46          #include "AF.h"
+     47          #include "ZDConfig.h"
+     48          
+     49          #include "zcl.h"
+     50          #include "zcl_general.h"
+     51          #include "zcl_ha.h"
+     52          #include "zcl_poll_control.h"
+     53          #include "zcl_electrical_measurement.h"
+     54          #include "zcl_diagnostic.h"
+     55          #include "zcl_meter_identification.h"
+     56          #include "zcl_appliance_identification.h"
+     57          #include "zcl_appliance_events_alerts.h"
+     58          #include "zcl_power_profile.h"
+     59          #include "zcl_appliance_control.h"
+     60          #include "zcl_appliance_statistics.h"
+     61          #include "zcl_hvac.h"
+     62          
+     63          #include "zcl_samplesw.h"
+
+  #define CMD_JC_ZCLREQ          0x7
+          ^
+"D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\Source\zcl_samplesw.h",94  Warning[Pe047]: 
+          incompatible redefinition of macro "CMD_JC_ZCLREQ" (declared at line
+          94)
+     64          
+     65          /*********************************************************************
+     66           * CONSTANTS
+     67           */
+     68          
+     69          #define SAMPLESW_DEVICE_VERSION     1
+     70          #define SAMPLESW_FLAGS              0
+     71          
+     72          #define SAMPLESW_HWVERSION          0
+     73          #define SAMPLESW_ZCLVERSION         0
+     74          
+     75          #define DEFAULT_PHYSICAL_ENVIRONMENT 0
+     76          #define DEFAULT_DEVICE_ENABLE_STATE DEVICE_ENABLED
+     77          #define DEFAULT_IDENTIFY_TIME 0
+     78          
+     79          /*********************************************************************
+     80           * TYPEDEFS
+     81           */
+     82          
+     83          /*********************************************************************
+     84           * MACROS
+     85           */
+     86          
+     87          /*********************************************************************
+     88           * GLOBAL VARIABLES
+     89           */
+     90          
+     91          //global attributes
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     92          const uint16 zclSampleSw_clusterRevision_all = 0x0001; //currently all cluster implementations are according to ZCL6, which has revision #1. In the future it is possible that different clusters will have different revisions, so they will have to use separate attribute variables.
+   \                     zclSampleSw_clusterRevision_all:
+   \   000000   0100         DW 1
+     93          
+     94          // Basic Cluster
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     95          const uint8 zclSampleSw_HWRevision = SAMPLESW_HWVERSION;
+   \                     zclSampleSw_HWRevision:
+   \   000000   00           DB 0
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     96          const uint8 zclSampleSw_ZCLVersion = SAMPLESW_ZCLVERSION;
+   \                     zclSampleSw_ZCLVersion:
+   \   000000   00           DB 0
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     97          const uint8 zclSampleSw_ManufacturerName[] = { 16, 'T','e','x','a','s','I','n','s','t','r','u','m','e','n','t','s' };
+   \                     zclSampleSw_ManufacturerName:
+   \   000000   10           DB 16
+   \   000001   54           DB 84
+   \   000002   65           DB 101
+   \   000003   78           DB 120
+   \   000004   61           DB 97
+   \   000005   73           DB 115
+   \   000006   49           DB 73
+   \   000007   6E           DB 110
+   \   000008   73           DB 115
+   \   000009   74           DB 116
+   \   00000A   72           DB 114
+   \   00000B   75           DB 117
+   \   00000C   6D           DB 109
+   \   00000D   65           DB 101
+   \   00000E   6E           DB 110
+   \   00000F   74           DB 116
+   \   000010   73           DB 115
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     98          const uint8 zclSampleSw_ModelId[] = { 16, 'T','I','0','0','0','1',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ' };
+   \                     zclSampleSw_ModelId:
+   \   000000   10           DB 16
+   \   000001   54           DB 84
+   \   000002   49           DB 73
+   \   000003   30           DB 48
+   \   000004   30           DB 48
+   \   000005   30           DB 48
+   \   000006   31           DB 49
+   \   000007   20           DB 32
+   \   000008   20           DB 32
+   \   000009   20           DB 32
+   \   00000A   20           DB 32
+   \   00000B   20           DB 32
+   \   00000C   20           DB 32
+   \   00000D   20           DB 32
+   \   00000E   20           DB 32
+   \   00000F   20           DB 32
+   \   000010   20           DB 32
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     99          const uint8 zclSampleSw_DateCode[] = { 16, '2','0','0','6','0','8','3','1',' ',' ',' ',' ',' ',' ',' ',' ' };
+   \                     zclSampleSw_DateCode:
+   \   000000   10           DB 16
+   \   000001   32           DB 50
+   \   000002   30           DB 48
+   \   000003   30           DB 48
+   \   000004   36           DB 54
+   \   000005   30           DB 48
+   \   000006   38           DB 56
+   \   000007   33           DB 51
+   \   000008   31           DB 49
+   \   000009   20           DB 32
+   \   00000A   20           DB 32
+   \   00000B   20           DB 32
+   \   00000C   20           DB 32
+   \   00000D   20           DB 32
+   \   00000E   20           DB 32
+   \   00000F   20           DB 32
+   \   000010   20           DB 32
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    100          const uint8 zclSampleSw_PowerSource = POWER_SOURCE_MAINS_1_PHASE;
+   \                     zclSampleSw_PowerSource:
+   \   000000   01           DB 1
+    101          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    102          uint8 zclSampleSw_LocationDescription[17];
+   \                     zclSampleSw_LocationDescription:
+   \   000000                DS 17
+   \   000011                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    103          uint8 zclSampleSw_PhysicalEnvironment;
+   \                     zclSampleSw_PhysicalEnvironment:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    104          uint8 zclSampleSw_DeviceEnable = DEVICE_ENABLED;
+   \                     zclSampleSw_DeviceEnable:
+   \   000000                DS 1
+   \   000001                REQUIRE `?<Initializer for zclSampleSw_DeviceEnable>`
+   \   000001                REQUIRE __INIT_XDATA_I
+    105          
+    106          // Identify Cluster
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    107          uint16 zclSampleSw_IdentifyTime = 0;
+   \                     zclSampleSw_IdentifyTime:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+    108          
+    109          /*********************************************************************
+    110           * ATTRIBUTE DEFINITIONS - Uses REAL cluster IDs
+    111           */
+    112           
+    113            // NOTE: The attributes listed in the AttrRec must be in ascending order 
+    114            // per cluster to allow right function of the Foundation discovery commands
+    115           
+
+   \                                 In  segment CODE_C, align 1
+    116          CONST zclAttrRec_t zclSampleSw_Attrs[] =
+   \                     zclSampleSw_Attrs:
+   \   000000   0000         DW 0
+   \   000002   0000         DW 0
+   \   000004   20           DB 32
+   \   000005   01           DB 1
+   \   000006   ....         DW zclSampleSw_ZCLVersion
+   \   000008   0000         DW 0
+   \   00000A   0300         DW 3
+   \   00000C   20           DB 32
+   \   00000D   01           DB 1
+   \   00000E   ....         DW zclSampleSw_HWRevision
+   \   000010   0000         DW 0
+   \   000012   0400         DW 4
+   \   000014   42           DB 66
+   \   000015   01           DB 1
+   \   000016   ....         DW zclSampleSw_ManufacturerName
+   \   000018   0000         DW 0
+   \   00001A   0500         DW 5
+   \   00001C   42           DB 66
+   \   00001D   01           DB 1
+   \   00001E   ....         DW zclSampleSw_ModelId
+   \   000020   0000         DW 0
+   \   000022   0600         DW 6
+   \   000024   42           DB 66
+   \   000025   01           DB 1
+   \   000026   ....         DW zclSampleSw_DateCode
+   \   000028   0000         DW 0
+   \   00002A   0700         DW 7
+   \   00002C   30           DB 48
+   \   00002D   01           DB 1
+   \   00002E   ....         DW zclSampleSw_PowerSource
+   \   000030   0000         DW 0
+   \   000032   1000         DW 16
+   \   000034   42           DB 66
+   \   000035   03           DB 3
+   \   000036   ....         DW zclSampleSw_LocationDescription
+   \   000038   0000         DW 0
+   \   00003A   1100         DW 17
+   \   00003C   30           DB 48
+   \   00003D   03           DB 3
+   \   00003E   ....         DW zclSampleSw_PhysicalEnvironment
+   \   000040   0000         DW 0
+   \   000042   1200         DW 18
+   \   000044   10           DB 16
+   \   000045   03           DB 3
+   \   000046   ....         DW zclSampleSw_DeviceEnable
+   \   000048   0000         DW 0
+   \   00004A   FDFF         DW 65533
+   \   00004C   21           DB 33
+   \   00004D   01           DB 1
+   \   00004E   ....         DW zclSampleSw_clusterRevision_all
+   \   000050   0300         DW 3
+   \   000052   0000         DW 0
+   \   000054   21           DB 33
+   \   000055   03           DB 3
+   \   000056   ....         DW zclSampleSw_IdentifyTime
+   \   000058   0300         DW 3
+   \   00005A   FDFF         DW 65533
+   \   00005C   21           DB 33
+   \   00005D   41           DB 65
+   \   00005E   ....         DW zclSampleSw_clusterRevision_all
+   \   000060   0700         DW 7
+   \   000062   0000         DW 0
+   \   000064   30           DB 48
+   \   000065   01           DB 1
+   \   000066   ....         DW zclSampleSw_OnOffSwitchType
+   \   000068   0700         DW 7
+   \   00006A   1000         DW 16
+   \   00006C   30           DB 48
+   \   00006D   03           DB 3
+   \   00006E   ....         DW zclSampleSw_OnOffSwitchActions
+   \   000070   0700         DW 7
+   \   000072   FDFF         DW 65533
+   \   000074   21           DB 33
+   \   000075   01           DB 1
+   \   000076   ....         DW zclSampleSw_clusterRevision_all
+   \   000078   0600         DW 6
+   \   00007A   FDFF         DW 65533
+   \   00007C   21           DB 33
+   \   00007D   81           DB 129
+   \   00007E   ....         DW zclSampleSw_clusterRevision_all
+   \   000080   0400         DW 4
+   \   000082   FDFF         DW 65533
+   \   000084   21           DB 33
+   \   000085   81           DB 129
+   \   000086   ....         DW zclSampleSw_clusterRevision_all
+    117          {
+    118            // *** General Basic Cluster Attributes ***
+    119            {
+    120              ZCL_CLUSTER_ID_GEN_BASIC,
+    121              { // Attribute record
+    122                ATTRID_BASIC_ZCL_VERSION,
+    123                ZCL_DATATYPE_UINT8,
+    124                ACCESS_CONTROL_READ,
+    125                (void *)&zclSampleSw_ZCLVersion
+    126              }
+    127            },  
+    128            {
+    129              ZCL_CLUSTER_ID_GEN_BASIC,             // Cluster IDs - defined in the foundation (ie. zcl.h)
+    130              {  // Attribute record
+    131                ATTRID_BASIC_HW_VERSION,            // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    132                ZCL_DATATYPE_UINT8,                 // Data Type - found in zcl.h
+    133                ACCESS_CONTROL_READ,                // Variable access control - found in zcl.h
+    134                (void *)&zclSampleSw_HWRevision  // Pointer to attribute variable
+    135              }
+    136            },
+    137            {
+    138              ZCL_CLUSTER_ID_GEN_BASIC,
+    139              { // Attribute record
+    140                ATTRID_BASIC_MANUFACTURER_NAME,
+    141                ZCL_DATATYPE_CHAR_STR,
+    142                ACCESS_CONTROL_READ,
+    143                (void *)zclSampleSw_ManufacturerName
+    144              }
+    145            },
+    146            {
+    147              ZCL_CLUSTER_ID_GEN_BASIC,
+    148              { // Attribute record
+    149                ATTRID_BASIC_MODEL_ID,
+    150                ZCL_DATATYPE_CHAR_STR,
+    151                ACCESS_CONTROL_READ,
+    152                (void *)zclSampleSw_ModelId
+    153              }
+    154            },
+    155            {
+    156              ZCL_CLUSTER_ID_GEN_BASIC,
+    157              { // Attribute record
+    158                ATTRID_BASIC_DATE_CODE,
+    159                ZCL_DATATYPE_CHAR_STR,
+    160                ACCESS_CONTROL_READ,
+    161                (void *)zclSampleSw_DateCode
+    162              }
+    163            },
+    164            {
+    165              ZCL_CLUSTER_ID_GEN_BASIC,
+    166              { // Attribute record
+    167                ATTRID_BASIC_POWER_SOURCE,
+    168                ZCL_DATATYPE_ENUM8,
+    169                ACCESS_CONTROL_READ,
+    170                (void *)&zclSampleSw_PowerSource
+    171              }
+    172            },
+    173            {
+    174              ZCL_CLUSTER_ID_GEN_BASIC,
+    175              { // Attribute record
+    176                ATTRID_BASIC_LOCATION_DESC,
+    177                ZCL_DATATYPE_CHAR_STR,
+    178                (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    179                (void *)zclSampleSw_LocationDescription
+    180              }
+    181            },
+    182            {
+    183              ZCL_CLUSTER_ID_GEN_BASIC,
+    184              { // Attribute record
+    185                ATTRID_BASIC_PHYSICAL_ENV,
+    186                ZCL_DATATYPE_ENUM8,
+    187                (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    188                (void *)&zclSampleSw_PhysicalEnvironment
+    189              }
+    190            },
+    191            {
+    192              ZCL_CLUSTER_ID_GEN_BASIC,
+    193              { // Attribute record
+    194                ATTRID_BASIC_DEVICE_ENABLED,
+    195                ZCL_DATATYPE_BOOLEAN,
+    196                (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    197                (void *)&zclSampleSw_DeviceEnable
+    198              }
+    199            },
+    200            {
+    201              ZCL_CLUSTER_ID_GEN_BASIC,
+    202              {  // Attribute record
+    203                ATTRID_CLUSTER_REVISION,
+    204                ZCL_DATATYPE_UINT16,
+    205                ACCESS_CONTROL_READ,
+    206                (void *)&zclSampleSw_clusterRevision_all
+    207              }
+    208            },  
+    209          
+    210            // *** Identify Cluster Attribute ***
+    211            {
+    212              ZCL_CLUSTER_ID_GEN_IDENTIFY,
+    213              { // Attribute record
+    214                ATTRID_IDENTIFY_TIME,
+    215                ZCL_DATATYPE_UINT16,
+    216                (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    217                (void *)&zclSampleSw_IdentifyTime
+    218              }
+    219            },  
+    220            {
+    221              ZCL_CLUSTER_ID_GEN_IDENTIFY,
+    222              {  // Attribute record
+    223                ATTRID_CLUSTER_REVISION,
+    224                ZCL_DATATYPE_UINT16,
+    225                ACCESS_CONTROL_READ | ACCESS_GLOBAL,
+    226                (void *)&zclSampleSw_clusterRevision_all
+    227              }
+    228            },
+    229          
+    230          
+    231            // *** On / Off Switch Configuration Cluster *** //
+    232            {
+    233              ZCL_CLUSTER_ID_GEN_ON_OFF_SWITCH_CONFIG,
+    234              { // Attribute record
+    235                ATTRID_ON_OFF_SWITCH_TYPE,
+    236                ZCL_DATATYPE_ENUM8,
+    237                ACCESS_CONTROL_READ,
+    238                (void *)&zclSampleSw_OnOffSwitchType
+    239              }
+    240            },
+    241            {
+    242              ZCL_CLUSTER_ID_GEN_ON_OFF_SWITCH_CONFIG,
+    243              { // Attribute record
+    244                ATTRID_ON_OFF_SWITCH_ACTIONS,
+    245                ZCL_DATATYPE_ENUM8,
+    246                ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE,
+    247                (void *)&zclSampleSw_OnOffSwitchActions
+    248              }
+    249            },
+    250            {
+    251              ZCL_CLUSTER_ID_GEN_ON_OFF_SWITCH_CONFIG,
+    252              {  // Attribute record
+    253                ATTRID_CLUSTER_REVISION,
+    254                ZCL_DATATYPE_UINT16,
+    255                ACCESS_CONTROL_READ,
+    256                (void *)&zclSampleSw_clusterRevision_all
+    257              }
+    258            },
+    259            // *** On / Off Cluster *** //
+    260            {
+    261              ZCL_CLUSTER_ID_GEN_ON_OFF,
+    262              {  // Attribute record
+    263                ATTRID_CLUSTER_REVISION,
+    264                ZCL_DATATYPE_UINT16,
+    265                ACCESS_CONTROL_READ | ACCESS_CLIENT,
+    266                (void *)&zclSampleSw_clusterRevision_all
+    267              }
+    268            },
+    269            // *** Groups Cluster *** //
+    270            {
+    271              ZCL_CLUSTER_ID_GEN_GROUPS,
+    272              {  // Attribute record
+    273                ATTRID_CLUSTER_REVISION,
+    274                ZCL_DATATYPE_UINT16,
+    275                ACCESS_CONTROL_READ | ACCESS_CLIENT,
+    276                (void *)&zclSampleSw_clusterRevision_all
+    277              }
+    278            }
+    279          };
+    280          
+
+   \                                 In  segment CODE_C, align 1
+    281          uint8 CONST zclSampleSw_NumAttributes = ( sizeof(zclSampleSw_Attrs) / sizeof(zclSampleSw_Attrs[0]) );
+   \                     zclSampleSw_NumAttributes:
+   \   000000   11           DB 17
+    282          
+    283          /*********************************************************************
+    284           * SIMPLE DESCRIPTOR
+    285           */
+    286          // This is the Cluster ID List and should be filled with Application
+    287          // specific cluster IDs.
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    288          const cId_t zclSampleSw_InClusterList[] =
+   \                     zclSampleSw_InClusterList:
+   \   000000   0000         DW 0
+   \   000002   0300         DW 3
+   \   000004   2000         DW 32
+    289          {
+    290            ZCL_CLUSTER_ID_GEN_BASIC,
+    291            ZCL_CLUSTER_ID_GEN_IDENTIFY,
+    292            ZCL_CLUSTER_ID_GEN_POLL_CONTROL,
+    293            //ZCL_CLUSTER_ID_GEN_ON_OFF_SWITCH_CONFIG
+    294          };
+    295          
+    296          #define ZCLSAMPLESW_MAX_INCLUSTERS    ( sizeof( zclSampleSw_InClusterList ) / sizeof( zclSampleSw_InClusterList[0] ))
+    297          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    298          const cId_t zclSampleSw_OutClusterList[] =
+   \                     zclSampleSw_OutClusterList:
+   \   000000   0300         DW 3
+   \   000002   0400         DW 4
+   \   000004   2000         DW 32
+    299          {
+    300            ZCL_CLUSTER_ID_GEN_IDENTIFY,
+    301            //ZCL_CLUSTER_ID_GEN_ON_OFF,
+    302            ZCL_CLUSTER_ID_GEN_GROUPS,
+    303            ZCL_CLUSTER_ID_GEN_POLL_CONTROL,
+    304          };
+    305          
+    306          #define ZCLSAMPLESW_MAX_OUTCLUSTERS   ( sizeof( zclSampleSw_OutClusterList ) / sizeof( zclSampleSw_OutClusterList[0] ))
+    307          
+    308          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    309          const cId_t naive_InClusterList[] = {ZCL_CLUSTER_ID_GEN_BASIC,ZCL_CLUSTER_ID_GEN_IDENTIFY};
+   \                     naive_InClusterList:
+   \   000000   0000         DW 0
+   \   000002   0300         DW 3
+    310          #define NAIVE_MAX_INCLUSTERS    ( sizeof( naive_InClusterList ) / sizeof( naive_InClusterList[0] ))
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    311          const cId_t naive_OutClusterList[] = {ZCL_CLUSTER_ID_GEN_IDENTIFY};
+   \                     naive_OutClusterList:
+   \   000000   0300         DW 3
+    312          #define NAIVE_MAX_OUTCLUSTERS   ( sizeof( naive_OutClusterList ) / sizeof( naive_OutClusterList[0] ))
+    313          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    314          SimpleDescriptionFormat_t zclSampleSw_HASimpleDesc =
+   \                     zclSampleSw_HASimpleDesc:
+   \   000000                DS 12
+   \   00000C                REQUIRE `?<Initializer for zclSampleSw_HASimpleDesc>`
+   \   00000C                REQUIRE __INIT_XDATA_I
+    315          {
+    316            SAMPLESW_HA_ENDPOINT,                  //  int Endpoint;
+    317            ZCL_HA_PROFILE_ID,                  //  uint16 AppProfId[2];
+    318            ZCL_HA_DEVICEID_ON_OFF_LIGHT_SWITCH,//  uint16 AppDeviceId[2];
+    319            SAMPLESW_DEVICE_VERSION,            //  int   AppDevVer:4;
+    320            SAMPLESW_FLAGS,                     //  int   AppFlags:4;
+    321            ZCLSAMPLESW_MAX_INCLUSTERS,         //  byte  AppNumInClusters;
+    322            (cId_t *)zclSampleSw_InClusterList, //  byte *pAppInClusterList;
+    323            ZCLSAMPLESW_MAX_OUTCLUSTERS,        //  byte  AppNumInClusters;
+    324            (cId_t *)zclSampleSw_OutClusterList //  byte *pAppInClusterList;
+    325          };
+    326          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    327          SimpleDescriptionFormat_t zclSampleSw_ZLLSimpleDesc =
+   \                     zclSampleSw_ZLLSimpleDesc:
+   \   000000                DS 12
+   \   00000C                REQUIRE `?<Initializer for zclSampleSw_ZLLSimpleDesc>`
+   \   00000C                REQUIRE __INIT_XDATA_I
+    328          {
+    329            SAMPLESW_ZLL_ENDPOINT,                  //  int Endpoint;
+    330            ZCL_ZLL_PROFILE_ID,                  //  uint16 AppProfId[2];
+    331            ZCL_HA_DEVICEID_ON_OFF_LIGHT_SWITCH,//  uint16 AppDeviceId[2];
+    332            SAMPLESW_DEVICE_VERSION,            //  int   AppDevVer:4;
+    333            SAMPLESW_FLAGS,                     //  int   AppFlags:4;
+    334            NAIVE_MAX_INCLUSTERS,         //  byte  AppNumInClusters;
+    335            (cId_t *)naive_InClusterList, //  byte *pAppInClusterList;
+    336            NAIVE_MAX_OUTCLUSTERS,        //  byte  AppNumInClusters;
+    337            (cId_t *)naive_OutClusterList //  byte *pAppInClusterList;
+    338          };
+    339          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    340          SimpleDescriptionFormat_t zclSampleSw_GPSimpleDesc =
+   \                     zclSampleSw_GPSimpleDesc:
+   \   000000                DS 12
+   \   00000C                REQUIRE `?<Initializer for zclSampleSw_GPSimpleDesc>`
+   \   00000C                REQUIRE __INIT_XDATA_I
+    341          {
+    342            SAMPLESW_GP_ENDPOINT,                  //  int Endpoint;
+    343            ZCL_GP_PROFILE_ID,                  //  uint16 AppProfId[2];
+    344            ZCL_HA_DEVICEID_ON_OFF_LIGHT_SWITCH,//  uint16 AppDeviceId[2];
+    345            SAMPLESW_DEVICE_VERSION,            //  int   AppDevVer:4;
+    346            SAMPLESW_FLAGS,                     //  int   AppFlags:4;
+    347            NAIVE_MAX_INCLUSTERS,         //  byte  AppNumInClusters;
+    348            (cId_t *)naive_InClusterList, //  byte *pAppInClusterList;
+    349            NAIVE_MAX_OUTCLUSTERS,        //  byte  AppNumInClusters;
+    350            (cId_t *)naive_OutClusterList //  byte *pAppInClusterList;
+    351          };
+    352          
+    353          /*********************************************************************
+    354           * GLOBAL FUNCTIONS
+    355           */
+    356          
+    357          /*********************************************************************
+    358           * LOCAL FUNCTIONS
+    359           */
+    360          
+    361          /*********************************************************************
+    362           * @fn      zclSampleLight_ResetAttributesToDefaultValues
+    363           *
+    364           * @brief   Reset all writable attributes to their default values.
+    365           *
+    366           * @param   none
+    367           *
+    368           * @return  none
+    369           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    370          void zclSampleSw_ResetAttributesToDefaultValues(void)
+   \                     zclSampleSw_ResetAttributesToDefaultValues:
+    371          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    372            int i;
+    373            
+    374            zclSampleSw_LocationDescription[0] = 16;
+   \   000004   90....       MOV       DPTR,#zclSampleSw_LocationDescription
+   \   000007   7410         MOV       A,#0x10
+   \   000009   F0           MOVX      @DPTR,A
+    375            for (i = 1; i <= 16; i++)
+    376            {
+    377              zclSampleSw_LocationDescription[i] = ' ';
+   \   00000A   7420         MOV       A,#0x20
+   \   00000C   A3           INC       DPTR
+   \   00000D   7810         MOV       R0,#0x10
+   \                     ??zclSampleSw_ResetAttributesToDefaultValues_0:
+   \   00000F   F0           MOVX      @DPTR,A
+   \   000010   A3           INC       DPTR
+   \   000011   D8FC         DJNZ      R0,??zclSampleSw_ResetAttributesToDefaultValues_0
+    378            }
+    379            
+    380            zclSampleSw_PhysicalEnvironment = DEFAULT_PHYSICAL_ENVIRONMENT;
+   \   000013   90....       MOV       DPTR,#zclSampleSw_PhysicalEnvironment
+   \   000016   E4           CLR       A
+   \   000017   F0           MOVX      @DPTR,A
+    381            zclSampleSw_DeviceEnable = DEFAULT_DEVICE_ENABLE_STATE;
+   \   000018   90....       MOV       DPTR,#zclSampleSw_DeviceEnable
+   \   00001B   04           INC       A
+   \   00001C   F0           MOVX      @DPTR,A
+    382            
+    383            zclSampleSw_IdentifyTime = DEFAULT_IDENTIFY_TIME;
+   \   00001D   90....       MOV       DPTR,#zclSampleSw_IdentifyTime
+   \   000020   E4           CLR       A
+   \   000021   F0           MOVX      @DPTR,A
+   \   000022   A3           INC       DPTR
+   \   000023   F0           MOVX      @DPTR,A
+    384            
+    385            zclSampleSw_OnOffSwitchActions = ON_OFF_SWITCH_ACTIONS_TOGGLE; //note that the default specified by the zcl spec is ON_OFF_SWITCH_ACTIONS_ON, but for backward compatibility with TI's legacy sample-switch, we use here ON_OFF_SWITCH_ACTIONS_TOGGLE
+   \   000024   90....       MOV       DPTR,#zclSampleSw_OnOffSwitchActions
+   \   000027   7402         MOV       A,#0x2
+   \   000029   F0           MOVX      @DPTR,A
+    386          }
+   \   00002A   D083         POP       DPH
+   \   00002C   D082         POP       DPL
+   \   00002E   02....       LJMP      ?BRET
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for zclSampleSw_DeviceEnable>`:
+   \   000000   01           DB 1
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for zclSampleSw_HASimpleDesc>`:
+   \   000000   08           DB 8
+   \   000001   0401         DW 260
+   \   000003   0301         DW 259
+   \   000005   01           DB 1
+   \   000006   03           DB 3
+   \   000007   ....         DW zclSampleSw_InClusterList
+   \   000009   03           DB 3
+   \   00000A   ....         DW zclSampleSw_OutClusterList
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for zclSampleSw_ZLLSimpleDesc>`:
+   \   000000   09           DB 9
+   \   000001   5EC0         DW 49246
+   \   000003   0301         DW 259
+   \   000005   01           DB 1
+   \   000006   02           DB 2
+   \   000007   ....         DW naive_InClusterList
+   \   000009   01           DB 1
+   \   00000A   ....         DW naive_OutClusterList
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for zclSampleSw_GPSimpleDesc>`:
+   \   000000   0A           DB 10
+   \   000001   E0A1         DW 41440
+   \   000003   0301         DW 259
+   \   000005   01           DB 1
+   \   000006   02           DB 2
+   \   000007   ....         DW naive_InClusterList
+   \   000009   01           DB 1
+   \   00000A   ....         DW naive_OutClusterList
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??zclSampleSw_ResetAttributesToDefaultValues::?`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclSampleSw_ResetAttributesToDefaultValues
+    387          
+    388          /****************************************************************************
+    389          ****************************************************************************/
+    390          
+    391          
+
+   Maximum stack usage in bytes:
+
+   ISTACK Function
+   ------ --------
+      2   zclSampleSw_ResetAttributesToDefaultValues
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       1  ?<Initializer for zclSampleSw_DeviceEnable>
+      12  ?<Initializer for zclSampleSw_GPSimpleDesc>
+      12  ?<Initializer for zclSampleSw_HASimpleDesc>
+      12  ?<Initializer for zclSampleSw_ZLLSimpleDesc>
+       4  naive_InClusterList
+       2  naive_OutClusterList
+     136  zclSampleSw_Attrs
+      17  zclSampleSw_DateCode
+       1  zclSampleSw_DeviceEnable
+      12  zclSampleSw_GPSimpleDesc
+      12  zclSampleSw_HASimpleDesc
+       1  zclSampleSw_HWRevision
+       2  zclSampleSw_IdentifyTime
+       6  zclSampleSw_InClusterList
+      17  zclSampleSw_LocationDescription
+      17  zclSampleSw_ManufacturerName
+      17  zclSampleSw_ModelId
+       1  zclSampleSw_NumAttributes
+       6  zclSampleSw_OutClusterList
+       1  zclSampleSw_PhysicalEnvironment
+       1  zclSampleSw_PowerSource
+      49  zclSampleSw_ResetAttributesToDefaultValues
+       6  zclSampleSw_ResetAttributesToDefaultValues::?relay
+       1  zclSampleSw_ZCLVersion
+      12  zclSampleSw_ZLLSimpleDesc
+       2  zclSampleSw_clusterRevision_all
+
+ 
+  49 bytes in segment BANKED_CODE
+   6 bytes in segment BANK_RELAYS
+ 137 bytes in segment CODE_C
+  37 bytes in segment XDATA_I
+  37 bytes in segment XDATA_ID
+  74 bytes in segment XDATA_ROM_C
+  20 bytes in segment XDATA_Z
+ 
+ 180 bytes of CODE     memory
+  74 bytes of CONST    memory
+  49 bytes of HUGECODE memory
+  57 bytes of XDATA    memory
+
+Errors: none
+Warnings: 1

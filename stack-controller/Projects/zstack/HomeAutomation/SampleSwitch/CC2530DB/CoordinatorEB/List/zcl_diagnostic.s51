@@ -1,0 +1,644 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// IAR C/C++ Compiler V10.10.1.4655 for 8051              22/Nov/2023  15:42:44
+// Copyright 2004-2017 IAR Systems AB.
+// Standalone license - IAR Embedded Workbench for 8051
+//
+//    Core               =  plain
+//    Code model         =  banked
+//    Data model         =  large
+//    Calling convention =  xdata reentrant
+//    Constant location  =  data_rom
+//    Dptr setup         =  1,16
+//                          
+//    Source file        =  
+//        D:\fuzzing-coordinator-response-collection\Components\stack\zcl\zcl_diagnostic.c
+//    Command line       =  
+//        -f C:\Users\ADMINI~1\AppData\Local\Temp\EWADCC.tmp
+//        (D:\fuzzing-coordinator-response-collection\Components\stack\zcl\zcl_diagnostic.c
+//        -D SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE -D
+//        MULTICAST_ENABLED=FALSE -D ZCL_READ -D ZCL_DISCOVER -D ZCL_WRITE -D
+//        ZCL_BASIC -D ZCL_IDENTIFY -D ISR_KEYINTERRUPT -D HAL_UART=TRUE -D
+//        HAL_LCD=FALSE -D ZCL_ON_OFF -D INT_HEAP_LEN=2800 -D
+//        HAL_UART_DMA_RX_MAX=256 -D HAL_UART_DMA_TX_MAX=256 -lC
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+//        -lA
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+//        --diag_suppress Pe001,Pa010 -o
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj
+//        -e --debug --core=plain --dptr=16,1 --data_model=large
+//        --code_model=banked --calling_convention=xdata_reentrant
+//        --place_constants=data_rom --nr_virtual_regs 8 -f
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg
+//        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+//        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+//        -DZDO_COORDINATOR -DRTR_NWK) -f
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+//        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+//        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+//        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+//        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+//        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+//        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+//        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+//        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+//        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+//        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x00, 0x01, 0x02, 0x03,
+//        0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E,
+//        0x0F}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+//        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+//        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+//        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000
+//        -DENABLE_LED4_DISABLE_S1) -f
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\Source\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\Source\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\ZMain\TI2530DB\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\include\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\include\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mt\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\osal\include\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\saddr\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\sdata\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\af\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\bdb\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\gp\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sec\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sys\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zcl\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\Common\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\SPI\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\Font\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_LCD_SPI\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_OLED\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_TFT\
+//        -Ohz --require_prototypes)
+//    Locale             =  Chinese (Simplified)_China.936
+//    List file          =  
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List\zcl_diagnostic.s51
+//
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME zcl_diagnostic
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__register_banks", "*"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+
+        END
+// D:\fuzzing-coordinator-response-collection\Components\stack\zcl\zcl_diagnostic.c
+//    1 /**************************************************************************************************
+//    2   Filename:       zcl_diagnostic.c
+//    3   Revised:        $Date: 2014-03-13 15:57:20 -0700 (Thu, 13 Mar 2014) $
+//    4   Revision:       $Revision: 37682 $
+//    5 
+//    6   Description:    Zigbee Cluster Library - Diagnostics.
+//    7 
+//    8 
+//    9   Copyright 2014 Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License").  You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product.  Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com.
+//   38 **************************************************************************************************/
+//   39 
+//   40 #ifdef ZCL_DIAGNOSTIC
+//   41 
+//   42 /*********************************************************************
+//   43  * INCLUDES
+//   44  */
+//   45 #include "zcl_diagnostic.h"
+//   46 #include "ZDiags.h"
+//   47 
+//   48 #if !defined ( FEATURE_SYSTEM_STATS )
+//   49 #error "ERROR: FEATURE_SYSTEM_STATS shall be defined if ZCL_DIAGNOSTICS is defined."
+//   50 #endif
+//   51 
+//   52 /*********************************************************************
+//   53  * MACROS
+//   54  */
+//   55 
+//   56 /*********************************************************************
+//   57  * CONSTANTS
+//   58  */
+//   59 
+//   60 /*********************************************************************
+//   61  * TYPEDEFS
+//   62  */
+//   63 // Attribute record
+//   64 typedef struct
+//   65 {
+//   66   uint16  zclAttrId;        // Attribute ID as defined by ZCL Diagnostics Cluster
+//   67   uint8   dataType;         // Data Type - defined in AF.h
+//   68   uint16  ZDiagsAttrId;     // Attribute ID as defined by ZDiags module
+//   69 } zclDiagnosticAttr_t;
+//   70 
+//   71 
+//   72 
+//   73 /*********************************************************************
+//   74  * GLOBAL VARIABLES
+//   75  */
+//   76 CONST zclDiagnosticAttr_t zclDiagsAttrTable[] =
+//   77 {
+//   78   {
+//   79     ATTRID_DIAGNOSTIC_NUMBER_OF_RESETS,
+//   80     ZCL_DATATYPE_UINT16,
+//   81     ZDIAGS_NUMBER_OF_RESETS
+//   82   },
+//   83   {
+//   84     ATTRID_DIAGNOSTIC_PERSISTENT_MEMORY_WRITES,
+//   85     ZCL_DATATYPE_UINT16,
+//   86     ZDIAGS_PERSISTENT_MEMORY_WRITES
+//   87   },
+//   88   {
+//   89     ATTRID_DIAGNOSTIC_MAC_RX_BCAST,
+//   90     ZCL_DATATYPE_UINT32,
+//   91     ZDIAGS_MAC_RX_BCAST
+//   92   },
+//   93   {
+//   94     ATTRID_DIAGNOSTIC_MAC_TX_BCAST,
+//   95     ZCL_DATATYPE_UINT32,
+//   96     ZDIAGS_MAC_TX_BCAST
+//   97   },
+//   98   {
+//   99     ATTRID_DIAGNOSTIC_MAC_RX_UCAST,
+//  100     ZCL_DATATYPE_UINT32,
+//  101     ZDIAGS_MAC_RX_UCAST
+//  102   },
+//  103   {
+//  104     ATTRID_DIAGNOSTIC_MAC_TX_UCAST,
+//  105     ZCL_DATATYPE_UINT32,
+//  106     ZDIAGS_MAC_TX_UCAST
+//  107   },
+//  108   {
+//  109     ATTRID_DIAGNOSTIC_MAC_TX_UCAST_RETRY,
+//  110     ZCL_DATATYPE_UINT16,
+//  111     ZDIAGS_MAC_TX_UCAST_RETRY
+//  112   },
+//  113   {
+//  114     ATTRID_DIAGNOSTIC_MAC_TX_UCAST_FAIL,
+//  115     ZCL_DATATYPE_UINT16,
+//  116     ZDIAGS_MAC_TX_UCAST_FAIL
+//  117   },
+//  118   {
+//  119     ATTRID_DIAGNOSTIC_APS_RX_BCAST,
+//  120     ZCL_DATATYPE_UINT16,
+//  121     ZDIAGS_APS_RX_BCAST
+//  122   },
+//  123   {
+//  124     ATTRID_DIAGNOSTIC_APS_TX_BCAST,
+//  125     ZCL_DATATYPE_UINT16,
+//  126     ZDIAGS_APS_TX_BCAST
+//  127   },
+//  128   {
+//  129     ATTRID_DIAGNOSTIC_APS_RX_UCAST,
+//  130     ZCL_DATATYPE_UINT16,
+//  131     ZDIAGS_APS_RX_UCAST
+//  132   },
+//  133   {
+//  134     ATTRID_DIAGNOSTIC_APS_TX_UCAST_SUCCESS,
+//  135     ZCL_DATATYPE_UINT16,
+//  136     ZDIAGS_APS_TX_UCAST_SUCCESS
+//  137   },
+//  138   {
+//  139     ATTRID_DIAGNOSTIC_APS_TX_UCAST_RETRY,
+//  140     ZCL_DATATYPE_UINT16,
+//  141     ZDIAGS_APS_TX_UCAST_RETRY
+//  142   },
+//  143   {
+//  144     ATTRID_DIAGNOSTIC_APS_TX_UCAST_FAIL,
+//  145     ZCL_DATATYPE_UINT16,
+//  146     ZDIAGS_APS_TX_UCAST_FAIL
+//  147   },
+//  148   {
+//  149     ATTRID_DIAGNOSTIC_ROUTE_DISC_INITIATED,
+//  150     ZCL_DATATYPE_UINT16,
+//  151     ZDIAGS_ROUTE_DISC_INITIATED
+//  152   },
+//  153   {
+//  154     ATTRID_DIAGNOSTIC_NEIGHBOR_ADDED,
+//  155     ZCL_DATATYPE_UINT16,
+//  156     ZDIAGS_NEIGHBOR_ADDED
+//  157   },
+//  158   {
+//  159     ATTRID_DIAGNOSTIC_NEIGHBOR_REMOVED,
+//  160     ZCL_DATATYPE_UINT16,
+//  161     ZDIAGS_NEIGHBOR_REMOVED
+//  162   },
+//  163   {
+//  164     ATTRID_DIAGNOSTIC_NEIGHBOR_STALE,
+//  165     ZCL_DATATYPE_UINT16,
+//  166     ZDIAGS_NEIGHBOR_STALE
+//  167   },
+//  168   {
+//  169     ATTRID_DIAGNOSTIC_JOIN_INDICATION,
+//  170     ZCL_DATATYPE_UINT16,
+//  171     ZDIAGS_JOIN_INDICATION
+//  172   },
+//  173   {
+//  174     ATTRID_DIAGNOSTIC_CHILD_MOVED,
+//  175     ZCL_DATATYPE_UINT16,
+//  176     ZDIAGS_CHILD_MOVED
+//  177   },
+//  178   {
+//  179     ATTRID_DIAGNOSTIC_NWK_FC_FAILURE,
+//  180     ZCL_DATATYPE_UINT16,
+//  181     ZDIAGS_NWK_FC_FAILURE
+//  182   },
+//  183   {
+//  184     ATTRID_DIAGNOSTIC_APS_FC_FAILURE,
+//  185     ZCL_DATATYPE_UINT16,
+//  186     ZDIAGS_APS_FC_FAILURE
+//  187   },
+//  188   {
+//  189     ATTRID_DIAGNOSTIC_APS_UNAUTHORIZED_KEY,
+//  190     ZCL_DATATYPE_UINT16,
+//  191     ZDIAGS_APS_UNAUTHORIZED_KEY
+//  192   },
+//  193   {
+//  194     ATTRID_DIAGNOSTIC_NWK_DECRYPT_FAILURES,
+//  195     ZCL_DATATYPE_UINT16,
+//  196     ZDIAGS_NWK_DECRYPT_FAILURES
+//  197   },
+//  198   {
+//  199     ATTRID_DIAGNOSTIC_APS_DECRYPT_FAILURES,
+//  200     ZCL_DATATYPE_UINT16,
+//  201     ZDIAGS_APS_DECRYPT_FAILURES
+//  202   },
+//  203   {
+//  204     ATTRID_DIAGNOSTIC_PACKET_BUFFER_ALLOCATE_FAILURES,
+//  205     ZCL_DATATYPE_UINT16,
+//  206     ZDIAGS_PACKET_BUFFER_ALLOCATE_FAILURES
+//  207   },
+//  208   {
+//  209     ATTRID_DIAGNOSTIC_RELAYED_UCAST,
+//  210     ZCL_DATATYPE_UINT16,
+//  211     ZDIAGS_RELAYED_UCAST
+//  212   },
+//  213   {
+//  214     ATTRID_DIAGNOSTIC_PHY_TO_MAC_QUEUE_LIMIT_REACHED,
+//  215     ZCL_DATATYPE_UINT16,
+//  216     ZDIAGS_PHY_TO_MAC_QUEUE_LIMIT_REACHED
+//  217   },
+//  218   {
+//  219     ATTRID_DIAGNOSTIC_PACKET_VALIDATE_DROP_COUNT,
+//  220     ZCL_DATATYPE_UINT16,
+//  221     ZDIAGS_PACKET_VALIDATE_DROP_COUNT
+//  222   },
+//  223 };
+//  224 
+//  225 /*********************************************************************
+//  226  * LOCAL VARIABLES
+//  227  */
+//  228 
+//  229 /*********************************************************************
+//  230  * LOCAL FUNCTIONS
+//  231  */
+//  232 static ZStatus_t zclDiagnostic_GetAttribData( uint16 zclAttrId, uint16 *zdiagsAttrId, uint16 *dataLen );
+//  233 
+//  234 /****************************************************************************
+//  235  * @fn          zclDiagnostic_GetAttribData()
+//  236  *
+//  237  * @brief       Gets the Z-Stack attribute data for a specific ZCL Diagnostics
+//  238  *              AttributeID.
+//  239  *
+//  240  * @param       none.
+//  241  *
+//  242  * @return      none.
+//  243  */
+//  244 static ZStatus_t zclDiagnostic_GetAttribData( uint16 zclAttrId, uint16 *zdiagsAttrId, uint16 *dataLen )
+//  245 {
+//  246   uint8 i;
+//  247   uint8 attrTableSize = sizeof(zclDiagsAttrTable);
+//  248 
+//  249   for ( i = 0; i < attrTableSize; i++ )
+//  250   {
+//  251     if ( zclDiagsAttrTable[i].zclAttrId == zclAttrId )
+//  252     {
+//  253       *zdiagsAttrId = zclDiagsAttrTable[i].ZDiagsAttrId;
+//  254       *dataLen = (uint16)zclGetDataTypeLength( zclDiagsAttrTable[i].dataType );
+//  255 
+//  256       return ( ZSuccess );
+//  257     }
+//  258   }
+//  259 
+//  260   return ( ZFailure );
+//  261 }
+//  262 
+//  263 /****************************************************************************
+//  264  * @fn          zclDiagnostic_InitStats()
+//  265  *
+//  266  * @brief       Initialize the statistics table.
+//  267  *
+//  268  * @param       none.
+//  269  *
+//  270  * @return      ZSuccess - if NV data was initialized successfully.
+//  271  *              ZFailure - Otherwise
+//  272  */
+//  273 uint8 zclDiagnostic_InitStats( void )
+//  274 {
+//  275   // Initialize the Diagnostics table in the Lower layer
+//  276   return ( ZDiagsInitStats() );
+//  277 }
+//  278 
+//  279 /****************************************************************************
+//  280  * @fn          zclDiagnostic_ClearStats
+//  281  *
+//  282  * @brief       Clears the statistics table in RAM and NV if option flag set.
+//  283  *
+//  284  * @param       clearNV   - Option flag to clear NV data.
+//  285  *
+//  286  * @return      System Clock.
+//  287  */
+//  288 uint32 zclDiagnostic_ClearStats( bool clearNV )
+//  289 {
+//  290   // calls the diagnostics function to clear statistics and returns the system clock
+//  291   return ZDiagsClearStats( clearNV );
+//  292 }
+//  293 
+//  294 /****************************************************************************
+//  295  * @fn          zclDiagnostic_GetStatsAttr
+//  296  *
+//  297  * @brief       Reads Diagnostic values based on specific ZCL Diagnostics
+//  298  *              attribute ID
+//  299  *
+//  300  * @param       attributeId  input  - ZCL identifier for the required attribute
+//  301  * @param       value       output - value of the specific item
+//  302  *
+//  303  * NOTE:  the user of this function will have to cast the value
+//  304  *        based on the type of the attributeId, the returned value
+//  305  *        will allways be uint32
+//  306  *
+//  307  * @return      ZStatus_t
+//  308  */
+//  309 ZStatus_t zclDiagnostic_GetStatsAttr( uint16 attributeId, uint32 *attrValue, uint16 *dataLen )
+//  310 {
+//  311   uint8 status = ZSuccess;
+//  312   uint16 ZDiagsAttrId;
+//  313 
+//  314   // this atribute is a calculated value
+//  315   if ( attributeId == ATTRID_DIAGNOSTIC_AVERAGE_MAC_RETRY_PER_APS_MESSAGE_SENT )
+//  316   {
+//  317     uint32 macRetriesPerApsTx;
+//  318     uint32 apsTxUcastSuccess;
+//  319     uint32 apsTxUcastFailure;
+//  320 
+//  321     // retrieve each attribute to calculate the requested value
+//  322     macRetriesPerApsTx = ZDiagsGetStatsAttr( ZDIAGS_MAC_RETRIES_PER_APS_TX_SUCCESS );
+//  323 
+//  324     apsTxUcastSuccess = ZDiagsGetStatsAttr( ZDIAGS_APS_TX_UCAST_SUCCESS );
+//  325 
+//  326     apsTxUcastFailure = ZDiagsGetStatsAttr( ZDIAGS_APS_TX_UCAST_FAIL );
+//  327 
+//  328     *dataLen = 2;  // this is the lenght of ATTRID_DIAGNOSTIC_AVERAGE_MAC_RETRY_PER_APS_MESSAGE_SENT
+//  329 
+//  330     if ( ( apsTxUcastSuccess != 0 ) || ( apsTxUcastFailure != 0 ) )
+//  331     {
+//  332       // This formula considers the total MAC Failures per APS transmitted packet.
+//  333       // If MAC PIB element maxFrameRetries is changed from the default value 3, this formula
+//  334       // shall be updated and replace 4 with (MAC PIB maxFrameRetries+1) value
+//  335       *attrValue = ( macRetriesPerApsTx + ( apsTxUcastFailure * 4 ) ) / ( apsTxUcastSuccess + apsTxUcastFailure );
+//  336     }
+//  337     else
+//  338     {
+//  339       *attrValue = 0;
+//  340     }
+//  341   }
+//  342   // look-up for ZDiags attribute ID, based on the ZCL Diagnostics cluster attribute ID
+//  343   else if ( zclDiagnostic_GetAttribData( attributeId, &ZDiagsAttrId, dataLen ) == ZSuccess )
+//  344   {
+//  345     *attrValue = ZDiagsGetStatsAttr( ZDiagsAttrId );
+//  346   }
+//  347   else
+//  348   {
+//  349     status = ZFailure;
+//  350   }
+//  351 
+//  352   return ( status );
+//  353 }
+//  354 
+//  355 /*********************************************************************
+//  356  * @fn      zclDiagnostic_ReadWriteAttrCB
+//  357  *
+//  358  * @brief   Handle Diagnostics attributes.
+//  359  *
+//  360  * @param   clusterId - cluster that attribute belongs to
+//  361  * @param   attrId - attribute to be read or written
+//  362  * @param   oper - ZCL_OPER_LEN, ZCL_OPER_READ, or ZCL_OPER_WRITE
+//  363  * @param   pValue - pointer to attribute value, OTA endian
+//  364  * @param   pLen - length of attribute value read, native endian
+//  365  *
+//  366  * @return  status
+//  367  */
+//  368 ZStatus_t zclDiagnostic_ReadWriteAttrCB( uint16 clusterId, uint16 attrId, uint8 oper,
+//  369                                          uint8 *pValue, uint16 *pLen )
+//  370 {
+//  371   ZStatus_t status = ZSuccess;
+//  372   uint16 tempAttr;
+//  373   uint32 attrValue;
+//  374   afIncomingMSGPacket_t *origPkt;
+//  375 
+//  376   origPkt = zcl_getRawAFMsg();
+//  377 
+//  378   switch ( oper )
+//  379   {
+//  380     case ZCL_OPER_LEN:
+//  381       if ( ( attrId == ATTRID_DIAGNOSTIC_LAST_MESSAGE_LQI ) ||
+//  382            ( attrId == ATTRID_DIAGNOSTIC_LAST_MESSAGE_RSSI ) )
+//  383       {
+//  384         *pLen = 1;
+//  385       }
+//  386       else if ( attrId == ATTRID_DIAGNOSTIC_AVERAGE_MAC_RETRY_PER_APS_MESSAGE_SENT )
+//  387       {
+//  388         *pLen = 2;
+//  389       }
+//  390       // The next function call only returns the length for attributes that are defined
+//  391       // in lower layers
+//  392       else if ( zclDiagnostic_GetAttribData( attrId, &tempAttr, pLen ) != ZSuccess )
+//  393       {
+//  394         *pLen = 0;
+//  395         status = ZFailure;  // invalid length
+//  396       }
+//  397       break;
+//  398 
+//  399     case ZCL_OPER_READ:
+//  400       // Identify if incoming msg is LQI or RSSI attribute
+//  401       // and return the LQI and RSSI of the incoming values
+//  402       if ( attrId == ATTRID_DIAGNOSTIC_LAST_MESSAGE_LQI )
+//  403       {
+//  404         *pLen = 1;
+//  405         attrValue = origPkt->LinkQuality;
+//  406       }
+//  407       else if ( attrId == ATTRID_DIAGNOSTIC_LAST_MESSAGE_RSSI )
+//  408       {
+//  409         //origPkt = zcl_getRawAFMsg();
+//  410         *pLen = 1;
+//  411         attrValue = origPkt->rssi;
+//  412       }
+//  413       else if ( zclDiagnostic_GetStatsAttr( attrId, &attrValue, pLen ) == ZSuccess )
+//  414       {
+//  415         if ( ( attrId == ATTRID_DIAGNOSTIC_MAC_TX_UCAST_RETRY ) ||
+//  416              ( attrId == ATTRID_DIAGNOSTIC_MAC_TX_UCAST_FAIL  ) )
+//  417         {
+//  418           // The lower layer counter is a 32 bit counter, report the higher 16 bit value
+//  419           // util the lower layer counter wraps-up
+//  420           if ( attrValue > 0x0000FFFF )
+//  421           {
+//  422             attrValue = 0x0000FFFF;
+//  423           }
+//  424         }
+//  425       }
+//  426       else
+//  427       {
+//  428         *pLen = 0;
+//  429         status = ZFailure;  // invalid attribute
+//  430       }
+//  431 
+//  432       if ( *pLen == 1 )
+//  433       {
+//  434         pValue[0] = BREAK_UINT32( attrValue, 0 );
+//  435       }
+//  436       else if ( *pLen == 2 )
+//  437       {
+//  438         pValue[0] = LO_UINT16( attrValue );
+//  439         pValue[1] = HI_UINT16( attrValue );
+//  440       }
+//  441       else if ( *pLen == 4 )
+//  442       {
+//  443         pValue[0] = BREAK_UINT32( attrValue, 0 );
+//  444         pValue[1] = BREAK_UINT32( attrValue, 1 );
+//  445         pValue[2] = BREAK_UINT32( attrValue, 2 );
+//  446         pValue[3] = BREAK_UINT32( attrValue, 3 );
+//  447       }
+//  448 
+//  449       break;
+//  450 
+//  451     case ZCL_OPER_WRITE:
+//  452       status = ZFailure;  // All attributes in Diagnostics cluster are READ ONLY
+//  453       break;
+//  454   }
+//  455 
+//  456   return ( status );
+//  457 }
+//  458 
+//  459 /****************************************************************************
+//  460  * @fn          zclDiagnostic_RestoreStatsFromNV
+//  461  *
+//  462  * @brief       Restores the statistics table from NV into the RAM table.
+//  463  *
+//  464  * @param       none.
+//  465  *
+//  466  * @return      ZSuccess - if NV data was restored from NV.
+//  467  *              ZFailure - Otherwise, NV_OPER_FAILED for failure.
+//  468  */
+//  469 uint8 zclDiagnostic_RestoreStatsFromNV( void )
+//  470 {
+//  471   return ( ZDiagsRestoreStatsFromNV() );
+//  472 }
+//  473 
+//  474    /****************************************************************************
+//  475  * @fn          zclDiagnostic_SaveStatsToNV
+//  476  *
+//  477  * @brief       Saves the statistics table from RAM to NV.
+//  478  *
+//  479  * @param       none.
+//  480  *
+//  481  * @return      System Time.
+//  482  */
+//  483 uint32 zclDiagnostic_SaveStatsToNV( void )
+//  484 {
+//  485    return( ZDiagsSaveStatsToNV() );
+//  486 }
+//  487 
+//  488 
+//  489 #endif // ZCL_DIAGNOSTIC
+//  490 /********************************************************************************************
+//  491 *********************************************************************************************/
+//  492 
+// 
+//
+// 
+//
+//
+//Errors: none
+//Warnings: none

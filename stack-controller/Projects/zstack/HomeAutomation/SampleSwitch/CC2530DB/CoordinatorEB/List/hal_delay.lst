@@ -1,0 +1,276 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.10.1.4655 for 8051               22/Nov/2023  15:42:40
+# Copyright 2004-2017 IAR Systems AB.
+# Standalone license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        D:\fuzzing-coordinator-response-collection\Components\hal\target\CC2530EB\Common\hal_delay.c
+#    Command line       =  
+#        -f C:\Users\ADMINI~1\AppData\Local\Temp\EW9DB5.tmp
+#        (D:\fuzzing-coordinator-response-collection\Components\hal\target\CC2530EB\Common\hal_delay.c
+#        -D SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE -D
+#        MULTICAST_ENABLED=FALSE -D ZCL_READ -D ZCL_DISCOVER -D ZCL_WRITE -D
+#        ZCL_BASIC -D ZCL_IDENTIFY -D ISR_KEYINTERRUPT -D HAL_UART=TRUE -D
+#        HAL_LCD=FALSE -D ZCL_ON_OFF -D INT_HEAP_LEN=2800 -D
+#        HAL_UART_DMA_RX_MAX=256 -D HAL_UART_DMA_TX_MAX=256 -lC
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+#        -lA
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+#        --diag_suppress Pe001,Pa010 -o
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj
+#        -e --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=banked --calling_convention=xdata_reentrant
+#        --place_constants=data_rom --nr_virtual_regs 8 -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+#        -DZDO_COORDINATOR -DRTR_NWK) -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x00, 0x01, 0x02, 0x03,
+#        0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E,
+#        0x0F}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+#        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+#        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+#        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000
+#        -DENABLE_LED4_DISABLE_S1) -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\Source\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\Source\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\ZMain\TI2530DB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mt\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\osal\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\saddr\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\sdata\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\af\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\bdb\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\gp\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sec\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sys\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zcl\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\Common\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\SPI\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\Font\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_LCD_SPI\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_OLED\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_TFT\
+#        -Ohz --require_prototypes)
+#    Locale             =  Chinese (Simplified)_China.936
+#    List file          =  
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List\hal_delay.lst
+#    Object file        =  
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj\hal_delay.r51
+#
+###############################################################################
+
+D:\fuzzing-coordinator-response-collection\Components\hal\target\CC2530EB\Common\hal_delay.c
+      1          /**
+      2           * Copyright (c) 2020~2022 iotlucker.com, All Rights Reserved.
+      3           *
+      4           * @Official Store: https://shop233815998.taobao.com
+      5           * @Official Website & Online document: http://www.iotlucker.com
+      6           * @WeChat Official Accounts: shanxuefang_iot
+      7           * @Support: 1915912696@qq.com
+      8           */
+      9          #include "hal_delay.h"
+     10          
+     11          #pragma optimize=none
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     12          void delayUsIn32Mhz(uint16_t nUs)
+   \                     delayUsIn32Mhz:
+     13          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     14              for(uint16_t i = 0; i < nUs; i++)
+   \   000000   7800         MOV       R0,#0x0
+   \   000002   7900         MOV       R1,#0x0
+   \                     ??delayUsIn32Mhz_0:
+   \   000004   C3           CLR       C
+   \   000005   E8           MOV       A,R0
+   \   000006   9A           SUBB      A,R2
+   \   000007   E9           MOV       A,R1
+   \   000008   9B           SUBB      A,R3
+   \   000009   500E         JNC       ??delayUsIn32Mhz_1
+     15              {
+     16                  asm("NOP");
+   \   00000B   00           NOP
+     17                  asm("NOP");
+   \   00000C   00           NOP
+     18                  asm("NOP");
+   \   00000D   00           NOP
+     19                  asm("NOP");
+   \   00000E   00           NOP
+     20                  asm("NOP");
+   \   00000F   00           NOP
+     21                  asm("NOP");
+   \   000010   00           NOP
+     22                  asm("NOP");
+   \   000011   00           NOP
+     23              }
+   \   000012   08           INC       R0
+   \   000013   E8           MOV       A,R0
+   \   000014   70EE         JNZ       ??delayUsIn32Mhz_0
+   \   000016   09           INC       R1
+   \   000017   80EB         SJMP      ??delayUsIn32Mhz_0
+     24          }
+   \                     ??delayUsIn32Mhz_1:
+   \   000019   02....       LJMP      ?BRET
+     25          
+     26          #pragma optimize=none
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     27          void delayMs(halDelaySysClk_t sysClk, uint16_t nMs)
+   \                     delayMs:
+     28          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV       A,#-0xa
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+     29            uint16_t i, j;
+     30            uint16_t loop1Ms;
+     31            
+     32            if (sysClk == SYSCLK_16MHZ) loop1Ms = 535;
+   \   000005   E9           MOV       A,R1
+   \   000006   7008         JNZ       ??delayMs_0
+   \   000008   75..17       MOV       ?V0,#0x17
+   \   00000B   75..02       MOV       ?V1,#0x2
+   \   00000E   8006         SJMP      ??delayMs_1
+     33            else loop1Ms = 1070;
+   \                     ??delayMs_0:
+   \   000010   75..2E       MOV       ?V0,#0x2e
+   \   000013   75..04       MOV       ?V1,#0x4
+     34          
+     35            for(i = 0; i < nMs; i++) for(j = 0; j < loop1Ms; j++);
+   \                     ??delayMs_1:
+   \   000016   7E00         MOV       R6,#0x0
+   \   000018   7F00         MOV       R7,#0x0
+   \                     ??delayMs_2:
+   \   00001A   C3           CLR       C
+   \   00001B   EE           MOV       A,R6
+   \   00001C   9A           SUBB      A,R2
+   \   00001D   EF           MOV       A,R7
+   \   00001E   9B           SUBB      A,R3
+   \   00001F   501B         JNC       ??delayMs_3
+   \   000021   7C00         MOV       R4,#0x0
+   \   000023   7D00         MOV       R5,#0x0
+   \                     ??delayMs_4:
+   \   000025   C3           CLR       C
+   \   000026   EC           MOV       A,R4
+   \   000027   95..         SUBB      A,?V0
+   \   000029   ED           MOV       A,R5
+   \   00002A   95..         SUBB      A,?V1
+   \   00002C   5007         JNC       ??delayMs_5
+   \   00002E   0C           INC       R4
+   \   00002F   EC           MOV       A,R4
+   \   000030   70F3         JNZ       ??delayMs_4
+   \   000032   0D           INC       R5
+   \   000033   80F0         SJMP      ??delayMs_4
+   \                     ??delayMs_5:
+   \   000035   0E           INC       R6
+   \   000036   EE           MOV       A,R6
+   \   000037   70E1         JNZ       ??delayMs_2
+   \   000039   0F           INC       R7
+   \   00003A   80DE         SJMP      ??delayMs_2
+     36          }
+   \                     ??delayMs_3:
+   \   00003C   7F02         MOV       R7,#0x2
+   \   00003E   02....       LJMP      ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??delayUsIn32Mhz::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    delayUsIn32Mhz
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??delayMs::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    delayMs
+
+   Maximum stack usage in bytes:
+
+   XSTACK Function
+   ------ --------
+     10   delayMs
+      0   delayUsIn32Mhz
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      65  delayMs
+       6  delayMs::?relay
+      28  delayUsIn32Mhz
+       6  delayUsIn32Mhz::?relay
+
+ 
+ 93 bytes in segment BANKED_CODE
+ 12 bytes in segment BANK_RELAYS
+ 
+ 12 bytes of CODE     memory
+ 93 bytes of HUGECODE memory
+
+Errors: none
+Warnings: none

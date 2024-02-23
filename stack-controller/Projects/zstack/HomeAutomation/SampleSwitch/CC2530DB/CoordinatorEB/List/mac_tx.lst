@@ -1,0 +1,1906 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.10.1.4655 for 8051               22/Nov/2023  15:42:42
+# Copyright 2004-2017 IAR Systems AB.
+# Standalone license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        D:\fuzzing-coordinator-response-collection\Components\mac\low_level\srf04\mac_tx.c
+#    Command line       =  
+#        -f C:\Users\ADMINI~1\AppData\Local\Temp\EWA505.tmp
+#        (D:\fuzzing-coordinator-response-collection\Components\mac\low_level\srf04\mac_tx.c
+#        -D SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE -D
+#        MULTICAST_ENABLED=FALSE -D ZCL_READ -D ZCL_DISCOVER -D ZCL_WRITE -D
+#        ZCL_BASIC -D ZCL_IDENTIFY -D ISR_KEYINTERRUPT -D HAL_UART=TRUE -D
+#        HAL_LCD=FALSE -D ZCL_ON_OFF -D INT_HEAP_LEN=2800 -D
+#        HAL_UART_DMA_RX_MAX=256 -D HAL_UART_DMA_TX_MAX=256 -lC
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+#        -lA
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+#        --diag_suppress Pe001,Pa010 -o
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj
+#        -e --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=banked --calling_convention=xdata_reentrant
+#        --place_constants=data_rom --nr_virtual_regs 8 -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+#        -DZDO_COORDINATOR -DRTR_NWK) -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x00, 0x01, 0x02, 0x03,
+#        0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E,
+#        0x0F}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+#        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+#        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+#        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000
+#        -DENABLE_LED4_DISABLE_S1) -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\Source\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\Source\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\ZMain\TI2530DB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mt\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\osal\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\saddr\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\sdata\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\af\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\bdb\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\gp\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sec\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sys\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zcl\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\Common\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\SPI\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\Font\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_LCD_SPI\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_OLED\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_TFT\
+#        -Ohz --require_prototypes)
+#    Locale             =  Chinese (Simplified)_China.936
+#    List file          =  
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List\mac_tx.lst
+#    Object file        =  
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj\mac_tx.r51
+#
+###############################################################################
+
+D:\fuzzing-coordinator-response-collection\Components\mac\low_level\srf04\mac_tx.c
+      1          /**************************************************************************************************
+      2            Filename:       mac_tx.c
+      3            Revised:        $Date: 2015-02-17 14:17:44 -0800 (Tue, 17 Feb 2015) $
+      4            Revision:       $Revision: 42683 $
+      5          
+      6            Description:    Describe the purpose and contents of the file.
+      7          
+      8          
+      9            Copyright 2006-2015 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /* ------------------------------------------------------------------------------------------------
+     41           *                                          Includes
+     42           * ------------------------------------------------------------------------------------------------
+     43           */
+     44          
+     45          /* hal */
+     46          #include "hal_types.h"
+     47          #include "hal_defs.h"
+     48          #include "hal_mcu.h"
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IEN0
+   \                     _A_IEN0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe1
+   \   unsigned char volatile __sfr RFST
+   \                     RFST:
+   \   000000                DS 1
+     49          #include "hal_mac_cfg.h"
+     50          
+     51          /* high-level */
+     52          #include "mac_spec.h"
+     53          #include "mac_pib.h"
+     54          
+     55          /* exported low-level */
+     56          #include "mac_low_level.h"
+     57          
+     58          /* low-level specific */
+     59          #include "mac_tx.h"
+     60          #include "mac_backoff_timer.h"
+     61          #include "mac_rx.h"
+     62          #include "mac_rx_onoff.h"
+     63          #include "mac_radio.h"
+     64          #include "mac_sleep.h"
+     65          
+     66          /* target specific */
+     67          #include "mac_radio_defs.h"
+     68          #include "mac_main.h"
+     69          
+     70          /* debug */
+     71          #include "mac_assert.h"
+     72          
+     73          #ifdef ACK_DONE_ISR_WORKAROUND
+     74          typedef struct macTimer_s
+     75          {
+     76            struct macTimer_s     *pNext;                     /* next timer in queue */
+     77            int32                 backoff;                    /* timer expiration count */
+     78            void                  (*pFunc)(uint8 parameter);  /* timer callback function */
+     79            uint8                 parameter;                  /* callback function parameter */
+     80          } macTimer_t;
+     81          
+     82          extern void macTimer(macTimer_t *pTimer, uint32 backoffs);
+     83          extern void macTimerCancel(macTimer_t *pTimer);
+     84          #endif /* ACK_DONE_ISR_WROKAROUND */
+     85          
+     86          /* ------------------------------------------------------------------------------------------------
+     87           *                                            Defines
+     88           * ------------------------------------------------------------------------------------------------
+     89           */
+     90          #define MFR_LEN                   MAC_FCS_FIELD_LEN
+     91          #define PREPENDED_BYTE_LEN        1
+     92          
+     93          #ifdef ACK_DONE_ISR_WORKAROUND
+     94            #define ACK_TX_TIMEOUT_BACKOFFS   14 
+     95          #endif /* ACK_DONE_ISR_WROKAROUND */
+     96          
+     97          
+     98          /* ------------------------------------------------------------------------------------------------
+     99           *                                         Global Constants
+    100           * ------------------------------------------------------------------------------------------------
+    101           */
+    102          
+    103          /*
+    104           *  This is the time, in backoffs, required to set up a slotted transmit.
+    105           *  It is exported to high level so that code can schedule enough time
+    106           *  for slotted transmits.
+    107           *
+    108           *  A default is provided if a value is not specified.  If the default
+    109           *  is not appropriate, a #define should be added within hal_mac_cfg.h.
+    110           */
+    111          #ifndef HAL_MAC_TX_SLOTTED_DELAY
+    112          #define HAL_MAC_TX_SLOTTED_DELAY    3
+    113          #endif
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    114          uint8 const macTxSlottedDelay = HAL_MAC_TX_SLOTTED_DELAY;
+   \                     macTxSlottedDelay:
+   \   000000   03           DB 3
+    115          
+    116          
+    117          /* ------------------------------------------------------------------------------------------------
+    118           *                                         Global Variables
+    119           * ------------------------------------------------------------------------------------------------
+    120           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    121          uint8 macTxActive;
+   \                     macTxActive:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    122          uint8 macTxType;
+   \                     macTxType:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    123          uint8 macTxBe;
+   \                     macTxBe:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    124          uint8 macTxCsmaBackoffDelay;
+   \                     macTxCsmaBackoffDelay:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    125          uint8 macTxGpInterframeDelay;
+   \                     macTxGpInterframeDelay:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    126          
+    127          #ifdef ACK_DONE_ISR_WORKAROUND
+    128            /* MAC Timer for ACK transmit timeout */
+    129            macTimer_t macTxAckIsrTimer;
+    130          #endif /* ACK_DONE_ISR_WROKAROUND */
+    131          
+    132          /* ------------------------------------------------------------------------------------------------
+    133           *                                         Local Variables
+    134           * ------------------------------------------------------------------------------------------------
+    135           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    136          static uint8 nb;
+   \                     nb:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    137          static uint8 txSeqn;
+   \                     txSeqn:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    138          static uint8 txAckReq;
+   \                     txAckReq:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    139          static uint8 txRetransmitFlag;
+   \                     txRetransmitFlag:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    140          
+    141          
+    142          /* ------------------------------------------------------------------------------------------------
+    143           *                                         Local Prototypes
+    144           * ------------------------------------------------------------------------------------------------
+    145           */
+    146          static void txCsmaPrep(void);
+    147          #if (ZG_BUILD_RTR_TYPE)
+    148          static void txGreenPowerPrep(void);
+    149          #endif
+    150          static void txGo(void);
+    151          static void txCsmaGo(void);
+    152          static void txComplete(uint8 status);
+    153          
+    154          #ifdef ACK_DONE_ISR_WORKAROUND
+    155            static void txAckIsrTimeout(uint8 event);
+    156          #endif /* ACK_DONE_ISR_WROKAROUND */
+    157          
+    158          /**************************************************************************************************
+    159           * @fn          macTxInit
+    160           *
+    161           * @brief       Initialize variables for tx module.
+    162           *
+    163           * @param       none
+    164           *
+    165           * @return      none
+    166           **************************************************************************************************
+    167           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    168          MAC_INTERNAL_API void macTxInit(void)
+   \                     macTxInit:
+    169          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    170            macTxActive      = MAC_TX_ACTIVE_NO_ACTIVITY;
+   \   000004   90....       MOV       DPTR,#macTxActive
+   \   000007   E4           CLR       A
+   \   000008   F0           MOVX      @DPTR,A
+    171            txRetransmitFlag = 0;
+   \   000009   90....       MOV       DPTR,#txRetransmitFlag
+   \   00000C   F0           MOVX      @DPTR,A
+    172          
+    173          #ifdef ACK_DONE_ISR_WORKAROUND
+    174            macTxAckIsrTimer.pFunc = &txAckIsrTimeout;
+    175          #endif /* ACK_DONE_ISR_WROKAROUND */
+    176          }
+   \   00000D   02....       LJMP      ?Subroutine0 & 0xFFFF
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D083         POP       DPH
+   \   000002   D082         POP       DPL
+   \   000004   02....       LJMP      ?BRET
+    177          
+    178          
+    179          /**************************************************************************************************
+    180           * @fn          macTxHaltCleanup
+    181           *
+    182           * @brief       -
+    183           *
+    184           * @param       none
+    185           *
+    186           * @return      none
+    187           **************************************************************************************************
+    188           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    189          MAC_INTERNAL_API void macTxHaltCleanup(void)
+   \                     macTxHaltCleanup:
+    190          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    191            MAC_RADIO_TX_RESET();
+   \   000004                ; Setup parameters for call to function macCspTxReset
+   \   000004   12....       LCALL     `??macCspTxReset::?relay`; Banked call to: macCspTxReset
+    192            macTxInit();
+   \   000007                ; Setup parameters for call to function macTxInit
+   \   000007   12....       LCALL     `??macTxInit::?relay`; Banked call to: macTxInit
+    193          }
+   \   00000A   02....       LJMP      ?Subroutine0 & 0xFFFF
+    194          
+    195          
+    196          /**************************************************************************************************
+    197           * @fn          macTxFrame
+    198           *
+    199           * @brief       Transmit the frame pointed to by pMacDataTx with the specified type.
+    200           *              NOTE! It is not legal to call this function from interrupt context.
+    201           *
+    202           * @param       txType - type of transmit
+    203           *
+    204           * @return      none
+    205           **************************************************************************************************
+    206           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    207          MAC_INTERNAL_API void macTxFrame(uint8 txType)
+   \                     macTxFrame:
+    208          {
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV       A,R1
+   \   000006   FE           MOV       R6,A
+    209            MAC_ASSERT(!macTxActive);            /* transmit on top of transmit */
+   \   000007   90....       MOV       DPTR,#macTxActive
+   \   00000A   E0           MOVX      A,@DPTR
+   \   00000B   6003         JZ        ??macTxFrame_0
+   \   00000D                ; Setup parameters for call to function halAssertHandler
+   \   00000D   12....       LCALL     `??halAssertHandler::?relay`; Banked call to: halAssertHandler
+    210          
+    211            /* mark transmit as active */
+    212            macTxActive = MAC_TX_ACTIVE_INITIALIZE;
+   \                     ??macTxFrame_0:
+   \   000010   90....       MOV       DPTR,#macTxActive
+   \   000013   7401         MOV       A,#0x1
+   \   000015   F0           MOVX      @DPTR,A
+    213          
+    214            /*
+    215             *  The MAC will not enter sleep mode if there is an active transmit.  However, if macSleep() is
+    216             *  ever called from interrupt context, it possible to enter sleep state after a transmit is
+    217             *  intiated but before macTxActive is set.  To recover from this, the transmit must be aborted
+    218             *  and proper notificiation given to high-level.
+    219             */
+    220            if (macSleepState != MAC_SLEEP_STATE_AWAKE)
+   \   000016   90....       MOV       DPTR,#macSleepState
+   \   000019   E0           MOVX      A,@DPTR
+   \   00001A   6008         JZ        ??macTxFrame_1
+    221            {
+    222              /* notify high-level that transmit had to be aborted */
+    223              txComplete(MAC_TX_ABORTED);
+   \   00001C                ; Setup parameters for call to function txComplete
+   \   00001C   791D         MOV       R1,#0x1d
+   \   00001E   12....       LCALL     `??txComplete::?relay`; Banked call to: txComplete
+    224          
+    225              /* exit from transmit logic */
+    226              return;
+   \   000021   02....       LJMP      ??CrossCallReturnLabel_8 & 0xFFFF
+    227            }
+    228          
+    229            /* save transmit type */
+    230            macTxType = txType;
+   \                     ??macTxFrame_1:
+   \   000024   EE           MOV       A,R6
+   \   000025   90....       MOV       DPTR,#macTxType
+   \   000028   F0           MOVX      @DPTR,A
+    231          
+    232            /*-------------------------------------------------------------------------------
+    233             *  Prepare for transmit.
+    234             */
+    235            if (macTxType == MAC_TX_TYPE_SLOTTED)
+   \   000029   6402         XRL       A,#0x2
+   \   00002B   7005         JNZ       ??macTxFrame_2
+    236            {
+    237              MAC_RADIO_TX_PREP_SLOTTED();
+   \   00002D                ; Setup parameters for call to function macCspTxPrepSlotted
+   \   00002D   12....       LCALL     `??macCspTxPrepSlotted::?relay`; Banked call to: macCspTxPrepSlotted
+   \   000030   804A         SJMP      ??macTxFrame_3
+    238            }
+    239          
+    240          #if (ZG_BUILD_RTR_TYPE)
+    241            else if (macTxType == MAC_TX_TYPE_GREEN_POWER)
+    242            {
+    243              txGreenPowerPrep();
+    244            }
+    245          #endif
+    246          
+    247            else
+    248            {
+    249              MAC_ASSERT((macTxType == MAC_TX_TYPE_SLOTTED_CSMA) || (macTxType == MAC_TX_TYPE_UNSLOTTED_CSMA));
+   \                     ??macTxFrame_2:
+   \   000032   E0           MOVX      A,@DPTR
+   \   000033   6007         JZ        ??macTxFrame_4
+   \   000035   6401         XRL       A,#0x1
+   \   000037   6003         JZ        ??macTxFrame_4
+   \   000039                ; Setup parameters for call to function halAssertHandler
+   \   000039   12....       LCALL     `??halAssertHandler::?relay`; Banked call to: halAssertHandler
+    250          
+    251              nb = 0;
+   \                     ??macTxFrame_4:
+   \   00003C   90....       MOV       DPTR,#nb
+   \   00003F   E4           CLR       A
+   \   000040   F0           MOVX      @DPTR,A
+    252              macTxBe = (pMacDataTx->internal.txOptions & MAC_TXOPTION_ALT_BE) ? pMacPib->altBe : pMacPib->minBe;
+   \   000041   90....       MOV       DPTR,#pMacDataTx
+   \   000044   E0           MOVX      A,@DPTR
+   \   000045   F8           MOV       R0,A
+   \   000046   A3           INC       DPTR
+   \   000047   E0           MOVX      A,@DPTR
+   \   000048   C8           XCH       A,R0
+   \   000049   240E         ADD       A,#0xe
+   \   00004B   F582         MOV       DPL,A
+   \   00004D   E4           CLR       A
+   \   00004E   38           ADDC      A,R0
+   \   00004F   F583         MOV       DPH,A
+   \   000051   E0           MOVX      A,@DPTR
+   \   000052   5440         ANL       A,#0x40
+   \   000054   6005         JZ        ??macTxFrame_5
+   \   000056   90....       MOV       DPTR,#macPib + 58
+   \   000059   8003         SJMP      ??macTxFrame_6
+   \                     ??macTxFrame_5:
+   \   00005B   90....       MOV       DPTR,#macPib + 28
+   \                     ??macTxFrame_6:
+   \   00005E   E0           MOVX      A,@DPTR
+   \   00005F   90....       MOV       DPTR,#macTxBe
+   \   000062   12....       LCALL     ?Subroutine3 & 0xFFFF
+    253          
+    254              if ((macTxType == MAC_TX_TYPE_SLOTTED_CSMA) && (pMacPib->battLifeExt))
+   \                     ??CrossCallReturnLabel_2:
+   \   000065   7012         JNZ       ??macTxFrame_7
+   \   000067   90....       MOV       DPTR,#macPib + 3
+   \   00006A   E0           MOVX      A,@DPTR
+   \   00006B   600C         JZ        ??macTxFrame_7
+    255              {
+    256                macTxBe = MIN(2, macTxBe);
+   \   00006D   90....       MOV       DPTR,#macTxBe
+   \   000070   E0           MOVX      A,@DPTR
+   \   000071   C3           CLR       C
+   \   000072   9403         SUBB      A,#0x3
+   \   000074   4003         JC        ??macTxFrame_7
+   \   000076   7402         MOV       A,#0x2
+   \   000078   F0           MOVX      @DPTR,A
+    257              }
+    258          
+    259              txCsmaPrep();
+   \                     ??macTxFrame_7:
+   \   000079                ; Setup parameters for call to function txCsmaPrep
+   \   000079   12....       LCALL     `??txCsmaPrep::?relay`; Banked call to: txCsmaPrep
+    260            }
+    261          
+    262            /*-------------------------------------------------------------------------------
+    263             *  Load transmit FIFO unless this is a retransmit.  No need to write
+    264             *  the FIFO again in that case.
+    265             */
+    266            if (!txRetransmitFlag)
+   \                     ??macTxFrame_3:
+   \   00007C   90....       MOV       DPTR,#txRetransmitFlag
+   \   00007F   E0           MOVX      A,@DPTR
+   \   000080   705A         JNZ       ??macTxFrame_8
+    267            {
+    268              uint8 * p;
+    269              uint8   lenMhrMsdu;
+    270          
+    271              MAC_ASSERT(pMacDataTx != NULL); /* must have data to transmit */
+   \   000082   90....       MOV       DPTR,#pMacDataTx
+   \   000085   E0           MOVX      A,@DPTR
+   \   000086   F8           MOV       R0,A
+   \   000087   A3           INC       DPTR
+   \   000088   E0           MOVX      A,@DPTR
+   \   000089   F9           MOV       R1,A
+   \   00008A   E8           MOV       A,R0
+   \   00008B   49           ORL       A,R1
+   \   00008C   7003         JNZ       ??macTxFrame_9
+   \   00008E                ; Setup parameters for call to function halAssertHandler
+   \   00008E   12....       LCALL     `??halAssertHandler::?relay`; Banked call to: halAssertHandler
+    272          
+    273              /* save needed parameters */
+    274              txAckReq = MAC_ACK_REQUEST(pMacDataTx->msdu.p);
+   \                     ??macTxFrame_9:
+   \   000091   12....       LCALL     ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   000094   E0           MOVX      A,@DPTR
+   \   000095   F8           MOV       R0,A
+   \   000096   A3           INC       DPTR
+   \   000097   E0           MOVX      A,@DPTR
+   \   000098   F9           MOV       R1,A
+   \   000099   8882         MOV       DPL,R0
+   \   00009B   8983         MOV       DPH,R1
+   \   00009D   E0           MOVX      A,@DPTR
+   \   00009E   5420         ANL       A,#0x20
+   \   0000A0   90....       MOV       DPTR,#txAckReq
+   \   0000A3   F0           MOVX      @DPTR,A
+    275              txSeqn   = MAC_SEQ_NUMBER(pMacDataTx->msdu.p);
+   \   0000A4   8882         MOV       DPL,R0
+   \   0000A6   8983         MOV       DPH,R1
+   \   0000A8   A3           INC       DPTR
+   \   0000A9   A3           INC       DPTR
+   \   0000AA   E0           MOVX      A,@DPTR
+   \   0000AB   90....       MOV       DPTR,#txSeqn
+   \   0000AE   F0           MOVX      @DPTR,A
+    276          
+    277              /* set length of frame (note: use of term msdu is a misnomer, here it's actually mhr + msdu) */
+    278              lenMhrMsdu = pMacDataTx->msdu.len;
+   \   0000AF   90....       MOV       DPTR,#pMacDataTx
+   \   0000B2   E0           MOVX      A,@DPTR
+   \   0000B3   FA           MOV       R2,A
+   \   0000B4   A3           INC       DPTR
+   \   0000B5   E0           MOVX      A,@DPTR
+   \   0000B6   F583         MOV       DPH,A
+   \   0000B8   8A82         MOV       DPL,R2
+   \   0000BA   A3           INC       DPTR
+   \   0000BB   A3           INC       DPTR
+   \   0000BC   A3           INC       DPTR
+   \   0000BD   A3           INC       DPTR
+   \   0000BE   E0           MOVX      A,@DPTR
+   \   0000BF   FA           MOV       R2,A
+    279          
+    280              /* calling code guarantees an unused prepended byte  */
+    281              p = pMacDataTx->msdu.p - PREPENDED_BYTE_LEN;
+   \   0000C0   E8           MOV       A,R0
+   \   0000C1   24FF         ADD       A,#-0x1
+   \   0000C3   F582         MOV       DPL,A
+   \   0000C5   E9           MOV       A,R1
+   \   0000C6   34FF         ADDC      A,#-0x1
+   \   0000C8   F583         MOV       DPH,A
+    282          
+    283              /* first byte of buffer is length of MPDU */
+    284              *p = lenMhrMsdu + MFR_LEN;
+   \   0000CA   7402         MOV       A,#0x2
+   \   0000CC   2A           ADD       A,R2
+   \   0000CD   F0           MOVX      @DPTR,A
+    285          
+    286              /*
+    287               *  Flush the TX FIFO.  This is necessary in case the previous transmit was never
+    288               *  actually sent (e.g. CSMA failed without strobing TXON).  If bytes are written to
+    289               *  the FIFO but not transmitted, they remain in the FIFO to be transmitted whenever
+    290               *  a strobe of TXON does happen.
+    291               */
+    292              MAC_RADIO_FLUSH_TX_FIFO();
+   \   0000CE   75E1EE       MOV       0xe1,#-0x12
+    293          
+    294              /* write bytes to FIFO, prepended byte is included, MFR is not (it's generated by hardware) */
+    295              MAC_RADIO_WRITE_TX_FIFO(p, PREPENDED_BYTE_LEN + lenMhrMsdu);
+   \   0000D1                ; Setup parameters for call to function macMemWriteTxFifo
+   \   0000D1   7401         MOV       A,#0x1
+   \   0000D3   2A           ADD       A,R2
+   \   0000D4   F9           MOV       R1,A
+   \   0000D5   AA82         MOV       R2,DPL
+   \   0000D7   AB83         MOV       R3,DPH
+   \   0000D9   12....       LCALL     `??macMemWriteTxFifo::?relay`; Banked call to: macMemWriteTxFifo
+    296            }
+    297          
+    298            /*-------------------------------------------------------------------------------
+    299             *  If not receiving, start the transmit.  If receive is active
+    300             *  queue up the transmit.
+    301             *
+    302             *  Critical sections around the state change prevents any sort of race condition
+    303             *  with  macTxStartQueuedFrame().  This guarantees function txGo() will only be
+    304             *  called once.
+    305             */
+    306            {
+    307              halIntState_t  s;
+    308          
+    309              HAL_ENTER_CRITICAL_SECTION(s);
+   \                     ??macTxFrame_8:
+   \   0000DC   A2AF         MOV       C,0xa8.7
+   \   0000DE   E4           CLR       A
+   \   0000DF   33           RLC       A
+   \   0000E0   F8           MOV       R0,A
+   \   0000E1   C2AF         CLR       0xa8.7
+    310              if (!macRxActive && !macRxOutgoingAckFlag)
+   \   0000E3   90....       MOV       DPTR,#macRxActive
+   \   0000E6   E0           MOVX      A,@DPTR
+   \   0000E7   7011         JNZ       ??macTxFrame_10
+   \   0000E9   90....       MOV       DPTR,#macRxOutgoingAckFlag
+   \   0000EC   E0           MOVX      A,@DPTR
+   \   0000ED   700B         JNZ       ??macTxFrame_10
+    311              {
+    312                macTxActive = MAC_TX_ACTIVE_GO;
+   \   0000EF   90....       MOV       DPTR,#macTxActive
+   \   0000F2   12....       LCALL     ?Subroutine4 & 0xFFFF
+    313                HAL_EXIT_CRITICAL_SECTION(s);
+    314                txGo();
+   \                     ??CrossCallReturnLabel_6:
+   \   0000F5                ; Setup parameters for call to function txGo
+   \   0000F5   12....       LCALL     `??txGo::?relay` ; Banked call to: txGo
+   \   0000F8   8008         SJMP      ??CrossCallReturnLabel_8
+    315              }
+    316              else
+    317              {
+    318          #ifdef ACK_DONE_ISR_WORKAROUND
+    319                if( macRxOutgoingAckFlag == MAC_RX_FLAG_ACK_REQUEST )
+    320                {
+    321                  /* Add a timeout for queued frame. This special case timeout will be 
+    322                   * invoked when the ack done ISR is not fired even after 
+    323                   * ACK_TX_TIMEOUT_BACKOFFS.
+    324                   * The ACK_TX_TIMEOUT_BACKOFFS value is empirically used keeping in mind
+    325                   * the time for a 127 byte packet to be received over-the-air
+    326                   * MAC_A_MAX_PHY_PACKET_SIZE is always set to 127 bytes which is the 
+    327                   * maximum size a packet can have.
+    328                	 */
+    329                  macTimer(&macTxAckIsrTimer, ACK_TX_TIMEOUT_BACKOFFS);        
+    330                }
+    331          #endif /* ACK_DONE_ISR_WROKAROUND */
+    332                
+    333                macTxActive = MAC_TX_ACTIVE_QUEUED;
+   \                     ??macTxFrame_10:
+   \   0000FA   90....       MOV       DPTR,#macTxActive
+   \   0000FD   7402         MOV       A,#0x2
+   \   0000FF   12....       LCALL     ??Subroutine5_0 & 0xFFFF
+    334                HAL_EXIT_CRITICAL_SECTION(s);
+    335              }
+    336            }
+    337          }
+   \                     ??CrossCallReturnLabel_8:
+   \   000102   02....       LJMP      ?Subroutine1 & 0xFFFF
+   \   000105                REQUIRE RFST
+   \   000105                REQUIRE _A_IEN0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   F0           MOVX      @DPTR,A
+   \   000001                ; Setup parameters for call to function macTxFrame
+   \   000001   90....       MOV       DPTR,#macTxType
+   \   000004   E0           MOVX      A,@DPTR
+   \   000005   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   7483         MOV       A,#-0x7d
+   \   000002                REQUIRE ??Subroutine5_0
+   \   000002                ; // Fall through to label ??Subroutine5_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine5_0:
+   \   000000   F0           MOVX      @DPTR,A
+   \   000001   E8           MOV       A,R0
+   \   000002   A2E0         MOV       C,0xE0 /* A   */.0
+   \   000004   92AF         MOV       0xa8.7,C
+   \   000006   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   7F01         MOV       R7,#0x1
+   \   000002   02....       LJMP      ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   90....       MOV       DPTR,#pMacDataTx
+   \   000003   E0           MOVX      A,@DPTR
+   \   000004   F8           MOV       R0,A
+   \   000005   A3           INC       DPTR
+   \   000006   E0           MOVX      A,@DPTR
+   \   000007   F583         MOV       DPH,A
+   \   000009   8882         MOV       DPL,R0
+   \   00000B   A3           INC       DPTR
+   \   00000C   A3           INC       DPTR
+   \   00000D   22           RET
+    338          
+    339          
+    340          /*=================================================================================================
+    341           * @fn          txCsmaPrep
+    342           *
+    343           * @brief       Prepare/initialize for a CSMA transmit.
+    344           *
+    345           * @param       none
+    346           *
+    347           * @return      none
+    348           *=================================================================================================
+    349           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    350          static void txCsmaPrep(void)
+   \                     txCsmaPrep:
+    351          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV       A,#-0xa
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    352            macTxCsmaBackoffDelay = macRadioRandomByte() & ((1 << macTxBe) - 1);
+   \   000005                ; Setup parameters for call to function macRadioRandomByte
+   \   000005   12....       LCALL     `??macRadioRandomByte::?relay`; Banked call to: macRadioRandomByte
+   \   000008   E9           MOV       A,R1
+   \   000009   F9           MOV       R1,A
+   \   00000A   75..01       MOV       ?V0,#0x1
+   \   00000D   75..00       MOV       ?V1,#0x0
+   \   000010   90....       MOV       DPTR,#macTxBe
+   \   000013   E0           MOVX      A,@DPTR
+   \   000014   78..         MOV       R0,#?V0
+   \   000016   12....       LCALL     ?S_SHL
+   \   000019   E5..         MOV       A,?V0
+   \   00001B   14           DEC       A
+   \   00001C   59           ANL       A,R1
+   \   00001D   90....       MOV       DPTR,#macTxCsmaBackoffDelay
+   \   000020   12....       LCALL     ?Subroutine3 & 0xFFFF
+    353          
+    354            if (macTxType == MAC_TX_TYPE_SLOTTED_CSMA)
+   \                     ??CrossCallReturnLabel_3:
+   \   000023   7005         JNZ       ??txCsmaPrep_0
+    355            {
+    356              MAC_RADIO_TX_PREP_CSMA_SLOTTED();
+   \   000025                ; Setup parameters for call to function macCspTxPrepCsmaSlotted
+   \   000025   12....       LCALL     `??macCspTxPrepCsmaSlotted::?relay`; Banked call to: macCspTxPrepCsmaSlotted
+   \   000028   8003         SJMP      ??txCsmaPrep_1
+    357            }
+    358            else
+    359            {
+    360              MAC_RADIO_TX_PREP_CSMA_UNSLOTTED();
+   \                     ??txCsmaPrep_0:
+   \   00002A                ; Setup parameters for call to function macCspTxPrepCsmaUnslotted
+   \   00002A   12....       LCALL     `??macCspTxPrepCsmaUnslotted::?relay`; Banked call to: macCspTxPrepCsmaUnslotted
+    361            }
+    362          }
+   \                     ??txCsmaPrep_1:
+   \   00002D   7F02         MOV       R7,#0x2
+   \   00002F   02....       LJMP      ?BANKED_LEAVE_XDATA
+    363          
+    364          
+    365          #if (ZG_BUILD_RTR_TYPE)
+    366          /*=================================================================================================
+    367           * @fn          txGreenPowerPrep
+    368           *
+    369           * @brief       Prepare/initialize for a Green Power transmit.
+    370           *
+    371           * @param       none
+    372           *
+    373           * @return      none
+    374           *=================================================================================================
+    375           */
+    376          static void txGreenPowerPrep(void)
+    377          {
+    378            /* Re-use macTxCsmaBackoffDelay for Green Power number of transmissions */
+    379            macTxCsmaBackoffDelay  = pMacDataTx->internal.gpNumOfTx;
+    380            macTxGpInterframeDelay = pMacDataTx->internal.gpInterframeDelay;
+    381          
+    382            if (macTxGpInterframeDelay == 0)
+    383            {
+    384              macTxGpInterframeDelay = 1;
+    385            }
+    386          
+    387            MAC_RADIO_TX_PREP_GREEN_POWER();
+    388          }
+    389          #endif /* #if (ZG_BUILD_RTR_TYPE) */
+    390          
+    391          
+    392          /*=================================================================================================
+    393           * @fn          txGo
+    394           *
+    395           * @brief       Start a transmit going.
+    396           *
+    397           * @param       none
+    398           *
+    399           * @return      none
+    400           *=================================================================================================
+    401           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    402          static void txGo(void)
+   \                     txGo:
+    403          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    404            /*
+    405             *  If execution has reached this point, any transmitted ACK has long since completed.  It is
+    406             *  possible though that there is still a pending callback.  If so, it is irrelevant and needs to
+    407             *  be canceled at this point.
+    408             */
+    409            MAC_RADIO_CANCEL_ACK_TX_DONE_CALLBACK();
+   \   000004   9061A4       MOV       DPTR,#0x61a4
+   \   000007   E0           MOVX      A,@DPTR
+   \   000008   C2E0         CLR       0xE0 /* A   */.0
+   \   00000A   F0           MOVX      @DPTR,A
+    410            macRxOutgoingAckFlag = 0;
+   \   00000B   90....       MOV       DPTR,#macRxOutgoingAckFlag
+   \   00000E   E4           CLR       A
+   \   00000F   12....       LCALL     ?Subroutine3 & 0xFFFF
+    411          
+    412            /* based on type of transmit, call the correct "go" functionality */
+    413            if (macTxType == MAC_TX_TYPE_SLOTTED)
+   \                     ??CrossCallReturnLabel_4:
+   \   000012   6402         XRL       A,#0x2
+   \   000014   7005         JNZ       ??txGo_0
+    414            {
+    415              MAC_RADIO_TX_GO_SLOTTED();
+   \   000016                ; Setup parameters for call to function macCspTxGoSlotted
+   \   000016   12....       LCALL     `??macCspTxGoSlotted::?relay`; Banked call to: macCspTxGoSlotted
+   \   000019   800D         SJMP      ??txGo_1
+    416            }
+    417          
+    418          //ifdef FEATURE_GREEN_POWER
+    419            else if (macTxType == MAC_TX_TYPE_GREEN_POWER)
+   \                     ??txGo_0:
+   \   00001B   E0           MOVX      A,@DPTR
+   \   00001C   6403         XRL       A,#0x3
+   \   00001E   7005         JNZ       ??txGo_2
+    420            {
+    421              MAC_RADIO_TX_GO_GREEN_POWER();
+   \   000020                ; Setup parameters for call to function macCspTxGoGreenPower
+   \   000020   12....       LCALL     `??macCspTxGoGreenPower::?relay`; Banked call to: macCspTxGoGreenPower
+   \   000023   8003         SJMP      ??txGo_1
+    422            }
+    423          //endif /* #ifdef FEATURE_GREEN_POWER */
+    424          
+    425            else
+    426            {
+    427              txCsmaGo();
+   \                     ??txGo_2:
+   \   000025                ; Setup parameters for call to function txCsmaGo
+   \   000025   12....       LCALL     `??txCsmaGo::?relay`; Banked call to: txCsmaGo
+    428            }
+    429          }
+   \                     ??txGo_1:
+   \   000028   80..         SJMP      ?Subroutine0
+    430          
+    431          
+    432          /*=================================================================================================
+    433           * @fn          txCsmaGo
+    434           *
+    435           * @brief       Start a CSMA transmit going.
+    436           *
+    437           * @param       none
+    438           *
+    439           * @return      none
+    440           *=================================================================================================
+    441           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    442          static void txCsmaGo(void)
+   \                     txCsmaGo:
+    443          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    444            if (macTxType == MAC_TX_TYPE_SLOTTED_CSMA)
+   \   000004   90....       MOV       DPTR,#macTxType
+   \   000007   E0           MOVX      A,@DPTR
+   \   000008   7014         JNZ       ??txCsmaGo_0
+    445            {
+    446              if (macTxCsmaBackoffDelay >= macDataTxTimeAvailable())
+   \   00000A                ; Setup parameters for call to function macDataTxTimeAvailable
+   \   00000A   12....       LCALL     `??macDataTxTimeAvailable::?relay`; Banked call to: macDataTxTimeAvailable
+   \   00000D   E9           MOV       A,R1
+   \   00000E   F8           MOV       R0,A
+   \   00000F   90....       MOV       DPTR,#macTxCsmaBackoffDelay
+   \   000012   E0           MOVX      A,@DPTR
+   \   000013   C3           CLR       C
+   \   000014   98           SUBB      A,R0
+   \   000015   4007         JC        ??txCsmaGo_0
+    447              {
+    448                txComplete(MAC_NO_TIME);
+   \   000017                ; Setup parameters for call to function txComplete
+   \   000017   791C         MOV       R1,#0x1c
+   \   000019   12....       LCALL     `??txComplete::?relay`; Banked call to: txComplete
+    449                return;
+   \   00001C   8003         SJMP      ??txCsmaGo_1
+    450              }
+    451              MAC_RADIO_TX_GO_SLOTTED_CSMA();
+    452            }
+    453            else
+    454            {
+    455              MAC_RADIO_TX_GO_CSMA();
+   \                     ??txCsmaGo_0:
+   \   00001E                ; Setup parameters for call to function macCspTxGoCsma
+   \   00001E   12....       LCALL     `??macCspTxGoCsma::?relay`; Banked call to: macCspTxGoCsma
+    456            }
+    457          }
+   \                     ??txCsmaGo_1:
+   \   000021   80..         SJMP      ?Subroutine0
+    458          
+    459          
+    460          /**************************************************************************************************
+    461           * @fn          macTxFrameRetransmit
+    462           *
+    463           * @brief       Retransmit the last frame.
+    464           *
+    465           * @param       none
+    466           *
+    467           * @return      none
+    468           **************************************************************************************************
+    469           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    470          MAC_INTERNAL_API void macTxFrameRetransmit(void)
+   \                     macTxFrameRetransmit:
+    471          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    472            txRetransmitFlag = 1;
+   \   000004   90....       MOV       DPTR,#txRetransmitFlag
+   \   000007   7401         MOV       A,#0x1
+   \   000009   12....       LCALL     ?Subroutine3 & 0xFFFF
+    473          
+    474          #if defined ( FEATURE_SYSTEM_STATS )
+    475            /* Update Diagnostics counter */
+    476            macLowLevelDiags(MAC_DIAGS_TX_UCAST_RETRY);
+    477          #endif
+    478            
+    479            macTxFrame(macTxType);
+   \                     ??CrossCallReturnLabel_5:
+   \   00000C   F9           MOV       R1,A
+   \   00000D   12....       LCALL     `??macTxFrame::?relay`; Banked call to: macTxFrame
+    480          }
+   \   000010                REQUIRE ?Subroutine0
+   \   000010                ; // Fall through to label ?Subroutine0
+    481          
+    482          
+    483          /**************************************************************************************************
+    484           * @fn          macTxStartQueuedFrame
+    485           *
+    486           * @brief       See if there is a queued frame waiting to transmit.  If so, initiate
+    487           *              the transmit now.
+    488           *
+    489           * @param       none
+    490           *
+    491           * @return      none
+    492           **************************************************************************************************
+    493           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    494          MAC_INTERNAL_API void macTxStartQueuedFrame(void)
+   \                     macTxStartQueuedFrame:
+    495          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    496            halIntState_t  s;
+    497          
+    498            MAC_ASSERT(!macRxActive && !macRxOutgoingAckFlag); /* queued frames should not transmit in middle of a receive */
+   \   000004   90....       MOV       DPTR,#macRxActive
+   \   000007   E0           MOVX      A,@DPTR
+   \   000008   7006         JNZ       ??macTxStartQueuedFrame_0
+   \   00000A   90....       MOV       DPTR,#macRxOutgoingAckFlag
+   \   00000D   E0           MOVX      A,@DPTR
+   \   00000E   6003         JZ        ??macTxStartQueuedFrame_1
+   \                     ??macTxStartQueuedFrame_0:
+   \   000010                ; Setup parameters for call to function halAssertHandler
+   \   000010   12....       LCALL     `??halAssertHandler::?relay`; Banked call to: halAssertHandler
+    499          
+    500            /*
+    501             *  Critical sections around the state change prevents any sort of race condition
+    502             *  with macTxFrame().  This guarantees function txGo() will only be be called once.
+    503             */
+    504            HAL_ENTER_CRITICAL_SECTION(s);
+   \                     ??macTxStartQueuedFrame_1:
+   \   000013   A2AF         MOV       C,0xa8.7
+   \   000015   E4           CLR       A
+   \   000016   33           RLC       A
+   \   000017   F8           MOV       R0,A
+   \   000018   C2AF         CLR       0xa8.7
+    505            if (macTxActive == MAC_TX_ACTIVE_QUEUED)
+   \   00001A   90....       MOV       DPTR,#macTxActive
+   \   00001D   E0           MOVX      A,@DPTR
+   \   00001E   6402         XRL       A,#0x2
+   \   000020   7008         JNZ       ??macTxStartQueuedFrame_2
+    506            {
+    507              macTxActive = MAC_TX_ACTIVE_GO;
+   \   000022   12....       LCALL     ?Subroutine4 & 0xFFFF
+    508              HAL_EXIT_CRITICAL_SECTION(s);
+    509              txGo();
+   \                     ??CrossCallReturnLabel_7:
+   \   000025                ; Setup parameters for call to function txGo
+   \   000025   12....       LCALL     `??txGo::?relay` ; Banked call to: txGo
+   \   000028   8005         SJMP      ??macTxStartQueuedFrame_3
+    510            }
+    511            else
+    512            {
+    513              HAL_EXIT_CRITICAL_SECTION(s);
+   \                     ??macTxStartQueuedFrame_2:
+   \   00002A   E8           MOV       A,R0
+   \   00002B   A2E0         MOV       C,0xE0 /* A   */.0
+   \   00002D   92AF         MOV       0xa8.7,C
+    514            }
+    515          }
+   \                     ??macTxStartQueuedFrame_3:
+   \   00002F   80..         SJMP      ?Subroutine0
+   \   000031                REQUIRE _A_IEN0
+    516          
+    517          
+    518          /**************************************************************************************************
+    519           * @fn          macTxChannelBusyCallback
+    520           *
+    521           * @brief       This callback is executed if a CSMA transmit was attempted but the channel
+    522           *              was busy.
+    523           *
+    524           * @param       none
+    525           *
+    526           * @return      none
+    527           **************************************************************************************************
+    528           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    529          MAC_INTERNAL_API void macTxChannelBusyCallback(void)
+   \                     macTxChannelBusyCallback:
+    530          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    531            MAC_ASSERT((macTxType == MAC_TX_TYPE_SLOTTED_CSMA) || (macTxType == MAC_TX_TYPE_UNSLOTTED_CSMA));
+   \   000004   90....       MOV       DPTR,#macTxType
+   \   000007   E0           MOVX      A,@DPTR
+   \   000008   6007         JZ        ??macTxChannelBusyCallback_0
+   \   00000A   6401         XRL       A,#0x1
+   \   00000C   6003         JZ        ??macTxChannelBusyCallback_0
+   \   00000E                ; Setup parameters for call to function halAssertHandler
+   \   00000E   12....       LCALL     `??halAssertHandler::?relay`; Banked call to: halAssertHandler
+    532          
+    533            /* turn off receiver if allowed */
+    534            macTxActive = MAC_TX_ACTIVE_CHANNEL_BUSY;
+   \                     ??macTxChannelBusyCallback_0:
+   \   000011   90....       MOV       DPTR,#macTxActive
+   \   000014   7404         MOV       A,#0x4
+   \   000016   F0           MOVX      @DPTR,A
+    535            macRxOffRequest();
+   \   000017                ; Setup parameters for call to function macRxOffRequest
+   \   000017   12....       LCALL     `??macRxOffRequest::?relay`; Banked call to: macRxOffRequest
+    536          
+    537            /*  clear channel assement failed, follow through with CSMA algorithm */
+    538            nb++;
+   \   00001A   90....       MOV       DPTR,#nb
+   \   00001D   E0           MOVX      A,@DPTR
+   \   00001E   04           INC       A
+   \   00001F   F0           MOVX      @DPTR,A
+    539            if (nb > pMacPib->maxCsmaBackoffs)
+   \   000020   F8           MOV       R0,A
+   \   000021   90....       MOV       DPTR,#macPib + 27
+   \   000024   E0           MOVX      A,@DPTR
+   \   000025   C3           CLR       C
+   \   000026   98           SUBB      A,R0
+   \   000027   5007         JNC       ??macTxChannelBusyCallback_1
+    540            {
+    541              txComplete(MAC_CHANNEL_ACCESS_FAILURE);
+   \   000029                ; Setup parameters for call to function txComplete
+   \   000029   79E1         MOV       R1,#-0x1f
+   \   00002B   12....       LCALL     `??txComplete::?relay`; Banked call to: txComplete
+   \   00002E   8032         SJMP      ??macTxChannelBusyCallback_2
+    542            }
+    543            else
+    544            {
+    545              macTxBe = MIN(macTxBe+1, pMacPib->maxBe);
+   \                     ??macTxChannelBusyCallback_1:
+   \   000030   90....       MOV       DPTR,#macPib + 39
+   \   000033   E0           MOVX      A,@DPTR
+   \   000034   FA           MOV       R2,A
+   \   000035   90....       MOV       DPTR,#macTxBe
+   \   000038   E0           MOVX      A,@DPTR
+   \   000039   7900         MOV       R1,#0x0
+   \   00003B   2401         ADD       A,#0x1
+   \   00003D   F8           MOV       R0,A
+   \   00003E   5001         JNC       ??macTxChannelBusyCallback_3
+   \   000040   09           INC       R1
+   \                     ??macTxChannelBusyCallback_3:
+   \   000041   EA           MOV       A,R2
+   \   000042   FC           MOV       R4,A
+   \   000043   C3           CLR       C
+   \   000044   E8           MOV       A,R0
+   \   000045   9C           SUBB      A,R4
+   \   000046   E9           MOV       A,R1
+   \   000047   9400         SUBB      A,#0x0
+   \   000049   A2D2         MOV       C,0xD0 /* PSW */.2
+   \   00004B   65D0         XRL       A,PSW
+   \   00004D   33           RLC       A
+   \   00004E   5004         JNC       ??macTxChannelBusyCallback_4
+   \   000050   E0           MOVX      A,@DPTR
+   \   000051   04           INC       A
+   \   000052   8001         SJMP      ??macTxChannelBusyCallback_5
+   \                     ??macTxChannelBusyCallback_4:
+   \   000054   EA           MOV       A,R2
+   \                     ??macTxChannelBusyCallback_5:
+   \   000055   F0           MOVX      @DPTR,A
+    546              txCsmaPrep();
+   \   000056                ; Setup parameters for call to function txCsmaPrep
+   \   000056   12....       LCALL     `??txCsmaPrep::?relay`; Banked call to: txCsmaPrep
+    547              macTxActive = MAC_TX_ACTIVE_GO;
+   \   000059   90....       MOV       DPTR,#macTxActive
+   \   00005C   7483         MOV       A,#-0x7d
+   \   00005E   F0           MOVX      @DPTR,A
+    548              txCsmaGo();
+   \   00005F                ; Setup parameters for call to function txCsmaGo
+   \   00005F   12....       LCALL     `??txCsmaGo::?relay`; Banked call to: txCsmaGo
+    549            }
+    550          }
+   \                     ??macTxChannelBusyCallback_2:
+   \   000062   02....       LJMP      ?Subroutine0 & 0xFFFF
+    551          
+    552          
+    553          /**************************************************************************************************
+    554           * @fn          macTxDoneCallback
+    555           *
+    556           * @brief       This callback is executed when transmit completes.
+    557           *
+    558           * @param       none
+    559           *
+    560           * @return      none
+    561           **************************************************************************************************
+    562           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    563          MAC_INTERNAL_API void macTxDoneCallback(void)
+   \                     macTxDoneCallback:
+    564          {
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    565            halIntState_t  s;
+    566          
+    567            /*
+    568             *  There is a small chance this function could be called twice for a single transmit.
+    569             *  To prevent logic from executing twice, the state variable macTxActive is used as
+    570             *  a gating mechanism to guarantee single time execution.
+    571             */
+    572            HAL_ENTER_CRITICAL_SECTION(s);
+   \   000005   A2AF         MOV       C,0xa8.7
+   \   000007   E4           CLR       A
+   \   000008   33           RLC       A
+   \   000009   FE           MOV       R6,A
+   \   00000A   C2AF         CLR       0xa8.7
+    573            if (macTxActive == MAC_TX_ACTIVE_GO)
+   \   00000C   90....       MOV       DPTR,#macTxActive
+   \   00000F   E0           MOVX      A,@DPTR
+   \   000010   6483         XRL       A,#0x83
+   \   000012   7027         JNZ       ??macTxDoneCallback_0
+    574            {
+    575              if (macRxActive)
+   \   000014   90....       MOV       DPTR,#macRxActive
+   \   000017   E0           MOVX      A,@DPTR
+   \   000018   6003         JZ        ??macTxDoneCallback_1
+    576              {
+    577                /* RX was partly done just before TX. Reset the RX state. */
+    578                macTxCollisionWithRxCallback();
+   \   00001A                ; Setup parameters for call to function macRxHaltCleanup
+   \   00001A   12....       LCALL     `??macRxHaltCleanup::?relay`; Banked call to: macRxHaltCleanup
+    579              }
+    580              
+    581              /* see if ACK was requested */
+    582              if (!txAckReq)
+   \                     ??macTxDoneCallback_1:
+   \   00001D   90....       MOV       DPTR,#txAckReq
+   \   000020   E0           MOVX      A,@DPTR
+   \   000021   90....       MOV       DPTR,#macTxActive
+   \   000024   700F         JNZ       ??macTxDoneCallback_2
+    583              {
+    584                macTxActive = MAC_TX_ACTIVE_DONE;
+   \   000026   7485         MOV       A,#-0x7b
+   \   000028   F0           MOVX      @DPTR,A
+    585                HAL_EXIT_CRITICAL_SECTION(s);
+   \   000029   EE           MOV       A,R6
+   \   00002A   A2E0         MOV       C,0xE0 /* A   */.0
+   \   00002C   92AF         MOV       0xa8.7,C
+    586          
+    587                /* ACK was not requested, transmit is complete */
+    588                txComplete(MAC_SUCCESS);
+   \   00002E                ; Setup parameters for call to function txComplete
+   \   00002E   7900         MOV       R1,#0x0
+   \   000030   12....       LCALL     `??txComplete::?relay`; Banked call to: txComplete
+   \   000033   800B         SJMP      ??macTxDoneCallback_3
+    589              }
+    590              else
+    591              {
+    592                /*
+    593                 *  ACK was requested - must wait to receive it.  A timer is set
+    594                 *  to expire after the timeout duration for waiting for an ACK.
+    595                 *  If an ACK is received, the function macTxAckReceived() is called.
+    596                 *  If an ACK is not received within the timeout period,
+    597                 *  the function macTxAckNotReceivedCallback() is called.
+    598                 */
+    599                macTxActive = MAC_TX_ACTIVE_LISTEN_FOR_ACK;
+   \                     ??macTxDoneCallback_2:
+   \   000035   7486         MOV       A,#-0x7a
+   \   000037   F0           MOVX      @DPTR,A
+    600                MAC_RADIO_TX_REQUEST_ACK_TIMEOUT_CALLBACK();
+   \   000038                ; Setup parameters for call to function macCspTxRequestAckTimeoutCallback
+   \   000038   12....       LCALL     `??macCspTxRequestAckTimeoutCallback::?relay`; Banked call to: macCspTxRequestAckTimeoutCallback
+    601                HAL_EXIT_CRITICAL_SECTION(s);
+    602              }
+    603            }
+    604            else
+    605            {
+    606              HAL_EXIT_CRITICAL_SECTION(s);
+   \                     ??macTxDoneCallback_0:
+   \   00003B   EE           MOV       A,R6
+   \   00003C   A2E0         MOV       C,0xE0 /* A   */.0
+   \   00003E   92AF         MOV       0xa8.7,C
+    607            }
+    608          }
+   \                     ??macTxDoneCallback_3:
+   \   000040   80..         SJMP      ?Subroutine1
+   \   000042                REQUIRE _A_IEN0
+    609          
+    610          
+    611          /**************************************************************************************************
+    612           * @fn          macTxAckReceivedCallback
+    613           *
+    614           * @brief       This function is called by the receive logic when an ACK is received and
+    615           *              transmit logic is listening for an ACK.
+    616           *
+    617           * @param       seqn        - sequence number of received ACK
+    618           * @param       pendingFlag - set if pending flag of ACK is set, cleared otherwise
+    619           *
+    620           * @return      none
+    621           **************************************************************************************************
+    622           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    623          MAC_INTERNAL_API void macTxAckReceivedCallback(uint8 seqn, uint8 pendingFlag)
+   \                     macTxAckReceivedCallback:
+    624          {
+   \   000000                REQUIRE ?V0
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV       A,R1
+   \   000006   FF           MOV       R7,A
+   \   000007   8A..         MOV       ?V0,R2
+    625            halIntState_t  s;
+    626          
+    627            /* only process if listening for an ACK; critical section prevents race condition problems */
+    628            HAL_ENTER_CRITICAL_SECTION(s);
+   \   000009   A2AF         MOV       C,0xa8.7
+   \   00000B   E4           CLR       A
+   \   00000C   33           RLC       A
+   \   00000D   FE           MOV       R6,A
+   \   00000E   C2AF         CLR       0xa8.7
+    629            if (macTxActive == MAC_TX_ACTIVE_LISTEN_FOR_ACK)
+   \   000010   90....       MOV       DPTR,#macTxActive
+   \   000013   E0           MOVX      A,@DPTR
+   \   000014   6486         XRL       A,#0x86
+   \   000016   7025         JNZ       ??macTxAckReceivedCallback_0
+    630            {
+    631              macTxActive = MAC_TX_ACTIVE_POST_ACK;
+   \   000018   7487         MOV       A,#-0x79
+   \   00001A   F0           MOVX      @DPTR,A
+    632              MAC_RADIO_TX_CANCEL_ACK_TIMEOUT_CALLBACK();
+   \   00001B                ; Setup parameters for call to function macCspTxCancelAckTimeoutCallback
+   \   00001B   12....       LCALL     `??macCspTxCancelAckTimeoutCallback::?relay`; Banked call to: macCspTxCancelAckTimeoutCallback
+    633              HAL_EXIT_CRITICAL_SECTION(s);
+   \   00001E   EE           MOV       A,R6
+   \   00001F   A2E0         MOV       C,0xE0 /* A   */.0
+   \   000021   92AF         MOV       0xa8.7,C
+    634          
+    635              /* see if the sequence number of received ACK matches sequence number of packet just sent */
+    636              if (seqn == txSeqn)
+   \   000023   90....       MOV       DPTR,#txSeqn
+   \   000026   E0           MOVX      A,@DPTR
+   \   000027   6F           XRL       A,R7
+   \   000028   700C         JNZ       ??macTxAckReceivedCallback_1
+    637              {
+    638                /*
+    639                 *  Sequence numbers match so transmit is successful.  Return appropriate
+    640                 *  status based on the pending flag of the received ACK.
+    641                 */
+    642                if (pendingFlag)
+   \   00002A   E5..         MOV       A,?V0
+   \   00002C   6004         JZ        ??macTxAckReceivedCallback_2
+    643                {
+    644                  txComplete(MAC_ACK_PENDING);
+   \   00002E                ; Setup parameters for call to function txComplete
+   \   00002E   791B         MOV       R1,#0x1b
+   \   000030   8006         SJMP      ??macTxAckReceivedCallback_3
+    645                }
+    646                else
+    647                {
+    648                  txComplete(MAC_SUCCESS);
+   \                     ??macTxAckReceivedCallback_2:
+   \   000032                ; Setup parameters for call to function txComplete
+   \   000032   7900         MOV       R1,#0x0
+   \   000034   8002         SJMP      ??macTxAckReceivedCallback_3
+    649                }
+    650              }
+    651              else
+    652              {
+    653                /* sequence number did not match; per spec, transmit failed at this point */
+    654                txComplete(MAC_NO_ACK);
+   \                     ??macTxAckReceivedCallback_1:
+   \   000036                ; Setup parameters for call to function txComplete
+   \   000036   79E9         MOV       R1,#-0x17
+   \                     ??macTxAckReceivedCallback_3:
+   \   000038   12....       LCALL     `??txComplete::?relay`; Banked call to: txComplete
+   \   00003B   8005         SJMP      ??macTxAckReceivedCallback_4
+    655              }
+    656            }
+    657            else
+    658            {
+    659              HAL_EXIT_CRITICAL_SECTION(s);
+   \                     ??macTxAckReceivedCallback_0:
+   \   00003D   EE           MOV       A,R6
+   \   00003E   A2E0         MOV       C,0xE0 /* A   */.0
+   \   000040   92AF         MOV       0xa8.7,C
+    660            }
+    661          }
+   \                     ??macTxAckReceivedCallback_4:
+   \   000042                REQUIRE ?Subroutine1
+   \   000042                REQUIRE _A_IEN0
+   \   000042                ; // Fall through to label ?Subroutine1
+    662          
+    663          
+    664          /**************************************************************************************************
+    665           * @fn          macTxAckNotReceivedCallback
+    666           *
+    667           * @brief       This function is called by the receive logic when transmit is listening
+    668           *              for an ACK but something else is received.  It is also called if the
+    669           *              listen-for-ACK timeout is reached.
+    670           *
+    671           * @brief
+    672           *
+    673           * @param       none
+    674           *
+    675           * @return      none
+    676           **************************************************************************************************
+    677           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    678          MAC_INTERNAL_API void macTxAckNotReceivedCallback(void)
+   \                     macTxAckNotReceivedCallback:
+    679          {
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    680            halIntState_t  s;
+    681          
+    682            /* only process if listening for an ACK; critical section prevents race condition problems */
+    683            HAL_ENTER_CRITICAL_SECTION(s);
+   \   000005   A2AF         MOV       C,0xa8.7
+   \   000007   E4           CLR       A
+   \   000008   33           RLC       A
+   \   000009   FE           MOV       R6,A
+   \   00000A   C2AF         CLR       0xa8.7
+    684            if (macTxActive == MAC_TX_ACTIVE_LISTEN_FOR_ACK)
+   \   00000C   90....       MOV       DPTR,#macTxActive
+   \   00000F   E0           MOVX      A,@DPTR
+   \   000010   6486         XRL       A,#0x86
+   \   000012   7012         JNZ       ??macTxAckNotReceivedCallback_0
+    685            {
+    686              macTxActive = MAC_TX_ACTIVE_POST_ACK;
+   \   000014   7487         MOV       A,#-0x79
+   \   000016   F0           MOVX      @DPTR,A
+    687              MAC_RADIO_TX_CANCEL_ACK_TIMEOUT_CALLBACK();
+   \   000017                ; Setup parameters for call to function macCspTxCancelAckTimeoutCallback
+   \   000017   12....       LCALL     `??macCspTxCancelAckTimeoutCallback::?relay`; Banked call to: macCspTxCancelAckTimeoutCallback
+    688              HAL_EXIT_CRITICAL_SECTION(s);
+   \   00001A   EE           MOV       A,R6
+   \   00001B   A2E0         MOV       C,0xE0 /* A   */.0
+   \   00001D   92AF         MOV       0xa8.7,C
+    689              
+    690              /* a non-ACK was received when expecting an ACK, per spec transmit is over at this point */
+    691              txComplete(MAC_NO_ACK);
+   \   00001F                ; Setup parameters for call to function txComplete
+   \   00001F   79E9         MOV       R1,#-0x17
+   \   000021   12....       LCALL     `??txComplete::?relay`; Banked call to: txComplete
+   \   000024   8005         SJMP      ??macTxAckNotReceivedCallback_1
+    692            }
+    693            else
+    694            {
+    695              HAL_EXIT_CRITICAL_SECTION(s);
+   \                     ??macTxAckNotReceivedCallback_0:
+   \   000026   EE           MOV       A,R6
+   \   000027   A2E0         MOV       C,0xE0 /* A   */.0
+   \   000029   92AF         MOV       0xa8.7,C
+    696            }
+    697          }
+   \                     ??macTxAckNotReceivedCallback_1:
+   \   00002B   80..         SJMP      ?Subroutine1
+   \   00002D                REQUIRE _A_IEN0
+    698          
+    699          #ifdef ACK_DONE_ISR_WORKAROUND
+    700          /*=================================================================================================
+    701           * @fn          txAckIsrTimeout
+    702           *
+    703           * @brief       Timeout for ACK Done ISR interrupt. This would be invoked in case ACK done is not fired within 1 ms
+    704           *
+    705           * @param       none
+    706           *
+    707           * @return      none
+    708           *=================================================================================================
+    709           */
+    710          static void txAckIsrTimeout(uint8 event)
+    711          {
+    712            (void)event;
+    713            
+    714            if ( macRxOutgoingAckFlag == MAC_RX_FLAG_ACK_REQUEST )
+    715            {
+    716              MAC_RADIO_CANCEL_ACK_TX_DONE_CALLBACK();
+    717              macRxOutgoingAckFlag = 0;
+    718            
+    719              if ( macTxActive == MAC_TX_ACTIVE_QUEUED && !macRxActive )
+    720              {
+    721                macTxStartQueuedFrame();
+    722              }
+    723            }
+    724          
+    725            macTimerCancel(&macTxAckIsrTimer);
+    726          }
+    727          #endif /* ACK_DONE_ISR_WROKAROUND */
+    728          
+    729          /*=================================================================================================
+    730           * @fn          txComplete
+    731           *
+    732           * @brief       Transmit has completed.  Perform needed maintenance and return status of
+    733           *              the transmit via callback function.
+    734           *
+    735           * @param       status - status of the transmit that just went out
+    736           *
+    737           * @return      none
+    738           *=================================================================================================
+    739           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    740          static void txComplete(uint8 status)
+   \                     txComplete:
+    741          {
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV       A,R1
+   \   000006   FE           MOV       R6,A
+    742            /* reset the retransmit flag */
+    743            txRetransmitFlag = 0;
+   \   000007   90....       MOV       DPTR,#txRetransmitFlag
+   \   00000A   E4           CLR       A
+   \   00000B   F0           MOVX      @DPTR,A
+    744          
+    745            /* update tx state; turn off receiver if nothing is keeping it on */
+    746            macTxActive = MAC_TX_ACTIVE_NO_ACTIVITY;
+   \   00000C   90....       MOV       DPTR,#macTxActive
+   \   00000F   F0           MOVX      @DPTR,A
+    747          
+    748            if(pMacPib->rf4cepowerSavings)
+   \   000010   90....       MOV       DPTR,#macPib + 60
+   \   000013   E0           MOVX      A,@DPTR
+   \   000014   6005         JZ        ??txComplete_0
+    749            {
+    750              /* mark receive as inactive */
+    751              macRxActive = MAC_RX_ACTIVE_NO_ACTIVITY;
+   \   000016   90....       MOV       DPTR,#macRxActive
+   \   000019   E4           CLR       A
+   \   00001A   F0           MOVX      @DPTR,A
+    752            }
+    753            
+    754            /* turn off receive if allowed */
+    755            macRxOffRequest();
+   \                     ??txComplete_0:
+   \   00001B                ; Setup parameters for call to function macRxOffRequest
+   \   00001B   12....       LCALL     `??macRxOffRequest::?relay`; Banked call to: macRxOffRequest
+    756          
+    757            /* update transmit power in case there was a change */
+    758            macRadioUpdateTxPower();
+   \   00001E                ; Setup parameters for call to function macRadioUpdateTxPower
+   \   00001E   12....       LCALL     `??macRadioUpdateTxPower::?relay`; Banked call to: macRadioUpdateTxPower
+    759          
+    760            /*
+    761             *  Channel cannot change during transmit so update it here.  (Channel *can* change during
+    762             *  a receive.  The update function resets receive logic and any partially received
+    763             *  frame is purged.)
+    764             */
+    765            macRadioUpdateChannel();
+   \   000021                ; Setup parameters for call to function macRadioUpdateChannel
+   \   000021   12....       LCALL     `??macRadioUpdateChannel::?relay`; Banked call to: macRadioUpdateChannel
+    766          
+    767            /* return status of transmit via callback function */
+    768            macTxCompleteCallback(status);
+   \   000024                ; Setup parameters for call to function macTxCompleteCallback
+   \   000024   EE           MOV       A,R6
+   \   000025   F9           MOV       R1,A
+   \   000026   12....       LCALL     `??macTxCompleteCallback::?relay`; Banked call to: macTxCompleteCallback
+    769          }
+   \   000029   80..         SJMP      ?Subroutine1
+    770          
+    771          
+    772          /**************************************************************************************************
+    773           * @fn          macTxTimestampCallback
+    774           *
+    775           * @brief       This callback function records the timestamp into the receive data structure.
+    776           *              It should be called as soon as possible after there is a valid timestamp.
+    777           *
+    778           * @param       none
+    779           *
+    780           * @return      none
+    781           **************************************************************************************************
+    782           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    783          MAC_INTERNAL_API void macTxTimestampCallback(void)
+   \                     macTxTimestampCallback:
+    784          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000   74F4         MOV       A,#-0xc
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+    785            MAC_ASSERT(pMacDataTx != NULL); /* transmit structure must be there */
+   \   000005   90....       MOV       DPTR,#pMacDataTx
+   \   000008   E0           MOVX      A,@DPTR
+   \   000009   F8           MOV       R0,A
+   \   00000A   A3           INC       DPTR
+   \   00000B   E0           MOVX      A,@DPTR
+   \   00000C   F9           MOV       R1,A
+   \   00000D   E8           MOV       A,R0
+   \   00000E   49           ORL       A,R1
+   \   00000F   7003         JNZ       ??macTxTimestampCallback_0
+   \   000011                ; Setup parameters for call to function halAssertHandler
+   \   000011   12....       LCALL     `??halAssertHandler::?relay`; Banked call to: halAssertHandler
+    786          
+    787            pMacDataTx->internal.timestamp  = macBackoffTimerCapture();
+   \                     ??macTxTimestampCallback_0:
+   \   000014                ; Setup parameters for call to function macBackoffTimerCapture
+   \   000014   12....       LCALL     `??macBackoffTimerCapture::?relay`; Banked call to: macBackoffTimerCapture
+   \   000017   8A..         MOV       ?V0,R2
+   \   000019   8B..         MOV       ?V1,R3
+   \   00001B   8C..         MOV       ?V2,R4
+   \   00001D   8D..         MOV       ?V3,R5
+   \   00001F   12....       LCALL     ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   000022   A3           INC       DPTR
+   \   000023   A3           INC       DPTR
+   \   000024   A3           INC       DPTR
+   \   000025   78..         MOV       R0,#?V0
+   \   000027   12....       LCALL     ?L_MOV_TO_X
+    788            pMacDataTx->internal.timestamp2 = MAC_RADIO_TIMER_CAPTURE();
+   \   00002A                ; Setup parameters for call to function macMcuTimerCapture
+   \   00002A   12....       LCALL     `??macMcuTimerCapture::?relay`; Banked call to: macMcuTimerCapture
+   \   00002D   8A..         MOV       ?V0,R2
+   \   00002F   90....       MOV       DPTR,#pMacDataTx
+   \   000032   E0           MOVX      A,@DPTR
+   \   000033   FA           MOV       R2,A
+   \   000034   A3           INC       DPTR
+   \   000035   E0           MOVX      A,@DPTR
+   \   000036   CA           XCH       A,R2
+   \   000037   2409         ADD       A,#0x9
+   \   000039   F582         MOV       DPL,A
+   \   00003B   E4           CLR       A
+   \   00003C   3A           ADDC      A,R2
+   \   00003D   F583         MOV       DPH,A
+   \   00003F   E5..         MOV       A,?V0
+   \   000041   F0           MOVX      @DPTR,A
+   \   000042   A3           INC       DPTR
+   \   000043   EB           MOV       A,R3
+   \   000044   F0           MOVX      @DPTR,A
+    789          }
+   \   000045   7F04         MOV       R7,#0x4
+   \   000047   02....       LJMP      ?BANKED_LEAVE_XDATA
+    790          
+    791          
+    792          /**************************************************************************************************
+    793           * @fn          macTxCollisionWithRxCallback
+    794           *
+    795           * @brief       Function called if transmit strobed on top of a receive.
+    796           *
+    797           * @param       none
+    798           *
+    799           * @return      none
+    800           **************************************************************************************************
+    801           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    802          MAC_INTERNAL_API void macTxCollisionWithRxCallback(void)
+   \                     macTxCollisionWithRxCallback:
+    803          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    804            macRxHaltCleanup();
+   \   000004                ; Setup parameters for call to function macRxHaltCleanup
+   \   000004   12....       LCALL     `??macRxHaltCleanup::?relay`; Banked call to: macRxHaltCleanup
+    805          }
+   \   000007   02....       LJMP      ?Subroutine0 & 0xFFFF
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??macTxInit::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    macTxInit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??macTxHaltCleanup::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    macTxHaltCleanup
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??macTxFrame::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    macTxFrame
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??txCsmaPrep::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    txCsmaPrep
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??txGo::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    txGo
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??txCsmaGo::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    txCsmaGo
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??macTxFrameRetransmit::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    macTxFrameRetransmit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??macTxStartQueuedFrame::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    macTxStartQueuedFrame
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??macTxChannelBusyCallback::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    macTxChannelBusyCallback
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??macTxDoneCallback::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    macTxDoneCallback
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??macTxAckReceivedCallback::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    macTxAckReceivedCallback
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??macTxAckNotReceivedCallback::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    macTxAckNotReceivedCallback
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??txComplete::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    txComplete
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??macTxTimestampCallback::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    macTxTimestampCallback
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??macTxCollisionWithRxCallback::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    macTxCollisionWithRxCallback
+    806          
+    807          
+    808          /**************************************************************************************************
+    809           *                                  Compile Time Integrity Checks
+    810           **************************************************************************************************
+    811           */
+    812          #if (MAC_TX_ACTIVE_NO_ACTIVITY != 0x00)
+    813          #error "ERROR! Zero is reserved value of macTxActive. Allows boolean operations, e.g !macTxActive."
+    814          #endif
+    815          
+    816          /**************************************************************************************************
+    817          */
+
+   Maximum stack usage in bytes:
+
+   ISTACK XSTACK Function
+   ------ ------ --------
+      0      9   macTxAckNotReceivedCallback
+        0      9   -> macCspTxCancelAckTimeoutCallback
+        0      9   -> txComplete
+      0      9   macTxAckReceivedCallback
+        0      9   -> macCspTxCancelAckTimeoutCallback
+        0      9   -> txComplete
+      2      0   macTxChannelBusyCallback
+        2      0   -> halAssertHandler
+        2      0   -> macRxOffRequest
+        2      0   -> txComplete
+        2      0   -> txCsmaGo
+        2      0   -> txCsmaPrep
+      2      0   macTxCollisionWithRxCallback
+        2      0   -> macRxHaltCleanup
+      0      9   macTxDoneCallback
+        0      9   -> macCspTxRequestAckTimeoutCallback
+        0      9   -> macRxHaltCleanup
+        0      9   -> txComplete
+      1      9   macTxFrame
+        0      9   -> halAssertHandler
+        0      9   -> macCspTxPrepSlotted
+        0      9   -> macMemWriteTxFifo
+        0      9   -> txComplete
+        0      9   -> txCsmaPrep
+        0      9   -> txGo
+      2      0   macTxFrameRetransmit
+        2      0   -> macTxFrame
+      2      0   macTxHaltCleanup
+        2      0   -> macCspTxReset
+        2      0   -> macTxInit
+      2      0   macTxInit
+      2      0   macTxStartQueuedFrame
+        2      0   -> halAssertHandler
+        2      0   -> txGo
+      0     12   macTxTimestampCallback
+        0     12   -> halAssertHandler
+        0     12   -> macBackoffTimerCapture
+        0     12   -> macMcuTimerCapture
+      0     18   txComplete
+        0      9   -> macRadioUpdateChannel
+        0      9   -> macRadioUpdateTxPower
+        0      9   -> macRxOffRequest
+        0      9   -> macTxCompleteCallback
+      2      0   txCsmaGo
+        2      0   -> macCspTxGoCsma
+        2      0   -> macDataTxTimeAvailable
+        2      0   -> txComplete
+      0     19   txCsmaPrep
+        0     10   -> macCspTxPrepCsmaSlotted
+        0     10   -> macCspTxPrepCsmaUnslotted
+        0     10   -> macRadioRandomByte
+      2      9   txGo
+        2      0   -> macCspTxGoGreenPower
+        2      0   -> macCspTxGoSlotted
+        2      0   -> txCsmaGo
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       7  ??Subroutine5_0
+       7  ?Subroutine0
+       5  ?Subroutine1
+      14  ?Subroutine2
+       6  ?Subroutine3
+       2  ?Subroutine4
+       1  RFST
+       1  _A_IEN0
+      45  macTxAckNotReceivedCallback
+       6  macTxAckNotReceivedCallback::?relay
+      66  macTxAckReceivedCallback
+       6  macTxAckReceivedCallback::?relay
+       1  macTxActive
+       1  macTxBe
+     101  macTxChannelBusyCallback
+       6  macTxChannelBusyCallback::?relay
+      10  macTxCollisionWithRxCallback
+       6  macTxCollisionWithRxCallback::?relay
+       1  macTxCsmaBackoffDelay
+      66  macTxDoneCallback
+       6  macTxDoneCallback::?relay
+     261  macTxFrame
+       6  macTxFrame::?relay
+      16  macTxFrameRetransmit
+       6  macTxFrameRetransmit::?relay
+       1  macTxGpInterframeDelay
+      13  macTxHaltCleanup
+       6  macTxHaltCleanup::?relay
+      16  macTxInit
+       6  macTxInit::?relay
+       1  macTxSlottedDelay
+      49  macTxStartQueuedFrame
+       6  macTxStartQueuedFrame::?relay
+      74  macTxTimestampCallback
+       6  macTxTimestampCallback::?relay
+       1  macTxType
+       1  nb
+       1  txAckReq
+      43  txComplete
+       6  txComplete::?relay
+      35  txCsmaGo
+       6  txCsmaGo::?relay
+      50  txCsmaPrep
+       6  txCsmaPrep::?relay
+      42  txGo
+       6  txGo::?relay
+       1  txRetransmitFlag
+       1  txSeqn
+
+ 
+ 928 bytes in segment BANKED_CODE
+  90 bytes in segment BANK_RELAYS
+   2 bytes in segment SFR_AN
+   1 byte  in segment XDATA_ROM_C
+   9 bytes in segment XDATA_Z
+ 
+  90 bytes of CODE     memory
+   1 byte  of CONST    memory
+   0 bytes of DATA     memory (+ 2 bytes shared)
+ 928 bytes of HUGECODE memory
+   9 bytes of XDATA    memory
+
+Errors: none
+Warnings: none

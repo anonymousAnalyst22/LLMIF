@@ -1,0 +1,5 @@
+{
+    "ewp": "${workspaceFolder}\\SampleSwitch.ewp",
+    "configuration": "CoordinatorEB",
+    "toolchain": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.0"
+}

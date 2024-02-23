@@ -1,0 +1,1341 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.10.1.4655 for 8051               22/Nov/2023  15:42:39
+# Copyright 2004-2017 IAR Systems AB.
+# Standalone license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        D:\fuzzing-coordinator-response-collection\Components\stack\bdb\bdb_touchlink_target.c
+#    Command line       =  
+#        -f C:\Users\ADMINI~1\AppData\Local\Temp\EW98AC.tmp
+#        (D:\fuzzing-coordinator-response-collection\Components\stack\bdb\bdb_touchlink_target.c
+#        -D SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE -D
+#        MULTICAST_ENABLED=FALSE -D ZCL_READ -D ZCL_DISCOVER -D ZCL_WRITE -D
+#        ZCL_BASIC -D ZCL_IDENTIFY -D ISR_KEYINTERRUPT -D HAL_UART=TRUE -D
+#        HAL_LCD=FALSE -D ZCL_ON_OFF -D INT_HEAP_LEN=2800 -D
+#        HAL_UART_DMA_RX_MAX=256 -D HAL_UART_DMA_TX_MAX=256 -lC
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+#        -lA
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+#        --diag_suppress Pe001,Pa010 -o
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj
+#        -e --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=banked --calling_convention=xdata_reentrant
+#        --place_constants=data_rom --nr_virtual_regs 8 -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+#        -DZDO_COORDINATOR -DRTR_NWK) -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x00, 0x01, 0x02, 0x03,
+#        0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E,
+#        0x0F}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+#        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+#        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+#        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000
+#        -DENABLE_LED4_DISABLE_S1) -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\Source\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\Source\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\ZMain\TI2530DB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mt\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\osal\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\saddr\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\sdata\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\af\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\bdb\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\gp\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sec\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sys\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zcl\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\Common\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\SPI\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\Font\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_LCD_SPI\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_OLED\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_TFT\
+#        -Ohz --require_prototypes)
+#    Locale             =  Chinese (Simplified)_China.936
+#    List file          =  
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List\bdb_touchlink_target.lst
+#    Object file        =  
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj\bdb_touchlink_target.r51
+#
+###############################################################################
+
+D:\fuzzing-coordinator-response-collection\Components\stack\bdb\bdb_touchlink_target.c
+      1          /**************************************************************************************************
+      2            Filename:       bdb_touchlink_target.c
+      3            Revised:        $Date: 2013-11-26 15:12:49 -0800 (Tue, 26 Nov 2013) $
+      4            Revision:       $Revision: 36298 $
+      5          
+      6            Description:    Zigbee Cluster Library - Light Link Target.
+      7          
+      8          
+      9            Copyright 2011-2013 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          
+     41          /*********************************************************************
+     42           * INCLUDES
+     43           */
+     44          #include "ZComDef.h"
+     45          #include "OSAL.h"
+     46          #include "OSAL_Nv.h"
+     47          #include "AF.h"
+     48          #include "ZDApp.h"
+     49          #include "nwk_util.h"
+     50          #include "AddrMgr.h"
+     51          #include "ZDSecMgr.h"
+     52          
+     53          #if defined( INTER_PAN )
+     54            #include "stub_aps.h"
+     55          #endif
+     56          
+     57          #include "zcl.h"
+     58          #include "zcl_general.h"
+     59          #include "bdb.h"
+     60          #include "bdb_interface.h"
+     61          #include "bdb_tlCommissioning.h"
+     62          #include "bdb_touchLink.h"
+     63          
+     64          #include "bdb_touchlink_target.h"
+     65          
+     66          #include "OSAL_PwrMgr.h"
+     67          
+     68          #if defined ( BDB_TL_TARGET )
+     69             
+     70          /*********************************************************************
+     71           * MACROS
+     72           */
+     73          
+     74          /*********************************************************************
+     75           * CONSTANTS
+     76           */
+     77          
+     78          /*********************************************************************
+     79           * TYPEDEFS
+     80           */
+     81          
+     82          /*********************************************************************
+     83           * GLOBAL VARIABLES
+     84           */
+     85          uint8 touchLinkTarget_TaskID;
+     86          
+     87          /*********************************************************************
+     88           * EXTERNAL VARIABLES
+     89           */
+     90          
+     91          /*********************************************************************
+     92           * EXTERNAL FUNCTIONS
+     93           */
+     94          
+     95          /*********************************************************************
+     96           * LOCAL VARIABLES
+     97           */
+     98          
+     99          // Info related to the received request
+    100          static afAddrType_t dstAddr;
+    101          static bdbTLReq_t rxReq; // network start or join request
+    102          static uint8 rxSeqNum;
+    103          static uint8 initiatorRxChannel;
+    104          static bool targetJoinedNwk;
+    105          static bool touchlinkAllowStealing = BDB_ALLOW_TL_STEALING;
+    106          tlGCB_TargetEnable_t pfnTargetEnableChangeCB = NULL;
+    107          
+    108          bool touchlink_target_perpetual_operation;
+    109          
+    110          /*********************************************************************
+    111           * LOCAL FUNCTIONS
+    112           */
+    113          
+    114          static ZStatus_t targetScanReqCB( afAddrType_t *srcAddr, bdbTLScanReq_t *pReq, uint8 seqNum );
+    115          static ZStatus_t targetDeviceInfoReqCB( afAddrType_t *srcAddr, bdbTLDeviceInfoReq_t *pReq, uint8 seqNum );
+    116          static ZStatus_t targetIdentifyReqCB( afAddrType_t *srcAddr, bdbTLIdentifyReq_t *pReq );
+    117          static ZStatus_t targetResetToFNReqCB( afAddrType_t *srcAddr, bdbTLResetToFNReq_t *pReq );
+    118          static ZStatus_t targetNwkStartReqCB( afAddrType_t *srcAddr, bdbTLNwkStartReq_t *pReq, uint8 seqNum );
+    119          static ZStatus_t targetNwkJoinReqCB( afAddrType_t *srcAddr, bdbTLNwkJoinReq_t *pReq, uint8 seqNum );
+    120          static ZStatus_t targetNwkUpdateReqCB( afAddrType_t *srcAddr, bdbTLNwkUpdateReq_t *pReq );
+    121          static void *targetZdoLeaveCnfCB( void *pParam );
+    122          static void targetProcessStateChange( devStates_t devState );
+    123          static ZStatus_t touchLink_TargetSendScanRsp( uint8 srcEP, afAddrType_t *dstAddr, uint32 transID, uint8 seqNum );
+    124          static void targetSelectNwkParams( void );
+    125          static ZStatus_t targetVerifyNwkParams( uint16 PANID, uint8 *pExtendedPANID );
+    126          #if (ZSTACK_ROUTER_BUILD)
+    127          static void targetSendNwkStartRsp( afAddrType_t *dstAddr, uint32 transID, uint8 status,
+    128                                             bdbTLNwkParams_t *pNwkParams, uint8 nwkUpdateId, uint8 seqNum );
+    129          #endif  //  ZSTACK_ROUTER_BUILD
+    130          
+    131          /*********************************************************************
+    132           * TouchLink Target Callback Table
+    133           */
+    134          // Target Command Callbacks table
+    135          static bdbTL_InterPANCallbacks_t touchLinkTarget_CmdCBs =
+    136          {
+    137            // Received Server Commands
+    138            targetScanReqCB,          // Scan Request command
+    139            targetDeviceInfoReqCB,    // Device Information Request command
+    140            targetIdentifyReqCB,      // Identify Request command
+    141            targetResetToFNReqCB,     // Reset to Factory New Request command
+    142            targetNwkStartReqCB,      // Network Start Request command
+    143            #if ( ZSTACK_ROUTER_BUILD )
+    144            targetNwkJoinReqCB,       // Network Join Router Request command
+    145            NULL,                     // Network Join End Device Request command
+    146          #else
+    147            NULL,                     // Network Join Router Request command
+    148            targetNwkJoinReqCB,       // Network Join End Device Request command
+    149          #endif
+    150            targetNwkUpdateReqCB,     // Network Update Request command
+    151          
+    152            // Received Client Commands
+    153            NULL,                     // Scan Response command
+    154            NULL,                     // Device Information Response command
+    155            NULL,                     // Network Start Response command
+    156            NULL,                     // Network Join Router Response command
+    157            NULL                      // Network Join End Device Response command
+    158          };
+    159          
+    160          /*********************************************************************
+    161           * PUBLIC FUNCTIONS
+    162           */
+    163          
+    164          /*********************************************************************
+    165           * @fn      touchLinkTarget_InitDevice
+    166           *
+    167           * @brief   Start the TouchLink Target device in the network if it's not
+    168           *          factory new. Otherwise, determine the network parameters
+    169           *          and wait for a touchlink command.
+    170           *
+    171           * @param   none
+    172           *
+    173           * @return  status
+    174           */
+    175          ZStatus_t touchLinkTarget_InitDevice( void )
+    176          {
+    177            ZDO_Config_Node_Descriptor.LogicalType = zgDeviceLogicalType;
+    178            
+    179            uint8 x = TRUE;
+    180          
+    181            // Enable our receiver
+    182            ZMacSetReq( ZMacRxOnIdle, &x );
+    183            
+    184            if( bdbAttributes.bdbNodeIsOnANetwork == FALSE )
+    185            {
+    186              targetSelectNwkParams( );
+    187            }
+    188          
+    189            // Wait for a touchlink command
+    190            touchLinkTarget_PermitJoin(0);
+    191          
+    192            return ( ZSuccess );
+    193          }
+    194          
+    195          /*********************************************************************
+    196           * @fn      touchLinkTarget_Init
+    197           *
+    198           * @brief   Initialization function for the TouchLink Target task.
+    199           *
+    200           * @param   task_id - TouchLink Target task id
+    201           *
+    202           * @return  none
+    203           */
+    204          void touchLinkTarget_Init( uint8 task_id )
+    205          {
+    206            // Save our own Task ID
+    207            touchLinkTarget_TaskID = task_id;
+    208          
+    209            touchLink_SetTouchLinkTaskId( touchLinkTarget_TaskID );
+    210          
+    211            // Initialize TouchLink common variables
+    212            touchLink_InitVariables( FALSE );
+    213          
+    214            // Register the Application to receive the unprocessed Foundation command/response messages
+    215            zcl_registerForMsg( touchLinkTarget_TaskID );
+    216          
+    217            // Register for TouchLink Target callbacks (for Inter-PAN commands)
+    218            bdbTL_RegisterInterPANCmdCallbacks( &touchLinkTarget_CmdCBs );
+    219          
+    220            // Register for Initiator to receive Leave Confirm
+    221            ZDO_RegisterForZdoCB( ZDO_LEAVE_CNF_CBID, targetZdoLeaveCnfCB );
+    222          
+    223            // Register to process ZDO messages
+    224            ZDO_RegisterForZDOMsg( touchLinkTarget_TaskID, Mgmt_Permit_Join_req );
+    225            ZDO_RegisterForZDOMsg( touchLinkTarget_TaskID, Device_annce );
+    226          }
+    227          
+    228          /*********************************************************************
+    229           * @fn      touchLinkTarget_PermitJoin
+    230           *
+    231           * @brief   Set the router permit join flag, to allow or deny classical
+    232           *          commissioning by other ZigBee devices.
+    233           *
+    234           * @param   duration - enable up to aplcMaxPermitJoinDuration seconds,
+    235           *                     0 to disable
+    236           *
+    237           * @return  status
+    238           */
+    239          ZStatus_t touchLinkTarget_PermitJoin( uint8 duration )
+    240          {
+    241            return touchLink_PermitJoin( duration );
+    242          }
+    243          
+    244          /*********************************************************************
+    245           * @fn      touchLinkTarget_event_loop
+    246           *
+    247           * @brief   Event Loop Processor for TouchLink Target.
+    248           *
+    249           * @param   task_id - task id
+    250           * @param   events - event bitmap
+    251           *
+    252           * @return  unprocessed events
+    253           */
+    254          uint16 touchLinkTarget_event_loop( uint8 task_id, uint16 events )
+    255          { 
+    256            if ( events & SYS_EVENT_MSG )
+    257            {
+    258              osal_event_hdr_t *pMsg;
+    259          
+    260              if ( (pMsg = (osal_event_hdr_t *)osal_msg_receive( task_id )) != NULL )
+    261              {
+    262                switch (pMsg->event )
+    263                {
+    264                  case ZDO_CB_MSG:
+    265                    // ZDO sends the message that we registered for
+    266                    touchLink_RouterProcessZDOMsg( (zdoIncomingMsg_t *)pMsg );
+    267                    break;
+    268          
+    269                  case ZDO_STATE_CHANGE:
+    270                    targetProcessStateChange( (devStates_t)pMsg->status );
+    271                    break;
+    272          
+    273                  default:
+    274                    break;
+    275                }
+    276          
+    277                // Release the OSAL message
+    278                VOID osal_msg_deallocate( (uint8 *)pMsg );
+    279              }
+    280          
+    281              // return unprocessed events
+    282              return ( events ^ SYS_EVENT_MSG );
+    283            }
+    284          
+    285            if ( events & TOUCHLINK_NWK_START_EVT )
+    286            {
+    287              bdbTLNwkStartReq_t *pReq = &(rxReq.nwkStartReq);
+    288          
+    289              // If the PAN Id, Extended PAN Id or Logical Channel are zero then
+    290              // determine each of these parameters
+    291              if ( !nwk_ExtPANIDValid( pReq->nwkParams.extendedPANID ) )
+    292              {
+    293                touchLink_GenerateRandNum( pReq->nwkParams.extendedPANID, Z_EXTADDR_LEN );
+    294              }
+    295          
+    296              if ( pReq->nwkParams.panId == 0 )
+    297              {
+    298                pReq->nwkParams.panId = osal_rand();
+    299              }
+    300          
+    301              if ( pReq->nwkParams.logicalChannel == 0 )
+    302              {
+    303                pReq->nwkParams.logicalChannel = touchLink_GetRandPrimaryChannel();
+    304              }
+    305          
+    306              if ( pReq->nwkParams.nwkAddr == 0 )
+    307              {
+    308                pReq->nwkParams.nwkAddr = osal_rand();
+    309              }
+    310          
+    311              // Perform Network Discovery to verify our new network parameters uniqeness
+    312              touchLink_PerformNetworkDisc( (uint32)1 << pReq->nwkParams.logicalChannel );
+    313              
+    314              initiatorRxChannel = _NIB.nwkLogicalChannel;
+    315          
+    316              // return unprocessed events
+    317              return ( events ^ TOUCHLINK_NWK_START_EVT );
+    318            }
+    319            
+    320            if ( events & TOUCHLINK_NWK_FORMATION_SUCCESS_EVT )
+    321            {
+    322          #if (ZSTACK_ROUTER_BUILD)
+    323              bdbTLNwkStartReq_t *pReq = &(rxReq.nwkStartReq);
+    324              bdbTLNwkParams_t *pParams = &(pReq->nwkParams);
+    325              
+    326              if( bdbCommissioningProcedureState.bdbCommissioningState == BDB_COMMISSIONING_STATE_TL )
+    327              {
+    328                if ( targetJoinedNwk == FALSE )
+    329                {
+    330                  // Tune to the channel that the Scan Response was heard on
+    331                  touchLink_SetChannel( initiatorRxChannel );
+    332                
+    333                  touchLinkTarget_PermitJoin(APLC_MAX_PERMIT_JOIN_DURATION);
+    334          
+    335                  // Send a response back
+    336                  targetSendNwkStartRsp( &dstAddr, pReq->transID, TOUCHLINK_NETWORK_START_RSP_STATUS_SUCCESS, pParams, _NIB.nwkUpdateId, rxSeqNum );
+    337                }
+    338                
+    339                zTouchLinkNwkStartRtr = FALSE;
+    340                
+    341                osal_start_timerEx( touchLinkTarget_TaskID, TOUCHLINK_NWK_RESTORE_NWK_PARAMETERS_EVT, 50 );
+    342              }
+    343          #else
+    344              (void)targetJoinedNwk;
+    345              (void)initiatorRxChannel;
+    346          #endif
+    347              return ( events ^ TOUCHLINK_NWK_FORMATION_SUCCESS_EVT );
+    348            }
+    349                
+    350            if ( events & TOUCHLINK_NWK_RESTORE_NWK_PARAMETERS_EVT )
+    351            {
+    352          #if (ZSTACK_ROUTER_BUILD)
+    353              bdbTLNwkStartReq_t *pReq = &(rxReq.nwkStartReq);
+    354              bdbTLNwkParams_t *pParams = &(pReq->nwkParams);
+    355              
+    356              if ( osal_get_timeoutEx( touchLinkTarget_TaskID, TOUCHLINK_NWK_FORMATION_SUCCESS_EVT ) )
+    357              {
+    358                osal_stop_timerEx( touchLinkTarget_TaskID, TOUCHLINK_NWK_FORMATION_SUCCESS_EVT );
+    359              }
+    360              
+    361              if( bdbCommissioningProcedureState.bdbCommissioningState == BDB_COMMISSIONING_STATE_TL )
+    362              {
+    363                // Tune back to our channel
+    364                touchLink_SetChannel( pParams->logicalChannel );
+    365                bdb_reportCommissioningState( BDB_COMMISSIONING_STATE_TL, TRUE );
+    366              }
+    367          #endif
+    368              return ( events ^ TOUCHLINK_NWK_RESTORE_NWK_PARAMETERS_EVT );
+    369            }
+    370          
+    371            if ( events & TOUCHLINK_NWK_DISC_CNF_EVT )
+    372            {
+    373              bdbTLNwkStartReq_t *pReq = &(rxReq.nwkStartReq);
+    374              bdbTLNwkParams_t *pParams = &(pReq->nwkParams);
+    375              uint8 status;
+    376              
+    377              // Verify the received Network Parameters
+    378              if ( targetVerifyNwkParams( pParams->panId, pParams->extendedPANID ) == ZSuccess )
+    379              {
+    380                status = TOUCHLINK_NETWORK_START_RSP_STATUS_SUCCESS;
+    381              }
+    382              else
+    383              {
+    384                status = TOUCHLINK_NETWORK_START_RSP_STATUS_FAILURE;
+    385              }
+    386              
+    387              
+    388              if ( status == TOUCHLINK_NETWORK_START_RSP_STATUS_SUCCESS )
+    389              {
+    390                touchLink_FreeNwkParamList();
+    391                // If not factory new, perform a Leave on our old network
+    392                if ( ( bdbAttributes.bdbNodeIsOnANetwork == TRUE ) && ( touchLink_SendLeaveReq() == ZSuccess ) )
+    393                {
+    394                  // Wait for Leave confirmation before joining the new network
+    395                  touchLinkLeaveInitiated = TOUCHLINK_LEAVE_TO_START_NWK;
+    396                }
+    397                else
+    398                {
+    399                  // Notify our task to start the network
+    400                  osal_set_event( touchLinkTarget_TaskID, TOUCHLINK_START_NWK_EVT );
+    401                }
+    402              }
+    403              else
+    404              {
+    405                // Join to the chosen network
+    406                osal_set_event( touchLinkTarget_TaskID, TOUCHLINK_JOIN_ATTEMPT_EVT );
+    407              }
+    408              
+    409              // return unprocessed events
+    410              return ( events ^ TOUCHLINK_NWK_DISC_CNF_EVT );
+    411            }
+    412          
+    413            if ( events & TOUCHLINK_NWK_JOIN_IND_EVT )
+    414            {
+    415              bdbTLNwkJoinReq_t *pReq = &(rxReq.nwkJoinReq);
+    416              
+    417              initiatorRxChannel = pReq->nwkParams.logicalChannel;
+    418              
+    419              // If not factory new, perform a Leave on our old network
+    420              if ( ( bdbAttributes.bdbNodeIsOnANetwork == TRUE ) && ( touchLink_SendLeaveReq() == ZSuccess ) )
+    421              {
+    422                // Wait for Leave confirmation before joining the new network
+    423                touchLinkLeaveInitiated = TOUCHLINK_LEAVE_TO_JOIN_NWK;
+    424              }
+    425              else
+    426              {
+    427                // Notify our task to join this network
+    428                // Perform Network Discovery to verify our new network parameters uniqeness
+    429                touchLink_PerformNetworkDisc( (uint32)1 << initiatorRxChannel );
+    430              }
+    431          
+    432              // return unprocessed events
+    433              return ( events ^ TOUCHLINK_NWK_JOIN_IND_EVT );
+    434            }
+    435          
+    436            if ( events & TOUCHLINK_START_NWK_EVT )
+    437            {
+    438              bdbTLNwkStartReq_t *pReq = &(rxReq.nwkStartReq);
+    439              bdbCommissioningProcedureState.bdbCommissioningState = BDB_COMMISSIONING_STATE_TL;
+    440          
+    441              // Start operating on the new network
+    442              touchLinkStartRtr( &(pReq->nwkParams), pReq->transID );
+    443          
+    444              // Perform a ZigBee Direct Join in order to allow direct communication
+    445              // via the ZigBee network between the Initiator and the Target (i.e.,
+    446              // create an entry in the neighbor table with the IEEE address and the
+    447              // network address of the Initiator).
+    448              NLME_DirectJoinRequestWithAddr( pReq->initiatorIeeeAddr, pReq->initiatorNwkAddr,
+    449                                              CAPINFO_DEVICETYPE_RFD );
+    450          
+    451              // return unprocessed events
+    452              return ( events ^ TOUCHLINK_START_NWK_EVT );
+    453            }
+    454          
+    455            if ( events & TOUCHLINK_JOIN_ATTEMPT_EVT )
+    456            {
+    457              bdbTLNwkJoinReq_t *pReq = &(rxReq.nwkJoinReq);
+    458              
+    459              initiatorRxChannel = pReq->nwkParams.logicalChannel;
+    460              
+    461              // Copy the new network parameters to NIB
+    462              touchLink_SetNIB( ( ZSTACK_ROUTER_BUILD ? NWK_ROUTER : NWK_REJOINING ),
+    463                          pReq->nwkParams.nwkAddr, pReq->nwkParams.extendedPANID,
+    464                          pReq->nwkParams.logicalChannel, pReq->nwkParams.panId, pReq->nwkUpdateId );
+    465          
+    466              // Apply the received network key
+    467              touchLink_DecryptNwkKey( pReq->nwkParams.nwkKey, pReq->nwkParams.keyIndex, pReq->transID, touchLinkResponseID );
+    468          
+    469              // This is not a usual Trust Center protected network
+    470              ZDSecMgrUpdateTCAddress( NULL );
+    471              
+    472          #if ( ZSTACK_ROUTER_BUILD )
+    473              bdbCommissioningProcedureState.bdbCommissioningState = BDB_COMMISSIONING_STATE_TL;
+    474              
+    475              // Start operating on the new network
+    476              touchLinkStartRtr( &(pReq->nwkParams), pReq->transID );
+    477          #else
+    478              bdbTLNwkRejoin_t rejoinInf;
+    479                   
+    480              rejoinInf.panId = pReq->nwkParams.panId;
+    481              rejoinInf.logicalChannel = pReq->nwkParams.logicalChannel;
+    482              osal_memcpy( rejoinInf.extendedPANID, pReq->nwkParams.extendedPANID, Z_EXTADDR_LEN);
+    483              rejoinInf.nwkAddr = pDiscoveredNwkParamList->chosenRouter;
+    484              rejoinInf.nwkUpdateId = pReq->nwkUpdateId;
+    485                
+    486              touchLink_DevRejoin( &rejoinInf );
+    487          #endif
+    488              touchLink_FreeNwkParamList();
+    489              
+    490              // return unprocessed events
+    491              return ( events ^ TOUCHLINK_JOIN_ATTEMPT_EVT );
+    492            }
+    493          
+    494            if ( events & TOUCHLINK_RESET_TO_FN_EVT )
+    495            {
+    496              bdb_resetLocalAction();
+    497              
+    498              // return unprocessed events
+    499              return ( events ^ TOUCHLINK_RESET_TO_FN_EVT );
+    500            }
+    501          
+    502            if ( events & TOUCHLINK_TRANS_LIFETIME_EXPIRED_EVT )
+    503            {
+    504              touchLinkTransID = 0;
+    505              // return unprocessed events
+    506              return ( events ^ TOUCHLINK_TRANS_LIFETIME_EXPIRED_EVT );
+    507            }
+    508          
+    509            if(events & TOUCHLINK_TARGET_ENABLE_TIMEOUT)
+    510            {
+    511              touchLinkTargetEnabled = FALSE;
+    512              touchlink_target_perpetual_operation = FALSE;
+    513              pfnTargetEnableChangeCB( touchLinkTargetEnabled );  
+    514              (void)osal_pwrmgr_task_state(touchLinkTarget_TaskID, PWRMGR_CONSERVE);
+    515              
+    516              bdb_ClearNetworkParams();    
+    517              
+    518              return (events ^ TOUCHLINK_TARGET_ENABLE_TIMEOUT);
+    519            }
+    520            // If reach here, the events are unknown
+    521            // Discard or make more handlers
+    522            return 0;
+    523          }
+    524          
+    525          /*********************************************************************
+    526           * @fn      touchLinkTarget_EnableCommissioning
+    527           *
+    528           * @brief   Enable the reception of TL Commissioning commands. Refer to 
+    529           *          bdb_RegisterTouchlinkTargetEnableCB to get enable/disable notifications
+    530           *
+    531           * @param   timeoutTime - Enable timeout in ms
+    532           *
+    533           * @return  status
+    534           */
+    535          void touchLinkTarget_EnableCommissioning( uint32 timeoutTime )
+    536          {
+    537            touchLinkTargetEnabled = TRUE;
+    538          
+    539            touchLinkTarget_InitDevice( );
+    540            
+    541            // if time == 0xFFFF set target active forever, otherwise disable it in
+    542            // the timeout given by timeoutTime in ms
+    543            if ( timeoutTime < TOUCHLINK_TARGET_PERPETUAL )
+    544            {
+    545              osal_start_timerEx(touchLinkTarget_TaskID, TOUCHLINK_TARGET_ENABLE_TIMEOUT, timeoutTime);
+    546              touchlink_target_perpetual_operation = FALSE;
+    547            }
+    548            else
+    549            {
+    550              touchlink_target_perpetual_operation = TRUE;
+    551            }
+    552            pfnTargetEnableChangeCB( touchLinkTargetEnabled );
+    553            (void)osal_pwrmgr_task_state(touchLinkTarget_TaskID, PWRMGR_HOLD);
+    554          }
+    555          
+    556          /*********************************************************************
+    557           * @fn      touchLinkTarget_DisableCommissioning
+    558           *
+    559           * @brief   Disable TouchLink on a target device
+    560           *
+    561           * @param   none
+    562           *
+    563           * @return  none
+    564           */
+    565          void touchLinkTarget_DisableCommissioning( void )
+    566          {
+    567            osal_stop_timerEx(touchLinkTarget_TaskID, TOUCHLINK_TARGET_ENABLE_TIMEOUT);
+    568            osal_set_event(touchLinkTarget_TaskID, TOUCHLINK_TARGET_ENABLE_TIMEOUT);
+    569          }
+    570          
+    571          /*********************************************************************
+    572           * @fn      touchLinkTarget_GetTimer
+    573           *
+    574           * @brief   Get remaining touchlink duration on a target device
+    575           *
+    576           * @param   none
+    577           *
+    578           * @return  Remaining touchlink duration in milliseconds
+    579           */
+    580          uint32 touchLinkTarget_GetTimer( void )
+    581          {
+    582            if (!touchLinkTargetEnabled)
+    583            {
+    584            	return 0;
+    585            }
+    586            else if (touchlink_target_perpetual_operation)
+    587            {
+    588            	return TOUCHLINK_TARGET_PERPETUAL;
+    589            }
+    590          
+    591            return osal_get_timeoutEx(touchLinkTarget_TaskID, TOUCHLINK_TARGET_ENABLE_TIMEOUT);
+    592          }
+    593          
+    594          /*********************************************************************
+    595           * @fn      bdb_RegisterTouchlinkTargetEnableCB
+    596           *
+    597           * @brief   Register an Application's Enable/Disable callback function. 
+    598           *          Refer to touchLinkTarget_EnableCommissioning to enable/disable TL as target
+    599           *
+    600           * @param   pfnIdentify - application callback
+    601           *
+    602           * @return  none
+    603           */
+    604          void bdb_RegisterTouchlinkTargetEnableCB( tlGCB_TargetEnable_t pfnTargetEnableChange )
+    605          {
+    606            pfnTargetEnableChangeCB = pfnTargetEnableChange;
+    607          }
+    608          
+    609          /*********************************************************************
+    610           * @fn      bdb_TouchlinkSetAllowStealing
+    611           *
+    612           * @brief   General function to allow stealing when performing TL as target
+    613           *
+    614           * @param   allow - allow stealling if TRUE, deny if FALSE
+    615           *
+    616           * @return  none
+    617           */
+    618          void bdb_TouchlinkSetAllowStealing( bool allow )
+    619          {
+    620            touchlinkAllowStealing = allow;
+    621          }
+    622          
+    623          /*********************************************************************
+    624           * @fn      bdb_TouchlinkGetAllowStealing
+    625           *
+    626           * @brief   General function to get the allow stealing value
+    627           *
+    628           * @param   
+    629           *
+    630           * @return  return TRUE if allowed, FALSE if not allowed
+    631           */
+    632          bool bdb_TouchlinkGetAllowStealing( void )
+    633          {
+    634            return touchlinkAllowStealing;
+    635          }
+    636          /*********************************************************************
+    637           * LOCAL FUNCTIONS
+    638           */
+    639          
+    640          /*********************************************************************
+    641           * @fn      targetScanReqCB
+    642           *
+    643           * @brief   This callback is called to process a Scan Request command.
+    644           *
+    645           * @param   srcAddr - sender's address
+    646           * @param   pReq - parsed command
+    647           * @param   seqNum - command sequence number
+    648           *
+    649           * @return  ZStatus_t
+    650           */
+    651          static ZStatus_t targetScanReqCB( afAddrType_t *srcAddr, bdbTLScanReq_t *pReq, uint8 seqNum )
+    652          {
+    653            ZStatus_t ret = ZSuccess;
+    654            int8 rssi;
+    655            
+    656            if( pReq->touchLinkInitiator == FALSE )
+    657            {
+    658              return ZFailure;
+    659            }
+    660            
+    661            rssi = touchLink_GetMsgRssi();
+    662            if( rssi > TOUCHLINK_WORST_RSSI )
+    663            {
+    664              if ( pDiscoveredNwkParamList == NULL )
+    665              {
+    666                dstAddr = *srcAddr;
+    667                dstAddr.panId = 0xFFFF;
+    668          
+    669                ret = touchLink_TargetSendScanRsp( TOUCHLINK_INTERNAL_ENDPOINT, &dstAddr, pReq->transID, seqNum );
+    670                if ( ret == ZSuccess )
+    671                {
+    672                  touchLinkTransID = pReq->transID;
+    673                }
+    674              }
+    675            }
+    676          
+    677            return ( ret );
+    678          }
+    679          
+    680          /*********************************************************************
+    681           * @fn      targetDeviceInfoReqCB
+    682           *
+    683           * @brief   This callback is called to process a Device Information
+    684           *          Request command.
+    685           *
+    686           * @param   srcAddr - sender's address
+    687           * @param   pReq - parsed command
+    688           * @param   seqNum - command sequence number
+    689           *
+    690           * @return  ZStatus_t
+    691           */
+    692          static ZStatus_t targetDeviceInfoReqCB( afAddrType_t *srcAddr, bdbTLDeviceInfoReq_t *pReq, uint8 seqNum )
+    693          {
+    694            if ( touchLink_IsValidTransID( pReq->transID ) == FALSE )
+    695            {
+    696              return ( ZFailure );
+    697            }
+    698            return ( touchLink_SendDeviceInfoRsp( TOUCHLINK_INTERNAL_ENDPOINT, srcAddr,
+    699                                            pReq->startIndex, pReq->transID, seqNum ) );
+    700          }
+    701          
+    702          /*********************************************************************
+    703           * @fn      targetIdentifyReqCB
+    704           *
+    705           * @brief   This callback is called to process an Identify Request command.
+    706           *
+    707           * @param   srcAddr - sender's address
+    708           * @param   pReq - parsed command
+    709           *
+    710           * @return  ZStatus_t
+    711           */
+    712          static ZStatus_t targetIdentifyReqCB( afAddrType_t *srcAddr, bdbTLIdentifyReq_t *pReq )
+    713          {
+    714            if ( touchLink_IsValidTransID( pReq->transID ) == FALSE )
+    715            {
+    716              return ( ZFailure );
+    717            }
+    718          
+    719            // The target should identify itself
+    720            uint16 identifyTime;
+    721            endPointDesc_t * bdb_CurrEpDescriptor;
+    722          
+    723            // Values of the Identify Duration field:
+    724            // - Exit identify mode: 0x0000
+    725            // - Length of time to remain in identify mode: 0x0001-0xfffe
+    726            // - Remain in identify mode for a default time known by the receiver: 0xffff
+    727            if ( pReq->IdDuration == 0xffff )
+    728            {
+    729              identifyTime = TOUCHLINK_DEFAULT_IDENTIFY_TIME;
+    730            }
+    731            else
+    732            {
+    733              identifyTime = pReq->IdDuration;
+    734            }
+    735            
+    736            bdb_CurrEpDescriptor = bdb_setEpDescListToActiveEndpoint( );
+    737            
+    738            bdb_ZclIdentifyCmdInd( identifyTime, bdb_CurrEpDescriptor->endPoint );
+    739          
+    740            return ( ZSuccess );
+    741          }
+    742          
+    743          /*********************************************************************
+    744           * @fn      targetResetToFNReqCB
+    745           *
+    746           * @brief   This callback is called to process a Reset to Factory New
+    747           *          Request command.
+    748           *
+    749           * @param   srcAddr - sender's address
+    750           * @param   pReq - parsed command
+    751           *
+    752           * @return  ZStatus_t
+    753           */
+    754          static ZStatus_t targetResetToFNReqCB( afAddrType_t *srcAddr, bdbTLResetToFNReq_t *pReq )
+    755          {
+    756            // If factory new, discard the request
+    757            if ( ( touchLink_IsValidTransID( pReq->transID ) == FALSE ) )
+    758            {
+    759              return ( ZFailure );
+    760            }
+    761          
+    762            osal_set_event( touchLinkTarget_TaskID, TOUCHLINK_RESET_TO_FN_EVT );
+    763          
+    764            return ( ZSuccess );
+    765          }
+    766          
+    767          /*********************************************************************
+    768           * @fn      targetNwkStartReqCB
+    769           *
+    770           * @brief   This callback is called to process a Network Start Request command.
+    771           *
+    772           * @param   srcAddr - sender's address
+    773           * @param   pReq - parsed command
+    774           * @param   seqNum - command sequence number
+    775           *
+    776           * @return  ZStatus_t
+    777           */
+    778          static ZStatus_t targetNwkStartReqCB( afAddrType_t *srcAddr, bdbTLNwkStartReq_t *pReq, uint8 seqNum )
+    779          {
+    780          #if ZSTACK_END_DEVICE_BUILD
+    781            (void)rxSeqNum;
+    782            return ( ZFailure );
+    783          #else
+    784            if ( touchLink_IsValidTransID( pReq->transID ) == FALSE )
+    785            {
+    786              return ( ZFailure );
+    787            }
+    788            
+    789            dstAddr = *srcAddr;
+    790            dstAddr.panId = 0xFFFF;
+    791            targetJoinedNwk = FALSE;
+    792          
+    793            if ( ( touchlinkAllowStealing == TRUE ) || ( bdbAttributes.bdbNodeIsOnANetwork == FALSE ) )
+    794            {
+    795              // Save the request for later
+    796              rxReq.nwkStartReq = *pReq;
+    797              rxSeqNum = seqNum;
+    798                  
+    799              osal_set_event( touchLinkTarget_TaskID, TOUCHLINK_NWK_START_EVT );
+    800            }
+    801            else
+    802            {
+    803              targetSendNwkStartRsp( &dstAddr, pReq->transID, TOUCHLINK_NETWORK_START_RSP_STATUS_FAILURE,
+    804                                     NULL, 0, seqNum );
+    805            }
+    806          
+    807            return ( ZSuccess );
+    808          #endif
+    809          }
+    810          
+    811          /*********************************************************************
+    812           * @fn      targetNwkJoinReqCB
+    813           *
+    814           * @brief   This callback is called to process a Network Join
+    815           *          Request command.
+    816           *
+    817           * @param   srcAddr - sender's address
+    818           * @param   pReq - parsed command
+    819           * @param   seqNum - command sequence number
+    820           *
+    821           * @return  ZStatus_t
+    822           */
+    823          static ZStatus_t targetNwkJoinReqCB( afAddrType_t *srcAddr, bdbTLNwkJoinReq_t *pReq, uint8 seqNum )
+    824          { 
+    825            bdbTLNwkJoinRsp_t rsp;
+    826            nwk_states_t nwkState;
+    827            
+    828            if ( touchLink_IsValidTransID( pReq->transID ) == FALSE )
+    829            {
+    830              return ( ZFailure );
+    831            }
+    832          
+    833            dstAddr = *srcAddr;
+    834            dstAddr.panId = 0xFFFF;
+    835            targetJoinedNwk = TRUE;
+    836          
+    837            if ( ( touchlinkAllowStealing == TRUE ) || ( bdbAttributes.bdbNodeIsOnANetwork == FALSE ) )
+    838            {
+    839              // Save the request for later
+    840              rxReq.nwkJoinReq = *pReq;
+    841              
+    842              // Wait at least BDBCTL_MIN_STARTUP_DELAY_TIME seconds to allow the
+    843              // initiator to start the network correctly. Join the initiator afterwards.
+    844              osal_start_timerEx( touchLinkTarget_TaskID, TOUCHLINK_NWK_JOIN_IND_EVT, BDBCTL_MIN_STARTUP_DELAY_TIME );
+    845          
+    846              rsp.status = TOUCHLINK_NETWORK_JOIN_RSP_STATUS_SUCCESS;
+    847              
+    848          #if ( ZG_DEVICE_RTRONLY_TYPE )
+    849              nwkState = NWK_ROUTER;
+    850          #else
+    851              nwkState = NWK_ENDDEVICE;
+    852          #endif
+    853              
+    854              bdb_setNodeIsOnANetwork(TRUE);
+    855              
+    856              // Apply the received network key
+    857              touchLink_DecryptNwkKey( pReq->nwkParams.nwkKey, pReq->nwkParams.keyIndex, pReq->transID, touchLinkResponseID );
+    858          
+    859              // This is not a usual Trust Center protected network
+    860              ZDSecMgrUpdateTCAddress( NULL );
+    861              
+    862              // Configure MAC with our network parameters
+    863              NLME_InitNV();
+    864              touchLink_SetNIB( nwkState, pReq->nwkParams.nwkAddr, pReq->nwkParams.extendedPANID,
+    865                           _NIB.nwkLogicalChannel, pReq->nwkParams.panId, pReq->nwkParams.panId );
+    866              
+    867              touchLink_SetChannel( _NIB.nwkLogicalChannel );
+    868              touchLink_SetMacNwkParams( _NIB.nwkDevAddress, _NIB.nwkPanId, _NIB.nwkLogicalChannel );
+    869            }
+    870            else
+    871            {
+    872              rsp.status = TOUCHLINK_NETWORK_JOIN_RSP_STATUS_FAILURE;
+    873            }
+    874          
+    875            rsp.transID = pReq->transID;
+    876          
+    877            // Send a response back
+    878          #if ( ZSTACK_ROUTER_BUILD )
+    879            bdbTL_Send_NwkJoinRtrRsp( TOUCHLINK_INTERNAL_ENDPOINT, &dstAddr, &rsp, seqNum );
+    880          #else
+    881            bdbTL_Send_NwkJoinEDRsp( TOUCHLINK_INTERNAL_ENDPOINT, &dstAddr, &rsp, seqNum );
+    882          #endif  //ZSTACK_ROUTER_BUILD
+    883          
+    884            return ( ZSuccess );
+    885          }
+    886          
+    887          /*********************************************************************
+    888           * @fn      targetNwkUpdateReqCB
+    889           *
+    890           * @brief   This callback is called to process a Network Update Request
+    891           *          command.
+    892           *
+    893           * @param   srcAddr - sender's address
+    894           * @param   pReq - parsed command
+    895           *
+    896           * @return  ZStatus_t
+    897           */
+    898          static ZStatus_t targetNwkUpdateReqCB( afAddrType_t *srcAddr, bdbTLNwkUpdateReq_t *pReq )
+    899          {
+    900            if ( touchLink_IsValidTransID( pReq->transID ) == FALSE )
+    901            {
+    902              return ( ZFailure );
+    903            }
+    904            // Discard the request if the Extended PAN ID and PAN ID are not
+    905            // identical with our corresponding stored values
+    906            if ( TOUCHLINK_SAME_NWK( pReq->PANID, pReq->extendedPANID ) )
+    907            {
+    908              uint8 newUpdateId = touchLink_NewNwkUpdateId( pReq->nwkUpdateId, _NIB.nwkUpdateId);
+    909              if ( _NIB.nwkUpdateId != newUpdateId )
+    910              {
+    911                // Update the network update id and logical channel
+    912                touchLink_ProcessNwkUpdate( newUpdateId, pReq->logicalChannel );
+    913              }
+    914            }
+    915          
+    916            return ( ZSuccess );
+    917          }
+    918          
+    919          /******************************************************************************
+    920           * @fn      targetZdoLeaveCnfCB
+    921           *
+    922           * @brief   This callback is called to process a Leave Confirmation message.
+    923           *
+    924           *          Note: this callback function returns a pointer if it has handled
+    925           *                the confirmation message and no further action should be
+    926           *                taken with it. It returns NULL if it has not handled the
+    927           *                confirmation message and normal processing should take place.
+    928           *
+    929           * @param       pParam - received message
+    930           *
+    931           * @return      Pointer if message processed. NULL, otherwise.
+    932           */
+    933          static void *targetZdoLeaveCnfCB( void *pParam )
+    934          {
+    935            // Did we initiate the leave?
+    936            if ( touchLinkLeaveInitiated == FALSE )
+    937            {
+    938              return ( NULL );
+    939            }
+    940          
+    941            if ( touchLinkLeaveInitiated == TOUCHLINK_LEAVE_TO_START_NWK )
+    942            {
+    943              // Notify our task to start the network
+    944              osal_set_event( touchLinkTarget_TaskID, TOUCHLINK_START_NWK_EVT );
+    945            }
+    946            else // TOUCHLINK_LEAVE_TO_JOIN_NWK
+    947            {
+    948              AssocReset();
+    949              nwkNeighborInitTable();
+    950              AddrMgrSetDefaultNV();
+    951              // Immediately store empty tables in NV
+    952              osal_set_event( ZDAppTaskID, ZDO_NWK_UPDATE_NV );
+    953              // Notify our task to join the new network
+    954              osal_start_timerEx( touchLinkTarget_TaskID, TOUCHLINK_JOIN_ATTEMPT_EVT, 100 );
+    955            }
+    956          
+    957            return ( (void *)&touchLinkLeaveInitiated );
+    958          }
+    959          
+    960          /*********************************************************************
+    961           * @fn      targetProcessStateChange
+    962           *
+    963           * @brief   Process ZDO device state change
+    964           *
+    965           * @param   devState - The device's network state
+    966           *
+    967           * @return  none
+    968           */
+    969          static void targetProcessStateChange( devStates_t devState )
+    970          {
+    971            if ( ( devState == DEV_ROUTER ) || ( devState == DEV_END_DEVICE ) )
+    972            {
+    973              if ( !_NIB.CapabilityFlags )
+    974              {
+    975                _NIB.CapabilityFlags = ZDO_Config_Node_Descriptor.CapabilityFlags;
+    976              }
+    977              // Initialize the security for type of device
+    978              ZDApp_SecInit( ZDO_INITDEV_RESTORED_NETWORK_STATE );
+    979              
+    980              ZDP_DeviceAnnce( NLME_GetShortAddr(), NLME_GetExtAddr(),
+    981                               ZDO_Config_Node_Descriptor.CapabilityFlags, 0 );
+    982              
+    983              bdb_setNodeIsOnANetwork(TRUE);
+    984              
+    985              osal_start_timerEx( touchLinkTarget_TaskID, TOUCHLINK_NWK_FORMATION_SUCCESS_EVT, 500);
+    986              
+    987            }
+    988          }
+    989          
+    990          /*********************************************************************
+    991           * @fn      touchLink_TargetSendScanRsp
+    992           *
+    993           * @brief   Send out a Scan Response command.
+    994           *
+    995           * @param   srcEP - sender's endpoint
+    996           * @param   dstAddr - pointer to destination address struct
+    997           * @param   transID - received transaction id
+    998           * @param   seqNum - received sequence number
+    999           *
+   1000           * @return  ZStatus_t
+   1001           */
+   1002          static ZStatus_t touchLink_TargetSendScanRsp( uint8 srcEP, afAddrType_t *dstAddr, uint32 transID, uint8 seqNum )
+   1003          {
+   1004            ZStatus_t status = ZSuccess;
+   1005          
+   1006            // Make sure we respond only once during a Device Discovery
+   1007            if ( touchLinkLastAcceptedTransID != transID )
+   1008            {
+   1009              bdbTLScanRsp_t *pRsp;    
+   1010          
+   1011              pRsp = (bdbTLScanRsp_t *)osal_mem_alloc( sizeof( bdbTLScanRsp_t ) );
+   1012              if ( pRsp )
+   1013              {
+   1014                osal_memset( pRsp, 0, sizeof( bdbTLScanRsp_t ) );
+   1015          
+   1016                // Save transaction id
+   1017                touchLinkLastAcceptedTransID = transID;
+   1018                osal_start_timerEx( touchLinkTarget_TaskID, TOUCHLINK_TRANS_LIFETIME_EXPIRED_EVT,
+   1019                                    BDBCTL_INTER_PAN_TRANS_ID_LIFETIME );
+   1020          
+   1021                pRsp->transID = transID;
+   1022                pRsp->rssiCorrection = TOUCHLINK_RSSI_CORRECTION;
+   1023                pRsp->zLogicalType = zgDeviceLogicalType;
+   1024                pRsp->touchLinkAddressAssignment = touchLink_IsValidSplitFreeRanges( 0 );
+   1025                pRsp->touchLinkInitiator = FALSE;
+   1026                pRsp->touchLinkProfileInterop = TRUE;
+   1027          
+   1028                if ( ZDO_Config_Node_Descriptor.CapabilityFlags & CAPINFO_RCVR_ON_IDLE )
+   1029                {
+   1030                  pRsp->zRxOnWhenIdle = TRUE;
+   1031                }
+   1032          
+   1033                pRsp->touchLinklinkPriority = FALSE;
+   1034                pRsp->keyBitmask = touchLink_GetNwkKeyBitmask();
+   1035          
+   1036                // Generate a new Response ID
+   1037                touchLinkResponseID = ( ((uint32)osal_rand()) << 16 ) + osal_rand();
+   1038                pRsp->responseID = touchLinkResponseID;
+   1039          
+   1040                pRsp->touchLinkFactoryNew = !bdbAttributes.bdbNodeIsOnANetwork;
+   1041                if ( pRsp->touchLinkFactoryNew )
+   1042                {
+   1043                  pRsp->nwkAddr = 0xFFFF;
+   1044                  pRsp->nwkUpdateId = 0;
+   1045                }
+   1046                else
+   1047                {
+   1048                  pRsp->nwkAddr = _NIB.nwkDevAddress;
+   1049                  pRsp->nwkUpdateId = _NIB.nwkUpdateId;
+   1050                }
+   1051                pRsp->PANID = _NIB.nwkPanId;
+   1052                pRsp->logicalChannel = _NIB.nwkLogicalChannel;
+   1053                osal_cpyExtAddr( pRsp->extendedPANID, _NIB.extendedPANID );
+   1054          
+   1055                pRsp->numSubDevices = touchLink_GetNumSubDevices( 0 );
+   1056                if ( pRsp->numSubDevices == 1 )
+   1057                {
+   1058                  touchLink_GetSubDeviceInfo( 0, &(pRsp->deviceInfo) );
+   1059                }
+   1060          
+   1061                pRsp->totalGrpIDs = touchLink_GetNumGrpIDs();
+   1062          
+   1063                // Send a response back
+   1064                status = bdbTL_Send_ScanRsp( srcEP, dstAddr, pRsp, seqNum );
+   1065          
+   1066                osal_mem_free( pRsp );
+   1067              }
+   1068              else
+   1069              {
+   1070                status = ZMemError;
+   1071              }
+   1072            }
+   1073          
+   1074            return ( status );
+   1075          }
+   1076          
+   1077          /*********************************************************************
+   1078           * @fn      targetSelectNwkParams
+   1079           *
+   1080           * @brief   Select a unique PAN ID and Extended PAN ID when compared to
+   1081           *          the PAN IDs and Extended PAN IDs of the networks detected
+   1082           *          on the TouchLink channels. The selected Extended PAN ID must be
+   1083           *          a random number (and not equal to our IEEE address).
+   1084           *
+   1085           * @param   void
+   1086           *
+   1087           * @return  void
+   1088           */
+   1089          static void targetSelectNwkParams( void )
+   1090          {
+   1091            uint8 status = ZFailure;
+   1092          
+   1093            while ( status == ZFailure )
+   1094            {
+   1095              // Select a random Extended PAN ID
+   1096              touchLink_GenerateRandNum( _NIB.extendedPANID, Z_EXTADDR_LEN );
+   1097          
+   1098              // Select a random PAN ID
+   1099              _NIB.nwkPanId = osal_rand( );
+   1100          
+   1101              // Make sure they're unique
+   1102              status = targetVerifyNwkParams( _NIB.nwkPanId, _NIB.extendedPANID );
+   1103            }
+   1104          
+   1105            if ( _NIB.nwkLogicalChannel == 0 )
+   1106            {
+   1107              if (TOUCHLINK_FIXED_CHANNEL_ENABLE == TRUE )
+   1108              {
+   1109                // Use the fixed channel defined in bdb_interface
+   1110                _NIB.nwkLogicalChannel = TOUCHLINK_FIXED_CHANNEL;
+   1111              }
+   1112              else
+   1113              {
+   1114                // Select randomly one of the TouchLink channels as our logical channel
+   1115                _NIB.nwkLogicalChannel = touchLink_GetRandPrimaryChannel( );
+   1116              }
+   1117            }
+   1118          
+   1119            _NIB.nwkDevAddress = osal_rand( );
+   1120          
+   1121            // Configure MAC with our network parameters
+   1122            touchLink_SetMacNwkParams( _NIB.nwkDevAddress, _NIB.nwkPanId, _NIB.nwkLogicalChannel );
+   1123          }
+   1124          
+   1125          /*********************************************************************
+   1126           * @fn      targetVerifyNwkParams
+   1127           *
+   1128           * @brief   Verify that the PAN ID and Extended PAN ID are unique.
+   1129           *
+   1130           * @param   PANID - PAN Identifier
+   1131           * @param   pExtendedPANID - extended PAN Identifier
+   1132           *
+   1133           * @return  status
+   1134           */
+   1135          static ZStatus_t targetVerifyNwkParams( uint16 PANID, uint8 *pExtendedPANID )
+   1136          {
+   1137            touchLinkDiscoveredNwkParam_t *pParam = pDiscoveredNwkParamList;
+   1138          
+   1139            // Add for our network parameters in the Network Parameter List
+   1140            while ( pParam != NULL )
+   1141            {
+   1142              if ( ( pParam->PANID == PANID ) &&
+   1143                   ( osal_ExtAddrEqual( pParam->extendedPANID, pExtendedPANID ) ) )
+   1144              {
+   1145                return ( ZFailure );
+   1146              }
+   1147          
+   1148              pParam = pParam->nextParam;
+   1149            }
+   1150          
+   1151            return ( ZSuccess );
+   1152          }
+   1153          
+   1154          /*********************************************************************
+   1155           * @fn      targetSendNwkStartRsp
+   1156           *
+   1157           * @brief   Send out a Network Start Response command.
+   1158           *
+   1159           * @param   dstAddr - destination's address
+   1160           * @param   transID - touch link transaction identifier
+   1161           * @param   status - Network Start Response command status field
+   1162           * @param   pNwkParams - network parameters
+   1163           * @param   nwkUpdateId - network update identifier
+   1164           * @param   seqNum
+   1165           *
+   1166           * @return  none
+   1167           */
+   1168          #if (ZSTACK_ROUTER_BUILD)
+   1169          static void targetSendNwkStartRsp( afAddrType_t *dstAddr, uint32 transID, uint8 status,
+   1170                                             bdbTLNwkParams_t *pNwkParams, uint8 nwkUpdateId, uint8 seqNum )
+   1171          {
+   1172            bdbTLNwkStartRsp_t *pRsp;
+   1173          
+   1174            // Send out a response
+   1175            pRsp = (bdbTLNwkStartRsp_t *)osal_mem_alloc( sizeof( bdbTLNwkStartRsp_t ) );
+   1176            if ( pRsp )
+   1177            {
+   1178              pRsp->transID = transID;
+   1179              pRsp->status = status;
+   1180          
+   1181              if ( pNwkParams != NULL )
+   1182              {
+   1183                osal_cpyExtAddr( pRsp->extendedPANID, pNwkParams->extendedPANID );
+   1184                pRsp->logicalChannel = pNwkParams->logicalChannel;
+   1185                pRsp->panId = pNwkParams->panId;
+   1186              }
+   1187              else
+   1188              {
+   1189                osal_memset( pRsp->extendedPANID, 0, Z_EXTADDR_LEN );
+   1190                pRsp->logicalChannel = 0;
+   1191                pRsp->panId = 0;
+   1192              }
+   1193          
+   1194              pRsp->nwkUpdateId = nwkUpdateId;
+   1195          
+   1196              bdbTL_Send_NwkStartRsp( TOUCHLINK_INTERNAL_ENDPOINT, dstAddr, pRsp, seqNum );
+   1197          
+   1198              osal_mem_free( pRsp );
+   1199            }
+   1200          }
+   1201          #endif  // ZSTACK_ROUTER_BUILD
+   1202          
+   1203          
+   1204          #endif // BDB_TL_TARGET
+   1205          
+   1206          /*********************************************************************
+   1207          *********************************************************************/
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: none

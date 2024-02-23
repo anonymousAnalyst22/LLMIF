@@ -1,0 +1,5908 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// IAR C/C++ Compiler V10.10.1.4655 for 8051              22/Nov/2023  15:42:41
+// Copyright 2004-2017 IAR Systems AB.
+// Standalone license - IAR Embedded Workbench for 8051
+//
+//    Core               =  plain
+//    Code model         =  banked
+//    Data model         =  large
+//    Calling convention =  xdata reentrant
+//    Constant location  =  data_rom
+//    Dptr setup         =  1,16
+//                          
+//    Source file        =  
+//        D:\fuzzing-coordinator-response-collection\Components\hal\target\CC2530EB\HW_LCD\HAL_TFT\hal_tft.c
+//    Command line       =  
+//        -f C:\Users\ADMINI~1\AppData\Local\Temp\EWA1E6.tmp
+//        (D:\fuzzing-coordinator-response-collection\Components\hal\target\CC2530EB\HW_LCD\HAL_TFT\hal_tft.c
+//        -D SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE -D
+//        MULTICAST_ENABLED=FALSE -D ZCL_READ -D ZCL_DISCOVER -D ZCL_WRITE -D
+//        ZCL_BASIC -D ZCL_IDENTIFY -D ISR_KEYINTERRUPT -D HAL_UART=TRUE -D
+//        HAL_LCD=FALSE -D ZCL_ON_OFF -D INT_HEAP_LEN=2800 -D
+//        HAL_UART_DMA_RX_MAX=256 -D HAL_UART_DMA_TX_MAX=256 -lC
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+//        -lA
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+//        --diag_suppress Pe001,Pa010 -o
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj
+//        -e --debug --core=plain --dptr=16,1 --data_model=large
+//        --code_model=banked --calling_convention=xdata_reentrant
+//        --place_constants=data_rom --nr_virtual_regs 8 -f
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg
+//        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+//        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+//        -DZDO_COORDINATOR -DRTR_NWK) -f
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+//        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+//        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+//        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+//        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+//        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+//        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+//        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+//        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+//        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+//        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x00, 0x01, 0x02, 0x03,
+//        0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E,
+//        0x0F}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+//        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+//        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+//        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000
+//        -DENABLE_LED4_DISABLE_S1) -f
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\Source\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\Source\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\ZMain\TI2530DB\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\include\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\include\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mt\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\osal\include\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\saddr\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\sdata\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\af\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\bdb\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\gp\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sec\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sys\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zcl\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\Common\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\SPI\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\Font\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_LCD_SPI\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_OLED\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_TFT\
+//        -Ohz --require_prototypes)
+//    Locale             =  Chinese (Simplified)_China.936
+//    List file          =  
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List\hal_tft.s51
+//
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME hal_tft
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__register_banks", "*"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?V0
+        EXTERN ?V1
+        EXTERN ?V2
+        EXTERN ?V3
+        EXTERN ?V4
+        EXTERN ?V5
+        EXTERN ?V6
+        EXTERN ?V7
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK_I_ONE
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?SS_SHR
+        EXTERN ?S_SHL
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+
+        FUNCTION `??ST7735SInit::?relay`,0203H
+        FUNCTION `??halTFTDrawPixel::?relay`,0203H
+        PUBLIC `??halTFTInit::?relay`
+        FUNCTION `??halTFTInit::?relay`,0203H
+        FUNCTION `??halTFTSetRegion::?relay`,0203H
+        PUBLIC `??halTFTSetScreen::?relay`
+        FUNCTION `??halTFTSetScreen::?relay`,0203H
+        FUNCTION `??halTFTShowChar8x16::?relay`,0203H
+        FUNCTION `??halTFTShowChineseChar16x16::?relay`,0203H
+        PUBLIC `??halTFTShowPicture::?relay`
+        FUNCTION `??halTFTShowPicture::?relay`,0203H
+        PUBLIC `??halTFTShowX16::?relay`
+        FUNCTION `??halTFTShowX16::?relay`,0203H
+        FUNCTION ST7735SInit,021203H
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        PUBWEAK _A_P1
+        FUNCTION halTFTDrawPixel,0a1203H
+        ARGFRAME XSTACK, 27, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 14, STACK
+        PUBLIC halTFTInit
+        FUNCTION halTFTInit,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        FUNCTION halTFTSetRegion,0a1203H
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 15, STACK
+        PUBLIC halTFTSetScreen
+        FUNCTION halTFTSetScreen,0a1203H
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 14, STACK
+        FUNCTION halTFTShowChar8x16,0a1203H
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME XSTACK, 26, STACK
+        FUNCTION halTFTShowChineseChar16x16,0a1203H
+        ARGFRAME XSTACK, 23, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 27, STACK
+        PUBLIC halTFTShowPicture
+        FUNCTION halTFTShowPicture,0a1203H
+        ARGFRAME XSTACK, 2, STACK
+        LOCFRAME XSTACK, 22, STACK
+        PUBLIC halTFTShowX16
+        FUNCTION halTFTShowX16,0a1203H
+        ARGFRAME XSTACK, 6, STACK
+        LOCFRAME XSTACK, 23, STACK
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA_SP SP IDATA
+          CFI StackFrame CFA_PSP16 PSP16 XDATA
+          CFI StackFrame CFA_XSP16 XSP16 XDATA
+          CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+          CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+          CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+          CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+          CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+          CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+          CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+          CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+          CFI Resource SP:8, PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+          CFI VirtualResource ?RET:24
+          CFI Resource ?BRET_EXT:8
+          CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+          CFI ResourceParts PSP16 PSPH, PSPL
+          CFI ResourceParts XSP16 XSPH, XSPL
+          CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 1
+          CFI DataAlign -1
+          CFI ReturnAddress ?RET CODE
+          CFI CFA_DOVERLAY Used
+          CFI CFA_IOVERLAY Used
+          CFI CFA_SP SP+-3
+          CFI CFA_PSP16 PSP16+0
+          CFI CFA_XSP16 XSP16+0
+          CFI `PSW.CY` SameValue
+          CFI `B.BR0` SameValue
+          CFI `B.BR1` SameValue
+          CFI `B.BR2` SameValue
+          CFI `B.BR3` SameValue
+          CFI `B.BR4` SameValue
+          CFI `B.BR5` SameValue
+          CFI `B.BR6` SameValue
+          CFI `B.BR7` SameValue
+          CFI `VB.BR8` SameValue
+          CFI `VB.BR9` SameValue
+          CFI `VB.BR10` SameValue
+          CFI `VB.BR11` SameValue
+          CFI `VB.BR12` SameValue
+          CFI `VB.BR13` SameValue
+          CFI `VB.BR14` SameValue
+          CFI `VB.BR15` SameValue
+          CFI VB SameValue
+          CFI B Undefined
+          CFI A Undefined
+          CFI PSW SameValue
+          CFI DPL0 SameValue
+          CFI DPH0 SameValue
+          CFI R0 Undefined
+          CFI R1 Undefined
+          CFI R2 Undefined
+          CFI R3 Undefined
+          CFI R4 Undefined
+          CFI R5 Undefined
+          CFI R6 SameValue
+          CFI R7 SameValue
+          CFI V0 SameValue
+          CFI V1 SameValue
+          CFI V2 SameValue
+          CFI V3 SameValue
+          CFI V4 SameValue
+          CFI V5 SameValue
+          CFI V6 SameValue
+          CFI V7 SameValue
+          CFI PSPH Undefined
+          CFI PSPL Undefined
+          CFI XSPH Undefined
+          CFI XSPL Undefined
+          CFI ?RET Concat
+          CFI ?BRET_EXT Frame(CFA_SP, 3)
+          CFI ?RET_HIGH Frame(CFA_SP, 2)
+          CFI ?RET_LOW Frame(CFA_SP, 1)
+          CFI EndCommon cfiCommon0
+        
+        
+          CFI Common cfiCommon1 Using cfiNames0
+          CFI CodeAlign 1
+          CFI DataAlign -1
+          CFI ReturnAddress ?RET CODE
+          CFI CFA_DOVERLAY Used
+          CFI CFA_IOVERLAY Used
+          CFI CFA_SP SP+-2
+          CFI CFA_PSP16 PSP16+0
+          CFI CFA_XSP16 XSP16+0
+          CFI `PSW.CY` SameValue
+          CFI `B.BR0` SameValue
+          CFI `B.BR1` SameValue
+          CFI `B.BR2` SameValue
+          CFI `B.BR3` SameValue
+          CFI `B.BR4` SameValue
+          CFI `B.BR5` SameValue
+          CFI `B.BR6` SameValue
+          CFI `B.BR7` SameValue
+          CFI `VB.BR8` SameValue
+          CFI `VB.BR9` SameValue
+          CFI `VB.BR10` SameValue
+          CFI `VB.BR11` SameValue
+          CFI `VB.BR12` SameValue
+          CFI `VB.BR13` SameValue
+          CFI `VB.BR14` SameValue
+          CFI `VB.BR15` SameValue
+          CFI VB SameValue
+          CFI B SameValue
+          CFI A SameValue
+          CFI PSW SameValue
+          CFI DPL0 SameValue
+          CFI DPH0 SameValue
+          CFI R0 SameValue
+          CFI R1 SameValue
+          CFI R2 SameValue
+          CFI R3 SameValue
+          CFI R4 SameValue
+          CFI R5 SameValue
+          CFI R6 SameValue
+          CFI R7 SameValue
+          CFI V0 SameValue
+          CFI V1 SameValue
+          CFI V2 SameValue
+          CFI V3 SameValue
+          CFI V4 SameValue
+          CFI V5 SameValue
+          CFI V6 SameValue
+          CFI V7 SameValue
+          CFI PSPH Undefined
+          CFI PSPL Undefined
+          CFI XSPH Undefined
+          CFI XSPL Undefined
+          CFI ?RET Concat
+          CFI ?BRET_EXT SameValue
+          CFI ?RET_HIGH Frame(CFA_SP, 2)
+          CFI ?RET_LOW Frame(CFA_SP, 1)
+          CFI EndCommon cfiCommon1
+        
+delayMs             SYMBOL "delayMs"
+`??delayMs::?relay` SYMBOL "?relay", delayMs
+halLcdSpiInit       SYMBOL "halLcdSpiInit"
+`??halLcdSpiInit::?relay` SYMBOL "?relay", halLcdSpiInit
+halLcdSpiTxCmd      SYMBOL "halLcdSpiTxCmd"
+`??halLcdSpiTxCmd::?relay` SYMBOL "?relay", halLcdSpiTxCmd
+halLcdSpiTxData     SYMBOL "halLcdSpiTxData"
+`??halLcdSpiTxData::?relay` SYMBOL "?relay", halLcdSpiTxData
+halTFTInit          SYMBOL "halTFTInit"
+`??halTFTInit::?relay` SYMBOL "?relay", halTFTInit
+halTFTSetScreen     SYMBOL "halTFTSetScreen"
+`??halTFTSetScreen::?relay` SYMBOL "?relay", halTFTSetScreen
+halTFTShowPicture   SYMBOL "halTFTShowPicture"
+`??halTFTShowPicture::?relay` SYMBOL "?relay", halTFTShowPicture
+halTFTShowX16       SYMBOL "halTFTShowX16"
+`??halTFTShowX16::?relay` SYMBOL "?relay", halTFTShowX16
+
+        EXTERN `??delayMs::?relay`
+        FUNCTION `??delayMs::?relay`,00H
+        EXTERN `??halLcdSpiInit::?relay`
+        FUNCTION `??halLcdSpiInit::?relay`,00H
+        EXTERN `??halLcdSpiTxCmd::?relay`
+        FUNCTION `??halLcdSpiTxCmd::?relay`,00H
+        EXTERN `??halLcdSpiTxData::?relay`
+        FUNCTION `??halLcdSpiTxData::?relay`,00H
+        EXTERN delayMs
+        FUNCTION delayMs,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN halLcdSpiInit
+        FUNCTION halLcdSpiInit,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN halLcdSpiTxCmd
+        FUNCTION halLcdSpiTxCmd,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN halLcdSpiTxData
+        FUNCTION halLcdSpiTxData,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 18, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+
+// D:\fuzzing-coordinator-response-collection\Components\hal\target\CC2530EB\HW_LCD\HAL_TFT\hal_tft.c
+//    1 /**
+//    2  * Copyright (c) 2020~2022 iotlucker.com, All Rights Reserved.
+//    3  *
+//    4  * @Official Store: https://shop233815998.taobao.com
+//    5  * @Official Website & Online document: http://www.iotlucker.com
+//    6  * @WeChat Official Accounts: shanxuefang_iot
+//    7  * @Support: 1915912696@qq.com
+//    8  */
+//    9 #include "hal_tft.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,090H
+// union <unnamed> volatile __sfr _A_P1
+_A_P1:
+        DATA8
+        DS 1
+//   10 #include "font_h_8x16.h"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+// static unsigned char const __xdata_rom FontTable_H_8X16[1520]
+FontTable_H_8X16:
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 0
+        DB 0
+        DB 16
+        DB 16
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 108
+        DB 108
+        DB 36
+        DB 36
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 1
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 36
+        DB 36
+        DB 36
+        DB 36
+        DB 254
+        DB 72
+        DB 72
+        DB 72
+        DB 72
+        DB 252
+        DB 144
+        DB 144
+        DB 144
+        DB 144
+        DB 0
+        DB 0
+        DB 16
+        DB 60
+        DB 84
+        DB 146
+        DB 144
+        DB 80
+        DB 56
+        DB 20
+        DB 18
+        DB 18
+        DB 146
+        DB 84
+        DB 120
+        DB 16
+        DB 0
+        DB 0
+        DB 0
+        DB 34
+        DB 92
+        DB 148
+        DB 168
+        DB 72
+        DB 16
+        DB 16
+        DB 36
+        DB 42
+        DB 82
+        DB 84
+        DB 136
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 48
+        DB 72
+        DB 72
+        DB 80
+        DB 32
+        DB 110
+        DB 84
+        DB 148
+        DB 140
+        DB 136
+        DB 138
+        DB 116
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 48
+        DB 48
+        DB 16
+        DB 16
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 4
+        DB 8
+        DB 16
+        DB 16
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 16
+        DB 16
+        DB 8
+        DB 4
+        DB 0
+        DB 0
+        DB 128
+        DB 64
+        DB 32
+        DB 32
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 32
+        DB 32
+        DB 64
+        DB 128
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 16
+        DB 84
+        DB 56
+        DB 16
+        DB 56
+        DB 84
+        DB 16
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 254
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 16
+        DB 16
+        DB 32
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 254
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 16
+        DB 16
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 4
+        DB 4
+        DB 8
+        DB 8
+        DB 16
+        DB 16
+        DB 32
+        DB 32
+        DB 64
+        DB 64
+        DB 128
+        DB 128
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 56
+        DB 68
+        DB 130
+        DB 130
+        DB 130
+        DB 130
+        DB 130
+        DB 130
+        DB 130
+        DB 130
+        DB 68
+        DB 56
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 16
+        DB 112
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 124
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 56
+        DB 68
+        DB 130
+        DB 130
+        DB 4
+        DB 8
+        DB 16
+        DB 32
+        DB 64
+        DB 130
+        DB 132
+        DB 252
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 56
+        DB 68
+        DB 130
+        DB 2
+        DB 4
+        DB 56
+        DB 4
+        DB 2
+        DB 2
+        DB 130
+        DB 68
+        DB 56
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 4
+        DB 12
+        DB 20
+        DB 20
+        DB 36
+        DB 36
+        DB 68
+        DB 68
+        DB 254
+        DB 4
+        DB 4
+        DB 14
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 252
+        DB 128
+        DB 128
+        DB 128
+        DB 184
+        DB 196
+        DB 130
+        DB 2
+        DB 2
+        DB 130
+        DB 132
+        DB 120
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 60
+        DB 66
+        DB 130
+        DB 128
+        DB 184
+        DB 196
+        DB 130
+        DB 130
+        DB 130
+        DB 130
+        DB 68
+        DB 56
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 126
+        DB 66
+        DB 130
+        DB 4
+        DB 4
+        DB 8
+        DB 8
+        DB 8
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 56
+        DB 68
+        DB 130
+        DB 130
+        DB 68
+        DB 56
+        DB 68
+        DB 130
+        DB 130
+        DB 130
+        DB 68
+        DB 56
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 56
+        DB 68
+        DB 130
+        DB 130
+        DB 130
+        DB 130
+        DB 70
+        DB 58
+        DB 2
+        DB 130
+        DB 68
+        DB 56
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 16
+        DB 16
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 16
+        DB 16
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 16
+        DB 16
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 16
+        DB 16
+        DB 32
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 6
+        DB 24
+        DB 96
+        DB 128
+        DB 96
+        DB 24
+        DB 6
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 254
+        DB 0
+        DB 0
+        DB 254
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 192
+        DB 48
+        DB 12
+        DB 2
+        DB 12
+        DB 48
+        DB 192
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 56
+        DB 68
+        DB 130
+        DB 130
+        DB 2
+        DB 4
+        DB 8
+        DB 16
+        DB 16
+        DB 16
+        DB 0
+        DB 16
+        DB 16
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 56
+        DB 68
+        DB 130
+        DB 154
+        DB 170
+        DB 170
+        DB 170
+        DB 170
+        DB 170
+        DB 150
+        DB 128
+        DB 66
+        DB 60
+        DB 0
+        DB 0
+        DB 0
+        DB 16
+        DB 16
+        DB 16
+        DB 40
+        DB 40
+        DB 40
+        DB 68
+        DB 68
+        DB 124
+        DB 68
+        DB 68
+        DB 238
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 252
+        DB 66
+        DB 66
+        DB 66
+        DB 66
+        DB 124
+        DB 66
+        DB 66
+        DB 66
+        DB 66
+        DB 66
+        DB 252
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 60
+        DB 68
+        DB 130
+        DB 128
+        DB 128
+        DB 128
+        DB 128
+        DB 128
+        DB 130
+        DB 130
+        DB 68
+        DB 56
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 248
+        DB 68
+        DB 66
+        DB 66
+        DB 66
+        DB 66
+        DB 66
+        DB 66
+        DB 66
+        DB 66
+        DB 68
+        DB 248
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 252
+        DB 68
+        DB 66
+        DB 64
+        DB 68
+        DB 124
+        DB 68
+        DB 64
+        DB 64
+        DB 66
+        DB 68
+        DB 252
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 252
+        DB 68
+        DB 66
+        DB 64
+        DB 68
+        DB 124
+        DB 68
+        DB 64
+        DB 64
+        DB 64
+        DB 64
+        DB 240
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 52
+        DB 76
+        DB 130
+        DB 128
+        DB 128
+        DB 128
+        DB 142
+        DB 132
+        DB 132
+        DB 132
+        DB 76
+        DB 52
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 238
+        DB 68
+        DB 68
+        DB 68
+        DB 68
+        DB 124
+        DB 68
+        DB 68
+        DB 68
+        DB 68
+        DB 68
+        DB 238
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 124
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 124
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 62
+        DB 8
+        DB 8
+        DB 8
+        DB 8
+        DB 8
+        DB 8
+        DB 8
+        DB 8
+        DB 136
+        DB 136
+        DB 112
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 238
+        DB 68
+        DB 72
+        DB 72
+        DB 80
+        DB 96
+        DB 80
+        DB 72
+        DB 72
+        DB 68
+        DB 68
+        DB 238
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 224
+        DB 64
+        DB 64
+        DB 64
+        DB 64
+        DB 64
+        DB 64
+        DB 64
+        DB 64
+        DB 66
+        DB 68
+        DB 252
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 198
+        DB 68
+        DB 108
+        DB 108
+        DB 108
+        DB 84
+        DB 84
+        DB 84
+        DB 68
+        DB 68
+        DB 68
+        DB 238
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 206
+        DB 68
+        DB 100
+        DB 100
+        DB 100
+        DB 84
+        DB 84
+        DB 76
+        DB 76
+        DB 76
+        DB 68
+        DB 228
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 56
+        DB 68
+        DB 130
+        DB 130
+        DB 130
+        DB 130
+        DB 130
+        DB 130
+        DB 130
+        DB 130
+        DB 68
+        DB 56
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 248
+        DB 68
+        DB 66
+        DB 66
+        DB 66
+        DB 68
+        DB 120
+        DB 64
+        DB 64
+        DB 64
+        DB 64
+        DB 224
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 56
+        DB 68
+        DB 130
+        DB 130
+        DB 130
+        DB 130
+        DB 130
+        DB 130
+        DB 130
+        DB 186
+        DB 68
+        DB 60
+        DB 2
+        DB 0
+        DB 0
+        DB 0
+        DB 240
+        DB 72
+        DB 68
+        DB 68
+        DB 68
+        DB 72
+        DB 112
+        DB 72
+        DB 68
+        DB 68
+        DB 68
+        DB 230
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 60
+        DB 68
+        DB 130
+        DB 128
+        DB 64
+        DB 48
+        DB 12
+        DB 2
+        DB 2
+        DB 130
+        DB 68
+        DB 120
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 124
+        DB 84
+        DB 146
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 56
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 238
+        DB 68
+        DB 68
+        DB 68
+        DB 68
+        DB 68
+        DB 68
+        DB 68
+        DB 68
+        DB 68
+        DB 68
+        DB 56
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 238
+        DB 68
+        DB 68
+        DB 68
+        DB 68
+        DB 40
+        DB 40
+        DB 40
+        DB 40
+        DB 16
+        DB 16
+        DB 16
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 238
+        DB 68
+        DB 84
+        DB 84
+        DB 84
+        DB 84
+        DB 84
+        DB 84
+        DB 40
+        DB 40
+        DB 40
+        DB 40
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 238
+        DB 68
+        DB 68
+        DB 40
+        DB 40
+        DB 16
+        DB 16
+        DB 40
+        DB 40
+        DB 68
+        DB 68
+        DB 238
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 238
+        DB 68
+        DB 68
+        DB 40
+        DB 40
+        DB 40
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 56
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 126
+        DB 68
+        DB 132
+        DB 8
+        DB 8
+        DB 16
+        DB 32
+        DB 32
+        DB 64
+        DB 130
+        DB 132
+        DB 252
+        DB 0
+        DB 0
+        DB 0
+        DB 28
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 28
+        DB 0
+        DB 0
+        DB 0
+        DB 238
+        DB 68
+        DB 84
+        DB 84
+        DB 254
+        DB 84
+        DB 84
+        DB 84
+        DB 40
+        DB 40
+        DB 40
+        DB 40
+        DB 0
+        DB 0
+        DB 0
+        DB 112
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 112
+        DB 0
+        DB 0
+        DB 48
+        DB 72
+        DB 132
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 254
+        DB 0
+        DB 0
+        DB 64
+        DB 32
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 120
+        DB 132
+        DB 4
+        DB 124
+        DB 132
+        DB 132
+        DB 140
+        DB 118
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 192
+        DB 64
+        DB 64
+        DB 64
+        DB 88
+        DB 100
+        DB 66
+        DB 66
+        DB 66
+        DB 66
+        DB 100
+        DB 88
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 56
+        DB 68
+        DB 128
+        DB 128
+        DB 128
+        DB 128
+        DB 68
+        DB 56
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 12
+        DB 4
+        DB 4
+        DB 4
+        DB 52
+        DB 76
+        DB 132
+        DB 132
+        DB 132
+        DB 132
+        DB 76
+        DB 54
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 120
+        DB 132
+        DB 132
+        DB 252
+        DB 128
+        DB 128
+        DB 132
+        DB 120
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 24
+        DB 36
+        DB 32
+        DB 32
+        DB 248
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 112
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 58
+        DB 68
+        DB 68
+        DB 120
+        DB 128
+        DB 124
+        DB 130
+        DB 130
+        DB 124
+        DB 0
+        DB 0
+        DB 0
+        DB 192
+        DB 64
+        DB 64
+        DB 64
+        DB 88
+        DB 100
+        DB 68
+        DB 68
+        DB 68
+        DB 68
+        DB 68
+        DB 238
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 16
+        DB 16
+        DB 0
+        DB 0
+        DB 48
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 56
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 16
+        DB 16
+        DB 0
+        DB 0
+        DB 48
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 144
+        DB 96
+        DB 0
+        DB 0
+        DB 0
+        DB 192
+        DB 64
+        DB 64
+        DB 64
+        DB 92
+        DB 72
+        DB 80
+        DB 96
+        DB 80
+        DB 72
+        DB 68
+        DB 238
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 48
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 17
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 57
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 172
+        DB 210
+        DB 146
+        DB 146
+        DB 146
+        DB 146
+        DB 146
+        DB 214
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 88
+        DB 228
+        DB 68
+        DB 68
+        DB 68
+        DB 68
+        DB 68
+        DB 238
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 56
+        DB 68
+        DB 130
+        DB 130
+        DB 130
+        DB 130
+        DB 68
+        DB 56
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 216
+        DB 100
+        DB 66
+        DB 66
+        DB 66
+        DB 100
+        DB 88
+        DB 64
+        DB 224
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 54
+        DB 76
+        DB 132
+        DB 132
+        DB 132
+        DB 76
+        DB 52
+        DB 4
+        DB 14
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 108
+        DB 48
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 112
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 120
+        DB 136
+        DB 132
+        DB 96
+        DB 24
+        DB 132
+        DB 68
+        DB 120
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 32
+        DB 32
+        DB 32
+        DB 248
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 36
+        DB 24
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 198
+        DB 66
+        DB 66
+        DB 66
+        DB 66
+        DB 66
+        DB 70
+        DB 58
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 238
+        DB 68
+        DB 68
+        DB 40
+        DB 40
+        DB 40
+        DB 16
+        DB 16
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 238
+        DB 68
+        DB 68
+        DB 84
+        DB 84
+        DB 40
+        DB 40
+        DB 40
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 238
+        DB 68
+        DB 40
+        DB 16
+        DB 16
+        DB 40
+        DB 68
+        DB 238
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 238
+        DB 68
+        DB 68
+        DB 40
+        DB 40
+        DB 16
+        DB 16
+        DB 160
+        DB 192
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 126
+        DB 68
+        DB 136
+        DB 16
+        DB 32
+        DB 66
+        DB 132
+        DB 252
+        DB 0
+        DB 0
+        DB 0
+        DB 12
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 96
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 12
+        DB 0
+        DB 0
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 16
+        DB 0
+        DB 0
+        DB 192
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 24
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 192
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 114
+        DB 140
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+//   11 #include "font_chinese_h_16x16.h"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+// static struct <unnamed> const __xdata_rom FontTable_Chinese_H_16X16[4]
+FontTable_Chinese_H_16X16:
+        DB 0BDH, 0F1H
+        DB 1
+        DB 0
+        DB 1
+        DB 0
+        DB 2
+        DB 128
+        DB 4
+        DB 64
+        DB 8
+        DB 32
+        DB 18
+        DB 16
+        DB 33
+        DB 8
+        DB 193
+        DB 6
+        DB 0
+        DB 0
+        DB 31
+        DB 240
+        DB 0
+        DB 16
+        DB 0
+        DB 32
+        DB 0
+        DB 32
+        DB 0
+        DB 64
+        DB 0
+        DB 128
+        DB 1
+        DB 0
+        DB 0CCH, 0ECH
+        DB 0
+        DB 0
+        DB 63
+        DB 248
+        DB 1
+        DB 0
+        DB 1
+        DB 0
+        DB 1
+        DB 0
+        DB 1
+        DB 0
+        DB 255
+        DB 254
+        DB 1
+        DB 0
+        DB 2
+        DB 128
+        DB 2
+        DB 128
+        DB 4
+        DB 64
+        DB 4
+        DB 64
+        DB 8
+        DB 32
+        DB 16
+        DB 16
+        DB 32
+        DB 8
+        DB 192
+        DB 6
+        DB 0C6H, 0F8H
+        DB 16
+        DB 0
+        DB 16
+        DB 0
+        DB 63
+        DB 252
+        DB 32
+        DB 0
+        DB 79
+        DB 240
+        DB 128
+        DB 0
+        DB 63
+        DB 240
+        DB 0
+        DB 16
+        DB 0
+        DB 16
+        DB 0
+        DB 16
+        DB 0
+        DB 16
+        DB 0
+        DB 16
+        DB 0
+        DB 10
+        DB 0
+        DB 10
+        DB 0
+        DB 6
+        DB 0
+        DB 2
+        DB 0CEH, 0C2H
+        DB 0
+        DB 0
+        DB 35
+        DB 248
+        DB 18
+        DB 8
+        DB 18
+        DB 8
+        DB 131
+        DB 248
+        DB 66
+        DB 8
+        DB 66
+        DB 8
+        DB 19
+        DB 248
+        DB 16
+        DB 0
+        DB 39
+        DB 252
+        DB 228
+        DB 164
+        DB 36
+        DB 164
+        DB 36
+        DB 164
+        DB 36
+        DB 164
+        DB 47
+        DB 254
+        DB 0
+        DB 0
+//   12 #include "hal_delay.h"
+//   13 
+//   14 /* Write a uint16 data to TFT. */
+//   15 #define HAL_TFT_WRITE_UINT16(val) do {    \ 
+//   16     halLcdSpiTxData((uint8)((val) >> 8)); \ 
+//   17     halLcdSpiTxData((uint8)(val));        \ 
+//   18 } while(0)
+//   19                   
+//   20 static void halTFTReset(void);   
+//   21 
+//   22 #if (defined LCD_TYPE) && (LCD_TYPE == LCD_TFT096)
+//   23 static void ST7735RInit(void);
+//   24 
+//   25 static void halTFTSetRegion(uint16 xs, uint16 ys, uint16 xe, uint16 ye);
+//   26 #define HAL_TFT_SET_REGION(xs, ys, xe, ye)  halTFTSetRegion(xs, ys, xe, ye)
+//   27 #endif
+//   28 
+//   29 #if (defined LCD_TYPE) && (LCD_TYPE == LCD_IPS096_T1)
+//   30 #define ST7735S_FLAG_MY     (1 << 7)
+//   31 #define ST7735S_FLAG_MX     (1 << 6)
+//   32 #define ST7735S_FLAG_MV     (1 << 5)
+//   33 #define ST7735S_FLAG_ML     (1 << 4)
+//   34 #define ST7735S_FLAG_RGB    (1 << 3)
+//   35 #define ST7735S_FLAG_MH     (1 << 2)
+//   36 
+//   37 #define ST7735S_MADCTL_RGB           (ST7735S_FLAG_RGB)
+//   38 #define ST7735S_MADCTL_MY_MV_RGB     (ST7735S_FLAG_MY | ST7735S_FLAG_MV | ST7735S_FLAG_RGB)
+//   39 #define ST7735S_MADCTL_MY_MX_RGB     (ST7735S_FLAG_MY | ST7735S_FLAG_MX | ST7735S_FLAG_RGB)
+//   40 #define ST7735S_MADCTL_MX_MV_ML_RGB  (ST7735S_FLAG_MX | ST7735S_FLAG_MV | ST7735S_FLAG_ML | ST7735S_FLAG_RGB)
+//   41 
+//   42 #define ST7735S_MADCTL  ST7735S_MADCTL_MX_MV_ML_RGB
+//   43 
+//   44 static void ST7735SInit(uint8 madctl);
+//   45 
+//   46 static void halTFTSetRegion(uint8 madctl, uint16 xs, uint16 ys, uint16 xe, uint16 ye);
+//   47 #define HAL_TFT_SET_REGION(xs, ys, xe, ye)  halTFTSetRegion(ST7735S_MADCTL, xs, ys, xe, ye)
+//   48 #endif
+//   49 
+//   50 
+//   51 static void halTFTSetPosition(uint16 x, uint16 y);
+//   52 static void halTFTDrawPixel(uint16 xs, uint16 ys, uint16 color);
+//   53 static void halTFTShowChar8x16(uint16 x, uint16 y, uint16 fontColor, uint16 backgroundColor, uint8 ch);
+//   54 static void halTFTShowChineseChar16x16(uint16 x, uint16 y, uint16 fontColor, uint16 backgroundColor, uint8 chL, uint8 chR);
+//   55 
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//   56 void halTFTInit(uint16 screenColor)
+halTFTInit:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function halTFTInit
+        CODE
+//   57 {    
+        FUNCALL halTFTInit, halLcdSpiInit
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTInit, ST7735SInit
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTInit, halTFTSetRegion
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTInit, halTFTSetScreen
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        MOV       A,#-0xa
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV       A,R2
+        MOV       R6,A
+        MOV       A,R3
+        MOV       R7,A
+//   58     /* Init SPI-GPIO */
+//   59     halLcdSpiInit();
+        ; Setup parameters for call to function halLcdSpiInit
+        LCALL     `??halLcdSpiInit::?relay`; Banked call to: halLcdSpiInit
+//   60     
+//   61 #if (defined LCD_TYPE) && (LCD_TYPE == LCD_TFT096)
+//   62     ST7735RInit();
+//   63 #elif (defined LCD_TYPE) && (LCD_TYPE == LCD_IPS096_T1)
+//   64     ST7735SInit(ST7735S_MADCTL);
+        ; Setup parameters for call to function ST7735SInit
+        MOV       R1,#0x78
+        LCALL     `??ST7735SInit::?relay`; Banked call to: ST7735SInit
+//   65 #else
+//   66     #error "Unknow LCD_TYPE."
+//   67 #endif
+//   68     
+//   69     /* Setting */
+//   70     halTFTSetPosition(0, 0);
+        ; Setup parameters for call to function halTFTSetRegion
+        CLR       A
+        MOV       ?V0,A
+        MOV       ?V1,A
+        MOV       R0,#?V0
+        LCALL     ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 12)
+        MOV       R0,#?V0
+        LCALL     ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 14)
+        MOV       R4,#0x0
+        MOV       R5,#0x0
+        MOV       R2,#0x0
+        MOV       R3,#0x0
+        MOV       R1,#0x78
+        LCALL     `??halTFTSetRegion::?relay`; Banked call to: halTFTSetRegion
+        MOV       A,#0x4
+        LCALL     ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 10)
+//   71     halTFTSetScreen(screenColor);
+        ; Setup parameters for call to function halTFTSetScreen
+        MOV       A,R6
+        MOV       R2,A
+        MOV       A,R7
+        MOV       R3,A
+        LCALL     `??halTFTSetScreen::?relay`; Banked call to: halTFTSetScreen
+//   72 }
+          CFI EndBlock cfiBlock0
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine0:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 10)
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        MOV       R7,#0x2
+        LJMP      ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock1
+//   73 
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//   74 void halTFTSetScreen(uint16 pixelVal)
+halTFTSetScreen:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function halTFTSetScreen
+        CODE
+//   75 {
+        FUNCALL halTFTSetScreen, halTFTSetRegion
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTSetScreen, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTSetScreen, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        MOV       A,#-0xa
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV       A,R2
+        MOV       R6,A
+        MOV       A,R3
+        MOV       R7,A
+//   76     uint16 x, y;
+//   77     
+//   78     HAL_TFT_SET_REGION(0, HAL_TFT_Y_OFFSET, HAL_TFT_X-1, HAL_TFT_Y-1);
+        ; Setup parameters for call to function halTFTSetRegion
+        MOV       ?V0,#0x4f
+        MOV       ?V1,#0x0
+        MOV       R0,#?V0
+        LCALL     ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 12)
+        MOV       ?V0,#-0x61
+        MOV       R0,#?V0
+        LCALL     ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 14)
+        MOV       R4,#0x0
+        MOV       R5,#0x0
+        MOV       R2,#0x0
+        MOV       R3,#0x0
+        MOV       R1,#0x78
+        LCALL     `??halTFTSetRegion::?relay`; Banked call to: halTFTSetRegion
+        MOV       A,#0x4
+        LCALL     ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 10)
+//   79     
+//   80     for (x = 0; x < HAL_TFT_X; x++)
+        MOV       ?V1,#-0x60
+//   81         for (y = HAL_TFT_Y_OFFSET; y < HAL_TFT_Y; y++) HAL_TFT_WRITE_UINT16(pixelVal);
+??halTFTSetScreen_0:
+        MOV       ?V0,#0x50
+??halTFTSetScreen_1:
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       A,R7
+        MOV       R1,A
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       A,R6
+        MOV       R1,A
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+        DEC       ?V0
+        MOV       A,?V0
+        JNZ       ??halTFTSetScreen_1
+        DEC       ?V1
+        MOV       A,?V1
+        JNZ       ??halTFTSetScreen_0
+//   82 }
+        SJMP      ?Subroutine0
+          CFI EndBlock cfiBlock2
+//   83 
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//   84 void halTFTShowX16(uint16 x, uint16 y, uint16 fontColor, uint16 backgroundColor, const uint8 *str)
+halTFTShowX16:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function halTFTShowX16
+        CODE
+//   85 {
+        FUNCALL halTFTShowX16, halTFTShowChar8x16
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTShowX16, halTFTShowChineseChar16x16
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 23, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 23, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        REQUIRE ?V7
+        MOV       A,#-0x10
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 16)
+        ; Saved register size: 16
+        ; Auto size: 2
+        MOV       A,#-0x2
+        LCALL     ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 18)
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOV       A,R4
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOV       A,R5
+        MOVX      @DPTR,A
+        MOV       ?V2,R2
+        MOV       ?V3,R3
+        MOV       A,#0x16
+        LCALL     ?XSTACK_DISP0_8
+        LCALL     ?Subroutine3 & 0xFFFF
+//   86     if (!str) return;
+??CrossCallReturnLabel_2:
+        JNZ       $+5
+        LJMP      ??halTFTShowX16_0 & 0xFFFF
+//   87     
+//   88     y += HAL_TFT_Y_OFFSET;
+//   89     const uint8 *ptext = str; // text
+        MOV       A,#0x12
+        LCALL     ?XSTACK_DISP0_8
+        LCALL     ?Subroutine4 & 0xFFFF
+??CrossCallReturnLabel_4:
+        MOV       A,#0x14
+        LCALL     ?XSTACK_DISP0_8
+        MOVX      A,@DPTR
+        MOV       R6,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       R7,A
+        SJMP      ??halTFTShowX16_1
+//   90 
+//   91     /* Show text */
+//   92     while(*ptext != 0) {
+//   93         /* ASCII Code: 0~127 */
+//   94         if ((*ptext) < 128) {
+//   95             /* End of line */
+//   96             if((x + 8) > HAL_TFT_X) return;
+//   97           
+//   98             /* Show 8x16 ASCII Char. */
+//   99             halTFTShowChar8x16(x, y, fontColor, backgroundColor, *ptext);
+??halTFTShowX16_2:
+        ; Setup parameters for call to function halTFTShowChar8x16
+        MOV       ?V6,R6
+        MOV       ?V7,R7
+        MOV       R0,#?V6
+        LCALL     ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 20)
+        MOV       R0,#?V0
+        LCALL     ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 22)
+        MOV       A,#0x4
+        LCALL     ?XSTACK_DISP0_8
+        LCALL     ?Subroutine6 & 0xFFFF
+??CrossCallReturnLabel_9:
+        LCALL     `??halTFTShowChar8x16::?relay`; Banked call to: halTFTShowChar8x16
+        MOV       A,#0x4
+        LCALL     ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 18)
+//  100             x += 8;
+        MOV       A,?V2
+        ADD       A,#0x8
+        MOV       ?V2,A
+        CLR       A
+        ADDC      A,?V3
+        MOV       ?V3,A
+//  101             
+//  102             ptext++;
+        MOV       ?V6,?V4
+        MOV       ?V7,?V5
+??halTFTShowX16_1:
+        MOV       DPL,?V6
+        MOV       DPH,?V7
+        MOVX      A,@DPTR
+        MOV       R1,A
+        JZ        ??halTFTShowX16_0
+        INC       DPTR
+        MOV       ?V4,DPL
+        MOV       ?V5,DPH
+        CLR       C
+        SUBB      A,#-0x80
+        MOV       A,?V2
+        JNC       ??halTFTShowX16_3
+        ADD       A,#0x8
+        LCALL     ?Subroutine8 & 0xFFFF
+??CrossCallReturnLabel_13:
+        JC        ??halTFTShowX16_2
+        SJMP      ??halTFTShowX16_0
+//  103         }
+//  104         /* Chinese 16x16 characters */
+//  105         else {
+//  106             /* End of line */
+//  107             if((x + 16) > HAL_TFT_X) return;
+??halTFTShowX16_3:
+        ADD       A,#0x10
+        LCALL     ?Subroutine8 & 0xFFFF
+??CrossCallReturnLabel_14:
+        JNC       ??halTFTShowX16_0
+//  108             
+//  109             halTFTShowChineseChar16x16(x, y, fontColor, backgroundColor, *ptext, *(ptext + 1));
+        ; Setup parameters for call to function halTFTShowChineseChar16x16
+        MOVX      A,@DPTR
+        MOV       ?V4,A
+        MOV       R0,#?V4
+        LCALL     ?PUSH_XSTACK_I_ONE
+          CFI CFA_XSP16 add(XSP16, 19)
+        MOV       ?V4,R6
+        MOV       ?V5,R7
+        MOV       R0,#?V4
+        LCALL     ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 21)
+        MOV       R0,#?V0
+        LCALL     ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 23)
+        MOV       A,#0x5
+        LCALL     ?XSTACK_DISP0_8
+        LCALL     ?Subroutine6 & 0xFFFF
+??CrossCallReturnLabel_10:
+        LCALL     `??halTFTShowChineseChar16x16::?relay`; Banked call to: halTFTShowChineseChar16x16
+        MOV       A,#0x5
+        LCALL     ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 18)
+//  110             
+//  111             x += 16;
+        MOV       A,?V2
+        ADD       A,#0x10
+        MOV       ?V2,A
+        CLR       A
+        ADDC      A,?V3
+        MOV       ?V3,A
+//  112             
+//  113             ptext += 2;
+        MOV       A,?V6
+        ADD       A,#0x2
+        MOV       ?V6,A
+        JNC       ??halTFTShowX16_1
+        INC       ?V7
+        SJMP      ??halTFTShowX16_1
+//  114         }
+//  115     } /* while(*ptext != 0) */
+//  116 }
+??halTFTShowX16_0:
+        LJMP      ?Subroutine1 & 0xFFFF
+          CFI EndBlock cfiBlock3
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine8:
+          CFI Block cfiCond4 Using cfiCommon0
+          CFI Function halTFTShowX16
+          CFI Conditional ??CrossCallReturnLabel_13
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI CFA_SP SP+-2
+          CFI CFA_XSP16 add(XSP16, 18)
+          CFI Block cfiCond5 Using cfiCommon0
+          CFI (cfiCond5) Function halTFTShowX16
+          CFI (cfiCond5) Conditional ??CrossCallReturnLabel_14
+          CFI (cfiCond5) R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI (cfiCond5) VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI (cfiCond5) V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI (cfiCond5) V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI (cfiCond5) V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond5) V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond5) V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond5) V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond5) V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond5) V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond5) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond5) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond5) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond5) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond5) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond5) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond5) CFA_SP SP+-2
+          CFI (cfiCond5) CFA_XSP16 add(XSP16, 18)
+          CFI Block cfiPicker6 Using cfiCommon1
+          CFI (cfiPicker6) NoFunction
+          CFI (cfiPicker6) Picker
+        MOV       R2,A
+        CLR       A
+        ADDC      A,?V3
+        MOV       R3,A
+        CLR       C
+        MOV       A,R2
+        SUBB      A,#-0x5f
+        MOV       A,R3
+        SUBB      A,#0x0
+        RET
+          CFI EndBlock cfiCond4
+          CFI EndBlock cfiCond5
+          CFI EndBlock cfiPicker6
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine6:
+          CFI Block cfiCond7 Using cfiCommon0
+          CFI Function halTFTShowX16
+          CFI Conditional ??CrossCallReturnLabel_9
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI CFA_SP SP+-2
+          CFI CFA_XSP16 add(XSP16, 22)
+          CFI Block cfiCond8 Using cfiCommon0
+          CFI (cfiCond8) Function halTFTShowX16
+          CFI (cfiCond8) Conditional ??CrossCallReturnLabel_10
+          CFI (cfiCond8) R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI (cfiCond8) VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI (cfiCond8) V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI (cfiCond8) V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI (cfiCond8) V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond8) V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond8) V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond8) V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond8) V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond8) V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond8) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond8) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond8) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond8) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond8) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond8) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond8) CFA_SP SP+-2
+          CFI (cfiCond8) CFA_XSP16 add(XSP16, 23)
+          CFI Block cfiPicker9 Using cfiCommon1
+          CFI (cfiPicker9) NoFunction
+          CFI (cfiPicker9) Picker
+        MOVX      A,@DPTR
+        MOV       R4,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       R5,A
+        MOV       R2,?V2
+        MOV       R3,?V3
+        RET
+          CFI EndBlock cfiCond7
+          CFI EndBlock cfiCond8
+          CFI EndBlock cfiPicker9
+//  117 
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  118 void halTFTShowPicture(uint8 x, uint8 y, uint8 picWidth, uint8 picHeight, const uint8 *pic)
+halTFTShowPicture:
+          CFI Block cfiBlock10 Using cfiCommon0
+          CFI Function halTFTShowPicture
+        CODE
+//  119 {
+        FUNCALL halTFTShowPicture, halTFTSetRegion
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTShowPicture, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 18, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 18, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTShowPicture, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 18, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 18, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        REQUIRE ?V7
+        MOV       A,#-0x10
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 16)
+        ; Saved register size: 16
+        ; Auto size: 2
+        MOV       A,#-0x2
+        LCALL     ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 18)
+        MOV       ?V3,R1
+        MOV       ?V2,R2
+//  120     uint8 picL, picH;
+//  121     const uint8 *pPic = pic;
+//  122     uint16 picSize = (uint16)picWidth * picHeight;
+        MOV       A,R3
+        MOV       B,R4
+        MUL       AB
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOV       A,B
+        MOVX      @DPTR,A
+        MOV       A,#0x12
+        LCALL     ?XSTACK_DISP0_8
+        LCALL     ?Subroutine3 & 0xFFFF
+//  123 
+//  124     y += HAL_TFT_Y_OFFSET;
+//  125     
+//  126     if (!pPic || (x + picWidth)  > HAL_TFT_X ||  (y + picHeight) > HAL_TFT_Y) return;
+??CrossCallReturnLabel_3:
+        JZ        ??halTFTShowPicture_0
+        MOV       A,R1
+        ADD       A,R3
+        MOV       R2,A
+        CLR       A
+        ADDC      A,#0x0
+        MOV       R3,A
+        MOV       A,R2
+        SUBB      A,#-0x5f
+        MOV       A,R3
+        SUBB      A,#0x0
+        CLR       C
+        XRL       A,PSW
+        RLC       A
+        JNC       ??halTFTShowPicture_0
+        MOV       A,?V2
+        ADD       A,R4
+        MOV       R0,A
+        CLR       A
+        ADDC      A,#0x0
+        MOV       R1,A
+        MOV       A,R0
+        SUBB      A,#0x51
+        MOV       A,R1
+        SUBB      A,#0x0
+        CLR       C
+        XRL       A,PSW
+        RLC       A
+        JC        ??halTFTShowPicture_1
+??halTFTShowPicture_0:
+        SJMP      ??halTFTShowPicture_2
+//  127 
+//  128     /* Set region */
+//  129     HAL_TFT_SET_REGION(x, y, x + picWidth - 1, y + picHeight - 1);
+??halTFTShowPicture_1:
+        ; Setup parameters for call to function halTFTSetRegion
+        MOV       A,R0
+        ADD       A,#-0x1
+        MOV       ?V4,A
+        MOV       A,R1
+        ADDC      A,#-0x1
+        MOV       ?V5,A
+        MOV       R0,#?V4
+        LCALL     ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 20)
+        MOV       A,R2
+        ADD       A,#-0x1
+        MOV       ?V4,A
+        MOV       A,R3
+        ADDC      A,#-0x1
+        MOV       ?V5,A
+        MOV       R0,#?V4
+        LCALL     ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 22)
+        MOV       R4,?V2
+        MOV       R5,#0x0
+        MOV       R2,?V3
+        MOV       R3,#0x0
+        MOV       R1,#0x78
+        LCALL     `??halTFTSetRegion::?relay`; Banked call to: halTFTSetRegion
+        MOV       A,#0x4
+        LCALL     ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 18)
+//  130 
+//  131     /* Show Picture */
+//  132     for (uint16 i = 0; i < picSize; i++) {  
+        MOV       R6,#0x0
+        MOV       R7,#0x0
+        SJMP      ??halTFTShowPicture_3
+//  133     #ifdef HAL_TFT_PIC_MSB
+//  134         picH = *(pPic + i*2);     // High 8Bit
+//  135         picL = *(pPic + i*2 + 1); // Low 8Bit
+//  136     #else
+//  137         picL = *(pPic + i*2);     // Low 8Bit
+??halTFTShowPicture_4:
+        MOV       A,R6
+        MOV       R0,A
+        MOV       A,R7
+        MOV       R1,A
+        MOV       A,R0
+        ADD       A,R0
+        MOV       R0,A
+        MOV       A,R1
+        RLC       A
+        MOV       R1,A
+        MOV       A,?V6
+        ADD       A,R0
+        MOV       DPL,A
+        MOV       A,?V7
+        ADDC      A,R1
+        MOV       DPH,A
+        MOVX      A,@DPTR
+        MOV       ?V4,A
+//  138         picH = *(pPic + i*2 + 1); // High 8Bit
+//  139     #endif
+//  140           
+//  141         HAL_TFT_WRITE_UINT16((uint16)picH<<8 | picL);                       
+        ; Setup parameters for call to function halLcdSpiTxData
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       R1,A
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,?V4
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  142     }
+        INC       R6
+        MOV       A,R6
+        JNZ       ??halTFTShowPicture_3
+        INC       R7
+??halTFTShowPicture_3:
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOVX      A,@DPTR
+        MOV       R0,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       R1,A
+        CLR       C
+        MOV       A,R6
+        SUBB      A,R0
+        MOV       A,R7
+        SUBB      A,R1
+        JC        ??halTFTShowPicture_4
+//  143 }
+??halTFTShowPicture_2:
+        LJMP      ?Subroutine1 & 0xFFFF
+          CFI EndBlock cfiBlock10
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine3:
+          CFI Block cfiCond11 Using cfiCommon0
+          CFI Function halTFTShowX16
+          CFI Conditional ??CrossCallReturnLabel_2
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI CFA_SP SP+-2
+          CFI CFA_XSP16 add(XSP16, 18)
+          CFI Block cfiCond12 Using cfiCommon0
+          CFI (cfiCond12) Function halTFTShowPicture
+          CFI (cfiCond12) Conditional ??CrossCallReturnLabel_3
+          CFI (cfiCond12) R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI (cfiCond12) VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI (cfiCond12) V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI (cfiCond12) V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI (cfiCond12) V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond12) V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond12) V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond12) V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond12) V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond12) V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond12) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond12) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond12) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond12) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond12) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond12) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond12) CFA_SP SP+-2
+          CFI (cfiCond12) CFA_XSP16 add(XSP16, 18)
+          CFI Block cfiPicker13 Using cfiCommon1
+          CFI (cfiPicker13) NoFunction
+          CFI (cfiPicker13) Picker
+        MOVX      A,@DPTR
+        MOV       ?V6,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       ?V7,A
+        MOV       A,?V6
+        ORL       A,?V7
+        RET
+          CFI EndBlock cfiCond11
+          CFI EndBlock cfiCond12
+          CFI EndBlock cfiPicker13
+//  144 
+//  145 static void halTFTReset(void)
+//  146 {
+//  147     SPI_GPIO_SET(HAL_LCD_SPI_RST_PORT, HAL_LCD_SPI_RST_PIN);
+//  148     delayMs(SYSCLK_32MHZ, 100);
+//  149     
+//  150     SPI_GPIO_CLEAR(HAL_LCD_SPI_RST_PORT, HAL_LCD_SPI_RST_PIN);
+//  151     delayMs(SYSCLK_32MHZ, 100);
+//  152     
+//  153     SPI_GPIO_SET(HAL_LCD_SPI_RST_PORT, HAL_LCD_SPI_RST_PIN);
+//  154     delayMs(SYSCLK_32MHZ, 100);
+//  155 }
+//  156 
+//  157 #if (defined LCD_TYPE) && (LCD_TYPE == LCD_TFT096)
+//  158 static void ST7735RInit(void)
+//  159 {
+//  160     /* Reset TFT */
+//  161     halTFTReset();
+//  162     
+//  163     /* Sleep Exit */
+//  164     halLcdSpiTxCmd(0x11);
+//  165     delayMs(SYSCLK_32MHZ, 120);
+//  166     
+//  167     /* Frame Rate */
+//  168     halLcdSpiTxCmd(0xB1); 
+//  169     halLcdSpiTxData(0x01); 
+//  170     halLcdSpiTxData(0x2C); 
+//  171     halLcdSpiTxData(0x2D); 
+//  172 
+//  173     halLcdSpiTxCmd(0xB2); 
+//  174     halLcdSpiTxData(0x01);
+//  175     halLcdSpiTxData(0x2C);
+//  176     halLcdSpiTxData(0x2D);
+//  177 
+//  178     halLcdSpiTxCmd(0xB3);
+//  179     halLcdSpiTxData(0x01);
+//  180     halLcdSpiTxData(0x2C);
+//  181     halLcdSpiTxData(0x2D);
+//  182     halLcdSpiTxData(0x01);
+//  183     halLcdSpiTxData(0x2C);
+//  184     halLcdSpiTxData(0x2D);
+//  185     
+//  186     halLcdSpiTxCmd(0xB4);
+//  187     halLcdSpiTxData(0x07); 
+//  188     
+//  189     /* Power Sequence */
+//  190     halLcdSpiTxCmd(0xC0); 
+//  191     halLcdSpiTxData(0xA2);
+//  192     halLcdSpiTxData(0x02);
+//  193     halLcdSpiTxData(0x84);
+//  194     halLcdSpiTxData(0xC1);
+//  195     halLcdSpiTxData(0xC5);
+//  196 
+//  197     halLcdSpiTxCmd(0xC2); 
+//  198     halLcdSpiTxData(0x0A); 
+//  199     halLcdSpiTxData(0x00); 
+//  200 
+//  201     halLcdSpiTxCmd(0xC3); 
+//  202     halLcdSpiTxData(0x8A);
+//  203     halLcdSpiTxData(0x2A);
+//  204     halLcdSpiTxData(0xC4);
+//  205     halLcdSpiTxData(0x8A);
+//  206     halLcdSpiTxData(0xEE);
+//  207     
+//  208     halLcdSpiTxCmd(0xC5);
+//  209     halLcdSpiTxData(0x0E); 
+//  210     
+//  211     /* MX, MY, RGB mode */
+//  212     halLcdSpiTxCmd(0x36);
+//  213     halLcdSpiTxData(0xC8); 
+//  214     
+//  215     /* Gamma Sequence */
+//  216     halLcdSpiTxCmd(0xe0); 
+//  217     halLcdSpiTxData(0x0f); 
+//  218     halLcdSpiTxData(0x1a); 
+//  219     halLcdSpiTxData(0x0f); 
+//  220     halLcdSpiTxData(0x18); 
+//  221     halLcdSpiTxData(0x2f); 
+//  222     halLcdSpiTxData(0x28); 
+//  223     halLcdSpiTxData(0x20); 
+//  224     halLcdSpiTxData(0x22); 
+//  225     halLcdSpiTxData(0x1f); 
+//  226     halLcdSpiTxData(0x1b); 
+//  227     halLcdSpiTxData(0x23);
+//  228     halLcdSpiTxData(0x37); 
+//  229     halLcdSpiTxData(0x00); 
+//  230     halLcdSpiTxData(0x07); 
+//  231     halLcdSpiTxData(0x02); 
+//  232     halLcdSpiTxData(0x10);
+//  233 
+//  234     halLcdSpiTxCmd(0xe1); 
+//  235     halLcdSpiTxData(0x0f); 
+//  236     halLcdSpiTxData(0x1b);
+//  237     halLcdSpiTxData(0x0f);
+//  238     halLcdSpiTxData(0x17);
+//  239     halLcdSpiTxData(0x33);
+//  240     halLcdSpiTxData(0x2c);
+//  241     halLcdSpiTxData(0x29);
+//  242     halLcdSpiTxData(0x2e);
+//  243     halLcdSpiTxData(0x30);
+//  244     halLcdSpiTxData(0x30);
+//  245     halLcdSpiTxData(0x39);
+//  246     halLcdSpiTxData(0x3f);
+//  247     halLcdSpiTxData(0x00);
+//  248     halLcdSpiTxData(0x07);
+//  249     halLcdSpiTxData(0x03);
+//  250     halLcdSpiTxData(0x10);
+//  251     
+//  252     halLcdSpiTxCmd(0x2a);
+//  253     halLcdSpiTxData(0x00);
+//  254     halLcdSpiTxData(0x00);
+//  255     halLcdSpiTxData(0x00);
+//  256     halLcdSpiTxData(0x7f);
+//  257 
+//  258     halLcdSpiTxCmd(0x2b);
+//  259     halLcdSpiTxData(0x00);
+//  260     halLcdSpiTxData(0x00);
+//  261     halLcdSpiTxData(0x00);
+//  262     halLcdSpiTxData(0x9f);
+//  263     
+//  264     /* Enable test command */
+//  265     halLcdSpiTxCmd(0xF0);  
+//  266     halLcdSpiTxData(0x01); 
+//  267     
+//  268     /* Disable ram power save mode */
+//  269     halLcdSpiTxCmd(0xF6);  
+//  270     halLcdSpiTxData(0x00); 
+//  271     
+//  272     /* 65k mode */
+//  273     halLcdSpiTxCmd(0x3A);
+//  274     halLcdSpiTxData(0x05); 
+//  275     
+//  276     /* Display on */
+//  277     halLcdSpiTxCmd(0x29);
+//  278 }
+//  279 #endif
+//  280 
+//  281 #if (defined LCD_TYPE) && (LCD_TYPE == LCD_IPS096_T1)
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  282 static void ST7735SInit(uint8 madctl)
+ST7735SInit:
+          CFI Block cfiBlock14 Using cfiCommon0
+          CFI Function ST7735SInit
+        CODE
+//  283 {
+        FUNCALL ST7735SInit, delayMs
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, delayMs
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, delayMs
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxCmd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, delayMs
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxCmd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxCmd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxCmd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxCmd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxCmd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxCmd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxCmd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxCmd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxCmd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxCmd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxCmd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxCmd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxCmd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxCmd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ST7735SInit, halLcdSpiTxCmd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV       A,#-0x9
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV       A,R1
+        MOV       R6,A
+//  284     /* Reset TFT */
+//  285     halTFTReset();
+        SETB      0x90.0
+        ; Setup parameters for call to function delayMs
+        MOV       R2,#0x64
+        MOV       R3,#0x0
+        MOV       R1,#0x1
+        LCALL     `??delayMs::?relay`; Banked call to: delayMs
+        CLR       0x90.0
+        ; Setup parameters for call to function delayMs
+        MOV       R2,#0x64
+        MOV       R3,#0x0
+        MOV       R1,#0x1
+        LCALL     `??delayMs::?relay`; Banked call to: delayMs
+        SETB      0x90.0
+        ; Setup parameters for call to function delayMs
+        MOV       R2,#0x64
+        MOV       R3,#0x0
+        MOV       R1,#0x1
+        LCALL     `??delayMs::?relay`; Banked call to: delayMs
+//  286 
+//  287     halLcdSpiTxCmd(0x11);
+        ; Setup parameters for call to function halLcdSpiTxCmd
+        MOV       R1,#0x11
+        LCALL     `??halLcdSpiTxCmd::?relay`; Banked call to: halLcdSpiTxCmd
+//  288     delayMs(SYSCLK_32MHZ, 120);
+        ; Setup parameters for call to function delayMs
+        MOV       R2,#0x78
+        MOV       R3,#0x0
+        MOV       R1,#0x1
+        LCALL     `??delayMs::?relay`; Banked call to: delayMs
+//  289     
+//  290     halLcdSpiTxCmd(0xB1);
+        ; Setup parameters for call to function halLcdSpiTxCmd
+        MOV       R1,#-0x4f
+        LCALL     `??halLcdSpiTxCmd::?relay`; Banked call to: halLcdSpiTxCmd
+//  291     halLcdSpiTxData(0x05);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x5
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  292     halLcdSpiTxData(0x3C);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x3c
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  293     halLcdSpiTxData(0x3C);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x3c
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  294 
+//  295     halLcdSpiTxCmd(0xB2);
+        ; Setup parameters for call to function halLcdSpiTxCmd
+        MOV       R1,#-0x4e
+        LCALL     `??halLcdSpiTxCmd::?relay`; Banked call to: halLcdSpiTxCmd
+//  296     halLcdSpiTxData(0x05);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x5
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  297     halLcdSpiTxData(0x3C);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x3c
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  298     halLcdSpiTxData(0x3C);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x3c
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  299 
+//  300     halLcdSpiTxCmd(0xB3);
+        ; Setup parameters for call to function halLcdSpiTxCmd
+        MOV       R1,#-0x4d
+        LCALL     `??halLcdSpiTxCmd::?relay`; Banked call to: halLcdSpiTxCmd
+//  301     halLcdSpiTxData(0x05);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x5
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  302     halLcdSpiTxData(0x3C);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x3c
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  303     halLcdSpiTxData(0x3C);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x3c
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  304     halLcdSpiTxData(0x05);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x5
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  305     halLcdSpiTxData(0x3C);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x3c
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  306     halLcdSpiTxData(0x3C);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x3c
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  307 
+//  308     halLcdSpiTxCmd(0xB4);
+        ; Setup parameters for call to function halLcdSpiTxCmd
+        MOV       R1,#-0x4c
+        LCALL     `??halLcdSpiTxCmd::?relay`; Banked call to: halLcdSpiTxCmd
+//  309     halLcdSpiTxData(0x03);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x3
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  310 
+//  311     halLcdSpiTxCmd(0xC0);
+        ; Setup parameters for call to function halLcdSpiTxCmd
+        MOV       R1,#-0x40
+        LCALL     `??halLcdSpiTxCmd::?relay`; Banked call to: halLcdSpiTxCmd
+//  312     halLcdSpiTxData(0x0E);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0xe
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  313     halLcdSpiTxData(0x0E);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0xe
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  314     halLcdSpiTxData(0x04);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x4
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  315 
+//  316     halLcdSpiTxCmd(0xC1);
+        ; Setup parameters for call to function halLcdSpiTxCmd
+        MOV       R1,#-0x3f
+        LCALL     `??halLcdSpiTxCmd::?relay`; Banked call to: halLcdSpiTxCmd
+//  317     halLcdSpiTxData(0xC5);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#-0x3b
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  318 
+//  319     halLcdSpiTxCmd(0xC2);
+        ; Setup parameters for call to function halLcdSpiTxCmd
+        MOV       R1,#-0x3e
+        LCALL     `??halLcdSpiTxCmd::?relay`; Banked call to: halLcdSpiTxCmd
+//  320     halLcdSpiTxData(0x0D);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0xd
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  321     halLcdSpiTxData(0x00);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x0
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  322 
+//  323     halLcdSpiTxCmd(0xC3);
+        ; Setup parameters for call to function halLcdSpiTxCmd
+        MOV       R1,#-0x3d
+        LCALL     `??halLcdSpiTxCmd::?relay`; Banked call to: halLcdSpiTxCmd
+//  324     halLcdSpiTxData(0x8D);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#-0x73
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  325     halLcdSpiTxData(0x2A);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x2a
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  326 
+//  327     halLcdSpiTxCmd(0xC4);
+        ; Setup parameters for call to function halLcdSpiTxCmd
+        MOV       R1,#-0x3c
+        LCALL     `??halLcdSpiTxCmd::?relay`; Banked call to: halLcdSpiTxCmd
+//  328     halLcdSpiTxData(0x8D);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#-0x73
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  329     halLcdSpiTxData(0xEE);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#-0x12
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  330 
+//  331     halLcdSpiTxCmd(0xC5);
+        ; Setup parameters for call to function halLcdSpiTxCmd
+        MOV       R1,#-0x3b
+        LCALL     `??halLcdSpiTxCmd::?relay`; Banked call to: halLcdSpiTxCmd
+//  332     halLcdSpiTxData(0x06);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x6
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  333 
+//  334     halLcdSpiTxCmd(0x36);
+        ; Setup parameters for call to function halLcdSpiTxCmd
+        MOV       R1,#0x36
+        LCALL     `??halLcdSpiTxCmd::?relay`; Banked call to: halLcdSpiTxCmd
+//  335     halLcdSpiTxData(madctl);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       A,R6
+        MOV       R1,A
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  336 
+//  337     halLcdSpiTxCmd(0x3A);
+        ; Setup parameters for call to function halLcdSpiTxCmd
+        MOV       R1,#0x3a
+        LCALL     `??halLcdSpiTxCmd::?relay`; Banked call to: halLcdSpiTxCmd
+//  338     halLcdSpiTxData(0x55);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x55
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  339         
+//  340     halLcdSpiTxCmd(0xE0);
+        ; Setup parameters for call to function halLcdSpiTxCmd
+        MOV       R1,#-0x20
+        LCALL     `??halLcdSpiTxCmd::?relay`; Banked call to: halLcdSpiTxCmd
+//  341     halLcdSpiTxData(0x0B);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0xb
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  342     halLcdSpiTxData(0x17);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x17
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  343     halLcdSpiTxData(0x0A);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0xa
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  344     halLcdSpiTxData(0x0D);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0xd
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  345     halLcdSpiTxData(0x1A);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x1a
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  346     halLcdSpiTxData(0x19);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x19
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  347     halLcdSpiTxData(0x16);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x16
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  348     halLcdSpiTxData(0x1D);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x1d
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  349     halLcdSpiTxData(0x21);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x21
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  350     halLcdSpiTxData(0x26);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x26
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  351     halLcdSpiTxData(0x37);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x37
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  352     halLcdSpiTxData(0x3C);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x3c
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  353     halLcdSpiTxData(0x00);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x0
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  354     halLcdSpiTxData(0x09);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x9
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  355     halLcdSpiTxData(0x05);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x5
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  356     halLcdSpiTxData(0x10);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x10
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  357 
+//  358     halLcdSpiTxCmd(0xE1);
+        ; Setup parameters for call to function halLcdSpiTxCmd
+        MOV       R1,#-0x1f
+        LCALL     `??halLcdSpiTxCmd::?relay`; Banked call to: halLcdSpiTxCmd
+//  359     halLcdSpiTxData(0x0C);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0xc
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  360     halLcdSpiTxData(0x19);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x19
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  361     halLcdSpiTxData(0x09);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x9
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  362     halLcdSpiTxData(0x0D);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0xd
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  363     halLcdSpiTxData(0x1B);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x1b
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  364     halLcdSpiTxData(0x19);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x19
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  365     halLcdSpiTxData(0x15);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x15
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  366     halLcdSpiTxData(0x1D);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x1d
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  367     halLcdSpiTxData(0x21);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x21
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  368     halLcdSpiTxData(0x26);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x26
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  369     halLcdSpiTxData(0x39);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x39
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  370     halLcdSpiTxData(0x3E);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x3e
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  371     halLcdSpiTxData(0x00);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x0
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  372     halLcdSpiTxData(0x09);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x9
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  373     halLcdSpiTxData(0x05);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x5
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  374     halLcdSpiTxData(0x10);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,#0x10
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  375     halLcdSpiTxCmd(0x29);
+        ; Setup parameters for call to function halLcdSpiTxCmd
+        MOV       R1,#0x29
+        LCALL     `??halLcdSpiTxCmd::?relay`; Banked call to: halLcdSpiTxCmd
+//  376 }
+        MOV       R7,#0x1
+        LJMP      ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock14
+        REQUIRE _A_P1
+//  377 #endif
+//  378 
+//  379 #if (defined LCD_TYPE) && (LCD_TYPE == LCD_TFT096)
+//  380 static void halTFTSetRegion(uint16 xs, uint16 ys, uint16 xe, uint16 ye)
+//  381 {
+//  382     halLcdSpiTxCmd(0x2a);
+//  383     halLcdSpiTxData(0x00); 
+//  384     halLcdSpiTxData(xs + 2); 
+//  385     halLcdSpiTxData(0x00); 
+//  386     halLcdSpiTxData(xe + 2);
+//  387 
+//  388     halLcdSpiTxCmd(0x2b);
+//  389     halLcdSpiTxData(0x00); 
+//  390     halLcdSpiTxData(ys + 3); 
+//  391     halLcdSpiTxData(0x00); 
+//  392     halLcdSpiTxData(ye + 3);
+//  393     
+//  394     halLcdSpiTxCmd(0x2c);
+//  395 }
+//  396 #endif
+//  397 
+//  398 #if (defined LCD_TYPE) && (LCD_TYPE == LCD_IPS096_T1)
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  399 static void halTFTSetRegion(uint8 madctl, uint16 xs, uint16 ys, uint16 xe, uint16 ye)
+halTFTSetRegion:
+          CFI Block cfiBlock15 Using cfiCommon0
+          CFI Function halTFTSetRegion
+        CODE
+//  400 {
+        FUNCALL halTFTSetRegion, halLcdSpiTxCmd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTSetRegion, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTSetRegion, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTSetRegion, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTSetRegion, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTSetRegion, halLcdSpiTxCmd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTSetRegion, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTSetRegion, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTSetRegion, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTSetRegion, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTSetRegion, halLcdSpiTxCmd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTSetRegion, halLcdSpiTxCmd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTSetRegion, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTSetRegion, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTSetRegion, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTSetRegion, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTSetRegion, halLcdSpiTxCmd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTSetRegion, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTSetRegion, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTSetRegion, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTSetRegion, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTSetRegion, halLcdSpiTxCmd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        MOV       A,#-0xf
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 15)
+        ; Saved register size: 15
+        ; Auto size: 0
+        MOV       ?V6,R1
+        MOV       ?V4,R2
+        MOV       ?V5,R3
+        MOV       ?V2,R4
+        MOV       ?V3,R5
+        MOV       A,#0xf
+        LCALL     ?XSTACK_DISP0_8
+        MOVX      A,@DPTR
+        MOV       R6,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       R7,A
+        MOV       A,#0x11
+        LCALL     ?XSTACK_DISP0_8
+        LCALL     ?Subroutine4 & 0xFFFF
+//  401     if (madctl == ST7735S_MADCTL_RGB) {
+??CrossCallReturnLabel_5:
+        MOV       A,#0x8
+        XRL       A,?V6
+        JZ        ??halTFTSetRegion_0
+//  402         halLcdSpiTxCmd(0x2a);
+//  403         HAL_TFT_WRITE_UINT16(xs+24);
+//  404         HAL_TFT_WRITE_UINT16(xe+24);
+//  405         halLcdSpiTxCmd(0x2b);
+//  406         HAL_TFT_WRITE_UINT16(ys);
+//  407         HAL_TFT_WRITE_UINT16(ye);
+//  408         halLcdSpiTxCmd(0x2c);
+//  409     }
+//  410     else if (madctl == ST7735S_MADCTL_MY_MX_RGB) {
+        MOV       A,#-0x38
+        XRL       A,?V6
+        JNZ       ??halTFTSetRegion_1
+//  411         halLcdSpiTxCmd(0x2a);
+??halTFTSetRegion_0:
+        ; Setup parameters for call to function halLcdSpiTxCmd
+        MOV       R1,#0x2a
+        LCALL     `??halLcdSpiTxCmd::?relay`; Banked call to: halLcdSpiTxCmd
+//  412         HAL_TFT_WRITE_UINT16(xs+24);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       A,?V4
+        ADD       A,#0x18
+        CLR       A
+        ADDC      A,?V5
+        MOV       R1,A
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       A,?V4
+        ADD       A,#0x18
+        MOV       R1,A
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  413         HAL_TFT_WRITE_UINT16(xe+24);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       A,R6
+        ADD       A,#0x18
+        CLR       A
+        ADDC      A,R7
+        MOV       R1,A
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       A,R6
+        ADD       A,#0x18
+        MOV       R1,A
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  414         halLcdSpiTxCmd(0x2b);
+        ; Setup parameters for call to function halLcdSpiTxCmd
+        MOV       R1,#0x2b
+        LCALL     `??halLcdSpiTxCmd::?relay`; Banked call to: halLcdSpiTxCmd
+//  415         HAL_TFT_WRITE_UINT16(ys);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,?V3
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,?V2
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  416         HAL_TFT_WRITE_UINT16(ye);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,?V1
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,?V0
+        SJMP      ??halTFTSetRegion_2
+//  417         halLcdSpiTxCmd(0x2c);
+//  418     }
+//  419     else if(madctl == ST7735S_MADCTL_MX_MV_ML_RGB) {
+//  420         halLcdSpiTxCmd(0x2a);
+//  421         HAL_TFT_WRITE_UINT16(xs);
+//  422         HAL_TFT_WRITE_UINT16(xe);
+//  423         halLcdSpiTxCmd(0x2b);
+//  424         HAL_TFT_WRITE_UINT16(ys+24);
+//  425         HAL_TFT_WRITE_UINT16(ye+24);
+//  426         halLcdSpiTxCmd(0x2c);
+//  427     }
+//  428     else {
+//  429         halLcdSpiTxCmd(0x2a);
+??halTFTSetRegion_1:
+        ; Setup parameters for call to function halLcdSpiTxCmd
+        MOV       R1,#0x2a
+        LCALL     `??halLcdSpiTxCmd::?relay`; Banked call to: halLcdSpiTxCmd
+//  430         HAL_TFT_WRITE_UINT16(xs);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,?V5
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,?V4
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  431         HAL_TFT_WRITE_UINT16(xe);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       A,R7
+        MOV       R1,A
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       A,R6
+        MOV       R1,A
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  432         halLcdSpiTxCmd(0x2b);
+        ; Setup parameters for call to function halLcdSpiTxCmd
+        MOV       R1,#0x2b
+        LCALL     `??halLcdSpiTxCmd::?relay`; Banked call to: halLcdSpiTxCmd
+//  433         HAL_TFT_WRITE_UINT16(ys+24);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       A,?V2
+        ADD       A,#0x18
+        CLR       A
+        ADDC      A,?V3
+        MOV       R1,A
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       A,?V2
+        ADD       A,#0x18
+        MOV       R1,A
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  434         HAL_TFT_WRITE_UINT16(ye+24);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       A,?V0
+        ADD       A,#0x18
+        CLR       A
+        ADDC      A,?V1
+        MOV       R1,A
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       A,?V0
+        ADD       A,#0x18
+        MOV       R1,A
+??halTFTSetRegion_2:
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  435         halLcdSpiTxCmd(0x2c);
+        ; Setup parameters for call to function halLcdSpiTxCmd
+        MOV       R1,#0x2c
+        LCALL     `??halLcdSpiTxCmd::?relay`; Banked call to: halLcdSpiTxCmd
+//  436     }
+//  437 }
+        MOV       R7,#0x7
+        LJMP      ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock15
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine4:
+          CFI Block cfiCond16 Using cfiCommon0
+          CFI Function halTFTShowX16
+          CFI Conditional ??CrossCallReturnLabel_4
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI CFA_SP SP+-2
+          CFI CFA_XSP16 add(XSP16, 18)
+          CFI Block cfiCond17 Using cfiCommon0
+          CFI (cfiCond17) Function halTFTSetRegion
+          CFI (cfiCond17) Conditional ??CrossCallReturnLabel_5
+          CFI (cfiCond17) R6 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI (cfiCond17) VB load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI (cfiCond17) V0 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI (cfiCond17) V1 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond17) V2 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond17) V3 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond17) V4 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond17) V5 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond17) V6 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond17) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond17) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond17) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond17) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond17) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond17) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond17) CFA_SP SP+-2
+          CFI (cfiCond17) CFA_XSP16 add(XSP16, 15)
+          CFI Block cfiCond18 Using cfiCommon0
+          CFI (cfiCond18) Function halTFTShowChineseChar16x16
+          CFI (cfiCond18) Conditional ??CrossCallReturnLabel_6
+          CFI (cfiCond18) R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI (cfiCond18) VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI (cfiCond18) V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI (cfiCond18) V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI (cfiCond18) V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond18) V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond18) V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond18) V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond18) V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond18) V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond18) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond18) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond18) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond18) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond18) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond18) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond18) CFA_SP SP+-2
+          CFI (cfiCond18) CFA_XSP16 add(XSP16, 25)
+          CFI Block cfiPicker19 Using cfiCommon1
+          CFI (cfiPicker19) NoFunction
+          CFI (cfiPicker19) Picker
+        MOVX      A,@DPTR
+        MOV       ?V0,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       ?V1,A
+        RET
+          CFI EndBlock cfiCond16
+          CFI EndBlock cfiCond17
+          CFI EndBlock cfiCond18
+          CFI EndBlock cfiPicker19
+//  438 #endif
+//  439 
+//  440 static void halTFTSetPosition(uint16 x, uint16 y)
+//  441 {
+//  442     HAL_TFT_SET_REGION(x, y, x, y);
+//  443 }
+//  444 
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  445 static void halTFTDrawPixel(uint16 xs, uint16 ys, uint16 color)
+halTFTDrawPixel:
+          CFI Block cfiBlock20 Using cfiCommon0
+          CFI Function halTFTDrawPixel
+        CODE
+//  446 {
+        FUNCALL halTFTDrawPixel, halTFTSetRegion
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTDrawPixel, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTDrawPixel, halLcdSpiTxData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        MOV       A,#-0xa
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+//  447     HAL_TFT_SET_REGION(xs, ys, xs+1, ys+1);
+        ; Setup parameters for call to function halTFTSetRegion
+        MOV       A,R4
+        ADD       A,#0x1
+        MOV       ?V0,A
+        CLR       A
+        ADDC      A,R5
+        MOV       ?V1,A
+        MOV       R0,#?V0
+        LCALL     ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 12)
+        MOV       A,R2
+        ADD       A,#0x1
+        MOV       ?V0,A
+        CLR       A
+        ADDC      A,R3
+        MOV       ?V1,A
+        MOV       R0,#?V0
+        LCALL     ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 14)
+        MOV       R1,#0x78
+        LCALL     `??halTFTSetRegion::?relay`; Banked call to: halTFTSetRegion
+        MOV       A,#0x4
+        LCALL     ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 10)
+        MOV       A,#0xa
+        LCALL     ?XSTACK_DISP0_8
+        MOVX      A,@DPTR
+        MOV       R6,A
+        INC       DPTR
+        MOVX      A,@DPTR
+//  448     HAL_TFT_WRITE_UINT16(color);
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       R1,A
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+        ; Setup parameters for call to function halLcdSpiTxData
+        MOV       A,R6
+        MOV       R1,A
+        LCALL     `??halLcdSpiTxData::?relay`; Banked call to: halLcdSpiTxData
+//  449 }
+        LJMP      ?Subroutine0 & 0xFFFF
+          CFI EndBlock cfiBlock20
+//  450 
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  451 static void halTFTShowChar8x16(uint16 x, uint16 y, uint16 fontColor, uint16 backgroundColor, uint8 ch)
+halTFTShowChar8x16:
+          CFI Block cfiBlock21 Using cfiCommon0
+          CFI Function halTFTShowChar8x16
+        CODE
+//  452 {
+        FUNCALL halTFTShowChar8x16, halTFTDrawPixel
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 26, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 26, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTShowChar8x16, halTFTDrawPixel
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 26, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 26, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        REQUIRE ?V7
+        MOV       A,#-0x10
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 16)
+        ; Saved register size: 16
+        ; Auto size: 8
+        MOV       A,#-0x8
+        LCALL     ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 24)
+        MOV       A,#0x6
+        LCALL     ?XSTACK_DISP0_8
+        MOV       A,R2
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOV       A,R3
+        MOVX      @DPTR,A
+        MOV       A,#0x4
+        LCALL     ?XSTACK_DISP0_8
+        MOV       A,R4
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOV       A,R5
+        MOVX      @DPTR,A
+        MOV       A,R1
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOVX      @DPTR,A
+//  453     uint16 charIndex;
+//  454     
+//  455     /* index of font table, height: 16 */
+//  456     if(ch > 32) charIndex = (ch - 32) * 16;
+        CLR       C
+        SUBB      A,#0x21
+        JC        ??halTFTShowChar8x16_0
+        MOVX      A,@DPTR
+        ADD       A,#-0x20
+        MOV       ?V0,A
+        CLR       A
+        ADDC      A,#-0x1
+        MOV       ?V1,A
+        MOV       A,#0x4
+        MOV       R0,#?V0
+        LCALL     ?S_SHL
+        MOV       A,#0x2
+        LCALL     ?XSTACK_DISP0_8
+        MOV       A,?V0
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOV       A,?V1
+        SJMP      ??halTFTShowChar8x16_1
+//  457     else charIndex = 0;
+??halTFTShowChar8x16_0:
+        MOV       A,#0x2
+        LCALL     ?XSTACK_DISP0_8
+        CLR       A
+        MOVX      @DPTR,A
+        INC       DPTR
+??halTFTShowChar8x16_1:
+        MOVX      @DPTR,A
+//  458     
+//  459     /* Show Line */
+//  460     for (uint8 l = 0; l < 16; l++)
+        MOV       A,#0x1
+        LCALL     ?XSTACK_DISP0_8
+        CLR       A
+        MOVX      @DPTR,A
+        MOV       A,#0x18
+        LCALL     ?XSTACK_DISP0_8
+        MOVX      A,@DPTR
+        MOV       ?V6,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       ?V7,A
+        MOV       A,#0x1a
+        LCALL     ?XSTACK_DISP0_8
+        MOVX      A,@DPTR
+        MOV       ?V2,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       ?V3,A
+//  461         /* Show Column: 8column per line */
+//  462       for(uint8 c = 0; c < 8; c++) {
+??halTFTShowChar8x16_2:
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        CLR       A
+        MOVX      @DPTR,A
+        INC       A
+        LCALL     ?XSTACK_DISP0_8
+        MOVX      A,@DPTR
+        MOV       ?V0,A
+        MOV       A,#0x4
+        LCALL     ?XSTACK_DISP0_8
+        MOVX      A,@DPTR
+        ADD       A,?V0
+        MOV       R6,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        ADDC      A,#0x0
+        MOV       R7,A
+//  463             if(HAL_TFT_FONT_TBL_8x16[charIndex + l] & (0x80 >> c)) halTFTDrawPixel(x + c, y + l, fontColor);
+??halTFTShowChar8x16_3:
+        MOV       A,#0x6
+        LCALL     ?XSTACK_DISP0_8
+        PUSH      DPL
+          CFI CFA_SP SP+-1
+        PUSH      DPH
+          CFI CFA_SP SP+-2
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOVX      A,@DPTR
+        MOV       R0,A
+        POP       DPH
+          CFI CFA_SP SP+-1
+        POP       DPL
+          CFI CFA_SP SP+0
+        LCALL     ?Subroutine2 & 0xFFFF
+??CrossCallReturnLabel_0:
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOVX      A,@DPTR
+        MOV       R0,#?V4
+        LCALL     ?SS_SHR
+        MOV       A,#0x2
+        LCALL     ?XSTACK_DISP0_8
+        MOVX      A,@DPTR
+        ADD       A,?V0
+        MOV       R0,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        ADDC      A,#0x0
+        MOV       R1,A
+        MOV       A,#FontTable_H_8X16 & 0xff
+        ADD       A,R0
+        MOV       DPL,A
+        MOV       A,#(FontTable_H_8X16 >> 8) & 0xff
+        ADDC      A,R1
+        MOV       DPH,A
+        MOVX      A,@DPTR
+        ANL       A,?V4
+        JZ        ??halTFTShowChar8x16_4
+        ; Setup parameters for call to function halTFTDrawPixel
+        MOV       ?V4,?V6
+        MOV       ?V5,?V7
+        MOV       R0,#?V4
+        LCALL     ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 26)
+        SJMP      ??halTFTShowChar8x16_5
+          CFI CFA_XSP16 add(XSP16, 24)
+//  464             else halTFTDrawPixel(x + c, y + l, backgroundColor);
+??halTFTShowChar8x16_4:
+        ; Setup parameters for call to function halTFTDrawPixel
+        MOV       R0,#?V2
+        LCALL     ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 26)
+??halTFTShowChar8x16_5:
+        MOV       A,R6
+        MOV       R4,A
+        MOV       A,R7
+        MOV       R5,A
+        LCALL     `??halTFTDrawPixel::?relay`; Banked call to: halTFTDrawPixel
+        MOV       A,#0x2
+        LCALL     ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 24)
+//  465       }
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOVX      A,@DPTR
+        INC       A
+        MOVX      @DPTR,A
+        CLR       C
+        SUBB      A,#0x8
+        JC        ??halTFTShowChar8x16_3
+        MOV       A,#0x1
+        LCALL     ?XSTACK_DISP0_8
+        MOVX      A,@DPTR
+        INC       A
+        MOVX      @DPTR,A
+        CLR       C
+        SUBB      A,#0x10
+        JNC       $+5
+        LJMP      ??halTFTShowChar8x16_2 & 0xFFFF
+//  466 }
+        MOV       A,#0x8
+        SJMP      ??Subroutine9_0
+          CFI EndBlock cfiBlock21
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine1:
+          CFI Block cfiBlock22 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 18)
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        MOV       A,#0x2
+          CFI EndBlock cfiBlock22
+        REQUIRE ??Subroutine9_0
+        ; // Fall through to label ??Subroutine9_0
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+??Subroutine9_0:
+          CFI Block cfiBlock23 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 24)
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI Invalid
+        LCALL     ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 16)
+          CFI Valid
+        MOV       R7,#0x8
+        LJMP      ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock23
+//  467 
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  468 static void halTFTShowChineseChar16x16(uint16 x, uint16 y, uint16 fontColor, uint16 backgroundColor, uint8 chL, uint8 chR)
+halTFTShowChineseChar16x16:
+          CFI Block cfiBlock24 Using cfiCommon0
+          CFI Function halTFTShowChineseChar16x16
+        CODE
+//  469 {
+        FUNCALL halTFTShowChineseChar16x16, halTFTDrawPixel
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 27, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 27, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTShowChineseChar16x16, halTFTDrawPixel
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 27, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 27, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTShowChineseChar16x16, halTFTDrawPixel
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 27, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 27, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL halTFTShowChineseChar16x16, halTFTDrawPixel
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 27, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 27, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        REQUIRE ?V7
+        MOV       A,#-0x10
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 16)
+        ; Saved register size: 16
+        ; Auto size: 9
+        MOV       A,#-0x9
+        LCALL     ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 25)
+        MOV       A,#0x5
+        LCALL     ?XSTACK_DISP0_8
+        MOV       A,R2
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOV       A,R3
+        MOVX      @DPTR,A
+        MOV       A,#0x7
+        LCALL     ?XSTACK_DISP0_8
+        MOV       A,R4
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOV       A,R5
+        MOVX      @DPTR,A
+        MOV       A,#0x2
+        LCALL     ?XSTACK_DISP0_8
+        MOV       A,R1
+        MOVX      @DPTR,A
+//  470     for (uint16 i = 0; i < HAL_TFT_FONT_TBL_CHINESE_SIZE; i++) {
+        MOV       R0,#0x0
+        MOV       R1,#0x0
+        MOV       A,#0x1d
+        LCALL     ?XSTACK_DISP0_8
+        MOVX      A,@DPTR
+        MOV       R4,A
+//  471         if (HAL_TFT_FONT_TBL_CHINESE_16x16[i].Char16x16[0] != chL || HAL_TFT_FONT_TBL_CHINESE_16x16[i].Char16x16[1] != chR) continue;
+??halTFTShowChineseChar16x16_0:
+        MOV       A,R0
+        MOV       R2,A
+        MOV       A,R1
+        MOV       R3,A
+        MOV       A,R2
+        MOV       B,#0x22
+        MUL       AB
+        MOV       R2,A
+        MOV       R5,B
+        MOV       B,#0x22
+        MOV       A,R3
+        MUL       AB
+        ADD       A,R5
+        MOV       R3,A
+        MOV       A,#FontTable_Chinese_H_16X16 & 0xff
+        ADD       A,R2
+        MOV       R2,A
+        MOV       A,#(FontTable_Chinese_H_16X16 >> 8) & 0xff
+        ADDC      A,R3
+        MOV       R3,A
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOV       A,R2
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOV       A,R3
+        MOVX      @DPTR,A
+        LCALL     ?Subroutine7 & 0xFFFF
+??CrossCallReturnLabel_11:
+        MOVX      A,@DPTR
+        MOV       R2,A
+        MOV       A,#0x2
+        LCALL     ?XSTACK_DISP0_8
+        MOVX      A,@DPTR
+        XRL       A,R2
+        JNZ       ??halTFTShowChineseChar16x16_1
+        LCALL     ?Subroutine7 & 0xFFFF
+??CrossCallReturnLabel_12:
+        INC       DPTR
+        MOVX      A,@DPTR
+        XRL       A,R4
+        JZ        ??halTFTShowChineseChar16x16_2
+??halTFTShowChineseChar16x16_1:
+        INC       R0
+        MOV       A,R0
+        JNZ       ??halTFTShowChineseChar16x16_3
+        INC       R1
+??halTFTShowChineseChar16x16_3:
+        CLR       C
+        SUBB      A,#0x4
+        MOV       A,R1
+        SUBB      A,#0x0
+        JC        $+5
+        LJMP      ??halTFTShowChineseChar16x16_4 & 0xFFFF
+        SJMP      ??halTFTShowChineseChar16x16_0
+//  472         
+//  473         /* Show Line */
+//  474         for (uint8 l = 0; l < 16; l++) {
+??halTFTShowChineseChar16x16_2:
+        MOV       ?V7,#0x0
+        MOV       A,#0x19
+        LCALL     ?XSTACK_DISP0_8
+        MOVX      A,@DPTR
+        MOV       ?V2,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       ?V3,A
+        MOV       A,#0x1b
+        LCALL     ?XSTACK_DISP0_8
+        LCALL     ?Subroutine4 & 0xFFFF
+//  475             /* Show Column: 16column per line */
+//  476             // First 8column
+//  477             for (uint8 c1 = 0; c1 < 8; c1++) {
+??CrossCallReturnLabel_6:
+        MOV       ?V6,#0x0
+        MOV       R0,?V7
+        MOV       A,R0
+        ADD       A,R0
+        MOV       R0,A
+        CLR       A
+        RLC       A
+        MOV       R1,A
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOVX      A,@DPTR
+        ADD       A,R0
+        MOV       R0,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        ADDC      A,R1
+        MOV       R1,A
+        MOV       A,#0x3
+        LCALL     ?XSTACK_DISP0_8
+        MOV       A,R0
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOV       A,R1
+        MOVX      @DPTR,A
+        MOV       A,#0x7
+        LCALL     ?XSTACK_DISP0_8
+        MOV       R0,?V7
+        MOVX      A,@DPTR
+        ADD       A,R0
+        MOV       R6,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        ADDC      A,#0x0
+        MOV       R7,A
+//  478                 if(HAL_TFT_FONT_TBL_CHINESE_16x16[i].code[l*2] & (0x80>>c1))
+??halTFTShowChineseChar16x16_5:
+        MOV       A,#0x5
+        LCALL     ?XSTACK_DISP0_8
+        MOV       R0,?V6
+        LCALL     ?Subroutine2 & 0xFFFF
+??CrossCallReturnLabel_1:
+        MOV       A,R0
+        MOV       R0,#?V4
+        LCALL     ?SS_SHR
+        MOV       A,#0x3
+        LCALL     ?XSTACK_DISP0_8
+        LCALL     ?Subroutine5 & 0xFFFF
+??CrossCallReturnLabel_7:
+        MOVX      A,@DPTR
+        ANL       A,?V4
+        JZ        ??halTFTShowChineseChar16x16_6
+//  479                     halTFTDrawPixel(x + c1, y + l, fontColor);
+        ; Setup parameters for call to function halTFTDrawPixel
+        MOV       R0,#?V2
+        LCALL     ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 27)
+        SJMP      ??halTFTShowChineseChar16x16_7
+          CFI CFA_XSP16 add(XSP16, 25)
+//  480                 else
+//  481                     halTFTDrawPixel(x + c1, y + l, backgroundColor);
+??halTFTShowChineseChar16x16_6:
+        ; Setup parameters for call to function halTFTDrawPixel
+        MOV       R0,#?V0
+        LCALL     ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 27)
+??halTFTShowChineseChar16x16_7:
+        MOV       A,R6
+        MOV       R4,A
+        MOV       A,R7
+        MOV       R5,A
+        LCALL     `??halTFTDrawPixel::?relay`; Banked call to: halTFTDrawPixel
+        MOV       A,#0x2
+        LCALL     ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 25)
+//  482             }
+        INC       ?V6
+        MOV       A,?V6
+        CLR       C
+        SUBB      A,#0x8
+        JC        ??halTFTShowChineseChar16x16_5
+//  483             // Last 8column
+//  484             for (uint8 c2 = 0; c2 < 8; c2++) {
+        MOV       ?V6,#0x0
+//  485                 if(HAL_TFT_FONT_TBL_CHINESE_16x16[i].code[l*2+1] & (0x80>>c2))
+??halTFTShowChineseChar16x16_8:
+        MOV       A,#0x5
+        LCALL     ?XSTACK_DISP0_8
+        MOV       R0,?V6
+        MOVX      A,@DPTR
+        ADD       A,R0
+        MOV       R0,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        ADDC      A,#0x0
+        MOV       R1,A
+        MOV       A,R0
+        ADD       A,#0x8
+        MOV       R2,A
+        CLR       A
+        ADDC      A,R1
+        MOV       R3,A
+        MOV       ?V4,#-0x80
+        MOV       ?V5,#0x0
+        MOV       A,?V6
+        MOV       R0,#?V4
+        LCALL     ?SS_SHR
+        MOV       A,#0x3
+        LCALL     ?XSTACK_DISP0_8
+        LCALL     ?Subroutine5 & 0xFFFF
+??CrossCallReturnLabel_8:
+        INC       DPTR
+        MOVX      A,@DPTR
+        ANL       A,?V4
+        JZ        ??halTFTShowChineseChar16x16_9
+//  486                     halTFTDrawPixel(x + c2 + 8, y + l, fontColor);
+        ; Setup parameters for call to function halTFTDrawPixel
+        MOV       R0,#?V2
+        LCALL     ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 27)
+        SJMP      ??halTFTShowChineseChar16x16_10
+          CFI CFA_XSP16 add(XSP16, 25)
+//  487                 else
+//  488                     halTFTDrawPixel(x + c2 + 8, y + l, backgroundColor);
+??halTFTShowChineseChar16x16_9:
+        ; Setup parameters for call to function halTFTDrawPixel
+        MOV       R0,#?V0
+        LCALL     ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 27)
+??halTFTShowChineseChar16x16_10:
+        MOV       A,R6
+        MOV       R4,A
+        MOV       A,R7
+        MOV       R5,A
+        LCALL     `??halTFTDrawPixel::?relay`; Banked call to: halTFTDrawPixel
+        MOV       A,#0x2
+        LCALL     ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 25)
+//  489             }
+        INC       ?V6
+        MOV       A,?V6
+        CLR       C
+        SUBB      A,#0x8
+        JC        ??halTFTShowChineseChar16x16_8
+//  490         }
+        INC       ?V7
+        MOV       A,?V7
+        CLR       C
+        SUBB      A,#0x10
+        JNC       $+5
+        LJMP      ??CrossCallReturnLabel_6 & 0xFFFF
+//  491 
+//  492         break;
+//  493     }
+//  494 }
+??halTFTShowChineseChar16x16_4:
+        MOV       A,#0x9
+        LJMP      ??Subroutine9_0 & 0xFFFF
+          CFI EndBlock cfiBlock24
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine7:
+          CFI Block cfiCond25 Using cfiCommon0
+          CFI Function halTFTShowChineseChar16x16
+          CFI Conditional ??CrossCallReturnLabel_11
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI CFA_SP SP+-2
+          CFI CFA_XSP16 add(XSP16, 25)
+          CFI Block cfiCond26 Using cfiCommon0
+          CFI (cfiCond26) Function halTFTShowChineseChar16x16
+          CFI (cfiCond26) Conditional ??CrossCallReturnLabel_12
+          CFI (cfiCond26) R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI (cfiCond26) VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI (cfiCond26) V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI (cfiCond26) V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI (cfiCond26) V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond26) V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond26) V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond26) V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond26) V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond26) V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond26) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond26) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond26) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond26) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond26) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond26) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond26) CFA_SP SP+-2
+          CFI (cfiCond26) CFA_XSP16 add(XSP16, 25)
+          CFI Block cfiPicker27 Using cfiCommon1
+          CFI (cfiPicker27) NoFunction
+          CFI (cfiPicker27) Picker
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOVX      A,@DPTR
+        MOV       R2,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       DPH,A
+        MOV       DPL,R2
+        RET
+          CFI EndBlock cfiCond25
+          CFI EndBlock cfiCond26
+          CFI EndBlock cfiPicker27
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine5:
+          CFI Block cfiCond28 Using cfiCommon0
+          CFI Function halTFTShowChineseChar16x16
+          CFI Conditional ??CrossCallReturnLabel_7
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI CFA_SP SP+-2
+          CFI CFA_XSP16 add(XSP16, 25)
+          CFI Block cfiCond29 Using cfiCommon0
+          CFI (cfiCond29) Function halTFTShowChineseChar16x16
+          CFI (cfiCond29) Conditional ??CrossCallReturnLabel_8
+          CFI (cfiCond29) R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI (cfiCond29) VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI (cfiCond29) V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI (cfiCond29) V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI (cfiCond29) V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond29) V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond29) V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond29) V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond29) V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond29) V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond29) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond29) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond29) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond29) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond29) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond29) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond29) CFA_SP SP+-2
+          CFI (cfiCond29) CFA_XSP16 add(XSP16, 25)
+          CFI Block cfiPicker30 Using cfiCommon1
+          CFI (cfiPicker30) NoFunction
+          CFI (cfiPicker30) Picker
+        MOVX      A,@DPTR
+        MOV       R0,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       DPH,A
+        MOV       DPL,R0
+        INC       DPTR
+        INC       DPTR
+        RET
+          CFI EndBlock cfiCond28
+          CFI EndBlock cfiCond29
+          CFI EndBlock cfiPicker30
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine2:
+          CFI Block cfiCond31 Using cfiCommon0
+          CFI Function halTFTShowChar8x16
+          CFI Conditional ??CrossCallReturnLabel_0
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI CFA_SP SP+-2
+          CFI CFA_XSP16 add(XSP16, 24)
+          CFI Block cfiCond32 Using cfiCommon0
+          CFI (cfiCond32) Function halTFTShowChineseChar16x16
+          CFI (cfiCond32) Conditional ??CrossCallReturnLabel_1
+          CFI (cfiCond32) R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI (cfiCond32) VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI (cfiCond32) V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI (cfiCond32) V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI (cfiCond32) V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond32) V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond32) V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond32) V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond32) V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond32) V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond32) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond32) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond32) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond32) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond32) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond32) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond32) CFA_SP SP+-2
+          CFI (cfiCond32) CFA_XSP16 add(XSP16, 25)
+          CFI Block cfiPicker33 Using cfiCommon1
+          CFI (cfiPicker33) NoFunction
+          CFI (cfiPicker33) Picker
+        MOVX      A,@DPTR
+        ADD       A,R0
+        MOV       R2,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        ADDC      A,#0x0
+        MOV       R3,A
+        MOV       ?V4,#-0x80
+        MOV       ?V5,#0x0
+        RET
+          CFI EndBlock cfiCond31
+          CFI EndBlock cfiCond32
+          CFI EndBlock cfiPicker33
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??halTFTInit::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    halTFTInit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??halTFTSetScreen::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    halTFTSetScreen
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??halTFTShowX16::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    halTFTShowX16
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??halTFTShowPicture::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    halTFTShowPicture
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??ST7735SInit::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    ST7735SInit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??halTFTSetRegion::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    halTFTSetRegion
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??halTFTDrawPixel::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    halTFTDrawPixel
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??halTFTShowChar8x16::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    halTFTShowChar8x16
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??halTFTShowChineseChar16x16::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    halTFTShowChineseChar16x16
+
+        END
+// 
+// 1 943 bytes in segment BANKED_CODE
+//    54 bytes in segment BANK_RELAYS
+//     1 byte  in segment SFR_AN
+// 1 656 bytes in segment XDATA_ROM_C
+// 
+//    54 bytes of CODE     memory
+// 1 656 bytes of CONST    memory
+//     0 bytes of DATA     memory (+ 1 byte shared)
+// 1 943 bytes of HUGECODE memory
+//
+//Errors: none
+//Warnings: none

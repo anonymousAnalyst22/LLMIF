@@ -1,0 +1,726 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.10.1.4655 for 8051               22/Nov/2023  15:42:44
+# Copyright 2004-2017 IAR Systems AB.
+# Standalone license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\Source\zcl_ha.c
+#    Command line       =  
+#        -f C:\Users\ADMINI~1\AppData\Local\Temp\EWAE4C.tmp
+#        (D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\Source\zcl_ha.c
+#        -D SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE -D
+#        MULTICAST_ENABLED=FALSE -D ZCL_READ -D ZCL_DISCOVER -D ZCL_WRITE -D
+#        ZCL_BASIC -D ZCL_IDENTIFY -D ISR_KEYINTERRUPT -D HAL_UART=TRUE -D
+#        HAL_LCD=FALSE -D ZCL_ON_OFF -D INT_HEAP_LEN=2800 -D
+#        HAL_UART_DMA_RX_MAX=256 -D HAL_UART_DMA_TX_MAX=256 -lC
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+#        -lA
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+#        --diag_suppress Pe001,Pa010 -o
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj
+#        -e --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=banked --calling_convention=xdata_reentrant
+#        --place_constants=data_rom --nr_virtual_regs 8 -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+#        -DZDO_COORDINATOR -DRTR_NWK) -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x00, 0x01, 0x02, 0x03,
+#        0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E,
+#        0x0F}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+#        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+#        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+#        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000
+#        -DENABLE_LED4_DISABLE_S1) -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\Source\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\Source\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\ZMain\TI2530DB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mt\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\osal\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\saddr\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\sdata\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\af\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\bdb\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\gp\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sec\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sys\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zcl\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\Common\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\SPI\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\Font\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_LCD_SPI\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_OLED\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_TFT\
+#        -Ohz --require_prototypes)
+#    Locale             =  Chinese (Simplified)_China.936
+#    List file          =  
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List\zcl_ha.lst
+#    Object file        =  
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj\zcl_ha.r51
+#
+###############################################################################
+
+D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\Source\zcl_ha.c
+      1          /**************************************************************************************************
+      2            Filename:       zcl_ha.c
+      3            Revised:        $Date: 2013-10-21 12:15:10 -0700 (Mon, 21 Oct 2013) $
+      4            Revision:       $Revision: 35738 $
+      5          
+      6            Description:    Describe the purpose and contents of the file.
+      7          
+      8          
+      9            Copyright 2013 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /*********************************************************************
+     41           * INCLUDES
+     42           */
+     43          #include "ZComDef.h"
+     44          #include "OSAL.h"
+     45          
+     46          #include "zcl.h"
+     47          #include "zcl_general.h"
+     48          #include "zcl_closures.h"
+     49          #include "zcl_HVAC.h"
+     50          #include "zcl_ss.h"
+     51          #include "zcl_ms.h"
+     52          #include "zcl_lighting.h"
+     53          #include "zcl_ha.h"
+     54          
+     55          /* HAL */
+     56          #include "hal_lcd.h"
+     57          #include "bdb.h"
+     58          
+     59          
+     60          /*********************************************************************
+     61           * MACROS
+     62           */
+     63          
+     64          /*********************************************************************
+     65           * CONSTANTS
+     66           */
+     67          
+     68          /*********************************************************************
+     69           * TYPEDEFS
+     70           */
+     71          
+     72          /*********************************************************************
+     73           * GLOBAL VARIABLES
+     74           */
+     75          
+     76          /*********************************************************************
+     77           * EXTERNAL VARIABLES
+     78           */
+     79          
+     80          /*********************************************************************
+     81           * EXTERNAL FUNCTIONS
+     82           */
+     83          
+     84          /*********************************************************************
+     85           * LOCAL VARIABLES
+     86           */
+     87          
+     88          /*********************************************************************
+     89           * STATUS STRINGS
+     90           */
+     91          // NwkInfo displayed on line 1 once on the network
+     92          // 0123456789012345
+     93          // Zc: PPPP CH ADDR
+     94          // Zr: PPPP CH ADDR
+     95          // Zed:PPPP CH ADDR
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     96          const char NwkInfoZcStr[]  = "ZC: ";
+   \                     NwkInfoZcStr:
+   \   000000   5A433A20     DB "ZC: "
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     97          const char NwkInfoZrStr[]  = "ZR: ";
+   \                     NwkInfoZrStr:
+   \   000000   5A523A20     DB "ZR: "
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     98          const char NwkInfoZedStr[] = "Zed:";
+   \                     NwkInfoZedStr:
+   \   000000   5A65643A     DB "Zed:"
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     99          const char * const NwkInfoStrs[] = { NwkInfoZcStr, NwkInfoZrStr, NwkInfoZedStr };
+   \                     NwkInfoStrs:
+   \   000000   ....         DW NwkInfoZcStr
+   \   000002   ....         DW NwkInfoZrStr
+   \   000004   ....         DW NwkInfoZedStr
+    100          
+    101          /*********************************************************************
+    102           * LOCAL FUNCTIONS
+    103           */
+    104          
+    105          /*********************************************************************
+    106           * @fn      zclHA_isbit
+    107           *
+    108           * @brief   Returns TRUE if the index bit is set
+    109           *
+    110           * @param   pArray   - array with bits in it
+    111           *          bitIndex - index into the array of bits
+    112           *
+    113           * @return  TRUE if index bit is set
+    114           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    115          bool zclHA_isbit(uint8 *pArray, uint8 bitIndex)
+   \                     zclHA_isbit:
+    116          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004   E9           MOV       A,R1
+   \   000005   FC           MOV       R4,A
+    117            uint8 bit;
+    118            bit = ( 1 << ( bitIndex & 0x7 ) );
+    119            if( pArray[bitIndex >> 3] & bit )
+   \   000006   13           RRC       A
+   \   000007   13           RRC       A
+   \   000008   13           RRC       A
+   \   000009   541F         ANL       A,#0x1f
+   \   00000B   F8           MOV       R0,A
+   \   00000C   EA           MOV       A,R2
+   \   00000D   28           ADD       A,R0
+   \   00000E   F582         MOV       DPL,A
+   \   000010   E4           CLR       A
+   \   000011   3B           ADDC      A,R3
+   \   000012   F583         MOV       DPH,A
+   \   000014   E0           MOVX      A,@DPTR
+   \   000015   C0E0         PUSH      A
+   \   000017   7407         MOV       A,#0x7
+   \   000019   5C           ANL       A,R4
+   \   00001A   F8           MOV       R0,A
+   \   00001B   D0E0         POP       A
+   \   00001D   B80002       CJNE      R0,#0x0,??zclHA_isbit_0
+   \   000020   8004         SJMP      ??zclHA_isbit_1
+   \                     ??zclHA_isbit_0:
+   \   000022   C3           CLR       C
+   \   000023   13           RRC       A
+   \   000024   D8FC         DJNZ      R0,??zclHA_isbit_0
+   \                     ??zclHA_isbit_1:
+   \   000026   A2E0         MOV       C,0xE0 /* A   */.0
+   \   000028   5004         JNC       ??zclHA_isbit_2
+    120              return TRUE;
+   \   00002A   7901         MOV       R1,#0x1
+   \   00002C   8002         SJMP      ??zclHA_isbit_3
+    121            return FALSE;
+   \                     ??zclHA_isbit_2:
+   \   00002E   7900         MOV       R1,#0x0
+   \                     ??zclHA_isbit_3:
+   \   000030   80..         SJMP      ??Subroutine3_0
+    122          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine3_0:
+   \   000000   D083         POP       DPH
+   \   000002   D082         POP       DPL
+   \   000004   02....       LJMP      ?BRET
+    123          
+    124          /*********************************************************************
+    125           * @fn      zclHA_setbit
+    126           *
+    127           * @brief   Sets a bit in a bit array
+    128           *
+    129           * @param   pArray   - array with bits in it
+    130           *          bitIndex - index into the array of bits
+    131           *
+    132           * @return  none
+    133           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    134          void zclHA_setbit(uint8 *pArray, uint8 bitIndex)
+   \                     zclHA_setbit:
+    135          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    136            uint8 bit;
+    137            bit = ( 1 << ( bitIndex & 0x7 ) );
+    138            pArray[bitIndex >> 3] |= bit;
+   \   000004   7407         MOV       A,#0x7
+   \   000006   59           ANL       A,R1
+   \   000007   F8           MOV       R0,A
+   \   000008   7401         MOV       A,#0x1
+   \   00000A   B80002       CJNE      R0,#0x0,??zclHA_setbit_0
+   \   00000D   8004         SJMP      ??zclHA_setbit_1
+   \                     ??zclHA_setbit_0:
+   \   00000F   C3           CLR       C
+   \   000010   33           RLC       A
+   \   000011   D8FC         DJNZ      R0,??zclHA_setbit_0
+   \                     ??zclHA_setbit_1:
+   \   000013   12....       LCALL     ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   000016   48           ORL       A,R0
+   \   000017                REQUIRE ?Subroutine0
+   \   000017                ; // Fall through to label ?Subroutine0
+    139          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   F0           MOVX      @DPTR,A
+   \   000001                REQUIRE ??Subroutine3_0
+   \   000001                ; // Fall through to label ??Subroutine3_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   F8           MOV       R0,A
+   \   000001   E9           MOV       A,R1
+   \   000002   13           RRC       A
+   \   000003   13           RRC       A
+   \   000004   13           RRC       A
+   \   000005   541F         ANL       A,#0x1f
+   \   000007   FC           MOV       R4,A
+   \   000008   EA           MOV       A,R2
+   \   000009   2C           ADD       A,R4
+   \   00000A   F582         MOV       DPL,A
+   \   00000C   E4           CLR       A
+   \   00000D   3B           ADDC      A,R3
+   \   00000E   F583         MOV       DPH,A
+   \   000010   E0           MOVX      A,@DPTR
+   \   000011   22           RET
+    140          
+    141          /*********************************************************************
+    142           * @fn      zclHA_clearbit
+    143           *
+    144           * @brief   clears a bit in a bit array
+    145           *
+    146           * @param   pArray   - array with bits in it
+    147           *          bitIndex - index into the array of bits
+    148           *
+    149           * @return  none
+    150           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    151          void zclHA_clearbit(uint8 *pArray, uint8 bitIndex)
+   \                     zclHA_clearbit:
+    152          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    153            uint8 bit;
+    154            bit = ( 1 << ( bitIndex & 0x7 ) );
+    155            pArray[bitIndex >> 3] &= (~(unsigned)bit);
+   \   000004   7407         MOV       A,#0x7
+   \   000006   59           ANL       A,R1
+   \   000007   F8           MOV       R0,A
+   \   000008   7401         MOV       A,#0x1
+   \   00000A   B80002       CJNE      R0,#0x0,??zclHA_clearbit_0
+   \   00000D   8004         SJMP      ??zclHA_clearbit_1
+   \                     ??zclHA_clearbit_0:
+   \   00000F   C3           CLR       C
+   \   000010   33           RLC       A
+   \   000011   D8FC         DJNZ      R0,??zclHA_clearbit_0
+   \                     ??zclHA_clearbit_1:
+   \   000013   F4           CPL       A
+   \   000014   12....       LCALL     ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   000017   58           ANL       A,R0
+   \   000018   80..         SJMP      ?Subroutine0
+    156          }
+    157          
+    158          /*********************************************************************
+    159           * @fn      zclHA_uint16toa
+    160           *
+    161           * @brief   Converts from a uint16 to ascii hex string.
+    162           *          The # will be exactly 4 hex digits (e.g. 0x0000 or 0x1E3F).
+    163           *          NULL terminates the string.
+    164           *
+    165           * @param   u - Number to be converted
+    166           *          string - pointer to coverted string
+    167           *
+    168           * @return  none
+    169           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    170          void zclHA_uint16toa(uint16 u, char *string)
+   \                     zclHA_uint16toa:
+    171          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000   74F4         MOV       A,#-0xc
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+    172            // add preceding zeros
+    173            if ( u < 0x1000 )
+   \   000005   C3           CLR       C
+   \   000006   EB           MOV       A,R3
+   \   000007   9410         SUBB      A,#0x10
+   \   000009   5003         JNC       ??CrossCallReturnLabel_2
+    174            {
+    175              *string++ = '0';
+   \   00000B   12....       LCALL     ?Subroutine2 & 0xFFFF
+    176            }
+    177          
+    178            if ( u < 0x0100 )
+   \                     ??CrossCallReturnLabel_2:
+   \   00000E   C3           CLR       C
+   \   00000F   EB           MOV       A,R3
+   \   000010   9401         SUBB      A,#0x1
+   \   000012   5003         JNC       ??CrossCallReturnLabel_3
+    179            {
+    180              *string++ = '0';
+   \   000014   12....       LCALL     ?Subroutine2 & 0xFFFF
+    181            }
+    182          
+    183            if ( u < 0x0010 )
+   \                     ??CrossCallReturnLabel_3:
+   \   000017   C3           CLR       C
+   \   000018   EA           MOV       A,R2
+   \   000019   9410         SUBB      A,#0x10
+   \   00001B   EB           MOV       A,R3
+   \   00001C   9400         SUBB      A,#0x0
+   \   00001E   5003         JNC       ??CrossCallReturnLabel_4
+    184            {
+    185              *string++ = '0';
+   \   000020   12....       LCALL     ?Subroutine2 & 0xFFFF
+    186            }
+    187          
+    188            _ltoa((unsigned long)u, (unsigned char *)string, 16);
+   \                     ??CrossCallReturnLabel_4:
+   \   000023                ; Setup parameters for call to function _ltoa
+   \   000023   8C..         MOV       ?V0,R4
+   \   000025   8D..         MOV       ?V1,R5
+   \   000027   78..         MOV       R0,#?V0
+   \   000029   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00002C   7910         MOV       R1,#0x10
+   \   00002E   E4           CLR       A
+   \   00002F   FC           MOV       R4,A
+   \   000030   FD           MOV       R5,A
+   \   000031   12....       LCALL     `??_ltoa::?relay`; Banked call to: _ltoa
+   \   000034   7402         MOV       A,#0x2
+   \   000036   12....       LCALL     ?DEALLOC_XSTACK8
+    189          }
+   \   000039   7F04         MOV       R7,#0x4
+   \   00003B   02....       LJMP      ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   8C82         MOV       DPL,R4
+   \   000002   8D83         MOV       DPH,R5
+   \   000004   7430         MOV       A,#0x30
+   \   000006   F0           MOVX      @DPTR,A
+   \   000007   A3           INC       DPTR
+   \   000008   AC82         MOV       R4,DPL
+   \   00000A   AD83         MOV       R5,DPH
+   \   00000C   22           RET
+    190          
+    191          /*********************************************************************
+    192           * @fn      zclHA_uint8toa
+    193           *
+    194           * @brief   Converts from a uint8 to ascii decimal string.
+    195           *          The # will be exactly 3 digits (e.g. "123", " 64", "  0"), preceded by spaces.
+    196           *          No null terminator.
+    197           *
+    198           * @param   b - Byte to be converted
+    199           *          string - pointer to coverted string
+    200           *
+    201           * @return  none
+    202           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    203          void zclHA_uint8toa(uint8 b, char *string)
+   \                     zclHA_uint8toa:
+    204          {
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV       A,R1
+   \   000006   FE           MOV       R6,A
+    205            // write the level (up to 3 digits, pre-padded with spaces)
+    206            string[0] = string[1] = string[2] = '0';
+   \   000007   EA           MOV       A,R2
+   \   000008   2402         ADD       A,#0x2
+   \   00000A   F8           MOV       R0,A
+   \   00000B   E4           CLR       A
+   \   00000C   3B           ADDC      A,R3
+   \   00000D   F9           MOV       R1,A
+   \   00000E   8882         MOV       DPL,R0
+   \   000010   8983         MOV       DPH,R1
+   \   000012   7430         MOV       A,#0x30
+   \   000014   F0           MOVX      @DPTR,A
+   \   000015   8A82         MOV       DPL,R2
+   \   000017   8B83         MOV       DPH,R3
+   \   000019   A3           INC       DPTR
+   \   00001A   AC82         MOV       R4,DPL
+   \   00001C   AD83         MOV       R5,DPH
+   \   00001E   F0           MOVX      @DPTR,A
+   \   00001F   8A82         MOV       DPL,R2
+   \   000021   8B83         MOV       DPH,R3
+   \   000023   F0           MOVX      @DPTR,A
+    207            string[2] = '0' + (b % 10);  // 1s
+   \   000024   EE           MOV       A,R6
+   \   000025   75F00A       MOV       B,#0xa
+   \   000028   84           DIV       AB
+   \   000029   E5F0         MOV       A,B
+   \   00002B   2430         ADD       A,#0x30
+   \   00002D   8882         MOV       DPL,R0
+   \   00002F   8983         MOV       DPH,R1
+   \   000031   F0           MOVX      @DPTR,A
+    208            b = b / 10;
+   \   000032   75F00A       MOV       B,#0xa
+   \   000035   EE           MOV       A,R6
+   \   000036   84           DIV       AB
+   \   000037   FE           MOV       R6,A
+    209            if( b )
+   \   000038   6022         JZ        ??zclHA_uint8toa_0
+    210            {
+    211              string[1] = '0' + (b % 10);  // 10s
+   \   00003A   75F00A       MOV       B,#0xa
+   \   00003D   84           DIV       AB
+   \   00003E   E5F0         MOV       A,B
+   \   000040   2430         ADD       A,#0x30
+   \   000042   8C82         MOV       DPL,R4
+   \   000044   8D83         MOV       DPH,R5
+   \   000046   F0           MOVX      @DPTR,A
+    212              b = b / 10;
+   \   000047   75F00A       MOV       B,#0xa
+   \   00004A   EE           MOV       A,R6
+   \   00004B   84           DIV       AB
+   \   00004C   FE           MOV       R6,A
+    213            }
+    214            if( b )
+   \   00004D   600D         JZ        ??zclHA_uint8toa_0
+    215            {
+    216             string[0] = '0' + (b % 10);  // 100s
+   \   00004F   75F00A       MOV       B,#0xa
+   \   000052   84           DIV       AB
+   \   000053   E5F0         MOV       A,B
+   \   000055   2430         ADD       A,#0x30
+   \   000057   8A82         MOV       DPL,R2
+   \   000059   8B83         MOV       DPH,R3
+   \   00005B   F0           MOVX      @DPTR,A
+    217            }
+    218          }
+   \                     ??zclHA_uint8toa_0:
+   \   00005C   7F01         MOV       R7,#0x1
+   \   00005E   02....       LJMP      ?BANKED_LEAVE_XDATA
+    219          
+    220          /*********************************************************************
+    221           * @fn      zclHA_LcdStatusLine1
+    222           *
+    223           * @brief   Display LCD line 1 with network status
+    224           *          only call after on network
+    225           *          ZC: PPPP CH ADDR
+    226           *          ZR: PPPP CH ADDR
+    227           *          ZE: PPPP CH ADDR
+    228           *
+    229           * @param   kind (0=ZC, 1=ZR, 2=ZED)
+    230           *
+    231           * @return  none
+    232           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    233          void zclHA_LcdStatusLine1( uint8 kind )
+   \                     zclHA_LcdStatusLine1:
+    234          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    235          #if defined ( LCD_SUPPORTED )
+    236            char szLine[20];
+    237          
+    238            // copy in what node type it is
+    239            if ( kind > ZCL_HA_DEVICE_END_DEVICE )
+    240            {
+    241              return;
+    242            }
+    243          
+    244            // ZE: PANx CH ADDR
+    245            osal_memcpy( szLine, NwkInfoStrs[kind], 4 );
+    246            zclHA_uint16toa( _NIB.nwkPanId, &szLine[4] );
+    247            szLine[8] = ' ';
+    248          
+    249            _ltoa( _NIB.nwkLogicalChannel, (void *)(&szLine[9]), 10 );
+    250            szLine[11] = ' ';
+    251          
+    252            zclHA_uint16toa( _NIB.nwkDevAddress, &szLine[12] );
+    253            HalLcdWriteString( (char*)szLine, HAL_LCD_LINE_1 );
+    254          #endif
+    255          }
+   \   000000   02....       LJMP      ?BRET
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??zclHA_isbit::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclHA_isbit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??zclHA_setbit::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclHA_setbit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??zclHA_clearbit::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclHA_clearbit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??zclHA_uint16toa::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclHA_uint16toa
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??zclHA_uint8toa::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclHA_uint8toa
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??zclHA_LcdStatusLine1::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclHA_LcdStatusLine1
+    256          
+    257          /*********************************************************************
+    258          *********************************************************************/
+
+   Maximum stack usage in bytes:
+
+   ISTACK XSTACK Function
+   ------ ------ --------
+      0      0   zclHA_LcdStatusLine1
+      3      0   zclHA_clearbit
+      3      0   zclHA_isbit
+      3      0   zclHA_setbit
+      0     14   zclHA_uint16toa
+        0     14   -> _ltoa
+      1      9   zclHA_uint8toa
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       7  ??Subroutine3_0
+       1  ?Subroutine0
+      18  ?Subroutine1
+      13  ?Subroutine2
+       6  NwkInfoStrs
+       5  NwkInfoZcStr
+       5  NwkInfoZedStr
+       5  NwkInfoZrStr
+       3  zclHA_LcdStatusLine1
+       6  zclHA_LcdStatusLine1::?relay
+      26  zclHA_clearbit
+       6  zclHA_clearbit::?relay
+      50  zclHA_isbit
+       6  zclHA_isbit::?relay
+      23  zclHA_setbit
+       6  zclHA_setbit::?relay
+      62  zclHA_uint16toa
+       6  zclHA_uint16toa::?relay
+      97  zclHA_uint8toa
+       6  zclHA_uint8toa::?relay
+
+ 
+ 300 bytes in segment BANKED_CODE
+  36 bytes in segment BANK_RELAYS
+  21 bytes in segment XDATA_ROM_C
+ 
+  36 bytes of CODE     memory
+  21 bytes of CONST    memory
+ 300 bytes of HUGECODE memory
+
+Errors: none
+Warnings: none

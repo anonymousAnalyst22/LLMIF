@@ -1,0 +1,448 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.10.1.4655 for 8051               22/Nov/2023  15:42:41
+# Copyright 2004-2017 IAR Systems AB.
+# Standalone license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        D:\fuzzing-coordinator-response-collection\Components\hal\target\CC2530EB\SPI\hw_spi.c
+#    Command line       =  
+#        -f C:\Users\ADMINI~1\AppData\Local\Temp\EWA2E3.tmp
+#        (D:\fuzzing-coordinator-response-collection\Components\hal\target\CC2530EB\SPI\hw_spi.c
+#        -D SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE -D
+#        MULTICAST_ENABLED=FALSE -D ZCL_READ -D ZCL_DISCOVER -D ZCL_WRITE -D
+#        ZCL_BASIC -D ZCL_IDENTIFY -D ISR_KEYINTERRUPT -D HAL_UART=TRUE -D
+#        HAL_LCD=FALSE -D ZCL_ON_OFF -D INT_HEAP_LEN=2800 -D
+#        HAL_UART_DMA_RX_MAX=256 -D HAL_UART_DMA_TX_MAX=256 -lC
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+#        -lA
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+#        --diag_suppress Pe001,Pa010 -o
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj
+#        -e --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=banked --calling_convention=xdata_reentrant
+#        --place_constants=data_rom --nr_virtual_regs 8 -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+#        -DZDO_COORDINATOR -DRTR_NWK) -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x00, 0x01, 0x02, 0x03,
+#        0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E,
+#        0x0F}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+#        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+#        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+#        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000
+#        -DENABLE_LED4_DISABLE_S1) -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\Source\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\Source\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\ZMain\TI2530DB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mt\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\osal\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\saddr\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\sdata\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\af\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\bdb\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\gp\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sec\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sys\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zcl\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\Common\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\SPI\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\Font\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_LCD_SPI\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_OLED\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_TFT\
+#        -Ohz --require_prototypes)
+#    Locale             =  Chinese (Simplified)_China.936
+#    List file          =  
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List\hw_spi.lst
+#    Object file        =  
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj\hw_spi.r51
+#
+###############################################################################
+
+D:\fuzzing-coordinator-response-collection\Components\hal\target\CC2530EB\SPI\hw_spi.c
+      1          /**
+      2           * Copyright (c) 2020~2022 iotlucker.com, All Rights Reserved.
+      3           *
+      4           * @Official Store: https://shop233815998.taobao.com
+      5           * @Official Website & Online document: http://www.iotlucker.com
+      6           * @WeChat Official Accounts: shanxuefang_iot
+      7           * @Support: 1915912696@qq.com
+      8           */
+      9          #include "hw_spi.h"
+
+   \                                 In  segment SFR_AN, at 0xf1
+   \   unsigned char volatile __sfr PERCFG
+   \                     PERCFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf5
+   \   unsigned char volatile __sfr P2SEL
+   \                     P2SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf8
+   \   union <unnamed> volatile __sfr _A_U1CSR
+   \                     _A_U1CSR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf9
+   \   unsigned char volatile __sfr U1DBUF
+   \                     U1DBUF:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfa
+   \   unsigned char volatile __sfr U1BAUD
+   \                     U1BAUD:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfc
+   \   unsigned char volatile __sfr U1GCR
+   \                     U1GCR:
+   \   000000                DS 1
+     10          
+     11          static void CC2530_Spi1Init(uint8 alternate, uint8 bitOrder, uint8 CPOL, uint8 CPHA);
+     12          static int CC2530_Spi1TxByte(uint8 b);
+     13          static uint8 CC2530_Spi1RxByte(void);
+     14          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     15          void HwSPIInit(HwSPICfg_t *hw)
+   \                     HwSPIInit:
+     16          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     17              switch(hw->alternate)
+   \   000004   8A82         MOV       DPL,R2
+   \   000006   8B83         MOV       DPH,R3
+   \   000008   E0           MOVX      A,@DPTR
+   \   000009   6403         XRL       A,#0x3
+   \   00000B   704A         JNZ       ??HwSPIInit_0
+     18              {
+     19              case HW_SPI1_ALT2:
+     20                CC2530_Spi1Init(HW_SPI1_ALT2, hw->bitOrder, hw->CPOL, hw->CPHA);
+   \   00000D   A3           INC       DPTR
+   \   00000E   A3           INC       DPTR
+   \   00000F   A3           INC       DPTR
+   \   000010   E0           MOVX      A,@DPTR
+   \   000011   F9           MOV       R1,A
+   \   000012   8A82         MOV       DPL,R2
+   \   000014   8B83         MOV       DPH,R3
+   \   000016   A3           INC       DPTR
+   \   000017   A3           INC       DPTR
+   \   000018   E0           MOVX      A,@DPTR
+   \   000019   F8           MOV       R0,A
+   \   00001A   8A82         MOV       DPL,R2
+   \   00001C   8B83         MOV       DPH,R3
+   \   00001E   A3           INC       DPTR
+   \   00001F   E0           MOVX      A,@DPTR
+   \   000020   FA           MOV       R2,A
+   \   000021   75F800       MOV       0xf8,#0x0
+   \   000024   43FC11       ORL       0xfc,#0x11
+   \   000027   75FA00       MOV       0xfa,#0x0
+   \   00002A   43F102       ORL       0xf1,#0x2
+   \   00002D   43F4E0       ORL       0xf4,#0xe0
+   \   000030   7005         JNZ       ??HwSPIInit_1
+   \   000032   43FC20       ORL       0xfc,#0x20
+   \   000035   8003         SJMP      ??HwSPIInit_2
+   \                     ??HwSPIInit_1:
+   \   000037   53FCDF       ANL       0xfc,#0xdf
+   \                     ??HwSPIInit_2:
+   \   00003A   7401         MOV       A,#0x1
+   \   00003C   68           XRL       A,R0
+   \   00003D   7005         JNZ       ??HwSPIInit_3
+   \   00003F   43FC80       ORL       0xfc,#0x80
+   \   000042   8003         SJMP      ??HwSPIInit_4
+   \                     ??HwSPIInit_3:
+   \   000044   53FC7F       ANL       0xfc,#0x7f
+   \                     ??HwSPIInit_4:
+   \   000047   E9           MOV       A,R1
+   \   000048   7005         JNZ       ??HwSPIInit_5
+   \   00004A   53FCBF       ANL       0xfc,#0xbf
+   \   00004D   8003         SJMP      ??HwSPIInit_6
+   \                     ??HwSPIInit_5:
+   \   00004F   43FC40       ORL       0xfc,#0x40
+   \                     ??HwSPIInit_6:
+   \   000052   53F5DF       ANL       0xf5,#0xdf
+   \   000055   D2FE         SETB      0xf8.6
+     21              break;
+     22              
+     23              default:
+     24              break;
+     25              }
+     26          }
+   \                     ??HwSPIInit_0:
+   \   000057   D083         POP       DPH
+   \   000059   D082         POP       DPL
+   \   00005B   02....       LJMP      ?BRET
+   \   00005E                REQUIRE _A_U1CSR
+   \   00005E                REQUIRE U1GCR
+   \   00005E                REQUIRE U1BAUD
+   \   00005E                REQUIRE PERCFG
+   \   00005E                REQUIRE P1SEL
+   \   00005E                REQUIRE P2SEL
+     27          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     28          int HwSPITxByte(uint8 alternate, uint8 b)
+   \                     HwSPITxByte:
+     29          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+   \   000000   EA           MOV       A,R2
+   \   000001   F8           MOV       R0,A
+     30              int ret = -1;
+   \   000002   7AFF         MOV       R2,#-0x1
+   \   000004   7BFF         MOV       R3,#-0x1
+     31              
+     32              if (alternate == HW_SPI1_ALT2) ret = CC2530_Spi1TxByte(b);
+   \   000006   7403         MOV       A,#0x3
+   \   000008   69           XRL       A,R1
+   \   000009   701E         JNZ       ??HwSPITxByte_0
+   \   00000B   7C14         MOV       R4,#0x14
+   \   00000D   7D19         MOV       R5,#0x19
+   \   00000F   C2F9         CLR       0xf8.1
+   \   000011   88F9         MOV       0xf9,R0
+   \                     ??HwSPITxByte_1:
+   \   000013   A2F9         MOV       C,0xf8.1
+   \   000015   EC           MOV       A,R4
+   \   000016   400C         JC        ??HwSPITxByte_2
+   \   000018   2A           ADD       A,R2
+   \   000019   1C           DEC       R4
+   \   00001A   ED           MOV       A,R5
+   \   00001B   34FF         ADDC      A,#-0x1
+   \   00001D   FD           MOV       R5,A
+   \   00001E   EC           MOV       A,R4
+   \   00001F   4D           ORL       A,R5
+   \   000020   6007         JZ        ??HwSPITxByte_0
+   \   000022   80EF         SJMP      ??HwSPITxByte_1
+   \                     ??HwSPITxByte_2:
+   \   000024   4D           ORL       A,R5
+   \   000025   6002         JZ        ??HwSPITxByte_0
+   \   000027   0A           INC       R2
+   \   000028   0B           INC       R3
+     33              
+     34              return ret;
+   \                     ??HwSPITxByte_0:
+   \   000029   02....       LJMP      ?BRET
+   \   00002C                REQUIRE _A_U1CSR
+   \   00002C                REQUIRE U1DBUF
+     35          }
+     36          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     37          uint8 HwSPIRxByte(uint8 alternate)
+   \                     HwSPIRxByte:
+     38          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+   \   000000   E9           MOV       A,R1
+   \   000001   F8           MOV       R0,A
+     39              uint8 b = 0x00;
+   \   000002   7900         MOV       R1,#0x0
+     40          
+     41              if (alternate == HW_SPI1_ALT2) b = CC2530_Spi1RxByte();
+   \   000004   7403         MOV       A,#0x3
+   \   000006   68           XRL       A,R0
+   \   000007   7002         JNZ       ??HwSPIRxByte_0
+   \   000009   A9F9         MOV       R1,0xf9+0x0
+     42          
+     43              return b;
+   \                     ??HwSPIRxByte_0:
+   \   00000B   02....       LJMP      ?BRET
+   \   00000E                REQUIRE U1DBUF
+     44          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??HwSPIInit::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HwSPIInit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??HwSPITxByte::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HwSPITxByte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??HwSPIRxByte::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HwSPIRxByte
+     45          
+     46          /* 
+     47           * @brief	Init CC2530 SPI1
+     48           *
+     49           * @param 	alternate - SPI-1 alternate
+     50           * @param   bitOrder - SPI bit rrder
+     51           * @param   CPOL - lock polarity
+     52           * @param   CPHA - clock phase
+     53           */
+     54          static void CC2530_Spi1Init(uint8 alternate, uint8 bitOrder, uint8 CPOL, uint8 CPHA)
+     55          {
+     56              /* Mode select UART1 SPI Mode as master. */
+     57              U1CSR = 0; 
+     58            
+     59              /* Setup for baud, sys-clock/8 MHZ */
+     60              U1GCR |= 0x11;
+     61              U1BAUD = 0x00;
+     62            
+     63              if (alternate == HW_SPI1_ALT2) {
+     64                /* Set USART1 I/O to alternate 2 location on P1 pins:
+     65                 * SCK:P1_5, MOSI:P1_6, MISO:P1_7
+     66                 */
+     67                PERCFG |= 0x02;
+     68                
+     69                /* Select peripheral function on I/O pins but SS is left as GPIO for 
+     70                 * separate control: SELP1_[7:4]
+     71                 */
+     72                P1SEL |= 0xE0;
+     73              }
+     74              
+     75              /* Set bit order to MSB */
+     76              if (bitOrder == HW_SPI_BITORDER_MSB) U1GCR |= (1 << 5); 
+     77              else U1GCR &= ~(1 << 5); 
+     78          
+     79              /* Set clock polarity, CPOL */
+     80              if (CPOL == HW_SPI_CPOL_HIGH) U1GCR |= (1<<7);
+     81              else U1GCR &= ~(1<<7);
+     82              
+     83              /* Set clock phase, CPHA */
+     84              if (CPHA == HW_SPI_CPHA_FIRST) U1GCR &= ~(1<<6);
+     85              else U1GCR |= (1<<6);
+     86              
+     87              /* Give USART1 priority over Timer3. */
+     88              P2SEL &= ~0x20;
+     89              
+     90              /* When SPI config is complete, enable it. */
+     91              U1CSR |= 0x40; 
+     92          }
+     93          
+     94          /*
+     95           * @brief   Tx a byte by CC2530 HW-SPI-1
+     96           * @param   b - byte
+     97           * @return  SUCCESS: 0, Other: -1
+     98           */
+     99          static int CC2530_Spi1TxByte(uint8 b)
+    100          {
+    101              uint16 timeout = 6420;  // 32MHZ ~6ms, 16MHZ ~12ms
+    102            
+    103              U1CSR &= ~0x02; 
+    104              U1DBUF = b;
+    105              
+    106              while (!(U1CSR & 0x02)) if (--timeout == 0) break;
+    107              
+    108              return (timeout == 0)? -1 : 0;
+    109          }
+    110          
+    111          static uint8 CC2530_Spi1RxByte(void)
+    112          {
+    113              uint8 b = U1DBUF;
+    114              return b;
+    115          }
+
+   Maximum stack usage in bytes:
+
+   ISTACK Function
+   ------ --------
+      2   HwSPIInit
+      0   HwSPIRxByte
+      0   HwSPITxByte
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      94  HwSPIInit
+       6  HwSPIInit::?relay
+      14  HwSPIRxByte
+       6  HwSPIRxByte::?relay
+      44  HwSPITxByte
+       6  HwSPITxByte::?relay
+       1  P1SEL
+       1  P2SEL
+       1  PERCFG
+       1  U1BAUD
+       1  U1DBUF
+       1  U1GCR
+       1  _A_U1CSR
+
+ 
+ 152 bytes in segment BANKED_CODE
+  18 bytes in segment BANK_RELAYS
+   7 bytes in segment SFR_AN
+ 
+  18 bytes of CODE     memory
+   0 bytes of DATA     memory (+ 7 bytes shared)
+ 152 bytes of HUGECODE memory
+
+Errors: none
+Warnings: none

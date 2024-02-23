@@ -1,0 +1,79 @@
+# Seed command type
+COMMAND_GENETIC = 0x0
+COMMAND_ZCL = 0x1
+COMMAND_MANU = 0x2
+COMMAND_MISSING_ZCL = 0x3 # A customized command supported by devices in a ZCL-standard cluster
+COMMAND_STRANGE = 0x4 # A missing ZCL-standard command which is not supported by device
+
+# Mutation operator identifier
+MUTATION_BIT_FLIP = 0x0
+MUTATION_BYTE_FLIP = 0x1
+MUTATION_BYTE_INC = 0x2
+MUTATION_BYTE_DEC = 0x3
+INTERESTING_BYTE = 0x7
+INTERESTING_WORD = 0x8
+INTERESTING_DWORD = 0x9
+RANDOM_BYTE_MUTATION = 0xa
+RANDOM_WORD_MUTATION = 0xb
+RANDOM_DWORD_MUTATION = 0xc
+DELETE_BYTE_MUTATION = 0xd
+DELETE_WORD_MUTATION = 0xe
+DELETE_DWORD_MUTATION = 0xf
+INSERT_BYTE_MUTATION = 0x10
+INSERT_WORD_MUTATION = 0x11
+INSERT_DWORD_MUTATION = 0x12
+REPLACE_ATTRIBUTE_ID = 0x13
+SET_BENIGN_TYPE = 0x14
+MUTATION_INTERESTING_VALUE = 0x15
+MUTATION_RANDOM_VALUE = 0x16
+MUTATION_STRING_EXPAND = 0x17
+MUTATION_STRING_SHRINK = 0x18
+MUTATION_ARRAY_EXPAND = 0x19
+MUTATION_VARIABLE_EXPAND = 0x20
+MUTATION_VARIABLE_SHRINK = 0x21
+MUTATION_BYTE_ADDING = 0x22
+DELBYTE_MUTATION = 0x23
+DELFIELD_MUTATION= 0x24
+STRING_INC_MUTATION = 0x25
+STRING_DEC_MUTATION = 0x26
+
+INT_BYTE_VALUES = [0, 0xff]
+INT_WORD_VALUES = [0, 0xffff]
+INT_DWORD_VALUES = [0, 0xffffffff]
+
+#
+ATTR_UNSELECTED = 0
+ATTR_SELECTED = 1
+
+# Command ID
+GENETIC_READ_REQUEST_CMDID = 0x00
+
+# Parameters which control the fuzzing process
+N_EXPLORE_FUZZING_ROUND = 10000
+N_EXPLORE_DISTURBING_ROUND = 50
+N_FUZZING_ROUND = 50
+MIN_AFL_MUTATION_RT = 10
+MAX_AFL_MUTATION_RT = 20
+MIN_AFL_MUTATION_RO = 2
+MAX_AFL_MUTATION_RO = 5
+
+VERBOSE = False
+
+#
+NO_MANUCODE = 0x0000
+
+FORMAT_PRESERVING = 0
+FORMAT_DISTURBING = 1
+UNSPECIFIED = 2
+
+FUZZ_TI = True
+
+# Following macros are used to determine the mutation strategy in function fixed_strategy_mutation()
+ONLY_FREIDENLY_OP = 0
+MUST_DISTURBING_OP = 1 # For each testing case, format disturbing is needed, and randomly sample one disturbing op.
+RANDOM_DISTURBING_OP = 2 # For each testing case, with 50% probability to decide format disturbing, and randomly sample one disturbing op.
+
+# Fuzzer types
+AFL = 'afl'
+JC = 'jc'
+SPEC = 'spec'

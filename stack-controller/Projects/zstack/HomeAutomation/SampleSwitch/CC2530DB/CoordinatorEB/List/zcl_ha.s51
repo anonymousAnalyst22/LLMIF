@@ -1,0 +1,1104 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// IAR C/C++ Compiler V10.10.1.4655 for 8051              22/Nov/2023  15:42:44
+// Copyright 2004-2017 IAR Systems AB.
+// Standalone license - IAR Embedded Workbench for 8051
+//
+//    Core               =  plain
+//    Code model         =  banked
+//    Data model         =  large
+//    Calling convention =  xdata reentrant
+//    Constant location  =  data_rom
+//    Dptr setup         =  1,16
+//                          
+//    Source file        =  
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\Source\zcl_ha.c
+//    Command line       =  
+//        -f C:\Users\ADMINI~1\AppData\Local\Temp\EWAE4C.tmp
+//        (D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\Source\zcl_ha.c
+//        -D SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE -D
+//        MULTICAST_ENABLED=FALSE -D ZCL_READ -D ZCL_DISCOVER -D ZCL_WRITE -D
+//        ZCL_BASIC -D ZCL_IDENTIFY -D ISR_KEYINTERRUPT -D HAL_UART=TRUE -D
+//        HAL_LCD=FALSE -D ZCL_ON_OFF -D INT_HEAP_LEN=2800 -D
+//        HAL_UART_DMA_RX_MAX=256 -D HAL_UART_DMA_TX_MAX=256 -lC
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+//        -lA
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+//        --diag_suppress Pe001,Pa010 -o
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj
+//        -e --debug --core=plain --dptr=16,1 --data_model=large
+//        --code_model=banked --calling_convention=xdata_reentrant
+//        --place_constants=data_rom --nr_virtual_regs 8 -f
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg
+//        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+//        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+//        -DZDO_COORDINATOR -DRTR_NWK) -f
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+//        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+//        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+//        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+//        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+//        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+//        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+//        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+//        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+//        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+//        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x00, 0x01, 0x02, 0x03,
+//        0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E,
+//        0x0F}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+//        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+//        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+//        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000
+//        -DENABLE_LED4_DISABLE_S1) -f
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\Source\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\Source\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\ZMain\TI2530DB\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\include\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\include\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mt\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\osal\include\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\saddr\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\sdata\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\af\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\bdb\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\gp\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sec\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sys\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zcl\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\Common\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\SPI\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\Font\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_LCD_SPI\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_OLED\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_TFT\
+//        -Ohz --require_prototypes)
+//    Locale             =  Chinese (Simplified)_China.936
+//    List file          =  
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List\zcl_ha.s51
+//
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME zcl_ha
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__register_banks", "*"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?V0
+        EXTERN ?V1
+        EXTERN ?V2
+        EXTERN ?V3
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK_I_TWO
+
+        PUBLIC `??zclHA_LcdStatusLine1::?relay`
+        FUNCTION `??zclHA_LcdStatusLine1::?relay`,0203H
+        PUBLIC `??zclHA_clearbit::?relay`
+        FUNCTION `??zclHA_clearbit::?relay`,0203H
+        PUBLIC `??zclHA_isbit::?relay`
+        FUNCTION `??zclHA_isbit::?relay`,0203H
+        PUBLIC `??zclHA_setbit::?relay`
+        FUNCTION `??zclHA_setbit::?relay`,0203H
+        PUBLIC `??zclHA_uint16toa::?relay`
+        FUNCTION `??zclHA_uint16toa::?relay`,0203H
+        PUBLIC `??zclHA_uint8toa::?relay`
+        FUNCTION `??zclHA_uint8toa::?relay`,0203H
+        PUBLIC NwkInfoStrs
+        PUBLIC NwkInfoZcStr
+        PUBLIC NwkInfoZedStr
+        PUBLIC NwkInfoZrStr
+        PUBLIC zclHA_LcdStatusLine1
+        FUNCTION zclHA_LcdStatusLine1,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC zclHA_clearbit
+        FUNCTION zclHA_clearbit,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 3, STACK
+        PUBLIC zclHA_isbit
+        FUNCTION zclHA_isbit,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 3, STACK
+        PUBLIC zclHA_setbit
+        FUNCTION zclHA_setbit,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 3, STACK
+        PUBLIC zclHA_uint16toa
+        FUNCTION zclHA_uint16toa,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        PUBLIC zclHA_uint8toa
+        FUNCTION zclHA_uint8toa,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 9, STACK
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA_SP SP IDATA
+          CFI StackFrame CFA_PSP16 PSP16 XDATA
+          CFI StackFrame CFA_XSP16 XSP16 XDATA
+          CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+          CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+          CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+          CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+          CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+          CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+          CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+          CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+          CFI Resource SP:8, PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+          CFI VirtualResource ?RET:24
+          CFI Resource ?BRET_EXT:8
+          CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+          CFI ResourceParts PSP16 PSPH, PSPL
+          CFI ResourceParts XSP16 XSPH, XSPL
+          CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 1
+          CFI DataAlign -1
+          CFI ReturnAddress ?RET CODE
+          CFI CFA_DOVERLAY Used
+          CFI CFA_IOVERLAY Used
+          CFI CFA_SP SP+-3
+          CFI CFA_PSP16 PSP16+0
+          CFI CFA_XSP16 XSP16+0
+          CFI `PSW.CY` SameValue
+          CFI `B.BR0` SameValue
+          CFI `B.BR1` SameValue
+          CFI `B.BR2` SameValue
+          CFI `B.BR3` SameValue
+          CFI `B.BR4` SameValue
+          CFI `B.BR5` SameValue
+          CFI `B.BR6` SameValue
+          CFI `B.BR7` SameValue
+          CFI `VB.BR8` SameValue
+          CFI `VB.BR9` SameValue
+          CFI `VB.BR10` SameValue
+          CFI `VB.BR11` SameValue
+          CFI `VB.BR12` SameValue
+          CFI `VB.BR13` SameValue
+          CFI `VB.BR14` SameValue
+          CFI `VB.BR15` SameValue
+          CFI VB SameValue
+          CFI B Undefined
+          CFI A Undefined
+          CFI PSW SameValue
+          CFI DPL0 SameValue
+          CFI DPH0 SameValue
+          CFI R0 Undefined
+          CFI R1 Undefined
+          CFI R2 Undefined
+          CFI R3 Undefined
+          CFI R4 Undefined
+          CFI R5 Undefined
+          CFI R6 SameValue
+          CFI R7 SameValue
+          CFI V0 SameValue
+          CFI V1 SameValue
+          CFI V2 SameValue
+          CFI V3 SameValue
+          CFI V4 SameValue
+          CFI V5 SameValue
+          CFI V6 SameValue
+          CFI V7 SameValue
+          CFI PSPH Undefined
+          CFI PSPL Undefined
+          CFI XSPH Undefined
+          CFI XSPL Undefined
+          CFI ?RET Concat
+          CFI ?BRET_EXT Frame(CFA_SP, 3)
+          CFI ?RET_HIGH Frame(CFA_SP, 2)
+          CFI ?RET_LOW Frame(CFA_SP, 1)
+          CFI EndCommon cfiCommon0
+        
+        
+          CFI Common cfiCommon1 Using cfiNames0
+          CFI CodeAlign 1
+          CFI DataAlign -1
+          CFI ReturnAddress ?RET CODE
+          CFI CFA_DOVERLAY Used
+          CFI CFA_IOVERLAY Used
+          CFI CFA_SP SP+-2
+          CFI CFA_PSP16 PSP16+0
+          CFI CFA_XSP16 XSP16+0
+          CFI `PSW.CY` SameValue
+          CFI `B.BR0` SameValue
+          CFI `B.BR1` SameValue
+          CFI `B.BR2` SameValue
+          CFI `B.BR3` SameValue
+          CFI `B.BR4` SameValue
+          CFI `B.BR5` SameValue
+          CFI `B.BR6` SameValue
+          CFI `B.BR7` SameValue
+          CFI `VB.BR8` SameValue
+          CFI `VB.BR9` SameValue
+          CFI `VB.BR10` SameValue
+          CFI `VB.BR11` SameValue
+          CFI `VB.BR12` SameValue
+          CFI `VB.BR13` SameValue
+          CFI `VB.BR14` SameValue
+          CFI `VB.BR15` SameValue
+          CFI VB SameValue
+          CFI B SameValue
+          CFI A SameValue
+          CFI PSW SameValue
+          CFI DPL0 SameValue
+          CFI DPH0 SameValue
+          CFI R0 SameValue
+          CFI R1 SameValue
+          CFI R2 SameValue
+          CFI R3 SameValue
+          CFI R4 SameValue
+          CFI R5 SameValue
+          CFI R6 SameValue
+          CFI R7 SameValue
+          CFI V0 SameValue
+          CFI V1 SameValue
+          CFI V2 SameValue
+          CFI V3 SameValue
+          CFI V4 SameValue
+          CFI V5 SameValue
+          CFI V6 SameValue
+          CFI V7 SameValue
+          CFI PSPH Undefined
+          CFI PSPL Undefined
+          CFI XSPH Undefined
+          CFI XSPL Undefined
+          CFI ?RET Concat
+          CFI ?BRET_EXT SameValue
+          CFI ?RET_HIGH Frame(CFA_SP, 2)
+          CFI ?RET_LOW Frame(CFA_SP, 1)
+          CFI EndCommon cfiCommon1
+        
+_ltoa               SYMBOL "_ltoa"
+`??_ltoa::?relay`   SYMBOL "?relay", _ltoa
+zclHA_LcdStatusLine1 SYMBOL "zclHA_LcdStatusLine1"
+`??zclHA_LcdStatusLine1::?relay` SYMBOL "?relay", zclHA_LcdStatusLine1
+zclHA_clearbit      SYMBOL "zclHA_clearbit"
+`??zclHA_clearbit::?relay` SYMBOL "?relay", zclHA_clearbit
+zclHA_isbit         SYMBOL "zclHA_isbit"
+`??zclHA_isbit::?relay` SYMBOL "?relay", zclHA_isbit
+zclHA_setbit        SYMBOL "zclHA_setbit"
+`??zclHA_setbit::?relay` SYMBOL "?relay", zclHA_setbit
+zclHA_uint16toa     SYMBOL "zclHA_uint16toa"
+`??zclHA_uint16toa::?relay` SYMBOL "?relay", zclHA_uint16toa
+zclHA_uint8toa      SYMBOL "zclHA_uint8toa"
+`??zclHA_uint8toa::?relay` SYMBOL "?relay", zclHA_uint8toa
+
+        EXTERN `??_ltoa::?relay`
+        FUNCTION `??_ltoa::?relay`,00H
+        EXTERN _ltoa
+        FUNCTION _ltoa,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+
+// D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\Source\zcl_ha.c
+//    1 /**************************************************************************************************
+//    2   Filename:       zcl_ha.c
+//    3   Revised:        $Date: 2013-10-21 12:15:10 -0700 (Mon, 21 Oct 2013) $
+//    4   Revision:       $Revision: 35738 $
+//    5 
+//    6   Description:    Describe the purpose and contents of the file.
+//    7 
+//    8 
+//    9   Copyright 2013 Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License").  You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product.  Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com.
+//   38 **************************************************************************************************/
+//   39 
+//   40 /*********************************************************************
+//   41  * INCLUDES
+//   42  */
+//   43 #include "ZComDef.h"
+//   44 #include "OSAL.h"
+//   45 
+//   46 #include "zcl.h"
+//   47 #include "zcl_general.h"
+//   48 #include "zcl_closures.h"
+//   49 #include "zcl_HVAC.h"
+//   50 #include "zcl_ss.h"
+//   51 #include "zcl_ms.h"
+//   52 #include "zcl_lighting.h"
+//   53 #include "zcl_ha.h"
+//   54 
+//   55 /* HAL */
+//   56 #include "hal_lcd.h"
+//   57 #include "bdb.h"
+//   58 
+//   59 
+//   60 /*********************************************************************
+//   61  * MACROS
+//   62  */
+//   63 
+//   64 /*********************************************************************
+//   65  * CONSTANTS
+//   66  */
+//   67 
+//   68 /*********************************************************************
+//   69  * TYPEDEFS
+//   70  */
+//   71 
+//   72 /*********************************************************************
+//   73  * GLOBAL VARIABLES
+//   74  */
+//   75 
+//   76 /*********************************************************************
+//   77  * EXTERNAL VARIABLES
+//   78  */
+//   79 
+//   80 /*********************************************************************
+//   81  * EXTERNAL FUNCTIONS
+//   82  */
+//   83 
+//   84 /*********************************************************************
+//   85  * LOCAL VARIABLES
+//   86  */
+//   87 
+//   88 /*********************************************************************
+//   89  * STATUS STRINGS
+//   90  */
+//   91 // NwkInfo displayed on line 1 once on the network
+//   92 // 0123456789012345
+//   93 // Zc: PPPP CH ADDR
+//   94 // Zr: PPPP CH ADDR
+//   95 // Zed:PPPP CH ADDR
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//   96 const char NwkInfoZcStr[]  = "ZC: ";
+NwkInfoZcStr:
+        DB "ZC: "
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//   97 const char NwkInfoZrStr[]  = "ZR: ";
+NwkInfoZrStr:
+        DB "ZR: "
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//   98 const char NwkInfoZedStr[] = "Zed:";
+NwkInfoZedStr:
+        DB "Zed:"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//   99 const char * const NwkInfoStrs[] = { NwkInfoZcStr, NwkInfoZrStr, NwkInfoZedStr };
+NwkInfoStrs:
+        DATA16
+        DW NwkInfoZcStr
+        DW NwkInfoZrStr
+        DW NwkInfoZedStr
+//  100 
+//  101 /*********************************************************************
+//  102  * LOCAL FUNCTIONS
+//  103  */
+//  104 
+//  105 /*********************************************************************
+//  106  * @fn      zclHA_isbit
+//  107  *
+//  108  * @brief   Returns TRUE if the index bit is set
+//  109  *
+//  110  * @param   pArray   - array with bits in it
+//  111  *          bitIndex - index into the array of bits
+//  112  *
+//  113  * @return  TRUE if index bit is set
+//  114  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  115 bool zclHA_isbit(uint8 *pArray, uint8 bitIndex)
+zclHA_isbit:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function zclHA_isbit
+        CODE
+//  116 {
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV       A,R1
+        MOV       R4,A
+//  117   uint8 bit;
+//  118   bit = ( 1 << ( bitIndex & 0x7 ) );
+//  119   if( pArray[bitIndex >> 3] & bit )
+        RRC       A
+        RRC       A
+        RRC       A
+        ANL       A,#0x1f
+        MOV       R0,A
+        MOV       A,R2
+        ADD       A,R0
+        MOV       DPL,A
+        CLR       A
+        ADDC      A,R3
+        MOV       DPH,A
+        MOVX      A,@DPTR
+        PUSH      A
+          CFI CFA_SP SP+-6
+        MOV       A,#0x7
+        ANL       A,R4
+        MOV       R0,A
+        POP       A
+          CFI CFA_SP SP+-5
+        CJNE      R0,#0x0,??zclHA_isbit_0
+        SJMP      ??zclHA_isbit_1
+??zclHA_isbit_0:
+        CLR       C
+        RRC       A
+        DJNZ      R0,??zclHA_isbit_0
+??zclHA_isbit_1:
+        MOV       C,0xE0 /* A   */.0
+        JNC       ??zclHA_isbit_2
+//  120     return TRUE;
+        MOV       R1,#0x1
+        SJMP      ??zclHA_isbit_3
+//  121   return FALSE;
+??zclHA_isbit_2:
+        MOV       R1,#0x0
+??zclHA_isbit_3:
+        SJMP      ??Subroutine3_0
+//  122 }
+          CFI EndBlock cfiBlock0
+//  123 
+//  124 /*********************************************************************
+//  125  * @fn      zclHA_setbit
+//  126  *
+//  127  * @brief   Sets a bit in a bit array
+//  128  *
+//  129  * @param   pArray   - array with bits in it
+//  130  *          bitIndex - index into the array of bits
+//  131  *
+//  132  * @return  none
+//  133  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  134 void zclHA_setbit(uint8 *pArray, uint8 bitIndex)
+zclHA_setbit:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function zclHA_setbit
+        CODE
+//  135 {
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  136   uint8 bit;
+//  137   bit = ( 1 << ( bitIndex & 0x7 ) );
+//  138   pArray[bitIndex >> 3] |= bit;
+        MOV       A,#0x7
+        ANL       A,R1
+        MOV       R0,A
+        MOV       A,#0x1
+        CJNE      R0,#0x0,??zclHA_setbit_0
+        SJMP      ??zclHA_setbit_1
+??zclHA_setbit_0:
+        CLR       C
+        RLC       A
+        DJNZ      R0,??zclHA_setbit_0
+??zclHA_setbit_1:
+        LCALL     ?Subroutine1 & 0xFFFF
+??CrossCallReturnLabel_0:
+        ORL       A,R0
+          CFI EndBlock cfiBlock1
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+//  139 }
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine0:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA_SP SP+-5
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI DPH0 Frame(CFA_SP, 5)
+        MOVX      @DPTR,A
+          CFI EndBlock cfiBlock2
+        REQUIRE ??Subroutine3_0
+        ; // Fall through to label ??Subroutine3_0
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+??Subroutine3_0:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA_SP SP+-5
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI DPH0 Frame(CFA_SP, 5)
+        POP       DPH
+          CFI CFA_SP SP+-4
+          CFI DPH0 SameValue
+        POP       DPL
+          CFI CFA_SP SP+-3
+          CFI DPL0 SameValue
+        LJMP      ?BRET
+          CFI EndBlock cfiBlock3
+//  140 
+//  141 /*********************************************************************
+//  142  * @fn      zclHA_clearbit
+//  143  *
+//  144  * @brief   clears a bit in a bit array
+//  145  *
+//  146  * @param   pArray   - array with bits in it
+//  147  *          bitIndex - index into the array of bits
+//  148  *
+//  149  * @return  none
+//  150  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  151 void zclHA_clearbit(uint8 *pArray, uint8 bitIndex)
+zclHA_clearbit:
+          CFI Block cfiBlock4 Using cfiCommon0
+          CFI Function zclHA_clearbit
+        CODE
+//  152 {
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  153   uint8 bit;
+//  154   bit = ( 1 << ( bitIndex & 0x7 ) );
+//  155   pArray[bitIndex >> 3] &= (~(unsigned)bit);
+        MOV       A,#0x7
+        ANL       A,R1
+        MOV       R0,A
+        MOV       A,#0x1
+        CJNE      R0,#0x0,??zclHA_clearbit_0
+        SJMP      ??zclHA_clearbit_1
+??zclHA_clearbit_0:
+        CLR       C
+        RLC       A
+        DJNZ      R0,??zclHA_clearbit_0
+??zclHA_clearbit_1:
+        CPL       A
+        LCALL     ?Subroutine1 & 0xFFFF
+??CrossCallReturnLabel_1:
+        ANL       A,R0
+        SJMP      ?Subroutine0
+//  156 }
+          CFI EndBlock cfiBlock4
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine1:
+          CFI Block cfiCond5 Using cfiCommon0
+          CFI Function zclHA_setbit
+          CFI Conditional ??CrossCallReturnLabel_0
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-7
+          CFI Block cfiCond6 Using cfiCommon0
+          CFI (cfiCond6) Function zclHA_clearbit
+          CFI (cfiCond6) Conditional ??CrossCallReturnLabel_1
+          CFI (cfiCond6) DPL0 Frame(CFA_SP, 4)
+          CFI (cfiCond6) DPH0 Frame(CFA_SP, 5)
+          CFI (cfiCond6) CFA_SP SP+-7
+          CFI Block cfiPicker7 Using cfiCommon1
+          CFI (cfiPicker7) NoFunction
+          CFI (cfiPicker7) Picker
+        MOV       R0,A
+        MOV       A,R1
+        RRC       A
+        RRC       A
+        RRC       A
+        ANL       A,#0x1f
+        MOV       R4,A
+        MOV       A,R2
+        ADD       A,R4
+        MOV       DPL,A
+        CLR       A
+        ADDC      A,R3
+        MOV       DPH,A
+        MOVX      A,@DPTR
+        RET
+          CFI EndBlock cfiCond5
+          CFI EndBlock cfiCond6
+          CFI EndBlock cfiPicker7
+//  157 
+//  158 /*********************************************************************
+//  159  * @fn      zclHA_uint16toa
+//  160  *
+//  161  * @brief   Converts from a uint16 to ascii hex string.
+//  162  *          The # will be exactly 4 hex digits (e.g. 0x0000 or 0x1E3F).
+//  163  *          NULL terminates the string.
+//  164  *
+//  165  * @param   u - Number to be converted
+//  166  *          string - pointer to coverted string
+//  167  *
+//  168  * @return  none
+//  169  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  170 void zclHA_uint16toa(uint16 u, char *string)
+zclHA_uint16toa:
+          CFI Block cfiBlock8 Using cfiCommon0
+          CFI Function zclHA_uint16toa
+        CODE
+//  171 {
+        FUNCALL zclHA_uint16toa, _ltoa
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        MOV       A,#-0xc
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 0
+//  172   // add preceding zeros
+//  173   if ( u < 0x1000 )
+        CLR       C
+        MOV       A,R3
+        SUBB      A,#0x10
+        JNC       ??CrossCallReturnLabel_2
+//  174   {
+//  175     *string++ = '0';
+        LCALL     ?Subroutine2 & 0xFFFF
+//  176   }
+//  177 
+//  178   if ( u < 0x0100 )
+??CrossCallReturnLabel_2:
+        CLR       C
+        MOV       A,R3
+        SUBB      A,#0x1
+        JNC       ??CrossCallReturnLabel_3
+//  179   {
+//  180     *string++ = '0';
+        LCALL     ?Subroutine2 & 0xFFFF
+//  181   }
+//  182 
+//  183   if ( u < 0x0010 )
+??CrossCallReturnLabel_3:
+        CLR       C
+        MOV       A,R2
+        SUBB      A,#0x10
+        MOV       A,R3
+        SUBB      A,#0x0
+        JNC       ??CrossCallReturnLabel_4
+//  184   {
+//  185     *string++ = '0';
+        LCALL     ?Subroutine2 & 0xFFFF
+//  186   }
+//  187 
+//  188   _ltoa((unsigned long)u, (unsigned char *)string, 16);
+??CrossCallReturnLabel_4:
+        ; Setup parameters for call to function _ltoa
+        MOV       ?V0,R4
+        MOV       ?V1,R5
+        MOV       R0,#?V0
+        LCALL     ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 14)
+        MOV       R1,#0x10
+        CLR       A
+        MOV       R4,A
+        MOV       R5,A
+        LCALL     `??_ltoa::?relay`; Banked call to: _ltoa
+        MOV       A,#0x2
+        LCALL     ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 12)
+//  189 }
+        MOV       R7,#0x4
+        LJMP      ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock8
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine2:
+          CFI Block cfiCond9 Using cfiCommon0
+          CFI Function zclHA_uint16toa
+          CFI Conditional ??CrossCallReturnLabel_2
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI CFA_SP SP+-2
+          CFI CFA_XSP16 add(XSP16, 12)
+          CFI Block cfiCond10 Using cfiCommon0
+          CFI (cfiCond10) Function zclHA_uint16toa
+          CFI (cfiCond10) Conditional ??CrossCallReturnLabel_3
+          CFI (cfiCond10) R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond10) VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond10) V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond10) V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond10) V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond10) V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond10) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond10) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond10) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond10) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond10) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond10) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond10) CFA_SP SP+-2
+          CFI (cfiCond10) CFA_XSP16 add(XSP16, 12)
+          CFI Block cfiCond11 Using cfiCommon0
+          CFI (cfiCond11) Function zclHA_uint16toa
+          CFI (cfiCond11) Conditional ??CrossCallReturnLabel_4
+          CFI (cfiCond11) R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond11) VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond11) V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond11) V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond11) V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond11) V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond11) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond11) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond11) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond11) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond11) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond11) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond11) CFA_SP SP+-2
+          CFI (cfiCond11) CFA_XSP16 add(XSP16, 12)
+          CFI Block cfiPicker12 Using cfiCommon1
+          CFI (cfiPicker12) NoFunction
+          CFI (cfiPicker12) Picker
+        MOV       DPL,R4
+        MOV       DPH,R5
+        MOV       A,#0x30
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOV       R4,DPL
+        MOV       R5,DPH
+        RET
+          CFI EndBlock cfiCond9
+          CFI EndBlock cfiCond10
+          CFI EndBlock cfiCond11
+          CFI EndBlock cfiPicker12
+//  190 
+//  191 /*********************************************************************
+//  192  * @fn      zclHA_uint8toa
+//  193  *
+//  194  * @brief   Converts from a uint8 to ascii decimal string.
+//  195  *          The # will be exactly 3 digits (e.g. "123", " 64", "  0"), preceded by spaces.
+//  196  *          No null terminator.
+//  197  *
+//  198  * @param   b - Byte to be converted
+//  199  *          string - pointer to coverted string
+//  200  *
+//  201  * @return  none
+//  202  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  203 void zclHA_uint8toa(uint8 b, char *string)
+zclHA_uint8toa:
+          CFI Block cfiBlock13 Using cfiCommon0
+          CFI Function zclHA_uint8toa
+        CODE
+//  204 {
+        MOV       A,#-0x9
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV       A,R1
+        MOV       R6,A
+//  205   // write the level (up to 3 digits, pre-padded with spaces)
+//  206   string[0] = string[1] = string[2] = '0';
+        MOV       A,R2
+        ADD       A,#0x2
+        MOV       R0,A
+        CLR       A
+        ADDC      A,R3
+        MOV       R1,A
+        MOV       DPL,R0
+        MOV       DPH,R1
+        MOV       A,#0x30
+        MOVX      @DPTR,A
+        MOV       DPL,R2
+        MOV       DPH,R3
+        INC       DPTR
+        MOV       R4,DPL
+        MOV       R5,DPH
+        MOVX      @DPTR,A
+        MOV       DPL,R2
+        MOV       DPH,R3
+        MOVX      @DPTR,A
+//  207   string[2] = '0' + (b % 10);  // 1s
+        MOV       A,R6
+        MOV       B,#0xa
+        DIV       AB
+        MOV       A,B
+        ADD       A,#0x30
+        MOV       DPL,R0
+        MOV       DPH,R1
+        MOVX      @DPTR,A
+//  208   b = b / 10;
+        MOV       B,#0xa
+        MOV       A,R6
+        DIV       AB
+        MOV       R6,A
+//  209   if( b )
+        JZ        ??zclHA_uint8toa_0
+//  210   {
+//  211     string[1] = '0' + (b % 10);  // 10s
+        MOV       B,#0xa
+        DIV       AB
+        MOV       A,B
+        ADD       A,#0x30
+        MOV       DPL,R4
+        MOV       DPH,R5
+        MOVX      @DPTR,A
+//  212     b = b / 10;
+        MOV       B,#0xa
+        MOV       A,R6
+        DIV       AB
+        MOV       R6,A
+//  213   }
+//  214   if( b )
+        JZ        ??zclHA_uint8toa_0
+//  215   {
+//  216    string[0] = '0' + (b % 10);  // 100s
+        MOV       B,#0xa
+        DIV       AB
+        MOV       A,B
+        ADD       A,#0x30
+        MOV       DPL,R2
+        MOV       DPH,R3
+        MOVX      @DPTR,A
+//  217   }
+//  218 }
+??zclHA_uint8toa_0:
+        MOV       R7,#0x1
+        LJMP      ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock13
+//  219 
+//  220 /*********************************************************************
+//  221  * @fn      zclHA_LcdStatusLine1
+//  222  *
+//  223  * @brief   Display LCD line 1 with network status
+//  224  *          only call after on network
+//  225  *          ZC: PPPP CH ADDR
+//  226  *          ZR: PPPP CH ADDR
+//  227  *          ZE: PPPP CH ADDR
+//  228  *
+//  229  * @param   kind (0=ZC, 1=ZR, 2=ZED)
+//  230  *
+//  231  * @return  none
+//  232  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  233 void zclHA_LcdStatusLine1( uint8 kind )
+zclHA_LcdStatusLine1:
+          CFI Block cfiBlock14 Using cfiCommon0
+          CFI Function zclHA_LcdStatusLine1
+        CODE
+//  234 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  235 #if defined ( LCD_SUPPORTED )
+//  236   char szLine[20];
+//  237 
+//  238   // copy in what node type it is
+//  239   if ( kind > ZCL_HA_DEVICE_END_DEVICE )
+//  240   {
+//  241     return;
+//  242   }
+//  243 
+//  244   // ZE: PANx CH ADDR
+//  245   osal_memcpy( szLine, NwkInfoStrs[kind], 4 );
+//  246   zclHA_uint16toa( _NIB.nwkPanId, &szLine[4] );
+//  247   szLine[8] = ' ';
+//  248 
+//  249   _ltoa( _NIB.nwkLogicalChannel, (void *)(&szLine[9]), 10 );
+//  250   szLine[11] = ' ';
+//  251 
+//  252   zclHA_uint16toa( _NIB.nwkDevAddress, &szLine[12] );
+//  253   HalLcdWriteString( (char*)szLine, HAL_LCD_LINE_1 );
+//  254 #endif
+//  255 }
+        LJMP      ?BRET
+          CFI EndBlock cfiBlock14
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??zclHA_isbit::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    zclHA_isbit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??zclHA_setbit::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    zclHA_setbit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??zclHA_clearbit::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    zclHA_clearbit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??zclHA_uint16toa::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    zclHA_uint16toa
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??zclHA_uint8toa::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    zclHA_uint8toa
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??zclHA_LcdStatusLine1::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    zclHA_LcdStatusLine1
+
+        END
+//  256 
+//  257 /*********************************************************************
+//  258 *********************************************************************/
+// 
+// 300 bytes in segment BANKED_CODE
+//  36 bytes in segment BANK_RELAYS
+//  21 bytes in segment XDATA_ROM_C
+// 
+//  36 bytes of CODE     memory
+//  21 bytes of CONST    memory
+// 300 bytes of HUGECODE memory
+//
+//Errors: none
+//Warnings: none

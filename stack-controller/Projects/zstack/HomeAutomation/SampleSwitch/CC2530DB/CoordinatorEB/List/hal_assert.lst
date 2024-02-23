@@ -1,0 +1,782 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.10.1.4655 for 8051               22/Nov/2023  15:42:39
+# Copyright 2004-2017 IAR Systems AB.
+# Standalone license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        D:\fuzzing-coordinator-response-collection\Components\hal\common\hal_assert.c
+#    Command line       =  
+#        -f C:\Users\ADMINI~1\AppData\Local\Temp\EW98C2.tmp
+#        (D:\fuzzing-coordinator-response-collection\Components\hal\common\hal_assert.c
+#        -D SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE -D
+#        MULTICAST_ENABLED=FALSE -D ZCL_READ -D ZCL_DISCOVER -D ZCL_WRITE -D
+#        ZCL_BASIC -D ZCL_IDENTIFY -D ISR_KEYINTERRUPT -D HAL_UART=TRUE -D
+#        HAL_LCD=FALSE -D ZCL_ON_OFF -D INT_HEAP_LEN=2800 -D
+#        HAL_UART_DMA_RX_MAX=256 -D HAL_UART_DMA_TX_MAX=256 -lC
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+#        -lA
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+#        --diag_suppress Pe001,Pa010 -o
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj
+#        -e --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=banked --calling_convention=xdata_reentrant
+#        --place_constants=data_rom --nr_virtual_regs 8 -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+#        -DZDO_COORDINATOR -DRTR_NWK) -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x00, 0x01, 0x02, 0x03,
+#        0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E,
+#        0x0F}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+#        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+#        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+#        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000
+#        -DENABLE_LED4_DISABLE_S1) -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\Source\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\Source\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\ZMain\TI2530DB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mt\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\osal\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\saddr\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\sdata\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\af\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\bdb\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\gp\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sec\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sys\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zcl\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\Common\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\SPI\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\Font\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_LCD_SPI\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_OLED\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_TFT\
+#        -Ohz --require_prototypes)
+#    Locale             =  Chinese (Simplified)_China.936
+#    List file          =  
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List\hal_assert.lst
+#    Object file        =  
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj\hal_assert.r51
+#
+###############################################################################
+
+D:\fuzzing-coordinator-response-collection\Components\hal\common\hal_assert.c
+      1          /**************************************************************************************************
+      2            Filename:       hal_assert.c
+      3            Revised:        $Date: 2014-07-23 12:14:30 -0700 (Wed, 23 Jul 2014) $
+      4            Revision:       $Revision: 39492 $
+      5          
+      6            Description:    Describe the purpose and contents of the file.
+      7          
+      8          
+      9            Copyright 2006-2014 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          
+     41          /* ------------------------------------------------------------------------------------------------
+     42           *                                          Includes
+     43           * ------------------------------------------------------------------------------------------------
+     44           */
+     45          #include "hal_assert.h"
+     46          #include "hal_types.h"
+     47          #include "hal_board.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x9d
+   \   unsigned char volatile __sfr SLEEPSTA
+   \                     SLEEPSTA:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x9e
+   \   unsigned char volatile __sfr CLKCONSTA
+   \                     CLKCONSTA:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IEN0
+   \                     _A_IEN0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xbe
+   \   unsigned char volatile __sfr SLEEPCMD
+   \                     SLEEPCMD:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc6
+   \   unsigned char volatile __sfr CLKCONCMD
+   \                     CLKCONCMD:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+     48          #include "hal_defs.h"
+     49          #include "hal_mcu.h"
+     50          
+     51          #if (defined HAL_MCU_AVR) || (defined HAL_MCU_CC2430) || (defined HAL_MCU_CC2530) || \
+     52              (defined HAL_MCU_CC2533) || (defined HAL_MCU_MSP430)
+     53            /* for access to debug data */
+     54          #include "mac_rx.h"
+     55          #include "mac_tx.h"
+     56          #endif
+     57          
+     58          /* ------------------------------------------------------------------------------------------------
+     59           *                                       Local Prototypes
+     60           * ------------------------------------------------------------------------------------------------
+     61           */
+     62          void halAssertHazardLights(void);
+     63          
+     64          
+     65          /**************************************************************************************************
+     66           * @fn          halAssertHandler
+     67           *
+     68           * @brief       Logic to handle an assert.
+     69           *
+     70           * @param       none
+     71           *
+     72           * @return      none
+     73           **************************************************************************************************
+     74           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     75          void halAssertHandler( void )
+   \                     halAssertHandler:
+     76          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     77          #if defined( HAL_ASSERT_RESET )
+     78            HAL_SYSTEM_RESET();
+     79          #elif defined ( HAL_ASSERT_LIGHTS )
+     80            halAssertHazardLights();
+     81          #elif defined( HAL_ASSERT_SPIN )
+     82            volatile uint8 i = 1;
+     83            HAL_DISABLE_INTERRUPTS();
+     84            while(i);
+     85          #endif
+     86          
+     87            return;
+   \   000000   02....       LJMP      ?BRET
+     88          }
+     89          
+     90          #if !defined ASSERT_WHILE
+     91          /**************************************************************************************************
+     92           * @fn          halAssertHazardLights
+     93           *
+     94           * @brief       Blink LEDs to indicate an error.
+     95           *
+     96           * @param       none
+     97           *
+     98           * @return      none
+     99           **************************************************************************************************
+    100           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    101          void halAssertHazardLights(void)
+   \                     halAssertHazardLights:
+    102          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000   74F4         MOV       A,#-0xc
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 10
+   \   000005   74F6         MOV       A,#-0xa
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+    103            enum
+    104            {
+    105              DEBUG_DATA_RSTACK_HIGH_OFS,
+    106              DEBUG_DATA_RSTACK_LOW_OFS,
+    107              DEBUG_DATA_TX_ACTIVE_OFS,
+    108              DEBUG_DATA_RX_ACTIVE_OFS,
+    109          
+    110          #if (defined HAL_MCU_AVR) || (defined HAL_MCU_CC2430)
+    111              DEBUG_DATA_INT_MASK_OFS,
+    112          #elif (defined HAL_MCU_CC2530) || (defined HAL_MCU_CC2533)
+    113              DEBUG_DATA_INT_MASK0_OFS,
+    114              DEBUG_DATA_INT_MASK1_OFS,
+    115          #endif
+    116          
+    117              DEBUG_DATA_SIZE
+    118            };
+    119          
+    120            uint8 buttonHeld;
+    121            uint8 debugData[DEBUG_DATA_SIZE];
+    122          
+    123            /* disable all interrupts before anything else */
+    124            HAL_DISABLE_INTERRUPTS();
+   \   00000A   C2AF         CLR       0xa8.7
+    125          
+    126            /*-------------------------------------------------------------------------------
+    127             *  Initialize LEDs and turn them off.
+    128             */
+    129            HAL_BOARD_INIT();
+   \   00000C   53BEFB       ANL       0xbe,#0xfb
+   \                     ??halAssertHazardLights_0:
+   \   00000F   E59D         MOV       A,0x9d
+   \   000011   A2E6         MOV       C,0xE0 /* A   */.6
+   \   000013   50FA         JNC       ??halAssertHazardLights_0
+   \   000015   00           NOP
+   \   000016   78F8         MOV       R0,#-0x8
+   \   000018   7901         MOV       R1,#0x1
+   \                     ??halAssertHazardLights_1:
+   \   00001A   00           NOP
+   \   00001B   E8           MOV       A,R0
+   \   00001C   24FF         ADD       A,#-0x1
+   \   00001E   18           DEC       R0
+   \   00001F   E9           MOV       A,R1
+   \   000020   34FF         ADDC      A,#-0x1
+   \   000022   F9           MOV       R1,A
+   \   000023   E8           MOV       A,R0
+   \   000024   49           ORL       A,R1
+   \   000025   70F3         JNZ       ??halAssertHazardLights_1
+   \   000027   75C680       MOV       0xc6,#-0x80
+   \                     ??halAssertHazardLights_2:
+   \   00002A   7480         MOV       A,#-0x80
+   \   00002C   659E         XRL       A,0x9e
+   \   00002E   70FA         JNZ       ??halAssertHazardLights_2
+   \   000030   43BE04       ORL       0xbe,#0x4
+   \   000033   906270       MOV       DPTR,#0x6270
+   \   000036   7408         MOV       A,#0x8
+   \   000038   F0           MOVX      @DPTR,A
+   \   000039   C284         CLR       0x80.4
+   \   00003B   43FD10       ORL       0xfd,#0x10
+   \   00003E   C285         CLR       0x80.5
+   \   000040   43FD20       ORL       0xfd,#0x20
+   \   000043   C286         CLR       0x80.6
+   \   000045   43FD40       ORL       0xfd,#0x40
+    130          
+    131            HAL_TURN_OFF_LED1();
+   \   000048   C284         CLR       0x80.4
+    132            HAL_TURN_OFF_LED2();
+   \   00004A   C285         CLR       0x80.5
+    133            HAL_TURN_OFF_LED3();
+   \   00004C   C286         CLR       0x80.6
+   \   00004E   8019         SJMP      ??halAssertHazardLights_3
+    134          
+    135            /*-------------------------------------------------------------------------------
+    136             *  Master infinite loop.
+    137             */
+    138            for (;;)
+    139            {
+    140              buttonHeld = 0;
+    141          
+    142              /*-------------------------------------------------------------------------------
+    143               *  "Hazard lights" loop.  A held keypress will exit this loop.
+    144               */
+    145              do
+    146              {
+    147                HAL_LED_BLINK_DELAY();
+    148          
+    149                /* toggle LEDS, the #ifdefs are in case HAL has logically remapped non-existent LEDs */
+    150          #if (HAL_NUM_LEDS >= 1)
+    151                HAL_TOGGLE_LED1();
+    152          #if (HAL_NUM_LEDS >= 2)
+    153                HAL_TOGGLE_LED2();
+    154          #if (HAL_NUM_LEDS >= 3)
+    155                HAL_TOGGLE_LED3();
+    156          #if (HAL_NUM_LEDS >= 4)
+    157                HAL_TOGGLE_LED4();
+    158          #endif
+    159          #endif
+    160          #endif
+    161          #endif
+    162          
+    163                /* escape hatch to continue execution, set escape to '1' to continue execution */
+    164                {
+    165                  static uint8 escape = 0;
+    166                  if (escape)
+    167                  {
+    168                    escape = 0;
+    169                    return;
+    170                  }
+    171                }
+    172          
+    173                /* break out of loop if button is held long enough */
+    174                if (HAL_PUSH_BUTTON1())
+    175                {
+    176                  buttonHeld++;
+    177                }
+    178                else
+    179                {
+    180                  buttonHeld = 0;
+    181                }
+    182              }
+    183              while (buttonHeld != 10);  /* loop until button is held specified number of loops */
+    184          
+    185              /*-------------------------------------------------------------------------------
+    186               *  Just exited from "hazard lights" loop.
+    187               */
+    188          
+    189              /* turn off all LEDs */
+    190              HAL_TURN_OFF_LED1();
+    191              HAL_TURN_OFF_LED2();
+    192              HAL_TURN_OFF_LED3();
+    193          
+    194              /* wait for button release */
+    195              HAL_DEBOUNCE(!HAL_PUSH_BUTTON1());
+    196          
+    197              /*-------------------------------------------------------------------------------
+    198               *  Load debug data into memory.
+    199               */
+    200          #ifdef HAL_MCU_AVR
+    201              {
+    202                uint8 * pStack;
+    203                pStack = (uint8 *) SP;
+    204                pStack++; /* point to return address on stack */
+    205                debugData[DEBUG_DATA_RSTACK_HIGH_OFS] = *pStack;
+    206                pStack++;
+    207                debugData[DEBUG_DATA_RSTACK_LOW_OFS] = *pStack;
+    208              }
+    209              debugData[DEBUG_DATA_INT_MASK_OFS] = EIMSK;
+    210          #endif
+    211          
+    212          #if (defined HAL_MCU_CC2430)
+    213              debugData[DEBUG_DATA_INT_MASK_OFS] = RFIM;
+    214          #elif (defined HAL_MCU_CC2530) || (defined HAL_MCU_CC2533)
+    215              debugData[DEBUG_DATA_INT_MASK0_OFS] = RFIRQM0;
+    216              debugData[DEBUG_DATA_INT_MASK1_OFS] = RFIRQM1;
+    217          #endif
+    218          
+    219          
+    220          #if (defined HAL_MCU_AVR) || (defined HAL_MCU_CC2430) || (defined HAL_MCU_CC2530) || \
+    221              (defined HAL_MCU_CC2533) || (defined HAL_MCU_MSP430)
+    222              debugData[DEBUG_DATA_TX_ACTIVE_OFS] = macTxActive;
+    223              debugData[DEBUG_DATA_RX_ACTIVE_OFS] = macRxActive;
+    224          #endif
+    225          
+    226             /* initialize for data dump loop */
+    227              {
+    228                uint8 iBit;
+    229                uint8 iByte;
+    230          
+    231                iBit  = 0;
+    232                iByte = 0;
+    233          
+    234                /*-------------------------------------------------------------------------------
+    235                 *  Data dump loop.  A button press cycles data bits to an LED.
+    236                 */
+    237                while (iByte < DEBUG_DATA_SIZE)
+    238                {
+    239                  /* wait for key press */
+    240                  while(!HAL_PUSH_BUTTON1());
+    241          
+    242                  /* turn on all LEDs for first bit of byte, turn on three LEDs if not first bit */
+    243                  HAL_TURN_ON_LED1();
+    244                  HAL_TURN_ON_LED2();
+    245                  HAL_TURN_ON_LED3();
+    246          
+    247                  /* wait for debounced key release */
+    248                  HAL_DEBOUNCE(!HAL_PUSH_BUTTON1());
+    249          
+    250                  /* turn off all LEDs */
+    251                  HAL_TURN_OFF_LED1();
+    252                  HAL_TURN_OFF_LED2();
+    253                  HAL_TURN_OFF_LED3();
+    254          
+    255                  /* output value of data bit to LED1 */
+    256                  if (debugData[iByte] & (1 << (7 - iBit)))
+    257                  {
+    258                    HAL_TURN_ON_LED1();
+    259                  }
+    260                  else
+    261                  {
+    262                    HAL_TURN_OFF_LED1();
+   \                     ??halAssertHazardLights_4:
+   \   000050   C284         CLR       0x80.4
+    263                  }
+    264          
+    265                  /* advance to next bit */
+    266                  iBit++;
+   \                     ??halAssertHazardLights_5:
+   \   000052   09           INC       R1
+    267                  if (iBit == 8)
+   \   000053   7408         MOV       A,#0x8
+   \   000055   69           XRL       A,R1
+   \   000056   6003         JZ        $+5
+   \   000058   02....       LJMP      ??halAssertHazardLights_6 & 0xFFFF
+    268                  {
+    269                    iBit = 0;
+   \   00005B   7900         MOV       R1,#0x0
+    270                    iByte++;
+   \   00005D   0C           INC       R4
+    271                  }
+   \   00005E   EC           MOV       A,R4
+   \   00005F   C3           CLR       C
+   \   000060   9406         SUBB      A,#0x6
+   \   000062   5003         JNC       $+5
+   \   000064   02....       LJMP      ??halAssertHazardLights_6 & 0xFFFF
+    272                }
+    273              }
+    274          
+    275              /*
+    276               *  About to enter "hazard lights" loop again.  Turn off LED1 in case the last bit
+    277               *  displayed happened to be one.  This guarantees all LEDs are off at the start of
+    278               *  the flashing loop which uses a toggle operation to change LED states.
+    279               */
+    280              HAL_TURN_OFF_LED1();
+   \   000067   C284         CLR       0x80.4
+   \                     ??halAssertHazardLights_3:
+   \   000069   7900         MOV       R1,#0x0
+   \                     ??halAssertHazardLights_7:
+   \   00006B   7406         MOV       A,#0x6
+   \   00006D   12....       LCALL     ?XSTACK_DISP0_8
+   \   000070   E4           CLR       A
+   \   000071   F0           MOVX      @DPTR,A
+   \   000072   A3           INC       DPTR
+   \   000073   F0           MOVX      @DPTR,A
+   \   000074   A3           INC       DPTR
+   \   000075   F0           MOVX      @DPTR,A
+   \   000076   A3           INC       DPTR
+   \   000077   F0           MOVX      @DPTR,A
+   \   000078   8012         SJMP      ??halAssertHazardLights_8
+   \                     ??halAssertHazardLights_9:
+   \   00007A   90....       MOV       DPTR,#__Constant_1
+   \   00007D   78..         MOV       R0,#?V0
+   \   00007F   12....       LCALL     ?L_MOV_X
+   \   000082   7406         MOV       A,#0x6
+   \   000084   12....       LCALL     ?XSTACK_DISP0_8
+   \   000087   78..         MOV       R0,#?V0
+   \   000089   12....       LCALL     ?L_ADD_TO_X
+   \                     ??halAssertHazardLights_8:
+   \   00008C   90....       MOV       DPTR,#__Constant_5800
+   \   00008F   78..         MOV       R0,#?V0
+   \   000091   12....       LCALL     ?L_MOV_X
+   \   000094   7406         MOV       A,#0x6
+   \   000096   12....       LCALL     ?XSTACK_DISP0_8
+   \   000099   78..         MOV       R0,#?V0
+   \   00009B   12....       LCALL     ?UL_GT_X
+   \   00009E   40DA         JC        ??halAssertHazardLights_9
+   \   0000A0   A284         MOV       C,0x80.4
+   \   0000A2   5004         JNC       ??halAssertHazardLights_10
+   \   0000A4   C284         CLR       0x80.4
+   \   0000A6   8002         SJMP      ??halAssertHazardLights_11
+   \                     ??halAssertHazardLights_10:
+   \   0000A8   D284         SETB      0x80.4
+   \                     ??halAssertHazardLights_11:
+   \   0000AA   A285         MOV       C,0x80.5
+   \   0000AC   5004         JNC       ??halAssertHazardLights_12
+   \   0000AE   C285         CLR       0x80.5
+   \   0000B0   8002         SJMP      ??halAssertHazardLights_13
+   \                     ??halAssertHazardLights_12:
+   \   0000B2   D285         SETB      0x80.5
+   \                     ??halAssertHazardLights_13:
+   \   0000B4   A286         MOV       C,0x80.6
+   \   0000B6   5004         JNC       ??halAssertHazardLights_14
+   \   0000B8   C286         CLR       0x80.6
+   \   0000BA   8002         SJMP      ??halAssertHazardLights_15
+   \                     ??halAssertHazardLights_14:
+   \   0000BC   D286         SETB      0x80.6
+   \                     ??halAssertHazardLights_15:
+   \   0000BE   90....       MOV       DPTR,#??escape
+   \   0000C1   E0           MOVX      A,@DPTR
+   \   0000C2   600C         JZ        ??halAssertHazardLights_16
+   \   0000C4   E4           CLR       A
+   \   0000C5   F0           MOVX      @DPTR,A
+   \   0000C6   740A         MOV       A,#0xa
+   \   0000C8   12....       LCALL     ?DEALLOC_XSTACK8
+   \   0000CB   7F04         MOV       R7,#0x4
+   \   0000CD   02....       LJMP      ?BANKED_LEAVE_XDATA
+   \                     ??halAssertHazardLights_16:
+   \   0000D0   A281         MOV       C,0x80.1
+   \   0000D2   4095         JC        ??halAssertHazardLights_3
+   \   0000D4   09           INC       R1
+   \   0000D5   740A         MOV       A,#0xa
+   \   0000D7   69           XRL       A,R1
+   \   0000D8   7091         JNZ       ??halAssertHazardLights_7
+   \   0000DA   C284         CLR       0x80.4
+   \   0000DC   C285         CLR       0x80.5
+   \   0000DE   C286         CLR       0x80.6
+   \   0000E0   7800         MOV       R0,#0x0
+   \   0000E2   7900         MOV       R1,#0x0
+   \                     ??halAssertHazardLights_17:
+   \   0000E4   A281         MOV       C,0x80.1
+   \   0000E6   4004         JC        ??halAssertHazardLights_18
+   \   0000E8   7800         MOV       R0,#0x0
+   \   0000EA   7900         MOV       R1,#0x0
+   \                     ??halAssertHazardLights_18:
+   \   0000EC   08           INC       R0
+   \   0000ED   E8           MOV       A,R0
+   \   0000EE   7001         JNZ       ??halAssertHazardLights_19
+   \   0000F0   09           INC       R1
+   \                     ??halAssertHazardLights_19:
+   \   0000F1   C3           CLR       C
+   \   0000F2   94F4         SUBB      A,#-0xc
+   \   0000F4   E9           MOV       A,R1
+   \   0000F5   9401         SUBB      A,#0x1
+   \   0000F7   A2D2         MOV       C,0xD0 /* PSW */.2
+   \   0000F9   65D0         XRL       A,PSW
+   \   0000FB   33           RLC       A
+   \   0000FC   40E6         JC        ??halAssertHazardLights_17
+   \   0000FE   9061A3       MOV       DPTR,#0x61a3
+   \   000101   E0           MOVX      A,@DPTR
+   \   000102   C0E0         PUSH      A
+   \   000104   7404         MOV       A,#0x4
+   \   000106   12....       LCALL     ?XSTACK_DISP0_8
+   \   000109   D0E0         POP       A
+   \   00010B   F0           MOVX      @DPTR,A
+   \   00010C   9061A4       MOV       DPTR,#0x61a4
+   \   00010F   E0           MOVX      A,@DPTR
+   \   000110   C0E0         PUSH      A
+   \   000112   7405         MOV       A,#0x5
+   \   000114   12....       LCALL     ?XSTACK_DISP0_8
+   \   000117   D0E0         POP       A
+   \   000119   F0           MOVX      @DPTR,A
+   \   00011A   90....       MOV       DPTR,#macTxActive
+   \   00011D   E0           MOVX      A,@DPTR
+   \   00011E   C0E0         PUSH      A
+   \   000120   7402         MOV       A,#0x2
+   \   000122   12....       LCALL     ?XSTACK_DISP0_8
+   \   000125   D0E0         POP       A
+   \   000127   F0           MOVX      @DPTR,A
+   \   000128   90....       MOV       DPTR,#macRxActive
+   \   00012B   E0           MOVX      A,@DPTR
+   \   00012C   C0E0         PUSH      A
+   \   00012E   7403         MOV       A,#0x3
+   \   000130   12....       LCALL     ?XSTACK_DISP0_8
+   \   000133   D0E0         POP       A
+   \   000135   F0           MOVX      @DPTR,A
+   \   000136   7900         MOV       R1,#0x0
+   \   000138   7C00         MOV       R4,#0x0
+   \                     ??halAssertHazardLights_6:
+   \   00013A   A281         MOV       C,0x80.1
+   \   00013C   40FC         JC        ??halAssertHazardLights_6
+   \   00013E   D284         SETB      0x80.4
+   \   000140   D285         SETB      0x80.5
+   \   000142   D286         SETB      0x80.6
+   \   000144   7A00         MOV       R2,#0x0
+   \   000146   7B00         MOV       R3,#0x0
+   \                     ??halAssertHazardLights_20:
+   \   000148   A281         MOV       C,0x80.1
+   \   00014A   4004         JC        ??halAssertHazardLights_21
+   \   00014C   7A00         MOV       R2,#0x0
+   \   00014E   7B00         MOV       R3,#0x0
+   \                     ??halAssertHazardLights_21:
+   \   000150   0A           INC       R2
+   \   000151   EA           MOV       A,R2
+   \   000152   7001         JNZ       ??halAssertHazardLights_22
+   \   000154   0B           INC       R3
+   \                     ??halAssertHazardLights_22:
+   \   000155   C3           CLR       C
+   \   000156   94F4         SUBB      A,#-0xc
+   \   000158   EB           MOV       A,R3
+   \   000159   9401         SUBB      A,#0x1
+   \   00015B   A2D2         MOV       C,0xD0 /* PSW */.2
+   \   00015D   65D0         XRL       A,PSW
+   \   00015F   33           RLC       A
+   \   000160   40E6         JC        ??halAssertHazardLights_20
+   \   000162   C284         CLR       0x80.4
+   \   000164   C285         CLR       0x80.5
+   \   000166   C286         CLR       0x80.6
+   \   000168   75..01       MOV       ?V0,#0x1
+   \   00016B   75..00       MOV       ?V1,#0x0
+   \   00016E   7407         MOV       A,#0x7
+   \   000170   C3           CLR       C
+   \   000171   99           SUBB      A,R1
+   \   000172   78..         MOV       R0,#?V0
+   \   000174   12....       LCALL     ?S_SHL
+   \   000177   EC           MOV       A,R4
+   \   000178   FA           MOV       R2,A
+   \   000179   85..82       MOV       DPL,?XSP + 0
+   \   00017C   85..83       MOV       DPH,?XSP + 1
+   \   00017F   E582         MOV       A,DPL
+   \   000181   2A           ADD       A,R2
+   \   000182   F582         MOV       DPL,A
+   \   000184   E4           CLR       A
+   \   000185   3583         ADDC      A,DPH
+   \   000187   F583         MOV       DPH,A
+   \   000189   E0           MOVX      A,@DPTR
+   \   00018A   55..         ANL       A,?V0
+   \   00018C   7003         JNZ       $+5
+   \   00018E   02....       LJMP      ??halAssertHazardLights_4 & 0xFFFF
+   \   000191   D284         SETB      0x80.4
+   \   000193   02....       LJMP      ??halAssertHazardLights_5 & 0xFFFF
+   \   000196                REQUIRE _A_IEN0
+   \   000196                REQUIRE SLEEPCMD
+   \   000196                REQUIRE SLEEPSTA
+   \   000196                REQUIRE CLKCONCMD
+   \   000196                REQUIRE CLKCONSTA
+   \   000196                REQUIRE _A_P0
+   \   000196                REQUIRE P0DIR
+    281            }
+    282          }
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     ??escape:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_1:
+   \   000000   01000000     DD 1
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_5800:
+   \   000000   00580000     DD 22528
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??halAssertHandler::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halAssertHandler
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??halAssertHazardLights::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halAssertHazardLights
+    283          #endif
+    284          
+    285          /* ------------------------------------------------------------------------------------------------
+    286           *                                    Compile Time Assertions
+    287           * ------------------------------------------------------------------------------------------------
+    288           */
+    289          
+    290          /* integrity check of type sizes */
+    291          HAL_ASSERT_SIZE(  int8, 1);
+    292          HAL_ASSERT_SIZE( uint8, 1);
+    293          HAL_ASSERT_SIZE( int16, 2);
+    294          HAL_ASSERT_SIZE(uint16, 2);
+    295          HAL_ASSERT_SIZE( int32, 4);
+    296          HAL_ASSERT_SIZE(uint32, 4);
+    297          
+    298          
+    299          /**************************************************************************************************
+    300          */
+
+   Maximum stack usage in bytes:
+
+   ISTACK XSTACK Function
+   ------ ------ --------
+      0      0   halAssertHandler
+      1     22   halAssertHazardLights
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       1  CLKCONCMD
+       1  CLKCONSTA
+       1  P0DIR
+       1  SLEEPCMD
+       1  SLEEPSTA
+       1  _A_IEN0
+       1  _A_P0
+       4  __Constant_1
+       4  __Constant_5800
+       1  escape
+       3  halAssertHandler
+       6  halAssertHandler::?relay
+     406  halAssertHazardLights
+       6  halAssertHazardLights::?relay
+
+ 
+ 409 bytes in segment BANKED_CODE
+  12 bytes in segment BANK_RELAYS
+   7 bytes in segment SFR_AN
+   8 bytes in segment XDATA_ROM_C
+   1 byte  in segment XDATA_Z
+ 
+  12 bytes of CODE     memory
+   0 bytes of CONST    memory (+ 8 bytes shared)
+   0 bytes of DATA     memory (+ 7 bytes shared)
+ 409 bytes of HUGECODE memory
+   1 byte  of XDATA    memory
+
+Errors: none
+Warnings: none

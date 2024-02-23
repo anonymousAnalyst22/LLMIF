@@ -1,0 +1,832 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.10.1.4655 for 8051               22/Nov/2023  15:42:45
+# Copyright 2004-2017 IAR Systems AB.
+# Standalone license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        D:\fuzzing-coordinator-response-collection\Components\stack\sys\ZDiags.c
+#    Command line       =  
+#        -f C:\Users\ADMINI~1\AppData\Local\Temp\EWAF8A.tmp
+#        (D:\fuzzing-coordinator-response-collection\Components\stack\sys\ZDiags.c
+#        -D SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE -D
+#        MULTICAST_ENABLED=FALSE -D ZCL_READ -D ZCL_DISCOVER -D ZCL_WRITE -D
+#        ZCL_BASIC -D ZCL_IDENTIFY -D ISR_KEYINTERRUPT -D HAL_UART=TRUE -D
+#        HAL_LCD=FALSE -D ZCL_ON_OFF -D INT_HEAP_LEN=2800 -D
+#        HAL_UART_DMA_RX_MAX=256 -D HAL_UART_DMA_TX_MAX=256 -lC
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+#        -lA
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+#        --diag_suppress Pe001,Pa010 -o
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj
+#        -e --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=banked --calling_convention=xdata_reentrant
+#        --place_constants=data_rom --nr_virtual_regs 8 -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+#        -DZDO_COORDINATOR -DRTR_NWK) -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x00, 0x01, 0x02, 0x03,
+#        0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E,
+#        0x0F}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+#        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+#        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+#        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000
+#        -DENABLE_LED4_DISABLE_S1) -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\Source\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\Source\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\ZMain\TI2530DB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mt\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\osal\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\saddr\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\sdata\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\af\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\bdb\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\gp\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sec\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sys\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zcl\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\Common\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\SPI\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\Font\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_LCD_SPI\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_OLED\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_TFT\
+#        -Ohz --require_prototypes)
+#    Locale             =  Chinese (Simplified)_China.936
+#    List file          =  
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List\ZDiags.lst
+#    Object file        =  
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj\ZDiags.r51
+#
+###############################################################################
+
+D:\fuzzing-coordinator-response-collection\Components\stack\sys\ZDiags.c
+      1          /**************************************************************************************************
+      2            Filename:       ZDiags.c
+      3            Revised:        $Date: 2014-03-13 15:53:56 -0700 (Thu, 13 Mar 2014) $
+      4            Revision:       $Revision: 37678 $
+      5          
+      6            Description:    Diagnostics module.
+      7          
+      8          
+      9            Copyright 2014 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /*********************************************************************
+     41           * INCLUDES
+     42           */
+     43          #include "OSAL.h"
+     44          #include "OSAL_Nv.h"
+     45          #include "OSAL_Timers.h"
+     46          #include "ZDiags.h"
+     47          #include "ZMAC.h"
+     48          
+     49          /*********************************************************************
+     50           * MACROS
+     51           */
+     52          
+     53          /*********************************************************************
+     54           * CONSTANTS
+     55           */
+     56          
+     57          /*********************************************************************
+     58           * TYPEDEFS
+     59           */
+     60          
+     61          /*********************************************************************
+     62           * GLOBAL VARIABLES
+     63           */
+     64          #if defined ( FEATURE_SYSTEM_STATS )
+     65          static DiagStatistics_t DiagsStatsTable;
+     66          #endif
+     67          
+     68          /*********************************************************************
+     69           * LOCAL VARIABLES
+     70           */
+     71          
+     72          /*********************************************************************
+     73           * LOCAL FUNCTIONS
+     74           */
+     75          
+     76          
+     77          /****************************************************************************
+     78           * @fn          ZDiagsInitStats
+     79           *
+     80           * @brief       Initialize the statistics table in NV or restore values from
+     81           *              NV into the Statistics table in RAM
+     82           *
+     83           * @param       none.
+     84           *
+     85           * @return      ZSuccess - if NV data was initialized successfully.
+     86           *              ZFailure - Otherwise
+     87           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     88          uint8 ZDiagsInitStats( void )
+   \                     ZDiagsInitStats:
+     89          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     90            uint8 retValue = ZSuccess;
+     91          
+     92          #if defined ( FEATURE_SYSTEM_STATS )
+     93            uint8 status;
+     94          
+     95            // Initialize structure with default values, and do not try to write to NV
+     96            // because item does not exist yet
+     97            (void)ZDiagsClearStats( FALSE );
+     98          
+     99            status = osal_nv_item_init( ZCD_NV_DIAGNOSTIC_STATS,
+    100                                        (uint16)sizeof( DiagStatistics_t ),
+    101                                        &DiagsStatsTable );
+    102          
+    103            if ( status == NV_OPER_FAILED )
+    104            {
+    105              retValue = ZFailure;
+    106            }
+    107            else
+    108            {
+    109              // Item existed, restore NV values into RAM table
+    110              if ( status == SUCCESS )
+    111              {
+    112                if ( NV_OPER_FAILED == ZDiagsRestoreStatsFromNV() )
+    113                {
+    114                  retValue = ZFailure;
+    115                }
+    116              }
+    117            }
+    118          #endif // FEATURE_SYSTEM_STATS
+    119          
+    120            return ( retValue );
+   \   000000   7900         MOV       R1,#0x0
+   \   000002   02....       LJMP      ?BRET
+    121          }
+    122          
+    123          /****************************************************************************
+    124           * @fn          ZDiagsClearStats
+    125           *
+    126           * @brief       Clears the statistics table in RAM and NV if option flag set.
+    127           *
+    128           * @param       clearNV   - Option flag to clear NV data.
+    129           *
+    130           * @return      System Clock.
+    131           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    132          uint32 ZDiagsClearStats( bool clearNV )
+   \                     ZDiagsClearStats:
+    133          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    134            uint32 retValue = 0;
+    135          
+    136          #if defined ( FEATURE_SYSTEM_STATS )
+    137            // clears statistics table
+    138            osal_memset( &DiagsStatsTable, 0, sizeof( DiagStatistics_t ) );
+    139          
+    140            // saves System Clock when statistics were cleared
+    141            retValue = DiagsStatsTable.SysClock = osal_GetSystemClock();
+    142          
+    143            if ( clearNV )
+    144            {
+    145              uint16 bootCnt = 0;
+    146          
+    147              // Boot count is not part of DiagsStatsTable, it has to be initialized separately
+    148              osal_nv_write( ZCD_NV_BOOTCOUNTER, 0, sizeof(bootCnt), &bootCnt );
+    149          
+    150              // Clears values in NV and saves the system clock for the last time stats were cleared
+    151              osal_nv_write( ZCD_NV_DIAGNOSTIC_STATS, 0, sizeof( DiagStatistics_t ), &DiagsStatsTable );
+    152            }
+    153          #endif // FEATURE_SYSTEM_STATS
+    154          
+    155            return ( retValue );
+   \   000000                REQUIRE ?Subroutine0
+   \   000000                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7A00         MOV       R2,#0x0
+   \   000002   7B00         MOV       R3,#0x0
+   \   000004   7C00         MOV       R4,#0x0
+   \   000006   7D00         MOV       R5,#0x0
+   \   000008   02....       LJMP      ?BRET
+    156          }
+    157          
+    158          /****************************************************************************
+    159           * @fn          ZDiagsUpdateStats
+    160           *
+    161           * @brief       Update statistics and/or metrics for a specific Attribute Id
+    162           *
+    163           * @param       attributeId  input  - unique identifier for the required attribute
+    164           *
+    165           * @return      none.
+    166           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    167          void ZDiagsUpdateStats( uint16 attributeId )
+   \                     ZDiagsUpdateStats:
+    168          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    169          #if defined ( FEATURE_SYSTEM_STATS )
+    170            switch ( attributeId )
+    171            {
+    172              // System and Hardware Diagnostics
+    173              case ZDIAGS_SYSTEM_CLOCK:
+    174                DiagsStatsTable.SysClock = osal_GetSystemClock();
+    175                break;
+    176          
+    177              case ZDIAGS_PERSISTENT_MEMORY_WRITES:
+    178                DiagsStatsTable.PersistentMemoryWrites++;
+    179                break;
+    180          
+    181              // NWK Diagnostics
+    182              case ZDIAGS_ROUTE_DISC_INITIATED:
+    183                DiagsStatsTable.RouteDiscInitiated++;
+    184                break;
+    185          
+    186              case ZDIAGS_NEIGHBOR_ADDED:
+    187                DiagsStatsTable.NeighborAdded++;
+    188                break;
+    189          
+    190              case ZDIAGS_NEIGHBOR_REMOVED:
+    191                DiagsStatsTable.NeighborRemoved++;
+    192                break;
+    193          
+    194              case ZDIAGS_NEIGHBOR_STALE:
+    195                DiagsStatsTable.NeighborStale++;
+    196                break;
+    197          
+    198              case ZDIAGS_JOIN_INDICATION:
+    199                DiagsStatsTable.JoinIndication++;
+    200                break;
+    201          
+    202              case ZDIAGS_CHILD_MOVED:
+    203                DiagsStatsTable.ChildMoved++;
+    204                break;
+    205          
+    206              case ZDIAGS_NWK_FC_FAILURE:
+    207                DiagsStatsTable.NwkFcFailure++;
+    208                break;
+    209          
+    210              case ZDIAGS_NWK_DECRYPT_FAILURES:
+    211                DiagsStatsTable.NwkDecryptFailures++;
+    212                break;
+    213          
+    214              case ZDIAGS_PACKET_BUFFER_ALLOCATE_FAILURES:
+    215                DiagsStatsTable.PacketBufferAllocateFailures++;
+    216                break;
+    217          
+    218              case ZDIAGS_RELAYED_UCAST:
+    219                DiagsStatsTable.RelayedUcast++;
+    220                break;
+    221          
+    222              case ZDIAGS_PHY_TO_MAC_QUEUE_LIMIT_REACHED:
+    223                DiagsStatsTable.PhyToMacQueueLimitReached++;
+    224                break;
+    225          
+    226              case ZDIAGS_PACKET_VALIDATE_DROP_COUNT:
+    227                DiagsStatsTable.PacketValidateDropCount++;
+    228                break;
+    229          
+    230              // APS Diagnostics
+    231              case ZDIAGS_APS_RX_BCAST:
+    232                DiagsStatsTable.ApsRxBcast++;
+    233                break;
+    234          
+    235              case ZDIAGS_APS_TX_BCAST:
+    236                DiagsStatsTable.ApsTxBcast++;
+    237                break;
+    238          
+    239              case ZDIAGS_APS_RX_UCAST:
+    240                DiagsStatsTable.ApsRxUcast++;
+    241                break;
+    242          
+    243              case ZDIAGS_APS_TX_UCAST_SUCCESS:
+    244                DiagsStatsTable.ApsTxUcastSuccess++;
+    245                break;
+    246          
+    247              case ZDIAGS_APS_TX_UCAST_RETRY:
+    248                DiagsStatsTable.ApsTxUcastRetry++;
+    249                break;
+    250          
+    251              case ZDIAGS_APS_TX_UCAST_FAIL:
+    252                DiagsStatsTable.ApsTxUcastFail++;
+    253                break;
+    254          
+    255              case ZDIAGS_APS_FC_FAILURE:
+    256                DiagsStatsTable.ApsFcFailure++;
+    257                break;
+    258          
+    259              case ZDIAGS_APS_UNAUTHORIZED_KEY:
+    260                DiagsStatsTable.ApsUnauthorizedKey++;
+    261                break;
+    262          
+    263              case ZDIAGS_APS_DECRYPT_FAILURES:
+    264                DiagsStatsTable.ApsDecryptFailures++;
+    265                break;
+    266          
+    267              case ZDIAGS_APS_INVALID_PACKETS:
+    268                DiagsStatsTable.ApsInvalidPackets++;
+    269                break;
+    270          
+    271              case ZDIAGS_MAC_RETRIES_PER_APS_TX_SUCCESS:
+    272                DiagsStatsTable.MacRetriesPerApsTxSuccess++;
+    273                break;
+    274          
+    275              default:
+    276                break;
+    277            }
+    278          #endif // FEATURE_SYSTEM_STATS
+    279          }
+   \   000000   02....       LJMP      ?BRET
+    280          
+    281          /****************************************************************************
+    282           * @fn          ZDiagsGetStatsAttr
+    283           *
+    284           * @brief       Reads specific systemID statistics and/or metrics
+    285           *
+    286           * @param       attributeId  input  - unique identifier for the required attribute
+    287           *
+    288           *   NOTE: the user of this function will have to cast the value
+    289           *         based on the type of the attributeID, the returned value
+    290           *         will allways be uint32.
+    291           *
+    292           * @return      Value of the attribute requested.
+    293           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    294          uint32 ZDiagsGetStatsAttr( uint16 attributeId )
+   \                     ZDiagsGetStatsAttr:
+    295          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    296            uint32 diagsValue = 0;
+    297          
+    298          #if defined ( FEATURE_SYSTEM_STATS )
+    299            switch ( attributeId )
+    300            {
+    301              // System and Hardware Diagnostics
+    302              case ZDIAGS_SYSTEM_CLOCK:
+    303                // this is the system clock when statistics were cleared;
+    304                diagsValue = DiagsStatsTable.SysClock;
+    305                break;
+    306          
+    307              case ZDIAGS_NUMBER_OF_RESETS:
+    308                // Get the value from NV memory
+    309                osal_nv_read( ZCD_NV_BOOTCOUNTER, 0, sizeof(uint16), &diagsValue );
+    310                break;
+    311          
+    312              case ZDIAGS_PERSISTENT_MEMORY_WRITES:
+    313                diagsValue = DiagsStatsTable.PersistentMemoryWrites;
+    314                break;
+    315          
+    316              // MAC Diagnostics
+    317              case ZDIAGS_MAC_RX_CRC_PASS:
+    318                ZMacGetReq( ZMacDiagsRxCrcPass, (uint8 *)&diagsValue );
+    319                // Update the statistics table with this value from MAC
+    320                DiagsStatsTable.MacRxCrcPass = diagsValue;
+    321                break;
+    322          
+    323              case ZDIAGS_MAC_RX_CRC_FAIL:
+    324                ZMacGetReq( ZMacDiagsRxCrcFail, (uint8 *)&diagsValue );
+    325                // Update the statistics table with this value from MAC
+    326                DiagsStatsTable.MacRxCrcFail = diagsValue;
+    327                break;
+    328          
+    329              case ZDIAGS_MAC_RX_BCAST:
+    330                ZMacGetReq( ZMacDiagsRxBcast, (uint8 *)&diagsValue );
+    331                // Update the statistics table with this value from MAC
+    332                DiagsStatsTable.MacRxBcast = diagsValue;
+    333                break;
+    334          
+    335              case ZDIAGS_MAC_TX_BCAST:
+    336                ZMacGetReq( ZMacDiagsTxBcast, (uint8 *)&diagsValue );
+    337                // Update the statistics table with this value from MAC
+    338                DiagsStatsTable.MacTxBcast = diagsValue;
+    339                break;
+    340          
+    341              case ZDIAGS_MAC_RX_UCAST:
+    342                ZMacGetReq( ZMacDiagsRxUcast, (uint8 *)&diagsValue );
+    343                // Update the statistics table with this value from MAC
+    344                DiagsStatsTable.MacRxUcast = diagsValue;
+    345                break;
+    346          
+    347              case ZDIAGS_MAC_TX_UCAST:
+    348                ZMacGetReq( ZMacDiagsTxUcast, (uint8 *)&diagsValue );
+    349                // Update the statistics table with this value from MAC
+    350                DiagsStatsTable.MacTxUcast = diagsValue;
+    351                break;
+    352          
+    353              case ZDIAGS_MAC_TX_UCAST_RETRY:
+    354                ZMacGetReq( ZMacDiagsTxUcastRetry, (uint8 *)&diagsValue );
+    355                // Update the statistics table with this value from MAC
+    356                DiagsStatsTable.MacTxUcastRetry = diagsValue;
+    357                break;
+    358          
+    359              case ZDIAGS_MAC_TX_UCAST_FAIL:
+    360                ZMacGetReq( ZMacDiagsTxUcastFail, (uint8 *)&diagsValue );
+    361                // Update the statistics table with this value from MAC
+    362                DiagsStatsTable.MacTxUcastFail = diagsValue;
+    363                break;
+    364          
+    365              // NWK Diagnostics
+    366              case ZDIAGS_ROUTE_DISC_INITIATED:
+    367                diagsValue = DiagsStatsTable.RouteDiscInitiated;
+    368                break;
+    369          
+    370              case ZDIAGS_NEIGHBOR_ADDED:
+    371                diagsValue = DiagsStatsTable.NeighborAdded;
+    372                break;
+    373          
+    374              case ZDIAGS_NEIGHBOR_REMOVED:
+    375                diagsValue = DiagsStatsTable.NeighborRemoved;
+    376                break;
+    377          
+    378              case ZDIAGS_NEIGHBOR_STALE:
+    379                diagsValue = DiagsStatsTable.NeighborStale;
+    380                break;
+    381          
+    382              case ZDIAGS_JOIN_INDICATION:
+    383                diagsValue = DiagsStatsTable.JoinIndication;
+    384                break;
+    385          
+    386              case ZDIAGS_CHILD_MOVED:
+    387                diagsValue = DiagsStatsTable.ChildMoved;
+    388                break;
+    389          
+    390              case ZDIAGS_NWK_FC_FAILURE:
+    391                diagsValue = DiagsStatsTable.NwkFcFailure;
+    392                break;
+    393          
+    394              case ZDIAGS_NWK_DECRYPT_FAILURES:
+    395                diagsValue = DiagsStatsTable.NwkDecryptFailures;
+    396                break;
+    397          
+    398              case ZDIAGS_PACKET_BUFFER_ALLOCATE_FAILURES:
+    399                diagsValue = DiagsStatsTable.PacketBufferAllocateFailures;
+    400                break;
+    401          
+    402              case ZDIAGS_RELAYED_UCAST:
+    403                diagsValue = DiagsStatsTable.RelayedUcast;
+    404                break;
+    405          
+    406              case ZDIAGS_PHY_TO_MAC_QUEUE_LIMIT_REACHED:
+    407                diagsValue = DiagsStatsTable.PhyToMacQueueLimitReached;
+    408                break;
+    409          
+    410              case ZDIAGS_PACKET_VALIDATE_DROP_COUNT:
+    411                diagsValue = DiagsStatsTable.PacketValidateDropCount;
+    412                break;
+    413          
+    414              // APS Diagnostics
+    415              case ZDIAGS_APS_RX_BCAST:
+    416                diagsValue = DiagsStatsTable.ApsRxBcast;
+    417                break;
+    418          
+    419              case ZDIAGS_APS_TX_BCAST:
+    420                diagsValue = DiagsStatsTable.ApsTxBcast;
+    421                break;
+    422          
+    423              case ZDIAGS_APS_RX_UCAST:
+    424                diagsValue = DiagsStatsTable.ApsRxUcast;
+    425                break;
+    426          
+    427              case ZDIAGS_APS_TX_UCAST_SUCCESS:
+    428                diagsValue = DiagsStatsTable.ApsTxUcastSuccess;
+    429                break;
+    430          
+    431              case ZDIAGS_APS_TX_UCAST_RETRY:
+    432                diagsValue = DiagsStatsTable.ApsTxUcastRetry;
+    433                break;
+    434          
+    435              case ZDIAGS_APS_TX_UCAST_FAIL:
+    436                diagsValue = DiagsStatsTable.ApsTxUcastFail;
+    437                break;
+    438          
+    439              case ZDIAGS_APS_FC_FAILURE:
+    440                diagsValue = DiagsStatsTable.ApsFcFailure;
+    441                break;
+    442          
+    443              case ZDIAGS_APS_UNAUTHORIZED_KEY:
+    444                diagsValue = DiagsStatsTable.ApsUnauthorizedKey;
+    445                break;
+    446          
+    447              case ZDIAGS_APS_DECRYPT_FAILURES:
+    448                diagsValue = DiagsStatsTable.ApsDecryptFailures;
+    449                break;
+    450          
+    451              case ZDIAGS_APS_INVALID_PACKETS:
+    452                diagsValue = DiagsStatsTable.ApsInvalidPackets;
+    453                break;
+    454          
+    455              case ZDIAGS_MAC_RETRIES_PER_APS_TX_SUCCESS:
+    456                diagsValue = DiagsStatsTable.MacRetriesPerApsTxSuccess;
+    457                break;
+    458          
+    459          
+    460              default:
+    461                break;
+    462            }
+    463          #endif // FEATURE_SYSTEM_STATS
+    464          
+    465            return ( diagsValue );
+   \   000000   80..         SJMP      ?Subroutine0
+    466          }
+    467          
+    468          /****************************************************************************
+    469           * @fn          ZDiagsGetStatsTable
+    470           *
+    471           * @brief       Reads the statistics and metrics table
+    472           *
+    473           * @return      pointer to ZDiagStatistics_t structure.
+    474           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    475          DiagStatistics_t *ZDiagsGetStatsTable( void )
+   \                     ZDiagsGetStatsTable:
+    476          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    477          #if defined ( FEATURE_SYSTEM_STATS )
+    478            // call this function to update the DiagsStatsTable with MAC values,
+    479            // the return value does not need to be saved because the function
+    480            // is updating the value in DiagsStatsTable
+    481            (void)ZDiagsGetStatsAttr( ZDIAGS_MAC_RX_CRC_PASS );
+    482            (void)ZDiagsGetStatsAttr( ZDIAGS_MAC_RX_CRC_FAIL );
+    483            (void)ZDiagsGetStatsAttr( ZDIAGS_MAC_RX_BCAST );
+    484            (void)ZDiagsGetStatsAttr( ZDIAGS_MAC_TX_BCAST );
+    485            (void)ZDiagsGetStatsAttr( ZDIAGS_MAC_RX_UCAST );
+    486            (void)ZDiagsGetStatsAttr( ZDIAGS_MAC_TX_UCAST );
+    487            (void)ZDiagsGetStatsAttr( ZDIAGS_MAC_TX_UCAST_RETRY );
+    488            (void)ZDiagsGetStatsAttr( ZDIAGS_MAC_TX_UCAST_FAIL );
+    489          
+    490            return ( &DiagsStatsTable );
+    491          #else
+    492            return ( NULL );
+   \   000000   7A00         MOV       R2,#0x0
+   \   000002   7B00         MOV       R3,#0x0
+   \   000004   02....       LJMP      ?BRET
+    493          #endif  // FEATURE_SYSTEM_STATS
+    494          }
+    495          
+    496          /****************************************************************************
+    497           * @fn          ZDiagsRestoreStatsFromNV
+    498           *
+    499           * @brief       Restores the statistics table from NV into the RAM table.
+    500           *
+    501           * @param       none.
+    502           *
+    503           * @return      ZSuccess - if NV data was restored from NV.
+    504           *              ZFailure - Otherwise, NV_OPER_FAILED for failure.
+    505           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    506          uint8 ZDiagsRestoreStatsFromNV( void )
+   \                     ZDiagsRestoreStatsFromNV:
+    507          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    508            uint8 retValue = ZFailure;
+    509          
+    510          #if defined ( FEATURE_SYSTEM_STATS )
+    511          
+    512            // restore diagnostics table from NV into RAM table
+    513            if ( osal_nv_read( ZCD_NV_DIAGNOSTIC_STATS, 0,
+    514                                   (uint16)sizeof( DiagStatistics_t ),
+    515                                   &DiagsStatsTable ) == SUCCESS )
+    516            {
+    517              // restore MAC values into the PIB
+    518              /*
+    519              ZMacSetReq( ZMacDiagsRxCrcPass, (uint8 *)&(DiagsStatsTable.MacRxCrcPass) );
+    520              ZMacSetReq( ZMacDiagsRxCrcFail, (uint8 *)&(DiagsStatsTable.MacRxCrcFail) );
+    521              ZMacSetReq( ZMacDiagsRxBcast, (uint8 *)&(DiagsStatsTable.MacRxBcast) );
+    522              ZMacSetReq( ZMacDiagsTxBcast, (uint8 *)&(DiagsStatsTable.MacTxBcast) );
+    523              ZMacSetReq( ZMacDiagsRxUcast, (uint8 *)&(DiagsStatsTable.MacRxUcast) );
+    524              ZMacSetReq( ZMacDiagsTxUcast, (uint8 *)&(DiagsStatsTable.MacTxUcast) );
+    525              ZMacSetReq( ZMacDiagsTxUcastRetry, (uint8 *)&(DiagsStatsTable.MacTxUcastRetry) );
+    526              ZMacSetReq( ZMacDiagsTxUcastFail, (uint8 *)&(DiagsStatsTable.MacTxUcastFail) );
+    527          */
+    528              retValue = ZSuccess;
+    529            }
+    530          #endif // FEATURE_SYSTEM_STATS
+    531          
+    532            return ( retValue );
+   \   000000   7901         MOV       R1,#0x1
+   \   000002   02....       LJMP      ?BRET
+    533          }
+    534          
+    535          /****************************************************************************
+    536           * @fn          ZDiagsSaveStatsToNV
+    537           *
+    538           * @brief       Saves the statistics table from RAM to NV.
+    539           *
+    540           * @param       none.
+    541           *
+    542           * @return      System Time.
+    543           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    544          uint32 ZDiagsSaveStatsToNV( void )
+   \                     ZDiagsSaveStatsToNV:
+    545          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    546            uint32 sysClock = 0;
+    547          
+    548          #if defined ( FEATURE_SYSTEM_STATS )
+    549            // call this function to update the DiagsStatsTable with MAC values,
+    550            // the return value does not need to be saved because the function
+    551            // is updating the value in DiagsStatsTable
+    552            (void)ZDiagsGetStatsAttr( ZDIAGS_MAC_RX_CRC_PASS );
+    553            (void)ZDiagsGetStatsAttr( ZDIAGS_MAC_RX_CRC_FAIL );
+    554            (void)ZDiagsGetStatsAttr( ZDIAGS_MAC_RX_BCAST );
+    555            (void)ZDiagsGetStatsAttr( ZDIAGS_MAC_TX_BCAST );
+    556            (void)ZDiagsGetStatsAttr( ZDIAGS_MAC_RX_UCAST );
+    557            (void)ZDiagsGetStatsAttr( ZDIAGS_MAC_TX_UCAST );
+    558            (void)ZDiagsGetStatsAttr( ZDIAGS_MAC_TX_UCAST_RETRY );
+    559            (void)ZDiagsGetStatsAttr( ZDIAGS_MAC_TX_UCAST_FAIL );
+    560          
+    561            // System Clock when statistics were saved
+    562            sysClock = DiagsStatsTable.SysClock = osal_GetSystemClock();
+    563          
+    564            // save the statistics table from RAM to NV
+    565            osal_nv_write( ZCD_NV_DIAGNOSTIC_STATS, 0,
+    566                           sizeof( DiagStatistics_t ), &DiagsStatsTable );
+    567          #endif
+    568          
+    569            // returns the System Time
+    570            return ( sysClock );
+   \   000000   80..         SJMP      ?Subroutine0
+    571          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??ZDiagsInitStats::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ZDiagsInitStats
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??ZDiagsClearStats::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ZDiagsClearStats
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??ZDiagsUpdateStats::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ZDiagsUpdateStats
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??ZDiagsGetStatsAttr::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ZDiagsGetStatsAttr
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??ZDiagsGetStatsTable::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ZDiagsGetStatsTable
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??ZDiagsRestoreStatsFromNV::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ZDiagsRestoreStatsFromNV
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??ZDiagsSaveStatsToNV::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ZDiagsSaveStatsToNV
+    572          
+    573          /****************************************************************************
+    574          ****************************************************************************/
+
+   Maximum stack usage in bytes:
+
+   ISTACK Function
+   ------ --------
+      0   ZDiagsClearStats
+      0   ZDiagsGetStatsAttr
+      0   ZDiagsGetStatsTable
+      0   ZDiagsInitStats
+      0   ZDiagsRestoreStatsFromNV
+      0   ZDiagsSaveStatsToNV
+      0   ZDiagsUpdateStats
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      11  ?Subroutine0
+       0  ZDiagsClearStats
+       6  ZDiagsClearStats::?relay
+       2  ZDiagsGetStatsAttr
+       6  ZDiagsGetStatsAttr::?relay
+       7  ZDiagsGetStatsTable
+       6  ZDiagsGetStatsTable::?relay
+       5  ZDiagsInitStats
+       6  ZDiagsInitStats::?relay
+       5  ZDiagsRestoreStatsFromNV
+       6  ZDiagsRestoreStatsFromNV::?relay
+       2  ZDiagsSaveStatsToNV
+       6  ZDiagsSaveStatsToNV::?relay
+       3  ZDiagsUpdateStats
+       6  ZDiagsUpdateStats::?relay
+
+ 
+ 35 bytes in segment BANKED_CODE
+ 42 bytes in segment BANK_RELAYS
+ 
+ 42 bytes of CODE     memory
+ 35 bytes of HUGECODE memory
+
+Errors: none
+Warnings: none

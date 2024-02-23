@@ -1,0 +1,457 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.10.1.4655 for 8051               22/Nov/2023  15:42:44
+# Copyright 2004-2017 IAR Systems AB.
+# Standalone license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\Source\OSAL_SampleSw.c
+#    Command line       =  
+#        -f C:\Users\ADMINI~1\AppData\Local\Temp\EWAC11.tmp
+#        (D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\Source\OSAL_SampleSw.c
+#        -D SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE -D
+#        MULTICAST_ENABLED=FALSE -D ZCL_READ -D ZCL_DISCOVER -D ZCL_WRITE -D
+#        ZCL_BASIC -D ZCL_IDENTIFY -D ISR_KEYINTERRUPT -D HAL_UART=TRUE -D
+#        HAL_LCD=FALSE -D ZCL_ON_OFF -D INT_HEAP_LEN=2800 -D
+#        HAL_UART_DMA_RX_MAX=256 -D HAL_UART_DMA_TX_MAX=256 -lC
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+#        -lA
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+#        --diag_suppress Pe001,Pa010 -o
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj
+#        -e --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=banked --calling_convention=xdata_reentrant
+#        --place_constants=data_rom --nr_virtual_regs 8 -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+#        -DZDO_COORDINATOR -DRTR_NWK) -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x00, 0x01, 0x02, 0x03,
+#        0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E,
+#        0x0F}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+#        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+#        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+#        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000
+#        -DENABLE_LED4_DISABLE_S1) -f
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\Source\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\Source\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\ZMain\TI2530DB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mt\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\osal\include\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\saddr\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\sdata\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\af\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\bdb\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\gp\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sec\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sys\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zcl\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\Common\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\SPI\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\Font\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_LCD_SPI\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_OLED\
+#        -I
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_TFT\
+#        -Ohz --require_prototypes)
+#    Locale             =  Chinese (Simplified)_China.936
+#    List file          =  
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List\OSAL_SampleSw.lst
+#    Object file        =  
+#        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj\OSAL_SampleSw.r51
+#
+###############################################################################
+
+D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\Source\OSAL_SampleSw.c
+      1          /**************************************************************************************************
+      2            Filename:       OSAL_SampleSw.c
+      3            Revised:        $Date: 2014-06-03 16:29:28 -0700 (Tue, 03 Jun 2014) $
+      4            Revision:       $Revision: 38778 $
+      5          
+      6            Description:    This file contains all the settings and other functions
+      7                            that the user should set and change.
+      8          
+      9          
+     10            Copyright 2006-2014 Texas Instruments Incorporated. All rights reserved.
+     11          
+     12            IMPORTANT: Your use of this Software is limited to those specific rights
+     13            granted under the terms of a software license agreement between the user
+     14            who downloaded the software, his/her employer (which must be your employer)
+     15            and Texas Instruments Incorporated (the "License").  You may not use this
+     16            Software unless you agree to abide by the terms of the License. The License
+     17            limits your use, and you acknowledge, that the Software may not be modified,
+     18            copied or distributed unless embedded on a Texas Instruments microcontroller
+     19            or used solely and exclusively in conjunction with a Texas Instruments radio
+     20            frequency transceiver, which is integrated into your product.  Other than for
+     21            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     22            works of, modify, distribute, perform, display or sell this Software and/or
+     23            its documentation for any purpose.
+     24          
+     25            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     26            PROVIDED �AS IS� WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     27            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     28            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     29            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     30            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     31            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     32            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     33            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     34            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     35            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     36          
+     37            Should you have any questions regarding your right to use this Software,
+     38            contact Texas Instruments Incorporated at www.TI.com.
+     39          **************************************************************************************************/
+     40          
+     41          /*********************************************************************
+     42           * INCLUDES
+     43           */
+     44          
+     45          #include "ZComDef.h"
+     46          #include "hal_drivers.h"
+     47          #include "OSAL.h"
+     48          #include "OSAL_Tasks.h"
+     49          
+     50          #if defined ( MT_TASK )
+     51            #include "MT.h"
+     52            #include "MT_TASK.h"
+     53          #endif
+     54          
+     55          #include "nwk.h"
+     56          #include "APS.h"
+     57          #include "ZDApp.h"
+     58          
+     59          #include "bdb_interface.h"
+     60          
+     61          #if !defined (DISABLE_GREENPOWER_BASIC_PROXY) && (ZG_BUILD_RTR_TYPE)
+     62            #include "gp_common.h"
+     63          #endif   
+     64          #if defined ( ZIGBEE_FREQ_AGILITY ) || defined ( ZIGBEE_PANID_CONFLICT )
+     65            #include "ZDNwkMgr.h"
+     66          #endif
+     67          #if defined ( ZIGBEE_FRAGMENTATION )
+     68            #include "aps_frag.h"
+     69          #endif
+     70          
+     71          #if defined ( INTER_PAN )
+     72            #include "stub_aps.h"
+     73          #if defined ( BDB_TL_INITIATOR )
+     74            #include "bdb_touchlink_initiator.h"
+     75          #endif // BDB_TL_INITIATOR
+     76          #if defined ( BDB_TL_TARGET )
+     77            #include "bdb_touchlink_target.h"
+     78          #endif // BDB_TL_TARGET
+     79          #endif // INTER_PAN
+     80          
+     81          #include "zcl_samplesw.h"
+
+  #define ZCL_GP_PROFILE_ID               0xa1e0
+          ^
+"D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\Source\zcl_samplesw.h",63  Warning[Pe047]: 
+          incompatible redefinition of macro "ZCL_GP_PROFILE_ID" (declared at
+          line 63)
+
+  #define CMD_JC_ZCLREQ          0x7
+          ^
+"D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\Source\zcl_samplesw.h",94  Warning[Pe047]: 
+          incompatible redefinition of macro "CMD_JC_ZCLREQ" (declared at line
+          94)
+     82          
+     83          #if (defined OTA_CLIENT) && (OTA_CLIENT == TRUE)
+     84            #include "zcl_ota.h"
+     85          #endif
+     86          /*********************************************************************
+     87           * GLOBAL VARIABLES
+     88           */
+     89          
+     90          // The order in this table must be identical to the task initialization calls below in osalInitTask.
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     91          const pTaskEventHandlerFn tasksArr[] = {
+   \                     tasksArr:
+   \   000000   ....         DW `??macEventLoop::?relay`
+   \   000002   ....         DW `??nwk_event_loop::?relay`
+   \   000004   ....         DW `??gp_event_loop::?relay`
+   \   000006   ....         DW `??Hal_ProcessEvent::?relay`
+   \   000008   ....         DW `??APS_event_loop::?relay`
+   \   00000A   ....         DW `??APSF_ProcessEvent::?relay`
+   \   00000C   ....         DW `??ZDApp_event_loop::?relay`
+   \   00000E   ....         DW `??ZDNwkMgr_event_loop::?relay`
+   \   000010   ....         DW `??zcl_event_loop::?relay`
+   \   000012   ....         DW `??bdb_event_loop::?relay`
+   \   000014   ....         DW `??zclSampleSw_event_loop::?relay`
+     92            macEventLoop,
+     93            nwk_event_loop,
+     94          #if !defined (DISABLE_GREENPOWER_BASIC_PROXY) && (ZG_BUILD_RTR_TYPE)
+     95            gp_event_loop,
+     96          #endif  
+     97            Hal_ProcessEvent,
+     98          #if defined( MT_TASK )
+     99            MT_ProcessEvent,
+    100          #endif
+    101            APS_event_loop,
+    102          #if defined ( ZIGBEE_FRAGMENTATION )
+    103            APSF_ProcessEvent,
+    104          #endif
+    105            ZDApp_event_loop,
+    106          #if defined ( ZIGBEE_FREQ_AGILITY ) || defined ( ZIGBEE_PANID_CONFLICT )
+    107            ZDNwkMgr_event_loop,
+    108          #endif
+    109            //Added to include TouchLink functionality
+    110            #if defined ( INTER_PAN )
+    111              StubAPS_ProcessEvent,
+    112            #endif
+    113            // Added to include TouchLink initiator functionality
+    114            #if defined ( BDB_TL_INITIATOR )
+    115              touchLinkInitiator_event_loop,
+    116            #endif
+    117            // Added to include TouchLink target functionality
+    118            #if defined ( BDB_TL_TARGET )
+    119              touchLinkTarget_event_loop,
+    120            #endif
+    121            zcl_event_loop,
+    122            bdb_event_loop,
+    123            zclSampleSw_event_loop,
+    124          #if (defined OTA_CLIENT) && (OTA_CLIENT == TRUE)
+    125            zclOTA_event_loop
+    126          #endif
+    127          };
+    128          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    129          const uint8 tasksCnt = sizeof( tasksArr ) / sizeof( tasksArr[0] );
+   \                     tasksCnt:
+   \   000000   0B           DB 11
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    130          uint16 *tasksEvents;
+   \                     tasksEvents:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+    131          
+    132          /*********************************************************************
+    133           * FUNCTIONS
+    134           *********************************************************************/
+    135          
+    136          /*********************************************************************
+    137           * @fn      osalInitTasks
+    138           *
+    139           * @brief   This function invokes the initialization function for each task.
+    140           *
+    141           * @param   void
+    142           *
+    143           * @return  none
+    144           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    145          void osalInitTasks( void )
+   \                     osalInitTasks:
+    146          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    147            uint8 taskID = 0;
+    148          
+    149            tasksEvents = (uint16 *)osal_mem_alloc( sizeof( uint16 ) * tasksCnt);
+   \   000004                ; Setup parameters for call to function osal_mem_alloc
+   \   000004   7A16         MOV       R2,#0x16
+   \   000006   7B00         MOV       R3,#0x0
+   \   000008   12....       LCALL     `??osal_mem_alloc::?relay`; Banked call to: osal_mem_alloc
+   \   00000B   90....       MOV       DPTR,#tasksEvents
+   \   00000E   EA           MOV       A,R2
+   \   00000F   F0           MOVX      @DPTR,A
+   \   000010   A3           INC       DPTR
+   \   000011   EB           MOV       A,R3
+   \   000012   F0           MOVX      @DPTR,A
+    150            osal_memset( tasksEvents, 0, (sizeof( uint16 ) * tasksCnt));
+   \   000013                ; Setup parameters for call to function osal_memset
+   \   000013   7C16         MOV       R4,#0x16
+   \   000015   7D00         MOV       R5,#0x0
+   \   000017   7900         MOV       R1,#0x0
+   \   000019   12....       LCALL     `??osal_memset::?relay`; Banked call to: osal_memset
+    151          
+    152            macTaskInit( taskID++ );
+   \   00001C                ; Setup parameters for call to function macTaskInit
+   \   00001C   7900         MOV       R1,#0x0
+   \   00001E   12....       LCALL     `??macTaskInit::?relay`; Banked call to: macTaskInit
+    153            nwk_init( taskID++ );
+   \   000021                ; Setup parameters for call to function nwk_init
+   \   000021   7901         MOV       R1,#0x1
+   \   000023   12....       LCALL     `??nwk_init::?relay`; Banked call to: nwk_init
+    154          #if !defined (DISABLE_GREENPOWER_BASIC_PROXY) && (ZG_BUILD_RTR_TYPE)
+    155            gp_Init( taskID++ );
+   \   000026                ; Setup parameters for call to function gp_Init
+   \   000026   7902         MOV       R1,#0x2
+   \   000028   12....       LCALL     `??gp_Init::?relay`; Banked call to: gp_Init
+    156          #endif
+    157            Hal_Init( taskID++ );
+   \   00002B                ; Setup parameters for call to function Hal_Init
+   \   00002B   7903         MOV       R1,#0x3
+   \   00002D   12....       LCALL     `??Hal_Init::?relay`; Banked call to: Hal_Init
+    158          #if defined( MT_TASK )
+    159            MT_TaskInit( taskID++ );
+    160          #endif
+    161            APS_Init( taskID++ );
+   \   000030                ; Setup parameters for call to function APS_Init
+   \   000030   7904         MOV       R1,#0x4
+   \   000032   12....       LCALL     `??APS_Init::?relay`; Banked call to: APS_Init
+    162          #if defined ( ZIGBEE_FRAGMENTATION )
+    163            APSF_Init( taskID++ );
+   \   000035                ; Setup parameters for call to function APSF_Init
+   \   000035   7905         MOV       R1,#0x5
+   \   000037   12....       LCALL     `??APSF_Init::?relay`; Banked call to: APSF_Init
+    164          #endif
+    165            ZDApp_Init( taskID++ );
+   \   00003A                ; Setup parameters for call to function ZDApp_Init
+   \   00003A   7906         MOV       R1,#0x6
+   \   00003C   12....       LCALL     `??ZDApp_Init::?relay`; Banked call to: ZDApp_Init
+    166          #if defined ( ZIGBEE_FREQ_AGILITY ) || defined ( ZIGBEE_PANID_CONFLICT )
+    167            ZDNwkMgr_Init( taskID++ );
+   \   00003F                ; Setup parameters for call to function ZDNwkMgr_Init
+   \   00003F   7907         MOV       R1,#0x7
+   \   000041   12....       LCALL     `??ZDNwkMgr_Init::?relay`; Banked call to: ZDNwkMgr_Init
+    168          #endif
+    169            // Added to include TouchLink functionality 
+    170            #if defined ( INTER_PAN )
+    171              StubAPS_Init( taskID++ );
+    172            #endif
+    173            // Added to include TouchLink initiator functionality 
+    174            #if defined( BDB_TL_INITIATOR )
+    175              touchLinkInitiator_Init( taskID++ );
+    176            #endif
+    177            // Added to include TouchLink target functionality 
+    178            #if defined ( BDB_TL_TARGET )
+    179              touchLinkTarget_Init( taskID++ );
+    180            #endif
+    181            zcl_Init( taskID++ );
+   \   000044                ; Setup parameters for call to function zcl_Init
+   \   000044   7908         MOV       R1,#0x8
+   \   000046   12....       LCALL     `??zcl_Init::?relay`; Banked call to: zcl_Init
+    182            bdb_Init( taskID++ );
+   \   000049                ; Setup parameters for call to function bdb_Init
+   \   000049   7909         MOV       R1,#0x9
+   \   00004B   12....       LCALL     `??bdb_Init::?relay`; Banked call to: bdb_Init
+    183            zclSampleSw_Init( taskID++ );
+   \   00004E                ; Setup parameters for call to function zclSampleSw_Init
+   \   00004E   790A         MOV       R1,#0xa
+   \   000050   12....       LCALL     `??zclSampleSw_Init::?relay`; Banked call to: zclSampleSw_Init
+    184          #if (defined OTA_CLIENT) && (OTA_CLIENT == TRUE)
+    185            zclOTA_Init( taskID );
+    186          #endif
+    187          }
+   \   000053   D083         POP       DPH
+   \   000055   D082         POP       DPL
+   \   000057   02....       LJMP      ?BRET
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??osalInitTasks::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    osalInitTasks
+    188          
+    189          /*********************************************************************
+    190          *********************************************************************/
+
+   Maximum stack usage in bytes:
+
+   ISTACK Function
+   ------ --------
+      2   osalInitTasks
+        2   -> APSF_Init
+        2   -> APS_Init
+        2   -> Hal_Init
+        2   -> ZDApp_Init
+        2   -> ZDNwkMgr_Init
+        2   -> bdb_Init
+        2   -> gp_Init
+        2   -> macTaskInit
+        2   -> nwk_init
+        2   -> osal_mem_alloc
+        2   -> osal_memset
+        2   -> zclSampleSw_Init
+        2   -> zcl_Init
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      90  osalInitTasks
+       6  osalInitTasks::?relay
+      22  tasksArr
+       1  tasksCnt
+       2  tasksEvents
+
+ 
+ 90 bytes in segment BANKED_CODE
+  6 bytes in segment BANK_RELAYS
+ 23 bytes in segment XDATA_ROM_C
+  2 bytes in segment XDATA_Z
+ 
+  6 bytes of CODE     memory
+ 23 bytes of CONST    memory
+ 90 bytes of HUGECODE memory
+  2 bytes of XDATA    memory
+
+Errors: none
+Warnings: 2

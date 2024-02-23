@@ -1,0 +1,3787 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// IAR C/C++ Compiler V10.10.1.4655 for 8051              22/Nov/2023  15:42:42
+// Copyright 2004-2017 IAR Systems AB.
+// Standalone license - IAR Embedded Workbench for 8051
+//
+//    Core               =  plain
+//    Code model         =  banked
+//    Data model         =  large
+//    Calling convention =  xdata reentrant
+//    Constant location  =  data_rom
+//    Dptr setup         =  1,16
+//                          
+//    Source file        =  
+//        D:\fuzzing-coordinator-response-collection\Components\mac\low_level\srf04\single_chip\mac_mcu.c
+//    Command line       =  
+//        -f C:\Users\ADMINI~1\AppData\Local\Temp\EWA3C4.tmp
+//        (D:\fuzzing-coordinator-response-collection\Components\mac\low_level\srf04\single_chip\mac_mcu.c
+//        -D SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE -D
+//        MULTICAST_ENABLED=FALSE -D ZCL_READ -D ZCL_DISCOVER -D ZCL_WRITE -D
+//        ZCL_BASIC -D ZCL_IDENTIFY -D ISR_KEYINTERRUPT -D HAL_UART=TRUE -D
+//        HAL_LCD=FALSE -D ZCL_ON_OFF -D INT_HEAP_LEN=2800 -D
+//        HAL_UART_DMA_RX_MAX=256 -D HAL_UART_DMA_TX_MAX=256 -lC
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+//        -lA
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List
+//        --diag_suppress Pe001,Pa010 -o
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Obj
+//        -e --debug --core=plain --dptr=16,1 --data_model=large
+//        --code_model=banked --calling_convention=xdata_reentrant
+//        --place_constants=data_rom --nr_virtual_regs 8 -f
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg
+//        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+//        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+//        -DZDO_COORDINATOR -DRTR_NWK) -f
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+//        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+//        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+//        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+//        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+//        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+//        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+//        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+//        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+//        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+//        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x00, 0x01, 0x02, 0x03,
+//        0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E,
+//        0x0F}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+//        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+//        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+//        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000
+//        -DENABLE_LED4_DISABLE_S1) -f
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\Source\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\Source\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\ZMain\TI2530DB\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\include\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\include\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mt\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\osal\include\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\saddr\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\sdata\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\af\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\bdb\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\gp\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sec\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sys\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zcl\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\Common\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\SPI\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\Font\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_LCD_SPI\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_OLED\
+//        -I
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\HW_LCD\HAL_TFT\
+//        -Ohz --require_prototypes)
+//    Locale             =  Chinese (Simplified)_China.936
+//    List file          =  
+//        D:\fuzzing-coordinator-response-collection\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\List\mac_mcu.s51
+//
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME mac_mcu
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__register_banks", "*"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?V0
+        EXTERN ?V1
+        EXTERN ?V2
+        EXTERN ?V3
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?CALL_IND
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?INTERRUPT_ENTER_XSP
+        EXTERN ?INTERRUPT_LEAVE_XSP
+        EXTERN ?L_ADD_TO_X
+        EXTERN ?L_ADD_X
+        EXTERN ?L_AND_X
+        EXTERN ?L_EQ_X
+        EXTERN ?L_MOV_TO_X
+        EXTERN ?L_MOV_X
+        EXTERN ?L_SUB_X
+        EXTERN ?UL_GT_X
+        EXTERN ?VB
+        EXTERN ?XLOAD_R0123
+        EXTERN ?XLOAD_R2345
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN ?XSTORE_R0123
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC `??MAC_SetRandomSeedCB::?relay`
+        FUNCTION `??MAC_SetRandomSeedCB::?relay`,0203H
+        PUBLIC `??macMcuAccumulatedOverFlow::?relay`
+        FUNCTION `??macMcuAccumulatedOverFlow::?relay`,0203H
+        PUBLIC `??macMcuInit::?relay`
+        FUNCTION `??macMcuInit::?relay`,0203H
+        PUBLIC `??macMcuOverflowCapture::?relay`
+        FUNCTION `??macMcuOverflowCapture::?relay`,0203H
+        PUBLIC `??macMcuOverflowCount::?relay`
+        FUNCTION `??macMcuOverflowCount::?relay`,0203H
+        PUBLIC `??macMcuOverflowSetCompare::?relay`
+        FUNCTION `??macMcuOverflowSetCompare::?relay`,0203H
+        PUBLIC `??macMcuOverflowSetCount::?relay`
+        FUNCTION `??macMcuOverflowSetCount::?relay`,0203H
+        PUBLIC `??macMcuOverflowSetPeriod::?relay`
+        FUNCTION `??macMcuOverflowSetPeriod::?relay`,0203H
+        PUBLIC `??macMcuPrecisionCount::?relay`
+        FUNCTION `??macMcuPrecisionCount::?relay`,0203H
+        PUBLIC `??macMcuRandomByte::?relay`
+        FUNCTION `??macMcuRandomByte::?relay`,0203H
+        PUBLIC `??macMcuRandomWord::?relay`
+        FUNCTION `??macMcuRandomWord::?relay`,0203H
+        PUBLIC `??macMcuRecordMaxRssiStart::?relay`
+        FUNCTION `??macMcuRecordMaxRssiStart::?relay`,0203H
+        PUBLIC `??macMcuRecordMaxRssiStop::?relay`
+        FUNCTION `??macMcuRecordMaxRssiStop::?relay`,0203H
+        PUBWEAK `??macMcuRfErrIsr::??INTVEC 3`
+        PUBWEAK `??macMcuRfIsr::??INTVEC 131`
+        PUBWEAK `??macMcuTimer2Isr::??INTVEC 83`
+        PUBLIC `??macMcuTimer2OverflowWorkaround::?relay`
+        FUNCTION `??macMcuTimer2OverflowWorkaround::?relay`,0203H
+        PUBLIC `??macMcuTimerCapture::?relay`
+        FUNCTION `??macMcuTimerCapture::?relay`,0203H
+        PUBLIC `??macMcuTimerForceDelay::?relay`
+        FUNCTION `??macMcuTimerForceDelay::?relay`,0203H
+        PUBWEAK ADCCON1
+        PUBWEAK CLKCONSTA
+        PUBWEAK IEN2
+        PUBWEAK IP0
+        PUBWEAK IP1
+        PUBLIC MAC_SetRandomSeedCB
+        FUNCTION MAC_SetRandomSeedCB,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBWEAK RFERRF
+        PUBWEAK RFIRQF0
+        PUBWEAK RFIRQF1
+        PUBWEAK RNDH
+        PUBWEAK RNDL
+        PUBWEAK S1CON
+        PUBWEAK T2CTRL
+        PUBWEAK T2IRQF
+        PUBWEAK T2IRQM
+        PUBWEAK T2M0
+        PUBWEAK T2M1
+        PUBWEAK T2MOVF0
+        PUBWEAK T2MOVF1
+        PUBWEAK T2MOVF2
+        PUBWEAK T2MSEL
+        PUBWEAK _A_IEN0
+        PUBWEAK _A_IEN1
+        PUBWEAK __Constant_ff000000
+        PUBLIC macChipVersion
+        PUBLIC macMcuAccumulatedOverFlow
+        FUNCTION macMcuAccumulatedOverFlow,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        PUBLIC macMcuInit
+        FUNCTION macMcuInit,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 3, STACK
+        LOCFRAME XSTACK, 32, STACK
+        PUBLIC macMcuOverflowCapture
+        FUNCTION macMcuOverflowCapture,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 3, STACK
+        LOCFRAME XSTACK, 4, STACK
+        PUBLIC macMcuOverflowCount
+        FUNCTION macMcuOverflowCount,0203H
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 3, STACK
+        LOCFRAME XSTACK, 4, STACK
+        PUBLIC macMcuOverflowSetCompare
+        FUNCTION macMcuOverflowSetCompare,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        PUBLIC macMcuOverflowSetCount
+        FUNCTION macMcuOverflowSetCount,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME XSTACK, 16, STACK
+        PUBLIC macMcuOverflowSetPeriod
+        FUNCTION macMcuOverflowSetPeriod,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        PUBLIC macMcuPrecisionCount
+        FUNCTION macMcuPrecisionCount,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 16, STACK
+        PUBLIC macMcuRandomByte
+        FUNCTION macMcuRandomByte,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC macMcuRandomWord
+        FUNCTION macMcuRandomWord,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC macMcuRecordMaxRssiStart
+        FUNCTION macMcuRecordMaxRssiStart,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC macMcuRecordMaxRssiStop
+        FUNCTION macMcuRecordMaxRssiStop,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC macMcuRfErrIsr
+        FUNCTION macMcuRfErrIsr,021233H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        PUBLIC macMcuRfIsr
+        FUNCTION macMcuRfIsr,021233H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        PUBLIC macMcuTimer2Isr
+        FUNCTION macMcuTimer2Isr,0a1233H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        PUBLIC macMcuTimer2OverflowWorkaround
+        FUNCTION macMcuTimer2OverflowWorkaround,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 16, STACK
+        PUBLIC macMcuTimerCapture
+        FUNCTION macMcuTimerCapture,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC macMcuTimerForceDelay
+        FUNCTION macMcuTimerForceDelay,0203H
+        ARGFRAME XSTACK, 0, STACK
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA_SP SP IDATA
+          CFI StackFrame CFA_PSP16 PSP16 XDATA
+          CFI StackFrame CFA_XSP16 XSP16 XDATA
+          CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+          CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+          CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+          CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+          CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+          CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+          CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+          CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+          CFI Resource SP:8, PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+          CFI VirtualResource ?RET:24
+          CFI Resource ?BRET_EXT:8
+          CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+          CFI ResourceParts PSP16 PSPH, PSPL
+          CFI ResourceParts XSP16 XSPH, XSPL
+          CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 1
+          CFI DataAlign -1
+          CFI ReturnAddress ?RET CODE
+          CFI CFA_DOVERLAY Used
+          CFI CFA_IOVERLAY Used
+          CFI CFA_SP SP+-3
+          CFI CFA_PSP16 PSP16+0
+          CFI CFA_XSP16 XSP16+0
+          CFI `PSW.CY` SameValue
+          CFI `B.BR0` SameValue
+          CFI `B.BR1` SameValue
+          CFI `B.BR2` SameValue
+          CFI `B.BR3` SameValue
+          CFI `B.BR4` SameValue
+          CFI `B.BR5` SameValue
+          CFI `B.BR6` SameValue
+          CFI `B.BR7` SameValue
+          CFI `VB.BR8` SameValue
+          CFI `VB.BR9` SameValue
+          CFI `VB.BR10` SameValue
+          CFI `VB.BR11` SameValue
+          CFI `VB.BR12` SameValue
+          CFI `VB.BR13` SameValue
+          CFI `VB.BR14` SameValue
+          CFI `VB.BR15` SameValue
+          CFI VB SameValue
+          CFI B Undefined
+          CFI A Undefined
+          CFI PSW SameValue
+          CFI DPL0 SameValue
+          CFI DPH0 SameValue
+          CFI R0 Undefined
+          CFI R1 Undefined
+          CFI R2 Undefined
+          CFI R3 Undefined
+          CFI R4 Undefined
+          CFI R5 Undefined
+          CFI R6 SameValue
+          CFI R7 SameValue
+          CFI V0 SameValue
+          CFI V1 SameValue
+          CFI V2 SameValue
+          CFI V3 SameValue
+          CFI V4 SameValue
+          CFI V5 SameValue
+          CFI V6 SameValue
+          CFI V7 SameValue
+          CFI PSPH Undefined
+          CFI PSPL Undefined
+          CFI XSPH Undefined
+          CFI XSPL Undefined
+          CFI ?RET Concat
+          CFI ?BRET_EXT Frame(CFA_SP, 3)
+          CFI ?RET_HIGH Frame(CFA_SP, 2)
+          CFI ?RET_LOW Frame(CFA_SP, 1)
+          CFI EndCommon cfiCommon0
+        
+        
+          CFI Common cfiCommon1 Using cfiNames0
+          CFI CodeAlign 1
+          CFI DataAlign -1
+          CFI ReturnAddress ?RET CODE
+          CFI CFA_DOVERLAY Used
+          CFI CFA_IOVERLAY Used
+          CFI CFA_SP SP+-2
+          CFI CFA_PSP16 PSP16+0
+          CFI CFA_XSP16 XSP16+0
+          CFI `PSW.CY` SameValue
+          CFI `B.BR0` SameValue
+          CFI `B.BR1` SameValue
+          CFI `B.BR2` SameValue
+          CFI `B.BR3` SameValue
+          CFI `B.BR4` SameValue
+          CFI `B.BR5` SameValue
+          CFI `B.BR6` SameValue
+          CFI `B.BR7` SameValue
+          CFI `VB.BR8` SameValue
+          CFI `VB.BR9` SameValue
+          CFI `VB.BR10` SameValue
+          CFI `VB.BR11` SameValue
+          CFI `VB.BR12` SameValue
+          CFI `VB.BR13` SameValue
+          CFI `VB.BR14` SameValue
+          CFI `VB.BR15` SameValue
+          CFI VB SameValue
+          CFI B SameValue
+          CFI A SameValue
+          CFI PSW SameValue
+          CFI DPL0 SameValue
+          CFI DPH0 SameValue
+          CFI R0 SameValue
+          CFI R1 SameValue
+          CFI R2 SameValue
+          CFI R3 SameValue
+          CFI R4 SameValue
+          CFI R5 SameValue
+          CFI R6 SameValue
+          CFI R7 SameValue
+          CFI V0 SameValue
+          CFI V1 SameValue
+          CFI V2 SameValue
+          CFI V3 SameValue
+          CFI V4 SameValue
+          CFI V5 SameValue
+          CFI V6 SameValue
+          CFI V7 SameValue
+          CFI PSPH Undefined
+          CFI PSPL Undefined
+          CFI XSPH Undefined
+          CFI XSPL Undefined
+          CFI ?RET Concat
+          CFI ?BRET_EXT SameValue
+          CFI ?RET_HIGH Frame(CFA_SP, 2)
+          CFI ?RET_LOW Frame(CFA_SP, 1)
+          CFI EndCommon cfiCommon1
+        
+halAssertHandler    SYMBOL "halAssertHandler"
+`??halAssertHandler::?relay` SYMBOL "?relay", halAssertHandler
+halSetMaxSleepLoopTime SYMBOL "halSetMaxSleepLoopTime"
+`??halSetMaxSleepLoopTime::?relay` SYMBOL "?relay", halSetMaxSleepLoopTime
+macBackoffTimerCompareIsr SYMBOL "macBackoffTimerCompareIsr"
+`??macBackoffTimerCompareIsr::?relay` SYMBOL "?relay", macBackoffTimerCompareIsr
+macBackoffTimerPeriodIsr SYMBOL "macBackoffTimerPeriodIsr"
+`??macBackoffTimerPeriodIsr::?relay` SYMBOL "?relay", macBackoffTimerPeriodIsr
+macCspTxIntIsr      SYMBOL "macCspTxIntIsr"
+`??macCspTxIntIsr::?relay` SYMBOL "?relay", macCspTxIntIsr
+macCspTxStopIsr     SYMBOL "macCspTxStopIsr"
+`??macCspTxStopIsr::?relay` SYMBOL "?relay", macCspTxStopIsr
+macGetBackOffTimerRollover SYMBOL "macGetBackOffTimerRollover"
+`??macGetBackOffTimerRollover::?relay` SYMBOL "?relay", macGetBackOffTimerRollover
+macRxAckTxDoneCallback SYMBOL "macRxAckTxDoneCallback"
+`??macRxAckTxDoneCallback::?relay` SYMBOL "?relay", macRxAckTxDoneCallback
+macRxFifoOverflowIsr SYMBOL "macRxFifoOverflowIsr"
+`??macRxFifoOverflowIsr::?relay` SYMBOL "?relay", macRxFifoOverflowIsr
+macRxOff            SYMBOL "macRxOff"
+`??macRxOff::?relay` SYMBOL "?relay", macRxOff
+macRxOn             SYMBOL "macRxOn"
+`??macRxOn::?relay` SYMBOL "?relay", macRxOn
+macRxThresholdIsr   SYMBOL "macRxThresholdIsr"
+`??macRxThresholdIsr::?relay` SYMBOL "?relay", macRxThresholdIsr
+MAC_SetRandomSeedCB SYMBOL "MAC_SetRandomSeedCB"
+`??MAC_SetRandomSeedCB::?relay` SYMBOL "?relay", MAC_SetRandomSeedCB
+macMcuAccumulatedOverFlow SYMBOL "macMcuAccumulatedOverFlow"
+`??macMcuAccumulatedOverFlow::?relay` SYMBOL "?relay", macMcuAccumulatedOverFlow
+macMcuInit          SYMBOL "macMcuInit"
+`??macMcuInit::?relay` SYMBOL "?relay", macMcuInit
+macMcuOverflowCapture SYMBOL "macMcuOverflowCapture"
+`??macMcuOverflowCapture::?relay` SYMBOL "?relay", macMcuOverflowCapture
+macMcuOverflowCount SYMBOL "macMcuOverflowCount"
+`??macMcuOverflowCount::?relay` SYMBOL "?relay", macMcuOverflowCount
+macMcuOverflowSetCompare SYMBOL "macMcuOverflowSetCompare"
+`??macMcuOverflowSetCompare::?relay` SYMBOL "?relay", macMcuOverflowSetCompare
+macMcuOverflowSetCount SYMBOL "macMcuOverflowSetCount"
+`??macMcuOverflowSetCount::?relay` SYMBOL "?relay", macMcuOverflowSetCount
+macMcuOverflowSetPeriod SYMBOL "macMcuOverflowSetPeriod"
+`??macMcuOverflowSetPeriod::?relay` SYMBOL "?relay", macMcuOverflowSetPeriod
+macMcuPrecisionCount SYMBOL "macMcuPrecisionCount"
+`??macMcuPrecisionCount::?relay` SYMBOL "?relay", macMcuPrecisionCount
+macMcuRandomByte    SYMBOL "macMcuRandomByte"
+`??macMcuRandomByte::?relay` SYMBOL "?relay", macMcuRandomByte
+macMcuRandomWord    SYMBOL "macMcuRandomWord"
+`??macMcuRandomWord::?relay` SYMBOL "?relay", macMcuRandomWord
+macMcuRecordMaxRssiStart SYMBOL "macMcuRecordMaxRssiStart"
+`??macMcuRecordMaxRssiStart::?relay` SYMBOL "?relay", macMcuRecordMaxRssiStart
+macMcuRecordMaxRssiStop SYMBOL "macMcuRecordMaxRssiStop"
+`??macMcuRecordMaxRssiStop::?relay` SYMBOL "?relay", macMcuRecordMaxRssiStop
+macMcuRfErrIsr      SYMBOL "macMcuRfErrIsr"
+`??macMcuRfErrIsr::??INTVEC 3` SYMBOL "??INTVEC 3", macMcuRfErrIsr
+macMcuRfIsr         SYMBOL "macMcuRfIsr"
+`??macMcuRfIsr::??INTVEC 131` SYMBOL "??INTVEC 131", macMcuRfIsr
+macMcuTimer2Isr     SYMBOL "macMcuTimer2Isr"
+`??macMcuTimer2Isr::??INTVEC 83` SYMBOL "??INTVEC 83", macMcuTimer2Isr
+macMcuTimer2OverflowWorkaround SYMBOL "macMcuTimer2OverflowWorkaround"
+`??macMcuTimer2OverflowWorkaround::?relay` SYMBOL "?relay", macMcuTimer2OverflowWorkaround
+macMcuTimerCapture  SYMBOL "macMcuTimerCapture"
+`??macMcuTimerCapture::?relay` SYMBOL "?relay", macMcuTimerCapture
+macMcuTimerForceDelay SYMBOL "macMcuTimerForceDelay"
+`??macMcuTimerForceDelay::?relay` SYMBOL "?relay", macMcuTimerForceDelay
+
+        EXTERN `??halAssertHandler::?relay`
+        FUNCTION `??halAssertHandler::?relay`,00H
+        EXTERN `??halSetMaxSleepLoopTime::?relay`
+        FUNCTION `??halSetMaxSleepLoopTime::?relay`,00H
+        EXTERN `??macBackoffTimerCompareIsr::?relay`
+        FUNCTION `??macBackoffTimerCompareIsr::?relay`,00H
+        EXTERN `??macBackoffTimerPeriodIsr::?relay`
+        FUNCTION `??macBackoffTimerPeriodIsr::?relay`,00H
+        EXTERN `??macCspTxIntIsr::?relay`
+        FUNCTION `??macCspTxIntIsr::?relay`,00H
+        EXTERN `??macCspTxStopIsr::?relay`
+        FUNCTION `??macCspTxStopIsr::?relay`,00H
+        EXTERN `??macGetBackOffTimerRollover::?relay`
+        FUNCTION `??macGetBackOffTimerRollover::?relay`,00H
+        EXTERN `??macRxAckTxDoneCallback::?relay`
+        FUNCTION `??macRxAckTxDoneCallback::?relay`,00H
+        EXTERN `??macRxFifoOverflowIsr::?relay`
+        FUNCTION `??macRxFifoOverflowIsr::?relay`,00H
+        EXTERN `??macRxOff::?relay`
+        FUNCTION `??macRxOff::?relay`,00H
+        EXTERN `??macRxOn::?relay`
+        FUNCTION `??macRxOn::?relay`,00H
+        EXTERN `??macRxThresholdIsr::?relay`
+        FUNCTION `??macRxThresholdIsr::?relay`,00H
+        EXTERN halAssertHandler
+        FUNCTION halAssertHandler,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN halSetMaxSleepLoopTime
+        FUNCTION halSetMaxSleepLoopTime,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN macBackoffTimerCompareIsr
+        FUNCTION macBackoffTimerCompareIsr,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN macBackoffTimerPeriodIsr
+        FUNCTION macBackoffTimerPeriodIsr,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN macCspTxIntIsr
+        FUNCTION macCspTxIntIsr,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN macCspTxStopIsr
+        FUNCTION macCspTxStopIsr,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN macGetBackOffTimerRollover
+        FUNCTION macGetBackOffTimerRollover,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN macRxAckTxDoneCallback
+        FUNCTION macRxAckTxDoneCallback,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN macRxFifoOverflowIsr
+        FUNCTION macRxFifoOverflowIsr,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN macRxOff
+        FUNCTION macRxOff,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 32, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN macRxOn
+        FUNCTION macRxOn,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 32, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN macRxThresholdIsr
+        FUNCTION macRxThresholdIsr,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+
+// D:\fuzzing-coordinator-response-collection\Components\mac\low_level\srf04\single_chip\mac_mcu.c
+//    1 /**************************************************************************************************
+//    2   Filename:       mac_mcu.c
+//    3   Revised:        $Date: 2015-02-17 14:17:44 -0800 (Tue, 17 Feb 2015) $
+//    4   Revision:       $Revision: 42683 $
+//    5 
+//    6   Description:    Describe the purpose and contents of the file.
+//    7 
+//    8 
+//    9   Copyright 2006-2015 Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License").  You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product.  Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com.
+//   38 **************************************************************************************************/
+//   39 
+//   40 /* ------------------------------------------------------------------------------------------------
+//   41  *                                          Includes
+//   42  * ------------------------------------------------------------------------------------------------
+//   43  */
+//   44 
+//   45 /* hal */
+//   46 #include "hal_defs.h"
+//   47 #include "hal_mcu.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,091H
+// unsigned char volatile __sfr RFIRQF1
+RFIRQF1:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,094H
+// unsigned char volatile __sfr T2CTRL
+T2CTRL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09aH
+// unsigned char volatile __sfr IEN2
+IEN2:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09bH
+// unsigned char volatile __sfr S1CON
+S1CON:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09eH
+// unsigned char volatile __sfr CLKCONSTA
+CLKCONSTA:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a1H
+// unsigned char volatile __sfr T2IRQF
+T2IRQF:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a2H
+// unsigned char volatile __sfr T2M0
+T2M0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a3H
+// unsigned char volatile __sfr T2M1
+T2M1:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a4H
+// unsigned char volatile __sfr T2MOVF0
+T2MOVF0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a5H
+// unsigned char volatile __sfr T2MOVF1
+T2MOVF1:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a6H
+// unsigned char volatile __sfr T2MOVF2
+T2MOVF2:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a7H
+// unsigned char volatile __sfr T2IRQM
+T2IRQM:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a9H
+// unsigned char volatile __sfr IP0
+IP0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0b4H
+// unsigned char volatile __sfr ADCCON1
+ADCCON1:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0b8H
+// union <unnamed> volatile __sfr _A_IEN1
+_A_IEN1:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0b9H
+// unsigned char volatile __sfr IP1
+IP1:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0bcH
+// unsigned char volatile __sfr RNDL
+RNDL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0bdH
+// unsigned char volatile __sfr RNDH
+RNDH:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0bfH
+// unsigned char volatile __sfr RFERRF
+RFERRF:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c3H
+// unsigned char volatile __sfr T2MSEL
+T2MSEL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0e9H
+// unsigned char volatile __sfr RFIRQF0
+RFIRQF0:
+        DATA8
+        DS 1
+//   48 
+//   49 /* low-level specific */
+//   50 #include "mac_rx.h"
+//   51 #include "mac_tx.h"
+//   52 #include "mac_backoff_timer.h"
+//   53 #include "mac_csp_tx.h"
+//   54 #include "mac_rx_onoff.h"
+//   55 #include "mac_low_level.h"
+//   56 
+//   57 /* target specific */
+//   58 #include "mac_mcu.h"
+//   59 #include "mac_radio_defs.h"
+//   60 
+//   61 /* debug */
+//   62 #include "mac_assert.h"
+//   63 
+//   64 /* high level */
+//   65 #include "mac_pib.h"
+//   66 
+//   67 /* ------------------------------------------------------------------------------------------------
+//   68  *                                           Defines
+//   69  * ------------------------------------------------------------------------------------------------
+//   70  */
+//   71 
+//   72 /* for optimized indexing of uint32's */
+//   73 #if HAL_MCU_LITTLE_ENDIAN()
+//   74 #define UINT32_NDX0   0
+//   75 #define UINT32_NDX1   1
+//   76 #define UINT32_NDX2   2
+//   77 #define UINT32_NDX3   3
+//   78 #else
+//   79 #define UINT32_NDX0   3
+//   80 #define UINT32_NDX1   2
+//   81 #define UINT32_NDX2   1
+//   82 #define UINT32_NDX3   0
+//   83 #endif
+//   84 
+//   85 /* ------------------------------------------------------------------------------------------------
+//   86 *                                        Global Functions
+//   87 * ------------------------------------------------------------------------------------------------
+//   88 */
+//   89 
+//   90 /* ------------------------------------------------------------------------------------------------
+//   91  *                                        Local Variables
+//   92  * ------------------------------------------------------------------------------------------------
+//   93  */
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   94 uint8       macChipVersion = 0;
+macChipVersion:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   95 static int8 maxRssi;
+maxRssi:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA32
+//   96 static uint32 prevAccumulatedOverflowCount = 0;
+prevAccumulatedOverflowCount:
+        DS 4
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   97 static bool updateRolloverflag = FALSE;
+updateRolloverflag:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA32
+//   98 static uint32 prevoverflowCount = 0;
+prevoverflowCount:
+        DS 4
+        REQUIRE __INIT_XDATA_Z
+//   99 
+//  100 
+//  101 /*
+//  102  *  This number is used to calculate the precision count for OSAL timer update. In Beacon mode,
+//  103  *  the overflow count may be initialized to zero or to a constant. The "skip" in overflow count
+//  104  *  needs to be accounted for in this variable.
+//  105  */
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA32
+//  106 static uint32 accumulatedOverflowCount = 0;
+accumulatedOverflowCount:
+        DS 4
+        REQUIRE __INIT_XDATA_Z
+//  107 
+//  108 /* Function pointer for the random seed callback */
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//  109 static macRNGFcn_t pRandomSeedCB = NULL;
+pRandomSeedCB:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+//  110 /* ------------------------------------------------------------------------------------------------
+//  111  *                                       Local Prototypes
+//  112  * ------------------------------------------------------------------------------------------------
+//  113  */
+//  114 static void mcuRecordMaxRssiIsr(void);
+//  115 static uint32 macMcuOverflowGetCompare(void);
+//  116 void MAC_SetRandomSeedCB(macRNGFcn_t pCBFcn);
+//  117 
+//  118 
+//  119 /**************************************************************************************************
+//  120  * @fn          MAC_SetRandomSeedCB
+//  121  *
+//  122  * @brief       Set the function pointer for the random seed callback.
+//  123  *
+//  124  * @param       pCBFcn - function pointer of the random seed callback
+//  125  *
+//  126  * @return      none
+//  127  **************************************************************************************************
+//  128  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  129 void MAC_SetRandomSeedCB(macRNGFcn_t pCBFcn)
+MAC_SetRandomSeedCB:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function MAC_SetRandomSeedCB
+        CODE
+//  130 {
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  131   pRandomSeedCB = pCBFcn;
+        MOV       DPTR,#pRandomSeedCB
+        MOV       A,R2
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOV       A,R3
+        MOVX      @DPTR,A
+//  132 }
+        SJMP      ??Subroutine7_0
+          CFI EndBlock cfiBlock0
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine0:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA_SP SP+-5
+          CFI CFA_XSP16 add(XSP16, 4)
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI DPH0 Frame(CFA_SP, 5)
+        MOV       A,0xa4
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOVX      @DPTR,A
+        MOV       A,0xa5
+        PUSH      A
+          CFI CFA_SP SP+-6
+        MOV       A,#0x1
+        LCALL     ?XSTACK_DISP0_8
+        POP       A
+          CFI CFA_SP SP+-5
+        MOVX      @DPTR,A
+        MOV       A,0xa6
+        PUSH      A
+          CFI CFA_SP SP+-6
+        MOV       A,#0x2
+        LCALL     ?XSTACK_DISP0_8
+        POP       A
+          CFI CFA_SP SP+-5
+        MOVX      @DPTR,A
+        MOV       A,#0x3
+        LCALL     ?XSTACK_DISP0_8
+        CLR       A
+        MOVX      @DPTR,A
+        MOV       A,R0
+        MOV       C,0xE0 /* A   */.7
+        MOV       0xa8.7,C
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        LCALL     ?XLOAD_R2345
+        MOV       A,#0x4
+          CFI EndBlock cfiBlock1
+        REQUIRE ??Subroutine6_0
+        ; // Fall through to label ??Subroutine6_0
+//  133 
+//  134 /**************************************************************************************************
+//  135  * @fn          macMcuInit
+//  136  *
+//  137  * @brief       Initialize the MCU.
+//  138  *
+//  139  * @param       none
+//  140  *
+//  141  * @return      none
+//  142  **************************************************************************************************
+//  143  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+??Subroutine6_0:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA_SP SP+-5
+          CFI CFA_XSP16 add(XSP16, 32)
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI Invalid
+        LCALL     ?DEALLOC_XSTACK8
+          CFI EndBlock cfiBlock2
+        REQUIRE ??Subroutine7_0
+        ; // Fall through to label ??Subroutine7_0
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+??Subroutine7_0:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA_SP SP+-5
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI DPH0 Frame(CFA_SP, 5)
+        POP       DPH
+          CFI CFA_SP SP+-4
+          CFI DPH0 SameValue
+        POP       DPL
+          CFI CFA_SP SP+-3
+          CFI DPL0 SameValue
+        LJMP      ?BRET
+          CFI EndBlock cfiBlock3
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  144 MAC_INTERNAL_API void macMcuInit(void)
+macMcuInit:
+          CFI Block cfiBlock4 Using cfiCommon0
+          CFI Function macMcuInit
+        CODE
+//  145 {
+        FUNCALL macMcuInit, macRxOn
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 32, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 32, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL macMcuInit, macRxOff
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 32, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 32, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 32
+        MOV       A,#-0x20
+        LCALL     ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 32)
+//  146   halIntState_t  s;
+//  147 
+//  148   /* This CORR_THR value should be changed to 0x14 before attempting RX. Testing has shown that
+//  149    * too many false frames are received if the reset value is used. Make it more likely to detect
+//  150    * sync by removing the requirement that both symbols in the SFD must have a correlation value
+//  151    * above the correlation threshold, and make sync word detection less likely by raising the
+//  152    * correlation threshold.
+//  153    */
+//  154   MDMCTRL1 = CORR_THR;
+        MOV       DPTR,#0x61a9
+        MOV       A,#0x14
+        MOVX      @DPTR,A
+//  155 
+//  156 #ifdef FEATURE_CC253X_LOW_POWER_RX
+//  157   /* Reduce RX power consumption current to 20mA at the cost of some sensitivity
+//  158    * Note: This feature can be applied to CC2530 and CC2533 only.
+//  159    */
+//  160   RXCTRL = 0x00;
+//  161   FSCTRL = 0x50;
+//  162 #else
+//  163   /* tuning adjustments for optimal radio performance; details available in datasheet */
+//  164   RXCTRL = 0x3F;
+        MOV       DPTR,#0x61ab
+        MOV       A,#0x3f
+        MOVX      @DPTR,A
+//  165   
+//  166   /* Adjust current in synthesizer; details available in datasheet. */
+//  167   FSCTRL = 0x55;
+        INC       DPTR
+        MOV       A,#0x55
+        MOVX      @DPTR,A
+//  168 #endif /* #ifdef FEATURE_CC253X_LOW_POWER_RX */ 
+//  169 
+//  170 #if !(defined HAL_PA_LNA || defined HAL_PA_LNA_CC2590 || \ 
+//  171       defined HAL_PA_LNA_SE2431L || defined HAL_PA_LNA_CC2592)
+//  172   /* Raises the CCA threshold from about -108 dBm to about -80 dBm input level.
+//  173    */
+//  174   CCACTRL0 = CCA_THR;
+        MOV       DPTR,#0x6196
+        MOV       A,#-0x4
+        MOVX      @DPTR,A
+//  175 #endif
+//  176 
+//  177   /* Makes sync word detection less likely by requiring two zero symbols before the sync word.
+//  178    * details available in datasheet.
+//  179    */
+//  180   MDMCTRL0 = 0x85;
+        MOV       DPTR,#0x61a8
+        MOV       A,#-0x7b
+        MOVX      @DPTR,A
+//  181 
+//  182   /* In order to make a single library build, CC2533 specific accesses need to
+//  183    * be detected by reading the Chip ID
+//  184    */
+//  185   if ((*(uint8 *)(P_INFOPAGE+0x03) == 0x95) || (*(uint8 *)(P_INFOPAGE+0x03) == 0x34))
+        MOV       DPTR,#0x7803
+        MOVX      A,@DPTR
+        MOV       R0,A
+        MOV       A,#-0x6b
+        XRL       A,R0
+        JZ        ??macMcuInit_0
+        MOV       A,#0x34
+        XRL       A,R0
+        JNZ       ??macMcuInit_1
+//  186   {
+//  187     /* In case the device is a 2533, just update the IVCTRL regoster which is 2533 specific */
+//  188     #define IVCTRL          XREG( 0x6265 )
+//  189     IVCTRL = 0xF;
+??macMcuInit_0:
+        MOV       DPTR,#0x6265
+        MOV       A,#0xf
+        MOVX      @DPTR,A
+//  190     CCACTRL0 = CCA_THR_CC2533; 
+        MOV       DPTR,#0x6196
+        MOV       A,#-0x8
+        MOVX      @DPTR,A
+//  191   }
+//  192 
+//  193   /* Adjust current in VCO; details available in datasheet. */
+//  194 #ifdef FEATURE_VCO_ALTERNATE_SETTING
+//  195   FSCAL1 = 0x80;
+//  196 #else
+//  197   FSCAL1 = 0x00;
+??macMcuInit_1:
+        MOV       DPTR,#0x61ae
+        CLR       A
+        MOVX      @DPTR,A
+//  198 #endif
+//  199 
+//  200   /* Adjust target value for AGC control loop; details available in datasheet. */
+//  201   AGCCTRL1 = 0x15;
+        MOV       DPTR,#0x61b2
+        MOV       A,#0x15
+        MOVX      @DPTR,A
+//  202 
+//  203   /* Disable source address matching an autopend for now */
+//  204   SRCMATCH = 0;
+        MOV       DPTR,#0x6182
+        CLR       A
+        MOVX      @DPTR,A
+//  205 
+//  206   /* Tune ADC performance, details available in datasheet. */
+//  207   ADCTEST0 = 0x10;
+        MOV       DPTR,#0x61b5
+        MOV       A,#0x10
+        MOVX      @DPTR,A
+//  208   ADCTEST1 = 0x0E;
+        INC       DPTR
+        MOV       A,#0xe
+        MOVX      @DPTR,A
+//  209   ADCTEST2 = 0x03;
+        INC       DPTR
+        MOV       A,#0x3
+        MOVX      @DPTR,A
+//  210 
+//  211   /* Sets TX anti-aliasing filter to appropriate bandwidth.
+//  212    * Reduces spurious emissions close to signal.
+//  213    */
+//  214   TXFILTCFG = TXFILTCFG_RESET_VALUE;
+        MOV       DPTR,#0x61fa
+        MOV       A,#0x9
+        MOVX      @DPTR,A
+//  215 
+//  216   /* disable the CSPT register compare function */
+//  217   CSPT = 0xFF;
+        MOV       DPTR,#0x61e5
+        MOV       A,#-0x1
+        MOVX      @DPTR,A
+//  218 
+//  219   /* enable general RF interrupts */
+//  220   IEN2 |= RFIE;
+        ORL       0x9a,#0x1
+//  221 
+//  222   /* enable general REERR interrupts */
+//  223   IEN0 |= RFERRIE;
+        SETB      0xa8.0
+//  224 
+//  225   /* set RF interrupts one notch above lowest priority (four levels available) */
+//  226   IP0 |=  IP_RFERR_RF_DMA_BV;
+        ORL       0xa9,#0x1
+//  227   IP1 &= ~IP_RFERR_RF_DMA_BV;
+        ANL       0xb9,#0xfe
+//  228 
+//  229   /* set T2 interrupts one notch above lowest priority (four levels available)
+//  230    * This effectively turned off nested interrupt between T2 and RF.
+//  231    */
+//  232   IP0 |=  IP_RXTX0_T2_BV;
+        ORL       0xa9,#0x4
+//  233   IP1 &= ~IP_RXTX0_T2_BV;
+        ANL       0xb9,#0xfb
+//  234 
+//  235   /* read chip version */
+//  236   macChipVersion = CHVER;
+        MOV       DPTR,#0x6249
+        MOVX      A,@DPTR
+        MOV       DPTR,#macChipVersion
+        MOVX      @DPTR,A
+//  237 
+//  238   /*-------------------------------------------------------------------------------
+//  239    *  Initialize MAC timer.
+//  240    */
+//  241 
+//  242   /* set timer rollover */
+//  243   HAL_ENTER_CRITICAL_SECTION(s);
+        MOV       R0,0xa8+0x0
+        CLR       0xa8.7
+//  244   MAC_MCU_T2_ACCESS_PERIOD_VALUE();
+        MOV       0xc3,#0x2
+//  245   T2M0 = MAC_RADIO_TIMER_TICKS_PER_BACKOFF() & 0xFF;
+        MOV       0xa2,#0x0
+//  246   T2M1 = MAC_RADIO_TIMER_TICKS_PER_BACKOFF() >> 8;
+        MOV       0xa3,#0x28
+//  247   HAL_EXIT_CRITICAL_SECTION(s);
+        MOV       A,R0
+        MOV       C,0xE0 /* A   */.7
+        MOV       0xa8.7,C
+//  248 
+//  249   /* start timer */
+//  250   MAC_RADIO_TIMER_WAKE_UP();
+??macMcuInit_2:
+        MOV       A,#-0x80
+        XRL       A,0x9e
+        JNZ       ??macMcuInit_2
+        ORL       0x94,#0x3
+??macMcuInit_3:
+        MOV       A,0x94
+        MOV       C,0xE0 /* A   */.2
+        JNC       ??macMcuInit_3
+//  251 
+//  252   /* Enable latch mode and T2 SYNC start. OSAL timer is based on MAC timer.
+//  253    * The SYNC start msut be on when POWER_SAVING is on for this design to work.
+//  254    */
+//  255   T2CTRL |= (LATCH_MODE | TIMER2_SYNC);
+        ORL       0x94,#0xa
+//  256 
+//  257   /* enable timer interrupts */
+//  258   T2IE = 1;
+        SETB      0xb8.2
+//  259 
+//  260  /*----------------------------------------------------------------------------------------------
+//  261   *  Initialize random seed value.
+//  262   */
+//  263 
+//  264   /*
+//  265    *  Set radio for infinite reception.  Once radio reaches this state,
+//  266    *  it will stay in receive mode regardless RF activity.
+//  267    */
+//  268   FRMCTRL0 = FRMCTRL0_RESET_VALUE | RX_MODE_INFINITE_RECEPTION;
+        MOV       DPTR,#0x6189
+        MOV       A,#0x48
+        MOVX      @DPTR,A
+//  269 
+//  270   /* turn on the receiver */
+//  271   macRxOn();
+        ; Setup parameters for call to function macRxOn
+        LCALL     `??macRxOn::?relay`; Banked call to: macRxOn
+//  272 
+//  273   /*
+//  274    *  Wait for radio to reach infinite reception state by checking RSSI valid flag.
+//  275    *  Once it does, the least significant bit of ADTSTH should be pretty random.
+//  276    */
+//  277   while (!(RSSISTAT & 0x01));
+??macMcuInit_4:
+        MOV       DPTR,#0x6199
+        MOVX      A,@DPTR
+        MOV       C,0xE0 /* A   */.0
+        JNC       ??macMcuInit_4
+//  278 
+//  279   /* put 16 random bits into the seed value */
+//  280   {
+//  281     uint16 rndSeed;
+//  282     uint8  i;
+//  283     rndSeed = 0;
+        MOV       R0,#0x0
+        MOV       R1,#0x0
+//  284 
+//  285     for(i=0; i<16; i++)
+        MOV       R2,#0x10
+//  286     {
+//  287       /* use most random bit of analog to digital receive conversion to populate the random seed */
+//  288       rndSeed = (rndSeed << 1) | (RFRND & 0x01);
+??macMcuInit_5:
+        MOV       A,R0
+        ADD       A,0xE0 /* A   */
+        MOV       R0,A
+        MOV       A,R1
+        RLC       A
+        MOV       R1,A
+        MOV       DPTR,#0x61a7
+        MOVX      A,@DPTR
+        MOV       C,0xE0 /* A   */.0
+        CLR       A
+        RLC       A
+        MOV       R4,A
+        MOV       A,R0
+        ORL       A,R4
+        MOV       R0,A
+//  289     }
+        DJNZ      R2,??macMcuInit_5
+//  290 
+//  291     /*
+//  292      *  The seed value must not be zero or 0x0380 (0x8003 in the polynomial).  If it is, the psuedo
+//  293      *  random sequence won’t be random.  There is an extremely small chance this seed could randomly
+//  294      *  be zero or 0x0380.  The following check makes sure this does not happen.
+//  295      */
+//  296     if (rndSeed == 0x0000 || rndSeed == 0x0380)
+        MOV       A,R0
+        ORL       A,R1
+        JZ        ??macMcuInit_6
+        MOV       A,#-0x80
+        XRL       A,R0
+        JNZ       ??macMcuInit_7
+        MOV       A,#0x3
+        XRL       A,R1
+??macMcuInit_7:
+        JNZ       ??macMcuInit_8
+//  297     {
+//  298       rndSeed = 0xBABE; /* completely arbitrary "random" value */
+??macMcuInit_6:
+        MOV       R0,#-0x42
+        MOV       R1,#-0x46
+//  299     }
+//  300 
+//  301     /*
+//  302      *  Two writes to RNDL will set the random seed.  A write to RNDL copies current contents
+//  303      *  of RNDL to RNDH before writing new the value to RNDL.
+//  304      */
+//  305     RNDL = rndSeed & 0xFF;
+??macMcuInit_8:
+        MOV       A,R0
+        MOV       0xbc,A
+//  306     RNDL = rndSeed >> 8;
+        MOV       A,R1
+        MOV       0xbc,A
+//  307   }
+//  308 
+//  309   /* Read MAC_RANDOM_SEED_LEN*8 random bits and store them in flash for
+//  310    * future use in random key generation for CBKE key establishment
+//  311    */
+//  312   if( pRandomSeedCB )
+        MOV       DPTR,#pRandomSeedCB
+        MOVX      A,@DPTR
+        MOV       R0,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       R1,A
+        MOV       A,R0
+        ORL       A,R1
+        JZ        ??macMcuInit_9
+//  313   {
+//  314     uint8 randomSeed[MAC_RANDOM_SEED_LEN];
+//  315     uint8 i,j;
+//  316 
+//  317     for(i = 0; i < MAC_RANDOM_SEED_LEN; i++)
+        MOV       R1,#0x0
+//  318     {
+//  319       uint8 rndByte = 0;
+??macMcuInit_10:
+        MOV       R0,#0x0
+//  320       for(j = 0; j < 8; j++)
+        MOV       R2,#0x8
+//  321       {
+//  322         /* use most random bit of analog to digital receive conversion to
+//  323            populate the random seed */
+//  324         rndByte = (rndByte << 1) | (RFRND & 0x01);
+??macMcuInit_11:
+        MOV       DPTR,#0x61a7
+        MOVX      A,@DPTR
+        MOV       C,0xE0 /* A   */.0
+        CLR       A
+        RLC       A
+        MOV       R3,A
+        MOV       A,R0
+        RLC       A
+        ORL       A,R3
+        MOV       R0,A
+//  325       }
+        DJNZ      R2,??macMcuInit_11
+//  326       randomSeed[i] = rndByte;
+        MOV       A,R1
+        MOV       R2,A
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOV       A,DPL
+        ADD       A,R2
+        MOV       DPL,A
+        CLR       A
+        ADDC      A,DPH
+        MOV       DPH,A
+        MOV       A,R0
+        MOVX      @DPTR,A
+//  327 
+//  328     }
+        INC       R1
+        MOV       A,R1
+        CLR       C
+        SUBB      A,#0x20
+        JC        ??macMcuInit_10
+//  329     pRandomSeedCB( randomSeed );
+        ; Setup parameters for indirect call
+        MOV       R2,?XSP + 0
+        MOV       R3,?XSP + 1
+        MOV       DPTR,#pRandomSeedCB
+        MOVX      A,@DPTR
+        MOV       R0,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       DPH,A
+        MOV       DPL,R0
+        LCALL     ?CALL_IND
+//  330   }
+//  331 
+//  332   /* turn off the receiver */
+//  333   macRxOff();
+??macMcuInit_9:
+        ; Setup parameters for call to function macRxOff
+        LCALL     `??macRxOff::?relay`; Banked call to: macRxOff
+//  334 
+//  335   /* take receiver out of infinite reception mode; set back to normal operation */
+//  336   FRMCTRL0 = FRMCTRL0_RESET_VALUE | RX_MODE_NORMAL_OPERATION;
+        MOV       DPTR,#0x6189
+        MOV       A,#0x40
+        MOVX      @DPTR,A
+//  337 
+//  338   /* Turn on autoack */
+//  339   MAC_RADIO_TURN_ON_AUTO_ACK();
+        MOVX      A,@DPTR
+        SETB      0xE0 /* A   */.5
+        MOVX      @DPTR,A
+//  340 
+//  341   /* Initialize SRCEXTPENDEN and SRCSHORTPENDEN to zeros */
+//  342   MAC_RADIO_SRC_MATCH_INIT_EXTPENDEN();
+        MOV       DPTR,#0x6164
+        CLR       A
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOVX      @DPTR,A
+//  343   MAC_RADIO_SRC_MATCH_INIT_SHORTPENDEN();
+        INC       DPTR
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOVX      @DPTR,A
+//  344 }
+        MOV       A,#0x20
+        LJMP      ??Subroutine6_0 & 0xFFFF
+          CFI EndBlock cfiBlock4
+        REQUIRE IEN2
+        REQUIRE _A_IEN0
+        REQUIRE IP0
+        REQUIRE IP1
+        REQUIRE T2MSEL
+        REQUIRE T2M0
+        REQUIRE T2M1
+        REQUIRE CLKCONSTA
+        REQUIRE T2CTRL
+        REQUIRE _A_IEN1
+        REQUIRE RNDL
+//  345 
+//  346 
+//  347 /**************************************************************************************************
+//  348  * @fn          macMcuRandomByte
+//  349  *
+//  350  * @brief       Returns a random byte using a special hardware feature that generates new
+//  351  *              random values based on the truly random seed set earlier.
+//  352  *
+//  353  * @param       none
+//  354  *
+//  355  * @return      a random byte
+//  356  **************************************************************************************************
+//  357  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  358 MAC_INTERNAL_API uint8 macMcuRandomByte(void)
+macMcuRandomByte:
+          CFI Block cfiBlock5 Using cfiCommon0
+          CFI Function macMcuRandomByte
+        CODE
+//  359 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  360   /* clock the random generator to get a new random value */
+//  361   ADCCON1 = (ADCCON1 & ~RCTRL_BITS) | RCTRL_CLOCK_LFSR;
+        MOV       A,0xb4
+        ANL       A,#0xf3
+        ORL       A,#0x4
+        MOV       0xb4,A
+//  362 
+//  363   /* return new randomized value from hardware */
+//  364   return(RNDH);
+        MOV       A,0xbd
+        MOV       R1,A
+        LJMP      ?BRET
+          CFI EndBlock cfiBlock5
+        REQUIRE ADCCON1
+        REQUIRE RNDH
+//  365 }
+//  366 
+//  367 
+//  368 /**************************************************************************************************
+//  369  * @fn          macMcuRandomWord
+//  370  *
+//  371  * @brief       Returns a random word using a special hardware feature that generates new
+//  372  *              random values based on the truly random seed set earlier.
+//  373  *
+//  374  * @param       none
+//  375  *
+//  376  * @return      a random word
+//  377  **************************************************************************************************
+//  378  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  379 MAC_INTERNAL_API uint16 macMcuRandomWord(void)
+macMcuRandomWord:
+          CFI Block cfiBlock6 Using cfiCommon0
+          CFI Function macMcuRandomWord
+        CODE
+//  380 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  381   uint16 random_word;
+//  382 
+//  383   /* clock the random generator to get a new random value */
+//  384   ADCCON1 = (ADCCON1 & ~RCTRL_BITS) | RCTRL_CLOCK_LFSR;
+        MOV       A,0xb4
+        ANL       A,#0xf3
+        ORL       A,#0x4
+        MOV       0xb4,A
+//  385 
+//  386   /* read random word */
+//  387   random_word  = (RNDH << 8);
+        MOV       A,0xbd+0x0
+//  388   random_word +=  RNDL;
+//  389 
+//  390   /* return new randomized value from hardware */
+//  391   return(random_word);
+        MOV       R1,A
+        MOV       A,0xbc
+        MOV       R2,A
+        MOV       A,R1
+        MOV       R3,A
+        LJMP      ?BRET
+          CFI EndBlock cfiBlock6
+        REQUIRE ADCCON1
+        REQUIRE RNDH
+        REQUIRE RNDL
+//  392 }
+//  393 
+//  394 
+//  395 /**************************************************************************************************
+//  396  * @fn          macMcuTimerForceDelay
+//  397  *
+//  398  * @brief       Delay the timer by the requested number of ticks.
+//  399  *
+//  400  * @param       none
+//  401  *
+//  402  * @return      none
+//  403  **************************************************************************************************
+//  404  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  405 MAC_INTERNAL_API void macMcuTimerForceDelay(uint16 x)
+macMcuTimerForceDelay:
+          CFI Block cfiBlock7 Using cfiCommon0
+          CFI Function macMcuTimerForceDelay
+        CODE
+//  406 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  407   halIntState_t  s;
+//  408 
+//  409   HAL_ENTER_CRITICAL_SECTION(s);
+        MOV       R0,0xa8+0x0
+        CLR       0xa8.7
+//  410   MAC_MCU_T2_ACCESS_COUNT_VALUE();
+        MOV       0xc3,#0x0
+//  411   T2M0 = (x) & 0xFF;
+        MOV       A,R2
+        MOV       0xa2,A
+//  412   T2M1 = (x) >> 8;
+        MOV       A,R3
+        MOV       0xa3,A
+//  413   HAL_EXIT_CRITICAL_SECTION(s);
+        MOV       A,R0
+        MOV       C,0xE0 /* A   */.7
+        MOV       0xa8.7,C
+//  414 }
+        LJMP      ?BRET
+          CFI EndBlock cfiBlock7
+        REQUIRE _A_IEN0
+        REQUIRE T2MSEL
+        REQUIRE T2M0
+        REQUIRE T2M1
+//  415 
+//  416 /**************************************************************************************************
+//  417  * @fn          macMcuTimerCapture
+//  418  *
+//  419  * @brief       Returns the last timer capture.  This capture should have occurred at the
+//  420  *              receive time of the last frame (the last time SFD transitioned to active).
+//  421  *
+//  422  * @param       none
+//  423  *
+//  424  * @return      last capture of hardware timer (full 16-bit value)
+//  425  **************************************************************************************************
+//  426  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  427 MAC_INTERNAL_API uint16 macMcuTimerCapture(void)
+macMcuTimerCapture:
+          CFI Block cfiBlock8 Using cfiCommon0
+          CFI Function macMcuTimerCapture
+        CODE
+//  428 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  429   uint16         timerCapture;
+//  430   halIntState_t  s;
+//  431 
+//  432   HAL_ENTER_CRITICAL_SECTION(s);
+        MOV       R1,0xa8+0x0
+        CLR       0xa8.7
+//  433   MAC_MCU_T2_ACCESS_CAPTURE_VALUE();
+        MOV       0xc3,#0x1
+//  434   timerCapture = T2M1 << 8;
+        MOV       R0,0xa3+0x0
+//  435   timerCapture |= T2M0;
+        MOV       R2,0xa2+0x0
+//  436   HAL_EXIT_CRITICAL_SECTION(s);
+        MOV       A,R1
+        MOV       C,0xE0 /* A   */.7
+        MOV       0xa8.7,C
+//  437 
+//  438   return (timerCapture);
+        MOV       A,R0
+        MOV       R3,A
+        LJMP      ?BRET
+          CFI EndBlock cfiBlock8
+        REQUIRE _A_IEN0
+        REQUIRE T2MSEL
+        REQUIRE T2M1
+        REQUIRE T2M0
+//  439 }
+//  440 
+//  441 
+//  442 /**************************************************************************************************
+//  443  * @fn          macMcuOverflowCount
+//  444  *
+//  445  * @brief       Returns the value of the overflow counter which is a special hardware feature.
+//  446  *              The overflow count actually is 24 bits of information.
+//  447  *
+//  448  * @param       none
+//  449  *
+//  450  * @return      value of overflow counter
+//  451  **************************************************************************************************
+//  452  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  453 MAC_INTERNAL_API uint32 macMcuOverflowCount(void)
+macMcuOverflowCount:
+          CFI Block cfiBlock9 Using cfiCommon0
+          CFI Function macMcuOverflowCount
+        CODE
+//  454 {
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 4
+        MOV       A,#-0x4
+        LCALL     ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 4)
+//  455   uint32         overflowCount;
+//  456   halIntState_t  s;
+//  457 
+//  458   /* for efficiency, the 32-bit value is encoded using endian abstracted indexing */
+//  459 
+//  460   HAL_ENTER_CRITICAL_SECTION(s);
+        MOV       R0,0xa8+0x0
+        CLR       0xa8.7
+//  461 
+//  462   /* This T2 access macro allows accessing both T2MOVFx and T2Mx */
+//  463   MAC_MCU_T2_ACCESS_OVF_COUNT_VALUE();
+        MOV       0xc3,#0x0
+//  464 
+//  465   /* Latch the entire T2MOVFx first by reading T2M0. */
+//  466   T2M0;
+        MOV       A,0xa2
+//  467   ((uint8 *)&overflowCount)[UINT32_NDX0] = T2MOVF0;
+        LJMP      ?Subroutine0 & 0xFFFF
+          CFI EndBlock cfiBlock9
+        REQUIRE _A_IEN0
+        REQUIRE T2MSEL
+        REQUIRE T2M0
+        REQUIRE T2MOVF0
+        REQUIRE T2MOVF1
+        REQUIRE T2MOVF2
+//  468   ((uint8 *)&overflowCount)[UINT32_NDX1] = T2MOVF1;
+//  469   ((uint8 *)&overflowCount)[UINT32_NDX2] = T2MOVF2;
+//  470   ((uint8 *)&overflowCount)[UINT32_NDX3] = 0;
+//  471   HAL_EXIT_CRITICAL_SECTION(s);
+//  472 
+//  473   return (overflowCount);
+//  474 }
+//  475 
+//  476 
+//  477 /**************************************************************************************************
+//  478  * @fn          macMcuOverflowCapture
+//  479  *
+//  480  * @brief       Returns the last capture of the overflow counter.  A special hardware feature
+//  481  *              captures the overflow counter when the regular hardware timer is captured.
+//  482  *
+//  483  * @param       none
+//  484  *
+//  485  * @return      last capture of overflow count
+//  486  **************************************************************************************************
+//  487  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  488 MAC_INTERNAL_API uint32 macMcuOverflowCapture(void)
+macMcuOverflowCapture:
+          CFI Block cfiBlock10 Using cfiCommon0
+          CFI Function macMcuOverflowCapture
+        CODE
+//  489 {
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 4
+        MOV       A,#-0x4
+        LCALL     ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 4)
+//  490   uint32         overflowCapture;
+//  491   halIntState_t  s;
+//  492 
+//  493   /* for efficiency, the 32-bit value is encoded using endian abstracted indexing */
+//  494   HAL_ENTER_CRITICAL_SECTION(s);
+        MOV       R0,0xa8+0x0
+        CLR       0xa8.7
+//  495   MAC_MCU_T2_ACCESS_OVF_CAPTURE_VALUE();
+        MOV       0xc3,#0x10
+//  496   ((uint8 *)&overflowCapture)[UINT32_NDX0] = T2MOVF0;
+        LJMP      ?Subroutine0 & 0xFFFF
+          CFI EndBlock cfiBlock10
+        REQUIRE _A_IEN0
+        REQUIRE T2MSEL
+        REQUIRE T2MOVF0
+        REQUIRE T2MOVF1
+        REQUIRE T2MOVF2
+//  497   ((uint8 *)&overflowCapture)[UINT32_NDX1] = T2MOVF1;
+//  498   ((uint8 *)&overflowCapture)[UINT32_NDX2] = T2MOVF2;
+//  499   ((uint8 *)&overflowCapture)[UINT32_NDX3] = 0;
+//  500   HAL_EXIT_CRITICAL_SECTION(s);
+//  501 
+//  502   return (overflowCapture);
+//  503 }
+//  504 
+//  505 
+//  506 /**************************************************************************************************
+//  507  * @fn          macMcuOverflowSetCount
+//  508  *
+//  509  * @brief       Sets the value of the hardware overflow counter.
+//  510  *
+//  511  * @param       count - new overflow count value
+//  512  *
+//  513  * @return      none
+//  514  **************************************************************************************************
+//  515  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  516 MAC_INTERNAL_API void macMcuOverflowSetCount(uint32 count)
+macMcuOverflowSetCount:
+          CFI Block cfiBlock11 Using cfiCommon0
+          CFI Function macMcuOverflowSetCount
+        CODE
+//  517 {
+        FUNCALL macMcuOverflowSetCount, halAssertHandler
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL macMcuOverflowSetCount, macMcuOverflowCount
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        MOV       A,#-0xc
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 4
+        MOV       A,#-0x4
+        LCALL     ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 16)
+        LCALL     ?Subroutine5 & 0xFFFF
+//  518   halIntState_t  s;
+//  519 
+//  520   MAC_ASSERT(! (count >> 24) );   /* illegal count value */
+??CrossCallReturnLabel_5:
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOV       R0,#?V0
+        LCALL     ?L_MOV_X
+        MOV       DPTR,#__Constant_ff000000
+        MOV       R0,#?V0
+        LCALL     ?L_AND_X
+        LCALL     ?Subroutine4 & 0xFFFF
+??CrossCallReturnLabel_2:
+        JZ        ??macMcuOverflowSetCount_0
+        ; Setup parameters for call to function halAssertHandler
+        LCALL     `??halAssertHandler::?relay`; Banked call to: halAssertHandler
+//  521 
+//  522   /* save the current overflow count */
+//  523   accumulatedOverflowCount += macMcuOverflowCount();
+//  524 
+//  525   /* deduct the initial count */
+//  526   accumulatedOverflowCount -= count;
+??macMcuOverflowSetCount_0:
+        MOV       DPTR,#accumulatedOverflowCount
+        PUSH      DPL
+          CFI CFA_SP SP+-1
+        PUSH      DPH
+          CFI CFA_SP SP+-2
+        ; Setup parameters for call to function macMcuOverflowCount
+        LCALL     `??macMcuOverflowCount::?relay`; Banked call to: macMcuOverflowCount
+        MOV       ?V0,R2
+        MOV       ?V1,R3
+        MOV       ?V2,R4
+        MOV       ?V3,R5
+        POP       DPH
+          CFI CFA_SP SP+-1
+        POP       DPL
+          CFI CFA_SP SP+0
+        MOV       R0,#?V0
+        LCALL     ?L_ADD_X
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOV       R0,#?V0
+        LCALL     ?L_SUB_X
+        MOV       DPTR,#accumulatedOverflowCount
+        MOV       R0,#?V0
+        LCALL     ?L_MOV_TO_X
+//  527 
+//  528   HAL_ENTER_CRITICAL_SECTION(s);
+        MOV       R0,0xa8+0x0
+        CLR       0xa8.7
+//  529   MAC_MCU_T2_ACCESS_OVF_COUNT_VALUE();
+        MOV       0xc3,#0x0
+//  530 
+//  531   /* for efficiency, the 32-bit value is decoded using endian abstracted indexing */
+//  532   /* T2OF2 must be written last */
+//  533   T2MOVF0 = ((uint8 *)&count)[UINT32_NDX0];
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOVX      A,@DPTR
+        MOV       0xa4,A
+//  534   T2MOVF1 = ((uint8 *)&count)[UINT32_NDX1];
+        MOV       A,#0x1
+        LCALL     ?XSTACK_DISP0_8
+        MOVX      A,@DPTR
+        MOV       0xa5,A
+//  535   T2MOVF2 = ((uint8 *)&count)[UINT32_NDX2];
+        MOV       A,#0x2
+        LCALL     ?XSTACK_DISP0_8
+        MOVX      A,@DPTR
+        MOV       0xa6,A
+//  536   HAL_EXIT_CRITICAL_SECTION(s);
+        MOV       A,R0
+        MOV       C,0xE0 /* A   */.7
+        LJMP      ??Subroutine8_0 & 0xFFFF
+          CFI EndBlock cfiBlock11
+        REQUIRE _A_IEN0
+        REQUIRE T2MSEL
+        REQUIRE T2MOVF0
+        REQUIRE T2MOVF1
+        REQUIRE T2MOVF2
+//  537 }
+//  538 
+//  539 
+//  540 /**************************************************************************************************
+//  541  * @fn          macMcuOverflowSetCompare
+//  542  *
+//  543  * @brief       Set overflow count compare value.  An interrupt is triggered when the overflow
+//  544  *              count equals this compare value.
+//  545  *
+//  546  * @param       count - overflow count compare value
+//  547  *
+//  548  * @return      none
+//  549  **************************************************************************************************
+//  550  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  551 MAC_INTERNAL_API void macMcuOverflowSetCompare(uint32 count)
+macMcuOverflowSetCompare:
+          CFI Block cfiBlock12 Using cfiCommon0
+          CFI Function macMcuOverflowSetCompare
+        CODE
+//  552 {
+        FUNCALL macMcuOverflowSetCompare, halAssertHandler
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        MOV       A,#-0xc
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 4
+        MOV       A,#-0x4
+        LCALL     ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 16)
+        LCALL     ?Subroutine3 & 0xFFFF
+//  553   halIntState_t  s;
+//  554   uint8 enableCompareInt = 0;
+//  555 
+//  556   MAC_ASSERT( !(count >> 24) );   /* illegal count value */
+??CrossCallReturnLabel_0:
+        LCALL     ?L_MOV_X
+        MOV       DPTR,#__Constant_ff000000
+        MOV       R0,#?V0
+        LCALL     ?L_AND_X
+        LCALL     ?Subroutine4 & 0xFFFF
+??CrossCallReturnLabel_3:
+        JZ        ??macMcuOverflowSetCompare_0
+        ; Setup parameters for call to function halAssertHandler
+        LCALL     `??halAssertHandler::?relay`; Banked call to: halAssertHandler
+//  557 
+//  558   HAL_ENTER_CRITICAL_SECTION(s);
+??macMcuOverflowSetCompare_0:
+        MOV       C,0xa8.7
+        CLR       A
+        RLC       A
+        MOV       R0,A
+        CLR       0xa8.7
+//  559 
+//  560   /*  Disable overflow compare interrupts. */
+//  561   if (T2IRQM & TIMER2_OVF_COMPARE1M)
+        MOV       A,0xa7
+        MOV       C,0xE0 /* A   */.4
+        JNC       ??macMcuOverflowSetCompare_1
+//  562   {
+//  563     enableCompareInt = 1;
+        SETB      ?VB.0
+//  564     T2IRQM &= ~TIMER2_OVF_COMPARE1M;
+        ANL       0xa7,#0xef
+//  565   }
+//  566 
+//  567   MAC_MCU_T2_ACCESS_OVF_CMP1_VALUE();
+??macMcuOverflowSetCompare_1:
+        MOV       0xc3,#0x30
+//  568 
+//  569   /* for efficiency, the 32-bit value is decoded using endian abstracted indexing */
+//  570   T2MOVF0 = ((uint8 *)&count)[UINT32_NDX0];
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOVX      A,@DPTR
+        MOV       0xa4,A
+//  571   T2MOVF1 = ((uint8 *)&count)[UINT32_NDX1];
+        MOV       A,#0x1
+        LCALL     ?XSTACK_DISP0_8
+        MOVX      A,@DPTR
+        MOV       0xa5,A
+//  572   T2MOVF2 = ((uint8 *)&count)[UINT32_NDX2];
+        MOV       A,#0x2
+        LCALL     ?XSTACK_DISP0_8
+        MOVX      A,@DPTR
+        MOV       0xa6,A
+//  573 
+//  574   /*
+//  575    *  Now that new compare value is stored, clear the interrupt flag.  This is important just
+//  576    *  in case a false match was generated as the multi-byte compare value was written.
+//  577    */
+//  578   T2IRQF = (TIMER2_OVF_COMPARE1F ^ 0xFF);
+        MOV       0xa1,#-0x11
+//  579 
+//  580   /* re-enable overflow compare interrupts if they were previously enabled */
+//  581   if (enableCompareInt)
+        MOV       C,?VB.0
+        JNC       ??macMcuOverflowSetCompare_2
+//  582   {
+//  583     T2IRQM |= TIMER2_OVF_COMPARE1M;
+        ORL       0xa7,#0x10
+//  584   }
+//  585 
+//  586   HAL_EXIT_CRITICAL_SECTION(s);
+??macMcuOverflowSetCompare_2:
+        MOV       A,R0
+        LJMP      ?Subroutine1 & 0xFFFF
+          CFI EndBlock cfiBlock12
+        REQUIRE _A_IEN0
+        REQUIRE T2IRQM
+        REQUIRE T2MSEL
+        REQUIRE T2MOVF0
+        REQUIRE T2MOVF1
+        REQUIRE T2MOVF2
+        REQUIRE T2IRQF
+//  587 }
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine4:
+          CFI Block cfiCond13 Using cfiCommon0
+          CFI Function macMcuOverflowSetCount
+          CFI Conditional ??CrossCallReturnLabel_2
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI CFA_SP SP+-2
+          CFI CFA_XSP16 add(XSP16, 16)
+          CFI Block cfiCond14 Using cfiCommon0
+          CFI (cfiCond14) Function macMcuOverflowSetCompare
+          CFI (cfiCond14) Conditional ??CrossCallReturnLabel_3
+          CFI (cfiCond14) R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond14) VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond14) V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond14) V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond14) V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond14) V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond14) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond14) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond14) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond14) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond14) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond14) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond14) CFA_SP SP+-2
+          CFI (cfiCond14) CFA_XSP16 add(XSP16, 16)
+          CFI Block cfiCond15 Using cfiCommon0
+          CFI (cfiCond15) Function macMcuOverflowSetPeriod
+          CFI (cfiCond15) Conditional ??CrossCallReturnLabel_4
+          CFI (cfiCond15) R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond15) VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond15) V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond15) V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond15) V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond15) V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond15) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond15) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond15) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond15) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond15) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond15) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond15) CFA_SP SP+-2
+          CFI (cfiCond15) CFA_XSP16 add(XSP16, 16)
+          CFI Block cfiPicker16 Using cfiCommon1
+          CFI (cfiPicker16) NoFunction
+          CFI (cfiPicker16) Picker
+        MOV       A,?V0
+        ORL       A,?V1
+        ORL       A,?V2
+        ORL       A,?V3
+        RET
+          CFI EndBlock cfiCond13
+          CFI EndBlock cfiCond14
+          CFI EndBlock cfiCond15
+          CFI EndBlock cfiPicker16
+//  588 
+//  589 
+//  590 /**************************************************************************************************
+//  591  * @fn          macMcuOverflowSetPeriod
+//  592  *
+//  593  * @brief       Set overflow count period value.  An interrupt is triggered when the overflow
+//  594  *              count equals this period value.
+//  595  *
+//  596  * @param       count - overflow count compare value
+//  597  *
+//  598  * @return      none
+//  599  **************************************************************************************************
+//  600  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  601 MAC_INTERNAL_API void macMcuOverflowSetPeriod(uint32 count)
+macMcuOverflowSetPeriod:
+          CFI Block cfiBlock17 Using cfiCommon0
+          CFI Function macMcuOverflowSetPeriod
+        CODE
+//  602 {
+        FUNCALL macMcuOverflowSetPeriod, halAssertHandler
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL macMcuOverflowSetPeriod, halSetMaxSleepLoopTime
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        MOV       A,#-0xc
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 4
+        MOV       A,#-0x4
+        LCALL     ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 16)
+        LCALL     ?Subroutine3 & 0xFFFF
+//  603   halIntState_t  s;
+//  604   uint8 enableCompareInt = 0;
+//  605 
+//  606   MAC_ASSERT( !(count >> 24) );   /* illegal count value */
+??CrossCallReturnLabel_1:
+        LCALL     ?L_MOV_X
+        MOV       DPTR,#__Constant_ff000000
+        MOV       R0,#?V0
+        LCALL     ?L_AND_X
+        LCALL     ?Subroutine4 & 0xFFFF
+??CrossCallReturnLabel_4:
+        JZ        ??macMcuOverflowSetPeriod_0
+        ; Setup parameters for call to function halAssertHandler
+        LCALL     `??halAssertHandler::?relay`; Banked call to: halAssertHandler
+//  607 
+//  608   HAL_ENTER_CRITICAL_SECTION(s);
+??macMcuOverflowSetPeriod_0:
+        MOV       C,0xa8.7
+        CLR       A
+        RLC       A
+        MOV       R6,A
+        CLR       0xa8.7
+//  609 
+//  610   /*  Disable overflow compare interrupts. */
+//  611   if (T2IRQM & TIMER2_OVF_PERM)
+        MOV       A,0xa7
+        MOV       C,0xE0 /* A   */.3
+        JNC       ??macMcuOverflowSetPeriod_1
+//  612   {
+//  613     enableCompareInt = 1;
+        SETB      ?VB.0
+//  614     T2IRQM &= ~TIMER2_OVF_PERM;
+        ANL       0xa7,#0xf7
+//  615   }
+//  616 
+//  617   MAC_MCU_T2_ACCESS_OVF_PERIOD_VALUE();
+??macMcuOverflowSetPeriod_1:
+        MOV       0xc3,#0x20
+//  618 
+//  619   /* for efficiency, the 32-bit value is decoded using endian abstracted indexing */
+//  620   T2MOVF0 = ((uint8 *)&count)[UINT32_NDX0];
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOVX      A,@DPTR
+        MOV       0xa4,A
+//  621   T2MOVF1 = ((uint8 *)&count)[UINT32_NDX1];
+        MOV       A,#0x1
+        LCALL     ?XSTACK_DISP0_8
+        MOVX      A,@DPTR
+        MOV       0xa5,A
+//  622   T2MOVF2 = ((uint8 *)&count)[UINT32_NDX2];
+        MOV       A,#0x2
+        LCALL     ?XSTACK_DISP0_8
+        MOVX      A,@DPTR
+        MOV       0xa6,A
+//  623 
+//  624   /*
+//  625    *  Now that new compare value is stored, clear the interrupt flag.  This is important just
+//  626    *  in case a false match was generated as the multi-byte compare value was written.
+//  627    */
+//  628   T2IRQF &= ~TIMER2_OVF_PERF;
+        ANL       0xa1,#0xf7
+//  629 
+//  630   /* re-enable overflow compare interrupts if they were previously enabled */
+//  631   if (enableCompareInt)
+        MOV       C,?VB.0
+        JNC       ??macMcuOverflowSetPeriod_2
+//  632   {
+//  633     T2IRQM |= TIMER2_OVF_PERM;
+        ORL       0xa7,#0x8
+//  634   }
+//  635   halSetMaxSleepLoopTime(count);
+??macMcuOverflowSetPeriod_2:
+        ; Setup parameters for call to function halSetMaxSleepLoopTime
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        LCALL     ?XLOAD_R2345
+        LCALL     `??halSetMaxSleepLoopTime::?relay`; Banked call to: halSetMaxSleepLoopTime
+//  636   HAL_EXIT_CRITICAL_SECTION(s);
+        MOV       A,R6
+        LJMP      ?Subroutine1 & 0xFFFF
+          CFI EndBlock cfiBlock17
+        REQUIRE _A_IEN0
+        REQUIRE T2IRQM
+        REQUIRE T2MSEL
+        REQUIRE T2MOVF0
+        REQUIRE T2MOVF1
+        REQUIRE T2MOVF2
+        REQUIRE T2IRQF
+//  637 }
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine3:
+          CFI Block cfiCond18 Using cfiCommon0
+          CFI Function macMcuOverflowSetCompare
+          CFI Conditional ??CrossCallReturnLabel_0
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI CFA_SP SP+-2
+          CFI CFA_XSP16 add(XSP16, 16)
+          CFI Block cfiCond19 Using cfiCommon0
+          CFI (cfiCond19) Function macMcuOverflowSetPeriod
+          CFI (cfiCond19) Conditional ??CrossCallReturnLabel_1
+          CFI (cfiCond19) R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond19) VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond19) V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond19) V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond19) V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond19) V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond19) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond19) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond19) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond19) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond19) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond19) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond19) CFA_SP SP+-2
+          CFI (cfiCond19) CFA_XSP16 add(XSP16, 16)
+          CFI Block cfiPicker20 Using cfiCommon1
+          CFI (cfiPicker20) NoFunction
+          CFI (cfiPicker20) Picker
+        LCALL     ?Subroutine5 & 0xFFFF
+??CrossCallReturnLabel_6:
+        CLR       ?VB.0
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOV       R0,#?V0
+        RET
+          CFI EndBlock cfiCond18
+          CFI EndBlock cfiCond19
+          CFI EndBlock cfiPicker20
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine5:
+          CFI Block cfiCond21 Using cfiCommon0
+          CFI Function macMcuOverflowSetCount
+          CFI Conditional ??CrossCallReturnLabel_5
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI CFA_SP SP+-2
+          CFI CFA_XSP16 add(XSP16, 16)
+          CFI Block cfiCond22 Using cfiCommon0
+          CFI (cfiCond22) Function macMcuOverflowSetCompare
+          CFI (cfiCond22) Conditional ??CrossCallReturnLabel_6, ??CrossCallReturnLabel_0
+          CFI (cfiCond22) R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond22) VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond22) V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond22) V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond22) V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond22) V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond22) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond22) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond22) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond22) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond22) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond22) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond22) CFA_SP SP+-4
+          CFI (cfiCond22) CFA_XSP16 add(XSP16, 16)
+          CFI Block cfiCond23 Using cfiCommon0
+          CFI (cfiCond23) Function macMcuOverflowSetPeriod
+          CFI (cfiCond23) Conditional ??CrossCallReturnLabel_6, ??CrossCallReturnLabel_1
+          CFI (cfiCond23) R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI (cfiCond23) VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI (cfiCond23) V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI (cfiCond23) V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond23) V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond23) V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond23) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond23) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond23) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond23) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond23) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond23) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond23) CFA_SP SP+-4
+          CFI (cfiCond23) CFA_XSP16 add(XSP16, 16)
+          CFI Block cfiPicker24 Using cfiCommon1
+          CFI (cfiPicker24) NoFunction
+          CFI (cfiPicker24) Picker
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOV       A,R2
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOV       A,R3
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOV       A,R4
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOV       A,R5
+        MOVX      @DPTR,A
+        RET
+          CFI EndBlock cfiCond21
+          CFI EndBlock cfiCond22
+          CFI EndBlock cfiCond23
+          CFI EndBlock cfiPicker24
+//  638 
+//  639 
+//  640 /**************************************************************************************************
+//  641  * @fn          macMcuOverflowGetCompare
+//  642  *
+//  643  * @brief       Get overflow count compare value.
+//  644  *
+//  645  * @param       none
+//  646  *
+//  647  * @return      overflow count compare value
+//  648  **************************************************************************************************
+//  649  */
+//  650 MAC_INTERNAL_API uint32 macMcuOverflowGetCompare(void)
+//  651 {
+//  652   halIntState_t  s;
+//  653   uint32         compare;
+//  654 
+//  655   HAL_ENTER_CRITICAL_SECTION(s);
+//  656 
+//  657   MAC_MCU_T2_ACCESS_OVF_CMP1_VALUE();
+//  658 
+//  659   /* for efficiency, the 32-bit value is decoded using endian abstracted indexing */
+//  660   ((uint8 *)&compare)[UINT32_NDX0] = T2MOVF0;
+//  661   ((uint8 *)&compare)[UINT32_NDX1] = T2MOVF1;
+//  662   ((uint8 *)&compare)[UINT32_NDX2] = T2MOVF2;
+//  663   ((uint8 *)&compare)[UINT32_NDX3] = 0;
+//  664 
+//  665   HAL_EXIT_CRITICAL_SECTION(s);
+//  666 
+//  667   return(compare);
+//  668 }
+//  669 
+//  670 
+//  671 /**************************************************************************************************
+//  672  * @fn          macMcuTimer2Isr
+//  673  *
+//  674  * @brief       Interrupt service routine for timer2, the MAC timer.
+//  675  *
+//  676  * @param       none
+//  677  *
+//  678  * @return      none
+//  679  **************************************************************************************************
+//  680  */
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  681 HAL_ISR_FUNCTION( macMcuTimer2Isr, T2_VECTOR )
+macMcuTimer2Isr:
+          CFI Block cfiBlock25 Using cfiCommon1
+          CFI Function macMcuTimer2Isr
+        CODE
+//  682 {
+        FUNCALL macMcuTimer2Isr, macBackoffTimerCompareIsr
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL macMcuTimer2Isr, macBackoffTimerPeriodIsr
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        PUSH      A
+          CFI A Frame(CFA_SP, 3)
+          CFI CFA_SP SP+-3
+        MOV       A,#-0xf
+        LCALL     ?INTERRUPT_ENTER_XSP
+          CFI B load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI PSW load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R5 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R4 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI R3 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI R2 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI R1 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI R0 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI CFA_XSP16 add(XSP16, 15)
+        ; Saved register size: 15
+        ; Auto size: 0
+//  683   uint8 t2irqm;
+//  684   uint8 t2irqf;
+//  685 
+//  686   HAL_ENTER_ISR();
+        MOV       C,0xa8.7
+        CLR       A
+        RLC       A
+        MOV       ?V1,A
+        SETB      0xa8.7
+//  687 
+//  688   t2irqm = T2IRQM;
+        MOV       ?V0,0xa7+0x0
+//  689   t2irqf = T2IRQF;
+        MOV       R7,0xa1+0x0
+//  690 
+//  691   /*------------------------------------------------------------------------------------------------
+//  692    *  Overflow compare interrupt - triggers when then overflow counter is
+//  693    *  equal to the overflow compare register.
+//  694    */
+//  695   if ((t2irqf & TIMER2_OVF_COMPARE1F) & t2irqm)
+        MOV       A,R7
+        ANL       A,?V0
+        MOV       R6,A
+        MOV       A,#0x10
+        ANL       A,R6
+        JZ        ??macMcuTimer2Isr_0
+//  696   {
+//  697 
+//  698     /* call function for dealing with the timer compare interrupt */
+//  699     macBackoffTimerCompareIsr();
+        ; Setup parameters for call to function macBackoffTimerCompareIsr
+        LCALL     `??macBackoffTimerCompareIsr::?relay`; Banked call to: macBackoffTimerCompareIsr
+//  700 
+//  701     /* clear overflow compare interrupt flag */
+//  702     T2IRQF = (TIMER2_OVF_COMPARE1F ^ 0xFF);
+        MOV       0xa1,#-0x11
+//  703   }
+//  704 
+//  705   /*------------------------------------------------------------------------------------------------
+//  706    *  Overflow compare interrupt - triggers when then overflow counter is
+//  707    *  equal to the overflow compare register.
+//  708    */
+//  709   if ((t2irqf & TIMER2_OVF_PERF) & t2irqm)
+??macMcuTimer2Isr_0:
+        MOV       A,#0x8
+        ANL       A,R6
+        JZ        ??macMcuTimer2Isr_1
+//  710   {
+//  711 
+//  712     /* call function for dealing with the timer compare interrupt */
+//  713     macBackoffTimerPeriodIsr();
+        ; Setup parameters for call to function macBackoffTimerPeriodIsr
+        LCALL     `??macBackoffTimerPeriodIsr::?relay`; Banked call to: macBackoffTimerPeriodIsr
+//  714 
+//  715     /* clear overflow compare interrupt flag */
+//  716     T2IRQF = (TIMER2_OVF_PERF ^ 0xFF);
+        MOV       0xa1,#-0x9
+        SJMP      ??macMcuTimer2Isr_2
+//  717   }
+//  718 
+//  719   /*------------------------------------------------------------------------------------------------
+//  720    *  Overflow interrupt - triggers when the hardware timer rolls over.
+//  721    */
+//  722   else if ((t2irqf & TIMER2_PERF) & t2irqm)
+??macMcuTimer2Isr_1:
+        MOV       A,R7
+        MOV       C,0xE0 /* A   */.0
+        MOV       B.0,C
+        MOV       A,?V0
+        MOV       C,0xE0 /* A   */.0
+        ANL       C,B.0
+        JNC       ??macMcuTimer2Isr_2
+//  723   {
+//  724     /* call energy detect interrupt function, this interrupt not used for any other functionality */
+//  725     mcuRecordMaxRssiIsr();
+        MOV       DPTR,#0x6198
+        MOVX      A,@DPTR
+        MOV       R0,A
+        MOV       DPTR,#maxRssi
+        MOVX      A,@DPTR
+        CLR       C
+        SUBB      A,R0
+        MOV       C,0xD0 /* PSW */.2
+        XRL       A,PSW
+        RLC       A
+        JNC       ??macMcuTimer2Isr_3
+        MOV       A,R0
+        MOVX      @DPTR,A
+//  726 
+//  727     /* clear the interrupt flag */
+//  728     T2IRQF = (TIMER2_PERF ^ 0xFF);
+??macMcuTimer2Isr_3:
+        MOV       0xa1,#-0x2
+//  729   }
+//  730 
+//  731   CLEAR_SLEEP_MODE();
+//  732   HAL_EXIT_ISR();
+??macMcuTimer2Isr_2:
+        MOV       A,?V1
+        MOV       C,0xE0 /* A   */.0
+        MOV       0xa8.7,C
+//  733 }
+        MOV       R7,#0x2
+        LJMP      ?INTERRUPT_LEAVE_XSP
+          CFI EndBlock cfiBlock25
+        REQUIRE _A_IEN0
+        REQUIRE T2IRQM
+        REQUIRE T2IRQF
+//  734 
+//  735 
+//  736 /**************************************************************************************************
+//  737  * @fn          macMcuTimer2OverflowWorkaround
+//  738  *
+//  739  * @brief       For CC2530, T2 interrupt won’t be generated when the current count is greater than
+//  740  *              the comparator. The interrupt is only generated when the current count is equal to
+//  741  *              the comparator. When the CC2530 is waking up from sleep, there is a small window
+//  742  *              that the count may be grater than the comparator, therefore, missing the interrupt.
+//  743  *              This workaround will call the T2 ISR when the current T2 count is greater than the
+//  744  *              comparator.
+//  745  *
+//  746  * @param       none
+//  747  *
+//  748  * @return      none
+//  749  **************************************************************************************************
+//  750  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  751 void macMcuTimer2OverflowWorkaround(void)
+macMcuTimer2OverflowWorkaround:
+          CFI Block cfiBlock26 Using cfiCommon0
+          CFI Function macMcuTimer2OverflowWorkaround
+        CODE
+//  752 {
+        FUNCALL macMcuTimer2OverflowWorkaround, macMcuOverflowCount
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL macMcuTimer2OverflowWorkaround, macBackoffTimerCompareIsr
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        MOV       A,#-0xc
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 4
+        MOV       A,#-0x4
+        LCALL     ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 16)
+//  753   if (T2IRQM & TIMER2_OVF_COMPARE1F)
+        MOV       A,0xa7
+        MOV       C,0xE0 /* A   */.4
+        JNC       ??macMcuTimer2OverflowWorkaround_0
+//  754   {
+//  755     /* T2 comapre 1 interrupt is enabled but T2 compare 1 intererrupt is not generated */
+//  756     if (!(T2IRQF & TIMER2_OVF_COMPARE1F))
+        MOV       A,0xa1
+        MOV       C,0xE0 /* A   */.4
+        JC        ??macMcuTimer2OverflowWorkaround_0
+//  757     {
+//  758       if (MAC_RADIO_BACKOFF_COUNT() > macMcuOverflowGetCompare())
+        MOV       R0,0xa8+0x0
+        CLR       0xa8.7
+        MOV       0xc3,#0x30
+        MOV       A,0xa4
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOVX      @DPTR,A
+        MOV       A,0xa5
+        PUSH      A
+          CFI CFA_SP SP+-1
+        MOV       A,#0x1
+        LCALL     ?XSTACK_DISP0_8
+        POP       A
+          CFI CFA_SP SP+0
+        MOVX      @DPTR,A
+        MOV       A,0xa6
+        PUSH      A
+          CFI CFA_SP SP+-1
+        MOV       A,#0x2
+        LCALL     ?XSTACK_DISP0_8
+        POP       A
+          CFI CFA_SP SP+0
+        MOVX      @DPTR,A
+        MOV       A,#0x3
+        LCALL     ?XSTACK_DISP0_8
+        CLR       A
+        MOVX      @DPTR,A
+        MOV       A,R0
+        MOV       C,0xE0 /* A   */.7
+        MOV       0xa8.7,C
+        ; Setup parameters for call to function macMcuOverflowCount
+        LCALL     `??macMcuOverflowCount::?relay`; Banked call to: macMcuOverflowCount
+        MOV       ?V0,R2
+        MOV       ?V1,R3
+        MOV       ?V2,R4
+        MOV       ?V3,R5
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOV       R0,#?V0
+        LCALL     ?UL_GT_X
+        JNC       ??macMcuTimer2OverflowWorkaround_0
+//  759       {
+//  760         /* Set the flag to trigger the timer compare interrupt */
+//  761         macBackoffTimerCompareIsr();
+        ; Setup parameters for call to function macBackoffTimerCompareIsr
+        LCALL     `??macBackoffTimerCompareIsr::?relay`; Banked call to: macBackoffTimerCompareIsr
+//  762         T2IRQF = (TIMER2_OVF_COMPARE1F ^ 0xFF);
+        MOV       0xa1,#-0x11
+//  763       }
+//  764     }
+//  765   }
+//  766 }
+??macMcuTimer2OverflowWorkaround_0:
+        SJMP      ??Subroutine9_0
+          CFI EndBlock cfiBlock26
+        REQUIRE T2IRQM
+        REQUIRE T2IRQF
+        REQUIRE _A_IEN0
+        REQUIRE T2MSEL
+        REQUIRE T2MOVF0
+        REQUIRE T2MOVF1
+        REQUIRE T2MOVF2
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine1:
+          CFI Block cfiBlock27 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 16)
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        MOV       C,0xE0 /* A   */.0
+          CFI EndBlock cfiBlock27
+        REQUIRE ??Subroutine8_0
+        ; // Fall through to label ??Subroutine8_0
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+??Subroutine8_0:
+          CFI Block cfiBlock28 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 16)
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        MOV       0xa8.7,C
+          CFI EndBlock cfiBlock28
+        REQUIRE ??Subroutine9_0
+        ; // Fall through to label ??Subroutine9_0
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+??Subroutine9_0:
+          CFI Block cfiBlock29 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 16)
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        MOV       A,#0x4
+        LCALL     ?DEALLOC_XSTACK8
+          CFI EndBlock cfiBlock29
+        REQUIRE ??Subroutine10_0
+        ; // Fall through to label ??Subroutine10_0
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+??Subroutine10_0:
+          CFI Block cfiBlock30 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 12)
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        MOV       R7,#0x4
+        LJMP      ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock30
+//  767 
+//  768 
+//  769 /**************************************************************************************************
+//  770  * @fn          macMcuPrecisionCount
+//  771  *
+//  772  * @brief       This function is used by higher layer to read a free running counter driven by
+//  773  *              MAC timer.
+//  774  *
+//  775  * @param       none
+//  776  *
+//  777  * @return      overflowCount
+//  778  **************************************************************************************************
+//  779  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  780 uint32 macMcuPrecisionCount(void)
+macMcuPrecisionCount:
+          CFI Block cfiBlock31 Using cfiCommon0
+          CFI Function macMcuPrecisionCount
+        CODE
+//  781 {
+        FUNCALL macMcuPrecisionCount, macGetBackOffTimerRollover
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL macMcuPrecisionCount, macGetBackOffTimerRollover
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        MOV       A,#-0xc
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 4
+        MOV       A,#-0x4
+        LCALL     ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 16)
+//  782   uint32         overflowCount = 0;
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        CLR       A
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOVX      @DPTR,A
+//  783   halIntState_t  s;
+//  784 
+//  785   HAL_ENTER_CRITICAL_SECTION(s);
+        MOV       C,0xa8.7
+        RLC       A
+        MOV       R6,A
+        CLR       0xa8.7
+//  786 
+//  787   /* This T2 access macro allows accessing both T2MOVFx and T2Mx */
+//  788   MAC_MCU_T2_ACCESS_OVF_COUNT_VALUE();
+        MOV       0xc3,#0x0
+//  789 
+//  790   /* Latch the entire T2MOVFx first by reading T2M0.
+//  791    * T2M0 is discarded.
+//  792    */
+//  793   T2M0;
+        MOV       A,0xa2
+//  794   ((uint8 *)&overflowCount)[UINT32_NDX0] = T2MOVF0;
+        MOV       A,0xa4
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOVX      @DPTR,A
+//  795   ((uint8 *)&overflowCount)[UINT32_NDX1] = T2MOVF1;
+        MOV       A,0xa5
+        PUSH      A
+          CFI CFA_SP SP+-1
+        MOV       A,#0x1
+        LCALL     ?XSTACK_DISP0_8
+        POP       A
+          CFI CFA_SP SP+0
+        MOVX      @DPTR,A
+//  796   ((uint8 *)&overflowCount)[UINT32_NDX2] = T2MOVF2;
+        MOV       A,0xa6
+        PUSH      A
+          CFI CFA_SP SP+-1
+        MOV       A,#0x2
+        LCALL     ?XSTACK_DISP0_8
+        POP       A
+          CFI CFA_SP SP+0
+        MOVX      @DPTR,A
+//  797 
+//  798   /* the overflowCount needs to account for the accumulated overflow count in Beacon mode */
+//  799   overflowCount += accumulatedOverflowCount;
+        MOV       DPTR,#accumulatedOverflowCount
+        MOV       R0,#?V0
+        LCALL     ?L_MOV_X
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOV       R0,#?V0
+        LCALL     ?L_ADD_TO_X
+//  800 
+//  801   /*
+//  802    * Workaround to take care of the case where a rollover just occured and the call to
+//  803    * macBackoffTimerPeriodIsr() hasn't yet occured or if one rollover occured during
+//  804    * sleep then update the accumulatedoverflowCount with the rollover
+//  805    */
+//  806   if((prevoverflowCount > overflowCount) && (prevAccumulatedOverflowCount == accumulatedOverflowCount))
+        MOV       DPTR,#prevoverflowCount
+        MOV       R0,#?V0
+        LCALL     ?L_MOV_X
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOV       R0,#?V0
+        LCALL     ?UL_GT_X
+        JNC       ??macMcuPrecisionCount_0
+        MOV       DPTR,#accumulatedOverflowCount
+        MOV       R0,#?V0
+        LCALL     ?L_MOV_X
+        MOV       DPTR,#prevAccumulatedOverflowCount
+        MOV       R0,#?V0
+        LCALL     ?L_EQ_X
+        JNZ       ??macMcuPrecisionCount_0
+//  807   {
+//  808     accumulatedOverflowCount += macGetBackOffTimerRollover();
+        ; Setup parameters for call to function macGetBackOffTimerRollover
+        LCALL     `??macGetBackOffTimerRollover::?relay`; Banked call to: macGetBackOffTimerRollover
+        MOV       ?V0,R2
+        MOV       ?V1,R3
+        MOV       ?V2,R4
+        MOV       ?V3,R5
+        MOV       DPTR,#accumulatedOverflowCount
+        MOV       R0,#?V0
+        LCALL     ?L_ADD_TO_X
+//  809     overflowCount += macGetBackOffTimerRollover();
+        ; Setup parameters for call to function macGetBackOffTimerRollover
+        LCALL     `??macGetBackOffTimerRollover::?relay`; Banked call to: macGetBackOffTimerRollover
+        MOV       ?V0,R2
+        MOV       ?V1,R3
+        MOV       ?V2,R4
+        MOV       ?V3,R5
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        MOV       R0,#?V0
+        LCALL     ?L_ADD_TO_X
+//  810     /*don't update the rollover since it has been updated already */
+//  811     updateRolloverflag = TRUE;
+        MOV       DPTR,#updateRolloverflag
+        MOV       A,#0x1
+        MOVX      @DPTR,A
+//  812   }
+//  813 
+//  814   /* store the current value of overflowcount and accumulatedOverflowCount */
+//  815   prevoverflowCount = overflowCount;
+??macMcuPrecisionCount_0:
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        LCALL     ?XLOAD_R0123
+        MOV       DPTR,#prevoverflowCount
+        LCALL     ?XSTORE_R0123
+//  816   prevAccumulatedOverflowCount = accumulatedOverflowCount;
+        MOV       DPTR,#accumulatedOverflowCount
+        LCALL     ?XLOAD_R0123
+        MOV       DPTR,#prevAccumulatedOverflowCount
+        LCALL     ?XSTORE_R0123
+//  817 
+//  818   HAL_EXIT_CRITICAL_SECTION(s);
+        MOV       A,R6
+        MOV       C,0xE0 /* A   */.0
+        MOV       0xa8.7,C
+//  819 
+//  820   return(overflowCount);
+        MOV       DPL,?XSP + 0
+        MOV       DPH,?XSP + 1
+        LCALL     ?XLOAD_R2345
+        LJMP      ??Subroutine9_0 & 0xFFFF
+          CFI EndBlock cfiBlock31
+        REQUIRE _A_IEN0
+        REQUIRE T2MSEL
+        REQUIRE T2M0
+        REQUIRE T2MOVF0
+        REQUIRE T2MOVF1
+        REQUIRE T2MOVF2
+//  821 }
+//  822 
+//  823 
+//  824 /**************************************************************************************************
+//  825  * @fn          macMcuRfIsr
+//  826  *
+//  827  * @brief       Interrupt service routine that handles all RF interrupts.  There are a number
+//  828  *              of conditions "ganged" onto this one ISR so each condition must be tested for.
+//  829  *
+//  830  * @param       none
+//  831  *
+//  832  * @return      none
+//  833  **************************************************************************************************
+//  834  */
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  835 HAL_ISR_FUNCTION( macMcuRfIsr, RF_VECTOR )
+macMcuRfIsr:
+          CFI Block cfiBlock32 Using cfiCommon1
+          CFI Function macMcuRfIsr
+        CODE
+//  836 {
+        FUNCALL macMcuRfIsr, macCspTxIntIsr
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL macMcuRfIsr, macCspTxStopIsr
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL macMcuRfIsr, macRxAckTxDoneCallback
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL macMcuRfIsr, macRxThresholdIsr
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH      A
+          CFI A Frame(CFA_SP, 3)
+          CFI CFA_SP SP+-3
+        MOV       A,#-0xe
+        LCALL     ?INTERRUPT_ENTER_XSP
+          CFI B load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI PSW load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R5 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R4 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI R3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI R2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI R1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI R0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI CFA_XSP16 add(XSP16, 14)
+        ; Saved register size: 14
+        ; Auto size: 0
+//  837   uint8 rfim;
+//  838 
+//  839   HAL_ENTER_ISR();
+        MOV       C,0xa8.7
+        CLR       A
+        RLC       A
+        MOV       R6,A
+        SETB      0xa8.7
+//  840 
+//  841   rfim = RFIRQM1;
+        MOV       DPTR,#0x61a4
+        MOVX      A,@DPTR
+        MOV       R0,A
+//  842 
+//  843   /*  The CPU level RF interrupt flag must be cleared here (before clearing RFIRQFx).
+//  844    *  to allow the interrupts to be nested.
+//  845    */
+//  846   S1CON = 0x00;
+        MOV       0x9b,#0x0
+//  847 
+//  848   if ((RFIRQF1 & IRQ_CSP_MANINT) & rfim)
+        MOV       A,0x91
+        ANL       A,R0
+        ANL       A,#0x8
+        JZ        ??macMcuRfIsr_0
+//  849   {
+//  850     /*
+//  851      *  Important!  Because of how the CSP programs are written, CSP_INT interrupts should
+//  852      *  be processed before CSP_STOP interrupts.  This becomes an issue when there are
+//  853      *  long critical sections.
+//  854      */
+//  855     /* clear flag */
+//  856     RFIRQF1 = (IRQ_CSP_MANINT ^ 0xFF);
+        MOV       0x91,#-0x9
+//  857     macCspTxIntIsr();
+        ; Setup parameters for call to function macCspTxIntIsr
+        LCALL     `??macCspTxIntIsr::?relay`; Banked call to: macCspTxIntIsr
+        SJMP      ??macMcuRfIsr_1
+//  858   }
+//  859   else if ((RFIRQF1 & IRQ_CSP_STOP) & rfim)
+??macMcuRfIsr_0:
+        MOV       A,0x91
+        ANL       A,R0
+        ANL       A,#0x10
+        JZ        ??macMcuRfIsr_2
+//  860   {
+//  861     /* clear flag */
+//  862     RFIRQF1 = (IRQ_CSP_STOP ^ 0xFF);
+        MOV       0x91,#-0x11
+//  863     macCspTxStopIsr();
+        ; Setup parameters for call to function macCspTxStopIsr
+        LCALL     `??macCspTxStopIsr::?relay`; Banked call to: macCspTxStopIsr
+        SJMP      ??macMcuRfIsr_1
+//  864   }
+//  865   else if ((RFIRQF1 & IRQ_TXACKDONE) & rfim)
+??macMcuRfIsr_2:
+        MOV       A,0x91
+        MOV       C,0xE0 /* A   */.0
+        MOV       B.0,C
+        MOV       A,R0
+        MOV       C,0xE0 /* A   */.0
+        ANL       C,B.0
+        JNC       ??macMcuRfIsr_1
+//  866   {
+//  867     /* disable interrupt - set up is for "one shot" operation */
+//  868     RFIRQM1 &= ~IM_TXACKDONE;
+        MOVX      A,@DPTR
+        CLR       0xE0 /* A   */.0
+        MOVX      @DPTR,A
+//  869     macRxAckTxDoneCallback();
+        ; Setup parameters for call to function macRxAckTxDoneCallback
+        LCALL     `??macRxAckTxDoneCallback::?relay`; Banked call to: macRxAckTxDoneCallback
+//  870   }
+//  871 
+//  872   rfim = RFIRQM0;
+??macMcuRfIsr_1:
+        MOV       DPTR,#0x61a3
+        MOVX      A,@DPTR
+        MOV       R0,A
+//  873 
+//  874   /* process RFIRQF0 next */
+//  875   if ((RFIRQF0 & IRQ_FIFOP) & rfim)
+        MOV       A,0xe9
+        ANL       A,R0
+        ANL       A,#0x4
+        JZ        ??macMcuRfIsr_3
+//  876   {
+//  877     /* continue to execute interrup                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        t handler as long as FIFOP is active */
+//  878     do
+//  879     {
+//  880       macRxThresholdIsr();
+??macMcuRfIsr_4:
+        ; Setup parameters for call to function macRxThresholdIsr
+        LCALL     `??macRxThresholdIsr::?relay`; Banked call to: macRxThresholdIsr
+//  881       RFIRQF0 = (IRQ_FIFOP ^ 0xFF);
+        MOV       0xe9,#-0x5
+//  882     } while (FSMSTAT1 & FIFOP);
+        MOV       DPTR,#0x6193
+        MOVX      A,@DPTR
+        MOV       C,0xE0 /* A   */.6
+        JC        ??macMcuRfIsr_4
+//  883   }
+//  884 
+//  885   CLEAR_SLEEP_MODE();
+//  886   HAL_EXIT_ISR();
+??macMcuRfIsr_3:
+          CFI EndBlock cfiBlock32
+        REQUIRE ?Subroutine2
+        REQUIRE _A_IEN0
+        REQUIRE S1CON
+        REQUIRE RFIRQF1
+        REQUIRE RFIRQF0
+        ; // Fall through to label ?Subroutine2
+//  887 }
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+?Subroutine2:
+          CFI Block cfiBlock33 Using cfiCommon1
+          CFI NoFunction
+          CFI CFA_SP SP+-3
+          CFI CFA_XSP16 add(XSP16, 14)
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI B load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI A Frame(CFA_SP, 3)
+          CFI PSW load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI R1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI R2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI R3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI R4 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI R5 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        MOV       A,R6
+        MOV       C,0xE0 /* A   */.0
+        MOV       0xa8.7,C
+        MOV       R7,#0x1
+        LJMP      ?INTERRUPT_LEAVE_XSP
+          CFI EndBlock cfiBlock33
+//  888 
+//  889 
+//  890 /**************************************************************************************************
+//  891  * @fn          macMcuRfErrIsr
+//  892  *
+//  893  * @brief       Interrupt service routine that handles all RF Error interrupts.  Only the RX FIFO
+//  894  *              overflow condition is handled.
+//  895  *
+//  896  * @param       none
+//  897  *
+//  898  * @return      none
+//  899  **************************************************************************************************
+//  900  */
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  901 HAL_ISR_FUNCTION( macMcuRfErrIsr, RFERR_VECTOR )
+macMcuRfErrIsr:
+          CFI Block cfiBlock34 Using cfiCommon1
+          CFI Function macMcuRfErrIsr
+        CODE
+//  902 {
+        FUNCALL macMcuRfErrIsr, macRxFifoOverflowIsr
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH      A
+          CFI A Frame(CFA_SP, 3)
+          CFI CFA_SP SP+-3
+        MOV       A,#-0xe
+        LCALL     ?INTERRUPT_ENTER_XSP
+          CFI B load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI PSW load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R5 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R4 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI R3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI R2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI R1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI R0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI CFA_XSP16 add(XSP16, 14)
+        ; Saved register size: 14
+        ; Auto size: 0
+//  903   uint8 rferrm;
+//  904 
+//  905   HAL_ENTER_ISR();
+        MOV       C,0xa8.7
+        CLR       A
+        RLC       A
+        MOV       R6,A
+        SETB      0xa8.7
+//  906 
+//  907   rferrm = RFERRM;
+        MOV       DPTR,#0x61a5
+        MOVX      A,@DPTR
+        MOV       R0,A
+//  908 
+//  909   if ((RFERRF & RFERR_RXOVERF) & rferrm)
+        MOV       A,0xbf
+        ANL       A,R0
+        ANL       A,#0x4
+        JZ        ??macMcuRfErrIsr_0
+//  910   {
+//  911     RFERRF = (RFERR_RXOVERF ^ 0xFF);
+        MOV       0xbf,#-0x5
+//  912     macRxFifoOverflowIsr();
+        ; Setup parameters for call to function macRxFifoOverflowIsr
+        LCALL     `??macRxFifoOverflowIsr::?relay`; Banked call to: macRxFifoOverflowIsr
+//  913   }
+//  914 
+//  915   CLEAR_SLEEP_MODE();
+//  916   HAL_EXIT_ISR();
+??macMcuRfErrIsr_0:
+        SJMP      ?Subroutine2
+          CFI EndBlock cfiBlock34
+        REQUIRE _A_IEN0
+        REQUIRE RFERRF
+//  917 }
+//  918 
+//  919 
+//  920 /**************************************************************************************************
+//  921  * @fn          macMcuRecordMaxRssiStart
+//  922  *
+//  923  * @brief       Starts recording of the maximum received RSSI value.
+//  924  *
+//  925  * @param       none
+//  926  *
+//  927  * @return      none
+//  928  **************************************************************************************************
+//  929  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  930 MAC_INTERNAL_API void macMcuRecordMaxRssiStart(void)
+macMcuRecordMaxRssiStart:
+          CFI Block cfiBlock35 Using cfiCommon0
+          CFI Function macMcuRecordMaxRssiStart
+        CODE
+//  931 {
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  932   /* start maximum recorded value at the lowest possible value */
+//  933   maxRssi = -128;
+        MOV       DPTR,#maxRssi
+        MOV       A,#-0x80
+        MOVX      @DPTR,A
+//  934 
+//  935   /* enable timer overflow interrupt */
+//  936   T2IRQM |= TIMER2_PERM;
+        ORL       0xa7,#0x1
+//  937 }
+        LJMP      ??Subroutine7_0 & 0xFFFF
+          CFI EndBlock cfiBlock35
+        REQUIRE T2IRQM
+//  938 
+//  939 
+//  940 /**************************************************************************************************
+//  941  * @fn          macMcuRecordMaxRssiStop
+//  942  *
+//  943  * @brief       Stops recording of the maximum received RSSI.  It returns the maximum value
+//  944  *              received since starting the recording.
+//  945  *
+//  946  * @param       none
+//  947  *
+//  948  * @return      maximum received RSSI value
+//  949  **************************************************************************************************
+//  950  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  951 MAC_INTERNAL_API int8 macMcuRecordMaxRssiStop(void)
+macMcuRecordMaxRssiStop:
+          CFI Block cfiBlock36 Using cfiCommon0
+          CFI Function macMcuRecordMaxRssiStop
+        CODE
+//  952 {
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  953   /* disable timer overflow interrupt */
+//  954   T2IRQM &= ~TIMER2_PERM;
+        ANL       0xa7,#0xfe
+//  955 
+//  956   return(maxRssi);
+        MOV       DPTR,#maxRssi
+        MOVX      A,@DPTR
+        MOV       R1,A
+        LJMP      ??Subroutine7_0 & 0xFFFF
+          CFI EndBlock cfiBlock36
+        REQUIRE T2IRQM
+//  957 }
+//  958 
+//  959 
+//  960 /*=================================================================================================
+//  961  * @fn          macMcuRecordMaxRssiIsr
+//  962  *
+//  963  * @brief       Interrupt service routine called during recording of max RSSI value.
+//  964  *
+//  965  * @param       none
+//  966  *
+//  967  * @return      none
+//  968  *=================================================================================================
+//  969  */
+//  970 static void mcuRecordMaxRssiIsr(void)
+//  971 {
+//  972   int8 rssi;
+//  973 
+//  974   /* read latest RSSI value */
+//  975   rssi = RSSI;
+//  976 
+//  977   /* if new RSSI value is greater than the maximum already received, it is the new maximum */
+//  978   if (rssi > maxRssi)
+//  979   {
+//  980     maxRssi = rssi;
+//  981   }
+//  982 }
+//  983 
+//  984 
+//  985 /**************************************************************************************************
+//  986  * @fn          macMcuAccumulatedOverFlow
+//  987  *
+//  988  * @brief       This function is used to accumulate timer 2 overflow if applicable
+//  989  *              on the relevant platform
+//  990  *
+//  991  * @param       none
+//  992  *
+//  993  * @return      none
+//  994  **************************************************************************************************
+//  995  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  996 MAC_INTERNAL_API void macMcuAccumulatedOverFlow(void)
+macMcuAccumulatedOverFlow:
+          CFI Block cfiBlock37 Using cfiCommon0
+          CFI Function macMcuAccumulatedOverFlow
+        CODE
+//  997 {
+        FUNCALL macMcuAccumulatedOverFlow, macGetBackOffTimerRollover
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        MOV       A,#-0xc
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 0
+//  998   halIntState_t  s;
+//  999   HAL_ENTER_CRITICAL_SECTION(s);
+        MOV       C,0xa8.7
+        CLR       A
+        RLC       A
+        MOV       R6,A
+        CLR       0xa8.7
+// 1000 
+// 1001   if(updateRolloverflag == FALSE)
+        MOV       DPTR,#updateRolloverflag
+        MOVX      A,@DPTR
+        JNZ       ??macMcuAccumulatedOverFlow_0
+// 1002   {
+// 1003     accumulatedOverflowCount += macGetBackOffTimerRollover();
+        ; Setup parameters for call to function macGetBackOffTimerRollover
+        LCALL     `??macGetBackOffTimerRollover::?relay`; Banked call to: macGetBackOffTimerRollover
+        MOV       ?V0,R2
+        MOV       ?V1,R3
+        MOV       ?V2,R4
+        MOV       ?V3,R5
+        MOV       DPTR,#accumulatedOverflowCount
+        MOV       R0,#?V0
+        LCALL     ?L_ADD_TO_X
+        SJMP      ??macMcuAccumulatedOverFlow_1
+// 1004   }
+// 1005   else
+// 1006   {
+// 1007     updateRolloverflag = FALSE;
+??macMcuAccumulatedOverFlow_0:
+        CLR       A
+        MOVX      @DPTR,A
+// 1008   }
+// 1009 
+// 1010   HAL_EXIT_CRITICAL_SECTION(s);
+??macMcuAccumulatedOverFlow_1:
+        MOV       A,R6
+        MOV       C,0xE0 /* A   */.0
+        MOV       0xa8.7,C
+// 1011 }
+        LJMP      ??Subroutine10_0 & 0xFFFF
+          CFI EndBlock cfiBlock37
+        REQUIRE _A_IEN0
+
+        COMMON INTVEC:CODE:ROOT(0)
+        ORG 3
+`??macMcuRfErrIsr::??INTVEC 3`:
+        LJMP       (macMcuRfErrIsr)
+
+        COMMON INTVEC:CODE:ROOT(0)
+        ORG 83
+`??macMcuTimer2Isr::??INTVEC 83`:
+        LJMP       (macMcuTimer2Isr)
+
+        COMMON INTVEC:CODE:ROOT(0)
+        ORG 131
+`??macMcuRfIsr::??INTVEC 131`:
+        LJMP       (macMcuRfIsr)
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_ff000000:
+        DD 4278190080
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??MAC_SetRandomSeedCB::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    MAC_SetRandomSeedCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??macMcuInit::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    macMcuInit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??macMcuRandomByte::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    macMcuRandomByte
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??macMcuRandomWord::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    macMcuRandomWord
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??macMcuTimerForceDelay::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    macMcuTimerForceDelay
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??macMcuTimerCapture::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    macMcuTimerCapture
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??macMcuOverflowCount::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    macMcuOverflowCount
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??macMcuOverflowCapture::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    macMcuOverflowCapture
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??macMcuOverflowSetCount::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    macMcuOverflowSetCount
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??macMcuOverflowSetCompare::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    macMcuOverflowSetCompare
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??macMcuOverflowSetPeriod::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    macMcuOverflowSetPeriod
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??macMcuTimer2OverflowWorkaround::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    macMcuTimer2OverflowWorkaround
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??macMcuPrecisionCount::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    macMcuPrecisionCount
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??macMcuRecordMaxRssiStart::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    macMcuRecordMaxRssiStart
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??macMcuRecordMaxRssiStop::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    macMcuRecordMaxRssiStop
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??macMcuAccumulatedOverFlow::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    macMcuAccumulatedOverFlow
+
+        END
+// 1012 
+// 1013 
+// 1014 /**************************************************************************************************
+// 1015  *                                  Compile Time Integrity Checks
+// 1016  **************************************************************************************************
+// 1017  */
+// 1018 #if ((IRQ_SFD != IM_SFD) || (IRQ_FIFOP != IM_FIFOP) || (IRQ_TXACKDONE != IM_TXACKDONE))
+// 1019 #error "ERROR: Compile time error with RFIRQFx vs RFIRQMx register defines."
+// 1020 #endif
+// 1021 
+// 1022 #if defined (FEATURE_CC253X_LOW_POWER_RX) && !(defined (HAL_MCU_CC2530) || defined (HAL_MCU_CC2533))
+// 1023 #error "ERROR: FEATURE_CC253X_LOW_POWER_RX can only be used with CC2530 or CC2533."
+// 1024 #endif
+// 1025 
+// 1026 /**************************************************************************************************
+// 1027 */
+// 
+// 1 321 bytes in segment BANKED_CODE
+//    96 bytes in segment BANK_RELAYS
+//     9 bytes in segment INTVEC
+//   237 bytes in segment NEAR_CODE
+//    22 bytes in segment SFR_AN
+//     4 bytes in segment XDATA_ROM_C
+//    17 bytes in segment XDATA_Z
+// 
+//   333 bytes of CODE     memory (+  9 bytes shared)
+//     0 bytes of CONST    memory (+  4 bytes shared)
+//     0 bytes of DATA     memory (+ 22 bytes shared)
+// 1 321 bytes of HUGECODE memory
+//    17 bytes of XDATA    memory
+//
+//Errors: none
+//Warnings: none
